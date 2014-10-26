@@ -1,0 +1,24 @@
+this is for monet 8X8
+the total time is= 0.870000 
+the total duration of CPU kernel is 0.790000: 
+the total duration of GPU kernel is 531094748389925912576.000000: 
+the total duration of CPU is 0.870000: 
+the total duration of GPU is 0.000000: 
+this is for monet 8X8
+the total time is= 0.870000 
+the total duration of CPU kernel is 0.790000: 
+the total duration of GPU kernel is 531094748389925912576.000000: 
+the total duration of CPU is 0.870000: 
+the total duration of GPU is 0.000000: 
+this is for monet 8X8
+the total time is= 1.280000 
+the total duration of CPU kernel is 1.200000: 
+the total duration of GPU kernel is 531094748389925912576.000000: 
+the total duration of CPU is 1.280000: 
+the total duration of GPU is 0.000000: 
+this is for monet 8X8
+the total time is= 30.330000 
+the total duration of CPU kernel is 29.580000: 
+the total duration of GPU kernel is 531094748389925912576.000000: 
+the total duration of CPU is 30.330000: 
+the total duration of GPU is 0.000000: 

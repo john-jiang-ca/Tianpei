@@ -3,6 +3,10 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../src/FCSD_detection_CPU.o \
+../src/fullfactorial.o 
+
 CPP_SRCS += \
 ../src/FCSD_detection_CPU.cpp \
 ../src/communication_line.cpp \

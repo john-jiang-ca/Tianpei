@@ -1,0 +1,24 @@
+this is for 64X64
+the total time is= 0.190000 
+the total duration of CPU kernel is 0.070000: 
+the total duration of GPU kernel is 196972501.794816: 
+the total duration of CPU is 0.160000: 
+the total duration of GPU is 0.000000: 
+this is for 64X64
+the total time is= 0.100000 
+the total duration of CPU kernel is 0.040000: 
+the total duration of GPU kernel is 112436346.617856: 
+the total duration of CPU is 0.090000: 
+the total duration of GPU is 0.000000: 
+this is for 64X64
+the total time is= 20.510000 
+the total duration of CPU kernel is 6.980000: 
+the total duration of GPU kernel is 19913830616.268799: 
+the total duration of CPU is 18.300000: 
+the total duration of GPU is 0.030000: 
+this is for 64X64
+the total time is= 152.570000 
+the total duration of CPU kernel is 40.110000: 
+the total duration of GPU kernel is 101612234664.312836: 
+the total duration of CPU is 140.400000: 
+the total duration of GPU is 0.180000: 

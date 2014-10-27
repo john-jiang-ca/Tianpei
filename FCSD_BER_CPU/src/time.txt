@@ -1,0 +1,6 @@
+this is for 16 X 16
+the total time is= 6894.500000 
+the total duration of CPU kernel is 6469.783040: 
+the total duration of GPU kernel is -7983690100899993960769241743360.000000: 
+the total duration of CPU is 6887.671296: 
+the total duration of GPU is 0.050000: 

@@ -77,7 +77,7 @@
 #define miniteration 1e5               //the minimum number of channel realizations
 #define minSymbolError 500          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
-#define SNRnum 7                    //the point number of signal to noise ratio per bit
+#define SNRnum 6                    //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,
 		unsigned long Q);
@@ -119,7 +119,7 @@ int main(void) {
 	gsl_complex zero;
 	GSL_SET_COMPLEX(&zero, 0.0, 0.0);
 	SNR = (float*) malloc(11 * sizeof(float));
-	for (count1 = 0; count1 <=10; count1++) {
+	for (count1 = 0; count1 <=SNRnum; count1++) {
 		SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
 	}
 	FILE *cfile1, *cfile2, *cfile3, *cfile4;
@@ -151,36 +151,41 @@ int main(void) {
 	float durationKernel_GPU_t = 0;
 	durationKernel_CPU = (float*) malloc(sizeof(float));
 	durationKernel_GPU = (float*) malloc(sizeof(float));
+	printf("the program for %dX%d %d QAM begin!!\n", MATRIX_SIZE,MATRIX_SIZE,M);
+	fprintf(cfile1,"\n");
 	fprintf(cfile1, "this is the bit error rate of %d X %d MIMO \n",
 			MATRIX_SIZE, MATRIX_SIZE);
 	fprintf(cfile1,"this is %d QAM modulation\n", M);
 	fprintf(cfile1, "the SNR per bit is:\n");
-	for(count1=0;count1<=6;count1++)
+	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
+	for(count1=0;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile1,"%d ", 2*count1);
 	}
 	fprintf(cfile1,"\n");
-	for(count1=0;count1<=7;count1++)
+	for(count1=0;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile1,"%f ", SNR[count1]);
 	}
 	fprintf(cfile1,"\n");
+	fprintf(cfile2,"\n");
 	fprintf(cfile2, "this is the symbol error rate of %d X %d MIMO \n",
 			MATRIX_SIZE, MATRIX_SIZE);
 	fprintf(cfile2,"this is %d QAM modulation\n", M);
 	fprintf(cfile2, "the SNR per bit is:\n");
-	for(count1=0;count1<=7;count1++)
+	fprintf(cfile2,"this is SNR %d %f\n", 2*SNRnum, SNR[SNRnum]);
+	for(count1=SNRnum;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile2,"%d ", 2*count1);
 	}
 	fprintf(cfile2,"\n");
-	for(count1=0;count1<=7;count1++)
+	for(count1=0;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile2,"%f ", SNR[count1]);
 	}
 	fprintf(cfile2,"\n");
 	time1 = clock();
-	for (count = 0; count <=7; count++) {
+	for (count = SNRnum; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -372,7 +377,7 @@ int main(void) {
 	time2 = clock();
 //	printf("the clock per second is %f:\n", CLOCKS_PER_SEC);
 	duration_total = double(time2 - time1) / CLOCKS_PER_SEC;
-	fprintf(cfile3, "this is for 64X64\n");
+	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
 	fprintf(cfile3, "the total time is= %f \n", duration_total);
 	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
 			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));

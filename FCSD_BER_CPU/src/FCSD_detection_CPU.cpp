@@ -709,13 +709,18 @@ end=clock();
 
 
 free(list);
+list=NULL;
 free(x);
+x=NULL;
 gsl_matrix_complex_free(pR);
+pR=NULL;
 gsl_vector_complex_free(s_hat);
+s_hat=NULL;
 //gsl_matrix_complex_free(I);
 //gsl_matrix_complex_free(s_matrix_Q);
 //gsl_vector_free(Eu);
 free(s_sub_index);
+s_sub_index=NULL;
 
 }
 

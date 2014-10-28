@@ -77,7 +77,7 @@
 #define miniteration 1e5               //the minimum number of channel realizations
 #define minSymbolError 500          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
-#define SNRnum 6                    //the point number of signal to noise ratio per bit
+#define SNRnum 3                    //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,
 		unsigned long Q);
@@ -152,12 +152,20 @@ int main(void) {
 	durationKernel_CPU = (float*) malloc(sizeof(float));
 	durationKernel_GPU = (float*) malloc(sizeof(float));
 	printf("the program for %dX%d %d QAM begin!!\n", MATRIX_SIZE,MATRIX_SIZE,M);
+	printf("the SNR per bit is:\n");
+//	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
+	for(count1=0;count1<=SNRnum;count1++)
+	{
+	printf("%d ", 2*count1);
+	}
+	printf("\n");
 	fprintf(cfile1,"\n");
+	fprintf(cfile2,"\n");
 	fprintf(cfile1, "this is the bit error rate of %d X %d MIMO \n",
 			MATRIX_SIZE, MATRIX_SIZE);
 	fprintf(cfile1,"this is %d QAM modulation\n", M);
 	fprintf(cfile1, "the SNR per bit is:\n");
-	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
+//	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
 	for(count1=0;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile1,"%d ", 2*count1);
@@ -173,7 +181,7 @@ int main(void) {
 			MATRIX_SIZE, MATRIX_SIZE);
 	fprintf(cfile2,"this is %d QAM modulation\n", M);
 	fprintf(cfile2, "the SNR per bit is:\n");
-	fprintf(cfile2,"this is SNR %d %f\n", 2*SNRnum, SNR[SNRnum]);
+//	fprintf(cfile2,"this is SNR %d %f\n", 2*SNRnum, SNR[SNRnum]);
 	for(count1=SNRnum;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile2,"%d ", 2*count1);
@@ -185,7 +193,7 @@ int main(void) {
 	}
 	fprintf(cfile2,"\n");
 	time1 = clock();
-	for (count = SNRnum; count <=SNRnum; count++) {
+	for (count = 0; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -399,6 +407,8 @@ int main(void) {
 	free(durationKernel_CPU);
 	free(durationKernel_GPU);
 	SNR = NULL;
+	durationKernel_CPU=NULL;
+	durationKernel_GPU=NULL;
 	printf("the whole program finishes successfully\n");
 	fclose(cfile1);
 	fclose(cfile2);

@@ -8,19 +8,13 @@ O_SRCS += \
 ../src/fullfactorial.o 
 
 CPP_SRCS += \
-../src/FCSD_detection_CPU.cpp \
-../src/communication_line.cpp \
-../src/fullfactorial.cpp 
+../src/communication_line.cpp 
 
 OBJS += \
-./src/FCSD_detection_CPU.o \
-./src/communication_line.o \
-./src/fullfactorial.o 
+./src/communication_line.o 
 
 CPP_DEPS += \
-./src/FCSD_detection_CPU.d \
-./src/communication_line.d \
-./src/fullfactorial.d 
+./src/communication_line.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

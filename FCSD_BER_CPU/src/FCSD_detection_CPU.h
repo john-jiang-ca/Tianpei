@@ -29,6 +29,7 @@
 #include<gsl/gsl_sort.h>
 #include<gsl/gsl_sort_vector.h>
 #include<gsl/gsl_permutation.h>
+#include"fullfactorial.h"
 #include"common.h"
 void FCSD_CPU(
 		gsl_vector_complex *preceived,   //received signal vector
@@ -282,6 +283,7 @@ void FCSD_CPU(
 					 }
 				 }
 			 }
+			 gsl_matrix_complex_free(pH_loop);
 			pH_loop=gsl_matrix_complex_calloc(MATRIX_SIZE,(MATRIX_SIZE-count2-1));
 			for(count3=0;count3<MATRIX_SIZE;count3++)
 			 {

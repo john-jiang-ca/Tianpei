@@ -56,6 +56,7 @@
 #include"data_generator.h"
 #include"demodulator.h"
 #include"binaryerrors.h"
+#include"FCSD_detection_CPU.h"
 //#include"complex.h"
 //#include"chol.cuh"
 //#include"cu_complex_operation.cuh"
@@ -192,6 +193,10 @@ int main(void) {
 	fprintf(cfile2,"%f ", SNR[count1]);
 	}
 	fprintf(cfile2,"\n");
+	fclose(cfile1);
+	fclose(cfile2);
+	fclose(cfile3);
+	fclose(cfile4);
 	time1 = clock();
 	for (count = 0; count <=SNRnum; count++) {
 		iteration = 0;
@@ -199,6 +204,10 @@ int main(void) {
 		symbolError = 0;
 		BitErrorRate = 0;
 		SymbolErrorRate = 0;
+		cfile1 = fopen(BER, "a");
+		cfile2 = fopen(SER, "a");
+		cfile3 = fopen(timeused, "a");
+		cfile4 = fopen(GFLOPS, "a");
 		do {
 
 			gsl_vector_ulong *pdata, *pgraydata, *poutput;
@@ -348,7 +357,7 @@ int main(void) {
 //        	 errors=1;
 				bitError += errors;
 			}
-			printf("the iteration time is %d\n", iteration);
+//			printf("the iteration time is %d\n", iteration);
 			gsl_vector_ulong_free(pdata);
 			pdata = NULL;
 			gsl_vector_ulong_free(pgraydata);
@@ -376,25 +385,30 @@ int main(void) {
 //			free(symOut_cu);
 //			symOut_cu = NULL;
 		} while ((symbolError < minSymbolError) || (iteration < miniteration));
+//		}while(miniteration!=100);
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
 		fprintf(cfile1, "%f ", BitErrorRate);
 		fprintf(cfile2, "%f ", SymbolErrorRate);
+		fclose(cfile1);
+		fclose(cfile2);
+		fclose(cfile3);
+		fclose(cfile4);
 
 	}
 	time2 = clock();
 //	printf("the clock per second is %f:\n", CLOCKS_PER_SEC);
 	duration_total = double(time2 - time1) / CLOCKS_PER_SEC;
-	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
-	fprintf(cfile3, "the total time is= %f \n", duration_total);
-	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
-			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));
-	fprintf(cfile3, "the total duration of GPU kernel is %f: \n",
-			double(durationKernel_GPU_t / double(CLOCKS_PER_SEC)));
-	fprintf(cfile3, "the total duration of CPU is %f: \n",
-			double(duration_CPU / double(CLOCKS_PER_SEC)));
-	fprintf(cfile3, "the total duration of GPU is %f: \n",
-			double(duration_GPU / double(CLOCKS_PER_SEC)));
+//	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
+//	fprintf(cfile3, "the total time is= %f \n", duration_total);
+//	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
+//			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));
+//	fprintf(cfile3, "the total duration of GPU kernel is %f: \n",
+//			double(durationKernel_GPU_t / double(CLOCKS_PER_SEC)));
+//	fprintf(cfile3, "the total duration of CPU is %f: \n",
+//			double(duration_CPU / double(CLOCKS_PER_SEC)));
+//	fprintf(cfile3, "the total duration of GPU is %f: \n",
+//			double(duration_GPU / double(CLOCKS_PER_SEC)));
 	gsl_rng_free(pr);
 	pr = NULL;
 	gsl_vector_ulong_free(pgraycode);
@@ -410,10 +424,10 @@ int main(void) {
 	durationKernel_CPU=NULL;
 	durationKernel_GPU=NULL;
 	printf("the whole program finishes successfully\n");
-	fclose(cfile1);
-	fclose(cfile2);
-	fclose(cfile3);
-	fclose(cfile4);
+//	fclose(cfile1);
+//	fclose(cfile2);
+//	fclose(cfile3);
+//	fclose(cfile4);
 	return (0);
 
 }

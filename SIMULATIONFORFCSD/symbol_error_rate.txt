@@ -1,0 +1,23 @@
+
+
+this is the symbol error rate of 16 X 16 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+6 
+1.000000 1.584893 2.511886 3.981072 
+0.043594 0.007501 
+
+this is the symbol error rate of 16 X 16 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+this is SNR 10 10.000000
+10 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 
+0.000678 0.000024 
+
+this is the symbol error rate of 16 X 16 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+6 
+1.000000 1.584893 2.511886 3.981072 
+0.044381 0.007604 0.000656 0.000024 

@@ -25,14 +25,14 @@ void fullfact(
 {
 	int ssize,ncycles,columns,nreps;
 	int count1,count2,count3,count4;
-	int *settings2;
+	int *settings2,*settings1;
 	settings2=(int*)calloc(1,int(pow(M,rho))*sizeof(int));
 	ssize=int(pow(M,rho));
 	ncycles=ssize;
 	for(count1=0;count1<rho;count1++)
 	{
-		memset(settings2,0,int(pow(M,rho))*sizeof(int));
-	   int *settings1;
+//		memset(settings2,0,int(pow(M,rho))*sizeof(int));
+
 		nreps=int(ssize/ncycles);
 		ncycles=ncycles/M;
 		settings1=(int*)calloc(1,M*nreps*sizeof(int));
@@ -59,8 +59,9 @@ void fullfact(
 
     free(settings1);
 	}
-	memset(settings2,0,int(pow(M,rho))*sizeof(int));
+//	memset(settings2,0,int(pow(M,rho))*sizeof(int));
 	free(settings2);
+//	free(settings1);
 
 
 

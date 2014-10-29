@@ -78,7 +78,7 @@
 #define miniteration 1e5               //the minimum number of channel realizations
 #define minSymbolError 500          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
-#define SNRnum 3                    //the point number of signal to noise ratio per bit
+#define SNRnum 12                    //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,
 		unsigned long Q);

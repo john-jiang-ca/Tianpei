@@ -20,9 +20,9 @@
 #include <time.h>
 #include <gsl/gsl_complex.h>
 #include <gsl/gsl_complex_math.h>
-#define MATRIX_SIZE 16
+#define MATRIX_SIZE 8
 #define IDC2D(i,j,row)    (i)*row+j
-#define Constellationsize 4
+#define Constellationsize 64
 //void FCSD_detection(
 //		cuComplex *sigRec,   //received signal vector
 //		cuComplex *pH,        //propagation matrix

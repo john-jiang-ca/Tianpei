@@ -21,3 +21,32 @@ the SNR per bit is:
 6 
 1.000000 1.584893 2.511886 3.981072 
 0.044381 0.007604 0.000656 0.000024 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 64 QAM modulation
+the SNR per bit is:
+24 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 15.848933 25.118862 39.810719 63.095726 100.000000 158.489334 251.188705 
+
+
+this is the symbol error rate of 16 X 16 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+this is SNR 10 10.000000
+10 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 
+
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 64 QAM modulation
+the SNR per bit is:
+24 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 15.848933 25.118862 39.810719 63.095726 100.000000 158.489334 251.188705 
+
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 64 QAM modulation
+the SNR per bit is:
+24 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 15.848933 25.118862 39.810719 63.095726 100.000000 158.489334 251.188705 
+0.907917 

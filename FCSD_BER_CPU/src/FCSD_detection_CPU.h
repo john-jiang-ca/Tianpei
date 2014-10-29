@@ -568,19 +568,19 @@ for(count1=0;count1<pathNum;count1++)
 					                   gsl_complex QAM64_temp;
 								    	 d=sqrt(3/(2* (float)(Nt*(M-1))));
 								    	 //real part
-								    	 if(S_temp.dat[0]<(-6*d))
+								    	 if(S_temp.dat[0]<=(-6*d))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,-7*d);
 								    	 }
-								    	 else if(S_temp.dat[0]<=(-4*d)&&S_temp.dat[0]>=(-6*d))
+								    	 else if(S_temp.dat[0]<=(-4*d)&&S_temp.dat[0]>(-6*d))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,-5*d);
 								    	 }
-								    	 else if(S_temp.dat[0]<=(-2*d)&&S_temp.dat[0]>=(-4*d))
+								    	 else if(S_temp.dat[0]<=(-2*d)&&S_temp.dat[0]>(-4*d))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,-3*d);
 								    	 }
-								    	 else if(S_temp.dat[0]<=(0)&&S_temp.dat[0]>=(-2*d))
+								    	 else if(S_temp.dat[0]<=(0)&&S_temp.dat[0]>(-2*d))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,-d);
 								    	 }
@@ -588,32 +588,32 @@ for(count1=0;count1<pathNum;count1++)
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,7*d);
 								    	 }
-								    	 else if(S_temp.dat[0]<=(6*d)&&S_temp.dat[0]>=(4*d))
+								    	 else if(S_temp.dat[0]<=(6*d)&&S_temp.dat[0]>(4*d))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,5*d);
 								    	 }
-								    	 else if(S_temp.dat[0]<=(4*d)&&S_temp.dat[0]>=(2*d))
+								    	 else if(S_temp.dat[0]<=(4*d)&&S_temp.dat[0]>(2*d))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,3*d);
 								    	 }
-								    	 else if(S_temp.dat[0]<=(2*d)&&S_temp.dat[0]>=(0))
+								    	 else if(S_temp.dat[0]<=(2*d)&&S_temp.dat[0]>(0))
 								    	 {
 								    		 GSL_SET_REAL(&QAM64_temp,d);
 								    	 }
 								    	 //image part
-								    	 if(S_temp.dat[1]<(-6*d))
+								    	 if(S_temp.dat[1]<=(-6*d))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,-7*d);
 								    	 }
-								    	 else if(S_temp.dat[1]<=(-4*d)&&S_temp.dat[1]>=(-6*d))
+								    	 else if(S_temp.dat[1]<=(-4*d)&&S_temp.dat[1]>(-6*d))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,-5*d);
 								    	 }
-								    	 else if(S_temp.dat[1]<=(-2*d)&&S_temp.dat[1]>=(-4*d))
+								    	 else if(S_temp.dat[1]<=(-2*d)&&S_temp.dat[1]>(-4*d))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,-3*d);
 								    	 }
-								    	 else if(S_temp.dat[1]<=(0)&&S_temp.dat[1]>=(-2*d))
+								    	 else if(S_temp.dat[1]<=(0)&&S_temp.dat[1]>(-2*d))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,-d);
 								    	 }
@@ -621,15 +621,15 @@ for(count1=0;count1<pathNum;count1++)
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,7*d);
 								    	 }
-								    	 else if(S_temp.dat[1]<=(6*d)&&S_temp.dat[1]>=(4*d))
+								    	 else if(S_temp.dat[1]<=(6*d)&&S_temp.dat[1]>(4*d))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,5*d);
 								    	 }
-								    	 else if(S_temp.dat[1]<=(4*d)&&S_temp.dat[1]>=(2*d))
+								    	 else if(S_temp.dat[1]<=(4*d)&&S_temp.dat[1]>(2*d))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,3*d);
 								    	 }
-								    	 else if(S_temp.dat[1]<=(2*d)&&S_temp.dat[1]>=(0))
+								    	 else if(S_temp.dat[1]<=(2*d)&&S_temp.dat[1]>(0))
 								    	 {
 								    		 GSL_SET_IMAG(&QAM64_temp,d);
 								    	 }

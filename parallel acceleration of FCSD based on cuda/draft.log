@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  28 OCT 2014 15:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  29 OCT 2014 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,7 +328,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Non-PDF special ignored!
 
 {/usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-Overfull \hbox (7.6577pt too wide) in paragraph at lines 525--525
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
+
+ []
+
+[5]
+Overfull \hbox (7.6577pt too wide) in paragraph at lines 529--529
 []\OT1/cmr/bx/n/17.28 CUDA GPU Ar-chi-tec-ture and Pro-gram-ming Model 
  []
 
@@ -341,16 +346,16 @@ Package epstopdf Info: Source file: <CUDA_programming_hierachy.eps>
 (epstopdf)                    size: 40684 bytes
 (epstopdf)             Command: <repstopdf --outfile=CUDA_programming_hierachy-
 eps-converted-to.pdf CUDA_programming_hierachy.eps>
-(epstopdf)             \includegraphics on input line 530.
+(epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
 
-<CUDA_programming_hierachy-eps-converted-to.pdf, id=23, 451.6875pt x 373.395pt>
+<CUDA_programming_hierachy-eps-converted-to.pdf, id=31, 451.6875pt x 373.395pt>
 File: CUDA_programming_hierachy-eps-converted-to.pdf Graphic file (type pdf)
 <use CUDA_programming_hierachy-eps-converted-to.pdf>
 Package pdftex.def Info: CUDA_programming_hierachy-eps-converted-to.pdf used on
- input line 530.
+ input line 534.
 (pdftex.def)             Requested size: 225.84319pt x 186.69704pt.
- [5] [6 <./CUDA_programming_hierachy-eps-converted-to.pdf>] [7]
+ [6] [7 <./CUDA_programming_hierachy-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <High_view_of_CUDA_GPU_microarchitecture.ep
 s>
 (epstopdf)                    date: 2014-10-17 01:33:55
@@ -362,7 +367,7 @@ s-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=High_view_of_CUDA_GPU_micr
 oarchitecture-eps-converted-to.pdf High_view_of_CUDA_GPU_microarchitecture.eps>
 
-(epstopdf)             \includegraphics on input line 540.
+(epstopdf)             \includegraphics on input line 544.
 Package epstopdf Info: Output file is already uptodate.
 
 <High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf, id=43, 507.8975p
@@ -372,13 +377,13 @@ File: High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf Graphic file
 
 <use High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>
 Package pdftex.def Info: High_view_of_CUDA_GPU_microarchitecture-eps-converted-
-to.pdf used on input line 540.
+to.pdf used on input line 544.
 (pdftex.def)             Requested size: 253.94814pt x 203.76074pt.
- [8]
+ [8] [9 <./High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>]
 
-LaTeX Warning: Citation `matrixtheory' on page 9 undefined on input line 559.
+LaTeX Warning: Citation `matrixtheory' on page 10 undefined on input line 563.
 
-[9 <./High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>]
+[10]
 Package epstopdf Info: Source file: <FCSD_tree_searching.eps>
 (epstopdf)                    date: 2014-10-17 01:26:14
 (epstopdf)                    size: 1081094 bytes
@@ -387,36 +392,35 @@ Package epstopdf Info: Source file: <FCSD_tree_searching.eps>
 (epstopdf)                    size: 75400 bytes
 (epstopdf)             Command: <repstopdf --outfile=FCSD_tree_searching-eps-co
 nverted-to.pdf FCSD_tree_searching.eps>
-(epstopdf)             \includegraphics on input line 577.
+(epstopdf)             \includegraphics on input line 581.
 Package epstopdf Info: Output file is already uptodate.
 
-<FCSD_tree_searching-eps-converted-to.pdf, id=53, 565.11125pt x 531.9875pt>
+<FCSD_tree_searching-eps-converted-to.pdf, id=56, 565.11125pt x 531.9875pt>
 File: FCSD_tree_searching-eps-converted-to.pdf Graphic file (type pdf)
 
 <use FCSD_tree_searching-eps-converted-to.pdf>
 Package pdftex.def Info: FCSD_tree_searching-eps-converted-to.pdf used on input
- line 577.
+ line 581.
 (pdftex.def)             Requested size: 282.55493pt x 265.9931pt.
- [10] [11 <./FCSD_tree_searching-eps-converted-to.pdf>]
+ [11 <./FCSD_tree_searching-eps-converted-to.pdf>]
 
-LaTeX Warning: Citation `Vblas' on page 12 undefined on input line 602.
+LaTeX Warning: Citation `Vblas' on page 12 undefined on input line 606.
 
-[12]
-Underfull \hbox (badness 2941) in paragraph at lines 626--626
+[12] [13]
+Underfull \hbox (badness 2941) in paragraph at lines 630--630
 \OT1/cmr/m/n/12 vector mul-ti-pli-
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 626--627
+Underfull \hbox (badness 1661) in paragraph at lines 630--631
 []|\OT1/cmr/m/n/12 cholesky fac-tor-
  []
 
 
-Overfull \hbox (35.04898pt too wide) in paragraph at lines 624--635
+Overfull \hbox (35.04898pt too wide) in paragraph at lines 628--639
  [][] 
  []
 
-[13]
 Package epstopdf Info: Source file: <CUDA_FCSD_block_diagram.eps>
 (epstopdf)                    date: 2014-10-17 02:04:00
 (epstopdf)                    size: 928188 bytes
@@ -426,7 +430,7 @@ df>
 (epstopdf)                    size: 25361 bytes
 (epstopdf)             Command: <repstopdf --outfile=CUDA_FCSD_block_diagram-ep
 s-converted-to.pdf CUDA_FCSD_block_diagram.eps>
-(epstopdf)             \includegraphics on input line 640.
+(epstopdf)             \includegraphics on input line 644.
 Package epstopdf Info: Output file is already uptodate.
 
 <CUDA_FCSD_block_diagram-eps-converted-to.pdf, id=71, 204.765pt x 420.57124pt>
@@ -434,29 +438,29 @@ File: CUDA_FCSD_block_diagram-eps-converted-to.pdf Graphic file (type pdf)
 
 <use CUDA_FCSD_block_diagram-eps-converted-to.pdf>
 Package pdftex.def Info: CUDA_FCSD_block_diagram-eps-converted-to.pdf used on i
-nput line 640.
+nput line 644.
 (pdftex.def)             Requested size: 163.8122pt x 336.45746pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 645--647
-
- []
-
-[14] [15 <./CUDA_FCSD_block_diagram-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 652--655
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 649--651
 
  []
 
+[15 <./CUDA_FCSD_block_diagram-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 656--659
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--678
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 682--682
 []|\OT1/cmr/m/n/12 R/W op-er-a-
  []
 
 
-Overfull \hbox (69.40602pt too wide) in paragraph at lines 674--683
+Overfull \hbox (69.40602pt too wide) in paragraph at lines 678--687
  [][] 
  []
 
-[16] [17]
+[17] [18]
 Package epstopdf Info: Source file: <coalescing_global_memory.eps>
 (epstopdf)                    date: 2014-10-17 01:23:50
 (epstopdf)                    size: 2829876 bytes
@@ -466,34 +470,34 @@ pdf>
 (epstopdf)                    size: 60305 bytes
 (epstopdf)             Command: <repstopdf --outfile=coalescing_global_memory-e
 ps-converted-to.pdf coalescing_global_memory.eps>
-(epstopdf)             \includegraphics on input line 690.
+(epstopdf)             \includegraphics on input line 694.
 Package epstopdf Info: Output file is already uptodate.
 
-<coalescing_global_memory-eps-converted-to.pdf, id=88, 605.26125pt x 435.6275pt
+<coalescing_global_memory-eps-converted-to.pdf, id=91, 605.26125pt x 435.6275pt
 >
 File: coalescing_global_memory-eps-converted-to.pdf Graphic file (type pdf)
  <use coalescing_global_memory-eps-converted-to.pdf>
 Package pdftex.def Info: coalescing_global_memory-eps-converted-to.pdf used on 
-input line 690.
+input line 694.
 (pdftex.def)             Requested size: 381.31659pt x 274.44678pt.
- [18] [19] [20 <./coalescing_global_memory-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 702--705
+ [19] [20] [21 <./coalescing_global_memory-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 706--709
 
  []
 
-[21] [22] [23] (./draft.bbl [24]) [25] (./draft.aux)
+[22] [23] (./draft.bbl [24]) [25] (./draft.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4333 strings out of 493326
- 63457 string characters out of 6140501
- 132200 words of memory out of 5000000
- 7680 multiletter control sequences out of 15000+600000
- 15928 words of font info for 60 fonts, out of 8000000 for 9000
+ 4331 strings out of 493326
+ 63406 string characters out of 6140501
+ 130229 words of memory out of 5000000
+ 7678 multiletter control sequences out of 15000+600000
+ 14680 words of font info for 55 fonts, out of 8000000 for 9000
  953 hyphenation exceptions out of 8191
- 38i,14n,38p,1537b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,38p,1457b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -509,7 +513,7 @@ s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on draft.pdf (25 pages, 464554 bytes).
+Output written on draft.pdf (25 pages, 464136 bytes).
 PDF statistics:
  170 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams

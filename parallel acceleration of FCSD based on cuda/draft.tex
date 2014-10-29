@@ -442,12 +442,13 @@ Large MIMO constitutes a principal techniques for next generation wireless commu
 %I wish you the best of success.
 %\hfill mds
 %\hfill December 27, 2012
-We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive antennas and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, in the flat fading channel the corresponding discrete time model is given:
+\paragraph{}We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, over a flat fading channel, corresponding to the discrete time model:
 \begin{equation}
-y=\mathbf{H}s+n   \label{formula 1}
+\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n}   \label{formula 1}
 \end{equation}
-$s\in \mathbb{C}^{N_{t}\times 1}$ is the transmit symbol vector, the symbol in $s$ are mutually independent and taken from the signal constellation $\mathbb{O}$ (BPSK, QPSK, M-QAM), $M$ is the signal constellation size, all the transmit symbol vectors forms a $N_{t}$-dimensional signal constellation $\mathbb{O}^{N_{t}}$. $\varepsilon[ss^{H}]=I_{N_t}E_{s}$, $E_{s}$ denotes the symbol average energy where $\varepsilon$ denotes the mean operation.  $y\in \mathbb{C}^{N_{r}\times 1}$ is the receive symbol vector, $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identity distributed(i.i.d) circularly symmetric complex Gaussian zero mean elements of unit variance, $n\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) samples with zero mean elements of variance $\varepsilon[nn^{H}]=I_{N_{r}}N_{0}$, $N_{0}$ denotes the average noise energy, $\frac{E_{s}}{N_{0}}$ denotes the signal to noise ratio (SNR). \\
-  Assume we have the perfect channel state information (CSI)  $\quad \mathbf{H}$, receive symbol vector $y$, and we had already known the SNR, the task of decoder for MIMO system is to estimate $s$ in \ref{formula 1} based on CSI and received signal.
+$\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from the signal constellation $\mathbb{O}$ (4-QAM, 16-QAM, 64-QAM), of size $M$. The transmitted symbol vectors forms a $N_{t}$ complex signal vector space $\mathbb{O}^{N_{t}}$. $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore,  $\mathbf{y}\in \mathbb{C}^{N_{r}\times 1}$ is the received symbol vector, $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identity distributed(i.i.d) circularly symmetric complex Gaussian zero mean components of unit variance, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) samples with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, $N_{0}$ denotes the average noise power spectrum density and $\frac{E_{s}}{N_{0}}$ denotes the signal to noise ratio (SNR). \\
+
+\paragraph{} Assume we have the perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known at the receiver, as well as the SNR. The task of MIMO decoder is to estimate $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.

@@ -22,7 +22,7 @@
 #include <gsl/gsl_complex_math.h>
 #define MATRIX_SIZE 8
 #define IDC2D(i,j,row)    (i)*row+j
-#define Constellationsize 64
+#define Constellationsize 4
 //void FCSD_detection(
 //		cuComplex *sigRec,   //received signal vector
 //		cuComplex *pH,        //propagation matrix

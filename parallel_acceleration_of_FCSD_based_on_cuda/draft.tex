@@ -528,7 +528,7 @@ $\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, wit
 
 \section{CUDA GPU Architecture and  Programming Model} \label{programming model}
 \subsection{Memory Hierarchy}  
-CUDA programming model is the C programming extension, with special defined syntax and structure. The serial code executes on the host (CPU) side, and massive parallel data processing is performed on the device (GPU) side, is defined as a heterogeneous programming model. A thread is the basic programming unit of CUDA, a block of cooperative threads form a thread block, in one block all the threads can share one pitch of on chip memory (shared memory), all the threads executed in one block can synchronize their action meaning the threads are permitted to run to the next instruction only when all the threads have reached the same instruction node. Blocks can be grouped into a one-dimensional, two-dimensional, or three-dimensional grid. Similarly, The threads can also be organized into one-dimensional, two-dimensional or three-dimensional blocks. The organization of the block and grid shape and dimension is determined by the application, Figure \ref{figure1} illustrates the 3 dimensional thread hierarchy of CUDA.
+\paragraph{}CUDA programming model is the C programming extension, with special defined syntax and structure. The serial code executes on the host (CPU) side, and massive parallel data processing is performed on the device (GPU) side, is defined as a heterogeneous programming model. A thread is the basic programming unit of CUDA, a block of cooperative threads form a thread block, in one block all the threads can share one pitch of on chip memory (shared memory), all the threads executed in one block can synchronize their action meaning the threads are permitted to run to the next instruction only when all the threads have reached the same instruction node. Blocks can be grouped into a one-dimensional, two-dimensional, or three-dimensional grid. Similarly, The threads can also be organized into one-dimensional, two-dimensional or three-dimensional blocks. The organization of the block and grid shape and dimension is determined by the application, Figure \ref{figure1} illustrates the 3 dimensional thread hierarchy of CUDA.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{CUDA_programming_hierachy.eps}
@@ -536,12 +536,14 @@ CUDA programming model is the C programming extension, with special defined synt
 \label{figure1}
 \end{figure}
 
-\subsection{Single Instruction Multiple Thread (SIMT) Model} Threads are scheduled, managed, created and executed in a group of 32 threads called warp, the programs executes on the device side are defined as $\mathit{kernel}$ function, when a $\mathit{kernel}$ function is invoked, the thread blocks are partitioned into warps, the threads in one warps executes the same instruction simultaneously, the different warps are scheduled by warp scheduler, when one warp is waiting for data loading the other warps begin to execute, this is called Single Instruction Multiple Thread (SIMT). This programming architecture is askin to Single Instruction Multiple Data (SIMD), however unlike the SIMD vectoring machines, SIMT can branch the behavior of each threads to achieve thread-level parallelism. The GPU use massive number of threads to hide the long latency of global memory instead of using large cache as CPU, in a word CPU cores are designed to minimize latency for each thread at a time, whereas GPUs are designed to handle a large number of concurrent, lightweight threads in order to maximize throughput.
-\subsection{Mircroarchitecture of GPU} In Figure \ref{figure2} we use the GPU-GeForce GTX 760 as an example to show the microarchitecture of  GPU. The GPU works as a coprocessor system, consisting of Stream Multiprocessors (SM). The GeForce GTX 760 has 6 SM that perform the multiply-add arithmetic operation. Furthermore, each SM has the special functional units(SFU) that can perform more complex arithmetics such as trigonometric functions and reciprocal square root. The shared memory is on chip memory located at SM and has low latency and limited capacity. Global memory, which is off-chip memory of the GPU with long latency and large capacity. Another two types of the memory, called texture memory and constant memory, are located off-chip, but cached. Therefore the loading speed of the data located in these two type of memory space is much faster than that from global memory. Constant memory is read only and with latency approximately as small as the registers.  The variables invoked in kernel functions can be stored in either of the these four types of memories. Registers are allocated dynamically to threads.
+\subsection{Single Instruction Multiple Thread (SIMT) Model} 
+\paragraph{}Threads are scheduled, managed, created and executed in a group of 32 threads called warp, the programs executes on the device side are defined as $\mathit{kernel}$ function, when a $\mathit{kernel}$ function is invoked, the thread blocks are partitioned into warps, the threads in one warps executes the same instruction simultaneously, the different warps are scheduled by warp scheduler, when one warp is waiting for data loading the other warps begin to execute, this is called Single Instruction Multiple Thread (SIMT). This programming architecture is askin to Single Instruction Multiple Data (SIMD), however unlike the SIMD vectoring machines, SIMT can branch the behavior of each threads to achieve thread-level parallelism. The GPU use massive number of threads to hide the long latency of global memory instead of using large cache as CPU, in a word CPU cores are designed to minimize latency for each thread at a time, whereas GPUs are designed to handle a large number of concurrent, lightweight threads in order to maximize throughput.
+\subsection{Mircroarchitecture of GPU} 
+\paragraph{}In Figure \ref{figure2} we use the GPU-GeForce GTX 760 as an example to show the microarchitecture of  GPU. The GPU works as a coprocessor system, consisting of Stream Multiprocessors (SM). The GeForce GTX 760 has 6 SM that perform the multiply-add arithmetic operation. Furthermore, each SM has the special functional units(SFU) that can perform more complex arithmetics such as trigonometric functions and reciprocal square root. The shared memory is on chip memory located at SM and has low latency and limited capacity. Global memory, which is off-chip memory of the GPU with long latency and large capacity. Another two types of the memory, called texture memory and constant memory, are located off-chip, but cached. Therefore the loading speed of the data located in these two type of memory space is much faster than that from global memory. Constant memory is read only and with latency approximately as small as the registers.  The variables invoked in kernel functions can be stored in either of the these four types of memories. Registers are allocated dynamically to threads.
 \paragraph{}Because of the resource limitation of SM the total number of threads can be defined in one block is limited. On current CUDA supported GPUs, one block can contains up to 1024 threads, and all the blocks are executed on SM. Thus the total number of threads ($T_{total}$) we can make use of is $T_{total}=N_{threads}\times N_{threads/SM} $, $N_{SM}$ and $N_{threads/SM}$ denote the number of SM and number of threads per SM. The GeForce GTX 760 allows 2048 threads in one SM, thus the total number of threads that can work in parallel is $2048\times 6=12288$. In concrete applications, the programmer can allocate more than 12288 threads for a kernel, but the threads will work in serial, which will influence the program performance. 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.5]{High_view_of_CUDA_GPU_microarchitecture.eps}
+\includegraphics[scale=0.6]{High_view_of_CUDA_GPU_microarchitecture.eps}
 \caption{High View of CUDA CPU Microarchitecture}
 \label{figure2}
 \end{figure}   
@@ -560,7 +562,7 @@ We consider a MIMO system with  $N_{t}=N_{r}$. Performing the QR decomposition t
 \begin{equation}
  \mathbf{H}=\mathbf{Q}\mathbf{R}  \label{QR}
 \end{equation}
-where $\mathbf{Q}\in \mathbf{C}^{N_{t}\times N_{t}}$ is an unitary matrix and $\mathbf{R}\in \mathbf{C}^{N_{t}\times N_{t}}$, is an upper triangular matrix, the basing on \cite{matrix theory}, we can write (\ref{formula 2}) as:
+where $\mathbf{Q}\in \mathbf{C}^{N_{t}\times N_{t}}$ is an unitary matrix and $\mathbf{R}\in \mathbf{C}^{N_{t}\times N_{t}}$, is an upper triangular matrix, the basing on \cite{golub2012matrix}, we can write (\ref{formula 2}) as:
 \begin{eqnarray}
 \nonumber
 \mathbf{s}_{ML}&=&arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{Q}^{H}\mathbf{y}-\mathbf{Q}^{H}\mathbf{H}\mathbf{s}||^{2}\\
@@ -595,7 +597,7 @@ s_{FCSD}^{i}=\left\lbrace\begin{array}{c}
 \mathbb{Q}[\hat{s}_{i}+\sum_{j=i+1}^{N_{t}}\frac{r_{ij}}{r_{ii}}(\hat{s_{j}}-s_{FCSD}^{i})] \quad i=N_{t}-\rho,N_{t}-\rho-1,\dots 2,1 \\
 \end{array}\right.
 \end{displaymath}
-$\mathbb{Q}[\cdot]$ denotes the signal constellation quantization. At the post processing stage, FCSD compares the Euclidean metric of all the symbol vector candidates $E_{metric}$, which, according to \ref{formula 4}, is defined as:
+$\mathbb{Q}[\cdot]$ denotes the signal constellation quantization. At the post processing stage, FCSD compares the Euclidean distance of all the symbol vector candidates $E_{metric}$, which, according to \ref{formula 2}, can be written as:
 \begin{equation}
 E_{metric}=||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{\widetilde{s}})||^{2}
 \end{equation} 
@@ -620,9 +622,9 @@ arg \min_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad SE\quad stage   \l
 and $\mathbf{H}_{j}\in \mathbb{C}^{N_{r}\times (N_{t}-j+1)}$ denotes the renewed channel matrix. At the $j$th iteration with the column corresponding to previous detected data streams removed from $\mathbf{H}_{j-1}$.
 the unconstrained estimation $\mathbf{\hat{s}}$  is given in (\ref{unconstrained estimation}):
 
-\paragraph{}Although the FCSD pre-processing has a serial nature and can not be vectorized, the computational consumptive operations \ref{the ordering} \ref{shat} can be implement by the CUDA Basic Linear Algebra Subprograms(cuBLAS), the matrix inverse(Gaussian Jordan Elimination) and cholesky factorization(Row Major Factorization) are also implemented by GPU, as shown in Table \ref{table 1}.
+\paragraph{}As mention in section \ref{programming model}, our implementation is based on heterogeneous programming principle, the flow control and logical operations are reside at the host side, the compute intensive works is implemented at device side. Although the FCSD preprocessing has a serial nature and can not be vectorized, the computational consumptive operations can be performed by the CUDA Basic Linear Algebra Subprograms(cuBLAS) and corresponding GPU program implementations, as shown in Table \ref{table 1}.
 \begin{table}[htb]
-\caption{Parallel Computation Operation of FCSD Pre-processing}
+\caption{Parallel Computation Operation of FCSD Preprocessing}
 \centering
 \begin{tabular}{|c|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
 \hline
@@ -637,48 +639,44 @@ Formula   &  $\mathbf{H}^{H}\mathbf{H}$ & $(\mathbf{H}^{H}\mathbf{H})^{-1}\mathb
 \end{tabular}
 \end{table}
 
-Figure \ref{block diagram} shows the block diagram of the CUDA-FCSD implementation, as mention in section \ref{programming model}, our implementation is based on heterogeneous programming principle, the flow control and logical operations are reside at the host side, the compute intensive works is implemented at device side.
+Figure \ref{block diagram} shows the block diagram of the CUDA-FCSD implementation. 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.8]{CUDA_FCSD_block_diagram.eps}
+\includegraphics[width=0.85\textwidth]{CUDA_FCSD_block_diagram.eps}
 \caption{Block Diagram of CUDA-FCSD Implementation}
 \label{block diagram}
 \end{figure}
 \subsection{Parallel Acceleration of Blocked-Paths Searching}
-  We consider $16\times 16$ MIMO system, the modulation scheme is $16$QAM, the path we need to search is $\mathbb{O}[M^{\rho}]=16^{3}=4096$, $\rho=\lceil \sqrt[2]{N_{t}}-1\rceil$, as mentioned in section \ref{programming model} the maximum number of threads that can be used in GPU is limited by the number of SM and maximum number of threads per SM, as to GeForce GTX 760. we have $12288$ threads totally.   For each path, decision feedback path searching has a serial nature, therefore we match path to one thread, in order to have largest amount of threads that can be paralleled, we use one dimension blocks for widest expansion and blocked all the paths into several one dimension blocks, for largest SM occupation we define 4 blocks for path searching kernel and each block has 1024 threads. At each path, we perform the following data operation:\\
+  \paragraph{}We consider $16\times 16$ MIMO system, the modulation scheme is $16$QAM, the path we need to search is $\mathbb{O}[M^{\rho}]=16^{3}=4096$, $\rho=\lceil \sqrt[2]{N_{t}}-1\rceil$, as mentioned in section \ref{programming model} the maximum number of threads that can be used in GPU is limited by the number of SM and maximum number of threads per SM, as to GeForce GTX 760. we have $12288$ threads totally. The decision feedback searching paths have serial nature, we match one path to one thread. In order to have largest amount of threads that can be paralleled, we use one dimension blocks for widest expansion and blocked all the paths into several one dimension blocks. For largest SM occupation we define 4 blocks for path searching kernel and each block has 1024 threads which is the maximum number of thread allowing per block. At each FCSD searching path, we perform the following data operation:\\
 1. \emph{Decision Feedback Equalization}\\
 \begin{eqnarray}
 \nonumber
-{s}_{i}^{k}\in \mathbb{O}^{\rho}      \quad if\quad i&=&N_{t},N_{t}-1,\dots N_{t}-\rho+1\quad FE\\
+{s}_{i}^{k}\in \mathbb{O}^{\rho}      \quad if\quad i&=&N_{t},N_{t}-1,\dots N_{t}-\rho+1\quad FE \quad stage\\
 \nonumber
-{s}_{i}^{k}=\hat{s}_{i}^{k}+\sum_{j=i+1}^{N_{t}}\frac{r_{ij}}{r_{ii}}(\hat{s_{j}^{k}}-s_{j}^{k})\quad if\quad i &=& N_{t}-\rho,N_{t}-\rho-1,\dots 2,1\quad SE\\  \label{path searching}
+\mathbf{s}_{i}^{k}=\mathbf{\hat{s}}_{i}^{k}+\sum_{j=i+1}^{N_{t}}\frac{r_{ij}}{r_{ii}}(\mathbf{\hat{s}}_{j}^{k}-\mathbf{s}_{j}^{k})\quad if\quad i &=& N_{t}-\rho,N_{t}-\rho-1,\dots 2,1\quad SE\quad stage\\  \label{path searching}
 \end{eqnarray}
-$s_{j}^{k}$ denotes the $j$th symbol of the $k$th symbol vector candidate.\\
-2. \emph{Euclidean Metric Calculation}\\
+$\mathbf{s}_{j}^{k}$ denotes the $j$th symbol of the $k$th symbol vector candidate.\\
+2. \emph{Euclidean distance Calculation}\\
 \begin{equation}
-E_{u}^{k}=\sum_{i=1}^{i=N_{t}}\sum_{j=i}^{j=N_{t}}r_{ij}(\hat{s_{j}}-s_{j})\label{Eu metric}
+E_{u}^{k}=\sum_{i=1}^{i=N_{t}}\sum_{j=i}^{j=N_{t}}r_{ij}(\mathbf{\hat{s}}_{j}-\mathbf{s}_{j})\label{Eu metric}
 \end{equation}
-$E_{u}^{k}$ denotes the $k$th Euclidean metric of the corresponding symbol vector candidate $\widetilde{s}^{k}$. Then we take the symbol vector $s^{\theta}$ as the solution, where 
-\begin{equation}
-\theta=arg\min_{m}(E_{u}^{m})\quad m=1,2\dots M^{\rho} \label{Eu candidate}
-\end{equation} 
-
+$E_{u}^{k}$ denotes the $k$th Euclidean distance of the corresponding symbol vector candidate. The symbol vector candidate with minimum Euclidean distance is chosen as the solution.  
 \subsubsection{Data Preparation}
-There are three major factors that will influence the configuration of the data set configuration in memory space.\\
-1. Amount of Reading$\&$Writing operation per thread.\\
-2. Program scope of the data.\\
-3. Storage Requirement of data.\\
-The memory reading$\&$writing (R/W) strategy of GPU is the crutial factor that influence the application performance because the GPU is data processing intensive and only has small cache for special memory space(constant, texture), another consideration is the validation life circle of data, local memory which is invoked in kernel function is valid in one thread, share memory is valid in one block, constant, texture and global memory are valid both at host side and device side. On the other hand different from global memory (2047 MBytes in GeForce GTX 760), the constant and share memory are all capacity limited (only $65536$ bytes totally and $49152$ bytes per block in GeForce GTX 760), so that for our application the configuration of memory is determined by the capacity requirement of the data. Here in table \ref{amount of R/W operation} we present the amount of R/W operations and the storage that needed for critical data variables in FCSD path searching. The amount of the R/W operation is calculated based on the (\ref{path searching}) and ((ref{Eu metric}), for complex value ($\mathbf{R}$,$\hat{s}$, $\mathit{s_{pontential matrix}}$,$\mathit{s_{kernel}}$ ) is stored use $\mathit{float2}$ which counts 8 bytes, floating point data set $E_{u}$ is stored in $\mathit{float}$, which counts for 4 bytes, $\mathit{s_{index}}$ is the integer list which is stored use $\mathit{int}$, which counts 1 byte. \\
- At host side we set 4 vector data set that are stored linearly in global memory which has program scope for both host side and device side, $\mathit{s_{potential matrix}}$ is used to store the $M^{\rho}\times N_{t}$ complex matrix that each row stores one symbol vector candidate and whose valid scope is through the whole kernel function. $\mathit{s_{index}}$, which is used to store the index of all the possible sub symbol vectors for  FE stage using full factorial method, requires a $\rho\times M^{\rho}$  integer matrix space.  $\mathit{E_{u}}$ is a $M^{\rho}$ floating point vector that is used to store the Euclidean metric of all the symbol vector candidates, obviously the valid scope of it is for the whole kernel function. $\mathit{s_{kernel}}$ is a complex vector used to store the FCSD solution which length is $N_{t}$ and has to be transferred to host side, thus it is also needed to be stored in global memory. \\
-  On the other hand,   upper triangular matrix $\mathbf{R}$ in (\ref{formula 4})  and unconstrained estimation $\hat{s}$ in (\ref{unconstrained estimation})  requires a large amount of R operations and are read only. (for the $16\times 16$ $16QAM$ MIMO system the R/W of $\mathbf{R}$  and $\hat{s}$ are about  $370$ and $266$ per thread), these two data set need small size of storage(for the $16\times 16$ $16QAM$ MIMO system $1088$ bytes for $\mathbf{R}$ and $128$ bytes for $\hat{s}$  ) we make use of the read only constant memory to store the data which are capacity limited and do not need write operation in path searching , as we mentioned in section (\ref{programming model}), the constant memory is cached so that it is much faster than global memory.
+\paragraph{}There are three major factors that will influence the configuration of the data sets configuration in memory space.\\
+1. Amount of Reading$\&$Writing (R/W) operation per thread.\\
+2. Valid scope\\
+3. Storage occupancy\\
+\paragraph{}GPU is computation intensive and only has small cache for special memory space (texture, constant). Thus the memory reading$\&$writing (R/W) strategy of GPU is the crutial factor that influences the application performance. Different memory types has different valid scope, local memory which is invoked in kernel function is valid only in one thread, share memory is valid in one block, constant, texture and global memory are valid both at host side and device side. On the other hand different from global memory (2047 MBytes in GeForce GTX 760), the constant and share memory are all capacity limited (only $65536$ bytes totally and $49152$ bytes per block in GeForce GTX 760). Thus the occupancy of memory is one determinant factor needed to be considered. In table \ref{amount of R/W operation} we present the amount of R/W operations and the storage that needed for critical data variables in FCSD path searching. The amount of the R/W operation is calculated based on the (\ref{path searching}) and (\ref{Eu metric}), for complex values ($\mathbf{R}$ $\mathbf{\hat{s}}$, $\mathit{s_{pm}}$, $\mathit{s_{kernel}}$ ) are stored using CUDA build in variable data type $\mathit{cuComplex}$ which counts 8 bytes. Floating point data set $E_{u}$ is stored using variable type $\mathit{float}$, which counts for 4 bytes, $\mathit{s_{index}}$ is the integer list which is stored using variable type $\mathit{int}$, which counts 1 byte.\\
+ \paragraph{}At host side we set 4 data sets that are stored in global memory which are storage consumptive and have valid life circle for both host side and device side, $\mathit{s_{pm}}$ is a $M^{\rho}\times N_{t}$ complex matrix that each row stores one symbol vector candidate and whose valid life circle should be during the whole kernel execution. $\mathit{s_{index}}$ is used to store the index of all the possible sub symbol vectors for  FE stage using full factorial method, requires a $\rho\times M^{\rho}$  integer matrix space.  $\mathit{E_{u}}$ is a $M^{\rho}$ floating point vector that is used to store the Euclidean distance of all the symbol vector candidates. $\mathit{s_{kernel}}$ is a complex vector used to store the FCSD solution which length is $N_{t}$ and has to be transferred to host side. \\
+ \paragraph{} On the other hand, upper triangular matrix $\mathbf{R}$ in (\ref{formula 4})  and unconstrained estimation $\mathbf{\hat{s}}$ in (\ref{unconstrained estimation}), require a large amount of read operations and are read only. (for the $16\times 16$ $16QAM$ MIMO system the R/W of $\mathbf{R}$  and $\mathbf{\hat{s}}$ are about  $370$ and $266$ per thread), these two data set need small size of storage(for the $16\times 16$ $16QAM$ MIMO system $1088$ bytes for $\mathbf{R}$ and $128$ bytes for $\hat{s}$  ) we make use of the read only constant memory to store the data which are capacity limited and do not need write operation in path searching , as we mentioned in section \ref{programming model}, the constant memory is cached so that it is much faster than global memory.
  \begin{table}[htb]  
  \caption{Amount of R/W Operations and Storage Requirement of Different Data Set}
  \centering
 \begin{tabular}{|p{3cm}|p{3cm}|l|p{3cm}|l|l|l|}
 \hline
-data & $\mathbf{R}$ & $\hat{s}$ & $\mathit{s_{pontential matrix}}$ & $\mathit{s_{index}}$ & $\mathit{E_{u}}$ & $\mathit{s_{kernel}}$ \\
+data & $\mathbf{R}$ & $\mathbf{\hat{s}}$ & $\mathit{s_{pm}}$ & $\mathit{s_{index}}$ & $\mathit{E_{u}}$ & $\mathit{s_{kernel}}$ \\
 \hline
-R/W operations/thread & $(\frac{3}{2}(N_{t})^{2}-\frac{N_{t}}{2}+\rho-\rho^{2})$ & $(\frac{2(N_{t})^{2}+2N_{t}-\rho^{2}-\rho}{2})$ & $\rho$ & $N_{t}$ &$N_{t} $ & $N_{t}$ \\
+R/W operations/thread & $(\frac{3}{2}(N_{t})^{2}-\frac{N_{t}}{2}+\rho-\rho^{2})$ & $(\frac{2(N_{t})^{2}+2N_{t}-\rho^{2}-\rho}{2})$ & $N_{t}$ & $\rho$ &$N_{t}$ & $N_{t}$ \\
 \hline
 Storage/bytes  & $4(N_{t}+1)N_{t}$ & $8N_{t}$ & $8M^{\rho}N_{t}$ & $N_{t}M^{\rho}$ & $4N_{t}M^{\rho}$ & $8N_{t}$\\
 \hline  \label{amount of R/W operation} 
@@ -687,18 +685,18 @@ Storage/bytes  & $4(N_{t}+1)N_{t}$ & $8N_{t}$ & $8M^{\rho}N_{t}$ & $N_{t}M^{\rho
 \subsubsection{Memory Accesss Pattern}
   When considering large MIMO array, the large amount of R/W operations determine that the memory bandwidth is the major bottleneck of the performance,  although the theoretical bandwidth of off-chip memory is extremely high (in GeForce GTX 760 the bandwidth of off-chip memory is around $192 GB/s$), however the effect memory bandwidth can only be achieved by proper R/W strategy.\\
   Global memory is implemented by dynamic random access memory (DRAM) whose R/W is extremely slow process, modern DRAM R/W data by access a pitch of consecutive memory location, as mentioned in section (\ref{programming model}), the warp is the basic schedule unit of device, with one instruction recall one warp of threads that execute at the same time, the most favorable global memory access pattern is to keep one warp of threads that access consecutive memory as much as possible, for GeForce GTX 760, the DRAM will access a consecutive memory address that has 128 bytes length, In Figure \ref{coalesce global memory} we take the global access pattern of the $\mathit{s_{potential matrix}}$ as an example to illustrate how we coalesce the the global memory,
-we store $\mathit{s_{potential matrix}}$ in one pitch of linear global memory, with each row store one $N_{t}=16$ complex symbol vector solution candidate of $\hat{s}_{FCSD}$ in (\ref{formula 5}), totally there are $M^{\rho}=4096$ rows, this matrix is stored in column major. As mentioned before we operate one path in one thread, thus the address two consecutive symbol operated in one thread is $4096$, however for consecutive threads the address they reach is continues as shown in Figure \ref{coalesce global memory}, each 32 threads in one warp can make R/W operation to a pitch of continues memory, which is $32\times 8=256 bytes$, counts for two times of DRAM access.
+we store $\mathit{s_{potential matrix}}$ in one pitch of linear global memory, with each row store one $N_{t}=16$ complex symbol vector solution candidate of $\hat{s}_{FCSD}$ in (\ref{formula 5}), totally there are $M^{\rho}=4096$ rows, this matrix is stored in column major. As mentioned before we operate one path in one thread, thus the address two consecutive symbol operated in one thread is $4096$, however for consecutive threads the address they reach is continues as shown in Figure \ref{coalesce global memory}, each 32 threads in one warp can make R/W operation to a pitch of continues memory, which is $32\times 8=256$ bytes, counts for two times of DRAM access.
 \begin{figure}[htb]
 \centering
 \includegraphics[scale=0.63]{coalescing_global_memory.eps}
-\caption{Global Memory Access Pattern of $\mathit{s_{potential matrix}}$}
+\caption{Global Memory Access Pattern of $\mathit{s_{pm}}$}
 \label{coalesce global memory}
 \end{figure}
- Another available resource for memory bandwidth increase is to make use of share memory, for all the transient variables that used for accumulator in (\ref{path searching}) and (\ref{Eu metric}), because of the small capacity consumption and large amount of R/W operations.   
+ \paragraph{}Another available resource for memory bandwidth increase is to make use of share memory, for all the transient variables that used for accumulator in (\ref{path searching}) and (\ref{Eu metric}), because of the small storage consumption and large amount of R/W operations.   
 \subsubsection{Data Transfer Minimization}   
-The data transfer between the host side and the device side is much more slower than the inner device data transferring, therefore, in our application we minimize the data transferring times, we make data transfer only once for propagation channel matrix $\mathbf{H}$, received symbol vector $y$ in (\ref{formula 1}) as well as the index list $\mathit{s_{index}}$ at FE stage, we integrate the post processing (\ref{Eu metric}) into path searching kernel function to avoid the transferring of $E_{u}$ in (\ref{Eu metric}).  
+\paragraph{}The data transfer between the host side and the device side is much more slower than the inner device data transferring, therefore, in our application we minimize the data transferring times, we make data transfer only once for propagation channel matrix $\mathbf{H}$, received symbol vector $\mathbf{y}$ in (\ref{formula 1}) as well as the index list $\mathit{s_{index}}$ at FE stage, we integrate the post processing (\ref{Eu metric}) into path searching kernel function to avoid the transferring of $E_{u}$ in (\ref{Eu metric}).  
 \subsection{Going to Larger MIMO System}
-  Consider the uplink $32\times 32$ MIMO system with $16$QAM modulation scheme, from \ref{path number}, the path number that need to be searched is $16^{5}=1048576$, as mentioned in section (\ref{programming model}), the maximum number of threads that can be execute in kernel function of GeForce GTX 760 is 12288, therefore we need to consider serial the one kernel into a certain times of loop, in order to avoid device synchronization latency, we synchronize and return the control to host side in order to reduce the synchronization expense. Under this condition we use 12 linear blocks and each block has 1024 threads, we execute the kernel function for 86 times and get the final solution.
+  \paragraph{}Consider the uplink $32\times 32$ MIMO system with $16$QAM modulation scheme, the path number that need to be searched is $M^{\rho}=16^{5}=1048576$. The maximum number of threads that can be execute in kernel function of GeForce GTX 760 is 12288, therefore we need to consider execute the kernel function serially, in order to avoid device synchronization latency, we synchronize and return the control to host side in order to reduce the synchronization expense. Under this condition we use 12 linear blocks and each block has 1024 threads, we execute the kernel function for 86 times and get the final solution. The same strategy can be applied to CUDA-FCSD for larger size MIMO systems. 
 \section{Simulation Results}\label{simulation}
 \subsection{Environment}
 \subsubsection{Device}
@@ -716,7 +714,7 @@ Nsight Eclipse Version 6.5
 \hline
 \multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
 \cline{2-6}
-&GTX 760 & modigliani & monet & GTX/modigliani  & GTX/monet \\
+&GTX 760 & modigliani & monet & GTX 760/modigliani  & GTX 760/monet \\
 \hline
 $8\time 8$& 0.46& 0.09&0.08 & 0.20& 0.17\\
 \hline
@@ -731,9 +729,9 @@ $32\time 32$& 611&2836&3033&4.64& 4.96 \\
 \label{speedup}
 \end{tabular}
 \end{table}
-  \quad We test 5 array sizes and make comparison between GTX 760 and two kinds of CPU, all the operation times we test is based on 100 channel realizations, the transmitted data is generated randomly and modulated by $16$ QAM modulation scheme,  as we can see in \ref{speedup}, for small size array, like $8\times 8$, GPU has no advantage over CPU, for small array size, the number of path that need to be searched is relatively small, the CPU has already had a good performance, there is a short time for GPU to "warm up", for data transferring, launch kernel function and host device synchronization, further more, for small number of threads, the memory R/W latency is not well hided. When the array size grows large, a large parallelism is achieved so that the GPU begin to display its data processing power, and with the array size increasing, this speedup tends to be much more considerable.
+\paragraph{} We make simulation to different array sizes and signal constellation and make comparison between GTX 760 and two kinds of CPU, all the operation times we test is based on 100 channel realizations, the transmitted data is generated randomly and modulated by $M$ QAM modulation scheme,  as we can see in Table \ref{speedup}, for small size of array and signal constellation, like $8\times 8$ array $4$-QAM, GPU has no advantage over CPU, for small array size and signal constellation, the number of path that need to be searched is relatively small, the CPU has already had a good performance, there is a short time for GPU to "warm up", for data transferring, launch kernel function and host device synchronization, further more, for small number of threads, the memory R/W latency is not well hided. When the size of array or signal constellation size  grows large, a large parallelism is achieved so that the GPU begin to display its data processing power, For example , and with the size of array and signal constellation increasing, this speedup tends to be much more considerable.
 \section{Conclusion}\label{conclusion}
-In this paper, we present the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional platform, we have reached up to nearly 5 times acceleration of FCSD and this speedup grows higher with the increasing array size. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for the simulation and consumptive computational work of large MIMO area.      
+\paragraph{}This paper presents the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional computation platform, we have reached considerable acceleration of FCSD and this speedup grows larger for large MIMO system. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for computational consumptive simulation in large MIMO area.      
 % conference papers do not normally have an appendix
 
 

@@ -75,8 +75,8 @@ __global__ void FEpath(
 
 	error_t error;
 	int count1, count2, count3, count4;
-	__shared__ float d; //the minimum distance unit between the signal constellation, the distance is usually 2d
-	__shared__ cuComplex alpha, beta;
+	 float d; //the minimum distance unit between the signal constellation, the distance is usually 2d
+	 cuComplex alpha, beta;
 	alpha.x = 1;
 	alpha.y = 0;
 	beta.x = 0;

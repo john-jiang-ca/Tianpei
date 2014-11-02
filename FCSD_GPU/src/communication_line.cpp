@@ -75,10 +75,10 @@
 #define SER "symbol_error_rate.txt"  //the file to store the symbol error rate
 #define timeused "time.txt"              //the file to store operation time of detection algorithm
 #define GFLOPS "GFLOPS.txt"          //the file to store the Giga flops operated per second
-#define miniteration 1e5               //the minimum number of channel realizations
-#define minSymbolError 500          //the minimum number of symbol error
+#define miniteration 1e4               //the minimum number of channel realizations
+#define minSymbolError 300          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
-#define SNRnum 6                     //the point number of signal to noise ratio per bit
+#define SNRnum 4                     //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,
 		unsigned long Q);
@@ -119,7 +119,7 @@ int main(void) {
 	GSL_SET_COMPLEX(&one, 1.0, 0.0);
 	gsl_complex zero;
 	GSL_SET_COMPLEX(&zero, 0.0, 0.0);
-	SNR = (float*) malloc(11 * sizeof(float));
+	SNR = (float*) malloc((SNRnum+1) * sizeof(float));
 	for (count1 = 0; count1 <=SNRnum; count1++) {
 		SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
 	}
@@ -198,12 +198,14 @@ int main(void) {
 	fclose(cfile3);
 	fclose(cfile4);
 	time1 = clock();
-	for (count = SNRnum; count <=SNRnum; count++) {
+	for (count = 0; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
 		BitErrorRate = 0;
 		SymbolErrorRate = 0;
+		duration_GPU=0;
+		duration_CPU=0;
 		cfile1 = fopen(BER, "a");
 		cfile2 = fopen(SER, "a");
 		cfile3 = fopen(timeused, "a");
@@ -254,17 +256,17 @@ int main(void) {
 				psymbolconstellation_cu[count2].y = gsl_vector_complex_get(
 						psymbolconstellation, count2).dat[1];
 			}
-			for (count1 = 0; count1 < M; count1++) {
-				printf("the symbol constellation is: %0.4f%+0.4fi ",
-						psymbolconstellation_cu[count1].x,
-						psymbolconstellation_cu[count1].y);
-			}
-			printf("\n");
-			for(count1=0;count1<M;count1++)
-			{
-				printf("the gray code is %d:\n", gsl_vector_ulong_get(pgrayindexes,count1));
-			}
-			printf("\n");
+//			for (count1 = 0; count1 < M; count1++) {
+//				printf("the symbol constellation is: %0.4f%+0.4fi ",
+//						psymbolconstellation_cu[count1].x,
+//						psymbolconstellation_cu[count1].y);
+//			}
+//			printf("\n");
+//			for(count1=0;count1<M;count1++)
+//			{
+//				printf("the gray code is %d:\n", gsl_vector_ulong_get(pgrayindexes,count1));
+//			}
+//			printf("\n");
 			for (count2 = 0; count2 < Nt; count2++) {
 				ptransmitted_cu[count2].x = gsl_vector_complex_get(ptransmitted,
 						count2).dat[0];
@@ -285,8 +287,8 @@ int main(void) {
 			}
 			double start, end, duration1, duration2;
 			start = clock();
-			FCSD_CPU(preceived, pH, Nt, Nr, M, psymbolconstellation, SNR[count],
-					symOut, durationKernel_CPU);
+//			FCSD_CPU(preceived, pH, Nt, Nr, M, psymbolconstellation, SNR[count],
+//					symOut, durationKernel_CPU);
 			end = clock();
 			duration1 = double(end - start);
 			durationKernel_CPU_t += *durationKernel_CPU;
@@ -307,24 +309,24 @@ int main(void) {
 //			printf("%0.4f ", duration2);
 //			printf("the operation time in CPU is:\n");
 //			printf("%0.4f ", duration1);
-			printf("the original transmitted symbol vector is:\n");
-			for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
-				printf("%0.4f%+0.4fi ",
-						gsl_vector_complex_get(ptransmitted, count1).dat[0],
-						gsl_vector_complex_get(ptransmitted, count1).dat[1]);
-			}
-			printf("the decoded transmitted symbol vector by CPU is:\n");
-			for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
-				printf("%0.4f%+0.4fi ",
-						gsl_vector_complex_get(symOut, count1).dat[0],
-						gsl_vector_complex_get(symOut, count1).dat[1]);
-			}
-			printf("\n");
-			printf("the decoded transmitted symbol vector by GPU is:\n");
-			for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
-				printf("%0.4f%+0.4fi ", symOut_cu[count1].x,
-						symOut_cu[count1].y);
-			}
+//			printf("the original transmitted symbol vector is:\n");
+//			for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+//				printf("%0.4f%+0.4fi ",
+//						gsl_vector_complex_get(ptransmitted, count1).dat[0],
+//						gsl_vector_complex_get(ptransmitted, count1).dat[1]);
+//			}
+//			printf("the decoded transmitted symbol vector by CPU is:\n");
+//			for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+//				printf("%0.4f%+0.4fi ",
+//						gsl_vector_complex_get(symOut, count1).dat[0],
+//						gsl_vector_complex_get(symOut, count1).dat[1]);
+//			}
+//			printf("\n");
+//			printf("the decoded transmitted symbol vector by GPU is:\n");
+//			for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+//				printf("%0.4f%+0.4fi ", symOut_cu[count1].x,
+//						symOut_cu[count1].y);
+//			}
 //			demodulator_CPU(symOut, psymbolconstellation, pgrayindexes, poutput); //poutput is the graycode of the symbols
 			demodulator_GPU(symOut_cu, psymbolconstellation, pgrayindexes, poutput); //poutput is the graycode of the symbols
 //			for(count1=0;count1<Nt;count1++)
@@ -349,7 +351,7 @@ int main(void) {
 			for (count3 = 0; count3 < Nt; count3++) {
 				if (sqrt(pow((symOut_cu[count3].x-ptransmitted_cu[count3].x),2))>epsilon||sqrt(pow((symOut_cu[count3].y-ptransmitted_cu[count3].y),2))>epsilon) {
 					symbolError=symbolError+1;
-					printf("wtf there is an error!!\n");
+//					printf("wtf there is an error!!\n");
 				}
 			}
 			//check bit error
@@ -359,7 +361,7 @@ int main(void) {
 //        	 errors=1;
 				bitError += errors;
 			}
-			printf("the iteration time is %d\n", iteration);
+//			printf("the iteration time is %d\n", iteration);
 			gsl_vector_ulong_free(pdata);
 			pdata = NULL;
 			gsl_vector_ulong_free(pgraydata);
@@ -386,9 +388,9 @@ int main(void) {
 			pH_cu = NULL;
 			free(symOut_cu);
 			symOut_cu = NULL;
-//		} while ((symbolError < minSymbolError) || (iteration < miniteration));
+		} while ((symbolError < minSymbolError) || (iteration < miniteration));
 
-		}while(iteration<1e2);
+//		}while(iteration<1);
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
 		fprintf(cfile1, "%f ", BitErrorRate);
@@ -404,6 +406,7 @@ int main(void) {
 	duration_total = double(time2 - time1) / CLOCKS_PER_SEC;
 	cfile3=fopen(timeused,"a");
 	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
+	fprintf(cfile3,"this is for %d QAM\n", M);
 	fprintf(cfile3, "the total time is= %f \n", duration_total);
 	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
 			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));

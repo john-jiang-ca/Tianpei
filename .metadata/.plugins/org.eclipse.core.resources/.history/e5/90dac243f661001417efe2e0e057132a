@@ -35,7 +35,7 @@
 #include<cuda_profiler_api.h>
 #include<device_functions.h>
 #define threadNum 1024
-#define blockNum 8
+#define blockNum 4
 #define stride 1
 /*
  * in this version I applied colesced memory accesss to all the vector and matrix, with all the matrix stored in row major different threads reading one column
@@ -263,7 +263,8 @@ __global__ void FEpath(
 				R_Eu_share[count1] =
 						complex_sub(
 								s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)],
-								d_constant_shat[count1]);
+								d_constant_shat[count1]
+								);
 				Eu_norm_share = beta;
 #pragma unroll
 				for (count3 = count1; count3 < MATRIX_SIZE; count3++) {
@@ -279,12 +280,25 @@ __global__ void FEpath(
 			Eu[tx] = Eu_t;
 			free(R_Eu_share);
 			__syncthreads();
+	}
+}
 
-			if (bid == 0) {
+
+
+__global__ void MED(
+		float *Eu,   //the minimum Euclidean distance
+		cuComplex *s_pontential_matrix, //the matrix of symbol vector candidate
+		cuComplex *s_kernel,      //the solution
+		int pathNum
+		)
+{
+
+
 				__shared__ float Eu_mini_value_temp;
 				__shared__ int Eu_mini_index;
+               int count1, count2, count3;
 
-				if (tid == 0) {
+
 					Eu_mini_value_temp = Eu[0];
 					Eu_mini_index = 0;
 					for (count1 = 0; count1 < pathNum; count1++) {
@@ -307,21 +321,19 @@ __global__ void FEpath(
 //__syncthreads();
 
 				for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
-					s_potential[d_list[count1] - 1] =
-							s_potential_matrix[IDC2D((MATRIX_SIZE-count1-1),Eu_mini_index,pathNum)];
+					s_kernel[d_list[count1] - 1] =
+							s_pontential_matrix[IDC2D((MATRIX_SIZE-count1-1),Eu_mini_index,pathNum)];
 //	s_potential[d_list[tid]-1]=s_potential_matrix[IDC2D((MATRIX_SIZE-tid-1),1,pathNum)];
 //	printf("Eu_mini_index is %d", index);
 //	printf("the Eu_mini_value is %f16:\n", Eu_mini_value[0]);
 				}
-				}
+}
 
 //				__syncthreads();
-			}
 
 
-	}
 
-}
+
 
 //host
 
@@ -408,15 +420,18 @@ void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factor
 	cudaMalloc((void**) &Eu_mini, sizeof(float));
 	cudaMemset(Eu_mini, 0, sizeof(float));
 	start = clock();
+	error = cudaDeviceSynchronize();
 	cudaMemcpyAsync(d_s_sub_index, s_sub_index, rho * (pathNum) * sizeof(int),
 			cudaMemcpyHostToDevice, 0);
 //	printf("%s\n", cudaGetErrorString(cudaGetLastError()));
+//	error = cudaDeviceSynchronize();
 	for (count1 = 0; count1 < stride; count1++) {
 
 //		error = cudaDeviceSynchronize();
 //	cudaMemcpyAsync(s_potential_matrix,d_s_potential_matrix,MATRIX_SIZE*(pathNum)*sizeof(cuComplex),cudaMemcpyHostToDevice,0);
 		FEpath<<<blockNum, threadNum, 0, 0>>>(d_s_kernel, d_s_potential_matrix,
-				d_s_sub_index, rho, pathNum, d_Eu, M, count1);
+				d_s_sub_index, rho, pathNum, d_Eu, M, 0);
+		MED<<<1,1>>>(d_Eu,d_s_potential_matrix,d_s_kernel,pathNum);
 //	 cublasIsamin(handle,blockNum,d_Eu,1,Eu_mini_index);
 //	cudaMemcpyAsync(s_potential_matrix,d_s_potential_matrix,MATRIX_SIZE*(blockNum)*sizeof(cuComplex),cudaMemcpyDeviceToHost,0);
 		printf("%s\n", cudaGetErrorString(cudaGetLastError()));

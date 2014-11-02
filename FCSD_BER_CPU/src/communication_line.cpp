@@ -198,7 +198,7 @@ int main(void) {
 	fclose(cfile3);
 	fclose(cfile4);
 	time1 = clock();
-	for (count = 0; count <=SNRnum; count++) {
+	for (count = SNRnum; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -384,8 +384,8 @@ int main(void) {
 //			pH_cu = NULL;
 //			free(symOut_cu);
 //			symOut_cu = NULL;
-		} while ((symbolError < minSymbolError) || (iteration < miniteration));
-//		}while(miniteration!=100);
+//		} while ((symbolError < minSymbolError) || (iteration < miniteration));
+		}while(iteration<1e1);
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
 		fprintf(cfile1, "%f ", BitErrorRate);
@@ -399,16 +399,19 @@ int main(void) {
 	time2 = clock();
 //	printf("the clock per second is %f:\n", CLOCKS_PER_SEC);
 	duration_total = double(time2 - time1) / CLOCKS_PER_SEC;
-//	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
-//	fprintf(cfile3, "the total time is= %f \n", duration_total);
-//	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
-//			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));
-//	fprintf(cfile3, "the total duration of GPU kernel is %f: \n",
-//			double(durationKernel_GPU_t / double(CLOCKS_PER_SEC)));
-//	fprintf(cfile3, "the total duration of CPU is %f: \n",
-//			double(duration_CPU / double(CLOCKS_PER_SEC)));
-//	fprintf(cfile3, "the total duration of GPU is %f: \n",
-//			double(duration_GPU / double(CLOCKS_PER_SEC)));
+	cfile3=fopen(timeused,"a");
+	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
+	fprintf(cfile3,"this is the %d QAM modulation\n", M);
+	fprintf(cfile3, "the total time is= %f \n", duration_total);
+	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
+			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));
+	fprintf(cfile3, "the total duration of GPU kernel is %f: \n",
+			double(durationKernel_GPU_t / double(CLOCKS_PER_SEC)));
+	fprintf(cfile3, "the total duration of CPU is %f: \n",
+			double(duration_CPU / double(CLOCKS_PER_SEC)));
+	fprintf(cfile3, "the total duration of GPU is %f: \n",
+			double(duration_GPU / double(CLOCKS_PER_SEC)));
+	fclose(cfile3);
 	gsl_rng_free(pr);
 	pr = NULL;
 	gsl_vector_ulong_free(pgraycode);

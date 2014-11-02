@@ -38,6 +38,7 @@ src/fullfactorial.o : ../src/fullfactorial.cpp \
     /usr/lib/gcc/x86_64-redhat-linux/4.8.3/include/stdarg.h \
     /usr/include/bits/stdio_lim.h \
     /usr/include/bits/sys_errlist.h \
+    /usr/include/bits/stdio.h \
     /usr/include/errno.h \
     /usr/include/bits/errno.h \
     /usr/include/linux/errno.h \
@@ -99,6 +100,7 @@ src/fullfactorial.o : ../src/fullfactorial.cpp \
     /usr/include/bits/nan.h \
     /usr/include/bits/mathdef.h \
     /usr/include/bits/mathcalls.h \
+    /usr/include/bits/mathinline.h \
     /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/vector_types.h \
     /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/builtin_types.h \
     /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/device_types.h \

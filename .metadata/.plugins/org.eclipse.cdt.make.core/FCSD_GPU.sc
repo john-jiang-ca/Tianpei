@@ -9,7 +9,6 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
-<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -19,7 +18,6 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
-<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -34,6 +32,7 @@
 <definedSymbol symbol="__ATOMIC_RELEASE=3"/>
 <definedSymbol symbol="__ATOMIC_ACQ_REL=4"/>
 <definedSymbol symbol="__ATOMIC_CONSUME=1"/>
+<definedSymbol symbol="__OPTIMIZE__=1"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="_LP64=1"/>
 <definedSymbol symbol="__LP64__=1"/>
@@ -214,7 +213,6 @@
 <definedSymbol symbol="__REGISTER_PREFIX__="/>
 <definedSymbol symbol="__USER_LABEL_PREFIX__="/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
-<definedSymbol symbol="__NO_INLINE__=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1"/>
@@ -277,7 +275,6 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
-<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -287,7 +284,6 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
-<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -302,6 +298,7 @@
 <definedSymbol symbol="__ATOMIC_RELEASE=3"/>
 <definedSymbol symbol="__ATOMIC_ACQ_REL=4"/>
 <definedSymbol symbol="__ATOMIC_CONSUME=1"/>
+<definedSymbol symbol="__OPTIMIZE__=1"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="_LP64=1"/>
 <definedSymbol symbol="__LP64__=1"/>
@@ -482,7 +479,6 @@
 <definedSymbol symbol="__REGISTER_PREFIX__="/>
 <definedSymbol symbol="__USER_LABEL_PREFIX__="/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
-<definedSymbol symbol="__NO_INLINE__=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1"/>
@@ -545,7 +541,6 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
-<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -555,7 +550,6 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
-<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -570,6 +564,7 @@
 <definedSymbol symbol="__ATOMIC_RELEASE=3"/>
 <definedSymbol symbol="__ATOMIC_ACQ_REL=4"/>
 <definedSymbol symbol="__ATOMIC_CONSUME=1"/>
+<definedSymbol symbol="__OPTIMIZE__=1"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="_LP64=1"/>
 <definedSymbol symbol="__LP64__=1"/>
@@ -750,7 +745,6 @@
 <definedSymbol symbol="__REGISTER_PREFIX__="/>
 <definedSymbol symbol="__USER_LABEL_PREFIX__="/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
-<definedSymbol symbol="__NO_INLINE__=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1"/>

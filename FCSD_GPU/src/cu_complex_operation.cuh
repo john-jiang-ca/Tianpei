@@ -42,8 +42,8 @@
  inline  __device__  cuComplex complex_div(const cuComplex a, const cuComplex b)
 	{
       cuComplex result;
-      result.x=(a.x*b.x+a.y*b.y)/(__powf((b.x),2)+__powf((b.y),2));
-      result.y=(-a.x*b.y+a.y*b.x)/(__powf((b.x),2)+__powf((b.y),2));
+      result.x=(a.x*b.x+a.y*b.y)/(pow((b.x),2)+pow((b.y),2));
+      result.y=(-a.x*b.y+a.y*b.x)/(pow((b.x),2)+pow((b.y),2));
       return(result);
 	}
 
@@ -51,7 +51,7 @@
  inline  __device__  float complex_abs(const cuComplex a)
 	{
       float result;
-      result=__powf(a.x,2)+__powf(a.y,2);
+      result=pow(a.x,2)+pow(a.y,2);
 
       return(result);
 	}
@@ -77,8 +77,8 @@
  inline  __device__  cuComplex complex_exp(float arg)
 {
 	 cuComplex a;
-	 a.x=__cosf(arg);
-	 a.y=__sinf(arg);
+	 a.x=cos(arg);
+	 a.y=sin(arg);
     return a;
 }
 

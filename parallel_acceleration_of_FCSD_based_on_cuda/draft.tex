@@ -708,28 +708,77 @@ CUDA Driver Version / Runtime Version      6.5 / 6.0\\
 Nsight Eclipse Version 6.5
 \subsection{Performance and Evaluation}
 \begin{table}[htb]
-\caption{Speedup Performance of different MIMO Array size}
+\caption{Speedup Performance of Different Sizes of MIMO Array for 4 QAM}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
 \cline{2-6}
-&GTX 760 & modigliani & monet & GTX 760/modigliani  & GTX 760/monet \\
+&GeForce GTX 760 & modigliani & monet &  GTX 760/modigliani  &  GTX 760/monet \\
 \hline
-$8\time 8$& 0.46& 0.09&0.08 & 0.20& 0.17\\
+$8\times 8$& 1.88& 0.10&0.11 & 0.05& 0.06\\
 \hline
-$16\time 16$&1.56 &3.2&3.57& 2.05& 2.29\\
+$16\times 16$&6.12 & 0.92&0.98& 0.15& 0.16\\
 \hline
-$20\time 20$&31 & 74& 81& 2.39& 2.61\\
+$32\times 32$&38.32 & 31.27& 34.60& 0.82& 0.90\\
 \hline
-$25\time 25$& 38& 112& 122& 2.94& 3.21\\
+$48\times 48$&113.80& 262.00& 285.14& 2.30& 2.51\\
 \hline
-$32\time 32$& 611&2836&3033&4.64& 4.96 \\
+$64\times 64$& 537.41&1753.30&1940.10&3.26& 3.61 \\
 \hline
-\label{speedup}
+$72\times 72 $&2294.32&8727.69 &9641.80 &3.80 &4.20 \\
+\hline
+\label{speedup1}
+
 \end{tabular}
 \end{table}
-\paragraph{} We make simulation to different array sizes and signal constellation and make comparison between GTX 760 and two kinds of CPU, all the operation times we test is based on 100 channel realizations, the transmitted data is generated randomly and modulated by $M$ QAM modulation scheme,  as we can see in Table \ref{speedup}, for small size of array and signal constellation, like $8\times 8$ array $4$-QAM, GPU has no advantage over CPU, for small array size and signal constellation, the number of path that need to be searched is relatively small, the CPU has already had a good performance, there is a short time for GPU to "warm up", for data transferring, launch kernel function and host device synchronization, further more, for small number of threads, the memory R/W latency is not well hided. When the size of array or signal constellation size  grows large, a large parallelism is achieved so that the GPU begin to display its data processing power, For example , and with the size of array and signal constellation increasing, this speedup tends to be much more considerable.
+
+
+
+\begin{table}[htb]
+\caption{Speedup Performance of Different Sizes of MIMO Array for 16 QAM}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
+\cline{2-6}
+&GeForce GTX 760 & modigliani & monet &  GTX 760/modigliani  &  GTX 760/monet \\
+\hline
+$8\times 8$&2.60& 0.67&0.93 & 0.26&0.36 \\
+\hline
+$16\times 16$&26.80 & 31.68&41.95& 1.18& 1.57\\
+\hline
+$20\times 20$&478.40 & 740.50& 978.26& 1.55& 2.04\\
+\hline
+$32\times 32$&12330.05& 28209.53& 38106.00& 2.29& 3.09\\
+\hline
+$36\times 36$& 13480.01&35240.16&47290.00&2.61& 3.51 \\
+
+\hline
+\label{speedup1}
+
+\end{tabular}
+\end{table}
+
+\begin{table}[htb]
+\caption{Speedup Performance of Different Sizes of MIMO Array for 64 QAM}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
+\cline{2-6}
+&GeForce GTX 760 & modigliani & monet &  GTX 760/modigliani  &  GTX 760/monet \\
+\hline
+$8\times 8$&12.28& 10.69&13.38 & 0.87&1.09 \\
+\hline
+$16\times 16$&1460.11 & 2066.08&2689.00& 1.42& 1.84\\
+
+\hline
+\label{speedup1}
+
+\end{tabular}
+\end{table}
+\paragraph{} We made simulation to different sizes of array and signal constellation and make comparison between GTX 760 and two kinds of CPU, all the operation times we test is based on $1000$ channel realizations, the transmitted data is generated randomly and modulated by $M$ quadrature amplitude modulation (QAM) scheme. In Table \ref{speedup1}, for small size of array and signal constellation, like $8\times 8$ array $4$-QAM, GPU has no advantage over CPU, for small array size and signal constellation, the number of path that need to be searched is relatively small, the CPU has already had a good performance, there is a short time for GPU to "warm up", for data transferring, launch kernel function and host device synchronization, further more, for small number of threads, the memory R/W latency is not well hided. When the size of array or signal constellation size  grows large, a large parallelism is achieved so that the GPU begin to display its data processing power, For example , and with the size of array and signal constellation increasing, this speedup tends to be much more considerable.
 \section{Conclusion}\label{conclusion}
 \paragraph{}This paper presents the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional computation platform, we have reached considerable acceleration of FCSD and this speedup grows larger for large MIMO system. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for computational consumptive simulation in large MIMO area.      
 % conference papers do not normally have an appendix

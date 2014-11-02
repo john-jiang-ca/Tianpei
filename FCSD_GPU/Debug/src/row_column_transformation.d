@@ -49,6 +49,7 @@ src/row_column_transformation.o : ../src/row_column_transformation.cu \
     /usr/include/wchar.h \
     /usr/lib/gcc/x86_64-redhat-linux/4.8.3/include/stdarg.h \
     /usr/include/bits/sys_errlist.h \
+    /usr/include/bits/stdio.h \
     /usr/include/stdlib.h \
     /usr/include/bits/waitflags.h \
     /usr/include/bits/waitstatus.h \
@@ -74,6 +75,7 @@ src/row_column_transformation.o : ../src/row_column_transformation.cu \
     /usr/include/bits/nan.h \
     /usr/include/bits/mathdef.h \
     /usr/include/bits/mathcalls.h \
+    /usr/include/bits/mathinline.h \
     /usr/include/c++/4.8.3/cmath \
     /usr/include/c++/4.8.3/bits/cpp_type_traits.h \
     /usr/include/c++/4.8.3/ext/type_traits.h \

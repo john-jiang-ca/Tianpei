@@ -1,0 +1,21 @@
+this is for 8 X 8
+this is the 16 QAM modulation
+the total time is= 0.090000 
+the total duration of CPU kernel is 0.080000: 
+the total duration of GPU kernel is 16706672.001024: 
+the total duration of CPU is 0.090000: 
+the total duration of GPU is 0.000000: 
+this is for 8 X 8
+this is the 16 QAM modulation
+the total time is= 0.940000 
+the total duration of CPU kernel is 0.830000: 
+the total duration of GPU kernel is 167067416.264704: 
+the total duration of CPU is 0.930000: 
+the total duration of GPU is 0.000000: 
+this is for 16 X 16
+this is the 16 QAM modulation
+the total time is= 42.210000 
+the total duration of CPU kernel is 39.840000: 
+the total duration of GPU kernel is 167067416.264704: 
+the total duration of CPU is 42.150000: 
+the total duration of GPU is 0.000000: 

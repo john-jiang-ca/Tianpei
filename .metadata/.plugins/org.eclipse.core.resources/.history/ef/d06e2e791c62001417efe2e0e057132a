@@ -34,9 +34,9 @@
 #include<cudaProfiler.h>
 #include<cuda_profiler_api.h>
 #include<device_functions.h>
-#define threadNum 1024
-#define blockNum 12
-#define stride 86
+#define threadNum 64
+#define blockNum 1
+#define stride 0
 /*
  * in this version I applied colesced memory accesss to all the vector and matrix, with all the matrix stored in row major different threads reading one column
  * with all the matrix stored in column major, different threads reading one row
@@ -48,7 +48,7 @@ __global__ void FEpath(
 //		cuComplex *d_R,  //upper triangular matrix after cholesky factorization
 //		cuComplex *d_constant_shat,  //unconstrained estimation of transmitted symbol vector s
 //		cuComplex *s_matrix_share,
-		cuComplex *s_potential,   //the matrix use to store all the solution candidates from all the blocks
+//		cuComplex *s_potential,   //the matrix use to store all the solution candidates from all the blocks
         cuComplex *s_potential_matrix,
 		int *s_sub_index,   //full factorial index matrix
 		int rho,
@@ -62,8 +62,7 @@ __global__ void FEpath(
 //		int threadNum,    //number of threads
 //		int *d_list,     //the permutation list
 //		cuComplex *d_psymbolconstellation,
-		int index,
-		float *Eu_mini_value
+		int index
 
 
 
@@ -82,24 +81,25 @@ int Nt=MATRIX_SIZE;
 
 	error_t error;
 	int count1, count2,count3,count4;
-	__shared__ float d;    //the minimum distance unit between the signal constellation, the distance is usually 2d
-	__shared__ cuComplex alpha, beta;
+	 float d;    //the minimum distance unit between the signal constellation, the distance is usually 2d
+	cuComplex alpha, beta;
 	alpha.x=1;alpha.y=0; beta.x=0; beta.y=0;
 //	__shared__ cuComplex d_constant_shat[MATRIX_SIZE];
-//	__shared__ cuComplex d_R[MATRIX_SIZE*MATRIX_SIZE];
+//	__shared__ cuComplex d_R[MATRpIX_SIZE*MATRIX_SIZE];
 //    __shared__ cuComplex s_temp[threadNum];
 	cuComplex s_temp;
 	cuComplex Eu_norm_share;
 //   __shared__ cuComplex Eu_norm_share[threadNum];
     cuComplex *R_Eu_share=(cuComplex*)malloc(Nt*sizeof(cuComplex));
+//    cudaMemset(R_Eu_share,0,Nt*sizeof(cuComplex));
 //    __shared__ float Eu_t[threadNum];
-	float Eu_t;
+	float Eu_t=0;
 //  __shared__ cuComplex s_potential_matrix[MATRIX_SIZE*threadNum];
 //    if(tid>=0&&tid<MATRIX_SIZE)
 //    {
 //
 //		for(count1=0;count1<MATRIX_SIZE;count1++)
-//		{
+//		{p
 //			d_R[IDC2D(count1,tid,MATRIX_SIZE)]=d_R[IDC2D(count1,tid,MATRIX_SIZE)];
 //		}
 //
@@ -112,6 +112,7 @@ int Nt=MATRIX_SIZE;
 //	Eu_t=0;
 if(index*threadNum*blockNum+tx<pathNum)
 {
+//	printf("now the path index is %d!!!!", tx+index*threadNum*blockNum);
 for (count1=Nt-1; count1>=0; count1--)
 {
 
@@ -123,140 +124,146 @@ for (count1=Nt-1; count1>=0; count1--)
 			{
 				s_temp=complex_add(s_temp,complex_mulcom(complex_div(d_R[IDC2D(count1,count2,MATRIX_SIZE)],d_R[IDC2D(count1,count1,MATRIX_SIZE)]),(complex_sub(d_constant_shat[count2],s_potential_matrix[IDC2D(count2,index*blockNum*threadNum+tx,pathNum)]))));
 			}
-	if(M==2)   //BPSK
-	{
+			if (M == 2)   //BPSK
+										{
 
-    	 d=sqrt(float(float(1)/float(Nt)));
-    	 if(s_temp.x>0)
-    	 {
-    		  s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=d;
-    		  s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=0;
-    	 }
-    	 else
-    	 {
-    		  s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-d);
-    		  s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=0;
-    	 }
-	}
-	else if(M==4)   //QPSK
-	{
-		int *result=(int*)malloc(sizeof(int));
+									d = sqrt(float(float(1) / float(Nt)));
+									if (s_temp.x > 0) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												d;
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												0;
+									} else {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-d);
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												0;
+									}
+								} else if (M == 4)   //4QAM
+										{
+			//						printf("the s_temp is:\n");
+			//						printf("%0.4f%+0.4fi ",s_temp.x, s_temp.y);
+									d = sqrt(float(3) / (2 * (float) (Nt * (M - 1))));
+			//						gsl_complex QAM4;
+									if (s_temp.x < 0) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												-d;
+									} else {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												d;
+									}
+									if (s_temp.y < 0) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												-d;
+									} else {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												d;
+									}
 
-		memset(result,0,sizeof(int));
-		float *distance=(float*)malloc(M*sizeof(float));
-		memset(distance,0,M*sizeof(int));
-	    	d=sqrt(float(float(1)/float(Nt)));
-           for(count2=0;count2<M;count2++)
-           {
-        	   switch(count2)
-        	   {
-        	   case 0:
-        	   distance[count2]=sqrt(powf(s_temp.x-(-d),2)+pow(s_temp.y-0,2)); break;
-        	   case 1:
-        	   distance[count2]=sqrt(powf(s_temp.x-0,2)+pow(s_temp.y-(-d),2)); break;
-        	   case 2:
-        	   distance[count2]=sqrt(pow(s_temp.x-(d),2)+pow(s_temp.y-0,2)); break;
-        	   case 3:
-        	   distance[count2]=sqrt(pow(s_temp.x-0,2)+pow(s_temp.y-d,2)); break;
-               default:
-                   #if __CUDA_ARCH__ >=300
-            	   printf("result error code %d\n", error);
-                   #endif
-            	   break;
-        	   }
-           }
-           float  mini_distance;
-  	     int mini_index;
-  	     mini_distance=distance[0];
-  	     mini_index=1;
-  	     for(count3=0;count3<M;count3++)
-  	     {
-  	    	if(distance[count3]<mini_distance)
-  	    	{
-  	    		mini_distance=distance[count3];
-  	    		mini_index=count3+1;
-  	    	}
-  	     }
+								} else if (M == 16)  //16QAM
+										{
 
-           switch (mini_index)
-           {
-           case 1:
-        	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=-d;
-        	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=0;
-        	break;
-           case 2:
-           	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=0;
-           	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=-d;
-           	break;
-           case 3:
-           	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=d;
-           	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=0;
-           	break;
-           case 4:
-       	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=0;
-       	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=d;
-       	  break;
-           default:
-               #if __CUDA_ARCH__ >=300
-        	   printf("result error code %d\n", error);
-               #endif
-           }
-           free(distance);
-           free(result);
-	}
-	else if(M==16)  //16QAM
-	{
+									d = sqrt(float(3) / (2 * (float) (Nt * (M - 1))));
+									if (s_temp.x < (-2 * d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-3 * d);
+									} else if (s_temp.x > (2 * d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(3 * d);
+									} else if (s_temp.x >= 0 && s_temp.x <= 2 * d) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												d;
+									} else if (s_temp.x >= (-2 * d) && s_temp.x <= 0) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-d);
+									}
 
-	    	 d=sqrt(float(3)/(2* (float)(Nt*(M-1))));
-	     if(s_temp.x<(-2*d))
-	    	{
-	    	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-3*d);
-	    	}
-	    else if(s_temp.x>(2*d))
-	    	{
-	    	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(3*d);
-	    	}
-	    else if(s_temp.x>=0&&s_temp.x<=2*d)
-	    	{
-	    	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=d;
-	    	}
-	    else if(s_temp.x>=(-2*d)&&s_temp.x<=0)
-	        {
-	    	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-d);
-	    	}
+									if (s_temp.y < (-2 * d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(-3 * d);
+									} else if (s_temp.y > (2 * d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(3 * d);
+									} else if (s_temp.y >= 0 && s_temp.y <= (2 * d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												d;
+									} else if (s_temp.y >= (-2 * d) && s_temp.y <= 0) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(-d);
+									}
+			//	    	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-d);
+								} else if (M == 64) //64QAM
+										{
 
+									d = sqrt(3 / (2 * (float) (Nt * (M - 1))));
+									//real part
+									if (s_temp.x <=(-6*d))
+									{
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-7*d);
+									} else if (s_temp.x >(-6 * d)&&s_temp.x<=(-4*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-5*d);
+									} else if (s_temp.x >(-4 * d)&&s_temp.x<=(-2*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-3*d);
+									} else if (s_temp.x >(-2*d)&&s_temp.x<=(0)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(-d);
+									}
 
+									else if (s_temp.x > (6 * d))
+									{
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(7 * d);
+									} else if (s_temp.x >(4 * d)&&s_temp.x<=(6*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(5 * d);
+									} else if (s_temp.x >(2 * d)&&s_temp.x<=(4*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(3*d);
+									} else if (s_temp.x >(0)&&s_temp.x<=(2*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+												(d);
+									}
+			                      //imag part
+									if (s_temp.y <= (-6 * d))
+									{
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(-7 * d);
+									} else if (s_temp.y >(-6 * d)&&s_temp.y<=(-4*d)) {
+										//if(index*threadNum*blockNum+tx<pathNum)
+										//{			s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(-5 * d);
+									} else if (s_temp.y >(-4 * d)&&s_temp.y<=(-2*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(-3*d);
+									} else if (s_temp.y >(-2*d)&&s_temp.y<=(0)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(-d);
+									}
 
+									else if (s_temp.y > (6 * d))
+									{
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(7 * d);
+									} else if (s_temp.y >(4 * d)&&s_temp.y<=(6*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(5 * d);
+									} else if (s_temp.y >(2 * d)&&s_temp.y<=(4*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												3*d;
+									} else if (s_temp.y >(0)&&s_temp.y<=(2*d)) {
+										s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+												(d);
+									}
 
-	    if(s_temp.y<(-2*d))
-	    	{
-	    	    s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-3*d);
-	    	}
-	   else if(s_temp.y>(2*d))
-	    	 {
-	    	   s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(3*d);
-	         }
-	   else if(s_temp.y>=0&&s_temp.y<=(2*d))
-	        {
-	    	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=d;
-	    	}
-	    else if(s_temp.y>=(-2*d)&&s_temp.y<=0)
-	       {
-	         s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-d);
-	       }
-//	    	 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-d);
-	}
-	else if(M==64)   //64QAM	__shared__ float Eu_mini_value;
-		{
+								}
+							} else {
+								s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)] =
+										d_psymbolconstellation[s_sub_index[IDC2D((Nt-count1-1),(index*blockNum*threadNum+tx),pathNum)]];
 
-	    	 d=sqrt(3/(2* (float)(Nt*(M-1))));
-	     }
-		}
-	else
-	{
-		 s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)]=d_psymbolconstellation[s_sub_index[IDC2D((Nt-count1-1),(index*blockNum*threadNum+tx),pathNum)]];
-
-	}
+							}
 		R_Eu_share[count1]=complex_sub( s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)],d_constant_shat[count1]);
 		Eu_norm_share=beta;
         #pragma unroll
@@ -269,45 +276,37 @@ for (count1=Nt-1; count1>=0; count1--)
 
 	}
 Eu[tx+index*blockNum*threadNum]=Eu_t;
-__syncthreads();
 free(R_Eu_share);
 
-if(bid==0)
-{
-	__shared__ int temp;
-	__shared__ float Eu_mini_value_temp;
-	__shared__ int Eu_mini_index;
-
-if(tid==0)
-{
-	    temp=0;
-		if(index==0)
-		{
-		Eu_mini_value_temp=Eu[0];
-		Eu_mini_index=0;
-		temp=1;
-		}
-		else
-		{
-			Eu_mini_value_temp=Eu_mini_value[0];
-//			printf("the temp is %d:\n", temp);
-//			printf("the Eu_mini_value_temp is %f:\n", Eu_mini_value);
-		}
-
-
-for(count1=index*blockNum*threadNum;count1<(index+1)*blockNum*threadNum;count1++)
-{
-	if(count1<pathNum)
-	{
-	if(Eu[count1]<Eu_mini_value_temp)
-	{
-		Eu_mini_index=count1;
-		Eu_mini_value_temp=Eu[count1];
-		temp=1;
-	}
-	}
-//	Eu_mini=Eu_mini_value;
 }
+__syncthreads();
+}
+
+
+
+__global__ void MED(
+		float *Eu,   //the minimum Euclidean distance
+		cuComplex *s_pontential_matrix, //the matrix of symbol vector candidate
+		cuComplex *s_kernel,      //the solution
+		int pathNum
+		)
+{
+
+
+				__shared__ float Eu_mini_value_temp;
+				__shared__ int Eu_mini_index;
+               int count1, count2, count3;
+
+
+					Eu_mini_value_temp = Eu[0];
+					Eu_mini_index = 0;
+					for (count1 = 0; count1 < pathNum; count1++) {
+						if (Eu[count1] < Eu_mini_value_temp) {
+							Eu_mini_index = count1;
+							Eu_mini_value_temp = Eu[count1];
+						}
+//	Eu_mini=Eu_mini_value;
+					}
 //printf("the temp is %d:\n", temp);
 //printf("the Eu_mini_value is %f:\n", Eu_mini_value[0]);
 //printf("the Eu_mini_value_temp is %f:\n", Eu_mini_value_temp);
@@ -317,25 +316,27 @@ for(count1=index*blockNum*threadNum;count1<(index+1)*blockNum*threadNum;count1++
 //{
 //printf("%f ", Eu[count1]);
 //}
-}
-__syncthreads();
-if(temp==1)
-{
-Eu_mini_value[0]=Eu_mini_value_temp;
-if(tid>=0&&tid<MATRIX_SIZE)
-{
-	s_potential[d_list[tid]-1]=s_potential_matrix[IDC2D((MATRIX_SIZE-tid-1),Eu_mini_index,pathNum)];
+
+//__syncthreads();
+
+				for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+					s_kernel[d_list[count1] - 1] =
+							s_pontential_matrix[IDC2D((MATRIX_SIZE-count1-1),Eu_mini_index,pathNum)];
 //	s_potential[d_list[tid]-1]=s_potential_matrix[IDC2D((MATRIX_SIZE-tid-1),1,pathNum)];
 //	printf("Eu_mini_index is %d", index);
-//	printf("the Eu_mini_value is %f:\n", Eu_mini_value[0]);
-}
-}
-__syncthreads();
-
-}
+//	printf("the Eu_mini_value is %f16:\n", Eu_mini_value[0]);
+				}
 }
 
-}
+
+
+
+//__syncthreads();
+
+//__syncthreads();
+
+
+
 
 //host
 
@@ -360,20 +361,21 @@ void FCSD_decoding(
 //	cuComplex *s_sub;
 //	s_sub=(cuComplex*)malloc(pow(M,rho)*rho*sizeof(cuComplex));   //all the possible full expansion sub vector
 	int  pathNum=pow(M,rho);
-	int *Eu_mini_index=(int*)malloc(sizeof(int));
+//	int *Eu_mini_index=(int*)malloc(sizeof(int));
 //	int *d_s_sub_index;
 //	int *s_sub_index=(int*)calloc(1,rho*pow(M,rho)*sizeof(int));
 	int *s_sub_index,*d_s_sub_index;
-	cudaHostAlloc((void**) &s_sub_index,rho*pathNum*sizeof(int),cudaHostAllocDefault);
+//	cudaHostAlloc((void**) &s_sub_index,rho*pathNum*sizeof(int),cudaHostAllocDefault);
+	s_sub_index=(int*)calloc(1,rho*pathNum*sizeof(int));
 	fullfact(rho,M,s_sub_index);    //get  the indexes of all the possible rho length symbol vectors
 //	int blockNum=BLOCK_NUM;   //determined by the path number
 //	int pathNum=pow(M,rho);  //number of search path
 //	int threadNum=ceil(pathNum/(blockNum*stride)); //determined by the path number
-    float *Eu,*d_Eu;
-    cuComplex *s_potential_matrix,*d_s_potential_matrix,*d_s_kernel;
+    float *d_Eu;
+    cuComplex *d_s_potential_matrix,*d_s_kernel;
 //	Eu=(float*)calloc(1,blockNum*sizeof(float));
-    cudaHostAlloc((void**) &Eu,blockNum*sizeof(float),cudaHostAllocDefault);
-    cudaHostAlloc((void**) &s_potential_matrix,MATRIX_SIZE*blockNum*sizeof(cuComplex),cudaHostAllocDefault);
+//    cudaHostAlloc((void**) &Eu,blockNum*sizeof(float),cudaHostAllocDefault);
+//    cudaHostAlloc((void**) &s_potential_matrix,MATRIX_SIZE*blockNum*sizeof(cuComplex),cudaHostAllocDefault);
 //	cuComplex *s_potential_matrix=(cuComplex*)calloc(1,pathNum*Nt*sizeof(cuComplex));
 //	cuComplex *s_hat=(cuComplex*)calloc(1,Nt*sizeof(cuComplex));
 //	cuComplex  *d_s_potential_matrix;
@@ -389,7 +391,7 @@ void FCSD_decoding(
 //	    error=cudaMalloc((void**) &d_R, MATRIX_SIZE*MATRIX_SIZE*sizeof(cuComplex));
 	    error=cudaMalloc((void**) &d_s_sub_index, rho*pathNum*sizeof(int));
 		error=cudaMalloc((void**) &d_s_potential_matrix, pathNum*Nt*sizeof(cuComplex));
-		cudaMemset(d_s_potential_matrix,0,pathNum*Nt*sizeof(cuComplex));
+//		cudaMemset(d_s_potential_matrix,0,pathNum*Nt*sizeof(cuComplex));
 //		error=cudaMalloc((void**) &d_list, MATRIX_SIZE*sizeof(int));
 		error=cudaMalloc((void**) &d_Eu, pathNum*sizeof(float));
         error=cudaMalloc((void**) &d_s_kernel, MATRIX_SIZE*sizeof(cuComplex));
@@ -412,23 +414,30 @@ void FCSD_decoding(
 	 int sharedMem;
     sharedMem=1*sizeof(cuComplex);
    float duration;
-   float *Eu_mini;
-   cudaMalloc((void**) &Eu_mini,sizeof(float));
-   cudaMemset(Eu_mini,0,sizeof(float));
-   cudaMemcpyAsync(d_s_sub_index,s_sub_index,rho*(pathNum)*sizeof(int),cudaMemcpyHostToDevice,0);
-   if(error!=cudaSuccess)
-	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
-   for(count1=0;count1<stride;count1++)
+//   float *Eu_mini;
+//   cudaMalloc((void**) &Eu_mini,sizeof(float));
+//   cudaMemset(Eu_mini,0,sizeof(float));
+   error=cudaDeviceSynchronize();
+   cudaMemcpy(d_s_sub_index,s_sub_index,rho*(pathNum)*sizeof(int),cudaMemcpyHostToDevice);
+//   cudaDeviceReset();
+
+//   if(error!=cudaSuccess)
+//   {
+//	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
+//   }
+   for(count1=0;count1<=stride;count1++)
    {
 
 
 //	cudaMemcpyAsync(s_potential_matrix,d_s_potential_matrix,MATRIX_SIZE*(pathNum)*sizeof(cuComplex),cudaMemcpyHostToDevice,0);
-	FEpath<<<blockNum, threadNum,0,0>>>(d_s_kernel,d_s_potential_matrix,d_s_sub_index,rho,pathNum, d_Eu, M,count1,Eu_mini);
-
+	FEpath<<<blockNum, threadNum,0,0>>>(d_s_potential_matrix,d_s_sub_index,rho,pathNum, d_Eu, M,count1);
 //	 cublasIsamin(handle,blockNum,d_Eu,1,Eu_mini_index);
 //	cudaMemcpyAsync(s_potential_matrix,d_s_potential_matrix,MATRIX_SIZE*(blockNum)*sizeof(cuComplex),cudaMemcpyDeviceToHost,0);
+//	error=cudaDeviceSynchronize();
 	 if(error!=cudaSuccess)
+	 {
 	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
+	 }
 
 //    for(count2=0;count2<Nt;count2++)
 //    {
@@ -437,7 +446,8 @@ void FCSD_decoding(
 //	cudaMemcpyAsync(Eu,d_Eu,(pathNum)*sizeof(float),cudaMemcpyDeviceToHost,0);
 
    }
-   cudaFree(Eu_mini);
+   MED<<<1,1>>>(d_Eu,d_s_potential_matrix,d_s_kernel,pathNum);
+//   cudaFree(Eu_mini);
    cudaMemcpy(s_kernel,d_s_kernel,MATRIX_SIZE*sizeof(cuComplex),cudaMemcpyDeviceToHost);
    error=cudaDeviceSynchronize();
 
@@ -446,8 +456,8 @@ void FCSD_decoding(
 //	cudaProfilerStop();
 	duration=double(end-start);
 
-	printf("hey %0.4f ", duration);
-	printf("\n");
+//	printf("hey %0.4f ", duration);
+//	printf("\n");
 //    memcpy(Eu+0,Eu1,pathNum*sizeof(float));
 //    memcpy(Eu+pathNum,Eu2,pathNum*sizeof(float));
 //    memcpy(Eu+pathNum/2,Eu3,pathNum*sizeof(float));
@@ -473,16 +483,21 @@ void FCSD_decoding(
 //			    }
 //			    printf("\n");
 
-			   	cudaFreeHost(s_sub_index);
+			   	free(s_sub_index);
+			   	s_sub_index=NULL;
 			   	cudaFree(d_s_sub_index);
+			   	d_s_sub_index=NULL;
 //			   	cudaFree(d_list);
-			   	cudaFreeHost(Eu);
+//			   	cudaFreeHost(Eu);
 			   	cudaFree(d_Eu);
-			   	cudaFreeHost(s_potential_matrix);
+			   	d_Eu=NULL;
+//			   	cudaFreeHost(s_potential_matrix);
 			   	cudaFree(d_s_potential_matrix);
+			   	d_s_potential_matrix=NULL;
 			   	cudaFree(d_s_kernel);
+			   	d_s_kernel=NULL;
 //			   	cudaFree(d_psymbolconstellation);
-			   	free(Eu_mini_index);
+//			   	free(Eu_mini_index);
 //			   	cudaFree(d_R);
 
 

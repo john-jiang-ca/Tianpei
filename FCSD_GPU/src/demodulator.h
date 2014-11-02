@@ -32,13 +32,13 @@ void demodulator_GPU(cuComplex *symOut, gsl_vector_complex *psymbolconstellation
 	int count1, count2;
 	int M = psymbolconstellation->size;
 	int Nt = poutput->size;
+	float epsilon=1e-5;
 	for (count1 = 0; count1 < Nt; count1++) {
 		for (count2 = 0; count2 < M; count2++) {
-			if (symOut[count1].x
-					== float(gsl_vector_complex_get(psymbolconstellation, count2).dat[0])
-					&& symOut[count1].y
-							== float(gsl_vector_complex_get(psymbolconstellation,
-									count2).dat[1])) {
+			if (sqrt(pow(symOut[count1].x
+					-gsl_vector_complex_get(psymbolconstellation, count2).dat[0],2))<epsilon
+					&& sqrt(pow(symOut[count1].y
+							-gsl_vector_complex_get(psymbolconstellation, count2).dat[1],2))<epsilon) {
 				gsl_vector_ulong_set(poutput, count1,
 						gsl_vector_ulong_get(pgrayindexes, count2));
 				break;

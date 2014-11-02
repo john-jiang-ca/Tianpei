@@ -1,0 +1,16 @@
+16:35:04 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+
+16:35:05 Build Finished (took 810ms)
+

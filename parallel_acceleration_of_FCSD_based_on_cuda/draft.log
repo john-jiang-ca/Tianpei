@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  2 NOV 2014 00:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  2 NOV 2014 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -240,11 +240,7 @@ LaTeX Info: The control sequence `\]' is already robust on input line 472.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen125
-) (./draft.aux
-
-LaTeX Warning: Label `speedup1' multiply defined.
-
-)
+) (./draft.aux)
 \openout1 = `draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 402.
@@ -259,7 +255,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 402.
 LaTeX Font Info:    ... okay on input line 402.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 402.
 LaTeX Font Info:    ... okay on input line 402.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count112
 \scratchdimen=\dimen126
@@ -488,59 +485,75 @@ File: coalescing_global_memory-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: coalescing_global_memory-eps-converted-to.pdf used on 
 input line 691.
 (pdftex.def)             Requested size: 439.49426pt x 278.24097pt.
- [18] [19] [20 <./coalescing_global_memory-eps-converted-to.pdf>]
+ [18] [19] [20 <./coalescing_global_memory-eps-converted-to.pdf>] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 703--706
 
  []
 
-[21]
-Overfull \hbox (57.76231pt too wide) in paragraph at lines 713--734
+[22]
+Overfull \hbox (57.76231pt too wide) in paragraph at lines 713--732
  [][] 
  []
 
 
-Overfull \hbox (63.63725pt too wide) in paragraph at lines 741--761
+Overfull \hbox (63.63725pt too wide) in paragraph at lines 740--757
  [][] 
  []
 
 
-Overfull \hbox (57.76231pt too wide) in paragraph at lines 766--780
+Overfull \hbox (57.76231pt too wide) in paragraph at lines 763--776
  [][] 
  []
 
-[22] [23] (./draft.bbl [24] [25]) [26] (./draft.aux)
+[23] [24]
+Package epstopdf Info: Source file: <BER_curves.eps>
+(epstopdf)                    date: 2014-11-02 17:01:32
+(epstopdf)                    size: 16021 bytes
+(epstopdf)             Output file: <BER_curves-eps-converted-to.pdf>
+(epstopdf)                    date: 2014-11-02 17:02:43
+(epstopdf)                    size: 9231 bytes
+(epstopdf)             Command: <repstopdf --outfile=BER_curves-eps-converted-t
+o.pdf BER_curves.eps>
+(epstopdf)             \includegraphics on input line 786.
+Package epstopdf Info: Output file is already uptodate.
+ <BER_curves-eps-converted-to.pdf, id=115, 461.725pt x 347.2975pt>
+File: BER_curves-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+<use BER_curves-eps-converted-to.pdf>
+Package pdftex.def Info: BER_curves-eps-converted-to.pdf used on input line 786
+.
+(pdftex.def)             Requested size: 323.20529pt x 243.10658pt.
+ [25 <./BER_curves-eps-converted-to.pdf>]
+[26] (./draft.bbl [27]) [28] (./draft.aux) ) 
 Here is how much of TeX's memory you used:
- 4329 strings out of 493326
- 63400 string characters out of 6140501
- 132256 words of memory out of 5000000
- 7676 multiletter control sequences out of 15000+600000
+ 4338 strings out of 493326
+ 63606 string characters out of 6140501
+ 130257 words of memory out of 5000000
+ 7684 multiletter control sequences out of 15000+600000
  14680 words of font info for 55 fonts, out of 8000000 for 9000
  953 hyphenation exceptions out of 8191
  38i,14n,38p,1486b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on draft.pdf (26 pages, 447566 bytes).
+</usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on draft.pdf (28 pages, 456663 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 190 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

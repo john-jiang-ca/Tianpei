@@ -661,7 +661,7 @@ $\mathbf{s}_{j}^{k}$ denotes the $j$th symbol of the $k$th symbol vector candida
 E_{u}^{k}=\sum_{i=1}^{i=N_{t}}\sum_{j=i}^{j=N_{t}}r_{ij}(\mathbf{\hat{s}}_{j}-\mathbf{s}_{j})\label{Eu metric}
 \end{equation}
 $E_{u}^{k}$ denotes the $k$th Euclidean distance of the corresponding symbol vector candidate. The symbol vector candidate with minimum Euclidean distance is chosen as the solution.  
-\subsubsection{Data Preparation}
+\subsubsection{Data Preparation}\label{data preparation}
 \paragraph{}There are three major factors that will influence the configuration of the data sets configuration in memory space.\\
 1. Amount of Reading$\&$Writing (R/W) operation per thread.\\
 2. Valid scope\\
@@ -696,7 +696,7 @@ we store $\mathit{s_{potential matrix}}$ in one pitch of linear global memory, w
 \subsubsection{Data Transfer Minimization}   
 \paragraph{}The data transfer between the host side and the device side is much more slower than the inner device data transferring, therefore, in our application we minimize the data transferring times, we make data transfer only once for propagation channel matrix $\mathbf{H}$, received symbol vector $\mathbf{y}$ in (\ref{formula 1}) as well as the index list $\mathit{s_{index}}$ at FE stage, we integrate the post processing (\ref{Eu metric}) into path searching kernel function to avoid the transferring of $E_{u}$ in (\ref{Eu metric}).  
 \subsection{Going to Larger MIMO System}
-  \paragraph{}Consider the uplink $32\times 32$ MIMO system with $16$QAM modulation scheme, the path number that need to be searched is $M^{\rho}=16^{5}=1048576$. The maximum number of threads that can be execute in kernel function of GeForce GTX 760 is 12288, therefore we need to consider execute the kernel function serially, in order to avoid device synchronization latency, we synchronize and return the control to host side in order to reduce the synchronization expense. Under this condition we use 12 linear blocks and each block has 1024 threads, we execute the kernel function for 86 times and get the final solution. The same strategy can be applied to CUDA-FCSD for larger size MIMO systems. 
+  \paragraph{}Consider the uplink $32\times 32$ MIMO system with $16$QAM modulation scheme, the path number that need to be searched is $M^{\rho}=16^{5}=1048576$. The maximum number of threads that can be execute in kernel function of GeForce GTX 760 is 12288, therefore we need to consider execute the kernel function serially, in order to avoid device synchronization latency, we synchronize and return the control to host side in order to reduce the synchronization expense. Under this condition we use 12 linear blocks and each block has 1024 threads, we execute the kernel function for 86 times and get the final solution,  when it comes to the large MIMO systems and large signal constellations such as $36\times 36$ $16$QAM, $144\times 144$ $4$QAM, $20\times 20$ $64$QAM, the global memory that need to used to store $s_{pm}$ in section (\ref{data preparation}) will out of bound (2 GB), multiple kernels with each one deal with a small subset of symbol vector candidates and kernel concurrency\cite{nvidia2008programming} can be applied for solving this problem.
 \section{Simulation Results}\label{simulation}
 \subsection{Environment}
 \subsubsection{Device}
@@ -708,7 +708,7 @@ CUDA Driver Version / Runtime Version      6.5 / 6.0\\
 Nsight Eclipse Version 6.5
 \subsection{Performance and Evaluation}
 \begin{table}[htb]
-\caption{Speedup Performance of Different Sizes of MIMO Array for 4 QAM}
+
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
@@ -728,15 +728,14 @@ $64\times 64$& 537.41&1753.30&1940.10&3.26& 3.61 \\
 \hline
 $72\times 72 $&2294.32&8727.69 &9641.80 &3.80 &4.20 \\
 \hline
-\label{speedup1}
-
 \end{tabular}
+\caption{speedup performance of different MIMO systems using 4 QAM}
+\label{speedup1}
 \end{table}
 
 
 
 \begin{table}[htb]
-\caption{Speedup Performance of Different Sizes of MIMO Array for 16 QAM}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
@@ -753,15 +752,13 @@ $20\times 20$&478.40 & 740.50& 978.26& 1.55& 2.04\\
 $32\times 32$&12330.05& 28209.53& 38106.00& 2.29& 3.09\\
 \hline
 $36\times 36$& 13480.01&35240.16&47290.00&2.61& 3.51 \\
-
 \hline
-\label{speedup1}
-
 \end{tabular}
+\caption{speedup performance of different MIMO systems using 16 QAM}
+\label{speedup2}
 \end{table}
 
 \begin{table}[htb]
-\caption{Speedup Performance of Different Sizes of MIMO Array for 64 QAM}
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
@@ -774,13 +771,25 @@ $8\times 8$&12.28& 10.69&13.38 & 0.87&1.09 \\
 $16\times 16$&1460.11 & 2066.08&2689.00& 1.42& 1.84\\
 
 \hline
-\label{speedup1}
 
 \end{tabular}
+\caption{speedup performance of different MIMO systems using 64 QAM}
+\label{speedup3}
 \end{table}
-\paragraph{} We made simulation to different sizes of array and signal constellation and make comparison between GTX 760 and two kinds of CPU, all the operation times we test is based on $1000$ channel realizations, the transmitted data is generated randomly and modulated by $M$ quadrature amplitude modulation (QAM) scheme. In Table \ref{speedup1}, for small size of array and signal constellation, like $8\times 8$ array $4$-QAM, GPU has no advantage over CPU, for small array size and signal constellation, the number of path that need to be searched is relatively small, the CPU has already had a good performance, there is a short time for GPU to "warm up", for data transferring, launch kernel function and host device synchronization, further more, for small number of threads, the memory R/W latency is not well hided. When the size of array or signal constellation size  grows large, a large parallelism is achieved so that the GPU begin to display its data processing power, For example , and with the size of array and signal constellation increasing, this speedup tends to be much more considerable.
+
+\paragraph{} We made simulation to different sizes MIMO systems and signal constellation and comparison is made between Geforce GTX 760 and two kinds of CPU, the speedup performance is presented in table \ref{speedup1}, \ref{speedup2} and \ref{speedup3}. All the operation times we test is based on $1000$ channel realizations, the transmitted data is generated randomly and modulated by $M$ quadrature amplitude modulation (QAM) scheme. In table \ref{speedup1}, for small MIMO systems $8\times 8$ and $16\times 16$, the speed performance of GPU implementation is even worse than that of CPU, for both antenna configurations the the number of path that need to be searched is relatively small ($16$ for $8\times 8$ system and $64$ for $16\times 16$ system), the CPU implementation has already had a good performance, there is a short time for GPU to "warm up", for host-device data transmission, launch kernel function and host device synchronization. Furthermore, for small number of threads, the memory R/W latency is not well hided. For the $32\times 32$ systems, the speed performance of GPU and CPU implementation is close, when comes to larger MIMO systems $48\times 48$, $64\times 64$, $72\times 72$, a large parallelism is achieved so that the GPU begin to display its data processing power, the speedup can be from $2.50$ to $4.20$. 
+\paragraph{}In table \ref{speedup2} and \ref{speedup3}, $16$QAM and $64$QAM is considered, the speedup of GPU implementation is reached from a small MIMO size, For $16\times 16$ system using $16$QAM $1.18$ over modigliani and $1.57$ over monet. For $8\times 8$, $64$QAM, $0.87$ over modigliani and $1.09$ over monet.  This is because for lager signal constellation, the massive parallelism can be reached for relatively small MIMO systems.
+\paragraph{}It can be observed from table \ref{speedup1}, \ref{speedup2} and \ref{speedup3}, GPU implementation shows its speed advantage over CPU implementation for increasing size of MIMO systems and signal constellations, indicating this GPU implementation's suitability for large MIMO system and large signal constellation.
+\paragraph{}Figure \ref{BER curve} shows the Monte Carlo simulation results of bit error rate per bit (BER per bit) performance for different MIMO systems and constellation sizes, we consider uncoded spatial multiplexing MIMO systems, the transmitted binary sequence is generated randomly and  mutually independent, modulated by $M$QAM modulation scheme, the results have been obtained using $100000$ channel realizations and $500$ symbol errors accumulated. 
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.7]{BER_curves.eps}
+\caption{BER performance of different sizes of MIMO systems and modulation scheme by CUDA-FCSD}
+\label{BER curve}
+\end{figure}
 \section{Conclusion}\label{conclusion}
-\paragraph{}This paper presents the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional computation platform, we have reached considerable acceleration of FCSD and this speedup grows larger for large MIMO system. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for computational consumptive simulation in large MIMO area.      
+\paragraph{}This paper presents the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional computation platform. In order to exploit the computational capability of GPU in the simulation of large MIMO systems, the utilization of heterogeneous programming model, thread resource limitation and memory configuration are considered in a comprehensive way. The simulation shows considerable acceleration of GPU implementation of FCSD can be reached for large MIMO systems and large signal constellation sizes while the same BER performance can be obtained. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for computational consumptive simulation in large MIMO area. The future work contains taking into consider the kernel execution and data transferring concurrence in order to optimize memory allocation strategy for large MIMO systems.       
+\newpage
 % conference papers do not normally have an appendix
 
 

@@ -76,7 +76,7 @@
 #define timeused "time.txt"              //the file to store operation time of detection algorithm
 #define GFLOPS "GFLOPS.txt"          //the file to store the Giga flops operated per second
 #define miniteration 1e4               //the minimum number of channel realizations
-#define minSymbolError 100          //the minimum number of symbol error
+#define minSymbolError 200          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
 #define SNRnum 2                     //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);

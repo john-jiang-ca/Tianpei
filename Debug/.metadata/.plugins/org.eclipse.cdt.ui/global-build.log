@@ -345,3 +345,406 @@ Invoking: NVCC Linker
 /usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
 Finished building target: FCSD_GPU_48_4
  
+14:52:12 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+14:52:15 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:52:34 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:52:36 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:52:55 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:53:28 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:58:12 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+14:58:16 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:58:27 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+14:59:38 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+15:09:45 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+15:09:49 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+15:10:18 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+15:10:28 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:05:37 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+16:05:41 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:05:51 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:06:09 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:08:30 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+16:08:34 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:08:42 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:09:30 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:12:19 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:12:21 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:12:27 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:12:28 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:15:14 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:16:24 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:18:48 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+16:21:16 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+../src/FCSD_decoding.cu(68): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(69): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(75): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(76): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(287): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(287): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(338): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(367): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(368): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(401): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(403): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 
+01:21:52 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/fullfactorial.o ./src/row_column_transformation.o   -lcublas -lgsl
+Finished building target: FCSD_GPU_48_4
+ 

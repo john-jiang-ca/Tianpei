@@ -1,0 +1,3 @@
+==4218== NVPROF is profiling process 4218, command: /home/tchen44/code/Tianpei/FCSD_GPU_48_4/Debug/FCSD_GPU_48_4
+==4218== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==4218== Generated result file: /home/tchen44/code/Tianpei/Debug/.metadata/.plugins/com.nvidia.viper/launch/12/api.log0

@@ -1,4 +1,4 @@
-16:35:04 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+01:21:52 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
 make all 
 Building file: ../src/communication_line.cpp
 Invoking: NVCC Compiler
@@ -12,5 +12,5 @@ Invoking: NVCC Linker
 Finished building target: FCSD_GPU_48_4
  
 
-16:35:05 Build Finished (took 810ms)
+01:21:53 Build Finished (took 818ms)
 

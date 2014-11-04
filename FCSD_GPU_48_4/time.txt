@@ -1,0 +1,147 @@
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 8.750000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 8.750000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 1.090000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.090000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 1.090000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 6.330000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.110000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 6.330000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 57.700000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 48.000000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 57.700000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 2.820000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.090000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 2.820000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 4.240000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 4.240000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 52.530000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 47.080000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 52.530000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 5.350000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.080000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 5.350000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 0.300000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 0.300000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 50.680000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 47.810000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 50.680000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 2.620000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.090000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 2.620000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 5.830000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.110000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 5.830000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 59.550000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 48.120000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 59.550000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 0.320000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 0.320000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 4.790000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 4.790000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 53.810000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 47.850000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 53.810000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 10.660000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 10.660000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 3.860000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.110000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 3.860000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 54.070000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 47.550000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 54.070000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 8.470000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.090000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 8.470000: 
+this is for 48 X 48
+this is for 4 QAM
+the total time is= 4.360000 
+the total duration of CPU kernel is 5740526775826685.000000: 
+the total duration of GPU kernel is 0.100000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 4.360000: 

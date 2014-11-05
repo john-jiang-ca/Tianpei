@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="com.nvidia.cuda.ide.configuration.debug.23869303;com.nvidia.cuda.ide.configuration.debug.23869303.;nvcc.compiler.base.410403839;nvcc.compiler.input.c.1044852437">
+<instance id="com.nvidia.cuda.ide.configuration.debug.871005812;com.nvidia.cuda.ide.configuration.debug.871005812.;nvcc.compiler.base.64705237;nvcc.compiler.input.c.1205840">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include"/>
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../include/c++/4.8.3"/>
@@ -9,6 +9,7 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
+<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -18,6 +19,7 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
+<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -266,7 +268,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.configuration.debug.23869303;com.nvidia.cuda.ide.configuration.debug.23869303.;nvcc.compiler.base.410403839;nvcc.compiler.input.cpp.1700861826">
+<instance id="com.nvidia.cuda.ide.configuration.debug.871005812;com.nvidia.cuda.ide.configuration.debug.871005812.;nvcc.compiler.base.64705237;nvcc.compiler.input.cpp.2098798689">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include"/>
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../include/c++/4.8.3"/>
@@ -275,6 +277,7 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
+<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -284,6 +287,7 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
+<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -532,7 +536,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.configuration.debug.23869303;com.nvidia.cuda.ide.configuration.debug.23869303.;nvcc.compiler.base.410403839;nvcc.compiler.input.cu.170694445">
+<instance id="com.nvidia.cuda.ide.configuration.debug.871005812;com.nvidia.cuda.ide.configuration.debug.871005812.;nvcc.compiler.base.64705237;nvcc.compiler.input.cu.236710002">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include"/>
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../include/c++/4.8.3"/>
@@ -541,6 +545,7 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
+<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -550,6 +555,7 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
+<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -798,7 +804,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.configuration.release.653015385;com.nvidia.cuda.ide.configuration.release.653015385.;nvcc.compiler.base.1280963999;nvcc.compiler.input.c.1915709974">
+<instance id="com.nvidia.cuda.ide.configuration.release.1714412487;com.nvidia.cuda.ide.configuration.release.1714412487.;nvcc.compiler.base.62337029;nvcc.compiler.input.cpp.1380397038">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include"/>
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../include/c++/4.8.3"/>
@@ -1057,7 +1063,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.configuration.release.653015385;com.nvidia.cuda.ide.configuration.release.653015385.;nvcc.compiler.base.1280963999;nvcc.compiler.input.cu.1932812041">
+<instance id="com.nvidia.cuda.ide.configuration.release.1714412487;com.nvidia.cuda.ide.configuration.release.1714412487.;nvcc.compiler.base.62337029;nvcc.compiler.input.cu.1883691089">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include"/>
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../include/c++/4.8.3"/>
@@ -1066,6 +1072,7 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
+<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -1075,6 +1082,7 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
+<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -1323,7 +1331,7 @@
 <definedSymbol symbol="__STDC_NO_THREADS__=1"/>
 </collector>
 </instance>
-<instance id="com.nvidia.cuda.ide.configuration.release.653015385;com.nvidia.cuda.ide.configuration.release.653015385.;nvcc.compiler.base.1280963999;nvcc.compiler.input.cpp.829387647">
+<instance id="com.nvidia.cuda.ide.configuration.release.1714412487;com.nvidia.cuda.ide.configuration.release.1714412487.;nvcc.compiler.base.62337029;nvcc.compiler.input.c.1372086310">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include"/>
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/../../../../include/c++/4.8.3"/>

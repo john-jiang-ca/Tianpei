@@ -198,7 +198,7 @@ int main(void) {
 	fclose(cfile3);
 	fclose(cfile4);
 	time1 = clock();
-	for (count = 0; count <=SNRnum; count++) {
+	for (count = SNRnum; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -388,9 +388,9 @@ int main(void) {
 			pH_cu = NULL;
 			free(symOut_cu);
 			symOut_cu = NULL;
-		} while ((symbolError < minSymbolError) || (iteration < miniteration));
+//		} while ((symbolError < minSymbolError) || (iteration < miniteration));
 
-//		}while(iteration<1);
+		}while(iteration<1);
 		printf("now we reach the SNR per bit point %d \n", 2*count);
 		printf("\n");
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));

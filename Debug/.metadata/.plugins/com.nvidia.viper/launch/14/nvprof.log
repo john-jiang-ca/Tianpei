@@ -1,2 +1,2 @@
-==4513== NVPROF is profiling process 4513, command: /home/tchen44/code/Tianpei/FCSD_GPU_48_4/Debug/FCSD_GPU_48_4
-==4513== Generated result file: /home/tchen44/code/Tianpei/Debug/.metadata/.plugins/com.nvidia.viper/launch/14/api.log0
+==10165== NVPROF is profiling process 10165, command: /home/tchen44/code/Tianpei/FCSD_GPU_48_4/Debug/FCSD_GPU_48_4
+==10165== Generated result file: /home/tchen44/code/Tianpei/Debug/.metadata/.plugins/com.nvidia.viper/launch/14/api.log

@@ -87,6 +87,10 @@ S.~Grauer-Gray, W.~Killian, R.~Searles, and J.~Cavazos, ``Accelerating
 \bibitem{nvidia2008programming}
 C.~Nvidia, ``Programming guide,'' 2008.
 
+\bibitem{cook2013cuda}
+S.~Cook, \emph{CUDA programming: a developer's guide to parallel computing with
+  GPUs}.\hskip 1em plus 0.5em minus 0.4em\relax Newnes, 2013.
+
 \bibitem{golub2012matrix}
 G.~H. Golub and C.~F. Van~Loan, \emph{Matrix computations}.\hskip 1em plus
   0.5em minus 0.4em\relax JHU Press, 2012, vol.~3.

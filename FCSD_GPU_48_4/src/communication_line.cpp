@@ -155,7 +155,7 @@ int main(void) {
 	printf("the program for %dX%d %d QAM begin!!\n", MATRIX_SIZE,MATRIX_SIZE,M);
 	printf("the SNR per bit is:\n");
 	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
-	for(count1=1;count1<=SNRnum;count1++)
+	for(count1=0;count1<=SNRnum;count1++)
 	{
 	printf("%d ", 2*count1);
 	}
@@ -225,12 +225,12 @@ int main(void) {
 			preceived = gsl_vector_complex_calloc(Nr);
 			pH = gsl_matrix_complex_calloc(Nr, Nt);
 			symOut = gsl_vector_complex_calloc(Nt);
-			ptransmitted_cu = (cuComplex*) malloc(Nt * sizeof(cuComplex));
-			psymbolconstellation_cu = (cuComplex*) malloc(
+			ptransmitted_cu = (cuComplex*) calloc(1,Nt * sizeof(cuComplex));
+			psymbolconstellation_cu = (cuComplex*) calloc(1,
 					M * sizeof(cuComplex));
-			sigRec = (cuComplex*) malloc(Nr * sizeof(cuComplex));
-			pH_cu = (cuComplex*) malloc(Nr * Nt * sizeof(cuComplex));
-			symOut_cu = (cuComplex*) malloc(Nt * sizeof(cuComplex));
+			sigRec = (cuComplex*) calloc(1,Nr * sizeof(cuComplex));
+			pH_cu = (cuComplex*) calloc(1,Nr * Nt * sizeof(cuComplex));
+			symOut_cu = (cuComplex*) calloc(1,Nt * sizeof(cuComplex));
 			//data generation and channel generation
 			data_generator(pdata, pr, M); //pdata is the indexes
 			for (count2 = 0; count2 < Nt; count2++) {
@@ -390,8 +390,9 @@ int main(void) {
 			symOut_cu = NULL;
 		} while ((symbolError < minSymbolError) || (iteration < miniteration));
 
-//		}while(iteration<1e1);
+//		}while(iteration<1e2);
 		printf("now we reach the SNR per bit point %d", 2*count);
+		printf("\n");
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
 		fprintf(cfile1, "%f ", BitErrorRate);

@@ -32,7 +32,6 @@
 <definedSymbol symbol="__ATOMIC_RELEASE=3"/>
 <definedSymbol symbol="__ATOMIC_ACQ_REL=4"/>
 <definedSymbol symbol="__ATOMIC_CONSUME=1"/>
-<definedSymbol symbol="__OPTIMIZE__=1"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="_LP64=1"/>
 <definedSymbol symbol="__LP64__=1"/>
@@ -213,6 +212,7 @@
 <definedSymbol symbol="__REGISTER_PREFIX__="/>
 <definedSymbol symbol="__USER_LABEL_PREFIX__="/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
+<definedSymbol symbol="__NO_INLINE__=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1"/>
@@ -298,7 +298,6 @@
 <definedSymbol symbol="__ATOMIC_RELEASE=3"/>
 <definedSymbol symbol="__ATOMIC_ACQ_REL=4"/>
 <definedSymbol symbol="__ATOMIC_CONSUME=1"/>
-<definedSymbol symbol="__OPTIMIZE__=1"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="_LP64=1"/>
 <definedSymbol symbol="__LP64__=1"/>
@@ -479,6 +478,7 @@
 <definedSymbol symbol="__REGISTER_PREFIX__="/>
 <definedSymbol symbol="__USER_LABEL_PREFIX__="/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
+<definedSymbol symbol="__NO_INLINE__=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1"/>
@@ -564,7 +564,6 @@
 <definedSymbol symbol="__ATOMIC_RELEASE=3"/>
 <definedSymbol symbol="__ATOMIC_ACQ_REL=4"/>
 <definedSymbol symbol="__ATOMIC_CONSUME=1"/>
-<definedSymbol symbol="__OPTIMIZE__=1"/>
 <definedSymbol symbol="__FINITE_MATH_ONLY__=0"/>
 <definedSymbol symbol="_LP64=1"/>
 <definedSymbol symbol="__LP64__=1"/>
@@ -745,6 +744,7 @@
 <definedSymbol symbol="__REGISTER_PREFIX__="/>
 <definedSymbol symbol="__USER_LABEL_PREFIX__="/>
 <definedSymbol symbol="__GNUC_GNU_INLINE__=1"/>
+<definedSymbol symbol="__NO_INLINE__=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2=1"/>
 <definedSymbol symbol="__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4=1"/>

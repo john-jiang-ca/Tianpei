@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  3 NOV 2014 00:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  5 NOV 2014 18:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,7 +379,7 @@ File: High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf Graphic file
 Package pdftex.def Info: High_view_of_CUDA_GPU_microarchitecture-eps-converted-
 to.pdf used on input line 549.
 (pdftex.def)             Requested size: 302.33183pt x 244.51538pt.
- [9 <./High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>] [10]
+ [9] [10 <./High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FCSD_tree_searching.eps>
 (epstopdf)                    date: 2014-10-31 00:28:54
 (epstopdf)                    size: 724874 bytes
@@ -413,6 +413,7 @@ Overfull \hbox (35.04898pt too wide) in paragraph at lines 631--641
  [][] 
  []
 
+[14]
 Package epstopdf Info: Source file: <CUDA_FCSD_block_diagram.eps>
 (epstopdf)                    date: 2014-10-31 00:52:36
 (epstopdf)                    size: 1723339 bytes
@@ -424,7 +425,8 @@ df>
 s-converted-to.pdf CUDA_FCSD_block_diagram.eps>
 (epstopdf)             \includegraphics on input line 648.
 Package epstopdf Info: Output file is already uptodate.
-<CUDA_FCSD_block_diagram-eps-converted-to.pdf, id=72, 554.07pt x 289.08pt>
+
+<CUDA_FCSD_block_diagram-eps-converted-to.pdf, id=75, 554.07pt x 289.08pt>
 File: CUDA_FCSD_block_diagram-eps-converted-to.pdf Graphic file (type pdf)
 
 <use CUDA_FCSD_block_diagram-eps-converted-to.pdf>
@@ -436,42 +438,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 653--655
 
  []
 
-[14] [15 <./CUDA_FCSD_block_diagram-eps-converted-to.pdf>]
+[15 <./CUDA_FCSD_block_diagram-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 660--663
 
  []
 
-
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 668--672
 
  []
 
-[16]
+
+Overfull \hbox (13.26291pt too wide) in paragraph at lines 672--673
+\OT1/cmr/m/n/12 small cache for spe-cial mem-ory space (tex-ture, con-stant). T
+hus the mem-ory reading$&$writing
+ []
+
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 673--674
 
  []
 
-[17]
 
-Package caption Warning: \label without proper \caption on input line 690.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `amount of R/W operation' on page 18 undefined on inpu
-t line 675.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 684--684
+Underfull \hbox (badness 10000) in paragraph at lines 682--682
 []|\OT1/cmr/m/n/12 R/W op-er-a-
  []
 
 
-Overfull \hbox (69.40602pt too wide) in paragraph at lines 680--691
+Overfull \hbox (69.40602pt too wide) in paragraph at lines 678--687
  [][] 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 691--692
 
  []
 
@@ -484,7 +483,7 @@ pdf>
 (epstopdf)                    size: 75742 bytes
 (epstopdf)             Command: <repstopdf --outfile=coalescing_global_memory-e
 ps-converted-to.pdf coalescing_global_memory.eps>
-(epstopdf)             \includegraphics on input line 698.
+(epstopdf)             \includegraphics on input line 695.
 Package epstopdf Info: Output file is already uptodate.
 
 <coalescing_global_memory-eps-converted-to.pdf, id=92, 697.60625pt x 441.65pt>
@@ -492,20 +491,20 @@ File: coalescing_global_memory-eps-converted-to.pdf Graphic file (type pdf)
 
 <use coalescing_global_memory-eps-converted-to.pdf>
 Package pdftex.def Info: coalescing_global_memory-eps-converted-to.pdf used on 
-input line 698.
+input line 695.
 (pdftex.def)             Requested size: 439.49426pt x 278.24097pt.
  [19] [20 <./coalescing_global_memory-eps-converted-to.pdf>] [21] [22]
-Overfull \hbox (60.68729pt too wide) in paragraph at lines 721--740
+Overfull \hbox (60.68729pt too wide) in paragraph at lines 718--737
  [][] 
  []
 
 
-Overfull \hbox (66.56223pt too wide) in paragraph at lines 748--765
+Overfull \hbox (66.56223pt too wide) in paragraph at lines 745--762
  [][] 
  []
 
 
-Overfull \hbox (60.68729pt too wide) in paragraph at lines 771--784
+Overfull \hbox (60.68729pt too wide) in paragraph at lines 768--781
  [][] 
  []
 
@@ -518,49 +517,45 @@ Package epstopdf Info: Source file: <BER_curves.eps>
 (epstopdf)                    size: 9231 bytes
 (epstopdf)             Command: <repstopdf --outfile=BER_curves-eps-converted-t
 o.pdf BER_curves.eps>
-(epstopdf)             \includegraphics on input line 794.
+(epstopdf)             \includegraphics on input line 791.
 Package epstopdf Info: Output file is already uptodate.
  <BER_curves-eps-converted-to.pdf, id=115, 461.725pt x 347.2975pt>
 File: BER_curves-eps-converted-to.pdf Graphic file (type pdf)
 
 <use BER_curves-eps-converted-to.pdf>
-Package pdftex.def Info: BER_curves-eps-converted-to.pdf used on input line 794
+Package pdftex.def Info: BER_curves-eps-converted-to.pdf used on input line 791
 .
 (pdftex.def)             Requested size: 300.11769pt x 225.74069pt.
- [25 <./BER_curves-eps-converted-to.pdf>]
-[26] (./draft.bbl [27]) [28] (./draft.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [25] [26 <./BER_curves-eps-converted-to.pdf>] [27] (./draft.bbl [28]) [29] (./
+draft.aux) ) 
 Here is how much of TeX's memory you used:
- 4338 strings out of 493326
- 63605 string characters out of 6140501
- 128285 words of memory out of 5000000
- 7684 multiletter control sequences out of 15000+600000
+ 4339 strings out of 493326
+ 63617 string characters out of 6140501
+ 130243 words of memory out of 5000000
+ 7685 multiletter control sequences out of 15000+600000
  14680 words of font info for 55 fonts, out of 8000000 for 9000
  953 hyphenation exceptions out of 8191
- 38i,14n,38p,1373b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on draft.pdf (28 pages, 455574 bytes).
+ 38i,14n,38p,1471b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on draft.pdf (29 pages, 456599 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
+ 193 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

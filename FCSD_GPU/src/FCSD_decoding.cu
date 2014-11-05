@@ -35,8 +35,8 @@
 #include<cuda_profiler_api.h>
 #include<device_functions.h>
 #define threadNum 1024
-#define blockNum 16
-#define stride 63
+#define blockNum 1
+#define stride 0
 /*
  * in this version I applied colesced memory accesss to all the vector and matrix, with all the matrix stored in row major different threads reading one column
  * with all the matrix stored in column major, different threads reading one row
@@ -164,7 +164,6 @@ __global__ void FEpath(
 				} else if (M == 16)  //16QAM
 						{
 
-
 					d = sqrt(float(3) / (2 * (float) (Nt * (M - 1))));
 					if (s_temp.x < (-2 * d)) {
 						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
@@ -200,53 +199,57 @@ __global__ void FEpath(
 					d = sqrt(float(3) / (2 * (float) (Nt * (M - 1))));
 					//real part
 					if (s_temp.x < (-6 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-7*d);
-					} else if (s_temp.x < (-4 * d)
-							&& s_temp.x > (-6 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-5*d);
-					} else if (s_temp.x < (-2 * d)
-							&& s_temp.x > (-4 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-3*d);
-					} else if (s_temp.x < (0)
-							&& s_temp.x > (-2 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(-d);
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(-7 * d);
+					} else if (s_temp.x < (-4 * d) && s_temp.x > (-6 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(-5 * d);
+					} else if (s_temp.x < (-2 * d) && s_temp.x > (-4 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(-3 * d);
+					} else if (s_temp.x < (0) && s_temp.x > (-2 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(-d);
 					}
 					if (s_temp.x > (6 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(7*d);
-					} else if (s_temp.x < (6 * d)
-							&& s_temp.x > (4 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(5*d);
-					} else if (s_temp.x < (4 * d)
-							&& s_temp.x > (2 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(3*d);
-					} else if (s_temp.x < (2 * d)
-							&& s_temp.x > (0)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x=(d);
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(7 * d);
+					} else if (s_temp.x < (6 * d) && s_temp.x > (4 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(5 * d);
+					} else if (s_temp.x < (4 * d) && s_temp.x > (2 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(3 * d);
+					} else if (s_temp.x < (2 * d) && s_temp.x > (0)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].x =
+								(d);
 					}
 					//image part
 					if (s_temp.y < (-6 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-7*d);
-					} else if (s_temp.y < (-4 * d)
-							&& s_temp.y > (-6 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-5*d);
-					} else if (s_temp.y < (-2 * d)
-							&& s_temp.y > (-4 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-3*d);
-					} else if (s_temp.y < (0)
-							&& s_temp.y > (-2 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(-d);
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(-7 * d);
+					} else if (s_temp.y < (-4 * d) && s_temp.y > (-6 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(-5 * d);
+					} else if (s_temp.y < (-2 * d) && s_temp.y > (-4 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(-3 * d);
+					} else if (s_temp.y < (0) && s_temp.y > (-2 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(-d);
 					}
 					if (s_temp.y > (6 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(7*d);
-					} else if (s_temp.y < (6 * d)
-							&& s_temp.y > (4 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(5*d);
-					} else if (s_temp.y < (4 * d)
-							&& s_temp.y > (2 * d)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(3*d);
-					} else if (s_temp.y < (2 * d)
-							&& s_temp.y > (0)) {
-						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y=(d);
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(7 * d);
+					} else if (s_temp.y < (6 * d) && s_temp.y > (4 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(5 * d);
+					} else if (s_temp.y < (4 * d) && s_temp.y > (2 * d)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(3 * d);
+					} else if (s_temp.y < (2 * d) && s_temp.y > (0)) {
+						s_potential_matrix[IDC2D(count1,index*blockNum*threadNum+tx,pathNum)].y =
+								(d);
 					}
 
 				}
@@ -316,10 +319,6 @@ __global__ void MED(float *Eu,   //the minimum Euclidean distance
 	}
 }
 
-//__syncthreads();
-
-//__syncthreads();
-
 //host
 
 void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factorization store in device side
@@ -336,86 +335,39 @@ void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factor
 //brute force search determine the vector results of the full expansion
 	int rho = ceil(sqrt(Nt) - 1);
 	int count1, count2;
-//	cuComplex *ss;
-//	ss=(cuComplex*)malloc(MATRIX_SIZE*sizeof(cuComplex));
-//	cuComplex *s_sub;
-//	s_sub=(cuComplex*)malloc(pow(M,rho)*rho*sizeof(cuComplex));   //all the possible full expansion sub vector
 	int pathNum = pow(M, rho);
-//	int *Eu_mini_index=(int*)malloc(sizeof(int));
-//	int *d_s_sub_index;
-//	int *s_sub_index=(int*)calloc(1,rho*pow(M,rho)*sizeof(int));
 	int *s_sub_index, *d_s_sub_index;
-//	cudaHostAlloc((void**) &s_sub_index,rho*pathNum*sizeof(int),cudaHostAllocDefault);
 	s_sub_index = (int*) calloc(1, rho * pathNum * sizeof(int));
 	fullfact(rho, M, s_sub_index); //get  the indexes of all the possible rho length symbol vectors
-//	int blockNum=BLOCK_NUM;   //determined by the path number
-//	int pathNum=pow(M,rho);  //number of search path
-//	int threadNum=ceil(pathNum/(blockNum*stride)); //determined by the path number
 	float *d_Eu;
 	cuComplex *d_s_potential_matrix, *d_s_kernel;
-//	Eu=(float*)calloc(1,blockNum*sizeof(float));
-//    cudaHostAlloc((void**) &Eu,blockNum*sizeof(float),cudaHostAllocDefault);
-//    cudaHostAlloc((void**) &s_potential_matrix,MATRIX_SIZE*blockNum*sizeof(cuComplex),cudaHostAllocDefault);
-//	cuComplex *s_potential_matrix=(cuComplex*)calloc(1,pathNum*Nt*sizeof(cuComplex));
-//	cuComplex *s_hat=(cuComplex*)calloc(1,Nt*sizeof(cuComplex));
-//	cuComplex  *d_s_potential_matrix;
-//	cudaMemcpy(s_hat,d_s_hat,Nt*sizeof(MATRIX_SIZE),cudaMemcpyDeviceToHost);
-
-//	int *j;
-//	j=(int*)malloc(sizeof(int));
 	cublasHandle_t handle;
 	cublasStatus_t ret;
 	cudaError_t error;
 //		size_t pitch_R,pitch_potential,pitch_index;
 	ret = cublasCreate(&handle);
-//	    error=cudaMalloc((void**) &d_R, MATRIX_SIZE*MATRIX_SIZE*sizeof(cuComplex));
 	error = cudaMalloc((void**) &d_s_sub_index, rho * pathNum * sizeof(int));
 	error = cudaMalloc((void**) &d_s_potential_matrix,
 			pathNum * Nt * sizeof(cuComplex));
-//		printf("%s\n",cudaGetErrorString(cudaGetLastError()));
-//		cudaMemset(d_s_potential_matrix,0,pathNum*Nt*sizeof(cuComplex));
-//		error=cudaMalloc((void**) &d_list, MATRIX_SIZE*sizeof(int));
 	error = cudaMalloc((void**) &d_Eu, pathNum * sizeof(float));
-//		printf("%s\n",cudaGetErrorString(cudaGetLastError()));
 	error = cudaMalloc((void**) &d_s_kernel, MATRIX_SIZE * sizeof(cuComplex));
-//        error=cudaMalloc((void**) &d_psymbolconstellation, M*sizeof(cuComplex));
 	clock_t start, end;
 	start = clock();
-//        cuComplex *R_constant=(cuComplex*)calloc(1,MATRIX_SIZE*MATRIX_SIZE*sizeof(cuComplex));
 	cudaMemcpyToSymbol(d_R, R, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex), 0,
 			cudaMemcpyDeviceToDevice);
-//    	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
 	cudaMemcpyToSymbol(d_psymbolconstellation, psymbolconstellation,
 			M * sizeof(cuComplex), 0, cudaMemcpyHostToDevice);
-//    	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
 	cudaMemcpyToSymbol(d_constant_shat, d_s_hat,
 			MATRIX_SIZE * sizeof(cuComplex), 0, cudaMemcpyDeviceToDevice);
-//    	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
 	cudaMemcpyToSymbol(d_list, list, MATRIX_SIZE * sizeof(int), 0,
 			cudaMemcpyHostToDevice);
-//    	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
-//        error=cudaMemcpy(d_R,R,MATRIX_SIZE*MATRIX_SIZE*sizeof(cuComplex),cudaMemcpyDeviceToDevice);
-//		error=cudaMemcpy(d_psymbolconstellation, psymbolconstellation, M*sizeof(cuComplex),cudaMemcpyHostToDevice);
-//		error=cudaMemcpy(d_s_sub_index, s_sub_index,rho*pathNum*sizeof(int),cudaMemcpyHostToDevice);
-//		error=cudaMemcpy(d_list, list, Nt*(sizeof(int)),cudaMemcpyHostToDevice);
 	int sharedMem;
 	sharedMem = 1 * sizeof(cuComplex);
 	float duration;
-//   float *Eu_mini;
-//   cudaMalloc((void**) &Eu_mini,sizeof(float));
-//   cudaMemset(Eu_mini,0,sizeof(float));
 	error = cudaDeviceSynchronize();
 	cudaMemcpy(d_s_sub_index, s_sub_index, rho * (pathNum) * sizeof(int),
 			cudaMemcpyHostToDevice);
-//   cudaDeviceReset();
-
-//   if(error!=cudaSuccess)
-//   {
-//	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
-//   }
 	for (count1 = 0; count1 <= stride; count1++) {
-
-//	cudaMemcpyAsync(s_potential_matrix,d_s_potential_matrix,MATRIX_SIZE*(pathNum)*sizeof(cuComplex),cudaMemcpyHostToDevice,0);
 		FEpath<<<blockNum, threadNum,0,0>>>(d_s_potential_matrix,d_s_sub_index,rho,pathNum, d_Eu, M,count1);
 //	 cublasIsamin(handle,blockNum,d_Eu,1,Eu_mini_index);
 //	cudaMemcpyAsync(s_potential_matrix,d_s_potential_matrix,MATRIX_SIZE*(blockNum)*sizeof(cuComplex),cudaMemcpyDeviceToHost,0);
@@ -423,13 +375,6 @@ void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factor
 //	 if(error!=cudaSuccess)
 //	 {
 //	printf("%s\n",cudaGetErrorString(cudaGetLastError()));
-//	 }
-
-//    for(count2=0;count2<Nt;count2++)
-//    {
-//     s_kernel[list[count2]-1]=s_potential_matrix[IDC2D((MATRIX_SIZE-count2-1),(*Eu_mini_index-1),blockNum)];
-//    }
-//	cudaMemcpyAsync(Eu,d_Eu,(pathNum)*sizeof(float),cudaMemcpyDeviceToHost,0);
 
 	}
 	MED<<<1,1>>>(d_Eu,d_s_potential_matrix,d_s_kernel,pathNum);
@@ -437,55 +382,18 @@ void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factor
 	cudaMemcpy(s_kernel, d_s_kernel, MATRIX_SIZE * sizeof(cuComplex),
 			cudaMemcpyDeviceToHost);
 	error = cudaDeviceSynchronize();
-
-//	error=cudaMemcpy(s_potential_matrix,d_s_potential_matrix, Nt*sizeof(cuComplex)*pathNum,cudaMemcpyDeviceToHost);
 	end = clock();
-//	cudaProfilerStop();
 	duration = double(end - start);
-
-//	printf("hey %0.4f ", duration);
-//	printf("\n");
-//    memcpy(Eu+0,Eu1,pathNum*sizeof(float));
-//    memcpy(Eu+pathNum,Eu2,pathNum*sizeof(float));
-//    memcpy(Eu+pathNum/2,Eu3,pathNum*sizeof(float));
-//    memcpy(Eu+(pathNum*3)/4,Eu4,pathNum*sizeof(float));
-
-//	printf("Eu_num is %d", Eu_num);
-//    error=cudaMemcpy(s_potential_matrix,d_s_potential_matrix,pathNum*Nt*sizeof(cuComplex),cudaMemcpyDeviceToHost);
-
-//    printf("all the potential symbol vector is:\n");
-//    for(count1=0;count1<blockNum;count1++)
-//    {
-//    	for(int count2=0;count2<Nt;count2++)
-//    	{
-//    		printf("%0.4f%+0.4fi ", s_potential_matrix[IDC2D(count2,count1,blockNum)].x,s_potential_matrix[IDC2D(count2,count1,blockNum)].y);
-//    	}
-//    	printf("\n");
-//    }
-
-//			    printf("the s_kernel is :\n");
-//			    for(count1=0;count1<Nt;count1++)
-//			    {
-//			    	printf("%0.4f%+0.4fi ", s_kernel[count1].x, s_kernel[count1].y);
-//			    }
-//			    printf("\n");
-
 	free(s_sub_index);
 	s_sub_index = NULL;
 	cudaFree(d_s_sub_index);
 	d_s_sub_index = NULL;
-//			   	cudaFree(d_list);
-//			   	cudaFreeHost(Eu);
 	cudaFree(d_Eu);
 	d_Eu = NULL;
-//			   	cudaFreeHost(s_potential_matrix);
 	cudaFree(d_s_potential_matrix);
 	d_s_potential_matrix = NULL;
 	cudaFree(d_s_kernel);
 	d_s_kernel = NULL;
-//			   	cudaFree(d_psymbolconstellation);
-//			   	free(Eu_mini_index);
-//			   	cudaFree(d_R);
-
+     cublasDestroy(handle);
 }
 

@@ -1,3 +1,2 @@
-==3118== NVPROF is profiling process 3118, command: /home/tchen44/code/Tianpei/FCSD_GPU_48_4/Debug/FCSD_GPU_48_4
-==3118== Warning: Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==3118== Generated result file: /home/tchen44/code/Tianpei/Debug/.metadata/.plugins/com.nvidia.viper/launch/6/api.log0
+==30673== NVPROF is profiling process 30673, command: /home/tchen44/code/Tianpei/FCSD_GPU_48_4/Debug/FCSD_GPU_48_4
+==30673== Generated result file: /home/tchen44/code/Tianpei/Debug/.metadata/.plugins/com.nvidia.viper/launch/6/api.log0

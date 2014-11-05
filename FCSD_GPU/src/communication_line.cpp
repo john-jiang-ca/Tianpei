@@ -361,7 +361,7 @@ int main(void) {
 //        	 errors=1;
 				bitError += errors;
 			}
-//			printf("the iteration time is %d\n", iteration);
+			printf("the iteration time is %d\n", iteration);
 			gsl_vector_ulong_free(pdata);
 			pdata = NULL;
 			gsl_vector_ulong_free(pgraydata);

@@ -3,20 +3,6 @@
 this is the symbol error rate of 48 X 48 MIMO 
 this is 4 QAM modulation
 the SNR per bit is:
-0 2 4 6 
-1.000000 1.584893 2.511886 3.981072 
-0.001042 0.000055 
-
-this is the symbol error rate of 48 X 48 MIMO 
-this is 4 QAM modulation
-the SNR per bit is:
-0 2 4 
-1.000000 1.584893 2.511886 
-0.000652 
-
-this is the symbol error rate of 48 X 48 MIMO 
-this is 4 QAM modulation
-the SNR per bit is:
 0 2 4 
 1.000000 1.584893 2.511886 
 0.000000 
@@ -68,7 +54,56 @@ this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 
 1.000000 1.584893 2.511886 
-0.000000 
+0.243750 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.439583 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.428229 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.427271 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.433917 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.426187 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.431563 
+
+this is the symbol error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.421917 
 
 this is the symbol error rate of 48 X 48 MIMO 
 this is 4 QAM modulation
@@ -103,28 +138,7 @@ this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 
 1.000000 1.584893 2.511886 
-0.000000 
 
-this is the symbol error rate of 48 X 48 MIMO 
-this is 4 QAM modulation
-the SNR per bit is:
-0 2 4 
-1.000000 1.584893 2.511886 
-0.000000 
-
-this is the symbol error rate of 48 X 48 MIMO 
-this is 4 QAM modulation
-the SNR per bit is:
-0 2 4 
-1.000000 1.584893 2.511886 
-0.000000 
-
-this is the symbol error rate of 48 X 48 MIMO 
-this is 4 QAM modulation
-the SNR per bit is:
-0 2 4 
-1.000000 1.584893 2.511886 
-0.000000 
 
 this is the symbol error rate of 48 X 48 MIMO 
 this is 4 QAM modulation
@@ -140,7 +154,21 @@ the SNR per bit is:
 1.000000 1.584893 2.511886 
 0.000000 
 
-this is the symbol error rate of 48 X 48 MIMO 
+this is the symbol error rate of 16 X 16 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000687 
+
+this is the symbol error rate of 72 X 72 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000 
+
+this is the symbol error rate of 72 X 72 MIMO 
 this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 
@@ -152,23 +180,16 @@ this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 
 1.000000 1.584893 2.511886 
-0.000000 
 
-this is the symbol error rate of 48 X 48 MIMO 
+
+this is the symbol error rate of 32 X 32 MIMO 
 this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 
 1.000000 1.584893 2.511886 
-0.000000 
+0.003259 
 
-this is the symbol error rate of 48 X 48 MIMO 
-this is 4 QAM modulation
-the SNR per bit is:
-0 2 4 
-1.000000 1.584893 2.511886 
-0.000000 
-
-this is the symbol error rate of 48 X 48 MIMO 
+this is the symbol error rate of 32 X 32 MIMO 
 this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 

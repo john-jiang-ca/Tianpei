@@ -266,19 +266,7 @@ __global__ void MED(float *Eu,   //the minimum Euclidean distance
 			Eu_mini_index = count1;
 			Eu_mini_value_temp = Eu[count1];
 		}
-//	Eu_mini=Eu_mini_value;
 	}
-//printf("the temp is %d:\n", temp);
-//printf("the Eu_mini_value is %f:\n", Eu_mini_value[0]);
-//printf("the Eu_mini_value_temp is %f:\n", Eu_mini_value_temp);
-//printf("the Eu[0] is %f:\n", Eu[0]);
-//printf("the Eu_mini_index is %d:\n", Eu_mini_index);
-//for(count1=0;count1<3*threadNum;count1++)
-//{
-//printf("%f ", Eu[count1]);
-//}
-
-//__syncthreads();
 
 	for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
 		s_kernel[d_list[count1] - 1] =
@@ -288,11 +276,6 @@ __global__ void MED(float *Eu,   //the minimum Euclidean distance
 //	printf("the Eu_mini_value is %f16:\n", Eu_mini_value[0]);
 	}
 }
-
-//__syncthreads();
-
-//__syncthreads();
-
 //host
 
 void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factorization store in device side
@@ -309,33 +292,12 @@ void FCSD_decoding(cuComplex *R, //upper triangular matrix after cholesky factor
 //brute force search determine the vector results of the full expansion
 	int rho = ceil(sqrt(Nt) - 1);
 	int count1, count2;
-//	cuComplex *ss;
-//	ss=(cuComplex*)malloc(MATRIX_SIZE*sizeof(cuComplex));
-//	cuComplex *s_sub;
-//	s_sub=(cuComplex*)malloc(pow(M,rho)*rho*sizeof(cuComplex));   //all the possible full expansion sub vector
 	int pathNum = pow(M, rho);
-//	int *Eu_mini_index=(int*)malloc(sizeof(int));
-//	int *d_s_sub_index;
-//	int *s_sub_index=(int*)calloc(1,rho*pow(M,rho)*sizeof(int));
 	int *s_sub_index, *d_s_sub_index;
-//	cudaHostAlloc((void**) &s_sub_index,rho*pathNum*sizeof(int),cudaHostAllocDefault);
 	s_sub_index = (int*) calloc(1, rho * pathNum * sizeof(int));
 	fullfact(rho, M, s_sub_index); //get  the indexes of all the possible rho length symbol vectors
-//	int blockNum=BLOCK_NUM;   //determined by the path number
-//	int pathNum=pow(M,rho);  //number of search path
-//	int threadNum=ceil(pathNum/(blockNum*stride)); //determined by the path number
 	float *d_Eu;
 	cuComplex *d_s_potential_matrix, *d_s_kernel;
-//	Eu=(float*)calloc(1,blockNum*sizeof(float));
-//    cudaHostAlloc((void**) &Eu,blockNum*sizeof(float),cudaHostAllocDefault);
-//    cudaHostAlloc((void**) &s_potential_matrix,MATRIX_SIZE*blockNum*sizeof(cuComplex),cudaHostAllocDefault);
-//	cuComplex *s_potential_matrix=(cuComplex*)calloc(1,pathNum*Nt*sizeof(cuComplex));
-//	cuComplex *s_hat=(cuComplex*)calloc(1,Nt*sizeof(cuComplex));
-//	cuComplex  *d_s_potential_matrix;
-//	cudaMemcpy(s_hat,d_s_hat,Nt*sizeof(MATRIX_SIZE),cudaMemcpyDeviceToHost);
-
-//	int *j;
-//	j=(int*)malloc(sizeof(int));
 	cublasHandle_t handle;
 	cublasStatus_t ret;
 	cudaError_t error;

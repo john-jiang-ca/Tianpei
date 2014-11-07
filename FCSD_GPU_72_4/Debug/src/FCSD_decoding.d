@@ -164,4 +164,5 @@ src/FCSD_decoding.o : ../src/FCSD_decoding.cu \
     /usr/include/gsl/gsl_rng.h \
     /usr/include/gsl/gsl_complex_math.h \
     /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/cudaProfiler.h \
-    /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/cuda_profiler_api.h
+    /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/cuda_profiler_api.h \
+    ../src/fullfactorial.h

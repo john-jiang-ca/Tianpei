@@ -9,7 +9,6 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
-<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -19,7 +18,6 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
-<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -277,7 +275,6 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
-<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -287,7 +284,6 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
-<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>
@@ -545,7 +541,6 @@
 <includePath path="/usr/lib/gcc/x86_64-redhat-linux/4.8.3/include"/>
 <includePath path="/usr/local/include"/>
 <includePath path="/usr/include"/>
-<definedSymbol symbol="__CUDA_PREC_SQRT="/>
 <definedSymbol symbol="__CUDACC__="/>
 <definedSymbol symbol="__CUDA_ARCH__=300"/>
 <definedSymbol symbol="CUDA_DOUBLE_MATH_FUNCTIONS="/>
@@ -555,7 +550,6 @@
 <definedSymbol symbol="__NVCC__="/>
 <definedSymbol symbol="__NVCC__=1"/>
 <definedSymbol symbol="__CUDABE__="/>
-<definedSymbol symbol="__CUDA_PREC_DIV="/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>

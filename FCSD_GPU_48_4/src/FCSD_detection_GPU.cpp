@@ -158,23 +158,35 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 		exit(EXIT_FAILURE);
 	}
 	double duration1, duration2;
-	ret = cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_C, Nt, Nt, Nr, &one, d_pH,
-			Nt, d_pH, Nt, &zero, d_pR, Nt);
+//	ret = cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_C, Nt, Nt, Nr, &one, d_pH,
+//			Nt, d_pH, Nt, &zero, d_pR, Nt);
 	start = clock();
+	gsl_complex a;
 	gsl_matrix_complex *g_pR = gsl_matrix_complex_calloc(MATRIX_SIZE,
 			MATRIX_SIZE);
+	gsl_matrix_complex *g_pH=gsl_matrix_complex_calloc(MATRIX_SIZE,MATRIX_SIZE);
+		for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+			for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
+				GSL_SET_COMPLEX(&a, pH[IDC2D(count1,count2,MATRIX_SIZE)].x,
+						pH[IDC2D(count1,count2,MATRIX_SIZE)].y);
+				gsl_matrix_complex_set(g_pH, count1, count2, a);
+			}
+		}
+		gsl_complex alpha, beta;
+		GSL_SET_COMPLEX(&alpha,1,0);
+		GSL_SET_COMPLEX(&beta,0,0);
+	gsl_blas_zgemm(CblasConjTrans,CblasNoTrans,alpha,g_pH,g_pH,beta,g_pR);
 	cuComplex *c_pR = (cuComplex*) calloc(1,
 			MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex));
-	cudaMemcpy(c_pR, d_pR, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
-			cudaMemcpyDeviceToHost);
-	gsl_complex a;
-	for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
-		for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
-			GSL_SET_COMPLEX(&a, c_pR[IDC2D(count1,count2,MATRIX_SIZE)].x,
-					c_pR[IDC2D(count1,count2,MATRIX_SIZE)].y);
-			gsl_matrix_complex_set(g_pR, count1, count2, a);
-		}
-	}
+//	cudaMemcpy(c_pR, d_pR, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
+//			cudaMemcpyDeviceToHost);
+//	for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+//		for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
+//			GSL_SET_COMPLEX(&a, c_pR[IDC2D(count1,count2,MATRIX_SIZE)].x,
+//					c_pR[IDC2D(count1,count2,MATRIX_SIZE)].y);
+//			gsl_matrix_complex_set(g_pR, count1, count2, a);
+//		}
+//	}
 	gsl_linalg_complex_cholesky_decomp(g_pR);
 //    	        chol(d_pR);
 	end = clock();
@@ -189,6 +201,7 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 	cudaMemcpy(d_pR, c_pR, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
 			cudaMemcpyHostToDevice);
 	duration1 = double((end - start) / CLOCKS_PER_SEC);
+	gsl_matrix_complex_free(g_pH);
 	gsl_matrix_complex_free(g_pR);
 	free(c_pR);
 	ret = cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_C, Nt, Nt, Nr, &one, d_pH,

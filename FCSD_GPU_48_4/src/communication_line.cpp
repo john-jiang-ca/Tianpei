@@ -78,7 +78,7 @@
 #define miniteration 1e4               //the minimum number of channel realizations
 #define minSymbolError 200          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
-#define SNRnum 2                     //the point number of signal to noise ratio per bit
+#define SNRnum 3                     //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,
 		unsigned long Q);
@@ -150,8 +150,8 @@ int main(void) {
 	float *durationKernel_GPU, duration_GPU;
 	float durationKernel_CPU_t = 0;
 	float durationKernel_GPU_t = 0;
-	durationKernel_CPU = (float*) malloc(sizeof(float));
-	durationKernel_GPU = (float*) malloc(sizeof(float));
+	durationKernel_CPU = (float*) calloc(1,sizeof(float));
+	durationKernel_GPU = (float*) calloc(1,sizeof(float));
 	printf("the program for %dX%d %d QAM begin!!\n", MATRIX_SIZE,MATRIX_SIZE,M);
 	printf("the SNR per bit is:\n");
 	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
@@ -193,12 +193,14 @@ int main(void) {
 	fprintf(cfile2,"%f ", SNR[count1]);
 	}
 	fprintf(cfile2,"\n");
+	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
+	fprintf(cfile3,"this is for %d QAM\n", M);
 	fclose(cfile1);
 	fclose(cfile2);
 	fclose(cfile3);
 	fclose(cfile4);
 	time1 = clock();
-	for (count = 0; count <=SNRnum; count++) {
+	for (count = SNRnum; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -225,12 +227,12 @@ int main(void) {
 			preceived = gsl_vector_complex_calloc(Nr);
 			pH = gsl_matrix_complex_calloc(Nr, Nt);
 			symOut = gsl_vector_complex_calloc(Nt);
-			ptransmitted_cu = (cuComplex*) calloc(1,Nt * sizeof(cuComplex));
-			psymbolconstellation_cu = (cuComplex*) calloc(1,
+			ptransmitted_cu = (cuComplex*) malloc(Nt * sizeof(cuComplex));
+			psymbolconstellation_cu = (cuComplex*) malloc(
 					M * sizeof(cuComplex));
-			sigRec = (cuComplex*) calloc(1,Nr * sizeof(cuComplex));
-			pH_cu = (cuComplex*) calloc(1,Nr * Nt * sizeof(cuComplex));
-			symOut_cu = (cuComplex*) calloc(1,Nt * sizeof(cuComplex));
+			sigRec = (cuComplex*) malloc(Nr * sizeof(cuComplex));
+			pH_cu = (cuComplex*) malloc(Nr * Nt * sizeof(cuComplex));
+			symOut_cu = (cuComplex*) malloc(Nt * sizeof(cuComplex));
 			//data generation and channel generation
 			data_generator(pdata, pr, M); //pdata is the indexes
 			for (count2 = 0; count2 < Nt; count2++) {
@@ -390,13 +392,23 @@ int main(void) {
 			symOut_cu = NULL;
 		} while ((symbolError < minSymbolError) || (iteration < miniteration));
 
-//		}while(iteration<1e2);
-		printf("now we reach the SNR per bit point %d", 2*count);
+//		}while(iteration<1e1);
+		printf("now we reach the SNR per bit point %d \n", 2*count);
 		printf("\n");
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
 		fprintf(cfile1, "%f ", BitErrorRate);
 		fprintf(cfile2, "%f ", SymbolErrorRate);
+		fprintf(cfile3, "the total time at SNR %d is= %f \n", 2*count, duration_total);
+		fprintf(cfile3, "the total duration of CPU kernel at SNR %d is %f: \n",
+				2*count, double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));
+		fprintf(cfile3, "the total duration of GPU kernel at SNR %d is %f: \n",
+				2*count, double(durationKernel_GPU_t / double(CLOCKS_PER_SEC)));
+		fprintf(cfile3, "the total duration of CPU at SNR %d is %f: \n",
+				2*count, double(duration_CPU / double(CLOCKS_PER_SEC)));
+		fprintf(cfile3, "the total duration of GPU at SNR %d is %f: \n",
+				2*count, double(duration_GPU / double(CLOCKS_PER_SEC)));
+
 		fclose(cfile1);
 		fclose(cfile2);
 		fclose(cfile3);
@@ -404,21 +416,7 @@ int main(void) {
 
 	}
 	time2 = clock();
-//	printf("the clock per second is %f:\n", CLOCKS_PER_SEC);
 	duration_total = double(time2 - time1) / CLOCKS_PER_SEC;
-	cfile3=fopen(timeused,"a");
-	fprintf(cfile3, "this is for %d X %d\n", MATRIX_SIZE, MATRIX_SIZE);
-	fprintf(cfile3,"this is for %d QAM\n", M);
-	fprintf(cfile3, "the total time is= %f \n", duration_total);
-	fprintf(cfile3, "the total duration of CPU kernel is %f: \n",
-			double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));
-	fprintf(cfile3, "the total duration of GPU kernel is %f: \n",
-			double(durationKernel_GPU_t / double(CLOCKS_PER_SEC)));
-	fprintf(cfile3, "the total duration of CPU is %f: \n",
-			double(duration_CPU / double(CLOCKS_PER_SEC)));
-	fprintf(cfile3, "the total duration of GPU is %f: \n",
-			double(duration_GPU / double(CLOCKS_PER_SEC)));
-	fclose(cfile3);
 	gsl_rng_free(pr);
 	pr = NULL;
 	gsl_vector_ulong_free(pgraycode);

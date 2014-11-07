@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FCSD_GPU_72_4/src/fullfactorial.cpp&apos; to &apos;fullfactorial.h&apos;" description="Rename resource &apos;fullfactorial.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/fullfactorial.cpp" name="fullfactorial.h" stamp="1415230809933" updateReferences="true"/>
+</session>

@@ -253,6 +253,12 @@ void FCSD_ordering_CPU(cuComplex *pH, int *list, cuComplex *d_pH_permuted) {
 					pH[IDC2D(count1,list[count2]-1,MATRIX_SIZE)];
 		}
 	}
+	for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+		for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
+			pH[IDC2D(count1,count2,MATRIX_SIZE)] =
+					pH_permuted1[IDC2D(count1,count2,MATRIX_SIZE)];
+		}
+	}
 	cudaMemcpy(d_pH_permuted, pH_permuted1,
 			MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
 			cudaMemcpyHostToDevice);

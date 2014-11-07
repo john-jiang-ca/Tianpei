@@ -96,3 +96,21 @@ the total duration of CPU kernel is 1722161221296541696.000000:
 the total duration of GPU kernel is 6.740000: 
 the total duration of CPU is 0.000000: 
 the total duration of GPU is 2.740000: 
+this is for 32 X 32
+this is for 4 QAM
+the total time is= 273.860000 
+the total duration of CPU kernel is 57411663230025687040.000000: 
+the total duration of GPU kernel is 226.570000: 
+the total duration of CPU is 0.000000: 
+the total duration of GPU is 272.070528: 
+this is for 32 X 32
+this is for 4 QAM
+the total time is= 21937.270000 
+the total duration of CPU kernel is 4538159067437012615168.000000: 
+the total duration of GPU kernel is 18238.593024: 
+the total duration of CPU is 0.210000: 
+the total duration of GPU is 21893.173248: 
+this is for 32 X 32
+this is for 4 QAM
+this is for 32 X 32
+this is for 4 QAM

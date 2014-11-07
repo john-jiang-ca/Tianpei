@@ -6,8 +6,7 @@
 CPP_SRCS += \
 ../src/FCSD_detection_GPU.cpp \
 ../src/FCSD_ordering_CPU.cpp \
-../src/communication_line.cpp \
-../src/fullfactorial.cpp 
+../src/communication_line.cpp 
 
 CU_SRCS += \
 ../src/FCSD_decoding.cu \
@@ -34,14 +33,12 @@ OBJS += \
 ./src/chol.o \
 ./src/chol_without_onchipmem.o \
 ./src/communication_line.o \
-./src/fullfactorial.o \
 ./src/row_column_transformation.o 
 
 CPP_DEPS += \
 ./src/FCSD_detection_GPU.d \
 ./src/FCSD_ordering_CPU.d \
-./src/communication_line.d \
-./src/fullfactorial.d 
+./src/communication_line.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

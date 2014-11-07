@@ -81,21 +81,8 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 //	cudaProfilerStart();
 //    FCSD_ordering(pH, list, d_pH);
 	FCSD_ordering_CPU(pH, list, d_pH);
-//    cudaProfilerStop();
 	end = clock();
 	duration = double(end - start);
-//printf("hey the ordering time is:\n");
-//printf("%0.4f ", duration);
-//printf("the list of GPU is:\n");
-//for(count1=0;count1<MATRIX_SIZE;count1++)
-//{
-//	printf("%d ", list[count1]);
-//}
-//    for (count1=0;count1<Nt; count1++)
-//    {
-//    	list_temp=sigRec[list[count1]];
-//    	sigRec[Nt-1-count1]=list_temp;
-//    }
 	//cholesky factorization
 
 	//FCSD decoding
@@ -171,23 +158,35 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 		exit(EXIT_FAILURE);
 	}
 	double duration1, duration2;
-	ret = cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_C, Nt, Nt, Nr, &one, d_pH,
-			Nt, d_pH, Nt, &zero, d_pR, Nt);
+//	ret = cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_C, Nt, Nt, Nr, &one, d_pH,
+//			Nt, d_pH, Nt, &zero, d_pR, Nt);
 	start = clock();
+	gsl_complex a;
 	gsl_matrix_complex *g_pR = gsl_matrix_complex_calloc(MATRIX_SIZE,
 			MATRIX_SIZE);
+	gsl_matrix_complex *g_pH=gsl_matrix_complex_calloc(MATRIX_SIZE,MATRIX_SIZE);
+		for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+			for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
+				GSL_SET_COMPLEX(&a, pH[IDC2D(count1,count2,MATRIX_SIZE)].x,
+						pH[IDC2D(count1,count2,MATRIX_SIZE)].y);
+				gsl_matrix_complex_set(g_pH, count1, count2, a);
+			}
+		}
+		gsl_complex alpha, beta;
+		GSL_SET_COMPLEX(&alpha,1,0);
+		GSL_SET_COMPLEX(&beta,0,0);
+	gsl_blas_zgemm(CblasConjTrans,CblasNoTrans,alpha,g_pH,g_pH,beta,g_pR);
 	cuComplex *c_pR = (cuComplex*) calloc(1,
 			MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex));
-	cudaMemcpy(c_pR, d_pR, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
-			cudaMemcpyDeviceToHost);
-	gsl_complex a;
-	for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
-		for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
-			GSL_SET_COMPLEX(&a, c_pR[IDC2D(count1,count2,MATRIX_SIZE)].x,
-					c_pR[IDC2D(count1,count2,MATRIX_SIZE)].y);
-			gsl_matrix_complex_set(g_pR, count1, count2, a);
-		}
-	}
+//	cudaMemcpy(c_pR, d_pR, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
+//			cudaMemcpyDeviceToHost);
+//	for (count1 = 0; count1 < MATRIX_SIZE; count1++) {
+//		for (count2 = 0; count2 < MATRIX_SIZE; count2++) {
+//			GSL_SET_COMPLEX(&a, c_pR[IDC2D(count1,count2,MATRIX_SIZE)].x,
+//					c_pR[IDC2D(count1,count2,MATRIX_SIZE)].y);
+//			gsl_matrix_complex_set(g_pR, count1, count2, a);
+//		}
+//	}
 	gsl_linalg_complex_cholesky_decomp(g_pR);
 //    	        chol(d_pR);
 	end = clock();
@@ -202,9 +201,9 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 	cudaMemcpy(d_pR, c_pR, MATRIX_SIZE * MATRIX_SIZE * sizeof(cuComplex),
 			cudaMemcpyHostToDevice);
 	duration1 = double((end - start) / CLOCKS_PER_SEC);
+	gsl_matrix_complex_free(g_pH);
 	gsl_matrix_complex_free(g_pR);
 	free(c_pR);
-//    	           printf("the duration of chol GPU is %0.4f:\n", duration1);
 	ret = cublasCgemm(handle, CUBLAS_OP_N, CUBLAS_OP_C, Nt, Nt, Nr, &one, d_pH,
 			Nt, d_pH, Nt, &snr, d_I, Nt);
 	if (ret != CUBLAS_STATUS_SUCCESS) {
@@ -250,7 +249,6 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 //    MATRIX_INVERSE(d_I,d_pW,Nr,Nt);
 	end = clock();
 	duration2 = double((end - start) / CLOCKS_PER_SEC);
-//    printf("the duration of matrix inverse GPU is %0.4f:\n", duration2);
 	ret = cublasCgemm(handle, CUBLAS_OP_C, CUBLAS_OP_N, Nt, Nt, Nr, &one, d_pH,
 			Nt, d_pW, Nt, &zero, d_pW1, Nr);
 	ret = cublasCgemv(handle, CUBLAS_OP_T, Nt, Nr, &one, d_pW1, Nr, d_sigRec, 1,
@@ -261,16 +259,27 @@ void FCSD_detection(cuComplex *sigRec,   //received signal vector
 	end = clock();
 	*durationKernel = double((end - start));
 	cudaFree(d_pH);
+	d_pH=NULL;
 	cudaFree(d_pW);
+	d_pW=NULL;
 	cudaFree(d_I);
+	d_I=NULL;
 	cudaFree(d_sigRec);
+	d_sigRec=NULL;
 	cudaFree(d_pW1);
+	d_pW1=NULL;
 	cudaFree(d_symOut_hat);
+	d_symOut_hat=NULL;
 	cudaFree(d_pR);
+	d_pR=NULL;
 	free(I);
+	I=NULL;
 	free(pH_temp);
+	pH_temp=NULL;
 	free(list);
-
+	list=NULL;
 	free(x);
+	x=NULL;
+	cublasDestroy(handle);
 
 }

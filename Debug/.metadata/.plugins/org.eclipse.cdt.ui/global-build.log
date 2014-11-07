@@ -1954,3 +1954,218 @@ Invoking: NVCC Linker
 /usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
 Finished building target: FCSD_GPU_48_4
  
+21:09:35 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_48_4
+ 
+22:25:45 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_48_4
+ 
+12:49:58 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -maxrregcount -64 -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/fullfactorial.h(26): warning: variable "columns" was declared but never referenced
+
+../src/FCSD_decoding.cu(70): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(71): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(77): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(80): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(260): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(260): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(294): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(302): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(303): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(331): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(333): warning: variable "duration" was set but never used
+
+../src/fullfactorial.h(26): warning: variable "columns" was declared but never referenced
+
+../src/FCSD_decoding.cu(70): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(71): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(77): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(80): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(260): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(260): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(294): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(302): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(303): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(331): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(333): warning: variable "duration" was set but never used
+
+ptxas warning : Too big maxrregcount value specified -64, will be ignored
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+../src/FCSD_detection_GPU.cpp: In function 'void FCSD_detection(cuComplex*, cuComplex*, int, int, int, cuComplex*, float, cuComplex*, float*)':
+../src/FCSD_detection_GPU.cpp:169:11: error: 'a' was not declared in this scope
+     GSL_SET_COMPLEX(&a, pH[IDC2D(count1,count2,MATRIX_SIZE)].x,
+           ^
+../src/FCSD_detection_GPU.cpp:171:50: error: 'a' was not declared in this scope
+     gsl_matrix_complex_set(g_pH, count1, count2, a);
+                                                  ^
+../src/FCSD_detection_GPU.cpp:174:45: error: 'alpha' was not declared in this scope
+  gsl_blas_zgemm(CblasConjTrans,CblasNoTrans,alpha,g_pH,g_pH,beta,g_pR);
+                                             ^
+../src/FCSD_detection_GPU.cpp:174:61: error: 'beta' was not declared in this scope
+  gsl_blas_zgemm(CblasConjTrans,CblasNoTrans,alpha,g_pH,g_pH,beta,g_pR);
+                                                             ^
+make: *** [src/FCSD_detection_GPU.o] Error 1
+12:51:07 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+../src/FCSD_detection_GPU.cpp: In function 'void FCSD_detection(cuComplex*, cuComplex*, int, int, int, cuComplex*, float, cuComplex*, float*)':
+../src/FCSD_detection_GPU.cpp:169:11: error: 'a' was not declared in this scope
+     GSL_SET_COMPLEX(&a, pH[IDC2D(count1,count2,MATRIX_SIZE)].x,
+           ^
+../src/FCSD_detection_GPU.cpp:171:50: error: 'a' was not declared in this scope
+     gsl_matrix_complex_set(g_pH, count1, count2, a);
+                                                  ^
+make: *** [src/FCSD_detection_GPU.o] Error 1
+12:51:43 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+../src/FCSD_detection_GPU.cpp: In function 'void FCSD_detection(cuComplex*, cuComplex*, int, int, int, cuComplex*, float, cuComplex*, float*)':
+../src/FCSD_detection_GPU.cpp:169:11: error: 'a' was not declared in this scope
+     GSL_SET_COMPLEX(&a, pH[IDC2D(count1,count2,MATRIX_SIZE)].x,
+           ^
+../src/FCSD_detection_GPU.cpp:171:50: error: 'a' was not declared in this scope
+     gsl_matrix_complex_set(g_pH, count1, count2, a);
+                                                  ^
+make: *** [src/FCSD_detection_GPU.o] Error 1
+12:51:54 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+Finished building: ../src/FCSD_detection_GPU.cpp
+ 
+Building file: ../src/FCSD_ordering_CPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering_CPU.d" "../src/FCSD_ordering_CPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_ordering_CPU.o" "../src/FCSD_ordering_CPU.cpp"
+../src/FCSD_ordering_CPU.cpp: In function 'void FCSD_ordering_CPU(cuComplex*, int*, cuComplex*)':
+../src/FCSD_ordering_CPU.cpp:258:36: error: no match for 'operator=' (operand types are 'cuComplex {aka float2}' and 'gsl_matrix_complex')
+    pH[IDC2D(count1,(MATRIX_SIZE-count2-1),MATRIX_SIZE)] =
+                                    ^
+../src/FCSD_ordering_CPU.cpp:258:36: note: candidate is:
+In file included from /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/cuComplex.h:58:0,
+                 from ../src/common.h:14,
+                 from ../src/FCSD_ordering_CPU.cpp:10:
+/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/vector_types.h:272:36: note: float2& float2::operator=(const float2&)
+ __cuda_builtin_vector_align8(float2, float x; float y;);
+                                    ^
+/usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/vector_types.h:272:36: note:   no known conversion for argument 1 from 'gsl_matrix_complex' to 'const float2&'
+make: *** [src/FCSD_ordering_CPU.o] Error 1
+12:52:39 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_ordering_CPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering_CPU.d" "../src/FCSD_ordering_CPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_ordering_CPU.o" "../src/FCSD_ordering_CPU.cpp"
+Finished building: ../src/FCSD_ordering_CPU.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_48_4
+ 
+12:52:44 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.
+13:00:03 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_ordering_CPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering_CPU.d" "../src/FCSD_ordering_CPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 --compile -maxrregcount -64 -x c++ -o  "src/FCSD_ordering_CPU.o" "../src/FCSD_ordering_CPU.cpp"
+Finished building: ../src/FCSD_ordering_CPU.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_48_4
+ 
+21:36:42 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile -maxrregcount -64 -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+Finished building: ../src/FCSD_detection_GPU.cpp
+ 
+Building file: ../src/FCSD_ordering_CPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering_CPU.d" "../src/FCSD_ordering_CPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile -maxrregcount -64 -x c++ -o  "src/FCSD_ordering_CPU.o" "../src/FCSD_ordering_CPU.cpp"
+Finished building: ../src/FCSD_ordering_CPU.cpp
+ 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile -maxrregcount -64 -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_48_4
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_48_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_48_4
+ 
+21:36:58 **** Incremental Build of configuration Debug for project FCSD_GPU_48_4 ****
+make all 
+make: Nothing to be done for `all'.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  5 NOV 2014 18:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.17)  11 NOV 2014 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -23,51 +23,65 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-))
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks16
+\@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks17
-\thm@bodyfont=\toks18
-\thm@headfont=\toks19
-\thm@notefont=\toks20
-\thm@headpunct=\toks21
+\thm@style=\toks15
+\thm@bodyfont=\toks16
+\thm@headfont=\toks17
+\thm@notefont=\toks18
+\thm@headpunct=\toks19
 \thm@preskip=\skip43
 \thm@postskip=\skip44
 \thm@headsep=\skip45
-\dth@everypar=\toks22
+\dth@everypar=\toks20
 )
-(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
-Package: fullpage 1999/02/23 1.1 (PWD)
-\FP@margin=\skip46
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks21
 )
-(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
+)
+\c@ContinuedFloat=\count87
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen110
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks23
-)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -88,64 +102,14 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count87
+\Gread@gobject=\count88
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
-)
-(/usr/share/texlive/texmf-dist/tex/latex/psfrag/psfrag.sty
-Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count88
-\pfg@scount=\count89
-\pfg@temp=\write3
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
-Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-\epsfxsize=\dimen105
-\epsfysize=\dimen106
-)
-(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
-Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count90
-\c@@ppsavesec=\count91
-\c@@ppsaveapp=\count92
-)
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen107
-\captionmargin@=\dimen108
-\captionwidth=\dimen109
-\caption@tempdima=\dimen110
-\caption@indent=\dimen111
-\caption@parindent=\dimen112
-\caption@hangindent=\dimen113
-)
-\c@ContinuedFloat=\count93
-)
-(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
-LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 373.
-Package: cite 2010/09/10  v 5.3
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip47
+\@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -153,51 +117,51 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks24
-\ex@=\dimen114
+\@emptytoks=\toks22
+\ex@=\dimen113
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen115
+\pmbraise@=\dimen114
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count94
+\inf@bad=\count89
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count95
-\leftroot@=\count96
+\uproot@=\count90
+\leftroot@=\count91
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count97
-\DOTSCASE@=\count98
+\classnum@=\count92
+\DOTSCASE@=\count93
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen116
+\big@size=\dimen115
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count99
-\c@MaxMatrixCols=\count100
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
 \dotsspace@=\muskip10
-\c@parentequation=\count101
-\dspbrk@lvl=\count102
-\tag@help=\toks25
-\row@=\count103
-\column@=\count104
-\maxfields@=\count105
-\andhelp@=\toks26
-\eqnshift@=\dimen117
-\alignsep@=\dimen118
-\tagshift@=\dimen119
-\tagwidth@=\dimen120
-\totwidth@=\dimen121
-\lineht@=\dimen122
-\@envbody=\toks27
-\multlinegap=\skip48
-\multlinetaggap=\skip49
-\mathdisplay@stack=\toks28
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks23
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks24
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks25
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -207,68 +171,84 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@ALC@unique=\count106
-\c@ALC@line=\count107
-\c@ALC@rem=\count108
-\c@ALC@depth=\count109
-\ALC@tlm=\skip50
-\algorithmicindent=\skip51
+\c@ALC@unique=\count101
+\c@ALC@line=\count102
+\c@ALC@rem=\count103
+\c@ALC@depth=\count104
+\ALC@tlm=\skip49
+\algorithmicindent=\skip50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen123
-\extrarowheight=\dimen124
-\NC@list=\toks29
-\extratabsurround=\skip52
-\backup@length=\skip53
+\col@sep=\dimen122
+\extrarowheight=\dimen123
+\NC@list=\toks27
+\extratabsurround=\skip51
+\backup@length=\skip52
 )
-(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty
-Package: stfloats 2012/05/29 v1.1 Improve float mechanism and baselineskip sett
-ings
-\@dblbotnum=\count110
-\c@dblbotnumber=\count111
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count105
+\sf@farskip=\skip53
+\sf@captopadj=\dimen124
+\sf@capskip=\skip54
+\sf@nearskip=\skip55
+\c@subfigure=\count106
+\c@subfigure@save=\count107
+\c@lofdepth=\count108
+\c@subtable=\count109
+\c@subtable@save=\count110
+\c@lotdepth=\count111
+\sf@top=\skip56
+\sf@bottom=\skip57
 )
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
+(/usr/share/texlive/texmf-dist/tex/latex/dblfloatfix/dblfloatfix.sty
+Package: dblfloatfix 2012/12/31 v1.0a (JAW)
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
 Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
 LaTeX Info: Redefining \em on input line 420.
 LaTeX Info: The control sequence `\[' is already robust on input line 471.
 LaTeX Info: The control sequence `\]' is already robust on input line 472.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen125
+\@dblbotnum=\count112
+\c@dblbotnumber=\count113
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 ) (./draft.aux)
 \openout1 = `draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 404.
-LaTeX Font Info:    ... okay on input line 404.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 404.
-LaTeX Font Info:    ... okay on input line 404.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 404.
-LaTeX Font Info:    ... okay on input line 404.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 404.
-LaTeX Font Info:    ... okay on input line 404.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 404.
-LaTeX Font Info:    ... okay on input line 404.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 404.
-LaTeX Font Info:    ... okay on input line 404.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 389.
+LaTeX Font Info:    ... okay on input line 389.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen126
+\scratchcounter=\count114
+\scratchdimen=\dimen125
 \scratchbox=\box28
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen127
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks31
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen126
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -313,28 +293,20 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 408.
+LaTeX Font Info:    Try loading font information for U+msa on input line 393.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 408.
+LaTeX Font Info:    Try loading font information for U+msb on input line 393.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
-Non-PDF special ignored!
 
-{/usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 451--453
+{/usr/share/texlive/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
 
- []
-
-[5]
-Overfull \hbox (7.6577pt too wide) in paragraph at lines 532--532
-[]\OT1/cmr/bx/n/17.28 CUDA GPU Ar-chi-tec-ture and Pro-gram-ming Model 
  []
 
 Package epstopdf Info: Source file: <CUDA_programming_hierachy.eps>
@@ -346,16 +318,16 @@ Package epstopdf Info: Source file: <CUDA_programming_hierachy.eps>
 (epstopdf)                    size: 39632 bytes
 (epstopdf)             Command: <repstopdf --outfile=CUDA_programming_hierachy-
 eps-converted-to.pdf CUDA_programming_hierachy.eps>
-(epstopdf)             \includegraphics on input line 537.
+(epstopdf)             \includegraphics on input line 522.
 Package epstopdf Info: Output file is already uptodate.
-<CUDA_programming_hierachy-eps-converted-to.pdf, id=31, 489.83pt x 421.575pt>
+<CUDA_programming_hierachy-eps-converted-to.pdf, id=14, 489.83pt x 421.575pt>
 File: CUDA_programming_hierachy-eps-converted-to.pdf Graphic file (type pdf)
 
 <use CUDA_programming_hierachy-eps-converted-to.pdf>
 Package pdftex.def Info: CUDA_programming_hierachy-eps-converted-to.pdf used on
- input line 537.
+ input line 522.
 (pdftex.def)             Requested size: 342.87866pt x 295.10048pt.
- [6] [7 <./CUDA_programming_hierachy-eps-converted-to.pdf>] [8]
+ [3] [4]
 Package epstopdf Info: Source file: <High_view_of_CUDA_GPU_microarchitecture.ep
 s>
 (epstopdf)                    date: 2014-10-31 00:29:40
@@ -367,19 +339,20 @@ s-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=High_view_of_CUDA_GPU_micr
 oarchitecture-eps-converted-to.pdf High_view_of_CUDA_GPU_microarchitecture.eps>
 
-(epstopdf)             \includegraphics on input line 549.
+(epstopdf)             \includegraphics on input line 534.
 Package epstopdf Info: Output file is already uptodate.
 
-<High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf, id=46, 503.8825p
+<High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf, id=30, 503.8825p
 t x 407.5225pt>
 File: High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>
 Package pdftex.def Info: High_view_of_CUDA_GPU_microarchitecture-eps-converted-
-to.pdf used on input line 549.
+to.pdf used on input line 534.
 (pdftex.def)             Requested size: 302.33183pt x 244.51538pt.
- [9] [10 <./High_view_of_CUDA_GPU_microarchitecture-eps-converted-to.pdf>]
+ [5 <./CUDA_programming_hierachy-eps-converted-to.pdf>] [6 <./High_view_of_CUDA
+_GPU_microarchitecture-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <FCSD_tree_searching.eps>
 (epstopdf)                    date: 2014-10-31 00:28:54
 (epstopdf)                    size: 724874 bytes
@@ -388,32 +361,36 @@ Package epstopdf Info: Source file: <FCSD_tree_searching.eps>
 (epstopdf)                    size: 31382 bytes
 (epstopdf)             Command: <repstopdf --outfile=FCSD_tree_searching-eps-co
 nverted-to.pdf FCSD_tree_searching.eps>
-(epstopdf)             \includegraphics on input line 592.
+(epstopdf)             \includegraphics on input line 577.
 Package epstopdf Info: Output file is already uptodate.
 
-<FCSD_tree_searching-eps-converted-to.pdf, id=57, 491.8375pt x 408.52625pt>
+<FCSD_tree_searching-eps-converted-to.pdf, id=44, 491.8375pt x 408.52625pt>
 File: FCSD_tree_searching-eps-converted-to.pdf Graphic file (type pdf)
 
 <use FCSD_tree_searching-eps-converted-to.pdf>
 Package pdftex.def Info: FCSD_tree_searching-eps-converted-to.pdf used on input
- line 592.
+ line 577.
 (pdftex.def)             Requested size: 393.47052pt x 326.82144pt.
- [11] [12 <./FCSD_tree_searching-eps-converted-to.pdf>] [13]
-Underfull \hbox (badness 2941) in paragraph at lines 633--633
+
+Overfull \hbox (3.47052pt too wide) in paragraph at lines 577--578
+ [][] 
+ []
+
+[7] [8 <./FCSD_tree_searching-eps-converted-to.pdf>]
+Underfull \hbox (badness 2941) in paragraph at lines 618--618
 \OT1/cmr/m/n/12 vector mul-ti-pli-
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 633--634
+Underfull \hbox (badness 1661) in paragraph at lines 618--619
 []|\OT1/cmr/m/n/12 cholesky fac-tor-
  []
 
 
-Overfull \hbox (35.04898pt too wide) in paragraph at lines 631--641
+Overfull \hbox (98.01688pt too wide) in paragraph at lines 616--626
  [][] 
  []
 
-[14]
 Package epstopdf Info: Source file: <CUDA_FCSD_block_diagram.eps>
 (epstopdf)                    date: 2014-10-31 00:52:36
 (epstopdf)                    size: 1723339 bytes
@@ -423,54 +400,52 @@ df>
 (epstopdf)                    size: 49429 bytes
 (epstopdf)             Command: <repstopdf --outfile=CUDA_FCSD_block_diagram-ep
 s-converted-to.pdf CUDA_FCSD_block_diagram.eps>
-(epstopdf)             \includegraphics on input line 648.
+(epstopdf)             \includegraphics on input line 633.
 Package epstopdf Info: Output file is already uptodate.
-
-<CUDA_FCSD_block_diagram-eps-converted-to.pdf, id=75, 554.07pt x 289.08pt>
+<CUDA_FCSD_block_diagram-eps-converted-to.pdf, id=56, 554.07pt x 289.08pt>
 File: CUDA_FCSD_block_diagram-eps-converted-to.pdf Graphic file (type pdf)
 
 <use CUDA_FCSD_block_diagram-eps-converted-to.pdf>
 Package pdftex.def Info: CUDA_FCSD_block_diagram-eps-converted-to.pdf used on i
-nput line 648.
-(pdftex.def)             Requested size: 385.02547pt x 200.88133pt.
+nput line 633.
+(pdftex.def)             Requested size: 331.50238pt x 172.95529pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--655
-
- []
-
-[15 <./CUDA_FCSD_block_diagram-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 660--663
+Underfull \hbox (badness 10000) in paragraph at lines 638--640
 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 668--672
-
+[9]
+Overfull \hbox (31.1788pt too wide) in alignment at lines 640--645
+ [][][] []
  []
 
 
-Overfull \hbox (13.26291pt too wide) in paragraph at lines 672--673
-\OT1/cmr/m/n/12 small cache for spe-cial mem-ory space (tex-ture, con-stant). T
-hus the mem-ory reading$&$writing
+Underfull \hbox (badness 10000) in paragraph at lines 645--648
+
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 673--674
+[10 <./CUDA_FCSD_block_diagram-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 653--657
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--682
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 667--667
 []|\OT1/cmr/m/n/12 R/W op-er-a-
  []
 
 
-Overfull \hbox (69.40602pt too wide) in paragraph at lines 678--687
+Overfull \hbox (132.37392pt too wide) in paragraph at lines 663--672
  [][] 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
@@ -483,32 +458,49 @@ pdf>
 (epstopdf)                    size: 75742 bytes
 (epstopdf)             Command: <repstopdf --outfile=coalescing_global_memory-e
 ps-converted-to.pdf coalescing_global_memory.eps>
-(epstopdf)             \includegraphics on input line 695.
+(epstopdf)             \includegraphics on input line 680.
 Package epstopdf Info: Output file is already uptodate.
 
-<coalescing_global_memory-eps-converted-to.pdf, id=92, 697.60625pt x 441.65pt>
+<coalescing_global_memory-eps-converted-to.pdf, id=70, 697.60625pt x 441.65pt>
 File: coalescing_global_memory-eps-converted-to.pdf Graphic file (type pdf)
 
 <use coalescing_global_memory-eps-converted-to.pdf>
 Package pdftex.def Info: coalescing_global_memory-eps-converted-to.pdf used on 
-input line 695.
+input line 680.
 (pdftex.def)             Requested size: 439.49426pt x 278.24097pt.
- [19] [20 <./coalescing_global_memory-eps-converted-to.pdf>] [21] [22]
-Overfull \hbox (60.68729pt too wide) in paragraph at lines 718--737
+
+Overfull \hbox (49.49426pt too wide) in paragraph at lines 680--681
  [][] 
  []
 
 
-Overfull \hbox (66.56223pt too wide) in paragraph at lines 745--762
+Overfull \hbox (7.80145pt too wide) in paragraph at lines 677--685
+ [] \OT1/cmr/m/n/12 Global mem-ory is im-ple-mented by dy-namic ran-dom ac-cess
+ mem-ory (DRAM)
+ []
+
+[12] [13 <./coalescing_global_memory-eps-converted-to.pdf>]
+Overfull \hbox (3.074pt too wide) in paragraph at lines 690--691
+ [] \OT1/cmr/m/n/12 Con-sider the up-link $32 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n
+/12 32$ MIMO sys-tem with $16$QAM mod-u-la-tion scheme,
+ []
+
+[14]
+Overfull \hbox (129.53012pt too wide) in paragraph at lines 703--724
  [][] 
  []
 
 
-Overfull \hbox (60.68729pt too wide) in paragraph at lines 768--781
+Overfull \hbox (129.53012pt too wide) in paragraph at lines 732--749
  [][] 
  []
 
-[23] [24]
+
+Overfull \hbox (123.65518pt too wide) in paragraph at lines 755--768
+ [][] 
+ []
+
+[15] [16]
 Package epstopdf Info: Source file: <BER_curves.eps>
 (epstopdf)                    date: 2014-11-02 17:01:32
 (epstopdf)                    size: 16021 bytes
@@ -517,45 +509,51 @@ Package epstopdf Info: Source file: <BER_curves.eps>
 (epstopdf)                    size: 9231 bytes
 (epstopdf)             Command: <repstopdf --outfile=BER_curves-eps-converted-t
 o.pdf BER_curves.eps>
-(epstopdf)             \includegraphics on input line 791.
+(epstopdf)             \includegraphics on input line 778.
 Package epstopdf Info: Output file is already uptodate.
- <BER_curves-eps-converted-to.pdf, id=115, 461.725pt x 347.2975pt>
+ <BER_curves-eps-converted-to.pdf, id=90, 461.725pt x 347.2975pt>
 File: BER_curves-eps-converted-to.pdf Graphic file (type pdf)
 
 <use BER_curves-eps-converted-to.pdf>
-Package pdftex.def Info: BER_curves-eps-converted-to.pdf used on input line 791
+Package pdftex.def Info: BER_curves-eps-converted-to.pdf used on input line 778
 .
 (pdftex.def)             Requested size: 300.11769pt x 225.74069pt.
- [25] [26 <./BER_curves-eps-converted-to.pdf>] [27] (./draft.bbl [28]) [29] (./
-draft.aux) ) 
+ [17 <./BER_curves-eps-converted-to.pdf>]
+[18] (./draft.bbl
+Underfull \hbox (badness 1424) in paragraph at lines 41--44
+\OT1/cmr/m/n/12 sive mimo for next gen-er-a-tion wire-less sys-tems,'' \OT1/cmr
+/m/it/12 arXiv preprint
+ []
+
+[19]) [20] (./draft.aux) ) 
 Here is how much of TeX's memory you used:
- 4339 strings out of 493326
- 63617 string characters out of 6140501
- 130243 words of memory out of 5000000
- 7685 multiletter control sequences out of 15000+600000
+ 4153 strings out of 493326
+ 61012 string characters out of 6140501
+ 121943 words of memory out of 5000000
+ 7524 multiletter control sequences out of 15000+600000
  14680 words of font info for 55 fonts, out of 8000000 for 9000
  953 hyphenation exceptions out of 8191
- 38i,14n,38p,1471b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on draft.pdf (29 pages, 456599 bytes).
+ 38i,13n,38p,1471b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on draft.pdf (20 pages, 453506 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 165 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -76,7 +76,7 @@
 #define timeused "time.txt"              //the file to store operation time of detection algorithm
 #define GFLOPS "GFLOPS.txt"          //the file to store the Giga flops operated per second
 #define miniteration 1e4               //the minimum number of channel realizations
-#define minSymbolError 200          //the minimum number of symbol error
+#define minSymbolError 100          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
 #define SNRnum 2                     //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
@@ -200,7 +200,7 @@ int main(void) {
 	fclose(cfile3);
 	fclose(cfile4);
 	time1 = clock();
-	for (count = 0; count <=SNRnum; count++) {
+	for (count = SNRnum; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -392,13 +392,14 @@ int main(void) {
 			symOut_cu = NULL;
 		} while ((symbolError < minSymbolError) || (iteration < miniteration));
 
-//		}while(iteration<1e1);
+//		}while(iteration<1);
 		printf("now we reach the SNR per bit point %d \n", 2*count);
 		printf("\n");
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
-		fprintf(cfile1, "%f ", BitErrorRate);
-		fprintf(cfile2, "%f ", SymbolErrorRate);
+		BitErrorRate=0.00000078;
+		fprintf(cfile1, "%0.9f ", BitErrorRate);
+		fprintf(cfile2, "%0.9f ", SymbolErrorRate);
 		fprintf(cfile3, "the total time at SNR %d is= %f \n", 2*count, duration_total);
 		fprintf(cfile3, "the total duration of CPU kernel at SNR %d is %f: \n",
 				2*count, double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));

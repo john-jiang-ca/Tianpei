@@ -1,0 +1,840 @@
+%% bare_conf.tex
+%% V1.4
+%% 2012/12/27
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex,
+%%                    bare_jrnl_transmag.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed inft.tex
+
+% draft mode.
+\documentclass[a4paper, 10pt, conference]{IEEEconf}
+%\documentclass[12pt,a4paper,final]{article}
+%\IEEEoverridecommandlockouts
+%\overrideIEEEmargins
+%\documentclass[conference]{IEEEtrans}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,ft.tex
+
+% manually specify the path to it like:
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{epstopdf}
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+%\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+%\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+   \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+%\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+ \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
+\title{\LARGE \bf GPU Acceleration of Fixed Complexity Sphere Decoder for Large MIMO Uplink Systems}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\IEEEauthorblockN{Tianpei Chen} and 
+%\IEEEauthorblockN{Harry Leib}}
+%\IEEEauthorblockA{ID: 25504946\\Department of Electrical and\\Computer Engineering\\
+%McGill University\\
+%Montreal, Quebec}}
+\author{Tianpei Chen and Harry Leib}
+ %Department of Electrical and Computer Engineering\\
+ %McGill University\\
+% Montreal, Quebec}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+%\author{\IEEEauthorblockN{Tianpei Chen and
+%Harry Leib
+%}
+%\IEEEauthorblockA{Department of Electrical and Computer Engineering\\
+%McGill University, Montreal, Quebec, Canada}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+\begin{document}
+% make the title area
+%\begin{spacing}{2.5}
+\date{}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Large MIMO constitutes a principal techniques for next generation wireless communication systems. Detection algorithms for large MIMO tend to require long simulation times on conventional computer systems, in order to reduce the simulation times for decoders of large MIMO systems, we propose to use General Purpose Graphic Processing Units (GPGPU). In this paper Fixed Complexity Sphere Decoder (FCSD) is implemented for the large scale MIMO system based on the dominant framework of GPGPU-Computed Unified Device Architecture (CUDA). The proposed CUDA-FCSD can achieve considerable speedup over conventional CPU implementation while reaching the same Bit Error Rate (BER) performance. Furthermore the proposed algorithm demonstrates great potential to accelerate large MIMO systems.\\
+\textbf{ Keywords: Large MIMO, FCSD, GPGPU, CUDA}
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+The present challenge in the wireless communication area is the sharp contrast between the increasing demand of mobile network speed for the transmission of rich media content with better QoS (Quality of Service), and the shortage of radio frequency spectrum. Multiple Input Multiple Output (MIMO) is thought to be a very promising technology that can help to solve this problem owing to several advantages it can offer. The core idea of MIMO is to use multiple antennas that at the transmitting and receiving sides, that provide parallel data pipes in space resulting in spatial multiplexing gains\cite{oestges2010mimo}. For example the LTE standard supports up to 8 antennas at the base station\cite{dahlman20103g}. 
+
+Large scale MIMO (also named massive MIMO) systems employ hundreds of low-power low-price antennas collocated at the base station and serving several tens of terminals at the same time\cite{rusek2013scaling}. This technology originated from multiuser MIMO (MU-MIMO) systems\cite{larsson2013massive}. Large scale MIMO will achieve the full potential of conventional MIMO systems (spatial diversity gain and spatial multiplexing gain), as well as provide additional reduction of latency and improvement of system robustness. Detector is one of the key component of MIMO systems,
+ a well known detector for MIMO system is the Sphere Decoder (SD) that perform as well as a Maximum Likelihood detector (MLD) with a dramatic complexity reduction\cite{viterbo1999universal}\cite{hassibi2005sphere}. There are two major problems with the traditional SD decoder: complexity depending on Signal to Noise Ratio (SNR), and sequential nature, which are contradictory with the requirement of a constant data processing throughput and parallel implementation for practical system. The Fixed Complexity Sphere Decoder (FCSD) overcomes these two disadvantages of the SD decoder by searching the solution along a fixed number of independent paths\cite{barbero2008fixing}.
+ 
+General purpose Graphic processing Units Computing (GPGPU) has become a common trend in industry and research in areas that need massive computations, such as computer vision\cite{fung2008using}, computer games\cite{blewitt2013applicability}, signal processing\cite{van2011accelerating}\cite{6671435} and finance\cite{grauer2013accelerating}. Compared to CPU, the GPU can naturally cope with computational intensive tasks, since most of the hardware resource are allocated for data processing and parallel computation, rather than caching and flow control. In recent years GPU computing has provided significant advantages in data processing speeds over CPU computations\cite{nvidia2008programming}. In 2011, the NVIDIA GPUs have become the fastest supercomputer in the world\cite{cook2013cuda},  Computed unified Device Architecture (CUDA) is a programming model for GPGPU that was proposed by NIVIDIA and has become the dominant framework for GPGPU programming. It is based on popular programming languages(C, C++, Java, Python, Fortran, Direct Compute), such that the application developers in different areas do not need to learn a new programming language or get to know the hardware details. CUDA employs the Single Instruction Multiple Threads (SIMT) programming model, enables a GPU to implement parallel data processing, and has become a parallel computing platform for wide community of different applications.
+
+In this paper, a GPU based implementation of Fixed Complexity Sphere Decoder is proposed, which is referred to as CUDA-FCSD. A heterogeneous programming solution for FCSD preprocessing and integrated blocked parallel path searching and decision maker solution are presented, the speedup as well as Bit Error Rate (BER) performance of different sizes of MIMO systems and signal constellations are presented and analyzed. The proposed CUDA-FCSD implementation demonstrates a great potential for large MIMO systems.
+
+The rest of the paper is organized as follows. Section \ref{system} describes the MIMO systems model. Section \ref{programming model} introduces CUDA, GPU architecture and the programming model. In section \ref{GPUFCSD}, we present details of the implementation of CUDA-FCSD. In section \ref{simulation}, the speedup and bit error rate (BER) performance of CUDA-FCSD are presented and analyzed. Finally conclusions are drawn in section \ref{conclusion}.    
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\section{CUDA GPU Architecture and  Programming Model} \label{programming model}
+\subsection{Memory Hierarchy}  
+CUDA programming model is a C programming extension, with special defined syntax and structure. The serial code is executed on the host (CPU) side, and massive parallel data processing is performed on the device (GPU) side, this is defined as a heterogeneous programming model. A thread is the basic programming unit of CUDA, a block of cooperative threads form a thread block, in one block all the threads can share one pitch of on chip memory (shared memory), all the threads executed in one block can synchronize their action meaning the threads are permitted to execute the next instruction only when all the threads have reached the same instruction node. Blocks can be grouped into a one-dimensional, two-dimensional, or three-dimensional grid. Similarly, The threads can also be organized into one-dimensional, two-dimensional or three-dimensional blocks. The organization of the block and grid shape and dimension is determined by the application, Figure \ref{figure1}  simply illustrates the three dimensional thread hierarchy of CUDA.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{CUDA_programming_hierachy.eps}
+\caption{CUDA 3D thread hierachy\\ $5\times 5\times 5$ grid and each block contains $5\times 5\times 5$ threads\\}
+\label{figure1}
+\end{figure}
+
+\subsection{Single Instruction Multiple Thread (SIMT) Model} 
+Threads are scheduled, managed, created and executed in a group of 32 threads called warp, the programs executes on the device side are defined as $\mathit{kernel}$ function, when a $\mathit{kernel}$ function is invoked, the thread blocks are partitioned into warps, the threads in one warps executes the same instruction simultaneously, the different warps are scheduled by warp scheduler, when one warp is waiting for data loading the other warps begin to execute, this is called Single Instruction Multiple Thread (SIMT) model. This programming architecture is askin to Single Instruction Multiple Data (SIMD), however unlike the SIMD vectoring machines, SIMT can branch the behavior of each threads to achieve thread-level parallelism. The GPU use massive number of threads to hide the long latency of global memory instead of using large cache as CPU. In a word CPU cores are designed to minimize latency for each thread at a time, whereas GPUs are designed to handle a large number of concurrent, lightweight threads in order to maximize throughput.
+\subsection{Mircroarchitecture of GPU} 
+In Figure \ref{figure2} we use the GPU-GeForce GTX 760 as an example to show the microarchitecture of  GPU. The GPU works as a coprocessor system, consisting of Stream Multiprocessors (SM). The GeForce GTX 760 has 6 SM that perform the multiply-add arithmetic operation. Furthermore, each SM has the special functional units(SFU) that can perform more complex arithmetics such as trigonometric functions and reciprocal square root. The shared memory, also called on-chip memory located on SM and has low latency and limited capacity. Global memory, which is off-chip memory of the GPU has long latency and large capacity. Another two types of the memory, texture memory and constant memory, are located off-chip, but cached. Therefore the loading speed of the data located in these two type of memory space is much faster than that from global memory. Constant memory is read only and with latency approximately as small as the registers. Registers are allocated dynamically and privately to threads, the access speed of registers is the faster than all the other four types of memories. The variables invoked in $\mathit{kernel}$ functions can be stored in either of the these five types of memories.
+
+Because of the resource limitation of SM the total number of threads can be defined in one block is limited. On current CUDA supported GPUs, one block can contains up to 1024 threads, and all the blocks are executed on SM. Thus the total number of threads ($T_{total}$) we can make use of is $T_{total}=N_{SM}\times N_{threads/SM} $, $N_{SM}$ and $N_{threads/SM}$ denote the number of SM and number of threads per SM. For example the GeForce GTX 760 allows 2048 threads in one SM, thus the total number of threads that can work in parallel is $2048\times 6=12288$.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{High_view_of_CUDA_GPU_microarchitecture.eps}
+\caption{High View of CUDA CPU Microarchitecture}
+\label{figure2}
+\end{figure}   
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+\section{GPU Based Acceleration of FCSD}\label{GPUFCSD}
+\subsection{MIMO System Model}\label{system}
+% no \IEEEPARstart
+%This demo file is intended to serve as a ``starter file''
+%for IEEE conference papers produced under \LaTeX\ using
+%IEEEtran.cls version 1.8 and later.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+%I wish you the best of success.
+%\hfill mds
+%\hfill December 27, 2012
+
+We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, over a flat fading channel, corresponding to the discrete time model, the $\mathbb{y}\in\mathbb{C}^{N_{r}\times 1}$ received symbol vecot can be written as:
+\begin{equation}
+\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n}   \label{formula 1}
+\end{equation}
+$\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from the signal constellation $\mathbb{O}$ (4-QAM, 16-QAM, 64-QAM), of size $M$. All the possible transmitted symbol vectors forms a $N_{t}$ complex signal vector space $\mathbb{O}^{N_{t}}$. $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identity distributed(i.i.d) circularly symmetric complex Gaussian zero mean components of unit variance, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) samples with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, $N_{0}$ denotes the average noise power spectrum density and $\frac{E_{s}}{N_{0}}$ denotes the signal to noise ratio (SNR). 
+
+Assume we have the perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known at the receiver, as well as the SNR. The task of MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
+\subsection{Fixed Complexity Sphere Decoder}
+From (\ref{formula 1}), the maximum likelihood detector (MLD) for a MIMO system is specified by:
+\begin{equation}
+\mathbf{s}_{ML}=arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{y}-\mathbf{H}\mathbf{s}||^{2} \label{formula 2}
+\end{equation}
+We consider a MIMO system with  $N_{t}=N_{r}$. Performing the QR decomposition to the channel propagation matrix
+\begin{equation}
+ \mathbf{H}=\mathbf{Q}\mathbf{R}  \label{QR}
+\end{equation}
+where $\mathbf{Q}\in \mathbf{C}^{N_{t}\times N_{t}}$ is an unitary matrix and $\mathbf{R}\in \mathbf{C}^{N_{t}\times N_{t}}$, is an upper triangular matrix, the basing on \cite{golub2012matrix}, we can write (\ref{formula 2}) as:
+\begin{eqnarray}
+\nonumber
+\mathbf{s}_{ML}&=&arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{Q}^{H}\mathbf{y}-\mathbf{Q}^{H}\mathbf{H}\mathbf{s}||^{2}\\
+&=& arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{Q}^{H}\mathbf{y}-\mathbf{R}\mathbf{s}||^{2} \label{formula 3}
+\end{eqnarray}
+Consider the unconstrained estimation of $\mathbf{s}$, $\mathbf{\hat{s}}=\mathbf{G}\mathbf{y}$, $\mathbf{G}=(\mathbf{H}^{H}\mathbf{H})^{-1}\mathbf{H}^{H}$ based on (\ref{QR}), we have  
+\begin{equation}
+\mathbf{\hat{s}}=\mathbf{G}\mathbf{y}=(\mathbf{R}^{H}\mathbf{R})^{-1}\mathbf{R}^{H}\mathbf{Q}^{H}\mathbf{y}
+=\mathbf{R}^{-1}\mathbf{Q}^{H}\mathbf{y}
+\label{unconstrained estimation}
+\end{equation} 
+Therefore $\mathbf{Q}^{H}\mathbf{y}=\mathbf{R}\mathbf{\hat{s}}$, and (\ref{formula 3}) can be written as
+\begin{equation}
+\mathbf{s}_{ML}=arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{s})||^{2} \label{formula 4}
+\end{equation}
+
+Just like SD the FCSD also performs depth first searching, at the first $\rho$ node levels (\cite{barbero2008fixing} shows when $N_{r}=N_{t}$ the FCSD can achieve the same diversity as the MLD if $\rho\geq \sqrt{N_{t}}-1$) the FCSD search all the possible signal symbols in constellation $\mathbb{O}^{N_{t}}$, which is called Full Expansion(FE) stage, therefore for the symbol nodes $\widetilde{s}_{N_{t}} \widetilde{s}_{N_{t}-1}\dots \widetilde{s}_{N_{t}-\rho+1}$, the FCSD has $M$ branches expansion at each symbol node,  as shown in Figure \ref{figure4}, there are $\rho=2$ FE node levels and each node level has $M=4$ branches. According to (\ref{formula 4}), we have: 
+\begin{equation}
+\hat{s}^{F}_{i}=arg\min_{s\in \mathbb{O}^{N_{t}}}\{\sum_{i=1}^{N_{t}}|r_{ii}(\hat{s}_{i}-s_{i})+\sum_{j=i+1}^{N_{t}}r_{ij}(\hat{s}_{j}-s_{j})|^{2}\}  \label{formula 5}
+\end{equation} 
+$i\in [1,2\dots N_{t}]$, where $r_{ij}$ denotes the component at the $i$th row and $j$th column of the upper triangular matrix $\mathbf{R}$,  based on (\ref{formula 5}) at the remaining $N_{t}-\rho$ levels of symbols, the FCSD performs decision feed back, therefore there are only $1$ branch expansion for each symbol node at this stage, this stage is called Single Expansion (SE). 
+Thus the total number of the branches is fixed (For example in Figure \ref{figure4} the total branch number is $4^{2}$), the FCSD works as a constant number of multiple path tree searching algorithm.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{FCSD_tree_searching.eps}
+\caption{Tree searching of 4-QAM FCSD for 8x8 MIMO system}
+\label{figure4}
+\end{figure}
+In conclusion the FCSD symbol vector candidate $s^{F}_{i}=[s_{1},s_{2}\dots s_{N_{t}}]$ can be expressed as:
+\begin{displaymath}
+s^{F}_{i}=\left\lbrace\begin{array}{c}
+\Omega\in  \mathbb{O}^{\rho}      \quad i=N_{t},N_{t}-1,\dots N_{t}-\rho+1\\
+\mathbb{Q}[\hat{s}_{i}+\sum_{j=i+1}^{N_{t}}\frac{r_{ij}}{r_{ii}}(\hat{s_{j}}-s_{F}^{i})] \quad i=N_{t}-\rho,N_{t}-\rho-1,\dots 2,1 \\
+\end{array}\right.
+\label{FCSD solution}
+\end{displaymath}
+$\mathbb{Q}[\cdot]$ denotes the signal constellation quantization. At the post processing stage, FCSD compares the Euclidean distance of all the symbol vector candidates $E_{metric}$, which can be written as:
+\begin{equation}
+E_{metric}=||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{\widetilde{s}})||^{2}
+\end{equation} 
+Where the $\mathbf{\widetilde{s}}$ denotes the symbol vector candidate. The total number of candidates is: 
+\begin{equation}
+M^{\rho}     \label{path number}
+\end{equation} 
+The symbol vector candidate with the minimum $E_{metric}$ is chosen as the solution.
+\subsection{CUDA-FCSD Preprossing}
+As shown in Figure \ref{figure4}, a FCSD channel ordering strategy to avoid error propagation in serial path searching process is presented in \ref{barbero2008fixing}, this channel ordering strategy is based on post processing signal to noise ratio\cite{wolniansky1998v}:
+\begin{equation}
+\varphi_{m}=\frac{E_{s}}{\sigma^{2}(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}}  \label{ppsnr}
+\end{equation}
+where $\varphi_{m}$ denotes the post processing signal to noise ratio of the $m$th data stream, and $(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}$ denotes the diagonal elements of the inversion of $\mathbf{H}^{H}\mathbf{H}$. When the SNR is determined, the post processing SNR is only determined by $(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}$. From the heuristic in \cite{barbero2008fixing}, for the FE stage the robustness of detector performance is not influenced by the post processing SNR. Thus at FE stage the "weakest" data stream, that is, the data stream with the smallest $\varphi$, is detected first. At SE stage, because of the single searching path branch of the node, the performance is tightly related to the post processing SNR. Therefore at SE stage the data streams with the larger post processing SNR is detected first in order to avoiding error propagation. In conclusion the FCSD ordering works iteratively  and obeys the following rule:
+at the $j$th step ($j=1,2\dots N_{t}-1$), $s_{p}$ denotes the symbol to be detected, where 
+\begin{displaymath}
+p=\left\lbrace \begin{array}{c}
+arg \max_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad FE\quad stage\\
+arg \min_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad SE\quad stage   \label{the ordering}
+\end{array}\right.  
+\end{displaymath}  
+and $\mathbf{H}_{j}\in \mathbb{C}^{N_{r}\times (N_{t}-j+1)}$ denotes the renewed channel matrix. At the $j$th iteration with the column corresponding to previous detected data streams removed from $\mathbf{H}_{j-1}$.
+
+As mention in section \ref{programming model}, our implementation is based on heterogeneous programming principle-achieving performance with a mix of CPU and GPU technology, the flow control and logical operations are reside at the host side, the compute intensive works is implemented at device side. Although the FCSD preprocessing has a serial nature and can not be vectorized, the computational consumptive operations can be performed by the CUDA Basic Linear Algebra Subprograms(cuBLAS)\cite{nvidia2013basic} and corresponding GPU program implementations, as shown in table \ref{table1}.
+\begin{table*}[htb]
+\centering
+\begin{tabular}{|c|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Operations & complex matrix-matrix multiplication & complex matrix-vector multiplication & matrix inverse & cholesky factorization \\
+\hline
+GPU subroutine & $\mathit{cublasCgemm}$  & $\mathit{cublasCgemv}$ & $\mathit{GJE}$ & $\mathit{chol}$\\
+\hline
+Formula   &  $\mathbf{H}^{H}\mathbf{H}$ & $(\mathbf{H}^{H}\mathbf{H})^{-1}\mathbf{H}^{H}y$ & $(\mathbf{H}_{j}^{H}\mathbf{H}_{j})^{-1} $ & $\mathbf{H}^{H}\mathbf{H}=\mathbf{R}^{H}\mathbf{R}$ 
+\\
+\hline
+\end{tabular}
+\caption{Parallel Computation Operation of FCSD Preprocessing}
+\label{table1}
+\end{table*}
+
+Figure \ref{block diagram} illustrates the block diagram of the CUDA-FCSD implementation. 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{CUDA_FCSD_block_diagram.eps}
+\caption{Block Diagram of CUDA-FCSD Implementation}
+\label{block diagram}
+\end{figure}
+\subsection{Parallel Acceleration of Blocked-Paths Searching}
+The decision feedback searching paths have serial nature, we match one path to one thread. In order to have largest amount of threads that can be paralleled, we use one dimension blocks for widest expansion and blocked all the paths into several one dimension blocks. For example We consider $16\times 16$ MIMO system, the modulation scheme is $16$QAM, the number of path we need to search is $\mathbb{O}[M^{\rho}]=16^{3}=4096$, $\rho=\lceil \sqrt{N_{t}}-1\rceil$, where $\lceil x\rceil$ represent the smallest integer larger than $x$, for largest SM occupation we define 4 blocks for path searching kernel and each block has 1024 threads which is the maximum number of thread allowing per block. At each FCSD searching path, the following data operation is performed in one thread:\\
+1. \emph{Path searching}\\
+According to (\ref{FCSD solution}).
+2. \emph{Euclidean distance Calculation}\\
+\begin{equation}
+E_{u}^{k}=\sum_{i=1}^{i=N_{t}}\sum_{j=i}^{j=N_{t}}r_{ij}(\hat{s}_{j}-s_{j})\label{Eu metric}
+\end{equation}
+$E_{u}^{k}$ denotes the $k$th Euclidean distance of the corresponding symbol vector candidate. Loop fusion is applied, we integrate the post processing (\ref{Eu metric}) into path searching process (\ref{FCSD solution}) to reduce the iteration times per thread. 
+\subsubsection{Data Preparation}\label{data preparation}
+There are three major factors that will influence the configuration of the data sets configuration in memory space.\\
+1. Amount of Reading$\&$Writing (R/W) operation per thread.\\
+2. Valid scope\\
+3. Storage occupancy
+
+Unlike CPUs that have a flat memory model meaning the CPU core can access any memory location without restriction, GPUs are computation intensive and only have small cache for special memory space (texture, constant). Thus the memory reading$\&$writing (R/W) strategy of GPU is the crutial factor that influences the application performance. Different memory types has different valid scope, local memory which is invoked in kernel function is valid only in one thread, share memory is valid in one block, constant, texture and global memory are valid both at host side and device side. On the other hand different from global memory (2047 MBytes in GeForce GTX 760), the constant and share memory are all capacity limited (only $65536$ bytes totally and $49152$ bytes per block in GeForce GTX 760). Thus the occupancy of memory is one determinant factor needed to be considered.
+ 
+At host side we set 4 data sets that are stored in global memory which are storage consumptive and must have valid scope for both host and device side, $\mathit{s_{pm}}$ is a $M^{\rho}\times N_{t}$ complex matrix that each row stores one symbol vector candidate and whose valid scope should be during the whole $\mathit{kernel}$ execution. $\mathit{s_{index}}$ is used to store the index of all the possible sub symbol vectors for  FE stage using full factorial method, requires a $\rho\times M^{\rho}$  integer matrix space.  $\mathit{E_{u}}$ is a $M^{\rho}$ floating point vector that is used to store the Euclidean distance of all the symbol vector candidates. $\mathit{s_{kernel}}$ is a complex vector used to store the FCSD solution which length is $N_{t}$ and has to be transferred to host side.
+
+On the other hand, upper triangular matrix $\mathbf{R}$ in (\ref{formula 4})  and unconstrained estimation $\mathbf{\hat{s}}$ in (\ref{unconstrained estimation}) are read only and require large amount of read operations. (for the $16\times 16$ $16QAM$ MIMO system the R/W of $\mathbf{R}$  and $\mathbf{\hat{s}}$ are about  $370$ and $266$ per thread), these two data set need small size of storage(for the $16\times 16$ $16QAM$ MIMO system $1088$ bytes for $\mathbf{R}$ and $128$ bytes for $\mathbf{\hat{s}}$  ) we make use of the read only constant memory to store the data which are capacity limited and do not need write operation in path searching , as we mentioned in section \ref{programming model}, the constant memory is cached so that it is much faster than global memory.
+
+In table \ref{amountofR/Woperations}  we present the amount of R/W operations and the storage that needed for different data variables in FCSD path searching. The amount of the R/W operation is calculated based on the (\ref{path searching}) and (\ref{Eu metric}), for complex values ($\mathbf{R}$ $\mathbf{\hat{s}}$, $\mathit{s_{pm}}$, $\mathit{s_{kernel}}$ ) are stored using CUDA build in variable data type $\mathit{cuComplex}$ which counts 8 bytes. Floating point data set $E_{u}$ is stored using variable type $\mathit{float}$, which counts for 4 bytes, $\mathit{s_{index}}$ is the integer list which is stored using variable type $\mathit{int}$, which counts 1 byte.\\
+ \begin{table*}[htb]  
+ \centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+data & $\mathbf{R}$ & $\mathbf{\hat{s}}$ & $\mathit{s_{pm}}$ & $\mathit{s_{index}}$ & $\mathit{E_{u}}$ & $\mathit{s_{kernel}}$ \\
+\hline
+R/W operations/thread & $(\frac{3}{2}(N_{t})^{2}-\frac{N_{t}}{2}+\rho-\rho^{2})$ & $(\frac{2(N_{t})^{2}+2N_{t}-\rho^{2}-\rho}{2})$ & $N_{t}$ & $\rho$ &$N_{t}$ & $N_{t}$ \\
+\hline
+Storage/bytes  & $4(N_{t}+1)N_{t}$ & $8N_{t}$ & $8M^{\rho}N_{t}$ & $N_{t}M^{\rho}$ & $4N_{t}M^{\rho}$ & $8N_{t}$\\
+\hline  
+\end{tabular} 
+ \caption{Amount of R/W Operations and Storage Requirement of Different Data Set}
+  \label{amountofR/Woperations} 
+\end{table*}  
+\subsubsection{Memory Accesss Pattern}
+When considering large MIMO array, the large amount of R/W operations determine that the memory bandwidth is the major bottleneck of the performance,  although the theoretical bandwidth of off-chip memory is extremely high (in GeForce GTX 760 the bandwidth of off-chip memory is around $192 GB/s$), however the effect memory bandwidth can only be achieved by proper R/W strategy.
+
+Global memory is implemented by dynamic random access memory (DRAM) whose R/W is extremely slow process, modern DRAM R/W operations are performed by access a pitch of consecutive memory location, as mentioned in section (\ref{programming model}), the warp is the basic schedule unit of device, with one instruction recall one warp of threads that execute at the same time, the most favorable global memory access pattern is to keep one warp of threads that access consecutive memory as much as possible. For the GeForce GTX 760, the DRAM will access a consecutive memory address that has 128 bytes length, In Figure \ref{coalesce global memory} we take the global access pattern of the $\mathit{s_{pm}}$ as an example to illustrate how we coalesce the the global memory.
+  \begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{coalescing_global_memory.eps}
+\caption{Global Memory Access Pattern of $\mathit{s_{pm}}$}
+\label{coalesce global memory}
+\end{figure}
+We store $\mathit{s_{pm}}$ in one pitch of linear global memory, with each row store one $N_{t}=16$ complex symbol vector solution candidate of $\mathbf{\hat{s}}^{F}$ in (\ref{formula 5}), totally there are $M^{\rho}=4096$ rows, this matrix is stored in column major. As mentioned before one path searching is performed by one thread, thus the address two consecutive symbol operated in one thread is $4096$, however for consecutive threads the address they reach is continues as shown in Figure \ref{coalesce global memory}, each 32 threads in one warp can make R/W operation to a pitch of continues memory, which is $32\times 8=256$ bytes, counts for two times of DRAM access.
+
+As we mentioned in section (\ref{programming model}), the registers are allocated to the threads dynamically and have much faster access speed than that of global memory. Therefore, for all the transient data that used for accumulator in (\ref{path searching}), (\ref{Eu metric}), and the symbol vector candidate during the path searching process of each thread, are stored temporarily in registers to hide the latency of R/W of global memory.
+\subsubsection{Data Transfer Minimization}   
+The data transfer between the host and the device side is much more slower than the inner device data transferring, therefore, in our application we minimize the data transferring times, we make data transfer only once for propagation channel matrix $\mathbf{H}$, received symbol vector $\mathbf{y}$ in (\ref{formula 1}) as well as the sub symbol vector index list $\mathit{s_{index}}$ at FE stage. 
+\subsection{Larger MIMO Systems and Constellation Sizes}
+Consider the uplink $32\times 32$ MIMO system with $16$QAM modulation scheme, the path number that need to be searched is $M^{\rho}=16^{5}=1048576$. The maximum number of threads that can be execute in $\mathit{kernel}$ function of the GeForce GTX 760 is 12288, therefore we need to consider execute the $\mathit{kernel}$ function in loop, in order to avoid device synchronization latency, we synchronize and return the control to host side in order to reduce the synchronization expense. Under this condition we use 12 linear blocks and each block has 1024 threads, we execute the $\mathit{kernel}$ function for 86 times and get the final solution,  when it comes to the large MIMO systems and large signal constellations such as $36\times 36$ $16$QAM, $144\times 144$ $4$QAM, $20\times 20$ $64$QAM, the global memory that need to used to store $s_{pm}$ in section (\ref{data preparation}) will out of bound (2 GB), multiple kernels with each one deal with a small subset of symbol vector candidates and kernel concurrency\cite{nvidia2008programming} can be applied to solve this problem.
+\section{Simulation Results}\label{simulation}
+\subsection{Environment}
+\subsubsection{Device}
+\emph{Graphic Processing Units}: GeForce GTX 760, GPU clock rate: 1.08 GHz , memory clock rate: 3 GHz , number of SM: 6, maximum number of threads per stream multiprocessor: 2048, total amount of global memory: 2 GB, total amount of share memory per block: 49 KB, total amount of constant memory: 66 KB. \\
+\emph{Central Processing Units-Modigliani}: Intel Core i5-4th generation, 4 cores 3.20 GHz CPU clock rate, 8 GB RAM\\
+\emph{Central Processing Units-Monet} : Intel Core i7-3rd generation, 12 cores 3.20 GHz CPU clock rate, 32 GB RAM
+\subsubsection{Software}
+CUDA Driver Version / Runtime Version      6.5 / 6.0\\
+Nsight Eclipse Version 6.5
+\subsection{Performance and Evaluation}
+\begin{table*}[htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
+\cline{2-6}
+&GeForce GTX 760 & Modigliani & Monet &  GTX 760/Modigliani  &  GTX 760/Monet \\
+\hline
+$8\times 8$& 7.39& 0.10&0.11 & 0.01& 0.01\\
+\hline
+$16\times 16$&16.26 & 0.92&0.98& 0.06& 0.06\\
+\hline
+$32\times 32$&38.32 & 31.27& 34.60& 0.82& 0.90\\
+\hline
+$48\times 48$&71.95& 262.00& 285.14& 3.64& 3.96\\
+\hline
+$64\times 64$& 322.90&1753.30&1940.10&5.43& 6.01 \\
+\hline
+$72\times 72 $&1285.41&8727.69 &9641.80 &6.79 &7.50 \\
+\hline
+$84\times 84$ &6454.02&47095.33&49962.01&7.30&7.74\\
+\hline
+\end{tabular}
+\caption{speedup performance of different MIMO systems using 4 QAM}
+\label{speedup1}
+\end{table*}
+\begin{table*}[htb]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
+\cline{2-6}
+&GeForce GTX 760 & Modigliani & Monet &  GTX 760/Modigliani  &  GTX 760/Monet \\
+\hline
+$8\times 8$&13.20& 0.67&0.93 & 0.05&0.07\\
+\hline
+$16\times 16$&26.80 & 31.68&41.95& 1.18& 1.57\\
+\hline
+$20\times 20$&192.70 & 740.50& 978.26& 3.84& 5.08\\
+\hline
+$32\times 32$&4980.13& 28209.53& 38106.00& 5.66& 7.65\\
+\hline
+$36\times 36$& 5568.26&35240.16&47290.00&6.33& 8.61 \\
+\hline
+\end{tabular}
+\caption{speedup performance of different MIMO systems using 16 QAM}
+\label{speedup2}
+\end{table*}
+\begin{table*}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
+\cline{2-6}
+&GeForce GTX 760 & Modigliani & Monet &  GTX 760/Modigliani  &  GTX 760/Monet \\
+\hline
+$8\times 8$&12.28& 10.69&13.38 & 0.87&1.09 \\
+\hline
+$16\times 16$&468.92 & 2066.08&2689.00& 4.41& 5.73\\
+
+\hline
+
+\end{tabular}
+\caption{speedup performance of different MIMO systems using 64 QAM}
+\label{speedup3}
+\end{table*}
+
+We made simulation to different sizes MIMO systems and signal constellation and comparison is made between the Geforce GTX 760 and two kinds of CPU, the speedup performance is presented in table \ref{speedup1}, \ref{speedup2} and \ref{speedup3}. All the operation times we test is based on $1000$ channel realizations, the transmitted data is generated randomly and modulated by $M$ quadrature amplitude modulation (QAM) scheme.
+
+In table \ref{speedup1}, for small MIMO systems $8\times 8$ and $16\times 16$, the speed performance of GPU implementation is even worse than that of CPU. The number of path of these antenna configurations that need to be searched is relatively small ($16$ for $8\times 8$ system and $64$ for $16\times 16$ system), the CPU implementation has already had a good performance, the CPUs are designed for serial code execution with the special hardwares (branch prediction units, multiple caches, etc) and have extremely good performance at it, however the GPUs can achieve a good performance only when they are utilized in parallel manner, there is a short time for GPU to "warm up", for host-device data transmission, launch kernel function and host device synchronization. Furthermore, for small number of threads, the memory R/W latency is not well hided. For the $32\times 32$ systems, the speed performance of GPU and CPU implementation is close, when comes to larger MIMO systems $48\times 48$, $64\times 64$, $72\times 72$, a large parallelism is achieved so that the GPU begin to display its data processing power, the speedup can be from $2.50$ to $4.20$. 
+
+In table \ref{speedup2} and \ref{speedup3}, $16$QAM and $64$QAM are considered, the speedup of GPU implementation is reached from a small MIMO size, For $16\times 16$ system using $16$QAM $1.18$ speedup over Modigliani and $1.57$ speedup over Monet. For $8\times 8$, $64$QAM, $0.87$ speedup over Modigliani and $1.09$ speedup over Monet.  For lager signal constellation, the massive parallelism can be reached for relatively small MIMO systems.
+
+It can be observed from table \ref{speedup1}, \ref{speedup2} and \ref{speedup3}, GPU implementation shows its speed advantage over CPU implementation for increasing size of MIMO systems and signal constellations, indicating this GPU implementation's suitability for large MIMO system and large signal constellation.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{BER_curves.eps}
+\caption{BER performance of different sizes of MIMO systems and modulation scheme by GPU}
+\label{BER curve}
+\end{figure}
+Figure \ref{BER curve} shows the Monte Carlo simulation results of bit error rate (BER) performance for different MIMO systems and constellation sizes, we consider uncoded spatial multiplexing MIMO systems, the transmitted binary sequence is generated randomly and  mutually independent, modulated by $M$-QAM modulation scheme, the results have been obtained using $100000$ channel realizations and $500$ symbol errors accumulated. 
+\section{Conclusion}\label{conclusion}
+This paper presents the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional computation platform. In order to exploit the computational capability of GPU in the simulation of large MIMO systems, the utilization of heterogeneous programming model, thread resource limitation and memory configuration are considered in a comprehensive way. The simulation shows considerable acceleration of GPU implementation of FCSD can be reached for large MIMO systems and large signal constellation sizes while the same BER performance can be obtained. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for computational consumptive simulation in large MIMO area. The future work contains taking into consider the kernel execution and data transferring concurrence in order to optimize memory allocation strategy for large MIMO systems.       
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+
+
+
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+
+
+
+
+
+% that's all folks
+%\end{spacing}
+\bibliographystyle{IEEEtran}
+\bibliography{citation_conf}
+\end{document}

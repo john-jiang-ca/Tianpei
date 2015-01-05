@@ -1,0 +1,7 @@
+this is the SNR 18 63.095726
+
+this is the bit error rate of 16 X 16 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+18 
+63.095726 

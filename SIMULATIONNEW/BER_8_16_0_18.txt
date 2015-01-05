@@ -1,0 +1,27 @@
+8X8 array
+0:2:18 SNR per bit in dB
+this is 16 QAM modulation
+BER
+the bit error rate of SNR 1.000000 is: 0.256291 
+the bit error rate of SNR 1.584893 is: 0.225231 
+the bit error rate of SNR 2.511886 is: 0.189038 
+the bit error rate of SNR 3.981072 is: 0.148347 
+the bit error rate of SNR 6.309574 is: 0.094947 
+the bit error rate of SNR 10.000000 is: 0.040334 
+the bit error rate of SNR 15.848933 is: 0.008522 
+the bit error rate of SNR 25.118862 is: 0.000909 
+the bit error rate of SNR 39.810719 is: 0.00004961727
+the bit error rate of SNR 18 is:  0.00000235999
+ 
+SER
+this is 16 QAM modulation
+the symbol error rate of SNR 1.000000 is: 0.698888 
+the symbol error rate of SNR 1.584893 is: 0.643375 
+the symbol error rate of SNR 2.511886 is: 0.566125 
+the symbol error rate of SNR 3.981072 is: 0.458663 
+the symbol error rate of SNR 6.309574 is: 0.300687 
+the symbol error rate of SNR 10.000000 is: 0.129850 
+the symbol error rate of SNR 15.848933 is: 0.028237 
+the symbol error rate of SNR 25.118862 is: 0.003125 
+the symbol error rate of SNR 39.810719 is: 0.000198  
+

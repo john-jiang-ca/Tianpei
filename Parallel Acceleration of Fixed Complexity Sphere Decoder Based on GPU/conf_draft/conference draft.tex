@@ -63,7 +63,8 @@
 % should be used if it is desired that the figures are to be displayed inft.tex
 
 % draft mode.
-\documentclass[a4paper, 10pt, conference]{IEEEconf}
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}
+\documentclass[letterpaper, 10pt, conference]{ieeeconf}
 %\documentclass[12pt,a4paper,final]{article}
 %\IEEEoverridecommandlockouts
 %\overrideIEEEmargins
@@ -74,11 +75,18 @@
 
 % manually specify the path to it like:
 \usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{caption}
+%\usepackage{amsthm}
+%\usepackage{caption}
 \usepackage{multirow}
 \usepackage{setspace}
 \usepackage{epstopdf}
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{fancyhdr}
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
@@ -143,7 +151,7 @@
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
-   \usepackage[dvips]{graphicx}
+  \usepackage[dvips]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../eps/}}
   % and their extensions so you won't have to specify these with
@@ -301,7 +309,7 @@
 % Instead, use Morten Hogholm'a dblfloatfix which combines the features
 % of both fixltx2e and stfloats:
 %
- \usepackage{dblfloatfix}
+% \usepackage{dblfloatfix}
 % The latest version can be found at:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
 
@@ -336,7 +344,7 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 % Do not put math or special symbols in the title.
-\title{\LARGE \bf GPU Acceleration of Fixed Complexity Sphere Decoder for Large MIMO Uplink Systems}
+\title{\LARGE \bf GPU Acceleration for Fixed Complexity Sphere Decoder in Large MIMO Uplink Systems}
 
 
 % author names and affiliations
@@ -347,7 +355,9 @@
 %\IEEEauthorblockA{ID: 25504946\\Department of Electrical and\\Computer Engineering\\
 %McGill University\\
 %Montreal, Quebec}}
-\author{Tianpei Chen and Harry Leib}
+\author{Tianpei Chen and Harry Leib\\
+Department of Electrical and Computer Engineering, McGill University, Montreal, Quebec\\
+tianpei.chen@mail.mcgill.ca harry.leib@mcgill.ca}
  %Department of Electrical and Computer Engineering\\
  %McGill University\\
 % Montreal, Quebec}
@@ -392,15 +402,28 @@
 \begin{document}
 % make the title area
 %\begin{spacing}{2.5}
-\date{}
+%\date{}
 \maketitle
-\thispagestyle{empty}
-\pagestyle{empty}
+\thispagestyle{fancy} % IEEE模板在\maketitle后会自动声明\thispagestyle{plain}，  
+                      % 导致第一页什么都没有。所以得把plain更改为fancy  
+\lhead{} % 页眉左，需要东西的话就在{}内添加  
+\chead{} % 页眉中  
+\rhead{\thepage} % 页眉右  
+\lfoot{} % 页眉左  
+\cfoot{} % 页眉中  
+\rfoot{} %页眉右，\thepage 表示当前页码  
+\renewcommand{\headrulewidth}{0pt} %改为0pt即可去掉页眉下面的横线  
+\renewcommand{\footrulewidth}{0pt} %改为0pt即可去掉页脚上面的横线  
+\pagestyle{fancy}  
+\rhead{\thepage}
+%\thispagestyle{empty}
+%\pagestyle{empty}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Large MIMO constitutes a principal techniques for next generation wireless communication systems. Detection algorithms for large MIMO tend to require long simulation times on conventional computer systems, in order to reduce the simulation times for decoders of large MIMO systems, we propose to use General Purpose Graphic Processing Units (GPGPU). In this paper Fixed Complexity Sphere Decoder (FCSD) is implemented for the large scale MIMO system based on the dominant framework of GPGPU-Computed Unified Device Architecture (CUDA). The proposed CUDA-FCSD can achieve considerable speedup over conventional CPU implementation while reaching the same Bit Error Rate (BER) performance. Furthermore the proposed algorithm demonstrates great potential to accelerate large MIMO systems.\\
-\textbf{ Keywords: Large MIMO, FCSD, GPGPU, CUDA}
+Large MIMO constitutes a principal technology for next generation wireless communication systems. Detection algorithms for large MIMO schemes tend to require long simulation times on conventional computer systems. In order to improve simulation efficiency of decoders in large MIMO systems, we propose to use General Purpose Graphic Processing Units (GPGPU). This paper considers the implementation of a Fixed Complexity Sphere Decoder (FCSD) for large scale MIMO systems using the framework of GPGPU-Computed Unified Device Architecture (CUDA). The proposed CUDA-FCSD can achieve considerable speedups over conventional CPU implementation while providing the same Bit Error Rate (BER) performance. Furthermore the proposed algorithm demonstrates the great potential of GPGPU to accelerate the simulation of large MIMO systems.
+
+\textbf{ Keywords: Large MIMO, fixed complexity sphere decoder (FCSD), general purpose graphic processing units (GPGPU), computed unified device architecture (CUDA)}
 \end{abstract}
 
 % no keywords
@@ -419,16 +442,16 @@ Large MIMO constitutes a principal techniques for next generation wireless commu
 %\IEEEpeerreviewmaketitle
 
 \section{Introduction}
-The present challenge in the wireless communication area is the sharp contrast between the increasing demand of mobile network speed for the transmission of rich media content with better QoS (Quality of Service), and the shortage of radio frequency spectrum. Multiple Input Multiple Output (MIMO) is thought to be a very promising technology that can help to solve this problem owing to several advantages it can offer. The core idea of MIMO is to use multiple antennas that at the transmitting and receiving sides, that provide parallel data pipes in space resulting in spatial multiplexing gains\cite{oestges2010mimo}. For example the LTE standard supports up to 8 antennas at the base station\cite{dahlman20103g}. 
+A present challenge in the wireless communication area is to bridge the sharp contrast between the increasing demand of mobile network speed for the transmission of rich media content with better QoS (Quality of Service), and the shortage of radio frequency spectrum. Multiple Input Multiple Output (MIMO) technology is of immense research interest since it can help solving this problem owing to several advantages it offers. The core idea of MIMO is to use multiple antennas at the transmitting and receiving sides, that provide parallel data pipes, resulting in spatial multiplexing and diversity gains\cite{oestges2010mimo}. 
 
-Large scale MIMO (also named massive MIMO) systems employ hundreds of low-power low-price antennas collocated at the base station and serving several tens of terminals at the same time\cite{rusek2013scaling}. This technology originated from multiuser MIMO (MU-MIMO) systems\cite{larsson2013massive}. Large scale MIMO will achieve the full potential of conventional MIMO systems (spatial diversity gain and spatial multiplexing gain), as well as provide additional reduction of latency and improvement of system robustness. Detector is one of the key component of MIMO systems,
- a well known detector for MIMO system is the Sphere Decoder (SD) that perform as well as a Maximum Likelihood detector (MLD) with a dramatic complexity reduction\cite{viterbo1999universal}\cite{hassibi2005sphere}. There are two major problems with the traditional SD decoder: complexity depending on Signal to Noise Ratio (SNR), and sequential nature, which are contradictory with the requirement of a constant data processing throughput and parallel implementation for practical system. The Fixed Complexity Sphere Decoder (FCSD) overcomes these two disadvantages of the SD decoder by searching the solution along a fixed number of independent paths\cite{barbero2008fixing}.
+Large scale MIMO (also named massive MIMO) systems employ tens to hundreds of low-power low-price antennas at the base station, that serve many terminals at the same time\cite{rusek2013scaling}. Large scale MIMO can achieve the full potential of conventional MIMO systems, as well as provide additional reduction of latency and improvement of system robustness. The detector is one of the key components of MIMO systems.
+ A well known detector for MIMO systems is the Sphere Decoder (SD) that performs as well as a Maximum Likelihood detector (MLD), with a dramatic complexity reduction\cite{viterbo1999universal}\cite{hassibi2005sphere}. There are two major problems with the traditional SD decoder: complexity depending on Signal to Noise Ratio (SNR), and sequential nature, which conflict with the requirement of a constant data processing throughput and parallel implementation for practical systems. The Fixed Complexity Sphere Decoder (FCSD) overcomes these problems of the SD decoder by searching the solution along a fixed number of independent paths\cite{barbero2008fixing}.
  
-General purpose Graphic processing Units Computing (GPGPU) has become a common trend in industry and research in areas that need massive computations, such as computer vision\cite{fung2008using}, computer games\cite{blewitt2013applicability}, signal processing\cite{van2011accelerating}\cite{6671435} and finance\cite{grauer2013accelerating}. Compared to CPU, the GPU can naturally cope with computational intensive tasks, since most of the hardware resource are allocated for data processing and parallel computation, rather than caching and flow control. In recent years GPU computing has provided significant advantages in data processing speeds over CPU computations\cite{nvidia2008programming}. In 2011, the NVIDIA GPUs have become the fastest supercomputer in the world\cite{cook2013cuda},  Computed unified Device Architecture (CUDA) is a programming model for GPGPU that was proposed by NIVIDIA and has become the dominant framework for GPGPU programming. It is based on popular programming languages(C, C++, Java, Python, Fortran, Direct Compute), such that the application developers in different areas do not need to learn a new programming language or get to know the hardware details. CUDA employs the Single Instruction Multiple Threads (SIMT) programming model, enables a GPU to implement parallel data processing, and has become a parallel computing platform for wide community of different applications.
+General Purpose Graphic Processing Units (GPGPU) computing is a common trend in industry and research in areas that need massive computations, such as computer vision\cite{fung2008using}, computer games\cite{blewitt2013applicability}, signal processing\cite{van2011accelerating}\cite{6671435}, and finance\cite{grauer2013accelerating}. Compared to a CPU, a GPU can naturally cope with computational intensive tasks, since most of the hardware resources are allocated for data processing and parallel computation, rather than caching and flow control\cite{cook2013cuda}. In recent years GPU computing has provided significant advantages in data processing speeds over CPU computations\cite{nvidia2008programming}. The Computed unified Device Architecture (CUDA)\cite{cook2013cuda}\cite{nvidia2008programming} is a programming model for GPGPU that was proposed by NIVIDIA and has become the dominant framework for GPGPU programming. It is based on popular programming languages (C, C++, Java, Python, Fortran, Direct Compute), such that the application developers in different areas do not need to learn a new programming language or get to know the hardware details. CUDA employs the Single Instruction Multiple Threads (SIMT) programming model, enables a GPU to implement parallel data processing, and has become a parallel computing platform for different applications.
 
-In this paper, a GPU based implementation of Fixed Complexity Sphere Decoder is proposed, which is referred to as CUDA-FCSD. A heterogeneous programming solution for FCSD preprocessing and integrated blocked parallel path searching and decision maker solution are presented, the speedup as well as Bit Error Rate (BER) performance of different sizes of MIMO systems and signal constellations are presented and analyzed. The proposed CUDA-FCSD implementation demonstrates a great potential for large MIMO systems.
+In this paper, a GPU based implementation of Fixed Complexity Sphere Decoder (FCSD) is proposed, which is referred to as CUDA-FCSD. A heterogeneous programming solution for FCSD preprocessing and integrated blocked parallel path searching and decision making are presented. Using this implementation the speedup as well as Bit Error Rate (BER) performance of different sizes of MIMO systems and signal constellations are analyzed. The proposed CUDA-FCSD implementation demonstrates a great potential for large MIMO systems.
 
-The rest of the paper is organized as follows. Section \ref{system} describes the MIMO systems model. Section \ref{programming model} introduces CUDA, GPU architecture and the programming model. In section \ref{GPUFCSD}, we present details of the implementation of CUDA-FCSD. In section \ref{simulation}, the speedup and bit error rate (BER) performance of CUDA-FCSD are presented and analyzed. Finally conclusions are drawn in section \ref{conclusion}.    
+The rest of the paper is organized as follows. Section \ref{programming model} briefly introduces CUDA, the GPU architecture and the programming model. In section \ref{GPUFCSD}, we present details of the implementation of CUDA-FCSD. In section \ref{simulation}, the speedup and bit error rate (BER) performance of CUDA-FCSD are considered. Finally, conclusions are drawn in section \ref{conclusion}.    
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
 
@@ -505,26 +528,29 @@ The rest of the paper is organized as follows. Section \ref{system} describes th
 %\end{tabular}
 %\end{table}
 
-\section{CUDA GPU Architecture and  Programming Model} \label{programming model}
-\subsection{Memory Hierarchy}  
-CUDA programming model is a C programming extension, with special defined syntax and structure. The serial code is executed on the host (CPU) side, and massive parallel data processing is performed on the device (GPU) side, this is defined as a heterogeneous programming model. A thread is the basic programming unit of CUDA, a block of cooperative threads form a thread block, in one block all the threads can share one pitch of on chip memory (shared memory), all the threads executed in one block can synchronize their action meaning the threads are permitted to execute the next instruction only when all the threads have reached the same instruction node. Blocks can be grouped into a one-dimensional, two-dimensional, or three-dimensional grid. Similarly, The threads can also be organized into one-dimensional, two-dimensional or three-dimensional blocks. The organization of the block and grid shape and dimension is determined by the application, Figure \ref{figure1}  simply illustrates the three dimensional thread hierarchy of CUDA.
+\section{CUDA Programming Model and GPU Architecture} \label{programming model} 
+\subsection{Single Instruction Multiple Thread Model}
+The CUDA programming model is a C programming extension with special defined syntax and structure. The serial code is executed on the host (CPU) side, and massive parallel data processing is performed on the device (GPU) side. Such an approach is defined as a heterogeneous programming model. A thread is the basic programming unit of CUDA. A block of cooperative threads form a thread block, where they can synchronize their behavior and communicate. Fig. \ref{figure1} illustrates a simple CUDA memory hierachy model.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{CUDA_programming_hierachy.eps}
-\caption{CUDA 3D thread hierachy\\ $5\times 5\times 5$ grid and each block contains $5\times 5\times 5$ threads\\}
+\includegraphics*[width=0.5\textwidth]{CUDA_programming_hierachy.eps}
+\caption{ CUDA 3D memory hierachy $5\times 5\times 5$ grid, with each block composed of $5\times 5\times 5$ threads.
+The threads can be organized into one-dimensional, two-dimensional or three-dimensional blocks. Similarly, blocks can also be grouped into a one-dimensional, two-dimensional, or three-dimensional grid.
+}
 \label{figure1}
-\end{figure}
+\end{figure} 
 
-\subsection{Single Instruction Multiple Thread (SIMT) Model} 
-Threads are scheduled, managed, created and executed in a group of 32 threads called warp, the programs executes on the device side are defined as $\mathit{kernel}$ function, when a $\mathit{kernel}$ function is invoked, the thread blocks are partitioned into warps, the threads in one warps executes the same instruction simultaneously, the different warps are scheduled by warp scheduler, when one warp is waiting for data loading the other warps begin to execute, this is called Single Instruction Multiple Thread (SIMT) model. This programming architecture is askin to Single Instruction Multiple Data (SIMD), however unlike the SIMD vectoring machines, SIMT can branch the behavior of each threads to achieve thread-level parallelism. The GPU use massive number of threads to hide the long latency of global memory instead of using large cache as CPU. In a word CPU cores are designed to minimize latency for each thread at a time, whereas GPUs are designed to handle a large number of concurrent, lightweight threads in order to maximize throughput.
+Threads are scheduled, managed, created and executed in a group of 32, called warp. The programs that execute on the device side are defined as \textit{kernel} functions. When a \textit{kernel} function is invoked, the thread blocks are partitioned into warps. The threads in one warp execute the same instruction simultaneously. The different warps are scheduled by a warp scheduler. When one warp is waiting for data loading, the other warps begin to execute. Such an approach is called a Single Instruction Multiple Thread (SIMT) model. This programming architecture is akin to a Single Instruction Multiple Data (SIMD) scheme, however unlike SIMD vectoring machines, the SIMT can branch the behavior of each threads to achieve thread-level parallelism. The GPU uses a massive number of threads to hide the long latency of a global memory, instead of using a large cache as CPU. A CPU core is designed to minimize the latency for each thread at a time, whereas a GPU is designed to handle a large number of concurrent lightweight threads, in order to maximize throughput.
 \subsection{Mircroarchitecture of GPU} 
-In Figure \ref{figure2} we use the GPU-GeForce GTX 760 as an example to show the microarchitecture of  GPU. The GPU works as a coprocessor system, consisting of Stream Multiprocessors (SM). The GeForce GTX 760 has 6 SM that perform the multiply-add arithmetic operation. Furthermore, each SM has the special functional units(SFU) that can perform more complex arithmetics such as trigonometric functions and reciprocal square root. The shared memory, also called on-chip memory located on SM and has low latency and limited capacity. Global memory, which is off-chip memory of the GPU has long latency and large capacity. Another two types of the memory, texture memory and constant memory, are located off-chip, but cached. Therefore the loading speed of the data located in these two type of memory space is much faster than that from global memory. Constant memory is read only and with latency approximately as small as the registers. Registers are allocated dynamically and privately to threads, the access speed of registers is the faster than all the other four types of memories. The variables invoked in $\mathit{kernel}$ functions can be stored in either of the these five types of memories.
+We present the GPU-GeForce GTX 760 microarchitecture in Fig. \ref{figure2} as an example. The GPU works as a coprocessor system, consisting of Stream Multiprocessors (SMs), which perform multiply-add arithmetic operations. Furthermore, each SM has the special functional units (SFU) that can perform more complex operations such as trigonometric functions and reciprocal square root. There are five types of memories: registers, shared memory, global memory, constant memory and texture memory. Registers are allocated dynamically and privately to threads, and provide most rapid access speeds. The shared memory, also called on-chip memory, is located on the SMs and can be shared among the threads in one block. Shared memory has low latency and limited capacity. Global memory, which is off-chip has large latency and large capacity. The other two types of memories, constant memory and texture memory, are located off-chip, but cached. Therefore the access speed of these two type of memory space is much faster than that of global memory. The variables invoked by \textit{kernel} functions can be stored in either of the these five types of memories.
 
-Because of the resource limitation of SM the total number of threads can be defined in one block is limited. On current CUDA supported GPUs, one block can contains up to 1024 threads, and all the blocks are executed on SM. Thus the total number of threads ($T_{total}$) we can make use of is $T_{total}=N_{SM}\times N_{threads/SM} $, $N_{SM}$ and $N_{threads/SM}$ denote the number of SM and number of threads per SM. For example the GeForce GTX 760 allows 2048 threads in one SM, thus the total number of threads that can work in parallel is $2048\times 6=12288$.
+Because of the resource limitation of SM, the total number of threads that can be defined in one block is limited. On current CUDA supported GPUs, one block contains up to 1024 threads. Thus the total number of threads ($T_{total}$) we can use is $T_{total}=N_{SM}\times N_{threads/SM} $, where $N_{SM}$ and $N_{threads/SM}$ denote the number of SMs and number of threads per SM.  
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{High_view_of_CUDA_GPU_microarchitecture.eps}
-\caption{High View of CUDA CPU Microarchitecture}
+\includegraphics[width=0.45\textwidth]{High_view_of_CUDA_GPU_microarchitecture.eps}
+\caption{ High View of CUDA CPU Microarchitecture
+The GeForce GTX 760 has 6 SMs and the maximum number of threads allowed on each SM is 2048. Thus the total number of threads that can work in parallel is $2048\times 6=12288$.
+}
 \label{figure2}
 \end{figure}   
 % Note that IEEE does not put floats in the very first column - or typically
@@ -545,89 +571,90 @@ Because of the resource limitation of SM the total number of threads can be defi
 %\hfill mds
 %\hfill December 27, 2012
 
-We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, over a flat fading channel, corresponding to the discrete time model, the $\mathbb{y}\in\mathbb{C}^{N_{r}\times 1}$ received symbol vecot can be written as:
+We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, over a flat fading channel. Using a discrete time model, $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector written as:
 \begin{equation}
-\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n}   \label{formula 1}
+\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{formula 1}
 \end{equation}
-$\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from the signal constellation $\mathbb{O}$ (4-QAM, 16-QAM, 64-QAM), of size $M$. All the possible transmitted symbol vectors forms a $N_{t}$ complex signal vector space $\mathbb{O}^{N_{t}}$. $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identity distributed(i.i.d) circularly symmetric complex Gaussian zero mean components of unit variance, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) samples with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, $N_{0}$ denotes the average noise power spectrum density and $\frac{E_{s}}{N_{0}}$ denotes the signal to noise ratio (SNR). 
+where $\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from a signal constellation $\mathbb{O}$ (4-QAM, 16-QAM, 64-QAM) of size $M$. All the possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, with $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identity distributed (i.i.d) circularly symmetric complex Gaussian components of zero mean and unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
-Assume we have the perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known at the receiver, as well as the SNR. The task of MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
+Assume the receiver has the perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known by receiver, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 \subsection{Fixed Complexity Sphere Decoder}
 From (\ref{formula 1}), the maximum likelihood detector (MLD) for a MIMO system is specified by:
 \begin{equation}
-\mathbf{s}_{ML}=arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{y}-\mathbf{H}\mathbf{s}||^{2} \label{formula 2}
+\mathbf{s}_{ML}=arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{y}-\mathbf{H}\mathbf{s}||^{2}. \label{formula 2}
 \end{equation}
-We consider a MIMO system with  $N_{t}=N_{r}$. Performing the QR decomposition to the channel propagation matrix
+We consider a MIMO system with  $N_{t}=N_{r}$. Performing the QR decomposition of the channel propagation matrix
 \begin{equation}
- \mathbf{H}=\mathbf{Q}\mathbf{R}  \label{QR}
+ \mathbf{H}=\mathbf{Q}\mathbf{R},  \label{QR}
 \end{equation}
-where $\mathbf{Q}\in \mathbf{C}^{N_{t}\times N_{t}}$ is an unitary matrix and $\mathbf{R}\in \mathbf{C}^{N_{t}\times N_{t}}$, is an upper triangular matrix, the basing on \cite{golub2012matrix}, we can write (\ref{formula 2}) as:
+where $\mathbf{Q}\in \mathbb{C}^{N_{t}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in \mathbb{C}^{N_{t}\times N_{t}}$, is an upper triangular matrix \cite{golub2012matrix}, we can write (\ref{formula 2}) as:
 \begin{eqnarray}
 \nonumber
 \mathbf{s}_{ML}&=&arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{Q}^{H}\mathbf{y}-\mathbf{Q}^{H}\mathbf{H}\mathbf{s}||^{2}\\
-&=& arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{Q}^{H}\mathbf{y}-\mathbf{R}\mathbf{s}||^{2} \label{formula 3}
+&=& arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{Q}^{H}\mathbf{y}-\mathbf{R}\mathbf{s}||^{2}. \label{formula 3}
 \end{eqnarray}
-Consider the unconstrained estimation of $\mathbf{s}$, $\mathbf{\hat{s}}=\mathbf{G}\mathbf{y}$, $\mathbf{G}=(\mathbf{H}^{H}\mathbf{H})^{-1}\mathbf{H}^{H}$ based on (\ref{QR}), we have  
+Using the unconstrained estimator of $\mathbf{s}$, $\mathbf{\hat{s}}=\mathbf{G}\mathbf{y}$, $\mathbf{G}=(\mathbf{H}^{H}\mathbf{H})^{-1}\mathbf{H}^{H}$, and (\ref{QR}), we have  
 \begin{equation}
 \mathbf{\hat{s}}=\mathbf{G}\mathbf{y}=(\mathbf{R}^{H}\mathbf{R})^{-1}\mathbf{R}^{H}\mathbf{Q}^{H}\mathbf{y}
-=\mathbf{R}^{-1}\mathbf{Q}^{H}\mathbf{y}
+=\mathbf{R}^{-1}\mathbf{Q}^{H}\mathbf{y}.
 \label{unconstrained estimation}
 \end{equation} 
 Therefore $\mathbf{Q}^{H}\mathbf{y}=\mathbf{R}\mathbf{\hat{s}}$, and (\ref{formula 3}) can be written as
 \begin{equation}
-\mathbf{s}_{ML}=arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{s})||^{2} \label{formula 4}
+\mathbf{s}_{ML}=arg\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{s})||^{2}. \label{formula 4}
 \end{equation}
 
-Just like SD the FCSD also performs depth first searching, at the first $\rho$ node levels (\cite{barbero2008fixing} shows when $N_{r}=N_{t}$ the FCSD can achieve the same diversity as the MLD if $\rho\geq \sqrt{N_{t}}-1$) the FCSD search all the possible signal symbols in constellation $\mathbb{O}^{N_{t}}$, which is called Full Expansion(FE) stage, therefore for the symbol nodes $\widetilde{s}_{N_{t}} \widetilde{s}_{N_{t}-1}\dots \widetilde{s}_{N_{t}-\rho+1}$, the FCSD has $M$ branches expansion at each symbol node,  as shown in Figure \ref{figure4}, there are $\rho=2$ FE node levels and each node level has $M=4$ branches. According to (\ref{formula 4}), we have: 
+Similarly to SD the FCSD also performs depth first searching. At the first $\rho$ node levels\footnote{when $N_{r}=N_{t}$ the FCSD can achieve the same diversity as the MLD if $\rho\geq \sqrt{N_{t}}-1$ \cite{barbero2008fixing}} the FCSD searches all the possible signal symbols in constellation $\mathbb{O}^{N_{t}}$, a process called the Full Expansion (FE) stage. Let $\mathbf{s}^{F}$ denote FCSD symbol vector candidates. For the symbols $s^{F}_{N_{t}}, s^{F}_{N_{t}-1}\dots s^{F}_{N_{t}-\rho+1}$, the FCSD has $M$ branch expansions at each symbol node. As shown in Fig. \ref{figure4}, there are $\rho=2$ FE node levels and each node level has $M=4$ branches. According to (\ref{formula 4}), we have: 
 \begin{equation}
-\hat{s}^{F}_{i}=arg\min_{s\in \mathbb{O}^{N_{t}}}\{\sum_{i=1}^{N_{t}}|r_{ii}(\hat{s}_{i}-s_{i})+\sum_{j=i+1}^{N_{t}}r_{ij}(\hat{s}_{j}-s_{j})|^{2}\}  \label{formula 5}
+s^{F}_{i}=arg\min_{s\in \mathbb{O}^{N_{t}}}\{\sum_{i=1}^{N_{t}}|r_{ii}(\hat{s}_{i}-s^{F}_{i})+\sum_{j=i+1}^{N_{t}}r_{ij}(\hat{s}_{j}-s^{F}_{j})|^{2}\},  \label{formula 5}
 \end{equation} 
-$i\in [1,2\dots N_{t}]$, where $r_{ij}$ denotes the component at the $i$th row and $j$th column of the upper triangular matrix $\mathbf{R}$,  based on (\ref{formula 5}) at the remaining $N_{t}-\rho$ levels of symbols, the FCSD performs decision feed back, therefore there are only $1$ branch expansion for each symbol node at this stage, this stage is called Single Expansion (SE). 
-Thus the total number of the branches is fixed (For example in Figure \ref{figure4} the total branch number is $4^{2}$), the FCSD works as a constant number of multiple path tree searching algorithm.
+$i\in [1,2\dots N_{t}]$, where $r_{ij}$ denotes the component at the $i$th row and $j$th column of the upper triangular matrix $\mathbf{R}$. Based on (\ref{formula 5}) at the remaining $N_{t}-\rho$ levels of symbols, the FCSD employs decision feedback, and therefore there are only one branch expansion for each symbol node at this stage. This stage is called Single Expansion (SE). 
+Thus the total number of the branches is fixed, and the FCSD works as a constant number of multiple path tree searching algorithm.
+
+In conclusion the FCSD symbol vector candidate $s^{F}_{i}=[s_{1},s_{2}\dots s_{N_{t}}]$ can be expressed as:
+\begin{equation}
+\begin{split}
+&FE \quad stage:\\
+&{s}_{i}^{F}\in    \mathbb{O}^{\rho},  \quad if\quad i=N_{t},N_{t}-1,\dots N_{t}-\rho+1\\
+& SE\quad stage:\\
+&{s}_{i}^{F}=\mathbb{Q}[\hat{s}_{i}+\sum_{j=i+1}^{N_{t}}\frac{r_{ij}}{r_{ii}}(\hat{s}_{j}-s_{j}^{F})], \quad if\quad \\
+& i = N_{t}-\rho,N_{t}-\rho-1,\dots 2,1 
+  \label{FCSD solution}
+\end{split}
+\end{equation}
+where $\mathbb{Q}[\cdot]$ denotes the operation of signal constellation quantization. At the post processing stage, the FCSD compares the Euclidean distance of all the symbol vector candidates
+\begin{equation}
+E_{metric}=||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{s}^{F})||^{2},
+\end{equation} 
+where $\mathbf{s}^{F}$ denotes the symbol vector candidate. The symbol vector candidate with minimum $E_{metric}$ is chosen as the solution. The total number of candidates is $M^{\rho}$.  
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{FCSD_tree_searching.eps}
-\caption{Tree searching of 4-QAM FCSD for 8x8 MIMO system}
+\includegraphics[width=0.5\textwidth, height=8cm]{FCSD_tree_searching.eps}
+\caption{Tree searching of 4-QAM FCSD for 8$\times$8 MIMO system. The total number of branches is $4^{2}$}
 \label{figure4}
 \end{figure}
-In conclusion the FCSD symbol vector candidate $s^{F}_{i}=[s_{1},s_{2}\dots s_{N_{t}}]$ can be expressed as:
-\begin{displaymath}
-s^{F}_{i}=\left\lbrace\begin{array}{c}
-\Omega\in  \mathbb{O}^{\rho}      \quad i=N_{t},N_{t}-1,\dots N_{t}-\rho+1\\
-\mathbb{Q}[\hat{s}_{i}+\sum_{j=i+1}^{N_{t}}\frac{r_{ij}}{r_{ii}}(\hat{s_{j}}-s_{F}^{i})] \quad i=N_{t}-\rho,N_{t}-\rho-1,\dots 2,1 \\
-\end{array}\right.
-\label{FCSD solution}
-\end{displaymath}
-$\mathbb{Q}[\cdot]$ denotes the signal constellation quantization. At the post processing stage, FCSD compares the Euclidean distance of all the symbol vector candidates $E_{metric}$, which can be written as:
+\subsection{CUDA-FCSD Preprocessing}
+A FCSD channel ordering strategy is used in order to avoid error propagation in the serial path searching process. This channel ordering strategy is based on post processing signal to noise ratio\cite{wolniansky1998v}
 \begin{equation}
-E_{metric}=||\mathbf{R}(\mathbf{\hat{s}}-\mathbf{\widetilde{s}})||^{2}
-\end{equation} 
-Where the $\mathbf{\widetilde{s}}$ denotes the symbol vector candidate. The total number of candidates is: 
-\begin{equation}
-M^{\rho}     \label{path number}
-\end{equation} 
-The symbol vector candidate with the minimum $E_{metric}$ is chosen as the solution.
-\subsection{CUDA-FCSD Preprossing}
-As shown in Figure \ref{figure4}, a FCSD channel ordering strategy to avoid error propagation in serial path searching process is presented in \ref{barbero2008fixing}, this channel ordering strategy is based on post processing signal to noise ratio\cite{wolniansky1998v}:
-\begin{equation}
-\varphi_{m}=\frac{E_{s}}{\sigma^{2}(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}}  \label{ppsnr}
+\varphi_{m}=\frac{E_{s}}{\sigma^{2}(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}},  \label{ppsnr}
 \end{equation}
-where $\varphi_{m}$ denotes the post processing signal to noise ratio of the $m$th data stream, and $(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}$ denotes the diagonal elements of the inversion of $\mathbf{H}^{H}\mathbf{H}$. When the SNR is determined, the post processing SNR is only determined by $(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}$. From the heuristic in \cite{barbero2008fixing}, for the FE stage the robustness of detector performance is not influenced by the post processing SNR. Thus at FE stage the "weakest" data stream, that is, the data stream with the smallest $\varphi$, is detected first. At SE stage, because of the single searching path branch of the node, the performance is tightly related to the post processing SNR. Therefore at SE stage the data streams with the larger post processing SNR is detected first in order to avoiding error propagation. In conclusion the FCSD ordering works iteratively  and obeys the following rule:
+where $\varphi_{m}$ denotes the post processing signal to noise ratio of the $m$th data stream, and $(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}$ denotes the diagonal elements of the inverse of $\mathbf{H}^{H}\mathbf{H}$. The post processing SNR depends only on $(\mathbf{H}^{H}\mathbf{H})_{mm}^{-1}$. From \cite{barbero2008fixing}, at the FE stage the "weakest" data stream, that is the data stream with the smallest $\varphi_{m}$, is detected first. At the SE stage, because of the single searching branch of the node, the performance is tightly related to the post processing SNR. Therefore at the SE stage the data stream with the largest post processing SNR is detected first in order to avoiding error propagation. In conclusion the FCSD ordering works iteratively  and obeys the following rule:
 at the $j$th step ($j=1,2\dots N_{t}-1$), $s_{p}$ denotes the symbol to be detected, where 
-\begin{displaymath}
+\begin{equation}
 p=\left\lbrace \begin{array}{c}
-arg \max_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad FE\quad stage\\
-arg \min_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad SE\quad stage   \label{the ordering}
+arg\max_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad FE\quad stage\\
+arg\min_{k}(\mathbf{H}_{j}^{H}\mathbf{H}_{j})_{kk}^{-1}\quad SE\quad stage   \label{the ordering}
 \end{array}\right.  
-\end{displaymath}  
-and $\mathbf{H}_{j}\in \mathbb{C}^{N_{r}\times (N_{t}-j+1)}$ denotes the renewed channel matrix. At the $j$th iteration with the column corresponding to previous detected data streams removed from $\mathbf{H}_{j-1}$.
+\end{equation}  
+and $\mathbf{H}_{j}\in \mathbb{C}^{N_{r}\times (N_{t}-j+1)}$ denotes the renewed channel matrix with the column corresponding to previous detected data streams removed from $\mathbf{H}_{j-1}$.
 
-As mention in section \ref{programming model}, our implementation is based on heterogeneous programming principle-achieving performance with a mix of CPU and GPU technology, the flow control and logical operations are reside at the host side, the compute intensive works is implemented at device side. Although the FCSD preprocessing has a serial nature and can not be vectorized, the computational consumptive operations can be performed by the CUDA Basic Linear Algebra Subprograms(cuBLAS)\cite{nvidia2013basic} and corresponding GPU program implementations, as shown in table \ref{table1}.
+As mentioned in section \ref{programming model}, our implementation is based on the heterogeneous programming principle, employing a mix of CPU and GPU technology. The flow control and logical operations reside at the host side, while the compute intensive work is implemented at the device side. Although the FCSD preprocessing has a serial nature and can not be vectorized, the computational intensive operations can be performed by the CUDA Basic Linear Algebra Subprograms (cuBLAS)\cite{nvidia2013basic} and corresponding GPU program implementations, as shown in Table \ref{table1}.
 \begin{table*}[htb]
 \centering
+\caption{Parallel Computation Operation of FCSD Preprocessing}
 \begin{tabular}{|c|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
 \hline
-Operations & complex matrix-matrix multiplication & complex matrix-vector multiplication & matrix inverse & cholesky factorization \\
+Operations & complex matrix-matrix multiplication & complex matrix-vector multiplication & matrix inverse & Cholesky factorization \\
 \hline
 GPU subroutine & $\mathit{cublasCgemm}$  & $\mathit{cublasCgemv}$ & $\mathit{GJE}$ & $\mathit{chol}$\\
 \hline
@@ -635,87 +662,89 @@ Formula   &  $\mathbf{H}^{H}\mathbf{H}$ & $(\mathbf{H}^{H}\mathbf{H})^{-1}\mathb
 \\
 \hline
 \end{tabular}
-\caption{Parallel Computation Operation of FCSD Preprocessing}
 \label{table1}
 \end{table*}
 
-Figure \ref{block diagram} illustrates the block diagram of the CUDA-FCSD implementation. 
+\subsection{Parallel Acceleration of Paths Searching}
+Since the decision feedback searching paths have a serial nature, we match one path to one thread. In order to have the largest number of threads that can be parallelized, we use one dimensional blocks for widest expansion, and organize all the paths into several such blocks. For example for a $16\times 16$ MIMO system with $16$QAM, the number of paths we need to search is $M^{\rho}=16^{3}=4096$, since $\rho=\lceil \sqrt{N_{t}}-1\rceil$, where $\lceil x\rceil$ represent the smallest integer greater than or equal to $x$. For largest SM occupancy we use 4 blocks for the path searching kernel where each block has 1024 threads which is the maximum number allowed per block. At each FCSD searching path, the following operations are performed in one thread:
+\begin{itemize}
+\item \emph{Path searching}\\
+As in (\ref{FCSD solution}).
+\item \emph{Euclidean Distance Calculation}
+\begin{equation}
+E_{u}^{k}=\sum_{i=1}^{i=N_{t}}\sum_{j=i}^{j=N_{t}}r_{ij}(\hat{s}_{j}-s^{F}_{j}), \label{Eu metric}
+\end{equation}
+\end{itemize}
+where $E_{u}^{k}$ denotes the Euclidean distance of the $k$th symbol vector candidate. We integrate the post processing (\ref{Eu metric}) into the path searching process (\ref{FCSD solution}) to reduce the iteration times per thread.
+ 
+In order to avoid low speed host-device data transfer, we reduce data transfers as much as possible. As shown in Fig. \ref{block diagram} we perform data transfer only two times. For host to device, the propagation channel matrix $\mathbf{H}$, received symbol vector $\mathbf{y}$, as well as the sub symbol vector index list $\mathit{s_{index}}$ at FE stage, are transferred. For device to host, the FCSD symbol vector solution $\mathbf{s}^{F}$ is transferred.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{CUDA_FCSD_block_diagram.eps}
+\includegraphics[width=0.5\textwidth, height=5.1cm]{CUDA_FCSD_block_diagram.eps}
 \caption{Block Diagram of CUDA-FCSD Implementation}
 \label{block diagram}
 \end{figure}
-\subsection{Parallel Acceleration of Blocked-Paths Searching}
-The decision feedback searching paths have serial nature, we match one path to one thread. In order to have largest amount of threads that can be paralleled, we use one dimension blocks for widest expansion and blocked all the paths into several one dimension blocks. For example We consider $16\times 16$ MIMO system, the modulation scheme is $16$QAM, the number of path we need to search is $\mathbb{O}[M^{\rho}]=16^{3}=4096$, $\rho=\lceil \sqrt{N_{t}}-1\rceil$, where $\lceil x\rceil$ represent the smallest integer larger than $x$, for largest SM occupation we define 4 blocks for path searching kernel and each block has 1024 threads which is the maximum number of thread allowing per block. At each FCSD searching path, the following data operation is performed in one thread:\\
-1. \emph{Path searching}\\
-According to (\ref{FCSD solution}).
-2. \emph{Euclidean distance Calculation}\\
-\begin{equation}
-E_{u}^{k}=\sum_{i=1}^{i=N_{t}}\sum_{j=i}^{j=N_{t}}r_{ij}(\hat{s}_{j}-s_{j})\label{Eu metric}
-\end{equation}
-$E_{u}^{k}$ denotes the $k$th Euclidean distance of the corresponding symbol vector candidate. Loop fusion is applied, we integrate the post processing (\ref{Eu metric}) into path searching process (\ref{FCSD solution}) to reduce the iteration times per thread. 
 \subsubsection{Data Preparation}\label{data preparation}
-There are three major factors that will influence the configuration of the data sets configuration in memory space.\\
-1. Amount of Reading$\&$Writing (R/W) operation per thread.\\
-2. Valid scope\\
-3. Storage occupancy
+There are three major factors that influence the configuration of the data sets in memory space.
+\begin{itemize}
+\item Number of Reading Writing (R/W) operations
+\item Valid program scope
+\item Storage occupancy
+\end{itemize}
 
-Unlike CPUs that have a flat memory model meaning the CPU core can access any memory location without restriction, GPUs are computation intensive and only have small cache for special memory space (texture, constant). Thus the memory reading$\&$writing (R/W) strategy of GPU is the crutial factor that influences the application performance. Different memory types has different valid scope, local memory which is invoked in kernel function is valid only in one thread, share memory is valid in one block, constant, texture and global memory are valid both at host side and device side. On the other hand different from global memory (2047 MBytes in GeForce GTX 760), the constant and share memory are all capacity limited (only $65536$ bytes totally and $49152$ bytes per block in GeForce GTX 760). Thus the occupancy of memory is one determinant factor needed to be considered.
+Unlike CPUs that have a flat memory model (the CPU core can access any memory location by a near clock rate speed) GPUs are computation intensive. Thus the memory R/W operations are time consuming that influence performance. Furthermore different memory types have different program scopes. Local memory, which is invoked in \textit{kernel} functions is valid only in one thread. Shared memory is valid in one block. Constant, texture and global memories are valid both at host side and device side. On the other hand different from global memory, the constant and share memory are all capacity limited. Thus the memory occupancy is an important factor that needs to be considered.
  
-At host side we set 4 data sets that are stored in global memory which are storage consumptive and must have valid scope for both host and device side, $\mathit{s_{pm}}$ is a $M^{\rho}\times N_{t}$ complex matrix that each row stores one symbol vector candidate and whose valid scope should be during the whole $\mathit{kernel}$ execution. $\mathit{s_{index}}$ is used to store the index of all the possible sub symbol vectors for  FE stage using full factorial method, requires a $\rho\times M^{\rho}$  integer matrix space.  $\mathit{E_{u}}$ is a $M^{\rho}$ floating point vector that is used to store the Euclidean distance of all the symbol vector candidates. $\mathit{s_{kernel}}$ is a complex vector used to store the FCSD solution which length is $N_{t}$ and has to be transferred to host side.
+At the host side we set four data sets that are stored in global memory. The $M^{\rho}\times N_{t}$ complex matrix $\mathit{s_{pm}}$ that stores in each row one symbol vector candidate and its program scope should be during the whole \textit{kernel} execution. The matrix $\mathit{s_{index}}$ is used to store the index of all the possible sub-symbol vectors for  FE stage using the full factorial method and requires a $\rho\times M^{\rho}$  integer matrix space. The $M^{\rho}$ dimensional floating point vector is used to store the Euclidean distance of all the symbol vector candidates. The $N_{t}$ dimensional complex vector $\mathit{s_{kernel}}$ is used to store the FCSD solutions and has to be transferred to host side.
 
-On the other hand, upper triangular matrix $\mathbf{R}$ in (\ref{formula 4})  and unconstrained estimation $\mathbf{\hat{s}}$ in (\ref{unconstrained estimation}) are read only and require large amount of read operations. (for the $16\times 16$ $16QAM$ MIMO system the R/W of $\mathbf{R}$  and $\mathbf{\hat{s}}$ are about  $370$ and $266$ per thread), these two data set need small size of storage(for the $16\times 16$ $16QAM$ MIMO system $1088$ bytes for $\mathbf{R}$ and $128$ bytes for $\mathbf{\hat{s}}$  ) we make use of the read only constant memory to store the data which are capacity limited and do not need write operation in path searching , as we mentioned in section \ref{programming model}, the constant memory is cached so that it is much faster than global memory.
-
-In table \ref{amountofR/Woperations}  we present the amount of R/W operations and the storage that needed for different data variables in FCSD path searching. The amount of the R/W operation is calculated based on the (\ref{path searching}) and (\ref{Eu metric}), for complex values ($\mathbf{R}$ $\mathbf{\hat{s}}$, $\mathit{s_{pm}}$, $\mathit{s_{kernel}}$ ) are stored using CUDA build in variable data type $\mathit{cuComplex}$ which counts 8 bytes. Floating point data set $E_{u}$ is stored using variable type $\mathit{float}$, which counts for 4 bytes, $\mathit{s_{index}}$ is the integer list which is stored using variable type $\mathit{int}$, which counts 1 byte.\\
- \begin{table*}[htb]  
- \centering
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-data & $\mathbf{R}$ & $\mathbf{\hat{s}}$ & $\mathit{s_{pm}}$ & $\mathit{s_{index}}$ & $\mathit{E_{u}}$ & $\mathit{s_{kernel}}$ \\
-\hline
-R/W operations/thread & $(\frac{3}{2}(N_{t})^{2}-\frac{N_{t}}{2}+\rho-\rho^{2})$ & $(\frac{2(N_{t})^{2}+2N_{t}-\rho^{2}-\rho}{2})$ & $N_{t}$ & $\rho$ &$N_{t}$ & $N_{t}$ \\
-\hline
-Storage/bytes  & $4(N_{t}+1)N_{t}$ & $8N_{t}$ & $8M^{\rho}N_{t}$ & $N_{t}M^{\rho}$ & $4N_{t}M^{\rho}$ & $8N_{t}$\\
-\hline  
-\end{tabular} 
- \caption{Amount of R/W Operations and Storage Requirement of Different Data Set}
-  \label{amountofR/Woperations} 
-\end{table*}  
+On the other hand, the upper triangular matrix $\mathbf{R}$ and the unconstrained estimator $\mathbf{\hat{s}}$ of (\ref{unconstrained estimation}) are read only and require large numbers of read operations. Since these two data sets need small sizes of storage, the constant memory, which is cached and read only, is used to store them.
 \subsubsection{Memory Accesss Pattern}
-When considering large MIMO array, the large amount of R/W operations determine that the memory bandwidth is the major bottleneck of the performance,  although the theoretical bandwidth of off-chip memory is extremely high (in GeForce GTX 760 the bandwidth of off-chip memory is around $192 GB/s$), however the effect memory bandwidth can only be achieved by proper R/W strategy.
+When considering a large MIMO system, the large number of required R/W operations make the memory bandwidth a major bottleneck for performance. Although the off-chip memory theoretical bandwidth is extremely high (the theoretical bandwidth of GeForce GTX 760 is 192GB/s), in practice it can only be achieved by a proper R/W strategy.
 
-Global memory is implemented by dynamic random access memory (DRAM) whose R/W is extremely slow process, modern DRAM R/W operations are performed by access a pitch of consecutive memory location, as mentioned in section (\ref{programming model}), the warp is the basic schedule unit of device, with one instruction recall one warp of threads that execute at the same time, the most favorable global memory access pattern is to keep one warp of threads that access consecutive memory as much as possible. For the GeForce GTX 760, the DRAM will access a consecutive memory address that has 128 bytes length, In Figure \ref{coalesce global memory} we take the global access pattern of the $\mathit{s_{pm}}$ as an example to illustrate how we coalesce the the global memory.
-  \begin{figure}[htb]
+Global memory access is implemented by a dynamic random access memory (DRAM) whose R/W is an extremely slow process. In a modern DRAM the R/W operations are performed by accessing a piece of consecutive memory location. As mentioned in section \ref{programming model}, the warp is the basic schedule unit of a device, and memory space is accessed warp by warp. Thus the most effective global memory access pattern is to ensure a warp of threads can access a consecutive memory space. For the GeForce GTX 760, the DRAM will access a consecutive memory space of 128 bytes at one time. In Fig. \ref{coalesce global memory} we present the global access pattern of $\mathit{s_{pm}}$ as an example to illustrate global memory access pattern.
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{coalescing_global_memory.eps}
+\includegraphics[width=0.5\textwidth, height=8cm]{coalescing_global_memory.eps}
 \caption{Global Memory Access Pattern of $\mathit{s_{pm}}$}
 \label{coalesce global memory}
 \end{figure}
-We store $\mathit{s_{pm}}$ in one pitch of linear global memory, with each row store one $N_{t}=16$ complex symbol vector solution candidate of $\mathbf{\hat{s}}^{F}$ in (\ref{formula 5}), totally there are $M^{\rho}=4096$ rows, this matrix is stored in column major. As mentioned before one path searching is performed by one thread, thus the address two consecutive symbol operated in one thread is $4096$, however for consecutive threads the address they reach is continues as shown in Figure \ref{coalesce global memory}, each 32 threads in one warp can make R/W operation to a pitch of continues memory, which is $32\times 8=256$ bytes, counts for two times of DRAM access.
 
-As we mentioned in section (\ref{programming model}), the registers are allocated to the threads dynamically and have much faster access speed than that of global memory. Therefore, for all the transient data that used for accumulator in (\ref{path searching}), (\ref{Eu metric}), and the symbol vector candidate during the path searching process of each thread, are stored temporarily in registers to hide the latency of R/W of global memory.
-\subsubsection{Data Transfer Minimization}   
-The data transfer between the host and the device side is much more slower than the inner device data transferring, therefore, in our application we minimize the data transferring times, we make data transfer only once for propagation channel matrix $\mathbf{H}$, received symbol vector $\mathbf{y}$ in (\ref{formula 1}) as well as the sub symbol vector index list $\mathit{s_{index}}$ at FE stage. 
+
+The complex matrix $\mathit{s_{pm}}$ is stored in one piece of linear global memory, where each row represents one $N_{t}$ complex symbols solution candidates of $\mathbf{\hat{s}}^{F}$ in (\ref{formula 5}). There are $M^{\rho}$ rows, and this matrix is stored in column major (first column in the first piece of memory space and the second in the second piece of memory space etc.). As mentioned before, one path searching is performed by one thread, and therefore the address distance between two consecutive symbols in one thread is $M^{\rho}$. However for consecutive threads in one warp, the address they reach is continuous as shown in Fig. \ref{coalesce global memory}. Every 32 threads in one warp can confirm R/W operations to a piece of memory that is consecutive, and reduce DRAM access as much as possible resulting in a better memory bandwidth.
+
+All the thread level temporary data that is used in (\ref{FCSD solution}), (\ref{Eu metric}), and the symbol vector candidate during the path searching process, are stored in registers to get near clock rate access speed.   
+
 \subsection{Larger MIMO Systems and Constellation Sizes}
-Consider the uplink $32\times 32$ MIMO system with $16$QAM modulation scheme, the path number that need to be searched is $M^{\rho}=16^{5}=1048576$. The maximum number of threads that can be execute in $\mathit{kernel}$ function of the GeForce GTX 760 is 12288, therefore we need to consider execute the $\mathit{kernel}$ function in loop, in order to avoid device synchronization latency, we synchronize and return the control to host side in order to reduce the synchronization expense. Under this condition we use 12 linear blocks and each block has 1024 threads, we execute the $\mathit{kernel}$ function for 86 times and get the final solution,  when it comes to the large MIMO systems and large signal constellations such as $36\times 36$ $16$QAM, $144\times 144$ $4$QAM, $20\times 20$ $64$QAM, the global memory that need to used to store $s_{pm}$ in section (\ref{data preparation}) will out of bound (2 GB), multiple kernels with each one deal with a small subset of symbol vector candidates and kernel concurrency\cite{nvidia2008programming} can be applied to solve this problem.
+There are two problems that need to be considered for large MIMO systems and constellation size:
+\begin{itemize}
+\item Thread resource limitation:
+The number of threads that can be executed in parallel is limited. When the size of a MIMO system and constellation increases, it becomes impossible to parallelize all the searching paths in one \textit{kernel} execution. For example, in a $32\times 32$ MIMO system with $16$QAM modulation, the number of paths that need to be searched is $M^{\rho}=16^{5}=1048576$.  
+\item Global memory limitation:
+Large MIMO systems and large signal constellations require a large global memory space to store the symbol vector candidates. For example, for the systems $36\times 36$ with $16$QAM, $144\times 144$ with $4$QAM, $20\times 20$ with $64$QAM, the required space of storing $s_{pm}$ of section \ref{data preparation} exceeds the limit (2 GB).
+\end{itemize}
+
+One solution to these problems is to employ partial parallelism. The detection task is divided into several \textit{kernel} executions, where for each, only one potential symbol vector solution, as well as its corresponding Euclidean distance are preserved. This allows the global memory space to be reused to avoid exceeding its limit. 
 \section{Simulation Results}\label{simulation}
 \subsection{Environment}
 \subsubsection{Device}
-\emph{Graphic Processing Units}: GeForce GTX 760, GPU clock rate: 1.08 GHz , memory clock rate: 3 GHz , number of SM: 6, maximum number of threads per stream multiprocessor: 2048, total amount of global memory: 2 GB, total amount of share memory per block: 49 KB, total amount of constant memory: 66 KB. \\
-\emph{Central Processing Units-Modigliani}: Intel Core i5-4th generation, 4 cores 3.20 GHz CPU clock rate, 8 GB RAM\\
-\emph{Central Processing Units-Monet} : Intel Core i7-3rd generation, 12 cores 3.20 GHz CPU clock rate, 32 GB RAM
+\begin{itemize}
+\item \emph{Graphic Processing Units}: GeForce GTX 760, GPU clock rate: 1.08 GHz , memory clock rate 3 GHz , number of SM 6, maximum number of threads per stream multiprocessor 2048, total amount of global memory 2 GB, total amount of share memory per block 49 KB, total amount of constant memory 66 KB. 
+\item \emph{Central Processing Units-Modigliani}: Intel Core I5-4th generation, 4 physical cores, 3.20 GHz CPU clock rate, 8 GB RAM.
+\item \emph{Central Processing Units-Monet} : Intel Core I7-3rd generation, 6 physical cores, 3.20 GHz CPU clock rate, 32 GB RAM.
+\end{itemize}
 \subsubsection{Software}
-CUDA Driver Version / Runtime Version      6.5 / 6.0\\
-Nsight Eclipse Version 6.5
-\subsection{Performance and Evaluation}
+\begin{itemize}
+\item CUDA Driver Version / Runtime Version      6.5 / 6.0
+\item Integrated software environment for source code editing, automatic building and debugging: Nsight Eclipse Version 6.5
+\end{itemize}
+\subsection{Performance Evaluation}
 \begin{table*}[htb]
 \centering
+\caption{ Speedup Performance of Different MIMO Systems using 4 QAM}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
 \cline{2-6}
-&GeForce GTX 760 & Modigliani & Monet &  GTX 760/Modigliani  &  GTX 760/Monet \\
+&GeForce GTX 760 & Modigliani & Monet &  $\vartheta_{GTX 760}/\vartheta_{Modigliani}$  & $\vartheta_{GTX 760}/\vartheta_{Monet}$ \\
 \hline
 $8\times 8$& 7.39& 0.10&0.11 & 0.01& 0.01\\
 \hline
@@ -732,16 +761,16 @@ $72\times 72 $&1285.41&8727.69 &9641.80 &6.79 &7.50 \\
 $84\times 84$ &6454.02&47095.33&49962.01&7.30&7.74\\
 \hline
 \end{tabular}
-\caption{speedup performance of different MIMO systems using 4 QAM}
 \label{speedup1}
 \end{table*}
 \begin{table*}[htb]
 \centering
+\caption{ Speedup Performance of Different MIMO Systems using 16 QAM}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
 \cline{2-6}
-&GeForce GTX 760 & Modigliani & Monet &  GTX 760/Modigliani  &  GTX 760/Monet \\
+&GeForce GTX 760 & Modigliani & Monet &  $\vartheta_{GTX 760}/\vartheta_{Modigliani}$  &  $\vartheta_{GTX 760}/\vartheta_{Monet}$ \\
 \hline
 $8\times 8$&13.20& 0.67&0.93 & 0.05&0.07\\
 \hline
@@ -754,44 +783,43 @@ $32\times 32$&4980.13& 28209.53& 38106.00& 5.66& 7.65\\
 $36\times 36$& 5568.26&35240.16&47290.00&6.33& 8.61 \\
 \hline
 \end{tabular}
-\caption{speedup performance of different MIMO systems using 16 QAM}
 \label{speedup2}
 \end{table*}
-\begin{table*}[h]
+\begin{table*}[htb]
 \centering
+\caption{Speedup Performance of Different MIMO Systems using 64 QAM}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 \multirow{2}{*}{ Array size} & \multicolumn{3}{|c|}{Time/s} & \multicolumn{2}{|c|}{Speedup}\\
 \cline{2-6}
-&GeForce GTX 760 & Modigliani & Monet &  GTX 760/Modigliani  &  GTX 760/Monet \\
+&GeForce GTX 760 & Modigliani & Monet &  $\vartheta_{GTX 760}/\vartheta_{Modigliani}$  &  $\vartheta_{GTX 760}/\vartheta_{Monet}$ \\
 \hline
 $8\times 8$&12.28& 10.69&13.38 & 0.87&1.09 \\
 \hline
 $16\times 16$&468.92 & 2066.08&2689.00& 4.41& 5.73\\
-
 \hline
-
 \end{tabular}
-\caption{speedup performance of different MIMO systems using 64 QAM}
 \label{speedup3}
 \end{table*}
+Monte-Carlo simulations were conducted for MIMO systems of different sizes and signal constellation. In this work the speedup is defined as $\vartheta_{GPU}/\vartheta_{CPU}$, where $\vartheta_{GPU}$ and $\vartheta_{CPU}$ denotes the number of symbols detected on GPU and CPU per second. Comparison is made between the GeForce GTX 760 and two types of CPUs, with speedup performance presented in Tables \ref{speedup1}, \ref{speedup2} and \ref{speedup3}. All the operation times correspond to $1000$ channel realizations.
 
-We made simulation to different sizes MIMO systems and signal constellation and comparison is made between the Geforce GTX 760 and two kinds of CPU, the speedup performance is presented in table \ref{speedup1}, \ref{speedup2} and \ref{speedup3}. All the operation times we test is based on $1000$ channel realizations, the transmitted data is generated randomly and modulated by $M$ quadrature amplitude modulation (QAM) scheme.
+From Table \ref{speedup1}, we see that for small MIMO systems of $8\times 8$, $16\times 16$, and $32\times 32$ with $4$QAM, the speed performance of GPU implementation is worse than that of CPU. The number of paths of these MIMO configurations that need to be searched is relatively small\footnote{$8\times 8$ MIMO system with $4$QAM has $16$ paths, $16\times 16$ MIMO system with $4$QAM has $64$ paths and $32\times 32$ MIMO system with $4$QAM has $1024$ paths}. The CPUs are designed for serial code execution with special hardware (branch prediction units, multiple caches, etc.) that provide extremely good performance, while the GPUs can achieve good performance only when they are utilized in a massive parallel manner. Furthermore there is a short time for GPU to "warm up", for host-device data transmission, \textit{kernel} function  launching and host device synchronization. When comes to larger MIMO systems of $48\times 48$, $64\times 64$, $72\times 72$, a large parallelism is achieved allowing the GPU to begin displaying its data processing power. 
 
-In table \ref{speedup1}, for small MIMO systems $8\times 8$ and $16\times 16$, the speed performance of GPU implementation is even worse than that of CPU. The number of path of these antenna configurations that need to be searched is relatively small ($16$ for $8\times 8$ system and $64$ for $16\times 16$ system), the CPU implementation has already had a good performance, the CPUs are designed for serial code execution with the special hardwares (branch prediction units, multiple caches, etc) and have extremely good performance at it, however the GPUs can achieve a good performance only when they are utilized in parallel manner, there is a short time for GPU to "warm up", for host-device data transmission, launch kernel function and host device synchronization. Furthermore, for small number of threads, the memory R/W latency is not well hided. For the $32\times 32$ systems, the speed performance of GPU and CPU implementation is close, when comes to larger MIMO systems $48\times 48$, $64\times 64$, $72\times 72$, a large parallelism is achieved so that the GPU begin to display its data processing power, the speedup can be from $2.50$ to $4.20$. 
+In Tables \ref{speedup2} and \ref{speedup3}, $16$QAM and $64$QAM are considered. We see that speedups larger than 1 can be achieved with GPU implementation also with smaller MIMO systems. For a $16\times 16$ system with $16$QAM modulation, GTX 760 provides a $1.18$ speedup over Modigliani and $1.57$ speedup over Monet. For a $16\times 16$ system with $64$QAM, GTX 760 provides a $4.41$ speedup over Modigliani and $5.73$ speedup over Monet. The nature of FCSD is such that for lager signal constellations, massive parallelism can be reached also for small MIMO systems that are not extremely large.
 
-In table \ref{speedup2} and \ref{speedup3}, $16$QAM and $64$QAM are considered, the speedup of GPU implementation is reached from a small MIMO size, For $16\times 16$ system using $16$QAM $1.18$ speedup over Modigliani and $1.57$ speedup over Monet. For $8\times 8$, $64$QAM, $0.87$ speedup over Modigliani and $1.09$ speedup over Monet.  For lager signal constellation, the massive parallelism can be reached for relatively small MIMO systems.
+It can be observed from Tables \ref{speedup1}, \ref{speedup2} and \ref{speedup3}, that the GPU implementation shows its speed advantage over CPU implementation for increasing size of MIMO systems and signal constellations, indicating that GPUs provide advantages for large MIMO system with large signal constellations.
 
-It can be observed from table \ref{speedup1}, \ref{speedup2} and \ref{speedup3}, GPU implementation shows its speed advantage over CPU implementation for increasing size of MIMO systems and signal constellations, indicating this GPU implementation's suitability for large MIMO system and large signal constellation.
-\begin{figure}[h]
+In Fig. \ref{BER curve} we present Monte Carlo simulation results for bit error rate (BER) performance, using the GPU implementation of different MIMO system configurations and constellation sizes. We consider uncoded complex MIMO systems with $M$QAM, where each antenna transmits different streams of binary data generated randomly and independently. The results have been obtained by using $100000$ channel realizations with at least $500$ symbol errors accumulated. The simulation results show that FCSD-CUDA provides the same BER performance as its CPU version\cite{barbero2008fixing}.
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{BER_curves.eps}
-\caption{BER performance of different sizes of MIMO systems and modulation scheme by GPU}
+\includegraphics*[width=0.56\textwidth]{BER_curves.eps}
+\caption{BER performance for MIMO systems with various modulation schemes using the GPU implementation}
 \label{BER curve}
 \end{figure}
-Figure \ref{BER curve} shows the Monte Carlo simulation results of bit error rate (BER) performance for different MIMO systems and constellation sizes, we consider uncoded spatial multiplexing MIMO systems, the transmitted binary sequence is generated randomly and  mutually independent, modulated by $M$-QAM modulation scheme, the results have been obtained using $100000$ channel realizations and $500$ symbol errors accumulated. 
-\section{Conclusion}\label{conclusion}
-This paper presents the GPU implementation of fixed complexity sphere decoder for a large MIMO system, which is a time consuming task for traditional computation platform. In order to exploit the computational capability of GPU in the simulation of large MIMO systems, the utilization of heterogeneous programming model, thread resource limitation and memory configuration are considered in a comprehensive way. The simulation shows considerable acceleration of GPU implementation of FCSD can be reached for large MIMO systems and large signal constellation sizes while the same BER performance can be obtained. In addition, the GPU and CPU can work independently, the data processing power of GPU computing is an extra bonus of the traditional simulation platform. This shows the potential of GPU computing for computational consumptive simulation in large MIMO area. The future work contains taking into consider the kernel execution and data transferring concurrence in order to optimize memory allocation strategy for large MIMO systems.       
+\section{Conclusions}\label{conclusion}
+This paper presents a GPU implementation of the fixed complexity sphere decoder (FCSD) for large MIMO systems. In order to exploit the computational capability of GPU in the simulation of large MIMO systems, the utilization of a heterogeneous programming model, accounting for resource limitations and memory configuration must be considered. The simulation results show that a considerable acceleration of the GPU implementation of FCSD can be reached for large MIMO systems and signal constellation sizes over CPU implementation, while maintaining the same BER performance. Since the GPU and CPU can work independently, the data processing power of GPU computing is an additional advantages provided by the traditional simulation platforms. This shows the potential of GPU computing to reduce the time associated with intensive simulations of large MIMO systems.
+
+
 % conference papers do not normally have an appendix
 
 
@@ -836,5 +864,5 @@ This paper presents the GPU implementation of fixed complexity sphere decoder fo
 % that's all folks
 %\end{spacing}
 \bibliographystyle{IEEEtran}
-\bibliography{citation_conf}
+\bibliography{IEEEabrv,citationconf}
 \end{document}

@@ -76,7 +76,7 @@
 \usepackage{amsthm}
 \usepackage{caption}
 \usepackage{multirow}
-
+\usepackage{setspace}
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
@@ -388,7 +388,7 @@
 
 \begin{document}
 % make the title area
-%\begin{spacing}{2.5}
+\begin{spacing}{2.5}
 \date{}
 \maketitle
 
@@ -660,7 +660,7 @@ $E_{u}^{k}$ denotes the $k$th Euclidean distance of the corresponding symbol vec
  \paragraph{}In table \ref{amountofR/Woperations}  we present the amount of R/W operations and the storage that needed for different data variables in FCSD path searching. The amount of the R/W operation is calculated based on the (\ref{path searching}) and (\ref{Eu metric}), for complex values ($\mathbf{R}$ $\mathbf{\hat{s}}$, $\mathit{s_{pm}}$, $\mathit{s_{kernel}}$ ) are stored using CUDA build in variable data type $\mathit{cuComplex}$ which counts 8 bytes. Floating point data set $E_{u}$ is stored using variable type $\mathit{float}$, which counts for 4 bytes, $\mathit{s_{index}}$ is the integer list which is stored using variable type $\mathit{int}$, which counts 1 byte.\\
  \begin{table}[htb]  
  \centering
-\begin{tabular}{|p{3cm}|p{3cm}|l|p{3cm}|l|l|l|}
+\begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
 data & $\mathbf{R}$ & $\mathbf{\hat{s}}$ & $\mathit{s_{pm}}$ & $\mathit{s_{index}}$ & $\mathit{E_{u}}$ & $\mathit{s_{kernel}}$ \\
 \hline
@@ -825,7 +825,7 @@ $16\times 16$&468.92 & 2066.08&2689.00& 4.41& 5.73\\
 
 
 % that's all folks
-%\end{spacing}
+\end{spacing}
 \bibliographystyle{IEEEtran}
 \bibliography{citation}
 \end{document}

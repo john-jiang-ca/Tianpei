@@ -161,3 +161,62 @@ the total duration of GPU kernel at SNR 4 is 44.550000:
 the total duration of CPU at SNR 4 is 0.000000: 
 the total duration of GPU at SNR 4 is 46.890000: 
 the speedup is 0.000000:
+this is for 32 X 32
+this is for 4 QAM
+the total time at SNR 6 is= 0.000000 
+the total duration of CPU kernel at SNR 6 is 276.191872: 
+the total duration of GPU kernel at SNR 6 is 211.500000: 
+the total duration of CPU at SNR 6 is 322.631040: 
+the total duration of GPU at SNR 6 is 372.430400: 
+this is for 48 X 48
+this is for 4 QAM
+the total time at SNR 6 is= 0.000000 
+the total duration of CPU kernel at SNR 6 is 24016.777216: 
+the total duration of GPU kernel at SNR 6 is 5565.240832: 
+the total duration of CPU at SNR 6 is 25909.755904: 
+the total duration of GPU at SNR 6 is 7955.546112: 
+this is for 48 X 48
+this is for 4 QAM
+the total time at SNR 6 is= 0.000000 
+the total duration of CPU kernel at SNR 6 is 0.000000: 
+the total duration of GPU kernel at SNR 6 is 5580.624384: 
+the total duration of CPU at SNR 6 is 0.030000: 
+the total duration of GPU at SNR 6 is 8841.408512: 
+the total time at SNR 8 is= 0.000000 
+the total duration of CPU kernel at SNR 8 is 0.000000: 
+the total duration of GPU kernel at SNR 8 is 11195.865088: 
+the total duration of CPU at SNR 8 is 0.030000: 
+the total duration of GPU at SNR 8 is 7685.049856: 
+this is for 48 X 48
+this is for 4 QAM
+the total time at SNR 0 is= 0.000000 
+the total duration of CPU kernel at SNR 0 is 0.000000: 
+the total duration of GPU kernel at SNR 0 is 5634.463744: 
+the total duration of CPU at SNR 0 is 0.050000: 
+the total duration of GPU at SNR 0 is 11987.094528: 
+the total time at SNR 2 is= 0.000000 
+the total duration of CPU kernel at SNR 2 is 0.000000: 
+the total duration of GPU kernel at SNR 2 is 10600.246272: 
+the total duration of CPU at SNR 2 is 0.040000: 
+the total duration of GPU at SNR 2 is 6768.397312: 
+the total time at SNR 4 is= 0.000000 
+the total duration of CPU kernel at SNR 4 is 0.000000: 
+the total duration of GPU kernel at SNR 4 is 15566.728192: 
+the total duration of CPU at SNR 4 is 0.020000: 
+the total duration of GPU at SNR 4 is 6568.066048: 
+the total time at SNR 6 is= 0.000000 
+the total duration of CPU kernel at SNR 6 is 0.000000: 
+the total duration of GPU kernel at SNR 6 is 20491.010048: 
+the total duration of CPU at SNR 6 is 0.030000: 
+the total duration of GPU at SNR 6 is 6567.209984: 
+this is for 48 X 48
+this is for 4 QAM
+the total time at SNR 12 is= 0.000000 
+the total duration of CPU kernel at SNR 12 is 0.000000: 
+the total duration of GPU kernel at SNR 12 is 4982.225408: 
+the total duration of CPU at SNR 12 is 0.020000: 
+the total duration of GPU at SNR 12 is 10676.282368: 
+this is for 48 X 48
+this is for 4 QAM
+this is for 48 X 48
+this is for 4 QAM

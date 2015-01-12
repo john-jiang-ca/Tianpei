@@ -66,3 +66,87 @@ the total duration of CPU kernel is 950.641088:
 the total duration of GPU kernel is 0.000000: 
 the total duration of CPU is 964.179840: 
 the total duration of GPU is 0.000000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 16.830000 
+the total duration of CPU kernel is 9.650000: 
+the total duration of GPU kernel is 574593941803164106752.000000: 
+the total duration of CPU is 15.510000: 
+the total duration of GPU is 0.020000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 1.120000 
+the total duration of CPU kernel is 0.330000: 
+the total duration of GPU kernel is 57403832587166392320.000000: 
+the total duration of CPU is 1.000000: 
+the total duration of GPU is 0.000000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 1.120000 
+the total duration of CPU kernel is 0.370000: 
+the total duration of GPU kernel is 57403832587166392320.000000: 
+the total duration of CPU is 1.020000: 
+the total duration of GPU is 0.000000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 11.260000 
+the total duration of CPU kernel is 3.650000: 
+the total duration of GPU kernel is 574593941803164106752.000000: 
+the total duration of CPU is 9.860000: 
+the total duration of GPU is 0.020000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 33.510000 
+the total duration of CPU kernel is 11.240000: 
+the total duration of GPU kernel is 1725670772002640101376.000000: 
+the total duration of CPU is 29.340000: 
+the total duration of GPU is 0.080000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 33.620000 
+the total duration of CPU kernel is 11.510000: 
+the total duration of GPU kernel is 1725670772002640101376.000000: 
+the total duration of CPU is 29.690000: 
+the total duration of GPU is 0.050000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 1170.800000 
+the total duration of CPU kernel is 392.301504: 
+the total duration of GPU kernel is 53150366990959374237696.000000: 
+the total duration of CPU is 1023.739584: 
+the total duration of GPU is 1.790000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 11.180000 
+the total duration of CPU kernel is 3.670000: 
+the total duration of GPU kernel is 574593941803164106752.000000: 
+the total duration of CPU is 9.610000: 
+the total duration of GPU is 0.030000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 11.200000 
+the total duration of CPU kernel is 3.770000: 
+the total duration of GPU kernel is 574593941803164106752.000000: 
+the total duration of CPU is 9.930000: 
+the total duration of GPU is 0.000000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 56.240000 
+the total duration of CPU kernel is 19.390000: 
+the total duration of GPU kernel is 2866469076404245364736.000000: 
+the total duration of CPU is 49.160000: 
+the total duration of GPU is 0.080000: 
+this is for 8 X 8
+this is the 4 QAM modulation
+the total time is= 11.190000 
+the total duration of CPU kernel is 3.870000: 
+the total duration of GPU kernel is 574593941803164106752.000000: 
+the total duration of CPU is 9.930000: 
+the total duration of GPU is 0.010000: 
+this is for 8 X 8
+this is the 64 QAM modulation
+the total time is= 1034.510000 
+the total duration of CPU kernel is 1009.096576: 
+the total duration of GPU kernel is 574593941803164106752.000000: 
+the total duration of CPU is 1031.235584: 
+the total duration of GPU is 0.030000: 

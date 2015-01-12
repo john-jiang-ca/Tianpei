@@ -20,7 +20,7 @@
 #include <time.h>
 #include <gsl/gsl_complex.h>
 #include <gsl/gsl_complex_math.h>
-#define MATRIX_SIZE 32
+#define MATRIX_SIZE 48
 #define IDC2D(i,j,row)    (i)*row+j
 #define Constellationsize 4
 void FCSD_detection(

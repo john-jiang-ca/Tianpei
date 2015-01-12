@@ -59,6 +59,7 @@
 					<sass major="3" minor="0"/>
 					<ptx major="3" minor="0"/>
 				</executable>
+				<editor-arch major="3" minor="0"/>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
@@ -132,10 +133,10 @@
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="com.nvidia.cuda.ide.configuration.debug.88336029;com.nvidia.cuda.ide.configuration.debug.88336029.;nvcc.compiler.base.1189729913;nvcc.compiler.input.cu.2120792721">
+		<scannerConfigBuildInfo instanceId="com.nvidia.cuda.ide.configuration.debug.88336029;com.nvidia.cuda.ide.configuration.debug.88336029.;nvcc.compiler.base.1189729913;nvcc.compiler.input.c.1254267609">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.nvidia.cuda.ide.build.NVCCPerProjectProfile"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="com.nvidia.cuda.ide.configuration.debug.88336029;com.nvidia.cuda.ide.configuration.debug.88336029.;nvcc.compiler.base.1189729913;nvcc.compiler.input.c.1254267609">
+		<scannerConfigBuildInfo instanceId="com.nvidia.cuda.ide.configuration.debug.88336029;com.nvidia.cuda.ide.configuration.debug.88336029.;nvcc.compiler.base.1189729913;nvcc.compiler.input.cu.2120792721">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.nvidia.cuda.ide.build.NVCCPerProjectProfile"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="com.nvidia.cuda.ide.configuration.debug.88336029;com.nvidia.cuda.ide.configuration.debug.88336029.;nvcc.compiler.base.1189729913;nvcc.compiler.input.cpp.434171379">

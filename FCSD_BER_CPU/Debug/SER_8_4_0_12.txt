@@ -1,0 +1,99 @@
+
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+
+
+0.75036001205 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 10 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 
+
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 10 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 
+
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.04726250097 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.04658750072 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.00116374996 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.04882875085 0.00985874981 0.00104374997 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.04853374884 0.00983500015 0.00108750002 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 
+1.000000 1.584893 2.511886 3.981072 6.309574 
+0.04881374910 0.00993875042 0.00113999995 0.00007412986 0.00000388871 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.49924373627 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.49905499816 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 
+1.000000 1.584893 2.511886 3.981072 6.309574 
+0.49883750081 0.44658625126 0.38509124517 0.30848625302 0.21683125198 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.31303250790 
+
+this is the symbol error rate of 8 X 8 MIMO 
+this is 64 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.89415502548 

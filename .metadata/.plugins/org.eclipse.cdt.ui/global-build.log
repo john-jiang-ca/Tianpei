@@ -25366,3 +25366,402 @@ Invoking: NVCC Linker
 /usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_72_4"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
 Finished building target: FCSD_GPU_72_4
  
+23:18:43 **** Clean-only build of configuration Debug for project FCSD_GPU_32 ****
+make clean 
+rm -rf  ./src/FCSD_decoding.d ./src/FCSD_ordering.d ./src/MATRIX_INVERSE_GJE.d ./src/chol.d ./src/chol_without_onchipmem.d ./src/row_column_transformation.d  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o  ./src/FCSD_detection_GPU.d ./src/FCSD_ordering_CPU.d ./src/communication_line.d  FCSD_GPU_32
+ 
+23:18:43 **** Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/fullfactorial.h(26): warning: variable "columns" was declared but never referenced
+
+../src/FCSD_decoding.cu(70): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(71): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(77): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(80): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(261): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(261): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(295): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(303): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(304): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(332): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(334): warning: variable "duration" was set but never used
+
+../src/fullfactorial.h(26): warning: variable "columns" was declared but never referenced
+
+../src/FCSD_decoding.cu(70): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(71): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(77): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(80): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(261): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(261): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(295): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(303): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(304): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(332): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(334): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+Finished building: ../src/FCSD_detection_GPU.cpp
+ 
+Building file: ../src/FCSD_ordering.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering.d" "../src/FCSD_ordering.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_ordering.o" "../src/FCSD_ordering.cu"
+../src/FCSD_ordering.cu(32): warning: variable "count" was declared but never referenced
+
+../src/FCSD_ordering.cu(33): warning: variable "mm" was declared but never referenced
+
+../src/FCSD_ordering.cu(177): warning: variable "duration" was declared but never referenced
+
+../src/FCSD_ordering.cu(32): warning: variable "count" was declared but never referenced
+
+../src/FCSD_ordering.cu(33): warning: variable "mm" was declared but never referenced
+
+../src/FCSD_ordering.cu(177): warning: variable "duration" was declared but never referenced
+
+Finished building: ../src/FCSD_ordering.cu
+ 
+Building file: ../src/FCSD_ordering_CPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering_CPU.d" "../src/FCSD_ordering_CPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/FCSD_ordering_CPU.o" "../src/FCSD_ordering_CPU.cpp"
+Finished building: ../src/FCSD_ordering_CPU.cpp
+ 
+Building file: ../src/MATRIX_INVERSE_GJE.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/MATRIX_INVERSE_GJE.d" "../src/MATRIX_INVERSE_GJE.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/MATRIX_INVERSE_GJE.o" "../src/MATRIX_INVERSE_GJE.cu"
+../src/MATRIX_INVERSE_GJE.cu(218): warning: variable "error" is used before its value is set
+
+../src/MATRIX_INVERSE_GJE.cu(202): warning: variable "count2" was declared but never referenced
+
+../src/MATRIX_INVERSE_GJE.cu(211): warning: variable "duration" was set but never used
+
+../src/MATRIX_INVERSE_GJE.cu(218): warning: variable "error" is used before its value is set
+
+../src/MATRIX_INVERSE_GJE.cu(202): warning: variable "count2" was declared but never referenced
+
+../src/MATRIX_INVERSE_GJE.cu(211): warning: variable "duration" was set but never used
+
+Finished building: ../src/MATRIX_INVERSE_GJE.cu
+ 
+Building file: ../src/chol.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/chol.d" "../src/chol.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/chol.o" "../src/chol.cu"
+../src/chol.cu(134): warning: variable "count2" was declared but never referenced
+
+../src/chol.cu(165): warning: variable "count2" was declared but never referenced
+
+../src/chol.cu(134): warning: variable "count2" was declared but never referenced
+
+../src/chol.cu(165): warning: variable "count2" was declared but never referenced
+
+Finished building: ../src/chol.cu
+ 
+Building file: ../src/chol_without_onchipmem.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/chol_without_onchipmem.d" "../src/chol_without_onchipmem.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/chol_without_onchipmem.o" "../src/chol_without_onchipmem.cu"
+../src/chol_without_onchipmem.cu(39): warning: variable "count3" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(113): warning: variable "count1" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(114): warning: variable "count2" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(131): warning: variable "start" was set but never used
+
+../src/chol_without_onchipmem.cu(131): warning: variable "end" was set but never used
+
+../src/chol_without_onchipmem.cu(39): warning: variable "count3" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(113): warning: variable "count1" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(114): warning: variable "count2" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(131): warning: variable "start" was set but never used
+
+../src/chol_without_onchipmem.cu(131): warning: variable "end" was set but never used
+
+Finished building: ../src/chol_without_onchipmem.cu
+ 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building file: ../src/row_column_transformation.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/row_column_transformation.d" "../src/row_column_transformation.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/row_column_transformation.o" "../src/row_column_transformation.cu"
+Finished building: ../src/row_column_transformation.cu
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 
+23:35:16 **** Incremental Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/FCSD_decoding.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_decoding.d" "../src/FCSD_decoding.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_decoding.o" "../src/FCSD_decoding.cu"
+../src/fullfactorial.h(26): warning: variable "columns" was declared but never referenced
+
+../src/FCSD_decoding.cu(70): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(71): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(77): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(80): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(261): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(261): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(295): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(303): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(304): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(332): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(334): warning: variable "duration" was set but never used
+
+../src/fullfactorial.h(26): warning: variable "columns" was declared but never referenced
+
+../src/FCSD_decoding.cu(70): warning: variable "tid" was declared but never referenced
+
+../src/FCSD_decoding.cu(71): warning: variable "bid" was declared but never referenced
+
+../src/FCSD_decoding.cu(77): warning: variable "error" was declared but never referenced
+
+../src/FCSD_decoding.cu(78): warning: variable "count4" was declared but never referenced
+
+../src/FCSD_decoding.cu(80): warning: variable "alpha" was set but never used
+
+../src/FCSD_decoding.cu(261): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(261): warning: variable "count3" was declared but never referenced
+
+../src/FCSD_decoding.cu(295): warning: variable "count2" was declared but never referenced
+
+../src/FCSD_decoding.cu(303): warning: variable "ret" was set but never used
+
+../src/FCSD_decoding.cu(304): warning: variable "error" was set but never used
+
+../src/FCSD_decoding.cu(332): warning: variable "sharedMem" was set but never used
+
+../src/FCSD_decoding.cu(334): warning: variable "duration" was set but never used
+
+Finished building: ../src/FCSD_decoding.cu
+ 
+Building file: ../src/FCSD_detection_GPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_detection_GPU.d" "../src/FCSD_detection_GPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/FCSD_detection_GPU.o" "../src/FCSD_detection_GPU.cpp"
+Finished building: ../src/FCSD_detection_GPU.cpp
+ 
+Building file: ../src/FCSD_ordering.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering.d" "../src/FCSD_ordering.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/FCSD_ordering.o" "../src/FCSD_ordering.cu"
+../src/FCSD_ordering.cu(32): warning: variable "count" was declared but never referenced
+
+../src/FCSD_ordering.cu(33): warning: variable "mm" was declared but never referenced
+
+../src/FCSD_ordering.cu(177): warning: variable "duration" was declared but never referenced
+
+../src/FCSD_ordering.cu(32): warning: variable "count" was declared but never referenced
+
+../src/FCSD_ordering.cu(33): warning: variable "mm" was declared but never referenced
+
+../src/FCSD_ordering.cu(177): warning: variable "duration" was declared but never referenced
+
+Finished building: ../src/FCSD_ordering.cu
+ 
+Building file: ../src/FCSD_ordering_CPU.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/FCSD_ordering_CPU.d" "../src/FCSD_ordering_CPU.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/FCSD_ordering_CPU.o" "../src/FCSD_ordering_CPU.cpp"
+Finished building: ../src/FCSD_ordering_CPU.cpp
+ 
+Building file: ../src/MATRIX_INVERSE_GJE.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/MATRIX_INVERSE_GJE.d" "../src/MATRIX_INVERSE_GJE.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/MATRIX_INVERSE_GJE.o" "../src/MATRIX_INVERSE_GJE.cu"
+../src/MATRIX_INVERSE_GJE.cu(218): warning: variable "error" is used before its value is set
+
+../src/MATRIX_INVERSE_GJE.cu(202): warning: variable "count2" was declared but never referenced
+
+../src/MATRIX_INVERSE_GJE.cu(211): warning: variable "duration" was set but never used
+
+../src/MATRIX_INVERSE_GJE.cu(218): warning: variable "error" is used before its value is set
+
+../src/MATRIX_INVERSE_GJE.cu(202): warning: variable "count2" was declared but never referenced
+
+../src/MATRIX_INVERSE_GJE.cu(211): warning: variable "duration" was set but never used
+
+Finished building: ../src/MATRIX_INVERSE_GJE.cu
+ 
+Building file: ../src/chol.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/chol.d" "../src/chol.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/chol.o" "../src/chol.cu"
+../src/chol.cu(134): warning: variable "count2" was declared but never referenced
+
+../src/chol.cu(165): warning: variable "count2" was declared but never referenced
+
+../src/chol.cu(134): warning: variable "count2" was declared but never referenced
+
+../src/chol.cu(165): warning: variable "count2" was declared but never referenced
+
+Finished building: ../src/chol.cu
+ 
+Building file: ../src/chol_without_onchipmem.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/chol_without_onchipmem.d" "../src/chol_without_onchipmem.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/chol_without_onchipmem.o" "../src/chol_without_onchipmem.cu"
+../src/chol_without_onchipmem.cu(39): warning: variable "count3" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(113): warning: variable "count1" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(114): warning: variable "count2" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(131): warning: variable "start" was set but never used
+
+../src/chol_without_onchipmem.cu(131): warning: variable "end" was set but never used
+
+../src/chol_without_onchipmem.cu(39): warning: variable "count3" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(113): warning: variable "count1" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(114): warning: variable "count2" was declared but never referenced
+
+../src/chol_without_onchipmem.cu(131): warning: variable "start" was set but never used
+
+../src/chol_without_onchipmem.cu(131): warning: variable "end" was set but never used
+
+Finished building: ../src/chol_without_onchipmem.cu
+ 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building file: ../src/row_column_transformation.cu
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/row_column_transformation.d" "../src/row_column_transformation.cu"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30  -x cu -o  "src/row_column_transformation.o" "../src/row_column_transformation.cu"
+Finished building: ../src/row_column_transformation.cu
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 
+17:01:18 **** Incremental Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 
+23:27:31 **** Incremental Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 
+12:42:07 **** Incremental Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 
+18:29:29 **** Incremental Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 
+11:01:55 **** Incremental Build of configuration Debug for project FCSD_GPU_32 ****
+make all 
+Building file: ../src/communication_line.cpp
+Invoking: NVCC Compiler
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false -gencode arch=compute_30,code=sm_30  -odir "src" -M -o "src/communication_line.d" "../src/communication_line.cpp"
+/usr/local/cuda-6.5/bin/nvcc -G -g -O0 -prec-div false -prec-sqrt false --compile  -x c++ -o  "src/communication_line.o" "../src/communication_line.cpp"
+Finished building: ../src/communication_line.cpp
+ 
+Building target: FCSD_GPU_32
+Invoking: NVCC Linker
+/usr/local/cuda-6.5/bin/nvcc --cudart static --relocatable-device-code=false -gencode arch=compute_30,code=compute_30 -gencode arch=compute_30,code=sm_30 -link -o  "FCSD_GPU_32"  ./src/FCSD_decoding.o ./src/FCSD_detection_GPU.o ./src/FCSD_ordering.o ./src/FCSD_ordering_CPU.o ./src/MATRIX_INVERSE_GJE.o ./src/chol.o ./src/chol_without_onchipmem.o ./src/communication_line.o ./src/row_column_transformation.o   -lgsl -lcublas
+Finished building target: FCSD_GPU_32
+ 

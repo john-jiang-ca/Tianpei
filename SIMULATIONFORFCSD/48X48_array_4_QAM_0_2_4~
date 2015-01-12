@@ -1,0 +1,6 @@
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000511 0.000032 0.000000548

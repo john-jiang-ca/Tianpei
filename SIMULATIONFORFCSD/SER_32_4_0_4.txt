@@ -1,0 +1,15 @@
+
+
+this is the symbol error rate of 32 X 32 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+
+
+this is the symbol error rate of 32 X 32 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 
+1.000000 1.584893 2.511886 3.981072 
+0.33853125572 0.05513750017 0.25648748875 0.14823749661 

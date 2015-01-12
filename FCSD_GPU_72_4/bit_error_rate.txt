@@ -75,4 +75,119 @@ this is 4 QAM modulation
 the SNR per bit is:
 0 2 4 
 1.000000 1.584893 2.511886 
-0.000000 
+0.000000 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.001042 0.000000 0.000000 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.018875 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.016875 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.189688 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.015562 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.018000 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.015562 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000646 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000511 0.000032 this is the SNR 4 2.511886
+
+
+this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000780 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000780 this is the SNR 4 2.511886
+
+this is the bit error rate of 48 X 48 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.000000576 

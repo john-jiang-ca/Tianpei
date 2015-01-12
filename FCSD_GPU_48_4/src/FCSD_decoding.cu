@@ -37,7 +37,7 @@
 #include<device_functions.h>
 #include"fullfactorial.h"
 #define threadNum 1024
-#define blockNum 1
+#define blockNum 4
 #define stride 0
 /*
  * in this version I applied colesced memory accesss to all the vector and matrix, with all the matrix stored in row major different threads reading one column
@@ -111,6 +111,7 @@ __global__ void FEpath(
 //	Eu_t=0;
 	if (index * threadNum * blockNum + tx < pathNum) {
 //	printf("now the path index is %d!!!!", tx+index*threadNum*blockNum);
+#pragma unroll
 		for (count1 = Nt - 1; count1 >= 0; count1--) {
 
 			if (count1 < Nt - rho) {

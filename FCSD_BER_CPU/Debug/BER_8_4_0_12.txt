@@ -1,0 +1,99 @@
+this is the SNR -2 -2.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+
+
+0.50015187263 this is the SNR 10 10.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 10 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 
+this is the SNR 10 10.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 10 
+1.000000 1.584893 2.511886 3.981072 6.309574 10.000000 
+this is the SNR 0 1.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.03497499973 this is the SNR 0 1.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.03394374996 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.00085937500 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.03560375050 0.00722312508 0.00078250002 this is the SNR 4 2.511886
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 
+1.000000 1.584893 2.511886 
+0.03536812589 0.00722937519 0.00081875001 this is the SNR 8 6.309574
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 
+1.000000 1.584893 2.511886 3.981072 6.309574 
+0.03561500087 0.00731812511 0.00084687502 0.00005535030 0.00000292950 this is the SNR 0 1.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.35270062089 this is the SNR 0 1.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.35265874863 this is the SNR 8 6.309574
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 2 4 6 8 
+1.000000 1.584893 2.511886 3.981072 6.309574 
+0.35230311751 0.31772688031 0.27639499307 0.22310312092 0.15754124522 this is the SNR 0 1.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 4 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.22571562231 this is the SNR 0 1.000000
+
+this is the bit error rate of 8 X 8 MIMO 
+this is 64 QAM modulation
+the SNR per bit is:
+0 
+1.000000 
+0.30988854170 

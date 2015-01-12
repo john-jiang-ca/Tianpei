@@ -71,14 +71,14 @@
 #include<cudaProfiler.h>
 #include<cuda_profiler_api.h>
 #include "common.h"
-#define BER "bit_error_rate.txt"   //the file to store the bit error rate
-#define SER "symbol_error_rate.txt"  //the file to store the symbol error rate
+#define BER "BER_48_4_8.txt"   //the file to store the bit error rate
+#define SER "SER_48_4_8.txt"  //the file to store the symbol error rate
 #define timeused "time.txt"              //the file to store operation time of detection algorithm
 #define GFLOPS "GFLOPS.txt"          //the file to store the Giga flops operated per second
-#define miniteration 1e4               //the minimum number of channel realizations
-#define minSymbolError 100          //the minimum number of symbol error
+#define miniteration 1e5               //the minimum number of channel realizations
+#define minSymbolError 500          //the minimum number of symbol error
 #define epsilon 1e-5               //the accuracy
-#define SNRnum 2                     //the point number of signal to noise ratio per bit
+#define SNRnum 4                     //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,
 		unsigned long Q);
@@ -123,6 +123,7 @@ int main(void) {
 	for (count1 = 0; count1 <=SNRnum; count1++) {
 		SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
 	}
+	float begin=SNRnum;      //the SNR per bit in dB beginer begin=SNRnum for single SNR point begin=0 for multiple SNR points
 	FILE *cfile1, *cfile2, *cfile3, *cfile4;
 	cfile1 = fopen(BER, "a");
 	cfile2 = fopen(SER, "a");
@@ -155,7 +156,7 @@ int main(void) {
 	printf("the program for %dX%d %d QAM begin!!\n", MATRIX_SIZE,MATRIX_SIZE,M);
 	printf("the SNR per bit is:\n");
 	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
-	for(count1=0;count1<=SNRnum;count1++)
+	for(count1=begin;count1<=SNRnum;count1++)
 	{
 	printf("%d ", 2*count1);
 	}
@@ -167,12 +168,12 @@ int main(void) {
 	fprintf(cfile1,"this is %d QAM modulation\n", M);
 	fprintf(cfile1, "the SNR per bit is:\n");
 //	fprintf(cfile1,"this is the SNR %d %f\n", 2*SNRnum, SNR[SNRnum] );
-	for(count1=0;count1<=SNRnum;count1++)
+	for(count1=begin;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile1,"%d ", 2*count1);
 	}
 	fprintf(cfile1,"\n");
-	for(count1=0;count1<=SNRnum;count1++)
+	for(count1=begin;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile1,"%f ", SNR[count1]);
 	}
@@ -183,12 +184,12 @@ int main(void) {
 	fprintf(cfile2,"this is %d QAM modulation\n", M);
 	fprintf(cfile2, "the SNR per bit is:\n");
 //	fprintf(cfile2,"this is SNR %d %f\n", 2*SNRnum, SNR[SNRnum]);
-	for(count1=0;count1<=SNRnum;count1++)
+	for(count1=begin;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile2,"%d ", 2*count1);
 	}
 	fprintf(cfile2,"\n");
-	for(count1=0;count1<=SNRnum;count1++)
+	for(count1=begin;count1<=SNRnum;count1++)
 	{
 	fprintf(cfile2,"%f ", SNR[count1]);
 	}
@@ -200,7 +201,7 @@ int main(void) {
 	fclose(cfile3);
 	fclose(cfile4);
 	time1 = clock();
-	for (count = SNRnum; count <=SNRnum; count++) {
+	for (count = begin; count <=SNRnum; count++) {
 		iteration = 0;
 		bitError = 0;
 		symbolError = 0;
@@ -245,7 +246,7 @@ int main(void) {
 
 			channel_generator(pH, pr);
 			sigmas = sqrt(1.0 / Nt);
-			sigman = sqrt(pow(sigmas, 2) / (SNR[count])); /* corresponding noise standard deviation per dimension */
+			sigman =sqrt(pow(sigmas, 2)*float(Nt) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
 			noise_generator(pnoise, pr, sigman);
 			for (count1 = 0; count1 < Nt; count1++) {
 				gsl_vector_complex_set(preceived, count1,
@@ -397,9 +398,8 @@ int main(void) {
 		printf("\n");
 		BitErrorRate = float(bitError)/float(iteration*MATRIX_SIZE*log2(M));
 		SymbolErrorRate=float(symbolError)/float(iteration*MATRIX_SIZE);
-		BitErrorRate=0.00000078;
-		fprintf(cfile1, "%0.9f ", BitErrorRate);
-		fprintf(cfile2, "%0.9f ", SymbolErrorRate);
+		fprintf(cfile1, "%0.11f ", BitErrorRate);
+		fprintf(cfile2, "%0.11f ", SymbolErrorRate);
 		fprintf(cfile3, "the total time at SNR %d is= %f \n", 2*count, duration_total);
 		fprintf(cfile3, "the total duration of CPU kernel at SNR %d is %f: \n",
 				2*count, double(durationKernel_CPU_t / double(CLOCKS_PER_SEC)));

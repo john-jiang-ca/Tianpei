@@ -1,0 +1,96 @@
+\relax 
+\citation{oestges2010mimo}
+\citation{rusek2013scaling}
+\citation{viterbo1999universal}
+\citation{hassibi2005sphere}
+\citation{barbero2008fixing}
+\citation{fung2008using}
+\citation{blewitt2013applicability}
+\citation{van2011accelerating}
+\citation{6671435}
+\citation{grauer2013accelerating}
+\citation{cook2013cuda}
+\citation{nvidia2008programming}
+\citation{cook2013cuda}
+\citation{nvidia2008programming}
+\citation{hongyuan2010fixed}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}CUDA Programming Model and GPU Architecture}{2}}
+\newlabel{programming model}{{II}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {II-A}Single Instruction Multiple Thread Model}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  CUDA 3D memory hierachy $5\times 5\times 5$ grid, with each block composed of $5\times 5\times 5$ threads. The threads can be organized into one-dimensional, two-dimensional or three-dimensional blocks. Similarly, blocks can also be grouped into a one-dimensional, two-dimensional, or three-dimensional grid. }}{2}}
+\newlabel{figure1}{{1}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {II-B}Mircroarchitecture of GPU}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  High View of CUDA CPU Microarchitecture The GeForce GTX 760 has 6 SMs and the maximum number of threads allowed on each SM is 2048. Thus the total number of threads that can work in parallel is $2048\times 6=12288$. }}{2}}
+\newlabel{figure2}{{2}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}GPU Based Acceleration of FCSD}{2}}
+\newlabel{GPUFCSD}{{III}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-A}MIMO System Model}{2}}
+\newlabel{system}{{III-A}{2}}
+\newlabel{formula 1}{{1}{2}}
+\citation{golub2012matrix}
+\citation{barbero2008fixing}
+\citation{wolniansky1998v}
+\citation{barbero2008fixing}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-B}Fixed Complexity Sphere Decoder}{3}}
+\newlabel{formula 2}{{2}{3}}
+\newlabel{QR}{{3}{3}}
+\newlabel{formula 3}{{4}{3}}
+\newlabel{unconstrained estimation}{{5}{3}}
+\newlabel{formula 4}{{6}{3}}
+\newlabel{formula 5}{{7}{3}}
+\newlabel{FCSD solution}{{8}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Tree searching of 4-QAM FCSD for 8$\times $8 MIMO system. The total number of branches is $4^{2}$}}{3}}
+\newlabel{figure4}{{3}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-C}CUDA-FCSD Preprocessing}{3}}
+\newlabel{ppsnr}{{10}{3}}
+\citation{nvidia2013basic}
+\newlabel{the ordering}{{11}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-D}Parallel Acceleration of Paths Searching}{4}}
+\newlabel{Eu metric}{{12}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Block Diagram of CUDA-FCSD Implementation}}{4}}
+\newlabel{block diagram}{{4}{4}}
+\newlabel{data preparation}{{III-D.1}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {III-D.1}Data Preparation}{4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {III-D.2}Memory Accesss Pattern}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Parallel Computation Operation of FCSD Preprocessing}}{5}}
+\newlabel{table1}{{I}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Global Memory Access Pattern of $\mathit  {s_{pm}}$}}{5}}
+\newlabel{coalesce global memory}{{5}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-E}Larger MIMO Systems and Constellation Sizes}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Simulation Results}{5}}
+\newlabel{simulation}{{IV}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-A}Environment}{5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {IV-A.1}Device}{5}}
+\citation{barbero2008fixing}
+\bibstyle{IEEEtran}
+\bibdata{IEEEabrv,citationconf}
+\bibcite{oestges2010mimo}{1}
+\bibcite{rusek2013scaling}{2}
+\bibcite{viterbo1999universal}{3}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {IV-A.2}Software}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {IV-B}Performance Evaluation}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces BER performance for MIMO systems with various modulation schemes using the GPU implementation}}{6}}
+\newlabel{BER curve}{{6}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{6}}
+\newlabel{conclusion}{{V}{6}}
+\@writefile{toc}{\contentsline {section}{References}{6}}
+\bibcite{hassibi2005sphere}{4}
+\bibcite{barbero2008fixing}{5}
+\bibcite{fung2008using}{6}
+\bibcite{blewitt2013applicability}{7}
+\bibcite{van2011accelerating}{8}
+\bibcite{6671435}{9}
+\bibcite{grauer2013accelerating}{10}
+\bibcite{cook2013cuda}{11}
+\bibcite{nvidia2008programming}{12}
+\bibcite{hongyuan2010fixed}{13}
+\bibcite{golub2012matrix}{14}
+\bibcite{wolniansky1998v}{15}
+\bibcite{nvidia2013basic}{16}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces  Speedup Performance of Different MIMO Systems using 4 QAM}}{7}}
+\newlabel{speedup1}{{II}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces  Speedup Performance of Different MIMO Systems using 16 QAM}}{7}}
+\newlabel{speedup2}{{III}{7}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Speedup Performance of Different MIMO Systems using 64 QAM}}{7}}
+\newlabel{speedup3}{{IV}{7}}

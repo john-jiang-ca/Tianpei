@@ -1,0 +1,613 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  2 FEB 2015 11:44
+entering extended mode
+**conference*draft.tex
+
+("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
+ence draft.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+
+("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\ieeeco
+nf.cls"
+Document Class: ieeeconf 2004/1/15 revision V1.6b by Pradeep Misra
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count80
+\@IEEEtrantmpcountB=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 792.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+Requested font "ptmr7t" at 10.0pt
+\@IEEEnormalsizefontbaselineskip=\skip41
+
+-- This is a 10 point document.
+\normalsizebaselineskip=\skip42
+\normaljot=\skip43
+Requested font "ptmr7t" at 5.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 5.0pt
+Requested font "ptmri7t" at 5.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 5.0pt
+Requested font "ptmr7t" at 7.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 7.0pt
+Requested font "ptmri7t" at 7.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 7.0pt
+Requested font "ptmr7t" at 8.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 8.0pt
+Requested font "ptmri7t" at 8.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 8.0pt
+Requested font "ptmr7t" at 9.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 9.0pt
+Requested font "ptmri7t" at 9.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 9.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 10.0pt
+Requested font "ptmri7t" at 10.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 10.0pt
+Requested font "ptmr7t" at 11.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 11.0pt
+Requested font "ptmri7t" at 11.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 11.0pt
+Requested font "ptmr7t" at 12.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 12.0pt
+Requested font "ptmri7t" at 12.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 12.0pt
+Requested font "ptmr7t" at 16.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 16.0pt
+Requested font "ptmri7t" at 16.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 16.0pt
+Requested font "ptmr7t" at 20.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 20.0pt
+Requested font "ptmri7t" at 20.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 20.0pt
+Requested font "ptmr7t" at 24.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
+Requested font "ptmb7t" at 24.0pt
+Requested font "ptmri7t" at 24.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
+
+Requested font "ptmbi7t" at 24.0pt
+\IEEEilabelindentA=\dimen104
+\IEEEilabelindentB=\dimen105
+\IEEEilabelindent=\dimen106
+\IEEEelabelindent=\dimen107
+\IEEEdlabelindent=\dimen108
+\labelindent=\dimen109
+\IEEEiednormlabelsep=\dimen110
+\IEEEiedmathlabelsep=\dimen111
+\IEEEiedtopsep=\skip44
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEtmpitemindent=\dimen112
+\c@biography=\count91
+\@IEEEtranrubishbin=\box26
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen113
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+
+Package epstopdf Warning: No graphics package `graphic{s,x}' loaded.
+
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\mathptmx.sty"
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip47
+\f@ncyO@elh=\skip48
+\f@ncyO@erh=\skip49
+\f@ncyO@olh=\skip50
+\f@ncyO@orh=\skip51
+\f@ncyO@elf=\skip52
+\f@ncyO@erf=\skip53
+\f@ncyO@olf=\skip54
+\f@ncyO@orf=\skip55
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen116
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen117
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen118
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks18
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks19
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
+\@envbody=\toks20
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count104
+\c@ALC@line=\count105
+\c@ALC@rem=\count106
+\c@ALC@depth=\count107
+\ALC@tlm=\skip59
+\algorithmicindent=\skip60
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen125
+\extrarowheight=\dimen126
+\NC@list=\toks22
+\extratabsurround=\skip61
+\backup@length=\skip62
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endfigure, most likely
+ \let\endfigure=\end@float
+ which has now been changed to
+ \def\endfigure{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endfigure.
+ Please complain to your document class author.
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endtable, most likely
+ \let\endtable=\end@float
+ which has now been changed to
+ \def\endtable{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endtable.
+ Please complain to your document class author.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen127
+\captionmargin@=\dimen128
+\captionwidth=\dimen129
+\caption@tempdima=\dimen130
+\caption@indent=\dimen131
+\caption@parindent=\dimen132
+\caption@hangindent=\dimen133
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count108
+\sf@farskip=\skip63
+\sf@captopadj=\dimen134
+\sf@capskip=\skip64
+\sf@nearskip=\skip65
+\c@subfigure=\count109
+\c@subfigure@save=\count110
+\c@lofdepth=\count111
+\c@subtable=\count112
+\c@subtable@save=\count113
+\c@lotdepth=\count114
+\sf@top=\skip66
+\sf@bottom=\skip67
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
+ence draft.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 402.
+LaTeX Font Info:    ... okay on input line 402.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 402.
+LaTeX Font Info:    ... okay on input line 402.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 402.
+LaTeX Font Info:    ... okay on input line 402.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 402.
+LaTeX Font Info:    ... okay on input line 402.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 402.
+LaTeX Font Info:    ... okay on input line 402.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 402.
+LaTeX Font Info:    ... okay on input line 402.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+Requested font "ptmrc7t" at 10.0pt
+File: CUDA_programming_hierachy.eps Graphic file (type eps)
+ <CUDA_programming_hierachy.eps>
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 536--539
+ [][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 53
+9.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+Requested font "zptmcm7t" at 8.0pt
+Requested font "zptmcm7t" at 6.0pt
+Requested font "zptmcm7t" at 5.0pt
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 53
+9.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+Requested font "zptmcm7m" at 8.0pt
+Requested font "zptmcm7m" at 6.0pt
+Requested font "zptmcm7m" at 5.0pt
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 53
+9.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+Requested font "zptmcm7y" at 8.0pt
+Requested font "zptmcm7y" at 6.0pt
+Requested font "zptmcm7y" at 5.0pt
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 53
+9.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+Requested font "zptmcm7v" at 8.0pt
+Requested font "zptmcm7v" at 6.0pt
+Requested font "zptmcm7v" at 5.0pt
+Requested font "msam10" at 8.0pt
+Requested font "msam10" at 6.0pt
+Requested font "msam10" at 5.0pt
+Requested font "msbm10" at 8.0pt
+Requested font "msbm10" at 6.0pt
+Requested font "msbm10" at 5.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 539.
+Requested font "ptmb7t" at 6.0pt
+Requested font "ptmri7t" at 6.0pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package Fancyhdr Warning: \headheight is too small (0.0pt): 
+ Make it at least 12.0pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[1
+
+
+]
+Requested font "zptmcm7t" at 10.0pt
+Requested font "zptmcm7t" at 7.4pt
+Requested font "zptmcm7m" at 10.0pt
+Requested font "zptmcm7m" at 7.4pt
+Requested font "zptmcm7y" at 10.0pt
+Requested font "zptmcm7y" at 7.4pt
+Requested font "zptmcm7v" at 10.0pt
+Requested font "zptmcm7v" at 7.4pt
+Requested font "msam10" at 10.0pt
+Requested font "msam10" at 7.4pt
+Requested font "msbm10" at 10.0pt
+Requested font "msbm10" at 7.4pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 547.
+Requested font "ptmb7t" at 7.4pt
+Requested font "ptmri7t" at 7.4pt
+File: High_view_of_CUDA_GPU_microarchitecture.eps Graphic file (type eps)
+ <High_view_of_CUDA_GPU_microarchitecture.eps> [2]
+Requested font "ptmr7t" at 7.4pt
+Requested font "ptmr7t" at 6.0pt
+File: FCSD_tree_searching.eps Graphic file (type eps)
+
+<FCSD_tree_searching.eps>
+Overfull \hbox (7.22516pt too wide) in paragraph at lines 632--633
+ [][] 
+ []
+
+[3]
+Requested font "ptmrc7t" at 8.0pt
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
+[]|\OT1/ptm/m/n/10 complex matrix-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--657
+[]|\OT1/ptm/m/n/10 complex matrix-
+ []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 657--658
+[]|\OT1/ptm/m/n/10 Cholesky fac-tor-iza-
+ []
+
+File: CUDA_FCSD_block_diagram.eps Graphic file (type eps)
+<CUDA_FCSD_block_diagram.eps>
+Overfull \hbox (7.22305pt too wide) in paragraph at lines 683--684
+ [][] 
+ []
+
+[4]
+File: coalescing_global_memory.eps Graphic file (type eps)
+ <coalescing_global_memory.eps>
+Overfull \hbox (7.22302pt too wide) in paragraph at lines 706--707
+ [][] 
+ []
+
+[5]
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+File: BER_curves.eps Graphic file (type eps)
+ <BER_curves.eps>
+Overfull \hbox (37.57904pt too wide) in paragraph at lines 815--816
+ [][] 
+ []
+
+
+("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
+ence draft.bbl" [6])
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the US letter (8.5in X 11in) paper size.
+
+[7]
+("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
+ence draft.aux") ) 
+Here is how much of TeX's memory you used:
+ 3806 strings out of 429025
+ 54807 string characters out of 3166797
+ 123314 words of memory out of 3000000
+ 7015 multiletter control sequences out of 15000+200000
+ 39405 words of font info for 92 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 42i,16n,43p,1420b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on conference*draft.pdf (7 pages).

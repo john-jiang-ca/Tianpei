@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  2 FEB 2015 11:44
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  4 FEB 2015 17:26
 entering extended mode
 **conference*draft.tex
 
-("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
-ence draft.tex"
+("C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acc
+eleration_of_FCSD_based_on_cuda\conference draft.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -16,8 +16,8 @@ ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
 
-("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\ieeeco
-nf.cls"
+("C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acc
+eleration_of_FCSD_based_on_cuda\ieeeconf.cls"
 Document Class: ieeeconf 2004/1/15 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
@@ -268,6 +268,9 @@ LaTeX Info: Redefining \hbar on input line 50.
 \f@ncyO@olf=\skip54
 \f@ncyO@orf=\skip55
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lastpage\lastpage.sty"
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
@@ -429,40 +432,48 @@ Package caption Info: Unknown document class (or package),
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
-ence draft.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 402.
-LaTeX Font Info:    ... okay on input line 402.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 402.
-LaTeX Font Info:    ... okay on input line 402.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 402.
-LaTeX Font Info:    ... okay on input line 402.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 402.
-LaTeX Font Info:    ... okay on input line 402.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 402.
-LaTeX Font Info:    ... okay on input line 402.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 402.
-LaTeX Font Info:    ... okay on input line 402.
+("C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acc
+eleration_of_FCSD_based_on_cuda\conference draft.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 403.
+LaTeX Font Info:    ... okay on input line 403.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 403.
+LaTeX Font Info:    ... okay on input line 403.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 403.
+LaTeX Font Info:    ... okay on input line 403.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 403.
+LaTeX Font Info:    ... okay on input line 403.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 403.
+LaTeX Font Info:    ... okay on input line 403.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 403.
+LaTeX Font Info:    ... okay on input line 403.
+Package lastpage Info: Please have a look at the pageslts package at
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
+(lastpage)             ! on input line 403.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 Requested font "ptmrc7t" at 10.0pt
 File: CUDA_programming_hierachy.eps Graphic file (type eps)
- <CUDA_programming_hierachy.eps>
-Overfull \hbox (7.22688pt too wide) in paragraph at lines 536--539
+
+<CUDA_programming_hierachy.eps>
+Overfull \hbox (7.22688pt too wide) in paragraph at lines 539--542
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 53
-9.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 54
+2.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 Requested font "zptmcm7t" at 8.0pt
 Requested font "zptmcm7t" at 6.0pt
 Requested font "zptmcm7t" at 5.0pt
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 53
-9.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 54
+2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
@@ -470,8 +481,8 @@ File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 Requested font "zptmcm7m" at 8.0pt
 Requested font "zptmcm7m" at 6.0pt
 Requested font "zptmcm7m" at 5.0pt
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 53
-9.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 54
+2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
@@ -479,8 +490,8 @@ File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 Requested font "zptmcm7y" at 8.0pt
 Requested font "zptmcm7y" at 6.0pt
 Requested font "zptmcm7y" at 5.0pt
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 53
-9.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 54
+2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
@@ -495,7 +506,7 @@ Requested font "msbm10" at 8.0pt
 Requested font "msbm10" at 6.0pt
 Requested font "msbm10" at 5.0pt
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 539.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 542.
 Requested font "ptmb7t" at 6.0pt
 Requested font "ptmri7t" at 6.0pt
 
@@ -525,7 +536,7 @@ Requested font "msam10" at 7.4pt
 Requested font "msbm10" at 10.0pt
 Requested font "msbm10" at 7.4pt
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 547.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 550.
 Requested font "ptmb7t" at 7.4pt
 Requested font "ptmri7t" at 7.4pt
 File: High_view_of_CUDA_GPU_microarchitecture.eps Graphic file (type eps)
@@ -535,58 +546,60 @@ Requested font "ptmr7t" at 6.0pt
 File: FCSD_tree_searching.eps Graphic file (type eps)
 
 <FCSD_tree_searching.eps>
-Overfull \hbox (7.22516pt too wide) in paragraph at lines 632--633
+Overfull \hbox (7.22516pt too wide) in paragraph at lines 635--636
  [][] 
  []
 
 [3]
 Requested font "ptmrc7t" at 8.0pt
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--657
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
 []|\OT1/ptm/m/n/10 complex matrix-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--657
+Underfull \hbox (badness 10000) in paragraph at lines 660--660
 []|\OT1/ptm/m/n/10 complex matrix-
  []
 
 
-Underfull \hbox (badness 6445) in paragraph at lines 657--658
+Underfull \hbox (badness 6445) in paragraph at lines 660--661
 []|\OT1/ptm/m/n/10 Cholesky fac-tor-iza-
  []
 
 File: CUDA_FCSD_block_diagram.eps Graphic file (type eps)
 <CUDA_FCSD_block_diagram.eps>
-Overfull \hbox (7.22305pt too wide) in paragraph at lines 683--684
+Overfull \hbox (7.22305pt too wide) in paragraph at lines 686--687
+ [][] 
+ []
+
+File: coalescing_global_memory.eps Graphic file (type eps)
+<coalescing_global_memory.eps>
+Overfull \hbox (7.22302pt too wide) in paragraph at lines 709--710
  [][] 
  []
 
 [4]
-File: coalescing_global_memory.eps Graphic file (type eps)
- <coalescing_global_memory.eps>
-Overfull \hbox (7.22302pt too wide) in paragraph at lines 706--707
- [][] 
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[5]
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 815 replaced by U+FFFD.
+ [5]
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 818 replaced by U+FFFD.
 File: BER_curves.eps Graphic file (type eps)
- <BER_curves.eps>
-Overfull \hbox (37.57904pt too wide) in paragraph at lines 815--816
+
+<BER_curves.eps>
+Overfull \hbox (7.23083pt too wide) in paragraph at lines 818--819
  [][] 
  []
 
-
-("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
-ence draft.bbl" [6])
+[6]
+("C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acc
+eleration_of_FCSD_based_on_cuda\conference draft.bbl")
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -598,16 +611,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
+
+AED: lastpage setting LastPage
 [7]
-("E:\Massive MIMO\parallel_acceleration_of_FCSD_based_on_cuda\draft_conf\confer
-ence draft.aux") ) 
+("C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acc
+eleration_of_FCSD_based_on_cuda\conference draft.aux")
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3806 strings out of 429025
- 54807 string characters out of 3166797
- 123314 words of memory out of 3000000
- 7015 multiletter control sequences out of 15000+200000
+ 3842 strings out of 429025
+ 55577 string characters out of 3166797
+ 127790 words of memory out of 3000000
+ 7048 multiletter control sequences out of 15000+200000
  39405 words of font info for 92 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 42i,16n,43p,1420b,315s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,16n,43p,1480b,287s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on conference*draft.pdf (7 pages).

@@ -551,9 +551,9 @@ Considering $U$, $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$, do $QR$ factorization:
 \mathbf{H}=\mathbf{Q}\mathbf{R},
 \label{formula5} 
  \end{equation}
-where $\mathbf{Q}\in\mathbb{C}^{N_{r}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in\mathbb{C}^{N_{t}\times N_{t}}$ is the upper triangular matrix. Using (\ref{formula5}), we have $\mathbf{W}=\mathbf{R}^{H}\mathbf{R}$. $r_{ii}$ denotes the $i$ th diagonal component of $\mathbf{R}$, thus $\mathbf{W}$ can be rewritten as:
+where $\mathbf{Q}\in\mathbb{C}^{N_{r}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in\mathbb{C}^{N_{t}\times N_{t}}$ is the upper triangular matrix. Using (\ref{formula5}), we have $\mathbf{W}=\mathbf{R}^{H}\mathbf{R}$. $r_{ii}$ denotes the $i$ th diagonal component of $\mathbf{R}$, thus $U$ can be rewritten as:
 \begin{equation}
-\mathbf{W}=N_{t}\ln{2}+\ln{det{\mathbf{R}^{H}\mathbf{R}}}=N_{t}\ln{2}+\ln{det(\mathbf{R}^{H})det(\mathbf{R})}\\=N_{t}\ln{2}+\ln{\prod_{i=1}^{N_{t}}r_{ii}^{H}\prod_{i=1}^{N_{t}}r_{ii}}=N_{t}\ln{2}+\sum_{i=1}^{N_{t}}\ln{|r_{ii}|^{2}}.
+U=N_{t}\ln{2}+\ln(det{\mathbf{R}^{H}\mathbf{R}})=N_{t}\ln{2}+\ln{det(\mathbf{R}^{H})det(\mathbf{R})}\\=N_{t}\ln{2}+\ln{\prod_{i=1}^{N_{t}}r_{ii}^{H}\prod_{i=1}^{N_{t}}r_{ii}}=N_{t}\ln{2}+\sum_{i=1}^{N_{t}}\ln{|r_{ii}|^{2}}.
 \label{formula6}
 \end{equation}    
 The next step that can be take into account is to find the distribution of $|r_{ii}|^{2}$.
@@ -603,9 +603,9 @@ where $\psi(n)$ denotes the Digamma function. $\psi(n+1)$ can be expressed as $\
 \mathbb{E}[\ln(det(\mathbf{W}))]=-N_{t}\gamma+\sum_{i=1}^{N_{t}}\int_{0}^{1}\frac{1-x^{\frac{(N_{r}-i)}{2}}}{1-x}dx+N_{t}\ln(2).
 \label{formula13}
 \end{equation} 
-Because the expectation of Gamma function can be written as:
+Because the expectation of logarithmic of Gamma function can be written as:
 \begin{equation}
-\mathbb{E}[Gamma(n,\theta)]=\psi(n)+\ln(\theta),
+\mathbb{E}[\ln(Gamma(n,\theta))]=\psi(n)+\ln(\theta),
 \end{equation}
 thus according to (\ref{formula2}), we have:
 \begin{equation}
@@ -639,7 +639,7 @@ combining the rest terms, we have
 \frac{2^{N_{t}}}{\prod_{i=1}^{N_{t}}\Gamma(N_{t}-i+1)}\pi^{\frac{-N_{t}}{2}(N_{t}-1)}\prod_{i=1}^{N_{t}}\prod_{j<i}exp(-|r_{ij}|^{2})=\frac{2^{N_{t}}}{\prod_{i=1}^{N_{t}}\Gamma(N_{t}-i+1)}\pi^{\frac{-N_{t}}{4}(N_{t}-1)}\prod_{i=1}^{N_{t}}\prod_{j<i}\frac{1}{\sqrt{\pi}}exp(-|r_{ij}|^{2}),
 \label{formula18}
 \end{equation}
-Finally based on (\ref(formula17))(\ref{formula18}), (\ref{formula16}) can be rewritten as:
+Finally based on (\ref{formula17}), (\ref{formula18}), (\ref{formula16}) can be rewritten as:
 \begin{equation}
 p_{\mathbf{R}}(\mathbf{R})=C\prod_{i=1}^{N_{t}}\prod_{j<i}\frac{1}{\sqrt{\pi}}exp(-|r_{ij}|^{2})
 \prod_{i=1}^{N_{t}}\frac{(|r_{ii}|^{(2(N_{r}-i+1)-1)}e^{-e^{|r_{ii}|^{2}}})}{\Gamma(2(N_{r}-i+1))},

@@ -593,92 +593,62 @@ taking expectation, we have
 \mathbb{E}[\ln(\phi_{om})]=N_{t}\ln(2)+\mathbb{E}[\ln(det(\mathbf{W}))]-\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})].
 \label{formula11}
 \end{equation}
-Consider Rayleigh fading channel, $\mathbf{H}=[\mathbf{h}_{1},\mathbf{h}_{2},\cdots \mathbf{h}_{N_{t}}]$, where $\mathbf{h}_{i}$ denotes the $i$ th column of $\mathbf{H}$, because each component of $\mathbf{H}$ is zero mean, and $\mathbf{h}_{i}$ are mutually independent. Therefore, $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}\sim W(n, \mathbf{\Sigma})$ denotes Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. The logarithmic expectation of $\mathbf{W}$ can be rewritten as \cite{bishop2006pattern}
+Consider Rayleigh fading channel, $\mathbf{H}=[\mathbf{h}_{1},\mathbf{h}_{2},\cdots \mathbf{h}_{N_{t}}]$, where $\mathbf{h}_{i}$ denotes the $i$ th column of $\mathbf{H}$, because each component of $\mathbf{H}$ is zero mean, and $\mathbf{h}_{i}$ are mutually independent. Therefore, $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}\sim \mathbb{C}W(n, \mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. The logarithmic expectation of $\mathbf{W}$ can be rewritten as
 \begin{equation}
-\mathbb{E}[\ln(det(\mathbf{W}))]=\sum_{i=1}^{N_{t}}\psi(\frac{N_{r}+1-i}{2})+N_{t}\ln(2)+\ln(det(\mathbf{I}))=\sum_{i=1}^{N_{t}}\psi{\frac{N_{r}+1-i}{2}}+N_{t}\ln(2),
+\mathbb{E}[\ln(det(\mathbf{W}))]=\frac{\tilde{\Gamma}^{'}_{N_{t}}(N_{r})}{\tilde{\Gamma}_{N_{t}}(N_{r})}=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1),
 \label{formula12}
 \end{equation}
-where $\psi(n)$ denotes the Digamma function. $\psi(n+1)$ can be expressed as $\psi(n+1)=-\gamma+\int_{0}^{1}\frac{1-x^{n}}{1-x}$, in which $\gamma$ denotes the Euler-Mascherioni constant. Thus (\ref{formula12}) can be rewritten as:
-\begin{equation}
-\mathbb{E}[\ln(det(\mathbf{W}))]=-N_{t}\gamma+\sum_{i=1}^{N_{t}}\int_{0}^{1}\frac{1-x^{\frac{(N_{r}-i)}{2}}}{1-x}dx+N_{t}\ln(2).
-\label{formula13}
-\end{equation} 
-Because the expectation of logarithmic of Gamma function can be written as:
+where $\tilde{\Gamma}_{m}(n)$ denotes the multivariate Gamma function. Proof: see Appendix A.
+
+Because the logarithmic expectation of a Gamma distribution variable can be written as:
 \begin{equation}
 \mathbb{E}[\ln(Gamma(n,\theta))]=\psi(n)+\ln(\theta),
 \end{equation}
-thus according to (\ref{formula2}), we have:
+where $\psi(n)$ denotes Digamma function. Thus according to (\ref{formula2}), we have:
 \begin{equation}
 \mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})]=\psi(N_{r})+\ln(2).
 \label{formula14}
 \end{equation}
+Proof: see Appendix B
 Based on (\ref{formula11})(\ref{formula12})(\ref{formula14}), The logarithmic expectation of $\phi_{om}$ can be written as:
-\begin{equation}
-\mathbb{E}[\ln(\phi_{om})]=N_{t}\ln(2)+\sum_{i=1}^{N_{t}}\psi{\frac{N_{r}+1-i}{2}}+N_{t}\ln(2)-\sum_{i=1}^{N_{t}}\psi(N_{r})-N_{t}\ln(2)=N_{t}\ln(2)+\sum_{i=1}^{N_{t}}[\psi(\frac{N_{r}-i+1}{2})-\psi(N_{r})].
-\label{formula15}
-\end{equation}
-\section{Derivation of Joint PDF of Logarithmic Orthogonality Measurement}
-Based on \cite{srivastava1965complex}, the distribution of lower triangular matrix $\mathbf{R}$ is 
 \begin{eqnarray}
 \nonumber
-p_{\mathbf{R}}(\mathbf{R})=\frac{2^{N_{t}}}{\prod_{i=1}^{N_{t}}\Gamma(N_{t}-i+1)}\pi^{\frac{-N_{t}}{2}(N_{t}-1)}\times \quad \quad (a)\\
-\nonumber
-\prod_{i=1}^{N_{t}}exp(-|r_{ii}|^{2})\times \quad \quad (b)\\
-\nonumber
-\prod_{i=1}^{N_{t}}\prod_{j<i}exp(-|r_{ij}|^{2})\times \quad \quad (c)\\
-\prod_{i=1}^{N_{t}}(|r_{ii}|^{2(N_{r}-i)+1}). \quad \quad (d)
-\label{formula16}
+\mathbb{E}[\ln(\phi_{om})]&=&N_{t}\ln(2)+\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r})-N_{t}\ln(2)\\
+&=& \sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r})
+\label{formula15}
 \end{eqnarray}
-Combining sub term (b) and (d), we have
+\section{Derivation of Joint PDF of Logarithmic Orthogonality Measurement}
+Recall (\ref{formula7}), because $||h_{i}||^{2}=\sum_{j\leq i}|r_{ij}|^{2}$, we can rewrite (\ref{formula7}) as
 \begin{equation}
-\prod_{i=1}^{N_{t}}exp(-|r_{ii}|^{2})\prod_{i=1}^{N_{t}}(|r_{ii}|^{2(N_{r}-i)+1})=\prod_{i=1}^{N_{t}}\Gamma(2(N_{r}-i+1))\frac{(|r_{ii}|^{(2(N_{r}-i+1)-1)}e^{-e^{|r_{ii}|^{2}}})}{\Gamma(2(N_{r}-i+1))},
-\label{formula17}
+\phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum_{j<i}|r_{ji}|^{2}}.
 \end{equation}
-combining the rest terms, we have 
+All the components in $\mathbf{R}$ are independently distributed and $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma((N_{r}-i+1),1)$ \cite{nagar2011expectations}. Because $|r_{ij}|$ are standard complex Gaussian, $\sum_{j<i}|r_{ij}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ij}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten to 
 \begin{equation}
-\frac{2^{N_{t}}}{\prod_{i=1}^{N_{t}}\Gamma(N_{t}-i+1)}\pi^{\frac{-N_{t}}{2}(N_{t}-1)}\prod_{i=1}^{N_{t}}\prod_{j<i}exp(-|r_{ij}|^{2})=\frac{2^{N_{t}}}{\prod_{i=1}^{N_{t}}\Gamma(N_{t}-i+1)}\pi^{\frac{-N_{t}}{4}(N_{t}-1)}\prod_{i=1}^{N_{t}}\prod_{j<i}\frac{1}{\sqrt{\pi}}exp(-|r_{ij}|^{2}),
-\label{formula18}
-\end{equation}
-Finally based on (\ref{formula17}), (\ref{formula18}), (\ref{formula16}) can be rewritten as:
-\begin{equation}
-p_{\mathbf{R}}(\mathbf{R})=C\prod_{i=1}^{N_{t}}\prod_{j<i}\frac{1}{\sqrt{\pi}}exp(-|r_{ij}|^{2})
-\prod_{i=1}^{N_{t}}\frac{(|r_{ii}|^{(2(N_{r}-i+1)-1)}e^{-e^{|r_{ii}|^{2}}})}{\Gamma(2(N_{r}-i+1))},
-\label{formula19}
-\end{equation}
-where $C$ denotes constant
-\begin{equation}
-C=\frac{2^{N_{t}}}{\prod_{i=1}^{N_{t}}\Gamma(N_{t}-i+1)}\pi^{\frac{-N_{t}}{4}(N_{t}-1)}\prod_{i=1}^{N_{t}}\Gamma(2(N_{r}-i+1)).
-\label{formula20}
-\end{equation}
-
-
-From (\ref{formula19}), we can find all the components in $\mathbf{R}$ are mutually independent, furthermore, $|r_{ij}|\sim N(0,1/2)$, $|r_{ii}|^{2}\sim Gamma(2(N_{r}-i+1),1)$. Because $|r_{ij}|$ are independent Gaussian, $\sum_{j<i}|r_{ij}|^{2}\sim Gamma(\frac{i-1}{2}, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ij}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten to 
-\begin{equation}
-\ln(\phi_{om})=\sum_{i=1}^{N_{t}}\ln(\frac{\beta_{i}}{\alpha_{i}+\beta_{i}}),
+\phi_{om}=\prod_{i=1}^{N_{t}}\frac{\beta_{i}}{\alpha_{i}+\beta_{i}},
 \label{formula21}
 \end{equation}
-From \cite{gupta2004handbook}, if $X\sim Gamma(k_{1},\theta)$ and $Y\sim Gamma(k_{2},\theta)$, then $\frac{X}{X+Y}\sim B(k_{1},k_{2})$, where $B$ denotes Beta distribution. Therefore $\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}\sim B(k_{1}, k_{2})$, where $k_{1}=2(N_{r}-i+1)$, $k_{2}=\frac{i-1}{2}$. we define $\eta_{i}=\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}$, based on (\ref{formula21}), we have 
+From \cite{gupta2004handbook}, if $X\sim Gamma(k_{1},\theta)$ and $Y\sim Gamma(k_{2},\theta)$, then $\frac{X}{X+Y}\sim B(k_{1},k_{2})$, where $B$ denotes Beta distribution. Therefore $\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}\sim B(k^{i}_{1}, k^{i}_{2})$, where $k^{i}_{1}=N_{r}-i+1$, $k^{i}_{2}=i-1$. we define $\eta_{i}=\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}$, it is obvious that $\eta_{i}$ are independently distributed. Based on (\ref{formula21}), we have 
 \begin{equation}
-\ln(\phi_{om})=\sum_{i=1}^{N_{t}}\ln(\eta_{i}),
+\phi_{om}=\prod_{i=1}^{N_{t}}\eta_{i}.
 \label{formula22}
 \end{equation}
-where $\ln(\eta_{i})$ are independent but not identically distributed random variables.
-\begin{eqnarray}
-\mu_{i}=\mathbb{E}[\ln(\eta_{i})]=\psi(k_{1})+\psi(k_{1}+k_{2})\\
-\delta_{i}^{2}=Var[\ln(\eta_{i})]=\psi_{1}(k_{1})+\psi_{1}(k_{1}+k_{2})
-\end{eqnarray}
-where $\psi_{1}$ denotes trigamma function $\psi_{1}(x)=\frac{d\psi(x)}{dx}$.
-Based on Lyapunov Central Limit Theorem\cite{jacod1987limit}, we have 
+Therefore the density function of $\phi_{om}$ can be defined as
 \begin{equation}
-\ln(\phi_{om})\sim N(\mu,\delta^{2}),
+f_{\phi_{om}}(x)=\prod_{i=0}^{N_{t}}f_{\eta_{i}}(l_{i}),
 \label{formula23}
 \end{equation}
-in (\ref{formula23}), $\delta^{2}=\sum_{i=1}^{N_{t}}\delta_{i}^{2}$, $\mu=\sum_{i=1}^{N_{t}}\mu_{i}$. However we need to check Lindeberg's condition: \\
-define $s_{n}=\sum_{i=1}^{n}\sigma^{2}$ if $\vartheta>0$ exists and (\ref{formula24}) is satisfied
+where $f_{\eta_{i}}(l_{i})=\frac{1}{\mathbb{B}(k^{i}_{1},k^{i}_{2})}l_{i}^{k^{i}_{1}-1}(1-l_{i})^{k^{i}_{2}-1}$, $\mathbb{B}(\alpha, \beta)$ denotes Beta function.
+Consider logarithmic expectation of $\phi_{om}$, we have
 \begin{equation}
-\lim_{n\to \infty}\frac{1}{s_{n}^{2+\vartheta}}\sum_{i=1}^{n}\mathbb{E}[|x_{i}-\mu_{i}|^{2+\vartheta}]=0,
+E[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}E[\ln(\eta_{i})],
 \label{formula24}
 \end{equation}
+where $E[\ln(\eta_{i})]=\psi(k^{i}_{1})-\psi(k^{i}_{1}+k^{i}_{2})$, thus we have 
+\begin{equation}
+E[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r}).
+\label{formula25}
+\end{equation}
+we can find (\ref{formula25}) is consistent with (\ref{formula15}). 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page
 % adjust value as needed - may need to be readjusted if
@@ -701,7 +671,91 @@ define $s_{n}=\sum_{i=1}^{n}\sigma^{2}$ if $\vartheta>0$ exists and (\ref{formul
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
+\begin{appendices}
+\section{Appendix A}
+Let $\mathbf{A}\in \mathbb{C}^{m\times m}$, $A\sim \mathbb{C}W(n, \mathbf{\Sigma})$, $\mathbb{C}W(n, \mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. It is obvious $\mathbf{A}$ is Hermition positive definite matrix, $\mathbf{A}=\mathbf{A}^{H}>0$.
 
+The p.d.f function of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
+\begin{equation}
+f(A)=\{\tilde{\Gamma}_{m}(n)det(\mathbf{\Sigma})^{n} \}^{-1}det(A)^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A}),
+\label{Appendequa1}
+\end{equation}
+where $\tilde{\Gamma}_{m}(\beta)$ denotes multivariate complex Gamma function defined by:
+\begin{equation}
+\tilde{\Gamma}_{m}(\beta)=\pi^{\frac{m(m-1)}{2}}\prod_{i=1}^{m}\Gamma(\beta-i+1)\quad Re(\beta)>m-1.
+\label{Appendequa2}
+\end{equation}
+Furthermore,from \cite{nagar2011expectations}, we have 
+
+\begin{equation}
+\tilde{\Gamma}_{m}(\beta)=\int_{\mathbf{X}=\mathbf{X}^{H}>0}etr(-\mathbf{X})det(\mathbf{X})^{\beta-m}d
+\mathbf{X} \quad Re(\beta)>m-1.
+\label{Appendequa3}
+\end{equation}
+We derive logarithmic expectation of $det(\mathbf{A})$
+\begin{eqnarray}
+\nonumber
+E[\ln(det(\mathbf{A}))]&=&\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))f(\mathbf{A})d\mathbf{A}\\
+\nonumber
+&=&\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))\{\tilde{\Gamma}_{m}(n)det(\mathbf{\Sigma})^{n} \}^{-1}det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A})d\mathbf{A}\\
+\nonumber
+&=&\frac{det(\mathbf{\Sigma})^{-n}}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A})d\mathbf{A},
+\label{Appendequa4}
+\end{eqnarray}
+if $\mathbf{\sum}=\mathbf{I}$, \ref{Appendequa4} can be written as 
+\begin{equation}
+E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A})d\mathbf{A}.
+\label{Appendequa5}
+\end{equation}
+Because $\frac{d}{dn}[det(\mathbf{A})]^{n-m}=\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}$, (\ref{Appendequa5}) can be rewritten as
+\begin{equation}
+E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}det(\mathbf{A})^{n-m}etr(-\mathbf{A})d\mathbf{A},
+\label{Appendequa6}
+\end{equation}
+using (\ref{Appendequa3}), (\ref{Appendequa6}) can be rewritten as 
+\begin{equation}
+E[\ln(\mathbf{A})]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}.
+\label{Appendequa7}
+\end{equation}
+Based on (\ref{Appendequa2}), we have 
+\begin{eqnarray}
+\tilde{\Gamma}^{'}_{m}(n)=\pi^{\frac{m(m-1)}{2}}\prod_{i=1}^{m}\Gamma^{'}(\beta-i+1),
+\end{eqnarray}
+Thus we have 
+\begin{equation}
+E[\ln(det(\mathbf{A}))]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}=\prod_{i=1}^{m}\psi(n-i+1),
+\label{Appendequa8}
+\end{equation}
+where $\psi$ denotes Digamma function.
+\section{Appendix B}
+If $x\sim Gamma(n, \theta)$, with shape parameter $k$ and scale parameter $\theta$, $x>0$, $\Gamma(k)$ denotes Gamma function, the density function of Gamma distribution is
+\begin{equation}
+f(x,k,\theta)=\frac{x^{k-1}e^{-x/\theta}}{\Gamma(k)\theta^{k}}.
+\label{Appendequa9}
+\end{equation}
+Thus we have 
+\begin{equation}
+E[\ln(x)]=\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(x)x^{k-1}e^{-x/\theta}\theta^{-k}dx,
+\label{Appendequa10}
+\end{equation}
+define $z=x/\theta$ and since $\Gamma(k)=\int_{0}^{\infty}x^{k-1}e^{-x}dx$, (\ref{Appendequa10}) can be rewritten as
+\begin{equation}
+E[\ln(x)]=\ln(\theta)+\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(z)z^{k-1}e^{-z}dz.
+\label{Appendequa11}
+\end{equation}
+Because $\frac{d(z^{k-1})}{dk}=\ln(z)z^{k-1}$, (\ref{Appendequa11}) can be rewritten as
+\begin{eqnarray}
+\nonumber
+E[\ln(z)]&=&\ln(\theta)+\frac{1}{\Gamma(k)}\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e^{-z}dz\\
+\nonumber
+&=&\ln(\theta)+\frac{\Gamma^{'}(k)}{\Gamma(k)}\\
+\nonumber
+&=&\ln(\theta)+\psi(k),
+\label{Appendequa12}
+\end{eqnarray}
+where $\psi(k)$ denotes Digamma function.
+
+\end{appendices}
 
 
 

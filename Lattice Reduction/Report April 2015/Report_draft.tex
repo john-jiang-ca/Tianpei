@@ -485,7 +485,8 @@ where $\psi(n)$ denotes Digamma function. Thus according to (\ref{formula2}), we
 \mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})]=\psi(N_{r})+\ln(2).
 \label{formula14}
 \end{equation}
-Proof: see Appendix B
+Proof: see Appendix B.
+
 Based on (\ref{formula11})(\ref{formula12})(\ref{formula14}), The logarithmic expectation of $\phi_{om}$ can be written as:
 \begin{eqnarray}
 \nonumber
@@ -500,7 +501,7 @@ Recall (\ref{formula9})
 \end{equation}
 All the components in $\mathbf{R}$ are independently distributed and $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma((N_{r}-i+1),1)$ \cite{nagar2011expectations}. Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ji}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten to 
 \begin{equation}
-\phi_{om}=\prod_{i=1}^{N_{t}}\frac{\beta_{i}}{\alpha_{i}+\beta_{i}},
+\phi_{om}=\prod_{i=1}^{N_{t}}\frac{\beta_{i}}{\beta_{i}+\alpha_{i}},
 \label{formula21}
 \end{equation}
 From \cite{gupta2004handbook}, if $X\sim Gamma(k_{1},\theta)$ and $Y\sim Gamma(k_{2},\theta)$, then $\frac{X}{X+Y}\sim B(k_{1},k_{2})$, where $B$ denotes Beta distribution. Therefore $\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}\sim B(k^{i}_{1}, k^{i}_{2})$, where $k^{i}_{1}=N_{r}-i+1$, $k^{i}_{2}=i-1$. we define $\eta_{i}=\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}$, it is obvious that $\eta_{i}$ are independently distributed. Based on (\ref{formula21}), we have 
@@ -569,7 +570,7 @@ where $\tilde{\Gamma}_{m}(\beta)$ denotes multivariate complex Gamma function de
 \tilde{\Gamma}_{m}(\beta)=\pi^{\frac{m(m-1)}{2}}\prod_{i=1}^{m}\Gamma(\beta-i+1)\quad Re(\beta)>m-1.
 \label{Appendequa2}
 \end{equation}
-Furthermore,from \cite{nagar2011expectations}, we have 
+Furthermore, from \cite{nagar2011expectations}, we have 
 
 \begin{equation}
 \tilde{\Gamma}_{m}(\beta)=\int_{\mathbf{X}=\mathbf{X}^{H}>0}etr(-\mathbf{X})det(\mathbf{X})^{\beta-m}d
@@ -585,14 +586,14 @@ E[\ln(det(\mathbf{A}))]&=&\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))
 &=&\frac{det(\mathbf{\Sigma})^{-n}}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A})d\mathbf{A},
 \label{Appendequa4}
 \end{eqnarray}
-if $\mathbf{\Sigma}=\mathbf{I}$, \ref{Appendequa4} can be written as 
+if $\mathbf{\Sigma}=\mathbf{I}$, (\ref{Appendequa4}) can be written as 
 \begin{equation}
 E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A})d\mathbf{A}.
 \label{Appendequa5}
 \end{equation}
 Because $\frac{d}{dn}[det(\mathbf{A})]^{n-m}=\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}$, (\ref{Appendequa5}) can be rewritten as
 \begin{equation}
-E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\frac{d}{dn}\int_{\mathbf{A}=\mathbf{A}^{H}>0}det(\mathbf{A})^{n-m}etr(-\mathbf{A})d\mathbf{A},
+E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\frac{d}{dn}\int_{\mathbf{A}=\mathbf{A}^{H}>0}etr(-\mathbf{A})det(\mathbf{A})^{n-m}d\mathbf{A},
 \label{Appendequa6}
 \end{equation}
 using (\ref{Appendequa3}), (\ref{Appendequa6}) can be rewritten as 
@@ -601,12 +602,12 @@ E[\ln(\mathbf{A})]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}.
 \label{Appendequa7}
 \end{equation}
 Based on (\ref{Appendequa2}), we have 
-\begin{eqnarray}
-\tilde{\Gamma}^{'}_{m}(n)=\pi^{\frac{m(m-1)}{2}}\prod_{i=1}^{m}\Gamma^{'}(\beta-i+1),
-\end{eqnarray}
+\begin{equation}
+\tilde{\Gamma}^{'}_{m}(n)=\pi^{\frac{m(m-1)}{2}}\sum_{i=1}^{m}[\Gamma^{'}(n-i+1)\prod_{j=1,j\neq i }^{m}\Gamma(n-j+1)],
+\end{equation}
 Thus we have 
 \begin{equation}
-E[\ln(det(\mathbf{A}))]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}=\prod_{i=1}^{m}\psi(n-i+1),
+E[\ln(det(\mathbf{A}))]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}=\sum_{i=1}^{m}\psi(n-i+1),
 \label{Appendequa8}
 \end{equation}
 where $\psi$ denotes Digamma function.
@@ -645,32 +646,32 @@ f(x_{i})=\frac{1}{\mathbb{B}(k_{1}^{i}, k_{2}^{i})}x_{i}^{k_{1}^{i}-1}(1-x_{i})^
 \end{equation}
 define $y_{i}=-\ln(x_{i})=g(x_{i})$, Based on Jacobian transformation, we have 
 \begin{equation}
-f_{y_{i}}((y)=|\frac{dy_{i}}{dx_{i}}|^{-1}f_{x_{i}}(g^{-1}(x_{i}))=\frac{1}{\mathbb{B}(k_{1}^{i},k_{2}^{i})}e^{-k_{1}^{i}y_{i}}(1-e^{-y_{i}})^{k_{1}^{i}-1}.
+f_{y_{i}}(\rho)=|\frac{dy_{i}}{dx_{i}}|^{-1}f_{x_{i}}(g^{-1}(\rho))=\frac{1}{\mathbb{B}(k_{1}^{i},k_{2}^{i})}e^{-k_{1}^{i}\rho}(1-e^{-\rho})^{k_{1}^{i}-1}.
 \label{Appendequal14}
 \end{equation}
 where (\ref{Appendequal14}) can be alternatively expressed as \cite{bhargava1981distribution}
 \begin{equation}
-f_{y_{i}}(y)=\sum_{j^{i}=0}^{k_{2}^{i}-1}c(k_{1}^{i},k_{2}^{i}, j^{i})(k_{1}^{i}+j^{i})exp(-(k_{1}^{i}+j^{i})y_{i}).
+f_{y_{i}}(\rho)=\sum_{j^{i}=0}^{k_{2}^{i}-1}c(k_{1}^{i},k_{2}^{i}, j^{i})(k_{1}^{i}+j^{i})exp(-(k_{1}^{i}+j^{i})\rho),
 \label{Appendequal15}
 \end{equation} 
-Based on the lemma 1 of \cite{bhargava1981distribution}, if $a_{1}, a_{2}, \cdots a_{n}$ are independent exponentially distributed random variables, with pdf given by
+where $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j^{i}}$ $k_{2}^{i}-1\choose j^{i}$ $[(k_{1}^{i}+k_{2}^{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. Based on the lemma 1 of \cite{bhargava1981distribution}, if $a_{1}, a_{2}, \cdots a_{n}$ are independent exponentially distributed random variables, with pdf given by
 \begin{equation}
 t_{i}exp(-t_{i}a_{i})，
 \label{Appendequal16}
 \end{equation} 
-then $a=\sum_{i=1}^{n}a_{i}$ can be written as
+then pdf of $a=\sum_{i=1}^{n}a_{i}$ can be written as
 \begin{equation}
-f(a|\mathbf{t})=\prod_{i=1}^{n}\sum_{i=1}^{n}[exp(-t_{i}a)\prod_{j=1\\ j\neq i}^{j=n}t_{j}-t_{i}],
+f(a|\mathbf{t})=\prod_{i=1}^{n}t_{i}\sum_{i=1}^{n}[exp(-t_{i}a)/\prod_{j=1\\ j\neq i}^{j=n}(t_{j}-t_{i})],
 \label{Appendequal17}
 \end{equation}
 where $t=[t_{1}, t_{2}, \cdots t_{n}]$. The pdf of $y_{i}$ can be viewed as the weighting summation of exponential distribution functions, define $y=\sum_{i=1}^{n}y_{i}$, based on (\ref{Appendequal17}), the pdf of $y$ is given by
 \begin{equation}
-f_{y}(m)=\sum_{\mathbf{j}}(\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j^{i}))f(m|\mathbf{k_{1}}+\mathbf{j}),
+f_{y}(m)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j^{i})]f(m|\mathbf{k_{1}}+\mathbf{j})\},
 \label{Appendequal18}
 \end{equation}
-where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{n}}$, the range of $j^{i}$ is defined by $j^{i}\in [0, k_{2}^{i}]$, $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j^{i}}$ $k_{2}^{i}-1\choose j^{i}$ $[(k_{1}^{i}+k_{2}^{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. $f(m|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp((k_{1}^{i}+j^{i})m)/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1}, k_{1}^{2}+j^{2} \cdots k_{1}^{n}+j^{n}]$. we define $U=exp(-y)=\prod_{i=1}^{n}x_{i}$, using Jacobian transformation, the pdf of $U$ is given by 
+where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{n}}$, the range of $j^{i}$ is defined by $j^{i}\in [0, k_{2}^{i}]$, $f(m|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp((k_{1}^{i}+j^{i})m)/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1}, k_{1}^{2}+j^{2} \cdots k_{1}^{n}+j^{n}]$. we define $U=exp(-y)=\prod_{i=1}^{n}x_{i}$, using Jacobian transformation, the pdf of $U$ is given by 
 \begin{equation}
-f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}f(-\ln(u)|\mathbf{k_{1}}+\mathbf{j}).
+f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i},j^{i})]f(-\ln(u)|\mathbf{k_{1}}+\mathbf{j})\}.
 \label{Appendequal19}
 \end{equation}
 

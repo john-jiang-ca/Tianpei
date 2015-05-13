@@ -72,12 +72,12 @@ J.~Goldberger and A.~Leshem, ``{MIMO} detection for high-order {QAM} based on a
 
 \bibitem{lakshmi2013channel}
 T.~Lakshmi~Narasimhan and A.~Chockalingam, ``Channel hardening-exploiting
-  message passing (chemp) receiver in large-scale {MIMO} systems,'' 2013.
+  message passing ({CHEMP}) receiver in large-scale {MIMO} systems,'' 2013.
 
 \bibitem{farhang2006markov}
-B.~Farhang-Boroujeny, H.~Zhu, and Z.~Shi, ``Markov chain monte carlo algorithms
-  for cdma and {MIMO} communication systems,'' \emph{Signal Processing, IEEE
-  Transactions on}, vol.~54, no.~5, pp. 1896--1909, 2006.
+B.~Farhang-Boroujeny, H.~Zhu, and Z.~Shi, ``Markov chain {Monte Carlo}
+  algorithms for {CDMA} and {MIMO} communication systems,'' \emph{Signal
+  Processing, IEEE Transactions on}, vol.~54, no.~5, pp. 1896--1909, 2006.
 
 \bibitem{datta2012novel}
 T.~Datta, N.~Ashok~Kumar, A.~Chockalingam, and B.~S. Rajan, ``A novel {MCMC}
@@ -94,7 +94,7 @@ X.~Ma and W.~Zhang, ``Performance analysis for {MIMO} systems with
 A.~Papoulis, ``Stochastic processes,'' \emph{McGra. w}, 1996.
 
 \bibitem{nagar2011expectations}
-D.~K. Nagar and A.~K. Gupta, ``Expectations of functions of complex wishart
+D.~K. Nagar and A.~K. Gupta, ``Expectations of functions of complex {Wishart}
   matrix,'' \emph{Acta applicandae mathematicae}, vol. 113, no.~3, pp.
   265--288, 2011.
 

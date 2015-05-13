@@ -469,12 +469,12 @@ Taking expectation of (\ref{formula4}), we have
 \mathbb{E}[\ln(\phi_{om})]=N_{t}\ln(2)+\mathbb{E}[\ln(det(\mathbf{W}))]-\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})].
 \label{formula11}
 \end{equation}
-Consider $\mathbf{H}=[\mathbf{h}_{1}^{'},\mathbf{h}_{2}^{'},\cdots \mathbf{h}_{N_{r}}^{'}]^{'}$, where $\mathbf{h}_{i}$ denotes the $i$ th row of $\mathbf{H}$, because each component of $\mathbf{H}$ is mutually independent and subject to circularly symmetric complex Gaussian distribution, i.e. $h_{i}\sim \mathbb{C}N(\mathbf{0},\mathbf{I}_{N_{t}})$. Therefore, $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}\sim \mathbb{C}W(N_{r}, \mathbf{I}_{N_{t}})$, $\mathbb{C}W(n,\mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. The logarithmic expectation of $\mathbf{W}$ can be rewritten as
+Consider $\mathbf{H}=[\mathbf{h}_{1}^{'},\mathbf{h}_{2}^{'},\cdots \mathbf{h}_{N_{r}}^{'}]^{'}$, where $\mathbf{h}_{i}$ denotes the $i$ th row of $\mathbf{H}$, because each component of $\mathbf{H}$ is mutually independent and subject to circularly symmetric complex Gaussian distribution, i.e. $\mathbf{h}_{i}\sim \mathbb{C}N(\mathbf{0},\mathbf{I}_{N_{t}})$. Therefore, $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}\sim \mathbb{C}W(N_{r}, \mathbf{I}_{N_{t}})$, $\mathbb{C}W(n,\mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. The logarithmic expectation of $\mathbf{W}$ can be rewritten as
 \begin{equation}
 \mathbb{E}[\ln(det(\mathbf{W}))]=\frac{\tilde{\Gamma}^{'}_{N_{t}}(N_{r})}{\tilde{\Gamma}_{N_{t}}(N_{r})}=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1),
 \label{formula12}
 \end{equation}
-where $\tilde{\Gamma}_{m}(n)$ denotes the multivariate Gamma function. Proof: see Appendix A.
+where $\tilde{\Gamma}_{m}(n)$ denotes the multivariate Gamma function and $\psi(n)$ denotes Digamma function. Proof: see Appendix A.
 
 Because the logarithmic expectation of a Gamma distribution variable $\mathbb{g}\sim Gamma(n,\theta)$ can be written as:
 \begin{equation}
@@ -511,10 +511,10 @@ From \cite{gupta2004handbook}, if $X\sim Gamma(k_{1},\theta)$ and $Y\sim Gamma(k
 \end{equation}
 Therefore the density function of $\phi_{om}$ can be defined as
 \begin{equation}
-f_{\phi_{om}}(x)=\frac{1}{x}\sum_{\mathbf{j}}(\prod_{i=1}^{N_{t}}c(k_{1}^{i}k,k_{2}^{i},j^{i}))f(\ln(x)|\mathbf{k_{1}}+\mathbf{j}), 
+f_{\phi_{om}}(x)=\frac{1}{x}\sum_{\mathbf{j}}(\prod_{i=1}^{N_{t}}c(k_{1}^{i}k,k_{2}^{i},j^{i}))f(-\ln(x)|\mathbf{k_{1}}+\mathbf{j}), 
 \label{formula23}
 \end{equation}
-where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{N_{t}}}$, the range of $j^{i}\in [0, k_{2}^{i}-1]$, $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j^{i}}$ $k_{2}^{i}-1\choose j^{i}$ $[(k_{1}^{i}+k_{2}^{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. $f(\ln(x)|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp((k_{1}^{i}+j^{i})\ln(x))/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$. $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1},\cdots k_{1}^{N_{t}-1}+j^{N_{t}-1},k_{1}^{N_{t}}+j^{N_{t}}]$. Proof: see Appendix C. 
+where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{N_{t}}}$, the range of $j^{i}\in [0, k_{2}^{i}-1]$, $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j^{i}}$ $k_{2}^{i}-1\choose j^{i}$ $[(k_{1}^{i}+k_{2}^{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. $f(-\ln(x)|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp((k_{1}^{i}+j^{i})\ln(x))/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$. $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1},\cdots k_{1}^{N_{t}-1}+j^{N_{t}-1},k_{1}^{N_{t}}+j^{N_{t}}]$. Proof: see Appendix C. 
 
 Consider logarithmic expectation of $\phi_{om}$, we have
 \begin{equation}

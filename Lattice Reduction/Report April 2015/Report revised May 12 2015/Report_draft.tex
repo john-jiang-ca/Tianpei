@@ -400,13 +400,13 @@
 \begin{spacing}{2.5}
 \maketitle
 \section{Introduction}
-Decoder is one of the key components of Multiple-Input Multiple-Output (MIMO) systems. Designing of high performance and low complexity detector has become a bottleneck of Large MIMO systems. Recently, academia has found a property of large MIMO channel called channel hardening phenomenon \cite{hochwald2004multiple}\cite{tse2005fundamentals}\cite{marvcenko1967distribution}\cite{tulino2004random}, which states the phenomenon that with the number of receiving or transmitting antennas increasing, the variances of channel mutual information decrease. Simply saying, the channel "hardens". An useful aspect of channel hardening phenomenon is the off diagonal elements of $\mathbf{H}^{H}\mathbf{H}$ matrix becomes more and more ignorable comparing to diagonal elements when the number of receiving antennas or transmitting antennas becomes large.
+Decoder is one of the key components of Multiple-Input Multiple-Output (MIMO) systems. Designing of high performance and low complexity detector has become a bottleneck of Large MIMO systems. Recently, an interesting property of large MIMO channel called channel hardening phenomenon has been found \cite{hochwald2004multiple}\cite{tse2005fundamentals}\cite{marvcenko1967distribution}\cite{tulino2004random}, which states the phenomenon that with the number of receiving or transmitting antennas increasing, the variances of channel mutual information decrease. Simply saying, the channel "hardens". An useful aspect of channel hardening phenomenon is that off diagonal elements of $\mathbf{H}^{H}\mathbf{H}$ matrix becomes more and more ignorable comparing to diagonal elements when the number of receiving antennas or transmitting antennas becomes large.
 
- Channel hardening phenomenon provides an opportunity for designing computationally economical detection algorithms. For example, linear detectors (LDs) such as zero forcing (ZF) and minimum mean square error (MMSE) detectors need to calculate the inverse of $\mathbf{H}^{H}\mathbf{H}$ matrix. This process can be accelerated by approximate matrix inversion using series expansion techniques and deterministic approximations in large dimensions\cite{wu2013approximate}. Channel hardening phenomenon can also provide computational advances to machine learning based detectors, e.g. probability data association (PDA)\cite{fricke1900impact}\cite{pham2004generalized} and message passing detectors\cite{som2011low}\cite{goldberger2011mimo}\cite{lakshmi2013channel} and Monte-Carlo Markov Chain (MCMC) MIMO detectors\cite{farhang2006markov}\cite{datta2012novel}. This type of algorithms work well in large sparse systems.
+ Channel hardening phenomenon provides an opportunity for designing computationally economical detection algorithms. For example, linear detectors (LDs) such as zero forcing (ZF) and minimum mean square error (MMSE) detectors need to do costly matrix operations such as multiplication and inverse. With channel hardening phenomenon, this process can be accelerated by approximate matrix inversion using series expansion techniques and deterministic approximations in large dimensions\cite{wu2013approximate}. Channel hardening phenomenon can also provide computational advances to machine learning based detectors, e.g. probability data association (PDA)\cite{fricke1900impact}\cite{pham2004generalized} and message passing detectors\cite{som2011low}\cite{goldberger2011mimo}\cite{lakshmi2013channel} and Monte-Carlo Markov Chain (MCMC) MIMO detectors\cite{farhang2006markov}\cite{datta2012novel}. This type of algorithms work well in large sparse systems.
  
 In this report, we propose some useful insights of the orthogonal properties of channel. We define orthogonality measurement (om), which is a well round metric that considers both diagonal and off diagonal elements of $\mathbf{H}^{H}\mathbf{H}$.
 
-The rest of the report is organized as follows, section \ref{system model} introduces system model. Section \ref{preliminary} provides some preliminaries of the definition of orthogonality measurement. Section \ref{log expectation of om} discusses the derivation of logarithmic expectation of orthogonality measurement. In section \ref{pdf of om} we obtain probability density function of orthogonality measurement. Some computer simulation results are presented in section \ref{computer simulation}.
+The rest of the report is organized as follows, section \ref{system model} introduces system model. Section \ref{preliminary} provides some preliminaries. Section \ref{log expectation of om} discusses the derivation of logarithmic expectation of orthogonality measurement. In section \ref{pdf of om} we obtain probability density function of orthogonality measurement. Some computer simulation results are presented in section \ref{computer simulation}.
 
 
 \section{System Model}\label{system model}
@@ -414,7 +414,7 @@ We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receiv
 \begin{equation}
 \mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{formula 1}
 \end{equation}
-where $\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian components of zero mean and unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
+where $\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian components with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
 Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 \section{Preliminaries}\label{preliminary}
@@ -424,7 +424,7 @@ Orthogonality deficiency measures the how orthogonal a matrix is \cite{ma2008per
 \label{formula1}
 \end{equation}
 where $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$ denotes Wishart matrix, $\mathbf{h}_{i}$ denotes the $i$ th column of $\mathbf{H}$, $det(\cdot)$ denotes determinant operation, $||\cdot||^{2}$ denotes 2-norm operation.
-In (\ref{formula1}), $||\mathbf{h}_{i}||^{2}=\sum_{i=1}^{N_{t}}|\mathbf{H}_{ij}|^{2}$, $\mathbf{H}_{ij}$ denotes the component of $\mathbf{H}$ at $i$ th row and $j$ th column. $\mathbf{H}_{ij}\sim Rayleigh(1/\sqrt{2})$, therefore $||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},1)$\cite{papoulis1996stochastic}. $Gamma(k,\theta)$ denotes Gamma distribution, with $k$ degrees of freedom. Furthermore, we have:
+In (\ref{formula1}), $||\mathbf{h}_{i}||^{2}=\sum_{j=1}^{N_{r}}|\mathbf{H}_{ji}|^{2}$, $\mathbf{H}_{ji}$ denotes the component of $\mathbf{H}$ at $j$ th row and $i$ th column. $|\mathbf{H}_{ji}|\sim Rayleigh(1/\sqrt{2})$, therefore $||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},1)$\cite{papoulis1996stochastic}. $Gamma(k,\theta)$ denotes Gamma distribution, with $k$ degrees of freedom and scale $\theta$. Furthermore, we have:
 \begin{equation}
 2||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},2)\sim\chi^{2}_{2N_{r}},
 \label{formula2}
@@ -499,7 +499,7 @@ Recall (\ref{formula9})
 \begin{equation}
 \phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum_{j<i}|r_{ji}|^{2}}.
 \end{equation}
-All the components in $\mathbf{R}$ are independently distributed and $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma((N_{r}-i+1),1)$ \cite{nagar2011expectations}. Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ji}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten to 
+All the components in $\mathbf{R}$ are independently distributed and $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma(N_{r}-i+1,1)$ \cite{nagar2011expectations}. Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ji}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten as 
 \begin{equation}
 \phi_{om}=\prod_{i=1}^{N_{t}}\frac{\beta_{i}}{\beta_{i}+\alpha_{i}},
 \label{formula21}
@@ -529,40 +529,40 @@ E[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r}).
 we can find (\ref{formula25}) is consistent with (\ref{formula15}). 
 
 \section{Computer Simulations}\label{computer simulation}
- Computer simulations are made for different sizes of V-BLAST MIMO systems, with $5\leq N_{r} \leq 100, 5 \leq N_{t} \leq N_{r}$, the empirical estimation of logarithmic expectation of $\phi_{om}$, $E[\ln(\phi_{om})]_{em}$, is calculated by taking average over $1e4$ channel realizations for each size of MIMO systems, as shown in Fig. \ref{figure1}, the Theoretical logarithmic expectation of $\phi_{om}$ $E[\ln(\phi_{om})]_{t}$ in (\ref{formula25}) is plotted in Fig. \ref{figure2}. Average deviation between $E[\ln(\phi_{om})]_{em}$ and $E[\ln(\phi_{om})]_{t}$ is also calculated, $V_{em-t}= 7.3043e-04$.
-
-
-
+ Computer simulations are made for different sizes of V-BLAST MIMO systems, with $5\leq N_{r} \leq 100, 5 \leq N_{t} \leq N_{r}$, the empirical estimation of logarithmic expectation of $\phi_{om}$, $E[\ln(\phi_{om})]_{em}$, is calculated by taking average over $1e4$ channel realizations for each size of MIMO systems, as shown in Fig.\ref{figure1}, the Theoretical logarithmic expectation of $\phi_{om}$ $E[\ln(\phi_{om})]_{t}$ in (\ref{formula25}) is plotted in Fig.\ref{figure2}. Average deviation between $E[\ln(\phi_{om})]_{em}$ and $E[\ln(\phi_{om})]_{t}$ is also calculated, $V_{em-t}= 7.3043e-04$.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.6]{NtE1.eps}
-\caption{Relation between $N_{t}$ and $E[\ln(\phi_{om})]_{t}$}
-\label{figure3}
-\end{figure}
-
-Fig. \ref{figure3} demonstrates the relation between the number of users ($N_{t}$) and $E[\ln(\phi_{om})]_{t}$ under cases of different numbers of antennas at base station ($N_{r}$). From Fig. \ref{figure3}, we can see, on the one hand, with $N_{r}$ fixed, $E[\ln(\phi_{om})]$ decreases while $N_{t}$ increases, however the gradient of each curve becomes more and more gentle. On the other hand, when $N_{r}$ becomes larger $E[\ln(\phi_{om})]$ becomes more insensitive to variation of $N_{t}$.
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.7\textwidth, height=5cm]{LogE_om_em1.eps}
+\includegraphics[width=0.7\textwidth, height=5cm]{logE_om_em.eps}
 \caption{Empirical Estimation $E[\ln(\phi_{om})]_{em}$}
 \label{figure1}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth, height=5cm]{LogE_om_t1.eps}
+\includegraphics[width=0.7\textwidth, height=5cm]{logE_om_t.eps}
 \caption{Theoretical $E[\ln(\phi_{om})]_{t}$}
 \label{figure2}
 \end{figure} 
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.6]{NtE.eps}
+\caption{Relation between $N_{t}$ and $E[\ln(\phi_{om})]_{t}$}
+\label{figure3}
+\end{figure}
+
+Fig.\ref{figure3} demonstrates the relation between the number of users ($N_{t}$) and $E[\ln(\phi_{om})]_{t}$ under cases of different numbers of antennas at base station ($N_{r}$). From Fig.\ref{figure3}, we can see, on the one hand, with $N_{r}$ fixed, $E[\ln(\phi_{om})]$ decreases while $N_{t}$ increases, however the gradient of each curve becomes more and more gentle. On the other hand, when $N_{r}$ becomes larger $E[\ln(\phi_{om})]$ becomes more insensitive to variation of $N_{t}$.
+
 
 \begin{appendices}
 \section{Appendix A}
 Let $\mathbf{A}\in \mathbb{C}^{m\times m}$, $A\sim \mathbb{C}W(n, \mathbf{\Sigma})$, $\mathbb{C}W(n, \mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. It is obvious $\mathbf{A}$ is Hermition positive definite matrix, $\mathbf{A}=\mathbf{A}^{H}>0$.
 
-The p.d.f function of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
+The pdf of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
 \begin{equation}
-f(A)=\{\tilde{\Gamma}_{m}(n)det(\mathbf{\Sigma})^{n} \}^{-1}det(A)^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A}),
+f(\mathbf{A})=\{\tilde{\Gamma}_{m}(n)det(\mathbf{\Sigma})^{n} \}^{-1}det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A}),
 \label{Appendequa1}
 \end{equation}
 where $\tilde{\Gamma}_{m}(\beta)$ denotes multivariate complex Gamma function defined by:
@@ -588,7 +588,7 @@ E[\ln(det(\mathbf{A}))]&=&\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))
 \end{eqnarray}
 if $\mathbf{\Sigma}=\mathbf{I}$, (\ref{Appendequa4}) can be written as 
 \begin{equation}
-E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A})d\mathbf{A}.
+E[\ln(det(\mathbf{A}))]=\frac{1}{\tilde{\Gamma}_{m}(n)}\int_{\mathbf{A}=\mathbf{A}^{H}>0}\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}etr(-\mathbf{A})d\mathbf{A}.
 \label{Appendequa5}
 \end{equation}
 Because $\frac{d}{dn}[det(\mathbf{A})]^{n-m}=\ln(det(\mathbf{A}))det(\mathbf{A})^{n-m}$, (\ref{Appendequa5}) can be rewritten as
@@ -607,7 +607,7 @@ Based on (\ref{Appendequa2}), we have
 \end{equation}
 Thus we have 
 \begin{equation}
-E[\ln(det(\mathbf{A}))]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}=\sum_{i=1}^{m}\psi(n-i+1),
+E[\ln(det(\mathbf{A}))]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}=\sum_{i=1}^{m}\frac{\Gamma^{'}(n-i+1)}{\Gamma(n-i+1)}=\sum_{i=1}^{m}\psi(n-i+1),
 \label{Appendequa8}
 \end{equation}
 where $\psi$ denotes Digamma function.
@@ -646,7 +646,7 @@ f(x_{i})=\frac{1}{\mathbb{B}(k_{1}^{i}, k_{2}^{i})}x_{i}^{k_{1}^{i}-1}(1-x_{i})^
 \end{equation}
 define $y_{i}=-\ln(x_{i})=g(x_{i})$, Based on Jacobian transformation, we have 
 \begin{equation}
-f_{y_{i}}(\rho)=|\frac{dy_{i}}{dx_{i}}|^{-1}f_{x_{i}}(g^{-1}(\rho))=\frac{1}{\mathbb{B}(k_{1}^{i},k_{2}^{i})}e^{-k_{1}^{i}\rho}(1-e^{-\rho})^{k_{1}^{i}-1}.
+f_{y_{i}}(\rho)=|\frac{dy_{i}}{dx_{i}}|^{-1}f_{x_{i}}(g^{-1}(\rho))=\frac{1}{\mathbb{B}(k_{1}^{i},k_{2}^{i})}e^{-k_{1}^{i}\rho}(1-e^{-\rho})^{k_{2}^{i}-1}.
 \label{Appendequal14}
 \end{equation}
 where (\ref{Appendequal14}) can be alternatively expressed as \cite{bhargava1981distribution}
@@ -669,7 +669,7 @@ where $t=[t_{1}, t_{2}, \cdots t_{n}]$. The pdf of $y_{i}$ can be viewed as the 
 f_{y}(m)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j^{i})]f(m|\mathbf{k_{1}}+\mathbf{j})\},
 \label{Appendequal18}
 \end{equation}
-where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{n}}$, the range of $j^{i}$ is defined by $j^{i}\in [0, k_{2}^{i}]$, $f(m|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp((k_{1}^{i}+j^{i})m)/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1}, k_{1}^{2}+j^{2} \cdots k_{1}^{n}+j^{n}]$. we define $U=exp(-y)=\prod_{i=1}^{n}x_{i}$, using Jacobian transformation, the pdf of $U$ is given by 
+where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{n}}$, the range of $j^{i}$ is defined by $j^{i}\in [0, k_{2}^{i}]$, $f(m|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp(-(k_{1}^{i}+j^{i})m)/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1}, k_{1}^{2}+j^{2} \cdots k_{1}^{n}+j^{n}]$. we define $U=exp(-y)=\prod_{i=1}^{n}x_{i}$, using Jacobian transformation, the pdf of $U$ is given by 
 \begin{equation}
 f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i},j^{i})]f(-\ln(u)|\mathbf{k_{1}}+\mathbf{j})\}.
 \label{Appendequal19}

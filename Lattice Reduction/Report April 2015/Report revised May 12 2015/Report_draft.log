@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2013.10.17)  12 MAY 2015 21:32
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=xelatex 2013.10.17)  13 MAY 2015 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,11 +401,7 @@ File: NtE.eps Graphic file (type eps)
  <NtE.eps> [10] [11] [12] [13] [14]
 [15]
 Missing character: There is no ， in font cmr12!
- [16] (./Report_draft.bbl [17] [18]) [19] (./Report_draft.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [16] (./Report_draft.bbl [17] [18]) [19] (./Report_draft.aux) ) 
 Here is how much of TeX's memory you used:
  4421 strings out of 493945
  60188 string characters out of 6151186

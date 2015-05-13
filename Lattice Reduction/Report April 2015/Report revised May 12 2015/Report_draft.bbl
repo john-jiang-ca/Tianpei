@@ -44,15 +44,15 @@ A.~M. Tulino and S.~Verd{\'u}, ``Random matrix theory and wireless
 \bibitem{wu2013approximate}
 M.~Wu, B.~Yin, A.~Vosoughi, C.~Studer, J.~R. Cavallaro, and C.~Dick,
   ``Approximate matrix inversion for high-throughput data detection in the
-  large-scale mimo uplink,'' in \emph{Circuits and Systems (ISCAS), 2013 IEEE
+  large-scale {MIMO} uplink,'' in \emph{Circuits and Systems (ISCAS), 2013 IEEE
   International Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2013, pp. 2155--2158.
 
 \bibitem{fricke1900impact}
 J.~C. Fricke, M.~Sandell, J.~Mietzner, and P.~A. Hoeher, ``Impact of the
-  gaussian approximation on the performance of the probabilistic data
-  association mimo decoder,'' \emph{EURASIP Journal on Wireless Communications
-  and Networking}, vol. 2005, no.~5, pp. 796--800, 1900.
+  {Gaussian} approximation on the performance of the probabilistic data
+  association {MIMO} decoder,'' \emph{EURASIP Journal on Wireless
+  Communications and Networking}, vol. 2005, no.~5, pp. 796--800, 1900.
 
 \bibitem{pham2004generalized}
 D.~Pham, K.~R. Pattipati, P.~K. Willett, and J.~Luo, ``A generalized
@@ -61,32 +61,32 @@ D.~Pham, K.~R. Pattipati, P.~K. Willett, and J.~Luo, ``A generalized
 
 \bibitem{som2011low}
 P.~Som, T.~Datta, N.~Srinidhi, A.~Chockalingam, and B.~S. Rajan,
-  ``Low-complexity detection in large-dimension mimo-isi channels using
+  ``Low-complexity detection in large-dimension {MIMO-ISI} channels using
   graphical models,'' \emph{Selected Topics in Signal Processing, IEEE Journal
   of}, vol.~5, no.~8, pp. 1497--1511, 2011.
 
 \bibitem{goldberger2011mimo}
-J.~Goldberger and A.~Leshem, ``Mimo detection for high-order qam based on a
-  gaussian tree approximation,'' \emph{Information Theory, IEEE Transactions
+J.~Goldberger and A.~Leshem, ``{MIMO} detection for high-order {QAM} based on a
+  {Gaussian} tree approximation,'' \emph{Information Theory, IEEE Transactions
   on}, vol.~57, no.~8, pp. 4973--4982, 2011.
 
 \bibitem{lakshmi2013channel}
 T.~Lakshmi~Narasimhan and A.~Chockalingam, ``Channel hardening-exploiting
-  message passing (chemp) receiver in large-scale mimo systems,'' 2013.
+  message passing (chemp) receiver in large-scale {MIMO} systems,'' 2013.
 
 \bibitem{farhang2006markov}
 B.~Farhang-Boroujeny, H.~Zhu, and Z.~Shi, ``Markov chain monte carlo algorithms
-  for cdma and mimo communication systems,'' \emph{Signal Processing, IEEE
+  for cdma and {MIMO} communication systems,'' \emph{Signal Processing, IEEE
   Transactions on}, vol.~54, no.~5, pp. 1896--1909, 2006.
 
 \bibitem{datta2012novel}
-T.~Datta, N.~Ashok~Kumar, A.~Chockalingam, and B.~S. Rajan, ``A novel mcmc
-  algorithm for near-optimal detection in large-scale uplink mulituser mimo
+T.~Datta, N.~Ashok~Kumar, A.~Chockalingam, and B.~S. Rajan, ``A novel {MCMC}
+  algorithm for near-optimal detection in large-scale uplink mulituser {MIMO}
   systems,'' in \emph{Information Theory and Applications Workshop (ITA),
   2012}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2012, pp. 69--77.
 
 \bibitem{ma2008performance}
-X.~Ma and W.~Zhang, ``Performance analysis for mimo systems with
+X.~Ma and W.~Zhang, ``Performance analysis for {MIMO} systems with
   lattice-reduction aided linear equalization,'' \emph{Communications, IEEE
   Transactions on}, vol.~56, no.~2, pp. 309--318, 2008.
 

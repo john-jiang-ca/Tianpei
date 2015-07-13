@@ -1,4 +1,4 @@
-cd 'C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acceleration_of_FCSD_based_on_cuda'
+% cd 'C:\Users\Preston Chen\Documents\GitHub\Tianpei\FCSD-CUDA project\parallel_acceleration_of_FCSD_based_on_cuda'
 %this is for ploting the figure of SNR-BER curve
 sim8_4_0_18=[0.22589062154, 0.15894874930, 0.08640749753, 0.03090812452, 0.00636250013, 0.00079124997, 0.00005481876,0.00000279009];
 sim8_16_0_18=[0.25537124276, 0.22414547205, 0.19270686805, 0.15720969439, 0.10538093746, 0.04198125005, 0.00701593747, 0.00052656251,0.00004961727, 0.00000235999];

@@ -1,0 +1,144 @@
+%\documentclass[12pt,a4paper,final]{article}
+\documentclass[conference]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{color}
+\usepackage{epsfig}
+%\usepackage{appendix}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{ifpdf}
+\usepackage[cmex10]{amsmath}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{fixltx2e}
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+%\usepackage[tight,footnotesize]{subfigure}
+%\usepackage{eqparbox}
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+
+\title{Report for 2013 Fall}
+\author{Tianpei Chen\\
+\small Department of Electrical and Computer Engineering\\
+\small McGill University\\
+\small Montreal, Quebec}
+%\author{\IEEEauthorblockN{Tianpei Chen}
+%\IEEEauthorblockA{Department of Electrical and\\Computer Engineering\\
+%McGill University\\
+%Montreal, Quebec}}
+\small \date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Multiple Input Multiple Output(MIMO) technology offers a cost effective opportunity to make high data rate wireless communication reality, is maturing and is being incorporated into emerging wireless broadband standards like IEEE 802.11n, long-term evolution (LTE)\cite{1}. Massive MIMO, which use several hundreds of antennas at the base station, will bring a lot of breakthrough in high data rate, link reliability, radiate energy efficiency etc\cite{7}. it has become a goldmine of research problems in recent 4 years, this report presents a overview of the conventional MIMO systems and Massive MIMO systems.\newline
+\textbf{keywords: }\emph{conventional MIMO, Massive MIMO, data rate, link reliability, energy efficiency}\newpage
+\end{abstract}
+\section{Background}
+The development of the wireless communication render the increasing demand for the quality of service(QoS), data rate and network capacity, On the other hand, the designer of the wireless systems are always facing the challenges like the complicated time-frequency varying environment, limited radio frequency spectrum resources, the demand for the transmission of the rich media content, Multiple-Input Multiple-Output(MIMO) systems have emerged as a most promising technology in these measures.\newline
+The core idea of MIMO is to use multiple antennas both at the transmitting end and receiving end, the spatial domain sampled signal can be combined to provide parallel data pipes so that can improve array gain, diversity gain, spatial multiplexing gain, and interference reduction.\newline
+MIMO technology has been implemented or considered in some applications, for example MIMO-OFDM has been incorporated in IEEE 802.11n standard for wireless local area networks(WLANs)\cite{2}. MIMO technology was also considered in the home audio/visual devices\cite{3}.\newline
+\section{Introduction}
+High data rate demands of wireless systems will continue to grow for the foreseeable future. Since current technologies are not capable of supporting these demands, new and more efficient antenna configurations need to be devised. One of the most viable solutions is the deployment of Large-scale multiple antenna (LSMA) wireless systems. LSMA wireless systems with hundreds of low-power antennas, that may be colocated at a base station (BS) site, spread out on the face of a building, or distributed geographically, provide a plethora of advantages over conventional multiple-input multiple-output (MIMO) and cooperative networks. In particular, these large-scale systems offer higher data rates, increased link reliability, and potential power savings, since the transmitted RF energy can be more sharply focused in space, while many random impairments (e.g., thermal noise and intercell interference) can be averaged out. We note that these gains can be achieved by coherent, but simple, processing
+(e.g. linear reception techniques in an uplink scenario). LSMA also entails a revolution in hardware. Expensive ultra-linear forty-Watt amplifiers are replaced by many cheap low-power
+devices whose combined action, only, has to meet stipulated tolerances. Likewise it is expected that lower resolution A/D and D/A converters can be used. Equally importantly, the
+analysis of large-scale systems can be carried out using tools from random matrix theory, which has attracted considerable research interest. For all these reasons, the area of LSMA
+systems has recently emerged at the forefront of wireless communication research.\newline
+The rest part of the report will be organized as follows, Section 3 presents a brief overview of the advantages that conventional MIMO can provide and some basic detection technologies of conventional MIMO. Section 4 introduce the potentials and challenges of Massive MIMO, then comes a conclusion.
+\section{Conventional MIMO}
+\subsection{Array Gain and Diversity Gain}
+Because of the multipath and path loss$\&$shadowing, which also been defined as small scale fading and large scale fading, the diversity techniques are employed to combat these effects, principle of this technology is to transmit the multiple versions of the same signal to receiver, because each version is affected by the independent fading, so the probability of all the versions are in a fade at the same time can be greatly reduced. In the other word, the diversity techniques help to improve the link reliability. Two criterions are defined to evaluate the effect of diversity techniques, the one is signal-noise ratio(SNR) and the other is error rate, the former is array gain and the latter is diversity gain.\newline   
+The average receive SNR can be improved due to the coherent combination effect of the processing at the transmitter and the receiver, Transmit/receive array gain requires channel knowledge in the transmitter and receiver, respectively, and depends on the number of transmit and receive antennas. Channel knowledge in the receiver is typically available whereas channel state information in the transmitter is in general more difficult to maintain.\newline
+the arriving signals are combined by the receiver to combat the fade effect, increasing the error rate slope as a function of SNR, it is possible to extract spatial diversity gain using appropriate transmit signal design, the corresponding techniques is called space-time coding\cite{4}.\newline
+\subsection{Multiplexing Gain}
+MIMO channels offer a linear $\min(n,m)$ increase in capacity for no additional power or bandwidth expenditure, $n$ and $m$ is the number of transmit antenna and receive antenna. This gain, referred to as spatial multiplexing gain, is
+realized by transmitting independent data signals from the individual antennas. Under conducive channel conditions, such as rich scattering, the receiver can separate the different streams, yielding a linear increase in capacity.\newline
+\subsection{Interference Reduction}
+Cochannel interference arises due to frequency reuse in wireless channels. When multiple antennas are used, the differentiation between the spatial signatures of the desired
+signal and cochannel signals can be exploited to reduce interference. Interference reduction requires knowledge of the desired signal's channel. Exact knowledge of the interferer's channel may not be necessary. Interference reduction(or avoidance) can also be implemented at the transmitter, where the goal is to minimize the interference energy sent toward the cochannel users while delivering the signal to the desired user. Interference reduction allows aggressive frequency reuse and thereby increases multicell capacity\cite{9}.
+\subsection{Detection Technology For Conventional MIMO}
+The detection of MIMO system is to restitute the transmitted symbol vector from the observed receiving symbol vector which is the linear superposition of the transmitted symbols, in fact is to find a least square solution of a linear equations system, the relation function between the transmitting and receiving signal symbols can be expressed as:
+\begin{equation}
+y=Gx+e\label{equation:1}
+\end{equation}
+G is the $m\times n$ propagation matrix, $e$ is the additive noise, we assume e subject to zero mean gaussian distribution, $x$ is the $n$ transmitting signal symbol vector and $y$ is the m receiving signal symbol vector, we want to get $x$ with known $G$ and $y$, in maximum likelihood(ML) method the problem can be expressed as:
+\begin{equation}
+\min_{s\in s^m}=\|y-Gx\|^2\label{equation:2}
+\end{equation}
+now the basic methods of detection include: Zero forcing(ZF), Zero forcing decision feedback(ZFDF), Sphere decoding(SD), Fixed complexity sphere decoding(FCSD), Semidefinite relaxation detector(SDR), Lattice reduction aided method and Soft decision\cite{10}\cite{5}.\newline
+\section{Massive MIMO}
+Massive MIMO (also known as ''Large-Scale Antenna System'', ''Very Large MIM'', ''Hyper MIM'', ''Full-Dimension MIM'' an''ARGO'')  we think of a system that use several hundreds of antennas at the base station serving several tens of terminals using the same time-frequency resources, it use a large excess of  service antennas and time division duplex operation(TDD) which are the clear break of Massive MIMO from the conventional MIMO systems, in addition, the Massive MIMO can reap all the advantages of the conventional MIMO system\cite{11}\cite{6}.
+There are many opportunities that can be brought by Massive MIMO, improvement of data rate, quality of service, spectrum efficiency\cite{6}, radiate energy efficiency\cite{6}, increasing degree of freedom, the fault of individual antenna will not greatly influence the performance of the system, vanishes of thermal noise and small scale fading\cite{6} and easier strategy to acquire channel state information(CSI) based on channel reciprocity.\newline
+The challenges also exist, brand new channel characterization for the Massive MIMO systems to reflect the behavior of the real world radio propagation, which is different from the conventional MIMO systems. mutual coupling(magnetic interaction) given  that the space of aperture is limited and special array structure[1], channel reciprocity will not be valid if the coherent time is very short, what is the best way to implement the reciprocity calibration, how to reduce the cost both in time-frequency resources and hardware. pilot contamination can not vanish as the number of the base station antenna become unlimited, because of beamforming. 
+The detection of MIMO system is to restitute the transmitted symbols from the observed receiving symbols which is the linear superposition of the transmitted symbols, in fact is to find a least square solution of a linear equations system.
+\subsection{Channel Model}
+we assume that the receiver has the perfect knowledge of channel matrix, the mutual information of the simplest narrowband memoryless channel has the following mathematical description:
+\begin{equation}
+C=I(y;x)=log_2det(I_m +\frac{\rho}{n}GG^H ) \label{equation:3}
+\end{equation}
+$m$ is the number of the receiving antennas, $n$ is the number of the transmitting antennas,Im is the $m\times m$ identical matrix, the scalar p is a measure of the SNR of the link: it is proportional to the transmitted power divided by the noise-variance, $G$ is the $m\times n$ propagation matrix, the superscript $H$ denote the conjugate transpose, $y$ is the received signal symbol vector and x is the transmitted signal vector. The actual capacity of the
+channel results if the inputs are optimized according to the water-filling principle. In the case that $GG^H$ equals a scaled identity matrix, C is in fact the capacity or achievable rate
+the relation between y and x can be represent as:
+\begin{equation}
+y=\sqrt{\rho}Gx+e  \label{equation:4}
+\end{equation}
+$e$ is the additive receiver noise subject to i.i.d zero mean gausssian distribution, we normalized the total transmit power to unity:$E\{\Vert x^2\Vert\}$ 
+we can express the achievable rate in terms of the singular value of the propagation matrix $G$:
+\begin{equation}
+G=UD_sV^H \label{equation:5}
+\end{equation}
+$D_s$ is the diagonal matrix, $U$ and $V$ is the unitary matrix, the diagonal elements $\{v_1,v_2,v_3\newline\cdots v_{min(n,m)}\}$ are the singular values of the propagation matrix, (\ref{equation:3}) can be expressed by singular values:
+\begin{equation}
+C=\sum_{l=1}^{\min(m,n)}log_2(1+\frac{\rho v_l^2}{n})
+\end{equation} 
+the bound of the achievable rate in (\ref{equation:3}) can be expressed as:
+\begin{equation}
+log_2(1+\frac{\rho Tr(GG^H)}{n})\leq C\leq\min(n,m)log_2(1+\frac{\rho Tr(GG^H)}{n\min(n,m)})\label{equation:6}
+\end{equation}
+$Tr(GG^H)$ is the trace of the propagation matrix G and $Tr(GG^H)=\sum_{l=1}^{\min(m,n)}v_l^2$ for simplicity, we assume that the magnitude of the propagation matrix elements is 1, so $Tr(GG^H)\approx mn$, (\ref{equation:6}) is simplified as follows
+\begin{equation}
+log_2(1+\frac{\rho}{m})\leq C\leq\min(n,m)log_2(1+\frac{\rho\max(n,m)}{n}) \label{equation:7}
+\end{equation}\newline
+\subsection{Data Rate}
+It can be easily deduced that the larger scale of the array will result in aggressive spatial multiplexing gain, the singular value of the tall propagation matrix $\{v_1,v_2,v_3\cdots v_{min(n,m)}\}$ tends to be large and stable under the favorable propagation condition, which will be further explained in section ''small scale fading vanish'' it is possible to get more parallel data pipes. more over under the the condition that the SNR of the receiving signal is very low e.g terminals locate at the edge of the cell, the achievable rate of (\ref{equation:6}) becomes:
+\begin{equation}
+C_{\rho\to 0}\approx\frac{\rho Tr(GG^H)}{nln2}=\frac{\rho m}{ln2} \label{equation:8}
+\end{equation}
+from the perspective of achievable rate, multiple transmit antennas are of no value.
+with the number of transmit antennas grows large, the (\ref{equation:6}) becomes:
+\begin{equation}
+C_{n\gg m}\approx log_2det(I_m+\rho I_m)=mlog_2(1+\rho)\label{equation:9}
+\end{equation}
+with the number of receive antennas grows large, the (\ref{equation:6}) becomes:
+\begin{equation}
+C_{m\gg n}=log_2det(I_n+\frac{\rho G^HG}{n})\approx nlog_2(1+\frac{\rho m}{n})
+\end{equation}\label{equation:10}
+the large number of the antennas will help to reserve the multiplexing gain under the extreme conditions that the SNR is low.
+\subsection{Radiate Energy Efficiency}
+The large scale antenna array has the potential to focus the radiate energy into a small regions or we can say the location of the intended terminal,The underlying physics is coherent superposition of wavefronts. By appropriately shaping the signals sent out by the antennas, the base station can make sure that all wave fronts collectively emitted by all antennas add up constructively at the locations of the intended terminals, but destructively (randomly) at every where else.\newline
+\subsection{Small Scale Fading Vanishes}
+In the massive MIMO scheme, we have the propagation matrix G that has a very tall structure, at the same time, under the favorable propagation condition\cite{8}(the propagation elements subject to independent and identical Rayleigh distribution), with the combination of these two conditions, recall the achievable rate in (\ref{equation:3}) the propagation matrix G has the row vector that is enough independent from each other and the as the length of the row vector increase the 2-norm of the row vectors increase much more faster than the inner product of the different row vectors, which is called asymptotically orthogonal. With this conclusion, in theory the small scale fading can be eliminated, more details are provided in\cite{7}.
+\subsection{Pilot Contamination}
+Pilot contamination can not vanish as the number of the base station antenna become unlimited, because of beamforming. One cell overhear the pilot from the terminals in the other cell. As consequence, base station will transmit the partially beamformed data vector to the terminals in the other cells and at the same time the terminals in this cell will also receive the component of the composite vector.
+\subsection{Mutual Coupling}
+Antenna array is never ideal(nonisotropic and polarized) as we often assume,  In large scale MIMO Increasing the number of antenna elements implies that the antenna separation decreases. Which indicate the mutual coupling(magnetic interaction), this effect will greatly determined by the structure of the antenna array(ULA, 2D, 3D), how to solve the issue of increasing coupling effect when the structure of array is 2 dimensions or 3 dimensions. 
+\subsection{Channel reciprocity}
+Because of the large scale of array, the traditional pilot training method of the down link will not be valid the time slots that need to be allocated for estimation will surpass the coherence time of channel. Massive MIMO must make use of TDD and matrix reciprocity to get the DL channel information.
+\section{Conclusion}
+This report provide a brief review of conventional MIMO system and Massive MIMO system, as to conventional MIMO system, the basic two major advantages it can provide are the diversity gain and multiplexing gain, the former one can improve the reliability of the channel, the latter one can increase the data rate of the channel. What is more, MIMO systems consider interference reduction which allows spectrum reuse for cochannel and increase multicell capacity. the basic concept and techniques are also presented.\newline
+very large scale MIMO is widely recognized as a key enabling technology for future beyond 4G cellular system. the second part focus on the potentials and challenges of Massive MIMO system, comparing to conventional MIMO system, very large scale MIMO can provide huge advantages at high data rate, radiate energy efficiency, quality of service, degree of freedom and small scale fading vanish. The challenges also exit ahead the realization of Massive MIMO system such as pilot contamination, mutual coupling of antennas and channel reciprocity. The detection of Massive MIMO system is different from that of conventional MIMO system, the further exploration will launch soon.
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{citation}
+
+\end{document}

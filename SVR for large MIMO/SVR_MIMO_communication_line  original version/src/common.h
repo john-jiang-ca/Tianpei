@@ -22,8 +22,13 @@
 #include <gsl/gsl_complex.h>
 #include <gsl/gsl_complex_math.h>
 #define MATRIX_SIZE 16
+#define Nt 8
+#define Nr 8
 #define IDC2D(i,j,row)    (i)*row+j
 #define Constellationsize 4
+#define  C  1e-3;      //Penalize weight for noise
+#define epsilon 1e-3; //Training precision
+#define tol 1e-4   //the tolerance for KKT condition
 //void FCSD_detection(
 //		cuComplex *sigRec,   //received signal vector
 //		cuComplex *pH,        //propagation matrix
@@ -77,6 +82,49 @@ void FCSD_CPU(
 		gsl_vector_complex *symOut,
 		float *durationKernel
 );
+void SVR_DETECTOR(
+		const gsl_vector_complex *preceived,
+		const gsl_matrix_complex *pH,
+		float SNRb,
+		gsl_vector_complex *psymout,
+		int start_M,
+		int select_M
+		);
+int Initialization(gsl_vector *alpha,//Lagrange multiplier
+		gsl_vector *alpha_hat,//Lagrange multiplier
+		gsl_vector *beta,//Lagrange multiplier
+		gsl_vector *beta_hat,//Lagrange multiplier
+		gsl_vector_complex *preceived,//received symbol vector(output of trainning data set)
+		gsl_vector_complex *phi, // update parameter
+		double S_C_real, //real stopping parameter
+		double S_C_imag,  //imaginary stopping parameter
+		int method //label which start strategy is used
+		);
+void 	WSS2_1Dsolver(gsl_vector *l_m, //Lagrange multiplier
+		gsl_vector *l_m_hat, //Lagrange multiplier
+		int label1, //determine this subroutine work for real(0) or imaginary(1) part
+        int label2, //determine update l_m(0) or l_m_hat(1)
+        gsl_vector_complex *phi,  //update parameter
+        gsl_matrix *R_Kernel,    //real kernel matrix
+        int F_i,  //index of first maximum Lagrange multiplier
+        int S_i //index of second maximum Lagrange multiplier
+);
+void outterloop(gsl_vector_complex *alpha,
+		gsl_vector_complex *eta,
+		gsl_vector_complex *Error,
+		gsl_matrix_complex *pH,
+		gsl_vector_complex psymout
+		);   //the outter loop to choose proper alpha
+
+int TestData(gsl_vector_complex *alpha,
+		gsl_vector_complex *Error,
+		gsl_vector_complex *eta);    // the subroutine to determine whether alpha or alpha* is updated
+
+int takestep(gsl_vector_complex *alpha,
+		gsl_vector_complex *Error,
+		gsl_vector_complex *eta);   //the subroutine to update chosen alpha or alpha*
+Nalpha_Node checkNonbound(gsl_vector_complex *alpha);
+
 //void FCSD_ordering_CPU(
 //		cuComplex *pH,
 //		int *list,

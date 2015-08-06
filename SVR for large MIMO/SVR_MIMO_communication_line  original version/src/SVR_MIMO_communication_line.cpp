@@ -95,7 +95,7 @@ int main(void) {
 	long int iteration;                       //iteration time
 	long int bitError=0;               //bit error symbol error
 	double BitErrorRate, SymbolErrorRate, sigmas, sigman; //bit error rate, symbol error rate, standard deviation of signal and noise
-	float *SNR;      //this is the SNR per bit in dB
+	float *SNR;      //this is the SNR per bit
 	int M = Constellationsize;                               //modulation scheme
 	int count, count1, count2, count3, count4;   //used for loops
 	const int Nt = MATRIX_SIZE; // Nt is the number of transmit antennas. Must be a positive integer.

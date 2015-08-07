@@ -1,13 +1,14 @@
-%% bare_conf.tex
-%% V1.4
-%% 2012/12/27
+
+%% bare_jrnl.tex
+%% V1.4a
+%% 2014/09/17
 %% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
+%% see http://www.michaelshell.org/
 %% for current contact information.
 %%
 %% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8 or later) with an IEEE conference paper.
+%% (requires IEEEtran.cls version 1.8a or later) with an IEEE
+%% journal paper.
 %%
 %% Support sites:
 %% http://www.michaelshell.org/tex/ieeetran/
@@ -39,35 +40,27 @@
 %% ** renaming them and changing author support contact information. **
 %%
 %% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
-%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex,
-%%                    bare_jrnl_transmag.tex
+%%                    bare_conf.tex, bare_jrnl.tex, bare_conf_compsoc.tex,
+%%                    bare_jrnl_compsoc.tex, bare_jrnl_transmag.tex
 %%*************************************************************************
+
 
 % *** Authors should verify (and, if needed, correct) their LaTeX system  ***
 % *** with the testflow diagnostic prior to trusting their LaTeX platform ***
-% *** with production work. IEEE's font choices can trigger bugs that do  ***
-% *** not appear when using other class files.                            ***
+% *** with production work. IEEE's font choices and paper sizes can       ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
 % The testflow support page is at:
 % http://www.michaelshell.org/tex/testflow/
 
 
 
-% Note that the a4paper option is mainly intended so that authors in
-% countries using A4 can easily print to A4 and see how their papers will
-% look in print - the typesetting of the document will not typically be
-% affected with changes in paper size (but the bottom and side margins will).
-% Use the testflow package mentioned above to verify correct handling of
-% both paper sizes by the user's LaTeX system.
-%
-% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
-% should be used if it is desired that the figures are to be displayed in
-% draft mode.
-%
-\documentclass[12pt,letter,final]{article}
-% Add the compsoc option for Computer Society conferences.
+%\documentclass[journal]{IEEEtran}
+\documentclass[12pt, draftclsnofoot, onecolumn]{IEEEtran}
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
 \usepackage[latin1]{inputenc}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -79,7 +72,7 @@
 \usepackage{psfrag}
 \usepackage{color}
 \usepackage{epsfig}
-\usepackage{appendix}
+%\usepackage{appendix}
 \usepackage{caption}
 \usepackage{cite}
 \usepackage{ifpdf}
@@ -95,15 +88,13 @@
 
 
 
-
-
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
 
 % *** MISC UTILITY PACKAGES ***
 %
-%\usepackage{ifpdf}
+\usepackage{ifpdf}
 % Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
 % compilation based on whether the output is pdf or dvi.
 % usage:
@@ -126,7 +117,7 @@
 
 % *** CITATION PACKAGES ***
 %
-%\usepackage{cite}
+\usepackage{cite}
 % cite.sty was written by Donald Arseneau
 % V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
 % \cite{} output to follow that of IEEE. Loading the cite package will
@@ -137,8 +128,7 @@
 % noadjust option (cite.sty V3.8 and later) if you want to turn this off
 % such as if a citation ever needs to be enclosed in parenthesis.
 % cite.sty is already installed on most LaTeX systems. Be sure and use
-% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
-% not currently provide for hyperlinked citations.
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
 % The latest version can be obtained at:
 % http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
 % The documentation is contained in the cite.sty file itself.
@@ -150,14 +140,14 @@
 
 % *** GRAPHICS RELATED PACKAGES ***
 %
-%\ifCLASSINFOpdf
+\ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-%\else
+\else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
   % driver is specified.
@@ -167,7 +157,7 @@
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   % \DeclareGraphicsExtensions{.eps}
-%\fi
+\fi
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation
@@ -194,7 +184,7 @@
 
 % *** MATH PACKAGES ***
 %
-%\usepackage[cmex10]{amsmath}
+\usepackage[cmex10]{amsmath}
 % A popular package from the American Mathematical Society that provides
 % many useful and powerful commands for dealing with mathematics. If using
 % it, be sure to load this package with the cmex10 option to ensure that
@@ -217,7 +207,7 @@
 
 % *** SPECIALIZED LIST PACKAGES ***
 %
-%\usepackage{algorithmic}
+\usepackage{algorithmic}
 % algorithmic.sty was written by Peter Williams and Rogerio Brito.
 % This package provides an algorithmic environment fo describing algorithms.
 % You can use the algorithmic environment in-text or within a figure
@@ -239,7 +229,7 @@
 
 % *** ALIGNMENT PACKAGES ***
 %
-%\usepackage{array}
+\usepackage{array}
 % Frank Mittelbach's and David Carlisle's array.sty patches and improves
 % the standard LaTeX2e array and tabular environments to provide better
 % appearance and additional user controls. As the default LaTeX2e table
@@ -286,7 +276,7 @@
 
 % *** FLOAT PACKAGES ***
 %
-%\usepackage{fixltx2e}
+\usepackage{fixltx2e}
 % fixltx2e, the successor to the earlier fix2col.sty, was written by
 % Frank Mittelbach and David Carlisle. This package corrects a few problems
 % in the LaTeX2e kernel, the most notable of which is that in current
@@ -326,9 +316,50 @@
 
 
 
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
 % *** PDF, URL AND HYPERLINK PACKAGES ***
 %
-%\usepackage{url}
+\usepackage{url}
 % url.sty was written by Donald Arseneau. It provides better support for
 % handling and breaking URLs. url.sty is already installed on most LaTeX
 % systems. The latest version and documentation can be obtained at:
@@ -346,75 +377,177 @@
 
 
 % correct bad hyphenation here
-%\hyphenation{op-tical net-works semi-conduc-tor}
+\hyphenation{op-tical net-works semi-conduc-tor}
 
 
+\begin{document}
 
 %
 % paper title
-% can use linebreaks \\ within to get better formatting as desired
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 \title{Report}
 
-
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
-%\author{\IEEEauthorblockN{Tianpei Chen}
-%\IEEEauthorblockA{ID: 25504946\\Department of Electrical and\\Computer Engineering\\
-%McGill University\\
-%Montreal, Quebec}}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
 \author{Tianpei Chen\\
- Department of Electrical and Computer Engineering\\
- McGill University}
+Department of Electrical and Computer Engineering\\
+McGill University\\
+\today}
 
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
+%\author{Michael~Shell,~\IEEEmembership{Member,~IEEE,}
+%        John~Doe,~\IEEEmembership{Fellow,~OSA,}
+%        and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
+%\thanks{M. Shell is with the Department
+%of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
+%GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised September 17, 2014.}}
 
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
 % 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
 
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~13, No.~9, September~2014}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2014 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
 
 
 
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
-\begin{document}
+
+
+
+
 % make the title area
-\begin{spacing}{2.5}
 \maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+%\begin{abstract}
+%The abstract goes here.
+%\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%IEEEtran, journal, \LaTeX, paper, template.
+%\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+\begin{spacing}{2.5}
+
 \section{Introduction}
-Decoder is one of the key components of Multiple-Input Multiple-Output (MIMO) systems. Designing of high performance and low complexity detector has become a bottleneck of Large MIMO systems. Recently, an interesting property of large MIMO channel called channel hardening phenomenon has been found \cite{hochwald2004multiple}\cite{tse2005fundamentals}\cite{marvcenko1967distribution}\cite{tulino2004random}, which states the phenomenon that with the number of receiving or transmitting antennas increasing, the variances of channel mutual information decrease. Simply saying, the channel "hardens". An useful aspect of channel hardening phenomenon is that off diagonal elements of $\mathbf{H}^{H}\mathbf{H}$ matrix become more and more negligible comparing to diagonal elements when the number of receiving antennas or transmitting antennas becomes large.
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps.
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+%\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
+%for IEEE journal papers produced under \LaTeX\ using
+%IEEEtran.cls version 1.8a and later.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+%I wish you the best of success.
 
- Channel hardening phenomenon provides an opportunity for designing computationally economical detection algorithms. For example, linear detectors (LDs) such as zero forcing (ZF) and minimum mean square error (MMSE) detectors need to do costly matrix operations such as matrix multiplication and inverse. With channel hardening phenomenon, this process can be accelerated by approximate matrix inversion using series expansion techniques and deterministic approximations in large dimensions\cite{wu2013approximate}. Channel hardening phenomenon can also provide computational advances to machine learning based detectors, e.g. probability data association (PDA)\cite{fricke1900impact}\cite{pham2004generalized} and message passing detectors\cite{som2011low}\cite{goldberger2011mimo}\cite{lakshmi2013channel} and Monte-Carlo Markov Chain (MCMC) MIMO detectors\cite{farhang2006markov}\cite{datta2012novel}. This type of algorithms work well in large sparse systems.
+%\hfill mds
  
-In this report, we propose some useful insights of the orthogonal properties of channel. We define orthogonality measurement (om), which is a well round metric that considers both diagonal and off diagonal elements of $\mathbf{H}^{H}\mathbf{H}$.
+%\hfill September 17, 2014
+Decoder is one of the key components of Multiple-Input Multiple-Output (MIMO) systems. Designing of high performance and low complexity detector has become a bottleneck of Large MIMO systems. 
 
-The rest of the report is organized as follows, section \ref{system model} introduces system model. Section \ref{preliminary} provides some preliminaries. Section \ref{log expectation of om} discusses the derivation of logarithmic expectation of orthogonality measurement. In section \ref{pdf of om} we obtain probability density function of orthogonality measurement. Some computer simulation results are presented in section \ref{computer simulation}.
+Firmly grounded in framework of statistical learning theory, Support Vector Machine (SVM) is proposed in 1960s [ref vapnik], and of immense research and industry interest since 1990s. SVM is a powerful tool for supervised learning tasks such as classification, regression and prediction. Moreover, the kernel trick [ref learning with kernels SVM regularization] makes it possible to map data samples into higher dimensional feature space. Therefore SVM can deal with non-linear learning tasks. This makes SVM become a promising tool for complex real-world problems.
+Based on the similar principle, $\epsilon$-Support Vector Regression (epsilon-SVR) [vapnik 1995, smola 2003], is developed.
 
+Like SVM, epsilon-SVR first change primal objective function into dual optimization task, then solving the dual quadratic optimization problem. Typically this kind of problem can be solved by numerical quadratic optimization (QP) methods, however, they are computational costly. Decomposition methods, denotes a set of algorithms that divide the optimization variables (Lagrange multipliers) into two sets W and N, W is the work set and N contains the rest optimization variables.  In each iteration, only work set is updated for optimization while the other variables are fixed. Sequential Minimal Optimization (SMO) [ref A fast algorithm sequential minimal optimization] is an extreme case of decomposition methods which chooses dual Lagrange multiplier to optimize in each iteration. In each iteration, decomposition method can find an analytic optimal solution for work set, which makes the solver works much more faster than numerical QP algorithms. Decomposition methods can be employed to epsilon SVR by the similar manner.
 
+  Bouloulis et employ Wirtinger’s calculus into Reproducing Kernel Hilbert Space (RKHS) so that expands real-SVM to pure complex SVM by exploiting complex kernel [ref complex support vector machine]. Based on this work, we construct a prototype of a complexity \$ performance controllable detector for large MIMO based on dual channel complex SVR. The detector can be divided into two parallel real SVR optimization problem which can be solved independently. Moreover, only real part of kernel matrix is needed in both channel. This means a large amount of computation can be reduced. 
+  
+  Steinwart et[ref SVM without offset] shows with a proper designed work set selection strategy, the approach that choosing double Lagrange multipliers can be much more faster than choosing single Lagrange multiplier without performance loss.
+  
+Based on the discrete time MIMO channel model, In our regression model, this CSVR-detector is constructed without offset, The offset in SVR imposes an additional linear quality constraint, which makes it necessary for decomposition methods such as Sequential Minimal Optimization to update more than one Lagrange multipliers in each iteration.
+
+Therefore, for each real SVR without offset, in principle, only one offset is needed to be updated in each iteration, In our prototype, we propose a sequential single Lagrange multiplier search strategy that find two Lagrange multiplier sequentially, which can approximate the optimal dual Lagrange multiplier searching strategy. The former one only requires O(n) searches in one iteration, while the optimal dual Lagrange multiplier strategy requires O(n2) searches per iteration.  
+%\subsection{Subsection Heading Here}
+%Subsection text here.
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+%\subsubsection{Subsubsection Heading Here}
+%Subsubsection text here.
 \section{System Model}\label{system model}
 We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, over a flat fading channel. Using a discrete time model, $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector written as:
 \begin{equation}
 \mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{formula 1}
 \end{equation}
-where $\mathbf{s}\in \mathbb{C}^{N_{t}\times 1}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian components with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}\times 1}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
+where $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian zero mean components with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
 Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 \section{Preliminaries}\label{preliminary}
@@ -462,6 +595,39 @@ Notice that $\mathbf{R}$ can be viewed as the Cholesky factorization of $\mathbf
 \phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum^{i-1}_{j=1}|r_{ji}|^{2}}.
 \label{formula9}
 \end{equation}  
+\section{Brief Introduction to $\epsilon$-Support Vector Regression}\label{Introduce epsilon SVR}
+Suppose we are given training data set $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2},y_{2}),\cdots,(\mathbf{x}_{l},y_{l}))$, $l$ denotes the number of training samples, $\mathbf{x}\in \mathbb{R}^{v}$ denotes input data vector, $v$ is the number of features in $\mathbf{x}$. $y$ denotes output. The regression model (either linear or non-linear regression) is given by 
+\begin{equation}
+y_{i}=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i\in 1\cdots l 
+\label{equation1}
+\end{equation} 
+where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the mapping of $\mathbf{x}$ to higher dimensional feature space. \ref{equation1}.
+\begin{figure}
+\centering
+%\includegraphics[scale=•]{•}
+\caption{}
+\label{epsilon-SVR}
+\end{figure}
+Here we give the primal optimization problem directly
+%\begin{eqnarray}
+%\nonumber
+ %\frac{1}{2}||\mathbf{w}||^{2}+C\sum_{j=1}^{l}(\xi_{i}+\hat{\xi}_{i}})\\
+%s.t. \l{
+
+%\end{eqnarray}\label{primal optimization problem}
+In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variable to cope with noise of input data set. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
+From the rationale of risk function, let $f(\mathbf{x})$ denotes regression function, $R(\mathbf{x},f(\mathbf{x}))$ denotes the risk function.
+\begin{equation}
+R(\mathbf{x},f(\mathbf{x}))
+\label{risk function1}
+\end{equation}
+ The optimization problem can be expressed as
+\begin{equation}
+minimize \lambda||f||^{2}+R(\mathbf{x},f(\mathbf{x}))
+\label{risk function2}
+\end{equation}
+
+
 \section{Dual Channel Complex Kernel Support Vector Regression for Large MIMO system}\label{dual channel CSVR}
 
 Taking expectation of (\ref{formula4}), we have 
@@ -534,35 +700,162 @@ we can find (\ref{formula25}) is consistent with (\ref{formula15}).
 \section{Initialization}\label{Initialization}
  Computer simulations are made for different sizes of V-BLAST MIMO systems, with $5\leq N_{r} \leq 100, 5 \leq N_{t} \leq N_{r}$, the empirical estimation of logarithmic expectation of $\phi_{om}$, $E[\ln(\phi_{om})]_{em}$, is calculated by taking average over $1e4$ channel realizations for each size of MIMO systems, as shown in Fig.\ref{figure1}, the Theoretical logarithmic expectation of $\phi_{om}$ $E[\ln(\phi_{om})]_{t}$ in (\ref{formula25}) is plotted in Fig.\ref{figure2}. Average deviation between $E[\ln(\phi_{om})]_{em}$ and $E[\ln(\phi_{om})]_{t}$ is also calculated, $V_{em-t}= 7.3043e-04$.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.7\textwidth, height=5cm]{logE_om_em.eps}
-\caption{Empirical Estimation $E[\ln(\phi_{om})]_{em}$}
-\label{figure1}
-\end{figure}
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.7\textwidth, height=5cm]{logE_om_em.eps}
+%\caption{Empirical Estimation $E[\ln(\phi_{om})]_{em}$}
+%\label{figure1}
+%\end{figure}
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.7\textwidth, height=5cm]{logE_om_t.eps}
-\caption{Theoretical $E[\ln(\phi_{om})]_{t}$}
-\label{figure2}
-\end{figure} 
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.7\textwidth, height=5cm]{logE_om_t.eps}
+%\caption{Theoretical $E[\ln(\phi_{om})]_{t}$}
+%\label{figure2}
+%\end{figure} 
 
 
-\begin{figure}[htb]
-\centering
-\includegraphics[scale=0.6]{NtE.eps}
-\caption{Relation between $N_{t}$ and $E[\ln(\phi_{om})]_{t}$}
-\label{figure3}
-\end{figure}
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[scale=0.6]{NtE.eps}
+%\caption{Relation between $N_{t}$ and $E[\ln(\phi_{om})]_{t}$}
+%\label{figure3}
+%\end{figure}
 
 Fig.\ref{figure3} demonstrates the relation between the number of users ($N_{t}$) and $E[\ln(\phi_{om})]_{t}$ under cases of different numbers of antennas at base station ($N_{r}$). From Fig.\ref{figure3}, we can see, on the one hand, with $N_{r}$ fixed, $E[\ln(\phi_{om})]$ decreases while $N_{t}$ increases, however the gradient of each curve becomes more and more gentle. On the other hand, when $N_{r}$ becomes larger $E[\ln(\phi_{om})]$ becomes more insensitive to variation of $N_{t}$.
 \section{Stopping Criteria}
 \section{Hyperparameter Setting}
 \section{Computer Simulations}
 
-\begin{appendices}
-\section{Appendix A}
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{Proof of the First Zonklar Equation}
+Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+\section{}
+Appendix two text goes here.
+\section{}
 Let $\mathbf{A}\in \mathbb{C}^{m\times m}$, $A\sim \mathbb{C}W(n, \mathbf{\Sigma})$, $\mathbb{C}W(n, \mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. It is obvious $\mathbf{A}$ is Hermition positive definite matrix, $\mathbf{A}=\mathbf{A}^{H}>0$.
 
 The pdf of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
@@ -616,7 +909,7 @@ E[\ln(det(\mathbf{A}))]=\frac{\tilde{\Gamma}^{'}_{m}(n)}{\tilde{\Gamma}_{m}(n)}=
 \label{Appendequa8}
 \end{equation}
 where $\psi$ denotes Digamma function.
-\section{Appendix B}
+\section{}
 If $x\sim Gamma(n, \theta)$, with shape parameter $k$ and scale parameter $\theta$, $x>0$, $\Gamma(k)$ denotes Gamma function, the density function of Gamma distribution is
 \begin{equation}
 f(x,k,\theta)=\frac{x^{k-1}e^{-x/\theta}}{\Gamma(k)\theta^{k}}.
@@ -643,7 +936,7 @@ E[\ln(z)]&=&\ln(\theta)+\frac{1}{\Gamma(k)}\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e
 \label{Appendequa12}
 \end{eqnarray}
 where $\psi(k)$ denotes Digamma function.
-\section{Appendix C}
+\section{}
 $x_{1}, x_{2}, \cdots x_{N_{t}}$ are independent beta variables, the probability density function (pdf) can be written as: 
 \begin{equation}
 f(x_{i})=\frac{1}{\mathbb{B}(k_{1}^{i}, k_{2}^{i})}x_{i}^{k_{1}^{i}-1}(1-x_{i})^{k_{2}^{i}-1},
@@ -680,11 +973,97 @@ f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod
 \label{Appendequal19}
 \end{equation}
 
-\end{appendices}
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
 
 
 
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
 \end{spacing}
 \bibliographystyle{IEEEtran}
 \bibliography{citation}
 \end{document}
+
+

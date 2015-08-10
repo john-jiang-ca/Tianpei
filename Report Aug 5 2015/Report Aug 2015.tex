@@ -672,50 +672,93 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \end{eqnarray}
 where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered, we arrive to at a convex minimization problem \cite{smola and skpkof 1998a tutorial of SVR}. 
 
-Build dual form of (\ref{primal optimization problem}) by introducing Lagrange multiplier, we have dual optimization problem
+we construct dual form of (\ref{primal optimization problem}) by introducing Lagrange multiplier, we have dual optimization problem
 \begin{eqnarray}
 \nonumber
 \min_{\mathbf{w}, \xi, \hat{\xi}} \max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\theta=
 \frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
--\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
 \nonumber
+-\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
 s.t. \left\{\begin{array}{cc}
 \eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
 \xi, \hat{\xi}\geq  0\\
 \end{array}\right. 
 \label{lagrange duality1}
 \end{eqnarray}
-where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers, the solution of dual optimization problem is saddle point, from \cite{saddle point}, \ref{lagrange duality1} is equivalent to
+where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers, the solution of dual optimization problem is saddle point, from \cite{saddle point}, (\ref{lagrange duality1}) is equivalent to
 \begin{eqnarray}
 \nonumber
 \max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\min_{\mathbf{w}, \xi, \hat{\xi}} \Theta=
 \frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
--\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
 \nonumber
+-\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\ 
 s.t. \left\{\begin{array}{cc}
 \eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
 \xi, \hat{\xi}\geq  0\\
-\end{array}\right. 
-\label{lagrange duality2}
+\end{array}\right.\label{lagrange duality2}
 \end{eqnarray}
 Take the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\hat{\xi}$ and $b$, and find the minimum.
+
 \begin{equation}
 \frac{\partial \theta}{\partial \mathbf{w}}=w-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})
 \label{partial1}
 \end{equation}
+
 \begin{equation}
 \frac{\partial \theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0
 \label{partial2}
 \end{equation}
+
 \begin{equation}
 \frac{\partial \theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0
 \label{partial3}
 \end{equation}
+
 \begin{equation}
 \frac{\partial \theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0
 \label{partial4}
 \end{equation} 
-Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}), yields the final dual optimization objective function.
+Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}), yields the final dual optimization objective function, for sake of brevity, we make $C_{i}$ uniform to all data samples ：
+\begin{eqnarray}
+\nonumber
+maximize\quad\Theta &=&\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
+\nonumber
+&+&(R(\hat{\xi}_{i})-\hat{\xi}_{i}R^{'}(\hat{\xi}_{i}))]
++\sum_{i=1}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
+&-&\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i}),\\
+\nonumber
+s.t.\left\{\begin{array}{l}
+\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})=0\\
+0<\alpha<C\tilde{R}(\alpha)\\
+0<\hat{\alpha}<C\tilde{R}(\hat{\alpha})\\
+\end{array}\right.
+\label{dual objective function1}
+\end{eqnarray}
+(\ref{dual objective function1}) can be simplified to 
+\begin{eqnarray}
+\nonumber
+maximize\quad \Theta &=&-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
+\nonumber
+&+&C\sum_{i=1}^{l}[\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi_{i}})]\\
+&=&-\frac{1}{2}(\mathbf{a}-\mathbf{\hat{a}})^{T}\mathbf{K}(\mathbf{a}-\mathbf{\hat{a}})+(\mathbf{y}-\epsilon)^{T}\mathbf{a}+(-\mathbf{y}-\epsilon)^{T}\mathbf{\hat{a}}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
+\label{dual optimization function2}
+\end{eqnarray}
+where $\mathbf{a}=[\alpha_{1},\alpha_{2}, \ldots, \alpha_{l}]^{T} $, $\mathbf{\hat{a}}=[\hat{\alpha}_{1},\hat{\alpha}_{2}, \ldots, \hat{\alpha}_{l}]^{T} $, $\mathbf{y}=[y_{1}, y_{2}, \ldots y_{l}]^{T}$, $ \mathbf{e}=[1,1,\ldots,1]^{T}\in \mathbb{R}^{l}$, $\mathbf{e}_{i}$ denotes the vector that only $i$th component is 1 while the rest are all 0,  $\tilde{R}(\xi)=R(\xi)-\xi R^{'}(\xi)\in \mathbb{R}^{l}$, $\mathbf{K}_{ij}=\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})$ denotes data kernel matrix. We define the following $2l$ vectors 
+$\mathbf{a}^{(*)}$= [$\mathbf{a} \atop \mathbf{\hat{a}}$], $\mathbf{v}\in \mathbb{R}^{2l}$, 
+\begin{eqnarray}
+\mathbf{v}_{i}=\left\{\begin{array}{ll}
+1\quad i=1,\ldots, l\\
+-1\quad i=l+1,\ldots, 2l\\ 
+\end{array}\right.
+\end{eqnarray}
+(\ref{dual optimization function2}) can be reformulate as 
+\begin{equation}
+maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{array}{ll}
+\mathbf{K}\quad -\mathbf{K}\\
+-\mathbf{K}\quad \mathbf{K}\\
+\end{array}\right]\mathbf{a}^{(*)}+[(\mathbf{y}-\epsilon)^{T}, (-\mathbf{y}-\epsilon)^{T}]\mathbf{a}^{(*)}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
+\label{vectorize dual optimization function}
+\end{equation}
 
 
  

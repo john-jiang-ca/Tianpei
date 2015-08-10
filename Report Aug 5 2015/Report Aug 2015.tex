@@ -609,25 +609,116 @@ where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the 
 \label{epsilon-SVR}
 \end{figure}
 Here we give the primal optimization problem directly
-%\begin{eqnarray}
-%\nonumber
- %\frac{1}{2}||\mathbf{w}||^{2}+C\sum_{j=1}^{l}(\xi_{i}+\hat{\xi}_{i}})\\
-%s.t. \l{
+\begin{eqnarray}
+\nonumber
+\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+s.t. \left\{\begin{array}{ll}
+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
+\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
+\epsilon, \xi,\hat{\xi} &\geq 0\\
+\end{array}\right.
+\label{primal optimization problem}
+\end{eqnarray}
+In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes cost function, the simplest cost function is $R(x)=x$, risk function is determined by the statistical distribution of noise \cite{A tutorial of Support Vector Regression}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
 
-%\end{eqnarray}\label{primal optimization problem}
-In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variable to cope with noise of input data set. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
-From the rationale of risk function, let $f(\mathbf{x})$ denotes regression function, $R(\mathbf{x},f(\mathbf{x}))$ denotes the risk function.
-\begin{equation}
-R(\mathbf{x},f(\mathbf{x}))
+From the rationale of risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
+\begin{eqnarray}
+maximize\quad \prod_{i=1}^{l}P(y_{i}|f_{estimation}(\mathbf{x}_{i}))&=\prod_{i=1}^{l}P(\xi_{i})\\
+&=\prod_{i=1}^{l}P(y_{i}-f(\mathbf{x}_{i})),
 \label{risk function1}
-\end{equation}
- The optimization problem can be expressed as
-\begin{equation}
-minimize \lambda||f||^{2}+R(\mathbf{x},f(\mathbf{x}))
+\end{eqnarray}
+Take the logarithm of (\ref{risk function1}), we have
+\begin{eqnarray}
+maximize\quad \sum_{i=1}^{l}log(P(y_{i}-f_{estimation}(\mathbf{x}_{i}))),
 \label{risk function2}
+\end{eqnarray}
+Therefore the $i$th risk function of $(\mathbf{x_{i}}, y_{i})$ can be written as 
+\begin{eqnarray}
+c(\mathbf{x}_{i}, y_{i}, f_{estimation}(\mathbf{x}_{i}))=-log(P(y_{i}-f_{estimation}(\mathbf{x}_{i}))).
+\label{risk function3}
+\end{eqnarray}
+In $\epsilon$-SVR, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{Vepsilon}), is applied to (\ref{risk function3}).
+\begin{eqnarray}
+|x|_{\epsilon}=\left\{\begin{array}{ll}
+0   &if\quad |x|<\epsilon\\
+|x|-\epsilon  &otherwise\\
+\end{array}\right.
+\label{Vepsilon}
+\end{eqnarray}
+Thus the cost function in $\epsilon$-SVR can be written as 
+\begin{equation}
+\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x}))=\frac{1}{l}\sum_{i=1}^{l}m_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
+\label{cost function}
 \end{equation}
+where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the cost function with regularization term can written as 
+\begin{equation}
+minimize\quad \lambda||w||^{2}+\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x})),
+\label{total cost function}
+\end{equation} 
+where $\lambda$ denotes the weight of regularization term, divide (\ref{total cost function}) by $\frac{1}{2\lambda}$, we have the optimization problem  
+\begin{equation}
+minimize \quad \frac{1}{2}||w||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
+\label{final cost function}
+\end{equation}
+where $C_{i}=\frac{m_{i}}{2\lambda l}$, based on (\ref{final cost function}), by introducing slack variables, we can easily derive the equivalent optimization problem as same as (\ref{primal optimization problem}):
+\begin{eqnarray}
+\nonumber
+\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+s.t. \left\{\begin{array}{ll}
+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
+\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
+\epsilon, \xi,\hat{\xi} &\geq 0\\
+\end{array}\right.
+\end{eqnarray}
+where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered, we arrive to at a convex minimization problem \cite{smola and skpkof 1998a tutorial of SVR}. 
+
+Build dual form of (\ref{primal optimization problem}) by introducing Lagrange multiplier, we have dual optimization problem
+\begin{eqnarray}
+\nonumber
+\min_{\mathbf{w}, \xi, \hat{\xi}} \max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\theta=
+\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
+-\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
+\nonumber
+s.t. \left\{\begin{array}{cc}
+\eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
+\xi, \hat{\xi}\geq  0\\
+\end{array}\right. 
+\label{lagrange duality1}
+\end{eqnarray}
+where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers, the solution of dual optimization problem is saddle point, from \cite{saddle point}, \ref{lagrange duality1} is equivalent to
+\begin{eqnarray}
+\nonumber
+\max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\min_{\mathbf{w}, \xi, \hat{\xi}} \Theta=
+\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
+-\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
+\nonumber
+s.t. \left\{\begin{array}{cc}
+\eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
+\xi, \hat{\xi}\geq  0\\
+\end{array}\right. 
+\label{lagrange duality2}
+\end{eqnarray}
+Take the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\hat{\xi}$ and $b$, and find the minimum.
+\begin{equation}
+\frac{\partial \theta}{\partial \mathbf{w}}=w-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})
+\label{partial1}
+\end{equation}
+\begin{equation}
+\frac{\partial \theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0
+\label{partial2}
+\end{equation}
+\begin{equation}
+\frac{\partial \theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0
+\label{partial3}
+\end{equation}
+\begin{equation}
+\frac{\partial \theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0
+\label{partial4}
+\end{equation} 
+Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}), yields the final dual optimization objective function.
 
 
+ 
 \section{Dual Channel Complex Kernel Support Vector Regression for Large MIMO system}\label{dual channel CSVR}
 
 Taking expectation of (\ref{formula4}), we have 

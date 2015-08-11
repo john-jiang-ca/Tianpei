@@ -602,12 +602,15 @@ y_{i}=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i\in 1\cdots l
 \label{equation1}
 \end{equation} 
 where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the mapping of $\mathbf{x}$ to higher dimensional feature space. \ref{equation1}.
+
 \begin{figure}
 \centering
-%\includegraphics[scale=•]{•}
+\def\svgwidth{\columnwidth}
+\input{epsilon-SVR.pdf_tex}
 \caption{}
 \label{epsilon-SVR}
 \end{figure}
+
 Here we give the primal optimization problem directly
 \begin{eqnarray}
 \nonumber
@@ -615,7 +618,7 @@ Here we give the primal optimization problem directly
 s.t. \left\{\begin{array}{ll}
 y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
-\epsilon, \xi,\hat{\xi} &\geq 0\\
+\epsilon, \xi,\hat{\xi} &\geq 0
 \end{array}\right.
 \label{primal optimization problem}
 \end{eqnarray}
@@ -641,7 +644,7 @@ In $\epsilon$-SVR, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{V
 \begin{eqnarray}
 |x|_{\epsilon}=\left\{\begin{array}{ll}
 0   &if\quad |x|<\epsilon\\
-|x|-\epsilon  &otherwise\\
+|x|-\epsilon  &otherwise
 \end{array}\right.
 \label{Vepsilon}
 \end{eqnarray}

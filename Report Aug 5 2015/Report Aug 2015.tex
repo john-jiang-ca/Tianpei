@@ -492,7 +492,7 @@ McGill University\\
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-\begin{spacing}{2.5}
+%\begin{spacing}{2.5}
 
 \section{Introduction}
 % The very first letter is a 2 line initial drop letter followed
@@ -533,7 +533,7 @@ Like SVM, epsilon-SVR first change primal objective function into dual optimizat
   
 Based on the discrete time MIMO channel model, In our regression model, this CSVR-detector is constructed without offset, The offset in SVR imposes an additional linear quality constraint, which makes it necessary for decomposition methods such as Sequential Minimal Optimization to update more than one Lagrange multipliers in each iteration.
 
-Therefore, for each real SVR without offset, in principle, only one offset is needed to be updated in each iteration, In our prototype, we propose a sequential single Lagrange multiplier search strategy that find two Lagrange multiplier sequentially, which can approximate the optimal dual Lagrange multiplier searching strategy. The former one only requires O(n) searches in one iteration, while the optimal dual Lagrange multiplier strategy requires O(n2) searches per iteration.  
+Therefore, for each real SVR without offset, in principle, only one variable is needed to be updated in each iteration, In our prototype, we propose a sequential single Lagrange multiplier search strategy that find two Lagrange multiplier sequentially, which can approximate the optimal dual Lagrange multiplier searching strategy. The former one only requires $O(n)$ searches in one iteration, while the optimal dual Lagrange multiplier strategy requires $O(n^{2})$ searches per iteration.  
 %\subsection{Subsection Heading Here}
 %Subsection text here.
 
@@ -543,13 +543,23 @@ Therefore, for each real SVR without offset, in principle, only one offset is ne
 %\subsubsection{Subsubsection Heading Here}
 %Subsubsection text here.
 \section{System Model}\label{system model}
-We consider a complex uncoded spatial multiplexing MIMO system with $N_r$ receive and $N_t$ transmit antennas, $N_{r}\geq N_{t}$, over a flat fading channel. Using a discrete time model, $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector written as:
+  Consider a large MIMO uplink multiplexing system with $N_{t}$ users, each user has one transmit antenna. The number of receive antennas at Base Station (BS) is $N_{r}$, $N_{r}\geq N_{t}$. Typically large MIMO systems have hundreds of antennas at BS serving several tens of terminals, as shown in Fig {\ref{large MIMO uplink model}}.
+  \begin{figure}
+  \centering
+  \def\svgwidth{\columnwidth}
+  %\includegraphics[scale=•]{•}
+  \input{largeMIMOuplink.pdf_tex}
+  \caption{Large MIMO uplink system }
+  \label{large MIMO uplink model}
+  \end{figure}
+    
+  Uncoded binary information sequences, which are modulated to complex symbols, are transmitted by users over a flat fading channel. Using a discrete time model, $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector written as:
 \begin{equation}
-\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{formula 1}
+\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{discrete time MIMO system}
 \end{equation}
 where $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian zero mean components with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
-Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
+  Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 \section{Preliminaries}\label{preliminary}
 Orthogonality deficiency measures the how orthogonal a matrix is \cite{ma2008performance}, which is defined by
 \begin{equation}
@@ -626,6 +636,7 @@ In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the reg
 
 From the rationale of risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
 \begin{eqnarray}
+\nonumber
 maximize\quad \prod_{i=1}^{l}P(y_{i}|f_{estimation}(\mathbf{x}_{i}))&=\prod_{i=1}^{l}P(\xi_{i})\\
 &=\prod_{i=1}^{l}P(y_{i}-f(\mathbf{x}_{i})),
 \label{risk function1}
@@ -644,7 +655,7 @@ In $\epsilon$-SVR, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{V
 \begin{eqnarray}
 |x|_{\epsilon}=\left\{\begin{array}{ll}
 0   &if\quad |x|<\epsilon\\
-|x|-\epsilon  &otherwise
+|x|-\epsilon  &otherwise\\
 \end{array}\right.
 \label{Vepsilon}
 \end{eqnarray}
@@ -765,7 +776,39 @@ maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{array}{ll}
 
 
  
-\section{Dual Channel Complex Kernel Support Vector Regression for Large MIMO system}\label{dual channel CSVR}
+\section{Dual Channel Real Kernel Complex Support Vector Regression for Large MIMO system}\label{dual channel CSVR}
+ Based on discrete time model of large MIMO uplink system in (\ref{discrete time MIMO system}), in our  regression model, the training data sample at detector is $(\mathbf{h}_{1}, y_{1})(\mathbf{h}_{2}, y_{2}), \ldots, (\mathbf{h}_{N_{r}}, y_{N_{r}})$, where $\mathbf{h}_{i}$ denotes $i$th row of channel propagation matrix $\mathbf{H}$, this yields a regression task without offset $b$:  
+ \begin{eqnarray}
+ y_{i}=f_{true}(\mathbf{h}_{i})+n,\\
+ \label{regression part1a}
+ f_{true}(\mathbf{h}_{i})=\mathbf{h}_{i}\mathbf{s},\\
+ \label{regression part1b}
+ \end{eqnarray}
+ where $f_{true}()$ denotes the true regression function, $n$ denotes additive noise.
+In this regression problem, receive symbol $y$ is the output data, $\mathbf{h}$ is input data sample, transmitted symbol vector $s$ is regression coefficients. Because the large MIMO system we consider here is complex, we employ complex support vector regression (CSVR). As shown in section (\ref{Introduce epsilon SVR}), in order to derive Lagrange duality optimization formula, partial derivatives of objective function with respect to $\mathbf{w}$ and $\xi$ are needed to be calculated, in CSVR, that means take partial derivatives to real cost functions which are defined in complex domain. The recent mathematical results of Wirtinger's calculus in Reproducing Kernel Hilbert Space (RKHS)[\cite{wirtinger's calculus}] is employed to solve this problem. First we generalize our regression model by complex Hilbert space, 
+Let $<>_{H}$ denotes inner product operation in real Hilbert space. $<,>_{\mathbb{H}}$ denotes inner products operation in complex Hilbert space, which has the following properties 
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Property}{Property}
+\begin{Property}
+\label{Property1}
+\end{Property}
+\begin{Lemma}
+$\mathbf{h}_{i}\mathbf{s}\in <\mathbf{h}_{i},\mathbf{s}^{H}>_{\mathbb{H}}$
+\end{Lemma}    
+
+\begin{proof}
+
+Assume $\mathbf{a}$, $\mathbf{b}$ are real vectors,$\mathbf{a}$, $\mathbf{b}$ $\in \mathbb{R}^{v}$, $\mathbf{x}$, $\mathbf{y}$ are complex vectors,$\mathbf{x}$, $\mathbf{x}$ $\in \mathbb{C}^{v}$, according to the properties of complex Hilbert space, is can be easily proved 
+\begin{equation}
+\mathbf{a}^{T}\mathbf{b} \in <\mathbf{a}, \mathbf{b}>_{H}
+\end{equation}
+\end{proof}
+
+
+
+
+
+
 
 Taking expectation of (\ref{formula4}), we have 
 \begin{equation}
@@ -1198,7 +1241,7 @@ f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod
 
 
 % that's all folks
-\end{spacing}
+%\end{spacing}
 \bibliographystyle{IEEEtran}
 \bibliography{citation}
 \end{document}

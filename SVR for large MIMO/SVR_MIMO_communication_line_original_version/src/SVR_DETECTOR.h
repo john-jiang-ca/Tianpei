@@ -51,21 +51,27 @@ gsl_vector *beta=gsl_vector_calloc(2*Nr);
 //gsl_vector *beta_hat=gsl_vector_calloc(Nr);  // Lagrange multipliers
 gsl_matrix_complex *K_complex=gsl_matrix_complex_calloc(Nr,Nr);
 gsl_blas_zherk(CblasUpper,CblasNoTrans, 1, pH,0, K_complex);  //calculate complex kernel matrix
-gsl_matrix *K=gsl_matrix_calloc(Nr,Nr);   //kernel matrix
+gsl_matrix *K_r=gsl_matrix_calloc(Nr,Nr);   //real kernel matrix
+gsl_matrix *K_i=gsl_matrix_calloc(Nr,Nr); //imaginary kernel matrix
 for(count1=0;count1<Nr;count1++){
 	for(count2=0;count2<=count1;count2++){
-		gsl_matrix_set(K,count1,count2,gsl_matrix_complex_get(K_complex,count1,count2).dat[0]);
+		gsl_matrix_set(K_r,count1,count2,gsl_matrix_complex_get(K_complex,count1,count2).dat[0]);
+		gsl_matrix_set(K_i,count1,count2,gsl_matrix_complex_get(K_complex,count1,count2).dat[1]);
 	}
 }   //get the real kernel
 //const gsl_matrix_complex_view K=gsl_matrix_complex_real(K_complex);
 
-gsl_vector_complex *phi=gsl_vector_complex_calloc(Nr); //phi matrix (update parameter)
+gsl_vector_complex *phi=gsl_vector_complex_calloc(Nr); //phi vector (intermediate parameter)
+gsl_vector_complex *eta=gsl_vector_complex_calloc(Nr); //eta vector (intermediate parameter)
 gsl_vector *delta_psi=gsl_vector_calloc(Nr); //gain of objective function
-double S_C_real=0; //stopping criteria(real)
-double S_C_imag=0; //stopping criteria(imaginary)
+double L_real=0; //stopping criteria(L real)
+double L_imag=0; //stopping criteria(L imaginary)
+double S_real=0; // stopping criteria(S real)
+double S_imag=0; //stopping criteria(S imaginary)
+double S_total=L_real+L_imag+S_real+S_imag; //global stopping criteria
 // initialization
 int M=Constellationsize;  //the size of modulation constellation
-Initialization(alpha,beta,preceived,phi,S_C_real,S_C_imag, start_M);
+Initialization(alpha,beta,preceived, K_r, K_i, phi, eta, L_real,L_imag, S_real, S_imag, S_total, start_M);
 double L=0;
 double H=C*double(1)/double(SNRb*log2(M));
 //alpha is chosen by the random value in the interval [0, C sigma], where sigma is the standard
@@ -75,9 +81,9 @@ int i, j;
 count2=0; //iteration times of real part
 int model_real=0;
 int model_imag=1;
-while(stopping criteria (real) not satisfied){
+while(){
 	WSS2_1Dsolver(alpha,phi,K,i,j,0);
-	TakeStep(alpha,phi,K,0,i,j);
+	TakeStep(alpha,phi,K,0,i,j,L_real);
 	count2++;
 
 }

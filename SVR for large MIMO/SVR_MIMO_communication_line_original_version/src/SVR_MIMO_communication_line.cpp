@@ -64,7 +64,6 @@
 #define GFLOPS "GFLOPS.txt"          //the file to store the Giga flops operated per second
 #define miniteration 1e5               //the minimum number of channel realizations
 #define minSymbolError 300          //the minimum number of symbol error
-#define epsilon 1e-5               //the accuracy
 #define SNRnum 7                     //the point number of signal to noise ratio per bit
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, unsigned long Q);
 void grayencoder(gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes,

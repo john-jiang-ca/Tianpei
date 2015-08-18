@@ -27,7 +27,7 @@
 #define IDC2D(i,j,row)    (i)*row+j
 #define Constellationsize 4
 #define  C  1e-3;      //Penalize weight for noise
-#define epsilon 1e-3; //Training precision
+#define epsilon 1e-5; //Training precision
 #define tol 1e-4   //the tolerance for KKT condition
 //void FCSD_detection(
 //		cuComplex *sigRec,   //received signal vector

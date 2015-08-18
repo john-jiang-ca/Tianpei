@@ -13,9 +13,15 @@
 int Initialization(gsl_vector *alpha,//Lagrange multiplier
 		gsl_vector *beta,//Lagrange multiplier
 		const gsl_vector_complex *preceived,//received symbol vector(output of trainning data set)
-		gsl_vector_complex *phi, // update parameter
-		double S_C_real, //real stopping parameter
-		double S_C_imag,  //imaginary stopping parameter
+		gsl_matrix *K_r, //real kernel matrix
+		gsl_matrix *K_i, //imaginary kernel matrix
+		gsl_vector_complex *phi, // intermediate parameter
+		gsl_vector_complex *eta, //intermediate parameter
+		double L_real, //L real stopping parameter
+		double L_imag,  //L imaginary stopping parameter
+		double S_real, //S real stopping parameter
+		double S_imag, //S imaginary stopping parameter
+		double S_total, //global stopping parameter
 		int method //label which start strategy is used
 		){
 //	int method=0; //label of method
@@ -24,12 +30,52 @@ int Initialization(gsl_vector *alpha,//Lagrange multiplier
     GSL_SET_COMPLEX(&temp, 0, 0);
 //cold start (L0-W0)
 if(method==1){
+//	gsl_vector *alpha_temp=gsl_vector_calloc(Nr);
+//	gsl_vector *beta_temp=gsl_vector_calloc(Nr);
+//	gsl_vector *alpha_temp_sum=gsl_vector_calloc(Nr);
+//	gsl_vector *beta_temp_sum=gsl_vector_calloc(Nr);
+//	double tempa=0;
+//	double tempb=0;
+//	double tempsa=0;
+//	double tempsb=0;
+//	for(count1=0;count1<Nr;count1++){
+//		tempa=gsl_vector_get(alpha,count1)-gsl_vector_get(alpha, count1+Nr);
+//		tempa=gsl_vector_get(alpha,count1)+gsl_vector_get(alpha, count1+Nr);
+//		tempb=gsl_vector_get(beta,count1)-gsl_vector_get(beta, count1+Nr);
+//		tempb=gsl_vector_get(beta,count1)+gsl_vector_get(beta, count1+Nr);
+//		gsl_vector_set(alpha_temp, count1, tempa);
+//		gsl_vector_set(beta_temp, count1, tempb);
+//		gsl_vector_set(alpha_temp_sum, count1, tempsa);
+//		gsl_vector_set(beta_temp_sum, count1, tempsb);
+//	}
+
+//	gsl_vector *L_real_temp=gsl_vector_calloc(Nr);
+//	gsl_vector *L_imag_temp=gsl_vector_calloc(Nr);
+//	gsl_vector *S_imag_temp=gsl_vector_calloc(Nr);
+//	gsl_vector *S_real_temp=gsl_vector_calloc(Nr);
+//	gsl_blas_sgemv(CblasNoTrans, 1, K_r, alpha_temp,  0, L_real_temp);
+//    gsl_blas_sdot(alpha_temp, L_real_temp, L_real);
+//	gsl_blas_sgemv(CblasNoTrans, 1, K_r, beta_temp,  0, L_imag_temp);
+//    gsl_blas_sdot(beta_temp, L_imag_temp, L_imag);
 for(count1=0;count1<Nr;count1++){
 temp=gsl_vector_complex_get(preceived, count1);
 gsl_vector_complex_set(phi, count1, temp);
-S_C_real=0;
-S_C_imag=0;  //need to consider what is stopping criteria of this SVR
+//L_real+=epsilon*(gsl_vector_get(alpha_temp_sum, count1))-gsl_vector_complex_get(preceived,count1).dat[0]
+//*(gsl_vector_get(alpha_temp,count1));// calculate real part of function L
+
+//L_imag+=epsilon*(gsl_vector_get(beta_temp_sum, count1))-gsl_vector_complex_get(preceived,count1).dat[1]
+//*(gsl_vector_get(beta_temp,count1));// calculate imaginary part of function L
+
+
 }
+L_real=0;
+L_imag=0;
+S_real=0;
+S_imag=0;
+eta_real=0;
+eta_imag=0;
+S_total=0;
+
 }
 
 

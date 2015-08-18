@@ -560,51 +560,7 @@ Therefore, for each real SVR without offset, in principle, only one variable is 
 where $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The possible transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian zero mean components with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
   Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
-\section{Preliminaries}\label{preliminary}
-Orthogonality deficiency measures the how orthogonal a matrix is \cite{ma2008performance}, which is defined by
-\begin{equation}
-\phi_{od}=1-\frac{det(\mathbf{W})}{\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||^{2}},
-\label{formula1}
-\end{equation}
-where $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$ denotes Wishart matrix, $\mathbf{h}_{i}$ denotes the $i$ th column of $\mathbf{H}$, $det(\cdot)$ denotes determinant operation, $||\cdot||^{2}$ denotes 2-norm operation.
-In (\ref{formula1}), $||\mathbf{h}_{i}||^{2}=\sum_{j=1}^{N_{r}}|\mathbf{H}_{ji}|^{2}$, $\mathbf{H}_{ji}$ denotes the component of $\mathbf{H}$ at $j$ th row and $i$ th column. $|\mathbf{H}_{ji}|\sim Rayleigh(1/\sqrt{2})$, therefore $||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},1)$\cite{papoulis1996stochastic}. $Gamma(k,\theta)$ denotes Gamma distribution, with $k$ degrees of freedom and scale $\theta$. Furthermore, we have:
-\begin{equation}
-2||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},2)\sim\chi^{2}_{2N_{r}},
-\label{formula2}
-\end{equation} 
-$\chi^{2}_{k}$ denotes chi-square distribution with $k$ degrees of freedom. For the sake of simplicity, (\ref{formula1}) can be changed to:
-\begin{equation}
-\phi_{om}=\frac{det(\mathbf{W})}{\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||^{2}}=\frac{2^{N_{t}}det(\mathbf{W})}{\prod_{i=1}^{N_{t}}2||\mathbf{h}_{i}||^{2}}.
-\label{formula3}
-\end{equation}
-Taking logarithmic operation to $\phi_{om}$ we have 
-\begin{equation}
-\ln(\phi_{om})=N_{t}\ln(2)+\ln(det(\mathbf{W}))-\sum_{i=1}^{N_{t}}\ln(2||\mathbf{h}_{i}||^{2}),
-\label{formula4}
-\end{equation}
-$\phi_{om}$ in (\ref{formula3}) is defined as Orthogonality Measure. Based on Hadamard's inequality ($\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||\geq det(\mathbf{H})$). $\phi_{om}\in [0,1]$. If $\phi_{om}$ is more closer to 1, $\mathbf{H}$ is closer to orthogonal matrix.
 
-Because $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$, do QR factorization to $\mathbf{H}$ 
-\begin{equation}
-\mathbf{H}=\mathbf{Q}\mathbf{R},
-\label{formula5} 
- \end{equation}
-where $\mathbf{Q}\in\mathbb{C}^{N_{r}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in\mathbb{C}^{N_{t}\times N_{t}}$ is the upper triangular matrix. Using (\ref{formula5}), we have $\mathbf{W}=\mathbf{R}^{H}\mathbf{R}$. $r_{ii}$ denotes the $i$ th diagonal component of $\mathbf{R}$, thus $det(\mathbf{W})$ can be rewritten as:
-\begin{equation}
-det(\mathbf{W})=det(\mathbf{R}^{H}\mathbf{R})=det(\mathbf{R}^{H})det(\mathbf{R})\\=\prod_{i=1}^{N_{t}}r_{ii}^{H}\prod_{i=1}^{N_{t}}r_{ii}=\prod_{i=1}^{N_{t}}|r_{ii}|^{2}.
-\label{formula6}
-\end{equation}  
-Notice that $\mathbf{R}$ can be viewed as the Cholesky factorization of $\mathbf{W}$. Therefore, we have
-\begin{equation}
- ||\mathbf{h}_{i}||^{2}=\mathbf{W}_{ii}=\sum^{i-1}_{j=1}|r_{ji}|^{2}+|r_{ii}|^{2},
-\label{formula7}
- \end{equation}
- where $\mathbf{W}_{ii}$ denotes the $i$ th diagonal element of $\mathbf{W}$.
- Thus based on (\ref{formula6}) and (\ref{formula7}), (\ref{formula3}) can be rewritten as:
-\begin{equation}
-\phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum^{i-1}_{j=1}|r_{ji}|^{2}}.
-\label{formula9}
-\end{equation}  
 \section{Brief Introduction to $\epsilon$-Support Vector Regression}\label{Introduce epsilon SVR}
 Suppose we are given training data set $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2},y_{2}),\cdots,(\mathbf{x}_{l},y_{l}))$, $l$ denotes the number of training samples, $\mathbf{x}\in \mathbb{R}^{v}$ denotes input data vector, $v$ is the number of features in $\mathbf{x}$. $y$ denotes output. The regression model (either linear or non-linear regression) is given by 
 \begin{equation}
@@ -634,11 +590,11 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \end{eqnarray}
 In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes cost function, the simplest cost function is $R(x)=x$, risk function is determined by the statistical distribution of noise \cite{A tutorial of Support Vector Regression}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
 
-From the rationale of risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
+From the rationale of regularized risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
 \begin{eqnarray}
 \nonumber
-maximize\quad \prod_{i=1}^{l}P(y_{i}|f_{estimation}(\mathbf{x}_{i}))&=\prod_{i=1}^{l}P(\xi_{i})\\
-&=\prod_{i=1}^{l}P(y_{i}-f(\mathbf{x}_{i})),
+maximize\quad \prod_{i=1}^{l}P(y_{i}|f_{estimation}(\mathbf{x}_{i}))&=maximize\quad \prod_{i=1}^{l}P(\xi_{i})\\
+&=maximize\quad \prod_{i=1}^{l}P(y_{i}-f(\mathbf{x}_{i})),
 \label{risk function1}
 \end{eqnarray}
 Take the logarithm of (\ref{risk function1}), we have
@@ -651,6 +607,11 @@ Therefore the $i$th risk function of $(\mathbf{x_{i}}, y_{i})$ can be written as
 c(\mathbf{x}_{i}, y_{i}, f_{estimation}(\mathbf{x}_{i}))=-log(P(y_{i}-f_{estimation}(\mathbf{x}_{i}))).
 \label{risk function3}
 \end{eqnarray}
+Thus the equivalent formula of (12) can be written as 
+\begin{equation}
+minimize\quad  \sum_{i=1}^{l}c(\mathbf{x}_{i}, y_{i}, f_{estimation}(\mathbf{x}_{i})),
+\label{Total risk function}
+\end{equation} 
 In $\epsilon$-SVR, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{Vepsilon}), is applied to (\ref{risk function3}).
 \begin{eqnarray}
 |x|_{\epsilon}=\left\{\begin{array}{ll}
@@ -664,7 +625,7 @@ Thus the cost function in $\epsilon$-SVR can be written as
 \tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x}))=\frac{1}{l}\sum_{i=1}^{l}m_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
 \label{cost function}
 \end{equation}
-where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the cost function with regularization term can written as 
+where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the regularized risk function can written as 
 \begin{equation}
 minimize\quad \lambda||w||^{2}+\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x})),
 \label{total cost function}
@@ -699,7 +660,7 @@ s.t. \left\{\begin{array}{cc}
 \end{array}\right. 
 \label{lagrange duality1}
 \end{eqnarray}
-where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers, the solution of dual optimization problem is saddle point, from \cite{saddle point}, (\ref{lagrange duality1}) is equivalent to
+where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers, the solution of dual optimization problem is saddle point, from \cite{saddle point}, the dual problem of (\ref{lagrange duality1}) can be formulated as
 \begin{eqnarray}
 \nonumber
 \max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\min_{\mathbf{w}, \xi, \hat{\xi}} \Theta=
@@ -711,6 +672,17 @@ s.t. \left\{\begin{array}{cc}
 \xi, \hat{\xi}\geq  0\\
 \end{array}\right.\label{lagrange duality2}
 \end{eqnarray}
+Karush–Kuhn–Tucker (KKT) condition is satisfied or not \cite{} determines whether a non linear optimization problem find its optimal solution, the complementary KKT solution of (\ref{lagrange duality2}) is 
+\begin{IEEEeqnarray}[\relax]{l}
+\left\{\begin{array}{ll}
+\eta_{i}\xi_{i}=0\\
+\hat{\eta}_{i}\hat{\xi}_{i}=0\\
+\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))=0\\
+\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))=0\\
+\end{array}\right.
+\label{complementary KKT condition}
+\end{IEEEeqnarray}
+ 
 Take the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\hat{\xi}$ and $b$, and find the minimum.
 
 \begin{equation}
@@ -739,12 +711,12 @@ maximize\quad\Theta &=&\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\
 \nonumber
 &+&(R(\hat{\xi}_{i})-\hat{\xi}_{i}R^{'}(\hat{\xi}_{i}))]
 +\sum_{i=1}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
-&-&\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i}),\\
 \nonumber
-s.t.\left\{\begin{array}{l}
+&-&\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i}),\\
+&s.t.&\left\{\begin{array}{l}
 \sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})=0\\
-0<\alpha<C\tilde{R}(\alpha)\\
-0<\hat{\alpha}<C\tilde{R}(\hat{\alpha})\\
+0<\alpha<C\tilde{R}^{'}(\alpha)\\
+0<\hat{\alpha}<C\tilde{R}^{'}(\hat{\alpha})\\
 \end{array}\right.
 \label{dual objective function1}
 \end{eqnarray}
@@ -766,11 +738,21 @@ $\mathbf{a}^{(*)}$= [$\mathbf{a} \atop \mathbf{\hat{a}}$], $\mathbf{v}\in \mathb
 \end{array}\right.
 \end{eqnarray}
 (\ref{dual optimization function2}) can be reformulate as 
+\newcommand{\mysmallarraydecl}{\renewcommand{%
+\IEEEeqnarraymathstyle}{\scriptscriptstyle}%
+\renewcommand{\IEEEeqnarraytextstyle}{\scriptsize}%
+\renewcommand{\baselinestretch}{1.1}%
+\settowidth{\normalbaselineskip}{\scriptsize
+\hspace{\baselinestretch\baselineskip}}%
+\setlength{\baselineskip}{\normalbaselineskip}%
+\setlength{\jot}{0.25\normalbaselineskip}%
+\setlength{\arraycolsep}{2pt}}
 \begin{equation}
-maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{array}{ll}
-\mathbf{K}\quad -\mathbf{K}\\
--\mathbf{K}\quad \mathbf{K}\\
-\end{array}\right]\mathbf{a}^{(*)}+[(\mathbf{y}-\epsilon)^{T}, (-\mathbf{y}-\epsilon)^{T}]\mathbf{a}^{(*)}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
+maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\mathbf{K}& -\mathbf{K}\\
+-\mathbf{K}& \mathbf{K}
+\end{IEEEeqnarraybox*}\right]
+\mathbf{a}^{(*)}+[(\mathbf{y}-\epsilon)^{T}, (-\mathbf{y}-\epsilon)^{T}]\mathbf{a}^{(*)}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
 \label{vectorize dual optimization function}
 \end{equation}
 
@@ -785,64 +767,289 @@ maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{array}{ll}
  \label{regression part1b}
  \end{eqnarray}
  where $f_{true}()$ denotes the true regression function, $n$ denotes additive noise.
-In this regression problem, receive symbol $y$ is the output data, $\mathbf{h}$ is input data sample, transmitted symbol vector $s$ is regression coefficients. Because the large MIMO system we consider here is complex, we employ complex support vector regression (CSVR). As shown in section (\ref{Introduce epsilon SVR}), in order to derive Lagrange duality optimization formula, partial derivatives of objective function with respect to $\mathbf{w}$ and $\xi$ are needed to be calculated, in CSVR, that means take partial derivatives to real cost functions which are defined in complex domain. The recent mathematical results of Wirtinger's calculus in Reproducing Kernel Hilbert Space (RKHS)[\cite{wirtinger's calculus}] is employed to solve this problem. First we generalize our regression model by complex Hilbert space, 
-Let $<>_{H}$ denotes inner product operation in real Hilbert space. $<,>_{\mathbb{H}}$ denotes inner products operation in complex Hilbert space, which has the following properties 
+In this regression problem, receive symbol $y$ is the output data, $\mathbf{h}$ is input data sample, transmitted symbol vector $s$ is regression coefficients. Because the large MIMO system we consider here is complex, we employ complex support vector regression (CSVR) without offset term $b$. As shown in section \ref{Introduce epsilon SVR}, in order to derive Lagrange duality optimization formula, partial derivatives of objective function with respect to $\mathbf{w}$ and $\xi$ are needed to be calculated, in CSVR, that means take partial derivatives to real cost functions which are defined in complex domain. The recent mathematical results of Wirtinger's calculus in Reproducing Kernel Hilbert Space (RKHS)[\cite{wirtinger's calculus}][\cite {reproducing Kernel Hilbert Space}] is employed to solve this problem. First we generalize our regression model by complex RKHS, 
+Let $<,>_{H}$ denotes inner product operation in real RKHS. $<,>_{\mathbb{H}}$ denotes inner products operation in complex RKHS. Assume $\mathbf{x}$, $\mathbf{y}$, $\mathbf{z}$, $j$, $k$ $\in \mathbb{C}$, complex Hilbert space has the following properties 
 \newtheorem{Lemma}{Lemma}
 \newtheorem{Property}{Property}
 \begin{Property}
-\label{Property1}
+ $<\mathbf{x},\mathbf{y}>_{\mathbb{H}}=<\overline{\mathbf{y},\mathbf{x}}>_{\mathbb{H}}$
+\label{CHSProperty1}
 \end{Property}
+
+\begin{Property}
+$<j\mathbf{x}+k\mathbf{y},\mathbf{z}>_{\mathbb{H}}=j<\mathbf{x},\mathbf{z}>_{\mathbb{H}}+k<\mathbf{y},\mathbf{z}>_{\mathbb{H}}$
+\label{CHSProperty2}
+\end{Property}
+
+\begin{Property}
+$<\mathbf{z}, j\mathbf{x}+k\mathbf{y}>=\bar{j}<\mathbf{z},\mathbf{x}>_{\mathbb{H}}+\bar{k}<\mathbf{z}, \mathbf{y}>_{\mathbb{H}}$
+\label{CHSProperty3}
+\end{Property}
+
 \begin{Lemma}
-$\mathbf{h}_{i}\mathbf{s}\in <\mathbf{h}_{i},\mathbf{s}^{H}>_{\mathbb{H}}$
+$\mathbf{h}_{i}\mathbf{s}\in <\mathbf{h}_{i},\mathbf{s}^{*}>_{\mathbb{H}}$
 \end{Lemma}    
 
 \begin{proof}
-
-Assume $\mathbf{a}$, $\mathbf{b}$ are real vectors,$\mathbf{a}$, $\mathbf{b}$ $\in \mathbb{R}^{v}$, $\mathbf{x}$, $\mathbf{y}$ are complex vectors,$\mathbf{x}$, $\mathbf{x}$ $\in \mathbb{C}^{v}$, according to the properties of complex Hilbert space, is can be easily proved 
+Assume $\mathbf{a}$, $\mathbf{b}$ $\in \mathbb{R}^{v}$, it can be easily proved  
 \begin{equation}
-\mathbf{a}^{T}\mathbf{b} \in <\mathbf{a}, \mathbf{b}>_{H}
+\mathbf{a}^{T}\mathbf{b} \in <\mathbf{a}, \mathbf{b}>_{H},
+\label{CHSequation1}
 \end{equation}
-\end{proof}
-
-
-
-
-
-
-
-Taking expectation of (\ref{formula4}), we have 
+ From Property \ref{CHSProperty1} and Property \ref{CHSProperty3}, it is obvious 
 \begin{equation}
-\mathbb{E}[\ln(\phi_{om})]=N_{t}\ln(2)+\mathbb{E}[\ln(det(\mathbf{W}))]-\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})].
-\label{formula11}
+<\mathbf{g},\mathbf{h}>_{\mathbb{H}}=<\mathbf{g}^{r},\mathbf{h}^{r}>_{H}+<\mathbf{g}^{i},\mathbf{h}^{i}>_{H}+i(<\mathbf{g}^{i},\mathbf{h}^{r}>_{H}-<\mathbf{g}^{r},\mathbf{h}^{i}>_{H})
+\label{CHSProperty4}
 \end{equation}
-Consider $\mathbf{H}=[\mathbf{h}_{1}^{'},\mathbf{h}_{2}^{'},\cdots \mathbf{h}_{N_{r}}^{'}]^{'}$, where $\mathbf{h}_{i}$ denotes the $i$ th row of $\mathbf{H}$, because each component of $\mathbf{H}$ is mutually independent and subject to circularly symmetric complex Gaussian distribution, i.e. $\mathbf{h}_{i}\sim \mathbb{C}N(\mathbf{0},\mathbf{I}_{N_{t}})$. Therefore, $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}\sim \mathbb{C}W(N_{r}, \mathbf{I}_{N_{t}})$, $\mathbb{C}W(n,\mathbf{\Sigma})$ denotes complex Wishart distribution with $n$ degrees of freedom and covariance matrix $\mathbf{\Sigma}$. The logarithmic expectation of $\mathbf{W}$ can be rewritten as
-\begin{equation}
-\mathbb{E}[\ln(det(\mathbf{W}))]=\frac{\tilde{\Gamma}^{'}_{N_{t}}(N_{r})}{\tilde{\Gamma}_{N_{t}}(N_{r})}=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1),
-\label{formula12}
-\end{equation}
-where $\tilde{\Gamma}_{m}(n)$ denotes the multivariate Gamma function and $\psi(n)$ denotes Digamma function. Proof: see Appendix A.
-
-Because the logarithmic expectation of a Gamma distribution variable $\mathbb{g}\sim Gamma(n,\theta)$ can be written as:
-\begin{equation}
-\mathbb{E}[\ln(\mathbb{g})]=\psi(n)+\ln(\theta),
-\end{equation}
-where $\psi(n)$ denotes Digamma function. Thus according to (\ref{formula2}), we have:
-\begin{equation}
-\mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})]=\psi(N_{r})+\ln(2).
-\label{formula14}
-\end{equation}
-Proof: see Appendix B.
-
-Based on (\ref{formula11})(\ref{formula12})(\ref{formula14}), The logarithmic expectation of $\phi_{om}$ can be written as:
+where $\mathbf{g}$,$\mathbf{h}$ $\in \mathbb{C}^{v}$, and $\mathbf{g}=\mathbf{g}^{r}+i\mathbf{g}^{i}$, $\mathbf{h}=\mathbf{h}^{r}+i\mathbf{h}^{i}$. Therefore, 
 \begin{eqnarray}
 \nonumber
-\mathbb{E}[\ln(\phi_{om})]&=&N_{t}\ln(2)+\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r})-N_{t}\ln(2)\\
-&=& \sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r})
-\label{formula15}
+<\mathbf{h}, \mathbf{s}^{*}>_{\mathbb{H}}&=&<\mathbf{h}^{r},  (\mathbf{s}^{*})^{r}>_{H}+<\mathbf{h}^{i},  (\mathbf{s}^{*})^{i}>_{H}+i(<\mathbf{h}^{i},  (\mathbf{s}^{*})^{r}>_{H}-<\mathbf{h}^{r},  (\mathbf{s}^{*})^{i}>_{H})\\
+&=&<\mathbf{h}^{r}, \mathbf{s}^{r}>_{H}-<\mathbf{h}^{i}, \mathbf{s}^{i}>_{H}+i(<\mathbf{h}^{i}, \mathbf{s}^{r}>_{H}+<\mathbf{h}^{r}, \mathbf{s}^{i}>_{H}),
+\label{CHSequation2}
 \end{eqnarray}
-\section{Work Set Selection}\label{WSS}
+
+\begin{equation}
+\mathbf{h}\mathbf{s}=\mathbf{h}^{r}\mathbf{s}^{r}-\mathbf{h}^{i}\mathbf{s}^{i}+i(\mathbf{h}^{i}\mathbf{s}^{r}+\mathbf{h}^{r}\mathbf{s}^{i}),
+\label{CHSequation3}
+\end{equation}
+Because of (\ref{CHSequation1}), (\ref{CHSequation2}) and (\ref{CHSequation3}), $\mathbf{h}_{i}\mathbf{s}\in <\mathbf{h}_{i},\mathbf{s}^{*}>_{\mathbb{H}}$
+\end{proof}
+represent $\mathbf{s}^{*}$ by $\mathbf{w}$, The general regularized risk function of large MIMO detection in complex RKHS can be formulated:
+\begin{eqnarray}
+\nonumber
+minimize \quad \frac{1}{2}||w||_{\mathbb{H}}^{2}+C\sum_{k=1}^{N_{r}}[(R(\xi^{r}_{k})+R(\hat{\xi}^{r}_{k})+R(\xi^{i}_{k})+R(\hat{\xi}^{i}_{k}))]\\
+s.t. \left\{\begin{array}{ll}
+Re(y_{k}-<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}})\leq \epsilon+\xi^{r}_{k}\\
+Re(<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}}-y_{k})\leq \epsilon+\hat{\xi}^{r}_{k}\\
+Im(y_{k}-<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}})\leq \epsilon+\xi^{i}_{k}\\
+Im(<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}}-y_{k})\leq \epsilon+\hat{\xi}^{i}_{k}\\
+\xi^{r}, \hat{\xi}^{r},\xi^{i},\hat{\xi}^{i}\geq 0\\
+\end{array}\right.
+\label{complex objective function1}
+\end{eqnarray}
+where $Re()$ and $Im()$ denote real part and imaginary part of a complex variable, restrictions are set to real and imaginary part of regression function separately. Let $\mathbf{K}=\mathbf{H}\mathbf{H}^{H}$ denotes the kernel function, $\mathbf{K}=\mathbf{K}^{r}+i\mathbf{K}^{i}$, $\mathbf{K}^{r}$ and $\mathbf{K}^{i}$ denote matrix of corresponding real part and imaginary part. Similar to the Lagrange duality rational in (\ref{lagrange duality2}), Lagrange duality is formulated for (\ref{complex objective function1}) 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\max_{(\alpha, \hat{\alpha}, \beta, \hat{\beta}, \eta, \hat{\eta}, \tau, \hat{\tau})} \min_{(\mathbf{w}, \xi^{r}, \hat{\xi}^{r}, \hat{\xi}^{i}, \hat{\xi}^{i})} \theta =
+\frac{1}{2}||w||_{\mathbb{H}}^{2}+C\sum_{k=1}^{N_{r}}[(R(\xi^{r}_{k})+R(\hat{\xi}^{r}_{k})+R(\xi^{i}_{k})+R(\hat{\xi}^{i}_{k}))]- \sum_{k=1}^{N_{r}}(\eta_{i}\xi^{r}_{k}+\hat{\eta}_{k}\hat{\xi}^{r}_{k}\\
+\nonumber
++\tau_{k}\xi^{i}_{k}+\hat{\tau}_{k}\hat{\xi}^{i}_{k})-\sum_{k=1}^{N_{r}}\alpha_{k}(\epsilon+\xi^{r}_{k}-Re(y_{k})+Re(<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}}))
+-\sum_{k=1}^{N_{r}}\hat{\alpha}_{k}(\epsilon+\hat{\xi}^{r}_{k}+Re(y_{k})-Re(<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}}))\\
+\nonumber
+-\sum_{k=1}^{N_{r}}\beta_{k}(\epsilon+\xi^{i}_{k}-Im(y_{k})+Im(<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}}))-\sum_{k=1}^{N_{r}}\hat{\beta}_{k}(\epsilon+\hat{\xi}^{i}_{k}+Im(y_{k})-Im(<\mathbf{h}_{k},\mathbf{w}>_{\mathbb{H}}))\\
+s.t. \left\{\begin{array}{ll}
+\eta, \hat{\eta}, \tau, \hat{\tau} \alpha, \hat{\alpha}, \beta, \hat{\beta}\geq 0\\
+\xi^{r}, \hat{\xi}^{r}, \xi^{i}, \hat{\xi}^{i} \geq  0
+\end{array}\right. 
+\label{complex lagrange duality1}
+\end{IEEEeqnarray}
+with Wirtinger's calculus applied to RKHS described in \cite{wirtinger's calculus to RKHS}, The partial derivatives of $\Theta$ respect to $\mathbf{w}$, which is define at complex domain, as well as the real variables $\xi^{r}$, $\hat{\xi}^{r}$, $\xi^{i}$ and $\hat{\xi}^{i}$ can be deduced 
+\begin{IEEEeqnarray}[\relax]{l}
+\left\{\begin{array}{ll}
+\frac{\partial \Theta}{\partial \mathbf{w}^{*}}=\frac{1}{2}\mathbf{w}-\frac{1}{2}\sum_{k=1}^{N_{r}}\alpha_{k}\mathbf{h}_{k}+\frac{1}{2}\sum_{k=1}^{N_{r}}\hat{\alpha}_{k}\mathbf{h}_{k}+\frac{i}{2}(\sum_{k=1}^{N_{r}}\beta_{k}\mathbf{h}_{k}-\sum_{k=1}^{N_{r}}\hat{\beta}_{k}\mathbf{h}_{k})=0\\
+\Rightarrow \mathbf{w}=\sum_{k=1}^{N_{r}}(\alpha_{k}-\hat{\alpha}_{k})\mathbf{h}_{k}-i\sum_{k=1}^{N_{r}}(\beta_{k}-\hat{\beta}_{k})\mathbf{h}_{k}\\
+\frac{\partial \Theta}{\partial \xi^{r}_{k}}=CR^{'}(\xi^{r}_{k})-\eta_{k}-\alpha_{k}=0\Rightarrow \eta_{k}=CR^{'}(\xi^{r}_{k})-\alpha_{k}\\
+\frac{\partial \Theta}{\partial \hat{\xi}^{r}_{k}}=CR^{'}(\hat{\xi}^{r}_{k})-\hat{\eta}_{k}-\hat{\alpha}_{k}=0\Rightarrow \hat{\eta}_{k}=CR^{'}(\hat{\xi}^{r}_{k})-\hat{\alpha}_{k}\\
+\frac{\partial \Theta}{\partial \xi^{i}_{k}}=CR^{'}(\xi^{i}_{k})-\tau_{k}-\beta_{k}=0\Rightarrow \tau_{k}=CR^{'}(\xi^{i}_{k})-\beta_{k}\\
+\frac{\partial \Theta}{\partial \hat{\xi}^{i}_{k}}=CR^{'}(\hat{\xi}^{i}_{k})-\hat{\eta}_{k}-\hat{\beta}_{k}=0\Rightarrow \hat{\eta}_{k}=CR^{'}(\hat{\xi}^{i}_{k})-\hat{\beta}_{k}\\
+
+\end{array}\right.
+\label{complex lagrange duality2}
+\end{IEEEeqnarray}
+Based on (\ref{complex lagrange duality2}), we have 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}}=\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})<\mathbf{h}_{i},\mathbf{h}_{j}>_{\mathbb{H}}+i\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})<\mathbf{h}_{i},\mathbf{h}_{j}>_{\mathbb{H}}\\
+\nonumber
+=\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{h}_{i}\mathbf{h}^{H}_{j}+i\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{h}_{i}\mathbf{h}^{H}_{j}\\
+=\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}-\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}+i(\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}),
+\label{complex duality regression function}
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+||\mathbf{w}||^{2}_{\mathbb{H}}=\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{i}-\hat{\alpha}_{i})\mathbf{h}_{i}\mathbf{h}^{H}_{j}+\sum_{i,j=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{i}-\hat{\beta}_{i})\mathbf{h}_{i}\mathbf{h}^{H}_{j}\\
++i(\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{h}_{i}\mathbf{h}^{H}_{j}-\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{h}_{j}\mathbf{h}^{H}_{i})
+\label{complex duality regularization1}
+\end{IEEEeqnarray}
+Because $\mathbf{K}$ is Hermitian, thus $\mathbf{K}_{ij}=\mathbf{K}^{*}_{ji}$, if we have $r_{i}$ and $r_{j}$ $\in \mathbb{R}$, 
+\begin{equation}
+\sum_{i,j}^{l}r_{i}r_{j}\mathbf{K}^{i}_{ij}=-\sum_{i,j}^{l}r_{i}r_{j}\mathbf{K}^{i}_{ji}=-\sum_{i,j}^{l}r_{i}r_{j}\mathbf{K}^{i}_{ij},
+\end{equation}
+Therefore
+\begin{equation}
+\sum_{i,j}^{l}r_{i}r_{j}\mathbf{K}^{i}_{ij}=0,
+\label{conjugate1}
+\end{equation}
+Based on (\ref{conjugate1}), (\ref{complex duality regularization1}) can be changed to
+\begin{equation}
+||\mathbf{w}||^{2}_{\mathbb{H}}=\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{i}-\hat{\alpha}_{i})\mathbf{K}^{r}_{ij}+\sum_{i,j=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{i}-\hat{\beta}_{i})\mathbf{K}^{r}_{ij}-2\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\beta-\hat{\beta}_{i})\mathbf{K}^{i}_{ij}.
+\label{complex duality regularization2}
+\end{equation}
+Apply (\ref{complex lagrange duality2}), (\ref{complex duality regression function}), (\ref{conjugate1}) and (\ref{complex duality regularization2}) to (\ref{complex lagrange duality1}), the final form of Lagrange duality can be obtained
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize\quad \Theta=-\frac{1}{2}[\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}+\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}]\\
+\nonumber
+-\sum_{i}^{N_{r}}(\alpha_{i}+\hat{\alpha}_{i}+\beta+\hat{\beta}_{i})\epsilon+[\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})Re(y_{i})+\sum_{i=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})Im(y_{i})]\\
+\nonumber
++C\sum_{i}^{N_{r}}(\tilde{R}(\xi^{r}_{i})+\tilde{R}(\hat{\xi}^{r}_{i})+\tilde{R}(\xi^{i}_{i})+\tilde{R}(\hat{\xi}^{i}_{i}))\\ 
+\left\{\begin{array}{ll}
+0\leq \alpha(\hat{\alpha})\leq C\tilde{R}(\xi^{r})(\tilde{R}(\hat{\xi}^{r}))\\
+0\leq \beta(\hat{\beta})\leq C\tilde{R}(\xi^{i})(\tilde{R}(\hat{\xi}^{i}))\\
+\xi^{r}(\hat{\xi}^{r})\geq 0\\
+\xi^{i}(\hat{\xi}^{i})\geq 0\\
+\end{array}\right.
+\label{final complex lagrange duality}
+\end{IEEEeqnarray}
+which can be divided into 2 independent regression task, 
+
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize \quad \Theta^{r}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}-\sum_{i=1}^{N_{r}}(\alpha_{i}+\hat{\alpha}_{i})\epsilon+\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})Re(y_{i})+C\sum_{i=1}^{N_{r}}(\tilde{R}(\xi^{r}_{i})\\
+\nonumber
++\tilde{R}(\hat{\xi}^{r}_{i}))\\
+\left\{\begin{array}{ll}
+0\leq \alpha(\hat{\alpha})\leq C\tilde{R}(\xi^{r})(\tilde{R}(\hat{\xi}^{r}))\\
+\xi^{r}(\hat{\xi}^{r})\geq 0\\
+\end{array}\right.
+\label{complex duality real part}
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize \quad \Theta^{i}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}-\sum_{i=1}^{N_{r}}(\beta_{i}+\hat{\beta}_{i})\epsilon+\sum_{i=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})Im(y_{i})+C\sum_{i=1}^{N_{r}}(\tilde{R}(\xi^{i}_{i})\\
+\nonumber
++\tilde{R}(\hat{\xi}^{i}_{i}))\\
+\left\{\begin{array}{ll}
+0\leq \beta(\hat{\beta})\leq C\tilde{R}(\xi^{i})(\tilde{R}(\hat{\xi}^{i}))\\
+\xi^{i}(\hat{\xi}^{i})\geq 0\\
+\end{array}\right.
+\label{complex duality imaginary part}
+\end{IEEEeqnarray}
+
+The alternate form can be written as 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize \quad \Theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})+Re(\mathbf{y})^{T}(\alpha-\hat{\alpha})-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})-\tilde{R}(\hat{\xi}^{r})))\\
+\left\{\begin{array}{ll}
+0\leq \alpha(\hat{\alpha})\leq C\tilde{R}(\xi^{r})(\tilde{R}(\hat{\xi}^{r}))\\
+\xi^{r}(\hat{\xi}^{r})\geq 0\\
+\end{array}\right.
+\label{complex duality real part vectorizes}
+\end{IEEEeqnarray}
+
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize \quad \Theta^{i}=-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Im(\mathbf{y})^{T}(\beta-\hat{\beta})-\epsilon(\mathbf{e}^{T}(\beta+\hat{\beta}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{i})-\tilde{R}(\hat{\xi}^{i})))\\
+\left\{\begin{array}{ll}
+0\leq \beta(\hat{\beta})\leq C\tilde{R}(\xi^{i})(\tilde{R}(\hat{\xi}^{i}))\\
+\xi^{i}(\hat{\xi}^{i})\geq 0\\
+\end{array}\right.
+\label{complex duality imaginary part vectorized}
+\end{IEEEeqnarray}
+where $(\alpha-\hat{\alpha})$, $(\beta-\hat{\beta})$,$Re(\mathbf{y})$, $Im(\mathbf{y})$ denote vectors, $\mathbf{e}=[1,1,\ldots, 1]^{T}\in \mathbb{R}^{N_{r}}$, $\mathbf{K}^{r}$ denotes the matrix consist of real  part of kernel components. 
+\section{Work Set Selection and Solver}\label{WSS}
+(\ref{final complex lagrange duality}) can be viewed as quadratic optimization problem, The traditional optimization algorithms such as Newton, Quasi Newton can not be directly applied to this problem, because the sparseness of kernel matrix $\mathbf{K}$ can not be guaranteed, so that a prohibitive storage may be required when dealing with large data set.   
+Decomposition method is a set of efficient algorithms that can help to conquer this difficulty. Decomposition method works iteratively, the basic idea of decomposition method is to choose a subset of variable pairs $S$ (named work set) to optimize in each iteration step while keep the rest variable pairs $N$ fixed. Sequential Minimal Optimization (SMO) \cite{SMO} is an extreme case of decomposition method, the work set size is 2, an analytic quadratic programming (QP) step instead of numerical QP step can be taken in each iteration.    
+
+Because (\ref{complex duality real part}) and (\ref{complex duality imaginary part}) are symmetric, in this section we discuss real part only. By dividing the variables into work set $S$ and fixed set $N$, (\ref{complex duality real part vectorizes}) can be changed to:
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}+2(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}(\alpha-\hat{\alpha})_{S}]
++Re(\mathbf{y})_{S}^{T}(\alpha-\hat{\alpha})_{S}-\\
+\nonumber
+\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha})_{S})
+-\frac{1}{2}(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NN}^{r}(\alpha-\hat{\alpha})_{N}+Re(\mathbf{y})_{N}^{T}(\alpha-\hat{\alpha})_{N}-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha})_{N})\\+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})-\tilde{R}(\hat{\xi}^{r}))),
+\label{real part decomposition}
+\end{IEEEeqnarray}
+Where $\mathbf{K}^{r}=\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\mathbf{K}^{r}_{SS}& -\mathbf{K}^{r}_{SN}\\
+-\mathbf{K}^{r}_{NS}& \mathbf{K}^{r}_{NN}
+\end{IEEEeqnarraybox*}\right]$, $\mathbf{K}^{r}_{SN}=\mathbf{K}^{r}_{NS}$
+and  $\alpha_{S}\in \mathbb{R}^{N_{r}}$ denotes the vector with the components that do not belong to $S$ zeroed. Therefore the sub-optimization problem is formulated as 
+\begin{equation}
+maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}]-[(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}
++Re(\mathbf{y})_{S}^{T}](\alpha-\hat{\alpha})_{S}-\epsilon[\mathbf{e}_{S}^{T}(\alpha+\hat{\alpha})_{S}],
+\label{subset optimization}
+\end{equation}
+In decomposition method, a proper work set selection strategy is required so that acceptable speed and performance can be guaranteed. One approach is to choose dual variable pairs that violate KKT conditions, so that after each iteration, the objective function can be increased according to Osuna's theorem\cite{inproved training algorithms for support vector machines}, Heuristic methods are used in [\cite{SMO}] in order to accelerate process, in work set selection process, the algorithm first searches among the non-bound variables (that is $0<\alpha<C\tilde{R}(\xi)$), which are more likely to violate KKT condition, then searching the whole dual variable set, the second dual variable that can maximize optimization step of the first coordinate is chosen, approximate step size is used as evaluator for sake of reducing computational cost. Lin propose another work set selection strategy based on an alternative form of KKT condition.
+
+Another class of approaches is to choose the dual variables whose update can provide the maximum improvements to objective function \cite{}, \cite{}, \cite{}(Training without offset). That is 
+\begin{equation}
+maximize\quad \bigtriangledown \Theta_{S}=\Theta((\alpha+\delta_{S}\mathbf{e}_{S}), (\hat{\alpha}+\hat{\delta}_{S}\mathbf{e}_{S}))-\Theta(\alpha, \hat{\alpha}),
+\label{maximum gain work set selection}
+\end{equation} 
+where $\delta_{S}=\alpha_{S}^{new}-\alpha_{S}$
+In our regression model, the offset is omitted, therefore different from SMO algorithm, there is no linear equation constraint as shown in (\ref{dual objective function1}), it is possible to update only one variable pair in each iteration. However, recent work shows more efficient work set selection strategy based on maximum gain selection approaches, that choose two pair of dual variables can reduce computational cost while maintaining the comparable performance with that with offset \cite{Training without offset}. Here we propose sequential 1-D work set selection, which can approximate the effect of optimal 2-D work set selection. There is only $O(n)$ searching times required for the former one while the later one need $O(n^{2})$ searching times.   
 \subsection{Single Direction Solver}
+ We will first introduce 1-D work set selection strategy in which the dual variable pair that maximizes the gain of objective function is chosen. Recall the decomposition method in (\ref{maximum gain work set selection}), let $\alpha_{1}$ denotes the dual variable that is chosen to be updated. The sub optimization  problem is formulated as 
+ \begin{IEEEeqnarray}[\relax]{l}
+ \nonumber
+ maximize\quad \Theta_{1}^{r}=-\frac{1}{2}((\alpha_{1}-\hat{\alpha}_{1})^{new})^{2}\mathbf{K}_{11}^{r}-(\alpha_{1}-\hat{\alpha}_{1})^{new}\sum_{j=2}^{N_{r}}\mathbf{K}_{1j}^{r}(\alpha_{j}-\hat{\alpha}_{j})^{new}
++Re(y_{1})(\alpha_{1}-\hat{\alpha}_{1})^{new}\\
+-\epsilon(\alpha_{1}+\hat{\alpha}_{1})^{new},
+ \label{optimization function 1-D}
+ \end{IEEEeqnarray}
+take the partial derivative of $\Theta_{1}^{r}$ respect to $\alpha_{1}$ and $\hat{\alpha}_{1}$, we have 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\frac{\partial \Theta_{1}^{r}}{\partial \alpha_{1}}=-(\alpha_{1}-\hat{\alpha}_{1})^{new}\mathbf{K}_{11}^{r}-\sum_{j=2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})^{new}\mathbf{K}_{1j}^{r}+Re(y_{1})-\epsilon=0\\
+\Rightarrow \alpha_{1}^{new}=\alpha_{1}+\frac{\Phi_{1}^{r}-\epsilon}{\mathbf{K}_{11}^{r}},
+\label{partial optimization function 1-D alpha}
+\end{IEEEeqnarray} 
+ 
+ 
+ \begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\frac{\partial \Theta_{1}^{r}}{\partial \hat{\alpha}_{1}}=(\alpha_{1}-\hat{\alpha}_{1})^{new}\mathbf{K}_{11}^{r}+\sum_{j=2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})^{new}\mathbf{K}_{1j}^{r}-Re(y_{1})-\epsilon=0\\
+\Rightarrow \hat{\alpha}_{1}^{new}=\hat{\alpha}_{1}-\frac{\Phi_{1}^{r}+\epsilon}{\mathbf{K}_{11}^{r}}\\
+\label{partial optimization function 1-D alpha hat}
+\end{IEEEeqnarray} 
+where we define $\Phi_{i}^{r}=Re(y_{i})-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}_{ij}^{r}$, similarly, as to dual variable  $\beta$ and $\hat{\beta}$, we define $\Phi_{i}^{i}=Im(y_{i})-\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}_{ij}^{r}$. 
+Recall complementary KKT condition
+\begin{IEEEeqnarray}[\relax]{l}
+\left\{\begin{array}{ll}
+(C\tilde{R}(\xi^{r})-\alpha)\xi^{r}=0\\
+(C\tilde{R}(\hat{\xi}^{r})-\hat{\alpha})\hat{\xi}^{r}=0\\
+\alpha(\epsilon+\xi^{r}-Re(y)+<\mathbf{h},\mathbf{w}>_{\mathbb{H}})=0\\
+\hat{\alpha}(\epsilon+\hat{\xi}^{r}+Re(y)-<\mathbf{h},\mathbf{w}>_{\mathbb{H}})=0\\
+\end{array}\right.
+\label{complementary KKT condition}
+\end{IEEEeqnarray}
+it can be easily observed that $\alpha\hat{\alpha}=0$, because $0\leq \alpha(\hat{\alpha})\leq C\tilde{R}(\xi^{r})(C\tilde{R}(\hat{\xi}^{r}))$,  $\xi^{r}$ and $\hat{\xi}^{r}$ satisfy $\xi^{r}\hat{\xi}^{r}$. The update of $\alpha_{1}$ or $\hat{\alpha}_{1}$ is completed by clipping
+\begin{IEEEeqnarray}[\relax]{l}
+\alpha^{new\quad clipped}=[\alpha^{new}]_{0}^{C\tilde{R}(\xi^{r})}\\
+\hat{\alpha}^{new\quad clipped}=[\hat{\alpha}^{new}]_{0}^{C\tilde{R}(\hat{\xi}^{r})}\\
+\label{clipped new dual variable}
+\end{IEEEeqnarray}
+where $[ ]_{a}^{b}$ denotes to function 
+\begin{IEEEeqnarray}[\relax]{l}
+[x]_{a}^{b}=\left\{\begin{array}{ll}
+a \quad if\quad  x\leq a\\
+x \quad if\quad a<x<b\\
+b \quad if\quad x\geq b\\
+\end{array}\right.
+\label{clipping function}
+\end{IEEEeqnarray}
+Based on (\ref{partial optimization function 1-D alpha}), (\ref{partial optimization function 1-D alpha hat}) and (\ref{clipped new dual variable}), The gain of objective function respect to $i$th dual variable pair is 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\bigtriangledown \Theta_{i}^{r}=\Theta^{r}((\alpha+\delta_{i}\mathbf{e}_{i}), (\hat{\alpha}+\hat{\delta}_{i}\mathbf{e}_{i}))-\Theta^{r}(\alpha, \hat{\alpha})\\
+\nonumber
+=-\frac{1}{2}(\delta_{i}-\hat{\delta}_{i})^{2}\mathbf{K}_{ii}^{r}-(\delta_{i}-\hat{\delta}_{i})\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}_{ij}^{r}+Re(y_{i})(\delta_{i}-\hat{\delta}_{i})-\epsilon(\delta_{i}+\hat{\delta}_{i})\\
+=(\delta_{i}-\hat{\delta}_{i})[-\frac{1}{2}(\delta_{i}-\hat{\delta}_{i})\mathbf{K}_{ii}^{r}+\Phi_{i}^{r}-\epsilon\frac{\delta_{i}+\hat{\delta}_{i}}{\delta_{i}-\hat{\delta}_{i}}],
+\label{gain of objective function}
+\end{IEEEeqnarray}
+where $\delta_{1}=\alpha^{new\quad clipped}_{1}-\alpha_{1}$, $\hat{\delta}_{1}=\hat{\alpha}^{new\quad clipped}_{1}-\hat{\alpha}_{1}$, in 1-D searching procedure, the dual variable pair which has the maximum gain of objective function is chosen as $1$ in (\ref{optimization function 1-D}), that is 
+\begin{equation}
+1=arg_{(i=1,\ldots, N_{r})}\max \bigtriangledown \Theta_{i}^{r},
+\label{1-D direction}
+\end{equation}
 \subsection{Double Direction Solver}
+
+
 \subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}
 Recall (\ref{formula9})
 \begin{equation}
@@ -1242,6 +1449,7 @@ f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod
 
 % that's all folks
 %\end{spacing}
+\newpage
 \bibliographystyle{IEEEtran}
 \bibliography{citation}
 \end{document}

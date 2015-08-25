@@ -1,12 +1,12 @@
 /*
- * SVR_DETECTOR.h
+ * SVR_DETECTOR.c
  *
- *  Created on: Jul 15, 2015
- *      Author: tianpei.chen@mail.mcgill.ca
+ *  Created on: Aug 24, 2015
+ *      Author: Preston Chen
  */
 
-#ifndef SVR_DETECTOR_CPP_
-#define SVR_DETECTOR_CPP_
+
+
 #include "public.h"
 #include"Initialization.h"
 #include"WSS2_1Dsolver.h"
@@ -287,7 +287,6 @@ gsl_vector_free(alpha);
 gsl_vector_free(beta);
 gsl_matrix_complex_free(K_complex);
 gsl_matrix_free(K_r);
-gsl_matrix_free(K_i);
 gsl_vector_complex_free(phi);
 gsl_vector_complex_free(eta);
 gsl_vector_complex_free(psymout_temp1);
@@ -297,9 +296,3 @@ gsl_vector_complex_free(beta_complex);
 
 return;
 }
-
-
-
-
-
-#endif /* SVR_DETECTOR_CPP_ */

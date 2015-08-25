@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/CPATH/delimiter=;
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/CPATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/CPLUS_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/CPLUS_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/CPLUS_INCLUDE_PATH/value=C\:\\MinGW\\lib\\gcc\\mingw32\\4.5.2\\include\\c++
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/C_INCLUDE_PATH/operation=replace
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/C_INCLUDE_PATH/value=C\:\\MinGW\\include
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/append=true
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.exe.debug.879659840/appendContributed=true
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.879659840/LIBRARY_PATH/delimiter=;
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.879659840/LIBRARY_PATH/operation=replace
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.879659840/LIBRARY_PATH/value=\ C\:/MinGW/lib
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.879659840/append=true
+environment/buildEnvironmentLibrary/cdt.managedbuild.config.gnu.exe.debug.879659840/appendContributed=true

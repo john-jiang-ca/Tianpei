@@ -74,7 +74,7 @@ int main(void) {
 	GSL_SET_COMPLEX(&zero, 0.0, 0.0);
 	SNR = (float*) malloc(11 * sizeof(float));
 	for (count1 = 0; count1 <=SNRnum; count1++) {
-		SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+		SNR[count1] = pow(10, (float)(((count1) * 2) / (float)(10))); //test the SNR from 2 to 20 the step is 2
 	}
 	float begin=0;      //the SNR per bit in dB beginer begin=SNRnum for single SNR point begin=0 for multiple SNR points
 	FILE *cfile1, *cfile2, *cfile3, *cfile4;
@@ -218,7 +218,7 @@ int main(void) {
 			modulator(pdata, ptransmitted, psymbolconstellation); //ptransmitted stores the complex symbol
 
 			channel_generator(pH, pr);
-			sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+			sigman = sqrt((double)(1) / (2*SNR[count]*(float)(log2(M)))); /* corresponding noise standard deviation per dimension */
 			noise_generator(pnoise, pr, sigman);
             gsl_blas_zcopy(pnoise, preceived);
 			gsl_blas_zgemv(CblasNoTrans, one, pH, ptransmitted, one, preceived);
@@ -228,7 +228,7 @@ int main(void) {
 //			FCSD_CPU(preceived, pH, psymbolconstellation, SNR[count], symOut, durationKernel_CPU);
 
 			end = clock();
-	        Time_FCSD+=double(end-start);
+	        Time_FCSD+=(double)(end-start);
 #endif
 //			cudaProfilerStart();
 //			cudaDeviceReset();
@@ -238,7 +238,7 @@ int main(void) {
 			start = clock();
 //			SVR_DETECTOR(preceived, pH, SNR[count], symOut, start_M,  selection_M);
 			end = clock();
-			Time_CSVR+=double(end-start);
+			Time_CSVR+=(double)(end-start);
 #endif
 
 //			demodulator_CPU(symOut, psymbolconstellation, pgrayindexes, poutput); //poutput is the graycode of the symbols
@@ -291,11 +291,11 @@ int main(void) {
 		Time_CSVR_aver[count]=Time_CSVR/(iteration*(CLOCKS_PER_SEC));//average time cost of CSVR
 		Time_SVM_aver[count]=Time_SVM/(iteration*(CLOCKS_PER_SEC)); //average time cost of SVM
 		Time_FCSD_aver[count]=Time_FCSD/(iteration*(CLOCKS_PER_SEC)); //average time cost of FCSD
-		duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+		duration_total[count]=(double)(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
 		printf(" SNR point %d finished\n", 2*count);
-		printf("Iteration time at this SNR point is %f\n",double(iteration));
-		BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
-		SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+		printf("Iteration time at this SNR point is %f\n",(double)(iteration));
+		BitErrorRate = (double)(BitError)/(double)((double)(iteration)*Nt*log2(M));
+		SymbolErrorRate=(double)(symbolError)/(double)((double)(iteration)*Nt);
 		if(count==begin){
 			fprintf(cfile1, "BER: ");
 			fprintf(cfile2, "SER: ");

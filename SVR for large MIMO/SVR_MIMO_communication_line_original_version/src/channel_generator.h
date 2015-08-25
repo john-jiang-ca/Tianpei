@@ -1,8 +1,9 @@
+#include "public.h"
 void channel_generator (gsl_matrix_complex *pH, gsl_rng *pr)
 {
-	int Nt, Nr, count1=0, count2=0;
-	Nr=pH->size1;
-	Nt=pH->size2;
+	int  count1=0, count2=0;
+//	Nr1=pH->size1;
+//	Nt1=pH->size2;
 	
 	gsl_complex z;
 	GSL_SET_COMPLEX (&z, 0.0, 0.0);

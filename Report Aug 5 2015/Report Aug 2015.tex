@@ -949,12 +949,13 @@ maximize \quad \Theta^{i}=-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\bet
 \end{array}\right.
 \label{complex duality imaginary part vectorized}
 \end{IEEEeqnarray}
-where $(\alpha-\hat{\alpha})$, $(\beta-\hat{\beta})$,$Re(\mathbf{y})$, $Im(\mathbf{y})$ denote vectors, $\mathbf{e}=[1,1,\ldots, 1]^{T}\in \mathbb{R}^{N_{r}}$, $\mathbf{K}^{r}$ denotes the matrix consist of real  part of kernel components. 
+where $(\alpha-\hat{\alpha})$, $(\beta-\hat{\beta})$,$Re(\mathbf{y})$, $Im(\mathbf{y})$ denote vectors, $\mathbf{e}=[1,1,\ldots, 1]^{T}\in \mathbb{R}^{N_{r}}$, $\mathbf{K}^{r}$ denotes the matrix consist of real  part of kernel components. Observe that solving (\ref{complex duality real part vectorizes}) and (\ref{complex duality imaginary part vectorized}) are equivalent to solving two independent real Support vector regression task (dual channel), only the real part of kernel matrix is required for each channel. In section \ref{stopping criteria}, we will further show that from the statistic analyst of channel orthogonality (which is also named channel hardening phenomenon), the imaginary part of kernel matrix can also be omitted in stopping condition. Therefore, in large MIMO scenario, our CSVR-MIMO detector can save half of the cost in kernel matrix computation.    
 \section{Work Set Selection and Solver}\label{WSS}
-(\ref{final complex lagrange duality}) can be viewed as quadratic optimization problem, The traditional optimization algorithms such as Newton, Quasi Newton can not be directly applied to this problem, because the sparseness of kernel matrix $\mathbf{K}$ can not be guaranteed, so that a prohibitive storage may be required when dealing with large data set.   
+(\ref{final complex lagrange duality}) can be viewed as quadratic optimization problem, The traditional optimization algorithms such as Newton, Quasi Newton can not be directly applied to this problem, because the sparseness of kernel matrix $\mathbf{K}$ can not be guaranteed, so that a prohibitive storage may be required when dealing with large data set.  
+ 
 Decomposition method is a set of efficient algorithms that can help to conquer this difficulty. Decomposition method works iteratively, the basic idea of decomposition method is to choose a subset of variable pairs $S$ (named work set) to optimize in each iteration step while keep the rest variable pairs $N$ fixed. Sequential Minimal Optimization (SMO) \cite{SMO} is an extreme case of decomposition method, the work set size is 2, an analytic quadratic programming (QP) step instead of numerical QP step can be taken in each iteration.    
 
-Because (\ref{complex duality real part}) and (\ref{complex duality imaginary part}) are symmetric, in this section we discuss real part only. By dividing the variables into work set $S$ and fixed set $N$, (\ref{complex duality real part vectorizes}) can be changed to:
+Because (\ref{complex duality real part}) and (\ref{complex duality imaginary part}) are symmetric, in this section we discuss real part only. By dividing the variables into work set $S$ and fixed set $N$, we have $(\alpha, \hat{\alpha})=((\alpha_{N}, \hat{\alpha}_{N})\mathbf{e}_{N}+(\alpha_{S}+\hat{\alpha}_{S})\mathbf{e}_{S})$, where $\mathbf{e}_{K}$ denotes the modified vector of $\mathbf{e}$ with the components in set $K$ zeroed, for sake of brevity， we replace $\alpha_{K}\mathbf{e}_{K}$ by $\alpha_{K}$. Thus (\ref{complex duality real part vectorizes}) can be changed to:
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
 maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}+2(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}(\alpha-\hat{\alpha})_{S}]
@@ -965,13 +966,13 @@ maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{S
 \label{real part decomposition}
 \end{IEEEeqnarray}
 Where $\mathbf{K}^{r}=\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
-\mathbf{K}^{r}_{SS}& -\mathbf{K}^{r}_{SN}\\
--\mathbf{K}^{r}_{NS}& \mathbf{K}^{r}_{NN}
+\mathbf{K}^{r}_{SS}& \mathbf{K}^{r}_{SN}\\
+\mathbf{K}^{r}_{NS}& \mathbf{K}^{r}_{NN}
 \end{IEEEeqnarraybox*}\right]$, $\mathbf{K}^{r}_{SN}=\mathbf{K}^{r}_{NS}$
 and  $\alpha_{S}\in \mathbb{R}^{N_{r}}$ denotes the vector with the components that do not belong to $S$ zeroed. Therefore the sub-optimization problem is formulated as 
 \begin{equation}
-maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}]-[(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}
-+Re(\mathbf{y})_{S}^{T}](\alpha-\hat{\alpha})_{S}-\epsilon[\mathbf{e}_{S}^{T}(\alpha+\hat{\alpha})_{S}],
+maximize\quad \Theta_{S}^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}]+[Re(\mathbf{y})_{S}^{T}-(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}
+](\alpha-\hat{\alpha})_{S}-\epsilon[\mathbf{e}_{S}^{T}(\alpha+\hat{\alpha})_{S}],
 \label{subset optimization}
 \end{equation}
 In decomposition method, a proper work set selection strategy is required so that acceptable speed and performance can be guaranteed. One approach is to choose dual variable pairs that violate KKT conditions, so that after each iteration, the objective function can be increased according to Osuna's theorem\cite{inproved training algorithms for support vector machines}, Heuristic methods are used in [\cite{SMO}] in order to accelerate process, in work set selection process, the algorithm first searches among the non-bound variables (that is $0<\alpha<C\tilde{R}(\xi)$), which are more likely to violate KKT condition, then searching the whole dual variable set, the second dual variable that can maximize optimization step of the first coordinate is chosen, approximate step size is used as evaluator for sake of reducing computational cost. Lin propose another work set selection strategy based on an alternative form of KKT condition.
@@ -981,13 +982,33 @@ Another class of approaches is to choose the dual variables whose update can pro
 maximize\quad \bigtriangledown \Theta_{S}=\Theta((\alpha+\delta_{S}\mathbf{e}_{S}), (\hat{\alpha}+\hat{\delta}_{S}\mathbf{e}_{S}))-\Theta(\alpha, \hat{\alpha}),
 \label{maximum gain work set selection}
 \end{equation} 
-where $\delta_{S}=\alpha_{S}^{new}-\alpha_{S}$
-In our regression model, the offset is omitted, therefore different from SMO algorithm, there is no linear equation constraint as shown in (\ref{dual objective function1}), it is possible to update only one variable pair in each iteration. However, recent work shows more efficient work set selection strategy based on maximum gain selection approaches, that choose two pair of dual variables can reduce computational cost while maintaining the comparable performance with that with offset \cite{Training without offset}. Here we propose sequential 1-D work set selection, which can approximate the effect of optimal 2-D work set selection. There is only $O(n)$ searching times required for the former one while the later one need $O(n^{2})$ searching times.   
+where $\delta_{S}=\alpha_{S}^{new}-\alpha_{S}$, the gain in (\ref{maximum gain work set selection}) can be written as 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}[(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+2(\alpha-\hat{\alpha})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}]+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}_{N}\mathbf{K}^{r}_{NS}](\delta-\hat{\delta})_{S}\\
+-\epsilon(\delta+\hat{\delta})_{S}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}_{S}](\delta-\hat{\delta})_{S}-\epsilon(\delta+\hat{\delta})_{S}
+\label{gain work set selection1}
+\end{IEEEeqnarray} 
+In (\ref{gain work set selection1}), we use 
+\begin{IEEEeqnarray}[\relax]{l}
+(\alpha-\hat{\alpha})^{T}_{S}\mathbf{K}^{r}_{SS}+(\alpha-\hat{\alpha})^{T}_{N}\mathbf{K}^{r}_{NS}=[(\alpha-\hat{\alpha})^{T}_{S}, (\alpha-\hat{\alpha})^{T}_{N}]\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\mathbf{K}^{r}_{SS}\\
+\mathbf{K}^{r}_{NS}
+\end{IEEEeqnarraybox*}\right]=(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}_{S},
+\label{modification of gain work set selection}
+\end{IEEEeqnarray}
+where $\mathbf{K}^{r}_{S}\in \mathbb{R}^{N_{r}\times S}$ denotes the matrix constructed by all the columns  that belong to work set $S$. Then we define intermediate variable vector $\Phi\in \mathbb{C}^{N_{r}}$, $\Phi^{r}=Re(\mathbf{y})-\mathbf{K}^{r}(\alpha-\hat{\alpha})$ and $\Phi^{i}=Im(\mathbf{y})-\mathbf{K}^{r}(\beta-\hat{\beta})$
+Thus (\ref{gain work set selection1}) can be rewritten as 
+\begin{IEEEeqnarray}[\relax]{l}
+\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+(\Phi^{r}_{S})^{T}(\delta-\hat{\delta})_{S}-\epsilon(\delta+\hat{\delta})_{S}
+\label{gain work set selection2}
+\end{IEEEeqnarray} 
+In our regression model, the offset is omitted, therefore different from SMO type algorithms, there is no linear equation constraint as shown in (\ref{dual objective function1}), it is possible to update only one variable pair in each iteration. However, recent work shows more efficient work set selection strategy based on maximum gain selection approaches, that choose two pair of dual variables can reduce computational cost while maintaining the comparable performance with that with offset \cite{Training without offset}. Here we propose sequential 1-D work set selection, which can approximate the effect of optimal 2-D work set selection. There is only $O(n)$ searching times required for the former one while the later one need $O(n^{2})$ searching times.   
 \subsection{Single Direction Solver}
  We will first introduce 1-D work set selection strategy in which the dual variable pair that maximizes the gain of objective function is chosen. Recall the decomposition method in (\ref{maximum gain work set selection}), let $\alpha_{1}$ denotes the dual variable that is chosen to be updated. The sub optimization  problem is formulated as 
  \begin{IEEEeqnarray}[\relax]{l}
  \nonumber
- maximize\quad \Theta_{1}^{r}=-\frac{1}{2}((\alpha_{1}-\hat{\alpha}_{1})^{new})^{2}\mathbf{K}_{11}^{r}-(\alpha_{1}-\hat{\alpha}_{1})^{new}\sum_{j=2}^{N_{r}}\mathbf{K}_{1j}^{r}(\alpha_{j}-\hat{\alpha}_{j})^{new}
+ maximize\quad \Theta_{1}^{r}=-\frac{1}{2}((\alpha_{1}-\hat{\alpha}_{1})^{new})^{2}\mathbf{K}_{11}^{r}-(\alpha_{1}-\hat{\alpha}_{1})^{new}\sum_{j=2}^{N_{r}}\mathbf{K}_{1j}^{r}(\alpha_{j}-\hat{\alpha}_{j})
 +Re(y_{1})(\alpha_{1}-\hat{\alpha}_{1})^{new}\\
 -\epsilon(\alpha_{1}+\hat{\alpha}_{1})^{new},
  \label{optimization function 1-D}
@@ -1005,6 +1026,7 @@ take the partial derivative of $\Theta_{1}^{r}$ respect to $\alpha_{1}$ and $\ha
 \nonumber
 \frac{\partial \Theta_{1}^{r}}{\partial \hat{\alpha}_{1}}=(\alpha_{1}-\hat{\alpha}_{1})^{new}\mathbf{K}_{11}^{r}+\sum_{j=2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})^{new}\mathbf{K}_{1j}^{r}-Re(y_{1})-\epsilon=0\\
 \Rightarrow \hat{\alpha}_{1}^{new}=\hat{\alpha}_{1}-\frac{\Phi_{1}^{r}+\epsilon}{\mathbf{K}_{11}^{r}}\\
+\nonumber
 \label{partial optimization function 1-D alpha hat}
 \end{IEEEeqnarray} 
 where we define $\Phi_{i}^{r}=Re(y_{i})-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}_{ij}^{r}$, similarly, as to dual variable  $\beta$ and $\hat{\beta}$, we define $\Phi_{i}^{i}=Im(y_{i})-\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}_{ij}^{r}$. 
@@ -1022,8 +1044,10 @@ it can be easily observed that $\alpha\hat{\alpha}=0$, because $0\leq \alpha(\ha
 \begin{IEEEeqnarray}[\relax]{l}
 \alpha^{new\quad clipped}=[\alpha^{new}]_{0}^{C\tilde{R}(\xi^{r})}\\
 \hat{\alpha}^{new\quad clipped}=[\hat{\alpha}^{new}]_{0}^{C\tilde{R}(\hat{\xi}^{r})}\\
+\nonumber
 \label{clipped new dual variable}
 \end{IEEEeqnarray}
+
 where $[ ]_{a}^{b}$ denotes to function 
 \begin{IEEEeqnarray}[\relax]{l}
 [x]_{a}^{b}=\left\{\begin{array}{ll}
@@ -1033,14 +1057,14 @@ b \quad if\quad x\geq b\\
 \end{array}\right.
 \label{clipping function}
 \end{IEEEeqnarray}
-Based on (\ref{partial optimization function 1-D alpha}), (\ref{partial optimization function 1-D alpha hat}) and (\ref{clipped new dual variable}), The gain of objective function respect to $i$th dual variable pair is 
+Based on (\ref{gain work set selection2}), The gain of objective function respect to $i$th dual variable pair is 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\bigtriangledown \Theta_{i}^{r}=\Theta^{r}((\alpha+\delta_{i}\mathbf{e}_{i}), (\hat{\alpha}+\hat{\delta}_{i}\mathbf{e}_{i}))-\Theta^{r}(\alpha, \hat{\alpha})\\
+\bigtriangledown \Theta_{i}^{r}=\Theta^{r}((\alpha_{i}+\delta_{i}\mathbf{e}_{i}), (\hat{\alpha}_{i}+\hat{\delta}_{i}\mathbf{e}_{i}))-\Theta^{r}(\alpha, \hat{\alpha})\\
 \nonumber
-=-\frac{1}{2}(\delta_{i}-\hat{\delta}_{i})^{2}\mathbf{K}_{ii}^{r}-(\delta_{i}-\hat{\delta}_{i})\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}_{ij}^{r}+Re(y_{i})(\delta_{i}-\hat{\delta}_{i})-\epsilon(\delta_{i}+\hat{\delta}_{i})\\
+=-\frac{1}{2}(\delta_{i}-\hat{\delta}_{i})^{2}\mathbf{K}_{ii}^{r}+\Phi^{r}_{1}(\delta_{i}-\hat{\delta}_{i})-\epsilon(\delta_{i}+\hat{\delta}_{i})\\
 =(\delta_{i}-\hat{\delta}_{i})[-\frac{1}{2}(\delta_{i}-\hat{\delta}_{i})\mathbf{K}_{ii}^{r}+\Phi_{i}^{r}-\epsilon\frac{\delta_{i}+\hat{\delta}_{i}}{\delta_{i}-\hat{\delta}_{i}}],
-\label{gain of objective function}
+\label{gain of 1-D objective function}
 \end{IEEEeqnarray}
 where $\delta_{1}=\alpha^{new\quad clipped}_{1}-\alpha_{1}$, $\hat{\delta}_{1}=\hat{\alpha}^{new\quad clipped}_{1}-\hat{\alpha}_{1}$, in 1-D searching procedure, the dual variable pair which has the maximum gain of objective function is chosen as $1$ in (\ref{optimization function 1-D}), that is 
 \begin{equation}
@@ -1048,8 +1072,52 @@ where $\delta_{1}=\alpha^{new\quad clipped}_{1}-\alpha_{1}$, $\hat{\delta}_{1}=\
 \label{1-D direction}
 \end{equation}
 \subsection{Double Direction Solver}
+Although omission of offset in the CSVR-MIMO detector makes 1-D solver possible, however recent work in machine learning field shows training SVM without offset by 2-D solver with special work set selection strategies has more rapid training speed while the comparable performance is retained\cite{training SVM without offset}. The 2-D solver uses the same principle as 1-D solver, the work set size is 2, recall (\ref{subset optimization}), let $(\alpha_{1}, \hat{\alpha}_{1})$, $(\alpha_{2}, \hat{\alpha}_{2})$ denote the two dual variable pairs that are chosen for optimization, that is $(\alpha_{s}, \hat{\alpha}_{s})=((\alpha_{1}\mathbf{e}_{1}+\alpha_{2}\mathbf{e}_{2}), (\hat{\alpha}_{1}\mathbf{e}_{1}+\hat{\alpha}_{2}\mathbf{e}_{2}))$. Thus we have, based on (\ref{subset optimization}), the sub objective function can be written as 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+maximize\quad \Theta^{r}_{1,2}=-\frac{1}{2}[(\alpha_{1}-\hat{\alpha}_{1})^{2}\mathbf{K}^{r}_{11}+(\alpha_{2}-\hat{\alpha}_{2})^{2}\mathbf{K}^{r}_{22}+2(\alpha_{1}-\hat{\alpha}_{1})(\alpha_{2}-\hat{\alpha}_{2})\mathbf{K}^{r}_{12}]-\\
+\nonumber
+(\alpha_{1}-\hat{\alpha}_{1})\sum_{j\neq 1, 2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{1j}-(\alpha_{2}-\hat{\alpha}_{2})\sum_{j\neq 1, 2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{2j}+Re(y_{1})(\alpha_{1}-\hat{\alpha}_{1})+Re(y_{2})(\alpha_{2}-\hat{\alpha}_{2})\\
+-\epsilon(\alpha_{1}+\hat{\alpha}_{1}+\alpha_{2}+\hat{\alpha}_{2}), 
+\label{2-D solver}
+\end{IEEEeqnarray}
+Based on (\ref{2-D solver}), the partial derivative of $\Theta^{r}_{1,2}$ with respect to $\alpha_{1}$ is 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\frac{\partial \Theta^{r}_{1,2}}{\partial \alpha_{1}}=-(\alpha_{1}-\hat{\alpha}_{1})\mathbf{K}^{r}_{11}-(\alpha_{2}-\hat{\alpha}_{2})\mathbf{K}^{r}_{12}-\sum_{j\neq 1, 2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{1j}+Re(y_{1})-\epsilon=\\
+\nonumber
+-(\alpha_{1}-\hat{\alpha}_{1})\mathbf{K}^{r}_{11}+Re(y_{1})-\sum_{j\neq 1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{1j}-\epsilon\\
+\Rightarrow \alpha^{new}_{1}=\alpha_{1}+\frac{(\Phi^{r}_{1}-\epsilon)}{\mathbf{K}^{r}_{11}},
+\label{partial derivative sample1}
+\end{IEEEeqnarray}
+Similarly we can derive the update formulas of $\hat{\alpha}_{1}$,$\alpha_{2}$ and $\hat{\alpha}_{2}$
+\begin{equation}
+\hat{\alpha}^{new}_{1}=\hat{\alpha}_{1}-\frac{(\Phi^{r}_{1}+\epsilon)}{\mathbf{K}^{r}_{11}},
+\label{partial derivative sample2}
+\end{equation}
 
+\begin{equation}
+\alpha^{new}_{2}=\alpha_{2}+\frac{(\Phi^{r}_{2}-\epsilon)}{\mathbf{K}^{r}_{22}},
+\label{partial derivative sample3}
+\end{equation}
 
+\begin{equation}
+\hat{\alpha}^{new}_{2}=\hat{\alpha}_{2}-\frac{(\Phi^{r}_{2}+\epsilon)}{\mathbf{K}^{r}_{22}},
+\label{partial derivative sample4}
+\end{equation}
+It is obviously the dual variables in 2-D solver have the same update rule as that of 1-D solver. Based on (\ref{gain work set selection2}), assume the $i$th and $j$th dual variable pair are chosen, the gain of 2-D solver objective function can be written as 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\bigtriangledown \Theta^{r}_{ij}=-\frac{1}{2}[(\delta_{i}-\hat{\delta}_{i})^{2}\mathbf{K}^{r}_{ii}+(\delta_{j}-\hat{\delta}_{j})^{2}\mathbf{K}^{r}_{jj}+2(\delta_{i}-\hat{\delta}_{i})(\delta_{j}-\hat{\delta}_{j})\mathbf{K}^{r}_{ij}]+\Phi^{r}_{i}(\delta_{i}-\hat{\delta}_{i})+\Phi^{r}_{j}(\delta_{j}-\hat{\delta}_{j})\\
+-\epsilon(\delta_{i}+\hat{\delta}_{i}+\delta_{j}+\hat{\delta}_{j}),
+\label{gain of 2-D objective function1}
+\end{IEEEeqnarray}
+recall the gain of objective function of 1-D solver in (\ref{gain of 1-D objective function}), we obtain
+ \begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\bigtriangledown \Theta^{r}_{ij}=\bigtriangledown \Theta^{r}_{i}+\bigtriangledown \Theta^{r}_{j}-(\delta_{i}-\hat{\delta}_{i})(\delta_{j}-\hat{\delta}_{j})\mathbf{K}^{r}_{ij},
+\label{gain of 2-D objective function1}
+\end{IEEEeqnarray}
 \subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}
 Recall (\ref{formula9})
 \begin{equation}
@@ -1110,7 +1178,7 @@ we can find (\ref{formula25}) is consistent with (\ref{formula15}).
 %\end{figure}
 
 Fig.\ref{figure3} demonstrates the relation between the number of users ($N_{t}$) and $E[\ln(\phi_{om})]_{t}$ under cases of different numbers of antennas at base station ($N_{r}$). From Fig.\ref{figure3}, we can see, on the one hand, with $N_{r}$ fixed, $E[\ln(\phi_{om})]$ decreases while $N_{t}$ increases, however the gradient of each curve becomes more and more gentle. On the other hand, when $N_{r}$ becomes larger $E[\ln(\phi_{om})]$ becomes more insensitive to variation of $N_{t}$.
-\section{Stopping Criteria}
+\section{Stopping Criteria}\label{stopping criteria}
 \section{Hyperparameter Setting}
 \section{Computer Simulations}
 

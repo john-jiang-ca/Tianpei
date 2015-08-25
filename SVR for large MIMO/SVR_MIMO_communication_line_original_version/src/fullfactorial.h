@@ -12,14 +12,11 @@
  * 29/08/2014
  * Tianpei Chen
  */
-#include "common.h"
-#include<stdlib.h>
-#include <stdio.h>
-#include<string.h>
-#include<math.h>
+
+#include "public.h"
 void fullfact(
 		int rho,  //the number of elements that use full expansion
-		int M,    //constellation size
+//		int M,    //constellation size
 		int *s_sub_index    //the indexes of the full expansion matrix  (pow(M,rho))
 		)
 {

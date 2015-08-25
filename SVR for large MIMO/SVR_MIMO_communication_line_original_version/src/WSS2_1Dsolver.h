@@ -9,7 +9,7 @@
  *      INPUT: alpha(beta), alpha_hat(beta_hat), label1, label2, phi, R_Kernel
  *      OUTPUT: First, Second
  */
-#include "common.h"
+#include "public.h"
 #ifndef WSS2_1DSOLVER_H_
 #define WSS2_1DSOLVER_H_
 void 	WSS2_1Dsolver(gsl_vector *l_m,  //Lagrange Multiplier vector
@@ -47,7 +47,7 @@ for(count=0;count<2*Nr;count++){
 		sigma=temp_l_m-gsl_vector_get(l_m,count);
 		sigma_hat=0;
 	}else{
-		temp_l_m_hat=gsl_vector_get(l_m, count)-double((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+		temp_l_m_hat=gsl_vector_get(l_m, count)-(double)((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/(double)((gsl_matrix_get(R_Kernel, count,count)));
 		if(temp_l_m_hat<0){
 			temp_l_m_hat=0;
 		}else if (temp_l_m_hat>C){
@@ -57,7 +57,7 @@ for(count=0;count<2*Nr;count++){
 		sigma_hat=temp_l_m_hat-gsl_vector_get(l_m,count);
 	}
 
-	g=abs((sigma-sigma_hat)*(-0.5*(sigma-sigma_hat)*gsl_matrix_get(R_Kernel(count,count))+gsl_vector_complex_get(phi, count).dat[model]-epsilon*(sigma+sigma_hat)/(sigma-sigma_hat)));
+	g=fabs((sigma-sigma_hat)*(-0.5*(sigma-sigma_hat)*gsl_matrix_get(R_Kernel, count,count)+gsl_vector_complex_get(phi, count).dat[model]-epsilon*(sigma+sigma_hat)/(sigma-sigma_hat)));
 	if(g>best_g){
 		best_g=g;
 		S_i=F_i;

@@ -7,7 +7,7 @@
 
 #ifndef TESTDATA_H_
 #define TESTDATA_H_
-#include"common.h"
+#include "public.h"
 int TestData(gsl_complex alpha,
 		int index,
 		gsl_vector_complex *Error,

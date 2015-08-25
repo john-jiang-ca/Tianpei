@@ -1,12 +1,13 @@
+#include"public.h"
 void grayencoder (gsl_vector_ulong *pgraydata, gsl_vector_ulong *pgrayindexes, unsigned long Q)
 {
 	unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
 
-	int M=0;
-	M = (int) ceil(sqrt(Q));
+	int S=0;
+	S = (int) ceil(sqrt(Q));
 
 	gsl_vector_ulong *ppamdata, *pQAMdata, *peqvdata;
-	ppamdata = gsl_vector_ulong_calloc (M);
+	ppamdata = gsl_vector_ulong_calloc (S);
 	pQAMdata = gsl_vector_ulong_calloc (Q);
 	peqvdata = gsl_vector_ulong_calloc (Q);
 if(Q==4)
@@ -31,7 +32,7 @@ if(Q==4)
 }
 else
 {
-	for (count=0; count<M; count++)
+	for (count=0; count<S; count++)
 	  {
 		value=count;
 		count2 = count;
@@ -46,7 +47,7 @@ else
 	
 	for (count=0; count<Q; count++)
 	  {
-		value = M*gsl_vector_ulong_get(ppamdata, count/M) + gsl_vector_ulong_get (ppamdata, count%M);
+		value = S*gsl_vector_ulong_get(ppamdata, count/S) + gsl_vector_ulong_get (ppamdata, count%S);
 		gsl_vector_ulong_set (pQAMdata, count, value);
 		gsl_vector_ulong_set (peqvdata, value, count);   //the pdata is actually the index
 		//according to the gray code we can find its indexs according to the indexes we can find the gray code

@@ -4,7 +4,7 @@
  *  Created on: Sep 10, 2014
  *      Author: tianpei.chen@mail.mcgill.ca
  */
-#include"common.h"
+#include "public.h"
 #ifndef COMB_H_
 #define COMB_H_
 void comb(int m, int k, int row, int * aaa, int *subset, int *count3)

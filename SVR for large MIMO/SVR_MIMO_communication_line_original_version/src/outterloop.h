@@ -7,7 +7,7 @@
 
 #ifndef OUTTERLOOP_H_
 #define OUTTERLOOP_H_
-#include "common.h"
+#include "public.h"
 void outterloop(gsl_vector_complex *alpha,
 		gsl_vector_complex *eta,
 		gsl_vector_complex *Error,

@@ -34,15 +34,15 @@
 #include<assert.h>
 #include<time.h>
 //#define MATRIX_SIZE 16
-#define Nr 8
-#define Nt 8
+#define Nr 4
+#define Nt 4
 #define M  4//constellation size
 #define IDC2D(i,j,row)    (i)*row+j
 #define  C  1e-3     //Penalize weight for noise
 #define epsilon 1e-5 //Training precision
-#define tol 1e-4   //the tolerance for KKT condition
+#define tol 1e-3   //the tolerance for KKT condition
 #define RUNCSVR_MIMO  //run CSVR-MIMO
 #define RUNFCSD      //run FCSD
-#define DEBUG  //debugging mode
+//#define DEBUG  //debugging mode
 
 #endif /* PUBLIC_H_ */

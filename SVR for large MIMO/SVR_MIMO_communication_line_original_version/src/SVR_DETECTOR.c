@@ -48,7 +48,9 @@ void TakeStep(gsl_vector *l_m,
 		double sigma1_gap,// the gap of the first coordinate pair
 		double sigma2_gap,// the gap of the second coordinate pair
 		double sigma_sum, //the sum of sigma
-		int label //0 real part 1 imaginary part
+		int label, //0 real part 1 imaginary part
+		double L, //lower bound of dual variables
+		double H //upper bound of dual variables
 		);
 double Stopping_Criteria(
 		double sigma1_gap_real, //sigma1-simga1_hat
@@ -85,9 +87,22 @@ int count1, count2, count3; //counters
 gsl_vector *alpha=gsl_vector_calloc(2*Nr);
 gsl_vector *beta=gsl_vector_calloc(2*Nr);
 gsl_matrix_complex *K_complex=gsl_matrix_complex_calloc(Nr,Nr);
-gsl_blas_zherk(CblasUpper,CblasNoTrans, 1, pH,0, K_complex);  //calculate complex kernel matrix
+gsl_blas_zherk(CblasLower,CblasNoTrans, 1, pH,0, K_complex);  //calculate complex kernel matrix
+gsl_complex one;
+gsl_complex zero;
+GSL_SET_COMPLEX(&one, 1,0);
+GSL_SET_COMPLEX(&zero, 0, 0);
+//gsl_blas_zgemm(CblasNoTrans, CblasConjTrans, one, pH, pH, zero, K_complex);
 gsl_matrix *K_r=gsl_matrix_calloc(Nr,Nr);   //real kernel matrix
 gsl_matrix *K_i=gsl_matrix_calloc(Nr,Nr); //imaginary kernel matrix
+//for(count1=0;count1<Nr;count1++){
+//	for(count2=0;count2<Nr;count2++){
+//		printf("%f+i%f ", gsl_matrix_complex_get(K_complex,count1,count2).dat[0],
+//				gsl_matrix_complex_get(K_complex,count1, count2).dat[1]);
+//	}
+//	printf("\n");
+//}
+//printf("\n");
 /*
  * extract real and imaginary kernel matrix
  */
@@ -113,8 +128,9 @@ Initialization(alpha, beta,preceived, K_r, K_i, phi, eta, L_pilot, S_pilot, G_pi
 /*
  * iterative update
  */
-double L=0;
-double H=C*(double)(1)/(double)(SNRb*log2(M));
+double L=0; // lower bound of dual variables
+//double H=C*(double)(1)/(double)(SNRb*log2(M)); //upper bound of dual variables
+double H=1e10;
 int i_real, j_real, i_imag, j_imag;
 count2=0; //iteration times of real part
 count3=0;
@@ -128,24 +144,28 @@ double sigma_sum_real;
 double sigma2_gap_real;
 double sigma2_gap_imag;
 double sigma_sum_imag;
-while(G_pilot>tol){
+while(G_pilot>=tol){
 
 	i_real=j_real=0;
 	sigma1_gap_real=0;
-	sigma2_gap_imag=0;
+	sigma2_gap_real=0;
 	sigma_sum_real=0;
 	WSS2_1Dsolver(alpha,phi,K_r,i_real,j_real,model_real);
-	TakeStep(alpha,i_real,j_real, preceived, phi, eta, K_r, K_i, sigma1_gap_real, sigma2_gap_real, sigma_sum_real, label_real);
+	TakeStep(alpha,i_real,j_real, preceived, phi, eta, K_r, K_i, sigma1_gap_real,
+			sigma2_gap_real, sigma_sum_real, label_real, L, H);
 
 
     i_imag=j_imag=0;
 	sigma1_gap_imag=0;
 	sigma2_gap_imag=0;
 	sigma_sum_imag=0;
+
 	WSS2_1Dsolver(beta, phi, K_r , i_imag, j_imag, model_imag);
-	TakeStep(beta,i_imag ,j_imag ,preceived,phi,eta, K_r, K_i ,sigma1_gap_imag, sigma2_gap_imag,sigma_sum_imag,  label_imag);
+	TakeStep(beta,i_imag ,j_imag ,preceived,phi,eta, K_r, K_i ,sigma1_gap_imag,
+			sigma2_gap_imag,sigma_sum_imag,  label_imag, L, H);
     G_pilot=Stopping_Criteria(sigma1_gap_real, sigma1_gap_imag, sigma_sum_real, sigma2_gap_real, sigma2_gap_imag,
     		sigma_sum_imag, i_real, j_real, i_imag, j_imag,phi,eta, preceived, K_r, K_i, L_pilot, S_pilot);
+//    G_pilot=G_pilot/(G_pilot+objective_fucntion);
     count3++; //record the iteration time
 
 }
@@ -159,8 +179,6 @@ gsl_vector_complex *alpha_complex=gsl_vector_complex_calloc(Nr);
 gsl_vector_complex *beta_complex= gsl_vector_complex_calloc(Nr);
 gsl_complex a_tmp;
 gsl_complex b_tmp;
-gsl_complex one;
-gsl_complex zero;
 gsl_complex one_i;
 GSL_SET_COMPLEX(&one, 1, 0);
 GSL_SET_COMPLEX(&zero, 0 ,0);

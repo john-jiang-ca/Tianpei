@@ -26,6 +26,14 @@ void 	WSS2_1Dsolver(gsl_vector *l_m,  //Lagrange Multiplier vector
         int S_i, //index of second maximum Lagrange multiplier
 		int model //determine this routine is for real part (0) or imaginary part (1)
 );
+
+void 	WSS2_1Dsolver_damping(gsl_vector *l_m,  //Lagrange Multiplier vector
+        gsl_vector_complex *phi,  //update parameter
+        gsl_matrix *R_Kernel,    //real kernel matrix
+        int F_i,  //index of first maximum Lagrange multiplier
+        int S_i, //index of second maximum Lagrange multiplier
+		int model //determine this routine is for real part (0) or imaginary part (1)
+);
 void TakeStep(gsl_vector *l_m,
 		int index1, //coordinates that are chosen
 		int index2, //coordinates that are chosen

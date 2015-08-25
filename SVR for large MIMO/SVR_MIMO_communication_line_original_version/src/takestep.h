@@ -21,9 +21,12 @@ void TakeStep(gsl_vector *l_m,
 		double sigma1_gap,// the gap of the first coordinate pair
 		double sigma2_gap,// the gap of the second coordinate pair
 		double sigma_sum, //the sum of sigma
-		int label //0 real part 1 imaginary part
+		int label, //0 real part 1 imaginary part
+		double  L, //lower bound of dual variables
+		double H //upper bound of dual variables
 		){
-	int count1,count2;  //counter
+
+	int count1, count2;  //counter
 	int label_hat; //label determine whether to update alpha or alpha_hat
 	double sigma1, sigma1_hat, sigma2, sigma2_hat;//step of dual variable
 	double Phi_temp=0;

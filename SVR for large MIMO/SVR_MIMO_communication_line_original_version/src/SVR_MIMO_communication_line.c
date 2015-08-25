@@ -67,7 +67,7 @@ int main(void) {
 	int count, count1, count2, count3, count4;   //used for loops
 //	const int Nt = MATRIX_SIZE; // Nt is the number of transmit antennas. Must be a positive integer.
 //	const int Nr = MATRIX_SIZE; // Nr is the number of receive antennas. Must be a positive integer.
-	unsigned long temp, symbolError, BitError;
+	unsigned long temp, symbolError, errors, BitError;
 	gsl_complex one;
 	GSL_SET_COMPLEX(&one, 1.0, 0.0);
 	gsl_complex zero;
@@ -240,18 +240,22 @@ int main(void) {
 			end = clock();
 			Time_CSVR+=(double)(end-start);
 #endif
-
-//			demodulator_CPU(symOut, psymbolconstellation, pgrayindexes, poutput); //poutput is the graycode of the symbols
-			iteration = iteration + 1;
-			//check symbol error CPU version
+			int count2;
+			for(count2=0;count2<Nt;count2++){
+				printf("%f+i%f ", gsl_vector_complex_get(ptransmitted, count2).dat[0], gsl_vector_complex_get(ptransmitted, count2).dat[1]);
+			}
+			printf("\n");
 #ifndef DEBUG
+			demodulator_CPU(symOut, psymbolconstellation, pgrayindexes, poutput); //poutput is the graycode of the symbols
+
+			//check symbol error CPU version
 			for (count3 = 0; count3 < Nt; count3++) {
 				if (fabs(gsl_vector_complex_get(symOut,count3).dat[0]-gsl_vector_complex_get(ptransmitted,count3).dat[0])>epsilon
 						||fabs(gsl_vector_complex_get(symOut,count3).dat[1]-gsl_vector_complex_get(ptransmitted,count3).dat[1])>epsilon){
-					symbolError=symbolError+1;
+					symbolError++;
 				}
 			}
-#endif
+
 			//check symbol error GPU version
 //			for (count3 = 0; count3 < Nt; count3++) {
 //				if (symOut_cu[count3].x!=ptransmitted_cu[count3].x||symOut_cu[count3].y!=ptransmitted_cu[count3].y) {
@@ -259,7 +263,6 @@ int main(void) {
 //				}
 //			}
 			//check bit error
-#ifndef DEBUG
 			for (count4 = 0; count4 < Nt; count4++) {
 				errors = binaryerrors(gsl_vector_ulong_get(pgraydata, count4),
 						gsl_vector_ulong_get(poutput, count4), M);
@@ -284,7 +287,7 @@ int main(void) {
 			pH = NULL;
 			gsl_vector_complex_free(symOut);
 			symOut = NULL;
-
+			iteration ++;
 //		} while ((symbolError < minSymbolError) || (iteration < miniteration));
 		}while(iteration<1e4);
 		time2=clock();
@@ -346,10 +349,10 @@ int main(void) {
    }
    fprintf(cfile4, "\n");
 
-#ifdef DEBUG
+
    fprintf(cfile2, "\n");
    fprintf(cfile2, "The program terminated normally\n");
-#endif
+
 
 	gsl_rng_free(pr);
 	pr = NULL;

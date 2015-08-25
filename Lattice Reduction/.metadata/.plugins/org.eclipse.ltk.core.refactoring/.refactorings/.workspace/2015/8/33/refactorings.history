@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/CC_practice" element2="/communication_line_LR" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1439238674495"/>&#x0A;<refactoring comment="Delete resource &apos;SVR_MIMO_communication_line&apos;" deleteContents="false" description="Delete resource &apos;SVR_MIMO_communication_line&apos;" element1="/SVR_MIMO_communication_line" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1439389370037"/>
+</session>

@@ -1,0 +1,1725 @@
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+Info: Nothing to build for test
+14:09:03 **** Rebuild of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.c" 
+gcc -o test.exe "src\\test.o" 
+Info: Nothing to build for test
+14:10:06 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:12:0:
+..\src\WSS2_1Dsolver.h: In function 'WSS2_1Dsolver':
+..\src\WSS2_1Dsolver.h:50:43: error: expected expression before 'double'
+   temp_l_m_hat=gsl_vector_get(l_m, count)-double((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+                                           ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:12: error: expected expression before 'double'
+ double H=C*double(1)/double(SNRb*log2(M));
+            ^
+..\src\SVR_DETECTOR.c:189:8: error: expected expression before 'double'
+ d=sqrt(double(3)/(2*Nt*(M-1)));
+        ^
+..\src\SVR_DETECTOR.c:191:9: error: expected expression before 'double'
+  d=sqrt(double(1)/double(Nt));
+         ^
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*double(1)/double(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+14:10:17 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:12:0:
+..\src\WSS2_1Dsolver.h: In function 'WSS2_1Dsolver':
+..\src\WSS2_1Dsolver.h:50:43: error: expected expression before 'double'
+   temp_l_m_hat=gsl_vector_get(l_m, count)-double((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+                                           ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:12: error: expected expression before 'double'
+ double H=C*double(1)/double(SNRb*log2(M));
+            ^
+..\src\SVR_DETECTOR.c:189:8: error: expected expression before 'double'
+ d=sqrt(double(3)/(2*Nt*(M-1)));
+        ^
+..\src\SVR_DETECTOR.c:191:9: error: expected expression before 'double'
+  d=sqrt(double(1)/double(Nt));
+         ^
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*double(1)/double(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+14:11:19 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:17: error: 'static_cast' undeclared (first use in this function)
+  S = (int) log2(static_cast<double>(Q));
+                 ^
+..\src\binaryerrors.h:7:17: note: each undeclared identifier is reported only once for each function it appears in
+..\src\binaryerrors.h:7:29: error: expected expression before 'double'
+  S = (int) log2(static_cast<double>(Q));
+                             ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:11:58 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:17: error: 'static_cast' undeclared (first use in this function)
+  S = (int) log2(static_cast<double>(Q));
+                 ^
+..\src\binaryerrors.h:7:17: note: each undeclared identifier is reported only once for each function it appears in
+..\src\binaryerrors.h:7:29: error: expected expression before 'double'
+  S = (int) log2(static_cast<double>(Q));
+                             ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:12:09 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:12:0:
+..\src\WSS2_1Dsolver.h: In function 'WSS2_1Dsolver':
+..\src\WSS2_1Dsolver.h:50:43: error: expected expression before 'double'
+   temp_l_m_hat=gsl_vector_get(l_m, count)-double((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+                                           ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:12: error: expected expression before 'double'
+ double H=C*double(1)/double(SNRb*log2(M));
+            ^
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*double(1)/double(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+14:12:28 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:12:0:
+..\src\WSS2_1Dsolver.h: In function 'WSS2_1Dsolver':
+..\src\WSS2_1Dsolver.h:50:43: error: expected expression before 'double'
+   temp_l_m_hat=gsl_vector_get(l_m, count)-double((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+                                           ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*(double)(1)/(double)(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+14:12:38 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:12:0:
+..\src\WSS2_1Dsolver.h: In function 'WSS2_1Dsolver':
+..\src\WSS2_1Dsolver.h:50:43: error: expected expression before 'double'
+   temp_l_m_hat=gsl_vector_get(l_m, count)-double((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+                                           ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*(double)(1)/(double)(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+14:12:49 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:12:0:
+..\src\WSS2_1Dsolver.h: In function 'WSS2_1Dsolver':
+..\src\WSS2_1Dsolver.h:50:108: error: expected expression before 'double'
+   temp_l_m_hat=gsl_vector_get(l_m, count)-(double)((gsl_vector_complex_get(phi,count).dat[model]+epsilon))/double((gsl_matrix_get(R_Kernel, count,count)));
+                                                                                                            ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*(double)(1)/(double)(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+14:13:05 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:17: error: 'static_cast' undeclared (first use in this function)
+  S = (int) log2(static_cast<double>(Q));
+                 ^
+..\src\binaryerrors.h:7:17: note: each undeclared identifier is reported only once for each function it appears in
+..\src\binaryerrors.h:7:29: error: expected expression before 'double'
+  S = (int) log2(static_cast<double>(Q));
+                             ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:13:16 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:17: error: 'static_cast' undeclared (first use in this function)
+  S = (int) log2(static_cast<(double)>(Q));
+                 ^
+..\src\binaryerrors.h:7:17: note: each undeclared identifier is reported only once for each function it appears in
+..\src\binaryerrors.h:7:37: error: expected expression before '>' token
+  S = (int) log2(static_cast<(double)>(Q));
+                                     ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:13:22 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_DETECTOR.o" "..\\src\\SVR_DETECTOR.c" 
+In file included from ..\src\SVR_DETECTOR.c:11:0:
+..\src\Initialization.h: In function 'Initialization':
+..\src\Initialization.h:26:16: warning: unused variable 'count2' [-Wunused-variable]
+     int count1,count2;
+                ^
+In file included from ..\src\SVR_DETECTOR.c:13:0:
+..\src\TakeStep.h: In function 'TakeStep':
+..\src\TakeStep.h:32:9: warning: unused variable 'S_sub_temp' [-Wunused-variable]
+  double S_sub_temp=0;
+         ^
+..\src\TakeStep.h:26:13: warning: unused variable 'count2' [-Wunused-variable]
+  int count1,count2;  //counter
+             ^
+In file included from ..\src\SVR_DETECTOR.c:14:0:
+..\src\Stopping_Criteria.h: In function 'Stopping_Criteria':
+..\src\Stopping_Criteria.h:31:22: warning: unused variable 'count3' [-Wunused-variable]
+  int count1, count2, count3; //counters
+                      ^
+..\src\Stopping_Criteria.h:31:14: warning: unused variable 'count2' [-Wunused-variable]
+  int count1, count2, count3; //counters
+              ^
+..\src\SVR_DETECTOR.c: In function 'SVR_DETECTOR':
+..\src\SVR_DETECTOR.c:117:8: warning: unused variable 'H' [-Wunused-variable]
+ double H=C*(double)(1)/(double)(SNRb*log2(M));
+        ^
+..\src\SVR_DETECTOR.c:116:8: warning: unused variable 'L' [-Wunused-variable]
+ double L=0;
+        ^
+..\src\SVR_DETECTOR.c:138:10: warning: 'sigma2_gap_real' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  TakeStep(alpha,i_real,j_real, preceived, phi, eta, K_r, K_i, sigma1_gap_real, sigma2_gap_real, sigma_sum_real, label_real);
+          ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:17: error: 'static_cast' undeclared (first use in this function)
+  S = (int) log2(static_cast<(double)>(Q));
+                 ^
+..\src\binaryerrors.h:7:17: note: each undeclared identifier is reported only once for each function it appears in
+..\src\binaryerrors.h:7:37: error: expected expression before '>' token
+  S = (int) log2(static_cast<(double)>(Q));
+                                     ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:13:57 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:24: error: expected ')' before 'Q'
+  S = (int)sqrt((double(Q)));
+                        ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:14:00 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+In file included from ..\src\SVR_MIMO_communication_line.c:18:0:
+..\src\binaryerrors.h: In function 'binaryerrors':
+..\src\binaryerrors.h:7:24: error: expected ')' before 'Q'
+  S = (int)sqrt((double(Q)));
+                        ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:14:20 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:77:25: error: expected expression before 'float'
+   SNR[count1] = pow(10, float(((count1) * 2) / float(10))); //test the SNR from 2 to 20 the step is 2
+                         ^
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:14:33 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:221:18: error: expected expression before 'double'
+    sigman = sqrt(double(1) / (2*SNR[count]*float(log2(M)))); /* corresponding noise standard deviation per dimension */
+                  ^
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:14:48 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:294:25: error: expected expression before 'double'
+   duration_total[count]=double(time2-time1)/(CLOCKS_PER_SEC); //total duration time of communication line
+                         ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:101:17: warning: variable 'time2' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+                 ^
+..\src\SVR_MIMO_communication_line.c:101:10: warning: variable 'time1' set but not used [-Wunused-but-set-variable]
+  clock_t time1, time2;
+          ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:14:57 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:296:53: error: expected expression before 'double'
+   printf("Iteration time at this SNR point is %f\n",double(iteration));
+                                                     ^
+..\src\SVR_MIMO_communication_line.c:297:18: error: expected expression before 'double'
+   BitErrorRate = double(BitError)/double(double(iteration)*Nt*log2(M));
+                  ^
+..\src\SVR_MIMO_communication_line.c:298:19: error: expected expression before 'double'
+   SymbolErrorRate=double(symbolError)/double(double(iteration)*Nt);
+                   ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:70:35: warning: variable 'BitError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                                   ^
+..\src\SVR_MIMO_communication_line.c:70:22: warning: variable 'symbolError' set but not used [-Wunused-but-set-variable]
+  unsigned long temp, symbolError, BitError;
+                      ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:15:36 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:15:40 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:231:21: error: expected expression before 'double'
+          Time_FCSD+=double(end-start);
+                     ^
+..\src\SVR_MIMO_communication_line.c:241:15: error: expected expression before 'double'
+    Time_CSVR+=double(end-start);
+               ^
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:100:17: warning: variable 'end' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+                 ^
+..\src\SVR_MIMO_communication_line.c:100:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+  clock_t start, end;
+          ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:15:58 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:26:12: error: expected expression before 'double'
+   d = sqrt(double(1 / double(Nt_conste)));
+            ^
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+14:16:18 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+gcc -o test.exe "src\\SVR_MIMO_communication_line.o" "src\\SVR_DETECTOR.o" 
+src\SVR_MIMO_communication_line.o: In function `channel_generator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/channel_generator.h:15: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/channel_generator.h:15: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/channel_generator.h:16: undefined reference to `gsl_matrix_complex_set'
+src\SVR_MIMO_communication_line.o: In function `grayencoder':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:10: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:11: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:12: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:19: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:22: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:25: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:28: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:42: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:50: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:50: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:51: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:52: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:60: undefined reference to `gsl_vector_ulong_memcpy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:61: undefined reference to `gsl_vector_ulong_memcpy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:63: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:64: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:65: undefined reference to `gsl_vector_ulong_free'
+src\SVR_MIMO_communication_line.o: In function `symbolconstellation':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:32: undefined reference to `gsl_vector_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:34: undefined reference to `gsl_vector_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:40: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:43: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:43: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:46: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:51: undefined reference to `gsl_vector_free'
+src\SVR_MIMO_communication_line.o: In function `modulator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/modulator.h:9: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/modulator.h:9: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/modulator.h:9: undefined reference to `gsl_vector_complex_set'
+src\SVR_MIMO_communication_line.o: In function `noise_generator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/noise_generator.h:13: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/noise_generator.h:13: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/noise_generator.h:14: undefined reference to `gsl_vector_complex_set'
+src\SVR_MIMO_communication_line.o: In function `data_generator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/data_generator.h:9: undefined reference to `gsl_rng_uniform_int'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/data_generator.h:9: undefined reference to `gsl_vector_ulong_set'
+src\SVR_MIMO_communication_line.o: In function `demodulator_CPU':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:18: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:19: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:20: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:21: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:23: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:23: undefined reference to `gsl_vector_ulong_set'
+src\SVR_MIMO_communication_line.o: In function `main':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:89: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:90: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:91: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:96: undefined reference to `gsl_rng_default'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:97: undefined reference to `gsl_rng_alloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:99: undefined reference to `gsl_rng_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:202: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:203: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:204: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:205: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:206: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:207: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:208: undefined reference to `gsl_matrix_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:209: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:213: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:214: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:214: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:223: undefined reference to `gsl_blas_zcopy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:224: undefined reference to `gsl_blas_zgemv'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:271: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:273: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:275: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:277: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:279: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:281: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:283: undefined reference to `gsl_matrix_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:285: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:354: undefined reference to `gsl_rng_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:356: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:358: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:360: undefined reference to `gsl_vector_complex_free'
+src\SVR_DETECTOR.o: In function `Initialization':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Initialization.h:35: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Initialization.h:36: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Initialization.h:37: undefined reference to `gsl_vector_complex_set'
+src\SVR_DETECTOR.o: In function `WSS2_1Dsolver':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:40: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:40: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:40: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:47: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:50: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:50: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:50: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:57: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:60: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:60: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o: In function `TakeStep':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:44: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:44: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:45: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:53: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:57: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:60: undefined reference to `gsl_vector_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:74: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:74: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:75: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:83: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:87: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:89: undefined reference to `gsl_vector_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:98: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:99: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:100: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:101: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:102: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:103: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o: In function `Stopping_Criteria':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:36: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:36: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:37: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:39: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:39: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:40: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:40: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:42: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:42: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:43: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:45: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:45: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:46: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:46: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:54: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:54: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:55: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:55: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:58: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o:C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:58: more undefined references to `gsl_vector_complex_get' follow
+src\SVR_DETECTOR.o: In function `Stopping_Criteria':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:70: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:71: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:71: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:72: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:72: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:73: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:73: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:74: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o: In function `SVR_DETECTOR':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:85: undefined reference to `gsl_vector_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:86: undefined reference to `gsl_vector_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:87: undefined reference to `gsl_matrix_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:88: undefined reference to `gsl_blas_zherk'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:89: undefined reference to `gsl_matrix_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:90: undefined reference to `gsl_matrix_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:96: undefined reference to `gsl_matrix_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:96: undefined reference to `gsl_matrix_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:97: undefined reference to `gsl_matrix_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:97: undefined reference to `gsl_matrix_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:101: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:102: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:156: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:157: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:158: undefined reference to `gsl_vector_complex_calloc'
+src\SVR_DETECTOR.o:C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:159: more undefined references to `gsl_vector_complex_calloc' follow
+src\SVR_DETECTOR.o: In function `SVR_DETECTOR':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:169: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:169: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:170: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:171: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:171: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:172: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:174: undefined reference to `gsl_blas_zgemv'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:175: undefined reference to `gsl_blas_zgemv'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:177: undefined reference to `gsl_blas_zaxpy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:187: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:188: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:276: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:286: undefined reference to `gsl_vector_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:287: undefined reference to `gsl_vector_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:288: undefined reference to `gsl_matrix_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:289: undefined reference to `gsl_matrix_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:290: undefined reference to `gsl_matrix_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:291: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:292: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:293: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:294: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:295: undefined reference to `gsl_vector_complex_free'
+src\SVR_DETECTOR.o:C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:296: more undefined references to `gsl_vector_complex_free' follow
+collect2.exe: error: ld returned 1 exit status
+14:16:28 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\SVR_MIMO_communication_line.o" "..\\src\\SVR_MIMO_communication_line.c" 
+In file included from ..\src\SVR_MIMO_communication_line.c:12:0:
+..\src\grayencoder.h: In function 'grayencoder':
+..\src\grayencoder.h:4:50: warning: unused variable 'temp' [-Wunused-variable]
+  unsigned long count=0UL, value=0UL, count2=0UL, temp=0UL;
+                                                  ^
+In file included from ..\src\SVR_MIMO_communication_line.c:13:0:
+..\src\symbolconstellation.h: In function 'symbolconstellation':
+..\src\symbolconstellation.h:15:14: warning: unused variable 'z' [-Wunused-variable]
+  gsl_complex z;
+              ^
+..\src\symbolconstellation.h:12:6: warning: unused variable 'count1' [-Wunused-variable]
+  int count1=0;
+      ^
+..\src\SVR_MIMO_communication_line.c: In function 'main':
+..\src\SVR_MIMO_communication_line.c:237:8: warning: unused variable 'selection_M' [-Wunused-variable]
+    int selection_M=0; //selection method WSS1D
+        ^
+..\src\SVR_MIMO_communication_line.c:236:8: warning: unused variable 'start_M' [-Wunused-variable]
+    int start_M=0; //cold start
+        ^
+..\src\SVR_MIMO_communication_line.c:67:37: warning: unused variable 'count4' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                                     ^
+..\src\SVR_MIMO_communication_line.c:67:29: warning: unused variable 'count3' [-Wunused-variable]
+  int count, count1, count2, count3, count4;   //used for loops
+                             ^
+gcc -o test.exe "src\\SVR_MIMO_communication_line.o" "src\\SVR_DETECTOR.o" 
+src\SVR_MIMO_communication_line.o: In function `channel_generator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/channel_generator.h:15: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/channel_generator.h:15: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/channel_generator.h:16: undefined reference to `gsl_matrix_complex_set'
+src\SVR_MIMO_communication_line.o: In function `grayencoder':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:10: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:11: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:12: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:19: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:22: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:25: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:28: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:42: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:50: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:50: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:51: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:52: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:60: undefined reference to `gsl_vector_ulong_memcpy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:61: undefined reference to `gsl_vector_ulong_memcpy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:63: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:64: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/grayencoder.h:65: undefined reference to `gsl_vector_ulong_free'
+src\SVR_MIMO_communication_line.o: In function `symbolconstellation':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:32: undefined reference to `gsl_vector_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:34: undefined reference to `gsl_vector_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:40: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:43: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:43: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:46: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/symbolconstellation.h:51: undefined reference to `gsl_vector_free'
+src\SVR_MIMO_communication_line.o: In function `modulator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/modulator.h:9: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/modulator.h:9: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/modulator.h:9: undefined reference to `gsl_vector_complex_set'
+src\SVR_MIMO_communication_line.o: In function `noise_generator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/noise_generator.h:13: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/noise_generator.h:13: undefined reference to `gsl_ran_gaussian'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/noise_generator.h:14: undefined reference to `gsl_vector_complex_set'
+src\SVR_MIMO_communication_line.o: In function `data_generator':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/data_generator.h:9: undefined reference to `gsl_rng_uniform_int'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/data_generator.h:9: undefined reference to `gsl_vector_ulong_set'
+src\SVR_MIMO_communication_line.o: In function `demodulator_CPU':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:18: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:19: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:20: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:21: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:23: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/demodulator.h:23: undefined reference to `gsl_vector_ulong_set'
+src\SVR_MIMO_communication_line.o: In function `main':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:89: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:90: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:91: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:96: undefined reference to `gsl_rng_default'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:97: undefined reference to `gsl_rng_alloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:99: undefined reference to `gsl_rng_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:202: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:203: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:204: undefined reference to `gsl_vector_ulong_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:205: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:206: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:207: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:208: undefined reference to `gsl_matrix_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:209: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:213: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:214: undefined reference to `gsl_vector_ulong_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:214: undefined reference to `gsl_vector_ulong_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:223: undefined reference to `gsl_blas_zcopy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:224: undefined reference to `gsl_blas_zgemv'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:271: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:273: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:275: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:277: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:279: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:281: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:283: undefined reference to `gsl_matrix_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:285: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:354: undefined reference to `gsl_rng_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:356: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:358: undefined reference to `gsl_vector_ulong_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_MIMO_communication_line.c:360: undefined reference to `gsl_vector_complex_free'
+src\SVR_DETECTOR.o: In function `Initialization':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Initialization.h:35: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Initialization.h:36: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Initialization.h:37: undefined reference to `gsl_vector_complex_set'
+src\SVR_DETECTOR.o: In function `WSS2_1Dsolver':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:40: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:40: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:40: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:47: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:50: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:50: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:50: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:57: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:60: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/WSS2_1Dsolver.h:60: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o: In function `TakeStep':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:44: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:44: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:45: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:53: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:57: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:60: undefined reference to `gsl_vector_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:74: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:74: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:75: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:83: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:87: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:89: undefined reference to `gsl_vector_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:98: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:99: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:100: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:101: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:102: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/TakeStep.h:103: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o: In function `Stopping_Criteria':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:36: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:36: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:37: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:39: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:39: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:40: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:40: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:42: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:42: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:43: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:45: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:45: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:46: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:46: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:54: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:54: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:55: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:55: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:58: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o:C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:58: more undefined references to `gsl_vector_complex_get' follow
+src\SVR_DETECTOR.o: In function `Stopping_Criteria':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:70: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:71: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:71: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:72: undefined reference to `gsl_matrix_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:72: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:73: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:73: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/Stopping_Criteria.h:74: undefined reference to `gsl_vector_complex_get'
+src\SVR_DETECTOR.o: In function `SVR_DETECTOR':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:85: undefined reference to `gsl_vector_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:86: undefined reference to `gsl_vector_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:87: undefined reference to `gsl_matrix_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:88: undefined reference to `gsl_blas_zherk'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:89: undefined reference to `gsl_matrix_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:90: undefined reference to `gsl_matrix_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:96: undefined reference to `gsl_matrix_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:96: undefined reference to `gsl_matrix_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:97: undefined reference to `gsl_matrix_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:97: undefined reference to `gsl_matrix_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:101: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:102: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:156: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:157: undefined reference to `gsl_vector_complex_calloc'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:158: undefined reference to `gsl_vector_complex_calloc'
+src\SVR_DETECTOR.o:C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:159: more undefined references to `gsl_vector_complex_calloc' follow
+src\SVR_DETECTOR.o: In function `SVR_DETECTOR':
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:169: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:169: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:170: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:171: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:171: undefined reference to `gsl_vector_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:172: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:174: undefined reference to `gsl_blas_zgemv'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:175: undefined reference to `gsl_blas_zgemv'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:177: undefined reference to `gsl_blas_zaxpy'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:187: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:188: undefined reference to `gsl_vector_complex_get'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:276: undefined reference to `gsl_vector_complex_set'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:286: undefined reference to `gsl_vector_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:287: undefined reference to `gsl_vector_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:288: undefined reference to `gsl_matrix_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:289: undefined reference to `gsl_matrix_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:290: undefined reference to `gsl_matrix_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:291: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:292: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:293: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:294: undefined reference to `gsl_vector_complex_free'
+C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:295: undefined reference to `gsl_vector_complex_free'
+src\SVR_DETECTOR.o:C:\Users\Preston Chen\Documents\GitHub\Tianpei\test\Debug/../src/SVR_DETECTOR.c:296: more undefined references to `gsl_vector_complex_free' follow
+collect2.exe: error: ld returned 1 exit status
+14:16:46 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -o test.exe "src\\SVR_MIMO_communication_line.o" "src\\SVR_DETECTOR.o" -lgsl 
+Info: Nothing to build for test
+Info: Nothing to build for test
+14:40:10 **** Rebuild of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.c" 
+..\src\test.c:13:25: fatal error: gsl/gsl_vector: No such file or directory
+ #include<gsl/gsl_vector>
+                         ^
+compilation terminated.
+14:40:17 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.c" 
+gcc -o test.exe "src\\test.o" -lgsl 
+14:41:18 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.c" 
+gcc -o test.exe "src\\test.o" -lgsl 
+Info: Nothing to build for test
+14:41:38 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.c" 
+..\src\test.c: In function 'main':
+..\src\test.c:16:6: warning: unused variable 'count' [-Wunused-variable]
+  int count;
+      ^
+gcc -o test.exe "src\\test.o" -lgsl 
+Info: Nothing to build for test
+14:41:58 **** Incremental Build of configuration Debug for project test ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\test.o" "..\\src\\test.c" 
+gcc -o test.exe "src\\test.o" -lgsl 
+Info: Nothing to build for test

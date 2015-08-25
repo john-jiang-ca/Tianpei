@@ -1,0 +1,24 @@
+/*
+ * takestep.h
+ *
+ *  Created on: Jul 16, 2015
+ *      Author: tianpei.chen@mail.mcgill.ca
+ */
+
+#ifndef TAKESTEP_H_
+#define TAKESTEP_H_
+#include"common.h"
+int TakeStep(gsl_complex alpha,
+		int index,
+		gsl_vector_complex *Error,
+		gsl_vector_complex *eta){
+	//update alpha and beta vector
+	//update phi real or imaginary vector
+	//update stopping criteria L_real and S_real or L_imag and S_imag
+	for(count)
+
+	return 0;
+}
+
+
+#endif /* TAKESTEP_H_ */

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;communication_line_CSVR_MIMO/src/SVR_DETECTOR.h&apos; to &apos;SVR_DETECTOR.cpp&apos;" description="Rename resource &apos;SVR_DETECTOR.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/SVR_DETECTOR.h" name="SVR_DETECTOR.cpp" stamp="1440186528325" updateReferences="true"/>
+</session>

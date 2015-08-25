@@ -1,0 +1,10 @@
+15:24:07 **** Incremental Build of configuration Debug for project SVR_MIMO_communication_line ****
+make all 
+'Building target: SVR_MIMO_communication_line'
+'Invoking: GCC C++ Linker'
+g++ -L"C:\MinGW\lib" -o "SVR_MIMO_communication_line"  ./src/SVR_MIMO_communication_line.o   -lgsl
+'Finished building target: SVR_MIMO_communication_line'
+' '
+
+15:24:08 Build Finished (took 429ms)
+

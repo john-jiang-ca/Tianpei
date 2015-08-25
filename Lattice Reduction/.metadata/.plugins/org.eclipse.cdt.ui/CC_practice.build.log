@@ -1,0 +1,15 @@
+15:56:13 **** Incremental Build of configuration Debug for project CC_practice ****
+make all 
+'Building file: ../src/CC_practice.c'
+'Invoking: Cross GCC Compiler'
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CC_practice.d" -MT"src/CC_practice.d" -o "src/CC_practice.o" "../src/CC_practice.c"
+'Finished building: ../src/CC_practice.c'
+' '
+'Building target: CC_practice'
+'Invoking: Cross GCC Linker'
+gcc  -o "CC_practice"  ./src/CC_practice.o   
+'Finished building target: CC_practice'
+' '
+
+15:56:15 Build Finished (took 1s.864ms)
+

@@ -1,0 +1,25 @@
+IEEE PDF eXpress Plus: File has passed PDF Check (Paper ID 3572373)
+IEEE PDF eXpress Plus Author Services [support@incontrolproductions.net]
+Sent:	February 17, 2015 13:46
+To:	
+Tianpei Chen
+ 	 
+Dear Tianpei Chen,
+
+Congratulations! The following PDF has passed the PDF Check:
+
+Filename: O Uplink Systems.pdf
+Title: GPU Acceleration for Fixed Complexity Sphere Decoder in 
+Large MIMO Uplink Systems
+Paper ID: 3572373
+Creation Date: 17 February 2015 10:44 -0800 GMT
+
+The approved file is labeled within its document properties as being "Certified by IEEE PDF eXpress", with an exact date and time stamp.
+
+ANY changes made to your PDF at this point will impact Xplore compatibility.
+
+To submit your final paper to the conference, log into your PDF eXpress Plus account. If you are satisfied with the file, click on the "Approve for Collection" link. Follow the instructions on screen to complete submission. The deadline is 28 February 2015. 
+
+Thank you for using PDF eXpress Plus!
+
+For guidance in creating Xplore-compliant PDFs, visit our online FAQ

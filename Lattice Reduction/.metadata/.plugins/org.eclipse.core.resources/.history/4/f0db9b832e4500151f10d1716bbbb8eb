@@ -1,0 +1,50 @@
+/*
+ * takestep.h
+ *
+ *  Created on: Jul 16, 2015
+ *      Author: tianpei.chen@mail.mcgill.ca
+ *      this subroutine update 2 Lagrange variable pair sequentially
+ */
+
+#ifndef TAKESTEP_H_
+#define TAKESTEP_H_
+#include"common.h"
+int TakeStep(gsl_vector *l_m,
+		int index1,
+		int index2, //coordinates that are chosen
+		gsl_vector_complex *preceive, //receive symbol vector
+		gsl_vector_complex *Phi, // phi complex vector
+		gsl_matrix *K_r,// real kernel matrix
+		gsl_matrix *K_i, //imaginary kernel matrix
+		double eta_sub, //mutual part
+		double L_sub,  //update L function
+		double S_sub,  //update S function
+		int label //0 real part 1 imaginary part
+		){
+	int count1,count2;  //counter
+	double sigma1, sigma1_hat, sigma2, sigma2_hat;//step of dual variable
+	double Phi_temp=0;
+	double eta_temp=0;
+	//update alpha and beta vector
+	//update phi real or imaginary vector
+	//update stopping criteria L_real and S_real or L_imag and S_imag
+
+	for(count1=0;count1<Nr;count1++){
+	Phi_temp-=(sigma1-sigma1_hat)*gsl_matrix_get(K_r, count1, index1);
+	Phi_temp-=(sigma2-sigma2_hat)*gsl_matrix_get(K_r, count1, index2);
+	gsl_vector_complex_get(Phi, count1).dat[label]=Phi_temp;
+
+	}
+	L_sub=(sigma1-sigma1_hat)*((sigma1-sigma1_hat)*gsl_matrix_get(K_r, index1, index1)
+			-2*gsl_vector_complex_get(Phi,index1).dat[label]+gsl_vector_complex_get(preceive,index1).dat[label]
+		)+epsilon*(sigma1+sigma1_hat)
+		+(sigma2-sigma2_hat)*((sigma2-sigma2_hat)*gsl_matrix_get(K_r, index2, index2)
+				-2*gsl_vector_complex_get(Phi,index2).dat[label]+gsl_vector_complex_get(preceive,index2).dat[label]
+			)+epsilon*(sigma2+sigma2_hat)
+			+2*(sigma1-sigma1_hat)*(sigma2-sigma2_hat)*gsl_matrix_get(K_r, index1, index2);
+
+	return 0;
+}
+
+
+#endif /* TAKESTEP_H_ */

@@ -10,14 +10,14 @@
 #include "public.h"
 #include"Initialization.h"
 #include"WSS2_1Dsolver.h"
-#include"TakeStep.h"
+#include"WSS2_1Dsolver_damping.h"
 #include"Stopping_Criteria.h"
 typedef struct{
 	gsl_complex data;
 	int index;
 
 }Nalpha_Node;
-
+#define damping
 void  Initialization(gsl_vector *alpha,//Lagrange multiplier
 		gsl_vector *beta,//Lagrange multiplier
 		const gsl_vector_complex *preceived,//received symbol vector(output of trainning data set)
@@ -30,28 +30,8 @@ void  Initialization(gsl_vector *alpha,//Lagrange multiplier
 		double G_pilot, //global stopping parameter
 		int method //label which start strategy is used
 		);
-void 	WSS2_1Dsolver(gsl_vector *l_m,  //Lagrange Multiplier vector
-        gsl_vector_complex *phi,  //update parameter
-        gsl_matrix *R_Kernel,    //real kernel matrix
-        int F_i,  //index of first maximum Lagrange multiplier
-        int S_i, //index of second maximum Lagrange multiplier
-		int model //determine this routine is for real part (0) or imaginary part (1)
-);
-void TakeStep(gsl_vector *l_m,
-		int index1, //coordinates that are chosen
-		int index2, //coordinates that are chosen
-		gsl_vector_complex *preceive, //receive symbol vector
-		gsl_vector_complex *Phi, // phi complex vector
-		gsl_vector_complex *eta, //eta complex vector
-		gsl_matrix *K_r,// real kernel matrix
-		gsl_matrix *K_i, //imaginary kernel matrix
-		double sigma1_gap,// the gap of the first coordinate pair
-		double sigma2_gap,// the gap of the second coordinate pair
-		double sigma_sum, //the sum of sigma
-		int label, //0 real part 1 imaginary part
-		double L, //lower bound of dual variables
-		double H //upper bound of dual variables
-		);
+
+
 double Stopping_Criteria(
 		double sigma1_gap_real, //sigma1-simga1_hat
 		double sigma1_gap_imag, //tao1-tao1_hat
@@ -114,6 +94,7 @@ for(count1=0;count1<Nr;count1++){
 }
 
 gsl_vector_complex *phi=gsl_vector_complex_calloc(Nr); //phi vector (intermediate parameter)
+gsl_vector_complex *phi_new=gsl_vector_complex_calloc(Nr); //the new phi vector
 gsl_vector_complex *eta=gsl_vector_complex_calloc(Nr); //eta vector (intermediate parameter)
 double L_pilot=0; //stopping criteria(L sub function)
 double S_pilot=0; // stopping criteria(S sub function)
@@ -138,33 +119,51 @@ int model_real=0;
 int model_imag=1;
 int label_real=0;
 int label_imag=1;
-double sigma1_gap_real;
-double sigma1_gap_imag;
-double sigma_sum_real;
-double sigma2_gap_real;
-double sigma2_gap_imag;
-double sigma_sum_imag;
+double sigma1_real;
+double sigma1_hat_real;
+double sigma1_imag;
+double sigma1_hat_imag;
+double sigma2_real;
+double sigma2_hat_real;
+double sigma2_imag;
+double sigma2_hat_imag;
 while(G_pilot>=tol){
 
 	i_real=j_real=0;
-	sigma1_gap_real=0;
-	sigma2_gap_real=0;
-	sigma_sum_real=0;
-	WSS2_1Dsolver(alpha,phi,K_r,i_real,j_real,model_real);
-	TakeStep(alpha,i_real,j_real, preceived, phi, eta, K_r, K_i, sigma1_gap_real,
-			sigma2_gap_real, sigma_sum_real, label_real, L, H);
+	sigma1_real=0;
+	sigma1_hat_real=0;
+	sigma2_real=0;
+	sigma2_hat_real=0;
+#ifndef damping
+	WSS2_1Dsolver(alpha,phi,eta, K_r, K_i, i_real,j_real,model_real, phi_new, sigma1_real,
+			sigma1_hat_real, sigma2_real, sigma2_hat_real);
+#endif
+
+#ifdef damping
+	WSS2_1Dsolver_damping(beta, phi, eta, K_r ,K_i, i_imag, j_imag, model_imag, phi_new, sigma1_real,
+			sigma1_hat_real, sigma2_real, sigma2_hat_real);
+#endif
+
 
 
     i_imag=j_imag=0;
-	sigma1_gap_imag=0;
-	sigma2_gap_imag=0;
-	sigma_sum_imag=0;
+	sigma1_imag=0;
+	sigma1_hat_imag=0;
+	sigma2_imag=0;
+	sigma2_hat_imag=0;
+#ifndef damping
+	WSS2_1Dsolver(beta, phi, eta, K_r ,K_i, i_imag, j_imag, model_imag, phi_new,sigma1_imag,
+			sigma1_hat_imag, sigma2_imag, sigma2_hat_imag);
+#endif
 
-	WSS2_1Dsolver(beta, phi, K_r , i_imag, j_imag, model_imag);
-	TakeStep(beta,i_imag ,j_imag ,preceived,phi,eta, K_r, K_i ,sigma1_gap_imag,
-			sigma2_gap_imag,sigma_sum_imag,  label_imag, L, H);
-    G_pilot=Stopping_Criteria(sigma1_gap_real, sigma1_gap_imag, sigma_sum_real, sigma2_gap_real, sigma2_gap_imag,
-    		sigma_sum_imag, i_real, j_real, i_imag, j_imag,phi,eta, preceived, K_r, K_i, L_pilot, S_pilot);
+#ifdef damping
+	WSS2_1Dsolver_damping(beta, phi,eta, K_r ,K_i, i_imag, j_imag, model_imag, phi_new,sigma1_imag,
+			sigma1_hat_imag, sigma2_imag, sigma2_hat_imag);
+#endif
+
+//    G_pilot=Stopping_Criteria(sigma1_gap_real, sigma1_gap_imag, sigma_sum_real, sigma2_gap_real, sigma2_gap_imag,
+//    		sigma_sum_imag, i_real, j_real, i_imag, j_imag,phi,eta, preceived, K_r, K_i, L_pilot, S_pilot);
+    gsl_blas_zcopy(phi_new , phi);
 //    G_pilot=G_pilot/(G_pilot+objective_fucntion);
     count3++; //record the iteration time
 

@@ -236,13 +236,13 @@ int main(void) {
 			int start_M=0; //cold start
 			int selection_M=0; //selection method WSS1D
 			start = clock();
-//			SVR_DETECTOR(preceived, pH, SNR[count], symOut, start_M,  selection_M);
+			SVR_DETECTOR(preceived, pH, SNR[count], symOut, start_M,  selection_M);
 			end = clock();
 			Time_CSVR+=(double)(end-start);
 #endif
 			int count2;
 			for(count2=0;count2<Nt;count2++){
-				printf("%f+i%f ", gsl_vector_complex_get(ptransmitted, count2).dat[0], gsl_vector_complex_get(ptransmitted, count2).dat[1]);
+				printf("%f+i%f ", gsl_vector_complex_get(symOut, count2).dat[0], gsl_vector_complex_get(symOut, count2).dat[1]);
 			}
 			printf("\n");
 #ifndef DEBUG

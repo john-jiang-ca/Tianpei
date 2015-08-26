@@ -638,19 +638,20 @@ minimize \quad \frac{1}{2}||w||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f_{estimat
 where $C_{i}=\frac{m_{i}}{2\lambda l}$, based on (\ref{final cost function}), by introducing slack variables, we can easily derive the equivalent optimization problem as same as (\ref{primal optimization problem}):
 \begin{eqnarray}
 \nonumber
-\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+minimize \quad f(\mathbf{w})=\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
 s.t. \left\{\begin{array}{ll}
 y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
 \epsilon, \xi,\hat{\xi} &\geq 0\\
 \end{array}\right.
+\label{primal objective function}
 \end{eqnarray}
 where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered, we arrive to at a convex minimization problem \cite{smola and skpkof 1998a tutorial of SVR}. 
 
-we construct dual form of (\ref{primal optimization problem}) by introducing Lagrange multiplier, we have dual optimization problem
+construct Lagrangian dual form of (\ref{primal optimization problem}) by introducing Lagrange multiplier,  dual optimization problem
 \begin{eqnarray}
 \nonumber
-\min_{\mathbf{w}, \xi, \hat{\xi}} \max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\theta=
+\min_{\alpha, \hat{\alpha}, \eta, \hat{\eta}, \mathbf{w}, \xi, \hat{\xi}}\Theta=
 \frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
 \nonumber
 -\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
@@ -660,30 +661,9 @@ s.t. \left\{\begin{array}{cc}
 \end{array}\right. 
 \label{lagrange duality1}
 \end{eqnarray}
-where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers, the solution of dual optimization problem is saddle point, from \cite{saddle point}, the dual problem of (\ref{lagrange duality1}) can be formulated as
-\begin{eqnarray}
-\nonumber
-\max_{\alpha, \hat{\alpha}, \eta, \hat{\eta}}\min_{\mathbf{w}, \xi, \hat{\xi}} \Theta=
-\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
-\nonumber
--\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\ 
-s.t. \left\{\begin{array}{cc}
-\eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
-\xi, \hat{\xi}\geq  0\\
-\end{array}\right.\label{lagrange duality2}
-\end{eqnarray}
-Karush–Kuhn–Tucker (KKT) condition is satisfied or not \cite{} determines whether a non linear optimization problem find its optimal solution, the complementary KKT solution of (\ref{lagrange duality2}) is 
-\begin{IEEEeqnarray}[\relax]{l}
-\left\{\begin{array}{ll}
-\eta_{i}\xi_{i}=0\\
-\hat{\eta}_{i}\hat{\xi}_{i}=0\\
-\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))=0\\
-\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))=0\\
-\end{array}\right.
-\label{complementary KKT condition}
-\end{IEEEeqnarray}
- 
-Take the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\hat{\xi}$ and $b$, and find the minimum.
+where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers.
+
+According to Lagrangian Theorem \cite{Introduction to SVM}, the necessary condition to find the minimum of (\ref{primal objective function}) is the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\hat{\xi}$ and $b$ equal to $0$, 
 
 \begin{equation}
 \frac{\partial \theta}{\partial \mathbf{w}}=w-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})
@@ -691,23 +671,23 @@ Take the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\h
 \end{equation}
 
 \begin{equation}
-\frac{\partial \theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0
+\frac{\partial \Theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0
 \label{partial2}
 \end{equation}
 
 \begin{equation}
-\frac{\partial \theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0
+\frac{\partial \Theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0
 \label{partial3}
 \end{equation}
 
 \begin{equation}
-\frac{\partial \theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0
+\frac{\partial \Theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0
 \label{partial4}
 \end{equation} 
-Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}), yields the final dual optimization objective function, for sake of brevity, we make $C_{i}$ uniform to all data samples ：
+Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}) and for sake of brevity, we make $C_{i}$ uniform to all data samples, we have the dual form ：
 \begin{eqnarray}
 \nonumber
-maximize\quad\Theta &=&\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
+\theta &=&\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
 \nonumber
 &+&(R(\hat{\xi}_{i})-\hat{\xi}_{i}R^{'}(\hat{\xi}_{i}))]
 +\sum_{i=1}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
@@ -720,7 +700,8 @@ maximize\quad\Theta &=&\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\
 \end{array}\right.
 \label{dual objective function1}
 \end{eqnarray}
-(\ref{dual objective function1}) can be simplified to 
+Thus $\theta(\alpha,\hat{\alpha})\leq \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})$, according to general Lagrange function\cite{introduction to SVM}, Lagrange duality with feasible solution always less or equal to original objective function, because inequality constraints is introduced. Therefore we have $\theta\leq \Theta \leq f(\mathbf{w})$, based on the lemma 5.16 of Lagrange theorem\cite{introduction of SVM}, the upper bound of $\theta$ is given by the minimal of $f(\mathbf{w})$, equality holds only when the optimal of $f(\mathbf{w})$ is obtained (property 5.19).
+Therefore the Lagrangian duality form can be written as 
 \begin{eqnarray}
 \nonumber
 maximize\quad \Theta &=&-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
@@ -986,7 +967,7 @@ where $\delta_{S}=\alpha_{S}^{new}-\alpha_{S}$, the gain in (\ref{maximum gain w
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
 \bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}[(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+2(\alpha-\hat{\alpha})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}]+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}_{N}\mathbf{K}^{r}_{NS}](\delta-\hat{\delta})_{S}\\
--\epsilon(\delta+\hat{\delta})_{S}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}_{S}](\delta-\hat{\delta})_{S}-\epsilon(\delta+\hat{\delta})_{S}
+-\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}_{S}](\delta-\hat{\delta})_{S}-\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}
 \label{gain work set selection1}
 \end{IEEEeqnarray} 
 In (\ref{gain work set selection1}), we use 
@@ -1000,7 +981,7 @@ In (\ref{gain work set selection1}), we use
 where $\mathbf{K}^{r}_{S}\in \mathbb{R}^{N_{r}\times S}$ denotes the matrix constructed by all the columns  that belong to work set $S$. Then we define intermediate variable vector $\Phi\in \mathbb{C}^{N_{r}}$, $\Phi^{r}=Re(\mathbf{y})-\mathbf{K}^{r}(\alpha-\hat{\alpha})$ and $\Phi^{i}=Im(\mathbf{y})-\mathbf{K}^{r}(\beta-\hat{\beta})$
 Thus (\ref{gain work set selection1}) can be rewritten as 
 \begin{IEEEeqnarray}[\relax]{l}
-\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+(\Phi^{r}_{S})^{T}(\delta-\hat{\delta})_{S}-\epsilon(\delta+\hat{\delta})_{S}
+\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+(\Phi^{r}_{S})^{T}(\delta-\hat{\delta})_{S}-\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}
 \label{gain work set selection2}
 \end{IEEEeqnarray} 
 In our regression model, the offset is omitted, therefore different from SMO type algorithms, there is no linear equation constraint as shown in (\ref{dual objective function1}), it is possible to update only one variable pair in each iteration. However, recent work shows more efficient work set selection strategy based on maximum gain selection approaches, that choose two pair of dual variables can reduce computational cost while maintaining the comparable performance with that with offset \cite{Training without offset}. Here we propose sequential 1-D work set selection, which can approximate the effect of optimal 2-D work set selection. There is only $O(n)$ searching times required for the former one while the later one need $O(n^{2})$ searching times.   
@@ -1114,11 +1095,22 @@ It is obviously the dual variables in 2-D solver have the same update rule as th
 \end{IEEEeqnarray}
 recall the gain of objective function of 1-D solver in (\ref{gain of 1-D objective function}), we obtain
  \begin{IEEEeqnarray}[\relax]{l}
-\nonumber
 \bigtriangledown \Theta^{r}_{ij}=\bigtriangledown \Theta^{r}_{i}+\bigtriangledown \Theta^{r}_{j}-(\delta_{i}-\hat{\delta}_{i})(\delta_{j}-\hat{\delta}_{j})\mathbf{K}^{r}_{ij},
 \label{gain of 2-D objective function1}
 \end{IEEEeqnarray}
+where $\bigtriangledown \Theta^{r}_{i}$, $\bigtriangledown \Theta^{r}_{j}$ denote gains of 1-D solver with $i$th and $j$th dual variable pairs are chosen. 
 \subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}
+From (\ref{gain of 2-D objective function1}), it is obviously that the gain of 2-D solver is a summation of the gain of 2 independent 1-D solver and a correlation term $(\delta_{i}+\hat{\delta}_{i})(\delta_{j}+\hat{\delta}_{j})\mathbf{K}^{r}_{ij}$.
+ 
+Obviously optimal 2-D coordinate combination ($i, j$) can be determined by comparing the gains of all the possibilities exhaustively, which requires $O(n^{2})$ times of searching. Based on (\ref{gain of 2-D objective function1}), we can approximate optimal 2-D solution by 1-D search approach, we will prove in large MIMO scenario, when $N_{t}$ is sufficient large, with channel hardening become effective, this approximation is very efficient. Here we propose two kinds of 1-D approximate searching strategy:\\
+1. 1-D searching without damping:\\
+do 1 time 1-D searching and calculate all the 1-D gain based on (\ref{gain of 1-D objective function}), then choose the coordinate pairs with first and second largest 1-D gain as the candidate.\\
+2. 1-D searching with damping:\\
+do 2 times 1-D searching, in the first round find dual variable pair $i$ that can maximize 1-D gain, then in the second round, find $j$th dual variable pair with the value of $i$th coordinate updated.
+
+From (\ref{gain of 2-D objective function1}), it can be easily interpreted the efficient of 1-D approximation approach is majorly determined by the approximation ratio $\frac{(\delta_{i}+\hat{\delta}_{i})(\delta_{j}+\hat{\delta}_{j})\mathbf{K}^{r}_{ij}}{\bigtriangledown \Theta^{r}_{i}+\bigtriangledown \Theta^{r}_{j}}$, hence we provide theoretical analyse from the view of channel hardening phenomenon, and give the upper bound of approximation ratio. Prior the theoretical analyse, we first investigate some mathematical properties of channel hardening.    
+
+
 Recall (\ref{formula9})
 \begin{equation}
 \phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum_{j<i}|r_{ji}|^{2}}.
@@ -1179,7 +1171,59 @@ we can find (\ref{formula25}) is consistent with (\ref{formula15}).
 
 Fig.\ref{figure3} demonstrates the relation between the number of users ($N_{t}$) and $E[\ln(\phi_{om})]_{t}$ under cases of different numbers of antennas at base station ($N_{r}$). From Fig.\ref{figure3}, we can see, on the one hand, with $N_{r}$ fixed, $E[\ln(\phi_{om})]$ decreases while $N_{t}$ increases, however the gradient of each curve becomes more and more gentle. On the other hand, when $N_{r}$ becomes larger $E[\ln(\phi_{om})]$ becomes more insensitive to variation of $N_{t}$.
 \section{Stopping Criteria}\label{stopping criteria}
+As we have explained in section \ref{Introduce epsilon SVR}, the upper bound of Lagrangian dual objective function is determined by primal objective function further more the Lagrangian dual objective function equals to original objective function only when the optimal is found. Therefore, the gap between primal problem and dual problem is used to evaluate how is close is the current solution to global minimum. In our scenario, feasibility gap is employed as stopping criteria because of low computational cost and reliable performance.
+
+Based on the dual objective function in (\ref{final complex lagrange duality}) and the primal objective function in (\ref{complex objective function1}), based on the proposition of Lagrangian theorem
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+ -\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})+Im(\mathbf{y}^{T})(\beta-\hat{\beta})-\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})\\
++C\sum_{i=1}^{N_{r}}[\tilde{R}(\xi_{i}^{r})+\tilde{R}(\hat{\xi}_{i}^{r})+\tilde{R}(\xi_{i}^{i})+\tilde{R}(\hat{\xi}_{i}^{i})] \leq \frac{1}{2}||\mathbf{W}||^{2}_{\mathbb{H}}+C\sum_{i=1}^{N_{r}}[R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})+R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})]
+\label{duality gap1}
+\end{IEEEeqnarray}
+ where $\mathbf{W}=\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})\mathbf{h}_{i}-i\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{h}_{j}$. The duality gap can be obtained by 
+ \begin{IEEEeqnarray}[\relax]{l}
+ \nonumber
+ G(\alpha, \hat{\alpha}, \beta, \hat{\beta})=\frac{1}{2}||\mathbf{W}||^{2}_{\mathbb{H}}+C\sum_{i=1}^{N_{r}}[R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})+R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})]-\{-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})\\
+\nonumber 
+ -\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})+Im(\mathbf{y}^{T})(\beta-\hat{\beta})-\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})+C\sum_{i=1}^{N_{r}}[\tilde{R}(\xi_{i}^{r})+\tilde{R}(\hat{\xi}_{i}^{r})\\
+ \nonumber
+ +\tilde{R}(\xi_{i}^{i})+\tilde{R}(\hat{\xi}_{i}^{i})]\}=(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha}) +(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})-Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})-Im(\mathbf{y}^{T})(\beta-\hat{\beta})+\\
+ \epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{i}(\beta-\hat{\beta})+C\sum_{i=1}^{N_{r}}[\xi_{i}^{r}R^{'}(\xi_{i}^{r})+\hat{\xi}_{i}^{r}R^{'}(\hat{\xi}_{i}^{r})+\xi_{i}^{i}R^{'}(\xi_{i}^{i})+\hat{\xi}_{i}^{i}R^{'}(\hat{\xi}_{i}^{i})]
+ \label{duality gap2}
+ \end{IEEEeqnarray}
+Because the noise is white Gaussian, therefore the optimal risk function is 
+$R(\xi)=\frac{1}{2}\xi^{2}$, $\xi$ is the slack variable, hence 
+\begin{equation}
+\xi R^{'}(\xi)=\xi^{2},
+\label{risk functional1}
+\end{equation} 
+\begin{equation}
+\xi_{i}^{r}(\hat{\xi}^{r})=\max(0, |Re(y_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|-\epsilon),
+\label{risk functional2}
+\end{equation}
+Because $\xi^{r}\hat{\xi}^{r}=0$ (estimation can only exceed $\epsilon$ tube in one direction), therefore there is only one of $\xi$ and $\hat{\xi}$ need to be considered, notice $Re(y_{i})-Re(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=\Phi_{i}^{r}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}$ and $Im(y_{i})-Im(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=\Phi_{i}^{i}-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}$ hence the last term in (\ref{duality gap2}) can be rewritten as 
+\begin{equation}
+C\sum_{i=1}^{N_{r}}((|\Phi_{i}^{r}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon}+(|\Phi_{i}^{i}-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon})
+\label{risk functional3}
+\end{equation}
+where $()_{\epsilon}$ denotes $\epsilon$ insensitive function.
+duality gap in (\ref{duality gap2}) can be divided into two part
+\begin{equation}
+G(\alpha, \hat{\alpha}, \beta, \hat{\beta})=L(\alpha, \hat{\alpha}, \beta, \hat{\beta})+S(\alpha, \hat{\alpha}, \beta, \hat{\beta}),
+\label{divide duality gap}
+\end{equation}
+where 
+\begin{equation}
+L(\alpha, \hat{\alpha}, \beta, \hat{\beta})=(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha}) +(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})-Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})-Im(\mathbf{y}^{T})(\beta-\hat{\beta})+\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})，
+\label{L sub function}
+\end{equation}
+
+\begin{equation}
+S(\alpha, \hat{\alpha}, \beta, \hat{\beta})=C\sum_{i=1}^{N_{r}}((|\Phi_{i}^{r}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon}+(|\Phi_{i}^{i}-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon})-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{i}(\beta-\hat{\beta})
+\label{S sub function}
+\end{equation}
 \section{Hyperparameter Setting}
+
 \section{Computer Simulations}
 
 

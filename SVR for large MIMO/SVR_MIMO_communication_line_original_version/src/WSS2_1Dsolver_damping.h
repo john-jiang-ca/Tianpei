@@ -33,6 +33,7 @@ void 	WSS2_1Dsolver_damping(gsl_vector *l_m,  //Lagrange Multiplier vector
 //	gsl_vector *sig2=gsl_vector_calloc(2*Nr);
 	double p_temp;
 //	gsl_blas_zcopy(phi, phi_new);
+
 	int count, count1;
 	//double phi_p[2*Nr];
 	//for(count=0;count<2*Nr;count++){  //take real and imaginary part of phi
@@ -76,6 +77,7 @@ while(second_round==0){
        }
 		if(count<Nr){
 			temp_l_m=gsl_vector_get(l_m, count)+(gsl_vector_complex_get(phi,count).dat[model]-epsilon)/(gsl_matrix_get(kernel_r,count,count));
+
 			if(temp_l_m<0){
 				temp_l_m=0;
 			}else if (temp_l_m>C){
@@ -95,6 +97,7 @@ while(second_round==0){
 				temp_l_m_hat=C;
 			}
 
+
 			sigma_tmp=0;
 			sigma_hat_tmp=temp_l_m_hat-gsl_vector_get(l_m,count);
 			 gsl_vector_set(dual_temp, count, temp_l_m);
@@ -104,6 +107,7 @@ while(second_round==0){
 		g_temp=fabs((sigma_tmp-sigma_hat_tmp)*(-0.5*(sigma_tmp-sigma_hat_tmp)
 				*gsl_matrix_get(kernel_r, index_tmp,index_tmp)+gsl_vector_complex_get(phi, index_tmp).dat[model]
 				   ))-epsilon*(sigma_tmp+sigma_hat_tmp);
+
 
 		if(g_temp>best_g){
 			best_g=g_temp;
@@ -187,6 +191,7 @@ eta_temp+=pow(-1,model+1)*((sigma1-sigma1_hat)*gsl_matrix_get(kernel_i,count1,F_
 //gsl_vector_complex_free(phi_temp);
 gsl_vector_free(dual_temp);
 gsl_vector_free(sig);
+
 
 }
 

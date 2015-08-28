@@ -79,15 +79,17 @@ for(count=0;count<2*Nr;count++){
    }
 	g=fabs((sigma_tmp-sigma_hat_tmp)*(-0.5*(sigma_tmp-sigma_hat_tmp)*gsl_matrix_get(kernel_r, index_tmp,index_tmp)
 			+gsl_vector_complex_get(phi, index_tmp).dat[model]-epsilon*(sigma_tmp+sigma_hat_tmp)/(sigma_tmp-sigma_hat_tmp)));
+
 	if(g>best_g){
 		best_g=g;
 		if(count!=F_i+Nr){
 		S_i=F_i;
 		}
-
 		F_i=count;
+
 	}
 }
+
 //update phi_new
 double sigma_diff1=0;
 double sigma_diff2=0;
@@ -145,6 +147,7 @@ gsl_vector_complex_get(eta, count1).dat[(model^1)]=eta_temp;
 //gsl_vector_complex_free(phi_new);
 gsl_vector_free(dual_temp);
 gsl_vector_free(sig);
+
 
 }
 

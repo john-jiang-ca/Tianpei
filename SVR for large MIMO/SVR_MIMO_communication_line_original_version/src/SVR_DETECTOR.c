@@ -92,6 +92,12 @@ for(count1=0;count1<Nr;count1++){
 		gsl_matrix_set(K_i,count1,count2,gsl_matrix_complex_get(K_complex,count1,count2).dat[1]);
 	}
 }
+for(count1=0;count1<Nr;count1++){
+	for(count2=count1+1;count2<Nr;count2++){
+		gsl_matrix_set(K_r,count1,count2,gsl_matrix_get(K_r,count2,count1));
+		gsl_matrix_set(K_i,count1,count2,gsl_matrix_get(K_i,count2,count1));
+	}
+}
 
 gsl_vector_complex *phi=gsl_vector_complex_calloc(Nr); //phi vector (intermediate parameter)
 gsl_vector_complex *phi_new=gsl_vector_complex_calloc(Nr); //the new phi vector

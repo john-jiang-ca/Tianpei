@@ -1173,7 +1173,7 @@ Fig.\ref{figure3} demonstrates the relation between the number of users ($N_{t}$
 \section{Stopping Criteria}\label{stopping criteria}
 As we have explained in section \ref{Introduce epsilon SVR}, the upper bound of Lagrangian dual objective function is determined by primal objective function further more the Lagrangian dual objective function equals to original objective function only when the optimal is found. Therefore, the gap between primal problem and dual problem is used to evaluate how is close is the current solution to global minimum. In our scenario, feasibility gap is employed as stopping criteria because of low computational cost and reliable performance.
 
-Based on the dual objective function in (\ref{final complex lagrange duality}) and the primal objective function in (\ref{complex objective function1}), based on the proposition of Lagrangian theorem
+  Based on the dual objective function in (\ref{final complex lagrange duality}) and the primal objective function in (\ref{complex objective function1}), based on the proposition of Lagrangian theorem
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
  -\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})+Im(\mathbf{y}^{T})(\beta-\hat{\beta})-\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})\\

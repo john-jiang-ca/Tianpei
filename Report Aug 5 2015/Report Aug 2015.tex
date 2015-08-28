@@ -949,8 +949,8 @@ maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{S
 Where $\mathbf{K}^{r}=\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
 \mathbf{K}^{r}_{SS}& \mathbf{K}^{r}_{SN}\\
 \mathbf{K}^{r}_{NS}& \mathbf{K}^{r}_{NN}
-\end{IEEEeqnarraybox*}\right]$, $\mathbf{K}^{r}_{SN}=\mathbf{K}^{r}_{NS}$
-and  $\alpha_{S}\in \mathbb{R}^{N_{r}}$ denotes the vector with the components that do not belong to $S$ zeroed. Therefore the sub-optimization problem is formulated as 
+\end{IEEEeqnarraybox*}\right]$ is a permutation of $\mathbf{K}^{r}$, $\mathbf{K}^{r}_{SN}=\mathbf{K}^{r}_{NS}$ 
+and  $\alpha_{S}\in \mathbb{R}^{N_{r}}$ denotes the vector with the components that do not belong to $S$ zeroed. In each iteration, in (\ref{real part decomposition}), $\alpha_{N}$ is fixed and only the sub problem that correlated to $\alpha_{S}$ is solved i.e 
 \begin{equation}
 maximize\quad \Theta_{S}^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}]+[Re(\mathbf{y})_{S}^{T}-(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}
 ](\alpha-\hat{\alpha})_{S}-\epsilon[\mathbf{e}_{S}^{T}(\alpha+\hat{\alpha})_{S}],

@@ -13,7 +13,9 @@ end
 
 SNR=[18];  %signal to noise ratio of output
 noiseVariance=zeros(length(SNR)); %noise variance
-noiseVariance=1./(10.^(SNR./10));
+SNRd=zeros(length(SNR),1);
+SNRd=10.^(SNR./10);
+noiseVariance=1./(SNRd);
 pH=zeros(Nr,Nt); %data samples 
 y=zeros(Nr,1);   %output
 x=zeros(Nt,1);   %real coefficience  

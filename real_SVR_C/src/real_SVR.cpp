@@ -11,7 +11,7 @@
 #include"Public.h"
 //#include"WSS1D_2Dsolver.h"
 
-int  main(void){
+int main(void) {
 	gsl_matrix *pH=gsl_matrix_calloc(Nr,Nt);
 //	gsl_matrix *kernel=gsl_matrix_calloc(Nt, Nt);
 	gsl_vector *symTransmitted=gsl_vector_calloc(Nt);
@@ -36,13 +36,17 @@ int  main(void){
     int channel_realization;
     double d;
 //    double SNR_current;
+printf("the program begin!!");
 
     int count, count1, count2;
+    printf("the SNR point are: \n");
     for(count=0;count<SNRnum;count++){
     	SNR[count]=2*count;
+    	printf("%d ", SNR[count]);
     	gsl_vector_set(SNRd, count, pow(10, (double)SNR[count]/10));
     }
-    for(count=0;count<Nr;count++){
+
+    for(count=0;count<SNRnum;count++){
     	gsl_vector_set(noiseVariance,count, (double)1/gsl_vector_get(SNRd,count));
     }
 
@@ -61,7 +65,7 @@ for(count=0;count<SNRnum;count++) {
     	for(count2=0;count2<Nt;count2++){
     		gsl_matrix_set(pH, count1,count2, gsl_ran_gaussian(pr, 1));
     	}
-    	gsl_vector_set(noise, count1, gsl_ran_gaussian(pr, 1/gsl_vector_get(noiseVariance,count1)));
+    	gsl_vector_set(noise, count1, gsl_ran_gaussian(pr, gsl_vector_get(noiseVariance,count)));
     }
 
 
@@ -77,7 +81,7 @@ for(count=0;count<SNRnum;count++) {
 
     //AWGN channel modeling
     gsl_blas_dcopy(noise, symReceived);
-    gsl_blas_dgemv(CblasNoTrans, 1, pH, symTransmitted, 1, symReceived);
+     gsl_blas_dgemv(CblasNoTrans, 1, pH, symTransmitted, 1, symReceived);
      //detector
 #ifndef DEBUG
      WSS2D_1Dsolver();

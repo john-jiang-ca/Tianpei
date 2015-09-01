@@ -11,7 +11,7 @@
 #include"Public.h"
 //#include"WSS1D_2Dsolver.h"
 
-int main(void) {
+int  main(void){
 	gsl_matrix *pH=gsl_matrix_calloc(Nr,Nt);
 //	gsl_matrix *kernel=gsl_matrix_calloc(Nt, Nt);
 	gsl_vector *symTransmitted=gsl_vector_calloc(Nt);
@@ -54,7 +54,7 @@ int main(void) {
 for(count=0;count<SNRnum;count++) {
 
     //Generate random number
-	gsl_rng_type *pT;
+	const gsl_rng_type *pT;
 	pT=gsl_rng_default;
     gsl_rng *pr=gsl_rng_alloc(pT);
     for(count1=0;count1<Nr;count1++){
@@ -77,7 +77,7 @@ for(count=0;count<SNRnum;count++) {
 
     //AWGN channel modeling
     gsl_blas_dcopy(noise, symReceived);
-     gsl_blas_dgemv(CblasNoTrans, 1, pH, symTransmitted, 1, symReceived);
+    gsl_blas_dgemv(CblasNoTrans, 1, pH, symTransmitted, 1, symReceived);
      //detector
 #ifndef DEBUG
      WSS2D_1Dsolver();

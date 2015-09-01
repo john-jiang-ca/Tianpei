@@ -1,4 +1,4 @@
-function [ symOut, lamida, Theta,G,  iteration, MSE ] = real_SVR_WSSS1D_2Dsolver( pH,  y, SNRd, symbolContellation, Nr, Nt, M)
+function [ symOut, lamida, Theta,G,  iteration, MSE ] = real_SVR_WSSS1D_2Dsolver_withoutNoise( pH,  y, SNRd, symbolContellation, Nr, Nt, M)
 %real SVR detection 
 %   Output
 % symOut: regression coefficiences estimation
@@ -27,8 +27,9 @@ G(1)=0;
 for count=1:Nr
 
     if(abs(Phi(count))>epsilon)
-    G(1)=G(1)+(abs(Phi(count))-epsilon)^2;
+    G(1)=G(1)+(abs(Phi(count))-epsilon);
     end
+    
 end
 G(1)=G(1)*C;
 G(1)=1;
@@ -40,7 +41,6 @@ while(G(iteration)>tol)
 
 delta=zeros(Nr,1);
 sigma_tmp=zeros(Nr, 1);
-NoiseTerm=0;
  %% approximate 2-D work set selection (without damping-bubble sorting)
 for count=1:Nr
     lamida_tmp1=lamida(count)+(Phi(count)-epsilon*(-1))/K(count,count);
@@ -54,12 +54,6 @@ for count=1:Nr
     else
         delta(count)=delta2;
         lamida_tmp=lamida_tmp2;
-    end
-    %clipping
-    if(lamida_tmp<-C)
-        lamida_tmp=-C;
-    elseif(lamida_tmp>C)
-        lamida_tmp=C;
     end
     sigma_tmp(count)=lamida_tmp-lamida(count);
 end
@@ -106,41 +100,33 @@ for count=1:Nr
 end
 
 iteration=iteration+1;
-for count1=1:Nr
-    if(abs(Phi(count1))-epsilon>0)
-    NoiseTerm=NoiseTerm+(abs(Phi(count1))-epsilon)^2;
+%calculate objective function value
+Theta(iteration)=-(1/2)*lamida'*K*lamida+y'*lamida-epsilon*norm(lamida, 1);
+%calculate duality gap
+G(iteration)=y'*lamida-epsilon*(norm(lamida,1))-2*Theta(iteration);
+for count=1:Nr
+    if(abs(Phi(count))>epsilon)
+        G(iteration)=G(iteration)+C*(abs(Phi(count))-epsilon);
     end
 end
-%calculate objective function value
-Theta_tmp=-(1/2)*lamida'*K*lamida+y'*lamida-epsilon*norm(lamida, 1);
-Theta(iteration)=Theta_tmp-0.5*NoiseTerm;
-%calculate duality gap
-G(iteration)=y'*lamida-epsilon*(norm(lamida,1))-2*Theta_tmp+NoiseTerm;
-G(iteration)=G(iteration)/abs(G(iteration)+Theta(iteration));
-
-
+G(iteration)=G(iteration)/(G(iteration)+Theta(iteration));
 
 end
 symOut=(lamida'*pH)';
-%  symOut_MMSE=zeros(Nt,1);
-%  I=ones(Nt,Nt);
-%  symOut_MMSE=(inv(pH'*pH)+SNRd^(-1)*I)*pH'*y;
+
+
 %% rounding 
 d=sqrt(3/(Nt*(M^2-1))); %the distance of constellation
 for count=1:Nt
 if(M==4)
     if(symOut(count)<=-2*d)
         symOut(count)=-3*d;
-%          symOut_MMSE(count)=-3*d;
     elseif(symOut(count)>-2*d&&symOut(count)<=0)
         symOut(count)=-1*d;
-%         symOut_MMSE(count)=-1*d;
     elseif(symOut(count)>0&&symOut(count)<=2*d)
         symOut(count)=d;
-%         symOut_MMSE(count)=d;
     elseif(symOut(count)>=2*d)
         symOut(count)=3*d;
-%          symOut_MMSE(count)=3*d;
     end
 elseif (M==8)
         if(symOut(count)<=-6*d)

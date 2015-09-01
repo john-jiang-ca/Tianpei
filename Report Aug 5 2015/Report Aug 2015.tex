@@ -913,7 +913,7 @@ maximize \quad \Theta^{i}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_
 The alternate form can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize \quad \Theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})+Re(\mathbf{y})^{T}(\alpha-\hat{\alpha})-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})-\tilde{R}(\hat{\xi}^{r})))\\
+maximize \quad \Theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})+Re(\mathbf{y})^{T}(\alpha-\hat{\alpha})-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})+\tilde{R}(\hat{\xi}^{r})))\\
 \left\{\begin{array}{ll}
 0\leq \alpha(\hat{\alpha})\leq C\tilde{R}(\xi^{r})(\tilde{R}(\hat{\xi}^{r}))\\
 \xi^{r}(\hat{\xi}^{r})\geq 0\\
@@ -923,7 +923,7 @@ maximize \quad \Theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\a
 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize \quad \Theta^{i}=-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Im(\mathbf{y})^{T}(\beta-\hat{\beta})-\epsilon(\mathbf{e}^{T}(\beta+\hat{\beta}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{i})-\tilde{R}(\hat{\xi}^{i})))\\
+maximize \quad \Theta^{i}=-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Im(\mathbf{y})^{T}(\beta-\hat{\beta})-\epsilon(\mathbf{e}^{T}(\beta+\hat{\beta}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{i})+\tilde{R}(\hat{\xi}^{i})))\\
 \left\{\begin{array}{ll}
 0\leq \beta(\hat{\beta})\leq C\tilde{R}(\xi^{i})(\tilde{R}(\hat{\xi}^{i}))\\
 \xi^{i}(\hat{\xi}^{i})\geq 0\\
@@ -943,7 +943,7 @@ maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{S
 +Re(\mathbf{y})_{S}^{T}(\alpha-\hat{\alpha})_{S}-\\
 \nonumber
 \epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha})_{S})
--\frac{1}{2}(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NN}^{r}(\alpha-\hat{\alpha})_{N}+Re(\mathbf{y})_{N}^{T}(\alpha-\hat{\alpha})_{N}-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha})_{N})\\+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})-\tilde{R}(\hat{\xi}^{r}))),
+-\frac{1}{2}(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NN}^{r}(\alpha-\hat{\alpha})_{N}+Re(\mathbf{y})_{N}^{T}(\alpha-\hat{\alpha})_{N}-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha})_{N})\\+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})+\tilde{R}(\hat{\xi}^{r}))),
 \label{real part decomposition}
 \end{IEEEeqnarray}
 Where $\mathbf{K}^{r}=\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
@@ -960,7 +960,7 @@ In decomposition method, a proper work set selection strategy is required so tha
 
 Another class of approaches is to choose the dual variables whose update can provide the maximum improvements to objective function \cite{}, \cite{}, \cite{}(Training without offset). That is 
 \begin{equation}
-maximize\quad \bigtriangledown \Theta_{S}=\Theta((\alpha+\delta_{S}\mathbf{e}_{S}), (\hat{\alpha}+\hat{\delta}_{S}\mathbf{e}_{S}))-\Theta(\alpha, \hat{\alpha}),
+maximize\quad \bigtriangledown \Theta_{S}=\Theta_{S}((\alpha_{S}+\delta_{S}\mathbf{e}_{S}), (\hat{\alpha}_{s}+\hat{\delta}_{S}\mathbf{e}_{S}))-\Theta_{S}(\alpha_{S}, \hat{\alpha}_{S}),
 \label{maximum gain work set selection}
 \end{equation} 
 where $\delta_{S}=\alpha_{S}^{new}-\alpha_{S}$, the gain in (\ref{maximum gain work set selection}) can be written as 

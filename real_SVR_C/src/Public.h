@@ -16,6 +16,7 @@
 #include<gsl/gsl_blas.h>
 #include<gsl/gsl_rng.h>
 #include<gsl/gsl_randist.h>
+#include<time.h>
 #define Nr 100
 #define Nt 100
 #define M 4

@@ -13,7 +13,6 @@
 
 int main(void) {
 	gsl_matrix *pH=gsl_matrix_calloc(Nr,Nt);
-//	gsl_matrix *kernel=gsl_matrix_calloc(Nt, Nt);
 	gsl_vector *symTransmitted=gsl_vector_calloc(Nt);
 	gsl_vector *symReceived=gsl_vector_calloc(Nr);
 	gsl_vector *noise=gsl_vector_calloc(Nr);
@@ -29,12 +28,20 @@ int main(void) {
 	double lamida_tmp;
     int TransmitNum[Nt];
     int SNR[SNRnum];
-    int First, Second;
     double symError;
     double symErrorRate;
-    int iteration;
+    int *iteration;
     int channel_realization;
     double d;
+
+
+	unsigned long seed=0L;
+	const gsl_rng_type *pT;
+	pT=gsl_rng_default;
+    gsl_rng *pr;
+	pr=gsl_rng_alloc(pT);
+    seed=time(NULL);
+    gsl_rng_set(pr,seed);
 //    double SNR_current;
 printf("the program begin!!");
 
@@ -45,7 +52,7 @@ printf("the program begin!!");
     	printf("%d ", SNR[count]);
     	gsl_vector_set(SNRd, count, pow(10, (double)SNR[count]/10));
     }
-
+printf("\n");
     for(count=0;count<SNRnum;count++){
     	gsl_vector_set(noiseVariance,count, (double)1/gsl_vector_get(SNRd,count));
     }
@@ -55,12 +62,14 @@ printf("the program begin!!");
     cfile2=fopen(SER, "a");
     cfile3=fopen(BER, "a");
 
-for(count=0;count<SNRnum;count++) {
+for(count=0;count<1;count++) {
 
+symError=0;
+channel_realization=0;
+symErrorRate=0;
+while(channel_realization<1||symError<1){
     //Generate random number
-	const gsl_rng_type *pT;
-	pT=gsl_rng_default;
-    gsl_rng *pr=gsl_rng_alloc(pT);
+
     for(count1=0;count1<Nr;count1++){
     	for(count2=0;count2<Nt;count2++){
     		gsl_matrix_set(pH, count1,count2, gsl_ran_gaussian(pr, 1));
@@ -74,6 +83,7 @@ for(count=0;count<SNRnum;count++) {
     d=sqrt((double) 3/(Nt*(pow(M,2)-1)));
     for(count1=0;count1<M;count1++){
     	gsl_vector_set(symbolconstellation,count1, -(M-1)*d+count1*2*d);
+    	printf("the %d th symbol is %f\n ", count1+1, gsl_vector_get(symbolconstellation,count1));
     }
     for(count1=0;count1<Nt;count1++){
     	gsl_vector_set(symTransmitted, count1, TransmitNum[count1]);
@@ -90,12 +100,26 @@ for(count=0;count<SNRnum;count++) {
      for(count1=0;count1<Nt;count1++){
     	 if(fabs(gsl_vector_get(symOut, count1)-gsl_vector_get(symTransmitted,count1))>1e-5)
     	 {
-    		 symError+=1;
+    		 symError++;
     	 }
      }
 
+     channel_realization++;
 }
 
+
+}
+gsl_matrix_free (pH);
+gsl_vector_free (symTransmitted);
+gsl_vector_free (symReceived);
+gsl_vector_free (noise);
+gsl_vector_free(SNRd);
+gsl_vector_free (noiseVariance);
+gsl_vector_free (symOut);
+gsl_vector_free(symbolconstellation);
+gsl_vector_free(lamida);
+gsl_vector_free(sigma);
+gsl_rng_free(pr);
 fclose(cfile1);
 fclose(cfile2);
 fclose(cfile3);

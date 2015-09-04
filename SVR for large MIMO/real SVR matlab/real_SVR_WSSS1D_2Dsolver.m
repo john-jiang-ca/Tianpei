@@ -24,15 +24,16 @@ lamida=zeros(Nr,1);
 Phi=y; %intermediate variable
 G=[]; %duality gap
 G(1)=0;
+Theta(1)=0;
 for count=1:Nr
 
     if(abs(Phi(count))>epsilon)
-    G(1)=G(1)+(abs(Phi(count))-epsilon)^2;
+    Theta(1)=Theta(1)+(abs(Phi(count))-epsilon)^2;
     end
 end
-G(1)=G(1)*C;
-G(1)=1;
-Theta(1)=0;
+Theta(1)=-0.5*Theta(1)*C;
+G(1)=-2*Theta(1);
+G(1)=G(1)/abs(G(1)+Theta(1));
 %% update lamida
 
 iteration=1;
@@ -45,6 +46,18 @@ NoiseTerm=0;
 for count=1:Nr
     lamida_tmp1=lamida(count)+(Phi(count)-epsilon*(-1))/K(count,count);
     lamida_tmp2=lamida(count)+(Phi(count)-epsilon*(1))/K(count,count);
+        %clipping
+    if(lamida_tmp1<-C)
+        lamida_tmp1=-C;
+    elseif(lamida_tmp1>C)
+        lamida_tmp1=C;
+    end
+        %clipping
+    if(lamida_tmp2<-C)
+        lamida_tmp2=-C;
+    elseif(lamida_tmp2>C)
+        lamida_tmp2=C;
+    end
     delta1=(lamida_tmp1-lamida(count))*((-1/2)*(lamida_tmp1-lamida(count))*K(count,count)+Phi(count))-epsilon*(abs(lamida_tmp1)-abs(lamida(count)));
     delta2=(lamida_tmp2-lamida(count))*((-1/2)*(lamida_tmp2-lamida(count))*K(count,count)+Phi(count))-epsilon*(abs(lamida_tmp2)-abs(lamida(count)));
     if(delta1>delta2)
@@ -55,12 +68,7 @@ for count=1:Nr
         delta(count)=delta2;
         lamida_tmp=lamida_tmp2;
     end
-    %clipping
-    if(lamida_tmp<-C)
-        lamida_tmp=-C;
-    elseif(lamida_tmp>C)
-        lamida_tmp=C;
-    end
+
     sigma_tmp(count)=lamida_tmp-lamida(count);
 end
 %bubble sorting
@@ -96,7 +104,7 @@ end
     
 
 
-%% update lamida, Phi, Theta and duality gap
+%% update lamida, sigma, Phi, Theta and duality gap
 sigma(First)=sigma_tmp(First);
 sigma(Second)=sigma_tmp(Second);
 lamida(First)=lamida(First)+sigma(First);
@@ -113,34 +121,34 @@ for count1=1:Nr
 end
 %calculate objective function value
 Theta_tmp=-(1/2)*lamida'*K*lamida+y'*lamida-epsilon*norm(lamida, 1);
-Theta(iteration)=Theta_tmp-0.5*NoiseTerm;
+Theta(iteration)=Theta_tmp-0.5*C*NoiseTerm;
 %calculate duality gap
-G(iteration)=y'*lamida-epsilon*(norm(lamida,1))-2*Theta_tmp+NoiseTerm;
+G(iteration)=y'*lamida-epsilon*(norm(lamida,1))-2*Theta(iteration);
 G(iteration)=G(iteration)/abs(G(iteration)+Theta(iteration));
 
 
 
 end
 symOut=(lamida'*pH)';
-%  symOut_MMSE=zeros(Nt,1);
-%  I=ones(Nt,Nt);
-%  symOut_MMSE=(inv(pH'*pH)+SNRd^(-1)*I)*pH'*y;
+%   symOut_MMSE=zeros(Nt,1);
+%   I=ones(Nt,Nt);
+%   symOut_MMSE=(inv(pH'*pH)+SNRd^(-1)*I)*pH'*y;
 %% rounding 
 d=sqrt(3/(Nt*(M^2-1))); %the distance of constellation
 for count=1:Nt
 if(M==4)
     if(symOut(count)<=-2*d)
-        symOut(count)=-3*d;
-%          symOut_MMSE(count)=-3*d;
+         symOut(count)=-3*d;
+%           symOut_MMSE(count)=-3*d;
     elseif(symOut(count)>-2*d&&symOut(count)<=0)
-        symOut(count)=-1*d;
-%         symOut_MMSE(count)=-1*d;
+         symOut(count)=-1*d;
+%          symOut_MMSE(count)=-1*d;
     elseif(symOut(count)>0&&symOut(count)<=2*d)
-        symOut(count)=d;
-%         symOut_MMSE(count)=d;
+         symOut(count)=d;
+%          symOut_MMSE(count)=d;
     elseif(symOut(count)>=2*d)
-        symOut(count)=3*d;
-%          symOut_MMSE(count)=3*d;
+         symOut(count)=3*d;
+%           symOut_MMSE(count)=3*d;
     end
 elseif (M==8)
         if(symOut(count)<=-6*d)

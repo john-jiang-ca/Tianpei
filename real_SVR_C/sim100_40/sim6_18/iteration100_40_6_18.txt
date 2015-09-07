@@ -1,0 +1,23 @@
+100 X 40 MIMO system  4 PAM modulation
+SNR from 6 to 20
+1.000000 1.584893 2.511886 3.981072 6.309573 10.000000 15.848932 25.118864 
+The average iteration time are: 
+687 718 595 623 649 625 631 
+
+
+
+
+formal
+100 X 40 MIMO system  4 PAM modulation
+SNR from 6 to 20
+1.000000 1.584893 2.511886 3.981072 6.309573 10.000000 15.848932 25.118864 
+The average iteration time are: 
+813 691 651 632 625 627 633 
+
+
+formal
+100 X 100 MIMO system  4 PAM modulation
+SNR from 6 to 20
+1.000000 1.584893 2.511886 3.981072 6.309573 10.000000 15.848932 25.118864 
+The average iteration time are: 
+1861 1856 1839 1831 1797 1786 1714 

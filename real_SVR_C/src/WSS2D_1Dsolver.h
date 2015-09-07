@@ -50,7 +50,7 @@ for(count1=0;count1<Nr;count1++){
 *G=-2*(*Theta);
 *G=*G/fabs(*G+*Theta);
 //update lamida
-while(G[*iteration]>tol){
+while(*G>tol){
 	best_gain=0;
 	NoiseTerm=0;
     First=0;
@@ -161,13 +161,13 @@ while(G[*iteration]>tol){
 	Theta_tmp3=epsilon*gsl_blas_dasum(lamida);
 	Theta_tmp=*Theta_tmp1+*Theta_tmp2-Theta_tmp3-0.5*C*NoiseTerm;
 	 (*iteration)++;
-	Theta[*iteration]=Theta_tmp;
+	*Theta=Theta_tmp;
 	double G_tmp=*Theta_tmp2-Theta_tmp3-2*Theta_tmp;
 //	printf("G_tmp now is %f'n ", G_tmp);
-	G[*iteration]=G_tmp/fabs(G_tmp+Theta[*iteration]);
+	*G=G_tmp/fabs(G_tmp+*Theta);
 #ifdef DEBUG
-	printf("G now is %f\n", G[*iteration]);
-	printf("Theta now is %f\n", Theta[*iteration]);
+	printf("G now is %f\n", *G);
+	printf("Theta now is %f\n", *Theta);
 #endif
     free(Theta_tmp1);
     free(Theta_tmp2);

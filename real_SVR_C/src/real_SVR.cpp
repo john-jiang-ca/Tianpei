@@ -57,7 +57,7 @@ for(count1=0;count1<M;count1++){
 	printf("the %d th symbol is %f\n ", count1+1, gsl_vector_get(symbolconstellation,count1));
 }
 printf("\n");
-int begin=3;//define start SNR point
+//int begin=11;//define start SNR point
 int aver_iter=0;
 //initialize the file to store data
     FILE *cfile1, *cfile2, *cfile3;
@@ -66,38 +66,80 @@ int aver_iter=0;
     cfile3=fopen(BER, "a");
 
     //file1
+    fprintf(cfile1, "\n");
+#ifdef TEST
+    fprintf(cfile1, "test\n");
+#endif
+
+#ifndef TEST
+    fprintf(cfile1, "formal\n");
+#endif
+    fprintf(cfile1, "hyperparameter settings: \n");
+    fprintf(cfile1, "epsilon %0.20f, tol %0.20f, C %f\n", epsilon, tol, C);
     fprintf(cfile1, "%d X %d MIMO system  %d PAM modulation\n", Nr, Nt, M);
-    fprintf(cfile1, "SNR from %d to %d\n", 2*begin, 2*SNRnum);
-    for(count1=0;count1<SNRnum-begin+1;count1++){
-    	fprintf(cfile1,"%f ", gsl_vector_get(SNRd,count1));
-    }
+//    fprintf(cfile1, "SNR from %d to %d\n", 2*begin, 2*SNRnum);
+    fprintf(cfile1, "The SNR point is: %d %f\n", SNR[begin], gsl_vector_get(SNRd, begin) );
+//    for(count1=0;count1<SNRnum-begin+1;count1++){
+//    	fprintf(cfile1,"%f ", gsl_vector_get(SNRd,count1));
+//    }
     fprintf(cfile1,"\n");
     fprintf(cfile1, "The average iteration time are: \n");
+
      //file 2
+    fprintf(cfile2, "\n");
+#ifdef TEST
+    fprintf(cfile2, "test\n");
+#endif
+
+#ifndef TEST
+    fprintf(cfile2, "formal\n");
+#endif
+    fprintf(cfile2, "hyperparameters settings: \n");
+    fprintf(cfile2, "epsilon %0.20f, tol %0.20f, C %f\n", epsilon, tol, C);
     fprintf(cfile2, "%d X %d MIMO system  %d PAM modulation\n", Nr, Nt, M);
-    fprintf(cfile2, "SNR from %d to %d\n", 2*begin, 2*SNRnum);
-    for(count1=0;count1<SNRnum-begin+1;count1++){
-    	fprintf(cfile2,"%f ", gsl_vector_get(SNRd,count1));
-    }
+//    fprintf(cfile2, "SNR from %d to %d\n", 2*begin, 2*SNRnum);
+    fprintf(cfile2, "The SNR point is: %d %f\n", SNR[begin], gsl_vector_get(SNRd, begin) );
+//    for(count1=0;count1<SNRnum-begin+1;count1++){
+//    	fprintf(cfile2,"%f ", gsl_vector_get(SNRd,count1));
+//    }
     fprintf(cfile2,"\n");
     fprintf(cfile2, "symbol error rate are: \n");
     //file 3
+
+    fprintf(cfile3, "\n");
+#ifdef TEST
+    fprintf(cfile3, "test\n");
+#endif
+
+#ifndef TEST
+    fprintf(cfile3, "formal\n");
+#endif
+    fprintf(cfile3, "hyperparameter settings: \n");
+    fprintf(cfile3, "epsilon %0.20f, tol %0.20f, C %f\n", epsilon, tol, C);
+    fprintf(cfile3, "\n");
     fprintf(cfile3, "%d X %d MIMO system  %d PAM modulation\n", Nr, Nt, M);
-    fprintf(cfile3, "SNR from %d to %d\n", 2*begin, 2*SNRnum);
-    for(count1=0;count1<SNRnum-begin+1;count1++){
-    	fprintf(cfile3,"%f ", gsl_vector_get(SNRd,count1));
-    }
+//    fprintf(cfile3, "SNR from %d to %d\n", 2*begin, 2*SNRnum);
+    fprintf(cfile3, "The SNR point is: %d %f\n", SNR[begin], gsl_vector_get(SNRd, begin) );
+//    for(count1=0;count1<SNRnum-begin+1;count1++){
+//    	fprintf(cfile3,"%f ", gsl_vector_get(SNRd,count1));
+//    }
     fprintf(cfile3,"\n");
     fprintf(cfile3, "Bit error rate are: \n");
+    fclose(cfile1);
+    fclose(cfile2);
+    fclose(cfile3);
 
-for(count=begin;count<SNRnum;count++) {
+for(count=begin;count<begin+1;count++) {
 symError=0;
 channel_realization=0;
 aver_iter=0;
+cfile1=fopen(Iteration, "a");
+cfile2=fopen(SER, "a");
+cfile3=fopen(BER, "a");
 while(channel_realization<1e5||symError<200){
 	gsl_vector *lamida=gsl_vector_calloc(Nr);
-	double *G=(double*)malloc(SIZE*sizeof(double));
-	double *Theta=(double*)malloc(SIZE*sizeof(double));
+	double *G=(double*)malloc(sizeof(double));
+	double *Theta=(double*)malloc(sizeof(double));
 	double *MSE=(double*)malloc(sizeof(double));
     int *iteration=(int*)malloc(sizeof(int));
     //Generate random channel propagation matrix and AWGN noise
@@ -172,6 +214,9 @@ fprintf(cfile2, "%0.20f ", symErrorRate[count]);
 printf("SNR point %d end", SNR[count]);
 printf("\n");
 //#endif
+fclose(cfile1);
+fclose(cfile2);
+fclose(cfile3);
 }
 #ifdef DEBUG
 printf("the symbol error rate is \n");
@@ -193,7 +238,15 @@ gsl_vector_free(symbolconstellation);
 
 //gsl_vector_free(sigma1);
 gsl_rng_free(pr);
-
+cfile1=fopen(Iteration,"a");
+cfile2=fopen(SER, "a");
+cfile3=fopen(BER, "a");
+fprintf(cfile1, "\n");
+fprintf(cfile2, "\n");
+fprintf(cfile3, "\n");
+fprintf(cfile1, "The program end");
+fprintf(cfile2, "The program end");
+fprintf(cfile3, "The program end");
 fclose(cfile1);
 fclose(cfile2);
 fclose(cfile3);

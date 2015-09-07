@@ -21,91 +21,119 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{hochwald2004multiple}
-B.~M. Hochwald, T.~L. Marzetta, and V.~Tarokh, ``Multiple-antenna channel
-  hardening and its implications for rate feedback and scheduling,''
-  \emph{Information Theory, IEEE Transactions on}, vol.~50, no.~9, pp.
-  1893--1909, 2004.
+\bibitem{IEEE802.11ac}
+``{IEEE} {S}tandard for {I}nformation technology-- {T}elecommunications and
+  information exchange between systemslocal and metropolitan area networks--
+  {S}pecific requirements--{P}art 11: {W}ireless {LAN} {M}edium {A}ccess
+  {C}ontrol ({MAC}) and {P}hysical {L}ayer ({PHY})
+  {S}pecifications--{A}mendment 4: {E}nhancements for {V}ery {H}igh
+  {T}hroughput for {O}peration in {B}ands below 6 {GHz}.'' \emph{{IEEE} Std
+  802.11ac-2013 (Amendment to {IEEE} Std 802.11-2012, as amended by {IEEE} Std
+  802.11ae-2012, {IEEE} Std 802.11aa-2012, and {IEEE} Std 802.11ad-2012)}, pp.
+  1--425, Dec 2013.
 
-\bibitem{tse2005fundamentals}
-D.~Tse and P.~Viswanath, \emph{Fundamentals of wireless communication}.\hskip
-  1em plus 0.5em minus 0.4em\relax Cambridge university press, 2005.
+\bibitem{3GLTE}
+E.~Dahlman, S.~Parkvall, J.~Skold, and P.~Beming, \emph{3{G} {E}volution:
+  {HSPA} and {LTE} for Mobile Broadband}.\hskip 1em plus 0.5em minus
+  0.4em\relax Academic press, 2010.
 
-\bibitem{marvcenko1967distribution}
-V.~A. Mar{\v{c}}enko and L.~A. Pastur, ``Distribution of eigenvalues for some
-  sets of random matrices,'' \emph{Sbornik: Mathematics}, vol.~1, no.~4, pp.
-  457--483, 1967.
+\bibitem{rusek2013scaling}
+F.~Rusek, D.~Persson, B.~K. Lau, E.~G. Larsson, T.~L. Marzetta, O.~Edfors, and
+  F.~Tufvesson, ``Scaling up {MIMO}: Opportunities and challenges with very
+  large arrays,'' \emph{Signal Processing Magazine, IEEE}, vol.~30, no.~1, pp.
+  40--60, 2013.
 
-\bibitem{tulino2004random}
-A.~M. Tulino and S.~Verd{\'u}, ``Random matrix theory and wireless
-  communications,'' \emph{Communications and Information theory}, vol.~1,
-  no.~1, pp. 1--182, 2004.
+\bibitem{larsson2014massive}
+E.~Larsson, O.~Edfors, F.~Tufvesson, and T.~Marzetta, ``Massive {MIMO} for next
+  generation wireless systems,'' \emph{Communications Magazine, IEEE}, vol.~52,
+  no.~2, pp. 186--195, 2014.
 
-\bibitem{wu2013approximate}
-M.~Wu, B.~Yin, A.~Vosoughi, C.~Studer, J.~R. Cavallaro, and C.~Dick,
-  ``Approximate matrix inversion for high-throughput data detection in the
-  large-scale {MIMO} uplink,'' in \emph{Circuits and Systems (ISCAS), 2013 IEEE
-  International Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2013, pp. 2155--2158.
+\bibitem{damen2003maximum}
+M.~O. Damen, H.~El~Gamal, and G.~Caire, ``On maximum-likelihood detection and
+  the search for the closest lattice point,'' \emph{Information Theory, IEEE
+  Transactions on}, vol.~49, no.~10, pp. 2389--2402, 2003.
 
-\bibitem{fricke1900impact}
-J.~C. Fricke, M.~Sandell, J.~Mietzner, and P.~A. Hoeher, ``Impact of the
-  {Gaussian} approximation on the performance of the probabilistic data
-  association {MIMO} decoder,'' \emph{EURASIP Journal on Wireless
-  Communications and Networking}, vol. 2005, no.~5, pp. 796--800, 1900.
+\bibitem{barbero2008fixing}
+L.~G. Barbero and J.~S. Thompson, ``Fixing the complexity of the sphere decoder
+  for {MIMO} detection,'' \emph{Wireless Communications, IEEE Transactions on},
+  vol.~7, no.~6, pp. 2131--2142, 2008.
 
-\bibitem{pham2004generalized}
-D.~Pham, K.~R. Pattipati, P.~K. Willett, and J.~Luo, ``A generalized
-  probabilistic data association detector for multiple antenna systems,''
-  \emph{IEEE Communications Letters}, vol.~8, no.~4, pp. 205--207, 2004.
+\bibitem{wolniansky1998v}
+P.~W. Wolniansky, G.~J. Foschini, G.~Golden, R.~Valenzuela \emph{et~al.},
+  ``{V}-{BLAST}: An architecture for realizing very high data rates over the
+  rich-scattering wireless channel,'' in \emph{Signals, Systems, and
+  Electronics, 1998. ISSSE 98. 1998 URSI International Symposium on}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 1998, pp. 295--300.
 
-\bibitem{som2011low}
-P.~Som, T.~Datta, N.~Srinidhi, A.~Chockalingam, and B.~S. Rajan,
-  ``Low-complexity detection in large-dimension {MIMO-ISI} channels using
-  graphical models,'' \emph{Selected Topics in Signal Processing, IEEE Journal
-  of}, vol.~5, no.~8, pp. 1497--1511, 2011.
+\bibitem{foschini1999simplified}
+G.~J. Foschini, G.~D. Golden, R.~Valenzuela, P.~W. Wolniansky \emph{et~al.},
+  ``Simplified processing for high spectral efficiency wireless communication
+  employing multi-element arrays,'' \emph{Selected Areas in Communications,
+  IEEE Journal on}, vol.~17, no.~11, pp. 1841--1852, 1999.
+
+\bibitem{benesty2003fast}
+J.~Benesty, Y.~Huang, and J.~Chen, ``A fast recursive algorithm for optimum
+  sequential signal detection in a blast system,'' \emph{Signal Processing,
+  IEEE Transactions on}, vol.~51, no.~7, pp. 1722--1730, 2003.
+
+\bibitem{hoydis2013massive}
+J.~Hoydis, S.~Ten~Brink, and M.~Debbah, ``Massive {MIMO} in the {UL}/{DL} of
+  cellular networks: How many antennas do we need?'' \emph{Selected Areas in
+  Communications, IEEE Journal on}, vol.~31, no.~2, pp. 160--171, 2013.
+
+\bibitem{vardhan2008low}
+K.~V. Vardhan, S.~K. Mohammed, A.~Chockalingam, and B.~S. Rajan, ``A
+  low-complexity detector for large {MIMO} systems and multicarrier {CDMA}
+  systems,'' \emph{Selected Areas in Communications, IEEE Journal on}, vol.~26,
+  no.~3, pp. 473--485, 2008.
+
+\bibitem{li2010multiple}
+P.~Li and R.~D. Murch, ``Multiple output selection-{LAS} algorithm in large
+  {MIMO} systems,'' \emph{Communications Letters, IEEE}, vol.~14, no.~5, pp.
+  399--401, 2010.
+
+\bibitem{sunfamily}
+Y.~Sun, ``A family of likelihood ascent search multiuser detectors,''
+  \emph{submitted to IEEE Trans. on Information Theory}.
+
+\bibitem{srinidhi2011layered}
+N.~Srinidhi, T.~Datta, A.~Chockalingam, and B.~S. Rajan, ``Layered tabu search
+  algorithm for large-{MIMO} detection and a lower bound on {ML} performance,''
+  \emph{Communications, IEEE Transactions on}, vol.~59, no.~11, pp. 2955--2963,
+  2011.
 
 \bibitem{goldberger2011mimo}
 J.~Goldberger and A.~Leshem, ``{MIMO} detection for high-order {QAM} based on a
-  {Gaussian} tree approximation,'' \emph{Information Theory, IEEE Transactions
+  {G}aussian tree approximation,'' \emph{Information Theory, IEEE Transactions
   on}, vol.~57, no.~8, pp. 4973--4982, 2011.
 
-\bibitem{lakshmi2013channel}
-T.~Lakshmi~Narasimhan and A.~Chockalingam, ``Channel hardening-exploiting
-  message passing ({CHEMP}) receiver in large-scale {MIMO} systems,'' 2013.
+\bibitem{som2011low}
+P.~Som, T.~Datta, N.~Srinidhi, A.~Chockalingam, and B.~S. Rajan,
+  ``Low-complexity detection in large-dimension {MIMO}-{ISI} channels using
+  graphical models,'' \emph{Selected Topics in Signal Processing, IEEE Journal
+  of}, vol.~5, no.~8, pp. 1497--1511, 2011.
 
-\bibitem{farhang2006markov}
-B.~Farhang-Boroujeny, H.~Zhu, and Z.~Shi, ``Markov chain {Monte Carlo}
-  algorithms for {CDMA} and {MIMO} communication systems,'' \emph{Signal
-  Processing, IEEE Transactions on}, vol.~54, no.~5, pp. 1896--1909, 2006.
+\bibitem{narasimhan2014channel}
+T.~L. Narasimhan and A.~Chockalingam, ``Channel hardening-exploiting message
+  passing ({CHEMP}) receiver in large-scale {MIMO} systems,'' \emph{Selected
+  Topics in Signal Processing, IEEE Journal of}, vol.~8, no.~5, pp. 847--860,
+  2014.
 
-\bibitem{datta2012novel}
-T.~Datta, N.~Ashok~Kumar, A.~Chockalingam, and B.~S. Rajan, ``A novel {MCMC}
-  algorithm for near-optimal detection in large-scale uplink mulituser {MIMO}
-  systems,'' in \emph{Information Theory and Applications Workshop (ITA),
-  2012}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2012, pp. 69--77.
+\bibitem{som2010improved}
+P.~Som, T.~Datta, A.~Chockalingam, and B.~S. Rajan, ``Improved large-{MIMO}
+  detection based on damped belief propagation,'' in \emph{Information Theory
+  Workshop (ITW), 2010 IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2010, pp. 1--5.
 
-\bibitem{ma2008performance}
-X.~Ma and W.~Zhang, ``Performance analysis for {MIMO} systems with
-  lattice-reduction aided linear equalization,'' \emph{Communications, IEEE
-  Transactions on}, vol.~56, no.~2, pp. 309--318, 2008.
+\bibitem{datta2013novel}
+T.~Datta, N.~A. Kumar, A.~Chockalingam, and B.~S. Rajan, ``A novel
+  monte-carlo-sampling-based receiver for large-scale uplink multiuser {MIMO}
+  systems,'' \emph{Vehicular Technology, IEEE Transactions on}, vol.~62, no.~7,
+  pp. 3019--3038, 2013.
 
-\bibitem{papoulis1996stochastic}
-A.~Papoulis, ``Stochastic processes,'' \emph{McGra. w}, 1996.
-
-\bibitem{nagar2011expectations}
-D.~K. Nagar and A.~K. Gupta, ``Expectations of functions of complex {Wishart}
-  matrix,'' \emph{Acta applicandae mathematicae}, vol. 113, no.~3, pp.
-  265--288, 2011.
-
-\bibitem{gupta2004handbook}
-A.~K. Gupta and S.~Nadarajah, \emph{Handbook of beta distribution and its
-  applications}.\hskip 1em plus 0.5em minus 0.4em\relax CRC Press, 2004.
-
-\bibitem{bhargava1981distribution}
-R.~Bhargava and C.~Khatri, ``The distribution of product of independent beta
-  random variables with application to multivariate analysis,'' \emph{Annals of
-  the Institute of Statistical Mathematics}, vol.~33, no.~1, pp. 287--296,
-  1981.
+\bibitem{zhou2013element}
+Q.~Zhou and X.~Ma, ``Element-based lattice reduction algorithms for large
+  {MIMO} detection,'' \emph{Selected Areas in Communications, IEEE Journal on},
+  vol.~31, no.~2, pp. 274--286, 2013.
 
 \end{thebibliography}

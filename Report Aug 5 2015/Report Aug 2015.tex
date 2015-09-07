@@ -56,7 +56,9 @@
 
 %\documentclass[journal]{IEEEtran}
 \documentclass[12pt, draftclsnofoot, onecolumn]{IEEEtran}
+%\documentclass[12pt,paper,final]{article}
 %
+%\documentclass[12pt, onecolummn]{report}
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
 % \documentclass[journal]{../sty/IEEEtran}
@@ -77,7 +79,7 @@
 \usepackage{cite}
 \usepackage{ifpdf}
 \usepackage[cmex10]{amsmath}
-\usepackage{algorithmic}
+\usepackage{algorithm}
 \usepackage{array}
 \usepackage{stfloats}
 \usepackage{url}
@@ -85,7 +87,7 @@
 \usepackage{setspace} 
 \usepackage{diagbox}
 \usepackage{subfigure}
-
+\usepackage{algpseudocode}
 
 
 % Some very useful LaTeX packages include:
@@ -207,7 +209,7 @@
 
 % *** SPECIALIZED LIST PACKAGES ***
 %
-\usepackage{algorithmic}
+%\usepackage{algorithmic}
 % algorithmic.sty was written by Peter Williams and Rogerio Brito.
 % This package provides an algorithmic environment fo describing algorithms.
 % You can use the algorithmic environment in-text or within a figure
@@ -381,7 +383,7 @@
 
 
 \begin{document}
-
+%\begin{spacing}{8}
 %
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
@@ -492,7 +494,7 @@ McGill University\\
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-%\begin{spacing}{2.5}
+
 
 \section{Introduction}
 % The very first letter is a 2 line initial drop letter followed
@@ -520,7 +522,15 @@ McGill University\\
 %\hfill mds
  
 %\hfill September 17, 2014
-Decoder is one of the key components of Multiple-Input Multiple-Output (MIMO) systems. Designing of high performance and low complexity detector has become a bottleneck of Large MIMO systems. 
+  One of the biggest challenges the researchers and industry practitioners are facing in wireless communication area is how to bridge the sharp gap between increasing demand of high speed communication of rich multimedia information with high level Quality of Service (QoS) and the limited radio frequency spectrum over a complex space-time varying environment. As the most promising technology for solving this problem, Multiple Input Multiple Output (MIMO) technology has been of immense research interest over the last several tens of years and become mature, which is incorporated into the emerging wireless broadband standard like 802.11ac\cite{IEEE802.11ac} long-term evolution (LTE)\cite{3GLTE}.  The core idea of MIMO system is to use multiple antennas at both transmitting and receiving end, so that multiplexing gain (multiple parallel spatial data pipelines that can improve bandwidth efficiency) and diversity gain (better reliability of communication link) is obtained by employing spatial domain. Large MIMO (also called Massive MIMO) is an upgrade version of conventional MIMO system, it equips   unprecedentedly hundreds of low power low price antennas at base station (BS), serving several tens of terminals simultaneously, It can achieve full potential of conventional MIMO system while providing additional power efficiency as well as system robustness\cite{rusek2013scaling}\cite{larsson2014massive}. 
+    
+  The price paid for large MIMO system is the increasing complexities for signal processing at both transmitting and receiving end. Uplink Detector is one of the key components in large MIMO system. With orders magnitude more antennas equipped at BS, benefit and challenge coexist in designing of detection algorithms for large MIMO uplink, on the one hand, large number of receive antennas provide potential of large diversity gain, on the other hand, complexity of the algorithm becomes extremely crucial to make system practical. 
+  
+The optimal maximum likelihood detector (MLD) for MIMO system requires the complexity increase exponentially with number of transmitted antennas with a factor of the size of size of constellation, which is prohibitive in practical implementations. 
+Sphere Decoder (SD)\cite{damen2003maximum} is the most prominent algorithm that utilizes lattice structure of MIMO system. 
+Its variant fixed complexity sphere decoder (FCSD)\cite{barbero2008fixing} make it possible to achieve near optimal performance with a fixed complexity under different signal to noise ratio (SNR). However, all the algorithms that based on lattice structure have the same shortage - their complexities increases exponentially with a factor of the size of symbol constellation. Therefore, they are prohibitive when it comes to a high order modulation scheme, for example in IEEE 802.11ac standard\cite{IEEE802.11ac}, the modulation scheme is 256QAM. 
+ 
+Suboptimal linear detectors (LD) like minimum mean square error (MMSE) and zero forcing (ZF) along with their sequential interference cancellation with optimized ordering (OSIC) counterparts\cite{wolniansky1998v}\cite{foschini1999simplified}\cite{benesty2003fast}, which have good performance for low loading factor in massive MIMO system (that is the number of receive antennas is much larger than the number of transmit antennas)\cite{hoydis2013massive}. In the last several years, a set of detection algorithms are proposed with complexities that is comparable with LD-OSIC and suboptimal performance can be achieved.  The local search algorithm, such as likelihood ascend searching (LAS)\cite{vardhan2008low}\cite{li2010multiple}, an theoretical analysis of upper bound of bit error rate (BER) and lower bound of on asymptotic multiuser efficiency for the LAS detector was presented\cite{sunfamily}. Layered Tabu search algorithm presented in\cite{srinidhi2011layered} is superior to the LAS algorithms because it can move away to new searching area to avoid local minimal. Message passing detectors based on belief propagation (BF) and Gaussian Approximation (GA) \cite{goldberger2011mimo}\cite{som2011low}\cite{narasimhan2014channel}\cite{som2010improved}. Markov Chain Monte Carlo algorithm\cite{datta2013novel}  and Lattice Reduction aided detectors\cite{zhou2013element}.
 
 Firmly grounded in framework of statistical learning theory, Support Vector Machine (SVM) is proposed in 1960s [ref vapnik], and of immense research and industry interest since 1990s. SVM is a powerful tool for supervised learning tasks such as classification, regression and prediction. Moreover, the kernel trick [ref learning with kernels SVM regularization] makes it possible to map data samples into higher dimensional feature space. Therefore SVM can deal with non-linear learning tasks. This makes SVM become a promising tool for complex real-world problems.
 Based on the similar principle, $\epsilon$-Support Vector Regression (epsilon-SVR) [vapnik 1995, smola 2003], is developed.
@@ -562,6 +572,7 @@ where $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with 
   Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 
 \section{Brief Introduction to $\epsilon$-Support Vector Regression}\label{Introduce epsilon SVR}
+\subsection{Regression Model}
 Suppose we are given training data set $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2},y_{2}),\cdots,(\mathbf{x}_{l},y_{l}))$, $l$ denotes the number of training samples, $\mathbf{x}\in \mathbb{R}^{v}$ denotes input data vector, $v$ is the number of features in $\mathbf{x}$. $y$ denotes output. The regression model (either linear or non-linear regression) is given by 
 \begin{equation}
 y_{i}=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i\in 1\cdots l 
@@ -588,8 +599,8 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \end{array}\right.
 \label{primal optimization problem}
 \end{eqnarray}
-In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes cost function, the simplest cost function is $R(x)=x$, risk function is determined by the statistical distribution of noise \cite{A tutorial of Support Vector Regression}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
-
+In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes risk function, the simplest risk function is $R(x)=x$, risk function is determined by the statistical distribution of noise \cite{A tutorial of Support Vector Regression}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
+\subsection{Risk Functional}
 From the rationale of regularized risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
 \begin{eqnarray}
 \nonumber
@@ -647,78 +658,83 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \label{primal objective function}
 \end{eqnarray}
 where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered, we arrive to at a convex minimization problem \cite{smola and skpkof 1998a tutorial of SVR}. 
-
-construct Lagrangian dual form of (\ref{primal optimization problem}) by introducing Lagrange multiplier,  dual optimization problem
+\subsection{Lagrange Duality}
+According to Lagrange Theorem, the optimization problem (\ref{primal objective function}) can be transferred to dual form by combining original objective function with linear combination of equality and inequality constraints, the combination coefficient is called Lagrange multiplier. Thus we have Lagrange function. 
 \begin{eqnarray}
 \nonumber
-\min_{\alpha, \hat{\alpha}, \eta, \hat{\eta}, \mathbf{w}, \xi, \hat{\xi}}\Theta=
+\Theta(\mathbf{w}, b, \xi, \hat{\xi}, \alpha, \hat{\alpha}, \eta, \hat{\eta})=
 \frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
 \nonumber
 -\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
 s.t. \left\{\begin{array}{cc}
 \eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
 \xi, \hat{\xi}\geq  0\\
-\end{array}\right. 
+\end{array}\right.
 \label{lagrange duality1}
 \end{eqnarray}
 where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers.
 
-According to Lagrangian Theorem \cite{Introduction to SVM}, the necessary condition to find the minimum of (\ref{primal objective function}) is the partial derivative of $\Theta$ with respect to $\mathbf{w}$, $\xi$, $\hat{\xi}$ and $b$ equal to $0$, 
-
-\begin{equation}
-\frac{\partial \theta}{\partial \mathbf{w}}=w-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})
-\label{partial1}
-\end{equation}
-
-\begin{equation}
-\frac{\partial \Theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0
-\label{partial2}
-\end{equation}
-
-\begin{equation}
-\frac{\partial \Theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0
-\label{partial3}
-\end{equation}
-
-\begin{equation}
-\frac{\partial \Theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0
+The sufficient and necessary condition that $f(\mathbf{w}^{*})$ is the global minimum of (\ref{primal objective function}) is called Karush Kuhn Tucker conditions, which can be written as 
+\begin{IEEEeqnarray}[\relax]{l}
+\frac{\partial \Theta}{\partial \mathbf{w}}=w-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})\\\label{partial1}
+\frac{\partial \Theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0\\\label{partial2}
+\frac{\partial \Theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0\\\label{parial3}
+\frac{\partial \Theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0\\
 \label{partial4}
-\end{equation} 
-Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}) and for sake of brevity, we make $C_{i}$ uniform to all data samples, we have the dual form ：
-\begin{eqnarray}
+\left\{\begin{array}{cc}
+\alpha, \hat{\alpha}\geq 0\\
+\alpha(y-\mathbf{w}^{T}\Phi(\mathbf{x})-b-\epsilon-\xi)=0\\
+\hat{\alpha}(\mathbf{w}^{T}\Phi(\mathbf{x})+b-y-\epsilon-\hat{\xi})=0
+\end{array}\right. \label{KKT complimentary}
+\end{IEEEeqnarray}
+ 
+The conditions in (\ref{KKT complimentary}) is called KKT complimentary condition. Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}) and for sake of brevity, we make $C_{i}$ uniform to all data samples, we have the dual form ：
+\begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\theta &=&\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
+\theta(\alpha, \hat{\alpha}) =\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
 \nonumber
-&+&(R(\hat{\xi}_{i})-\hat{\xi}_{i}R^{'}(\hat{\xi}_{i}))]
++(R(\hat{\xi}_{i})-\hat{\xi}_{i}R^{'}(\hat{\xi}_{i}))]
 +\sum_{i=1}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
 \nonumber
-&-&\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i}),\\
-&s.t.&\left\{\begin{array}{l}
+-\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i}),\\
+s.t.\left\{\begin{array}{l}
 \sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})=0\\
 0<\alpha<C\tilde{R}^{'}(\alpha)\\
 0<\hat{\alpha}<C\tilde{R}^{'}(\hat{\alpha})\\
 \end{array}\right.
 \label{dual objective function1}
-\end{eqnarray}
-Thus $\theta(\alpha,\hat{\alpha})\leq \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})$, according to general Lagrange function\cite{introduction to SVM}, Lagrange duality with feasible solution always less or equal to original objective function, because inequality constraints is introduced. Therefore we have $\theta\leq \Theta \leq f(\mathbf{w})$, based on the lemma 5.16 of Lagrange theorem\cite{introduction of SVM}, the upper bound of $\theta$ is given by the minimal of $f(\mathbf{w})$, equality holds only when the optimal of $f(\mathbf{w})$ is obtained (property 5.19).
-Therefore the Lagrangian duality form can be written as 
-\begin{eqnarray}
+\end{IEEEeqnarray}
+Obviously $\theta(\alpha,\hat{\alpha})\leq \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})$, Because 
+\begin{equation}
+\Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})=f(\mathbf{w})+\sum_{i}(\alpha_{i} g_{i}(\mathbf{w})+\hat{\alpha}_{i}\hat{g}_{i}(\mathbf{w}))+\sum_{i}(\eta_{i} l_{i}(\mathbf{w})+\hat{\eta}_{i}\hat{l}_{i}(\mathbf{w})),\label{Theta function}
+\end{equation} 
+where $g_{i}(\mathbf{w})$, $\hat{g_{i}(\mathbf{w})}$, $l_{i}(\mathbf{w})$, $\hat{l}_{i}(\mathbf{w})$ denote inequality constraints.
+\begin{IEEEeqnarray}[\relax]{l}
+g_{i}(\mathbf{w})=\mathbf{y}_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i}\leq 0\\
+\hat{g}_{i}(\mathbf{w})=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-\mathbf{y}_{i}-\epsilon-\hat{\xi}_{i}\leq 0\\
+l_{i}(\mathbf{w})=-\xi_{i}\leq 0\\
+\hat{l}_{i}(\mathbf{w})=-\hat{\xi}_{i}\leq 0\\
+\end{IEEEeqnarray}
+Hence $\Theta\leq f(\mathbf{w})$, we have $\theta\leq \Theta\leq f(\mathbf{w})$, therefore the upper bound of $\theta$ is determined by the original objective function $f(\mathbf{w})$. when $\theta=f(\mathbf{w})$,  according to (\ref{Theta function}), the linear combination term of inequality constraints equal to zero, that is, KKT complimentary conditions in (\ref{KKT complimentary}) satisfied. hence the global optimal point is found for both $\theta$ and $f(\mathbf{w})$ if and only if the equality holds. Therefore duality gap is defined as $G=f(\mathbf{w})-\theta$, which can be used as an evaluation for the closeness of one solution to the global optimal. 
+
+In conclusion, the dual objective function can be written as 
+\begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize\quad \Theta &=&-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
+maximize\quad \Theta =-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
 \nonumber
-&+&C\sum_{i=1}^{l}[\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi_{i}})]\\
-&=&-\frac{1}{2}(\mathbf{a}-\mathbf{\hat{a}})^{T}\mathbf{K}(\mathbf{a}-\mathbf{\hat{a}})+(\mathbf{y}-\epsilon)^{T}\mathbf{a}+(-\mathbf{y}-\epsilon)^{T}\mathbf{\hat{a}}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
++C\sum_{i=1}^{l}[\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi_{i}})]\\
+=-\frac{1}{2}(\mathbf{a}-\mathbf{\hat{a}})^{T}\mathbf{K}(\mathbf{a}-\mathbf{\hat{a}})+(\mathbf{y}-\epsilon)^{T}\mathbf{a}+(-\mathbf{y}-\epsilon)^{T}\mathbf{\hat{a}}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
 \label{dual optimization function2}
-\end{eqnarray}
+\end{IEEEeqnarray}
 where $\mathbf{a}=[\alpha_{1},\alpha_{2}, \ldots, \alpha_{l}]^{T} $, $\mathbf{\hat{a}}=[\hat{\alpha}_{1},\hat{\alpha}_{2}, \ldots, \hat{\alpha}_{l}]^{T} $, $\mathbf{y}=[y_{1}, y_{2}, \ldots y_{l}]^{T}$, $ \mathbf{e}=[1,1,\ldots,1]^{T}\in \mathbb{R}^{l}$, $\mathbf{e}_{i}$ denotes the vector that only $i$th component is 1 while the rest are all 0,  $\tilde{R}(\xi)=R(\xi)-\xi R^{'}(\xi)\in \mathbb{R}^{l}$, $\mathbf{K}_{ij}=\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})$ denotes data kernel matrix. We define the following $2l$ vectors 
 $\mathbf{a}^{(*)}$= [$\mathbf{a} \atop \mathbf{\hat{a}}$], $\mathbf{v}\in \mathbb{R}^{2l}$, 
-\begin{eqnarray}
+\begin{IEEEeqnarray}[\relax]{l}
 \mathbf{v}_{i}=\left\{\begin{array}{ll}
 1\quad i=1,\ldots, l\\
 -1\quad i=l+1,\ldots, 2l\\ 
 \end{array}\right.
-\end{eqnarray}
-(\ref{dual optimization function2}) can be reformulate as 
+\end{IEEEeqnarray}
+(\ref{dual optimization function2}) can also be reformulate as 
 \newcommand{\mysmallarraydecl}{\renewcommand{%
 \IEEEeqnarraymathstyle}{\scriptscriptstyle}%
 \renewcommand{\IEEEeqnarraytextstyle}{\scriptsize}%
@@ -1067,7 +1083,7 @@ Based on (\ref{2-D solver}), the partial derivative of $\Theta^{r}_{1,2}$ with r
 \nonumber
 \frac{\partial \Theta^{r}_{1,2}}{\partial \alpha_{1}}=-(\alpha_{1}-\hat{\alpha}_{1})\mathbf{K}^{r}_{11}-(\alpha_{2}-\hat{\alpha}_{2})\mathbf{K}^{r}_{12}-\sum_{j\neq 1, 2}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{1j}+Re(y_{1})-\epsilon=\\
 \nonumber
--(\alpha_{1}-\hat{\alpha}_{1})\mathbf{K}^{r}_{11}+Re(y_{1})-\sum_{j\neq 1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{1j}-\epsilon\\
+-(\alpha_{1}-\hat{\alpha}_{1})^{new}\mathbf{K}^{r}_{11}+Re(y_{1})-\sum_{j\neq 1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{1j}-\epsilon=-(\alpha_{1}-\hat{\alpha}_{1})^{new}\mathbf{K}^{r}_{11}+\Phi_{1}+(\alpha_{1}-\hat{\alpha}_{1})\mathbf{K}^{r}_{11}-\epsilon\\
 \Rightarrow \alpha^{new}_{1}=\alpha_{1}+\frac{(\Phi^{r}_{1}-\epsilon)}{\mathbf{K}^{r}_{11}},
 \label{partial derivative sample1}
 \end{IEEEeqnarray}
@@ -1099,7 +1115,7 @@ recall the gain of objective function of 1-D solver in (\ref{gain of 1-D objecti
 \label{gain of 2-D objective function1}
 \end{IEEEeqnarray}
 where $\bigtriangledown \Theta^{r}_{i}$, $\bigtriangledown \Theta^{r}_{j}$ denote gains of 1-D solver with $i$th and $j$th dual variable pairs are chosen. 
-\subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}
+\subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}\label{approximate 2D solver}
 From (\ref{gain of 2-D objective function1}), it is obviously that the gain of 2-D solver is a summation of the gain of 2 independent 1-D solver and a correlation term $(\delta_{i}+\hat{\delta}_{i})(\delta_{j}+\hat{\delta}_{j})\mathbf{K}^{r}_{ij}$.
  
 Obviously optimal 2-D coordinate combination ($i, j$) can be determined by comparing the gains of all the possibilities exhaustively, which requires $O(n^{2})$ times of searching. Based on (\ref{gain of 2-D objective function1}), we can approximate optimal 2-D solution by 1-D search approach, we will prove in large MIMO scenario, when $N_{t}$ is sufficient large, with channel hardening become effective, this approximation is very efficient. Here we propose two kinds of 1-D approximate searching strategy:\\
@@ -1110,39 +1126,98 @@ do 2 times 1-D searching, in the first round find dual variable pair $i$ that ca
 
 From (\ref{gain of 2-D objective function1}), it can be easily interpreted the efficient of 1-D approximation approach is majorly determined by the approximation ratio $\frac{(\delta_{i}+\hat{\delta}_{i})(\delta_{j}+\hat{\delta}_{j})\mathbf{K}^{r}_{ij}}{\bigtriangledown \Theta^{r}_{i}+\bigtriangledown \Theta^{r}_{j}}$, hence we provide theoretical analyse from the view of channel hardening phenomenon, and give the upper bound of approximation ratio. Prior the theoretical analyse, we first investigate some mathematical properties of channel hardening.    
 
+ Based on the complimentary KKT conditions, we have $\alpha\hat{\alpha}=0$, therefore we transform (\ref{subset optimization}) and (\ref{gain work set selection2}) by substituting $\lambda_{i}=\alpha_{i}-\hat{\alpha}_{i}$ and $|\lambda_{i}|=\alpha_{i}+\hat{\alpha}_{i}$, hence we have 
+\begin{equation}
+maximize\quad \Theta_{S}^{r}=-\frac{1}{2}\lambda_{S}^{T}\mathbf{K}_{SS}^{r}\lambda_{S}+(Re(\mathbf{y})_{S}^{T}-\lambda_{N}^{T}\mathbf{K}_{NS}^{r}
+)\lambda_{S}-\epsilon(\mathbf{e}_{S}^{T}|\lambda_{s}|),
+\label{simplified subset optimization}
+\end{equation}
 
-Recall (\ref{formula9})
-\begin{equation}
-\phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum_{j<i}|r_{ji}|^{2}}.
-\end{equation}
-All the components in $\mathbf{R}$ are independently distributed and $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma(N_{r}-i+1,1)$ \cite{nagar2011expectations}. Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ji}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten as 
-\begin{equation}
-\phi_{om}=\prod_{i=1}^{N_{t}}\frac{\beta_{i}}{\beta_{i}+\alpha_{i}},
-\label{formula21}
-\end{equation}
-From \cite{gupta2004handbook}, if $X\sim Gamma(k_{1},\theta)$ and $Y\sim Gamma(k_{2},\theta)$, then $\frac{X}{X+Y}\sim B(k_{1},k_{2})$, where $B$ denotes Beta distribution. Therefore $\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}\sim B(k^{i}_{1}, k^{i}_{2})$, where $k^{i}_{1}=N_{r}-i+1$, $k^{i}_{2}=i-1$. we define $\eta_{i}=\frac{\beta_{i}}{\beta_{i}+\alpha_{i}}$, it is obvious that $\eta_{i}$ are independently distributed. Based on (\ref{formula21}), we have 
-\begin{equation}
-\phi_{om}=\prod_{i=1}^{N_{t}}\eta_{i}.
-\label{formula22}
-\end{equation}
-Therefore the density function of $\phi_{om}$ can be defined as
-\begin{equation}
-f_{\phi_{om}}(x)=\frac{1}{x}\sum_{\mathbf{j}}(\prod_{i=1}^{N_{t}}c(k_{1}^{i}k,k_{2}^{i},j^{i}))f(-\ln(x)|\mathbf{k_{1}}+\mathbf{j}), 
-\label{formula23}
-\end{equation}
-where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{N_{t}}}$, the range of $j^{i}\in [0, k_{2}^{i}-1]$, $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j^{i}}$ $k_{2}^{i}-1\choose j^{i}$ $[(k_{1}^{i}+k_{2}^{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. $f(-\ln(x)|\mathbf{k_{1}}+\mathbf{j})=(\prod_{i=1}^{N_{t}}(k_{1}^{i}+j^{i}))\sum_{i=1}^{N_{t}}[exp((k_{1}^{i}+j^{i})\ln(x))/\prod_{j=1\\ j\neq i}^{N_{t}}(k_{1}^{j}+j^{j}-k_{1}^{i}-j^{i})]$. $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j^{1},\cdots k_{1}^{N_{t}-1}+j^{N_{t}-1},k_{1}^{N_{t}}+j^{N_{t}}]$. Proof: see Appendix C. 
 
-Consider logarithmic expectation of $\phi_{om}$, we have
+\begin{IEEEeqnarray}[\relax]{l}
+\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}\tau^{T}_{S}\mathbf{K}^{r}_{SS}\tau_{S}+(\Phi^{r}_{S})^{T}\tau_{S}-\epsilon\mathbf{e}^{T}_{S}(|\lambda|^{new}-|\lambda|)_{S},
+\label{simplified gain work set selection}
+\end{IEEEeqnarray}
+where $\tau=\lambda^{new}-\lambda$. 
+Therefore we can simplify the work set selection procedure by update variables $\lambda$ rather than dual variable pairs
+For single direction solver, (\ref{optimization function 1-D}) can be transformed as 
+\begin{IEEEeqnarray}[\relax]{l}
+ maximize\quad \Theta_{1}^{r}=-\frac{1}{2}(\lambda_{1}^{new})^{2}\mathbf{K}_{11}^{r}-(\lambda_{1})^{new}\sum_{j=2}^{N_{r}}\mathbf{K}_{1j}^{r}\lambda_{j}
++Re(y_{1})\lambda_{1}^{new}-\epsilon|\lambda_{1}|^{new},
+ \label{simplified optimization function 1-D}
+ \end{IEEEeqnarray}
+Thus for 1-D solver the gradient of (\ref{simplified optimization function 1-D}) with respect to $\lambda$ can be written as
 \begin{equation}
-E[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}E[\ln(\eta_{i})],
-\label{formula24}
+\lambda_{1}^{new}=\lambda_{1}+\frac{\Phi_{1}-sgn(\lambda_{1}^{new})\epsilon}{\mathbf{K}^{r}_{11}},
+\label{gradient lambda}
 \end{equation}
-where $E[\ln(\eta_{i})]=\psi(k^{i}_{1})-\psi(k^{i}_{1}+k^{i}_{2})$, thus we have 
-\begin{equation}
-E[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1)-N_{t}\psi(N_{r}).
-\label{formula25}
-\end{equation}
-we can find (\ref{formula25}) is consistent with (\ref{formula15}). 
+where $\frac{\partial |\lambda^{new}_{1}|}{\partial \lambda_{1}^{new}}=sgn(\lambda_{1}^{new})$
+the similar principle can be also applied to double direction solver. Because in the update process the $sgn(\lambda^{new})$ is unknown to old parameter values , therefore, we need to consider both the case $sgn(\lambda^{new})=-1 $ or $1$ and choose the one with the larger objective function gain $\bigtriangledown \Theta^{r}_{S}$. Here we give the pseudo code for sequential approximate optimal double direction solver.
+ 
+\begin{algorithm}
+\begin{algorithmic}
+\Procedure{CSVD}{$\mathbf{y}$,$\mathbf{H}$}
+\State Step 1. Initialization
+\For{$i=1:N_{r}$}\Comment{initialize $\lambda^{r}$, $\lambda^{i}$, $\Phi^{r}$, $\Phi^{i}$, $\Psi^{r}$, $\Psi^{i}$ and duality gap $G$}
+\State $\lambda_{i}^{r}=0, \lambda_{i}^{i}=0$
+\State $\Phi_{i}^{r}=Re(y_{i}), \Phi_{i}^{i}=Im(y_{i})$
+\State $\Psi_{i}^{r}=0, \Psi_{i}^{i}=0$
+\EndFor 
+\State  Step 2. if $G>tol$, go to step 3, else go to Step 6
+\State Step 3.
+\State Sequential 2-D solver with or without damping \Comment{find two dual variables to be updated} 
+\State Step 4.
+\State  $G$
+\State Step 5.
+\State $\tilde{x}=(\lambda^{r}+i\lambda^{i})\mathbf{H}$ \Comment{reconstruct $\mathbf{x}$}
+\State $\mathbf{x}=\mathbb{Q}(\tilde{x})$\Comment{$\mathbb{Q}(\cdot)$ denotes quantization operation based on symbol constellation}
+\State go back to Step 2
+\State Step 6. \textbf{Return} $\mathbf{x}$ 
+
+\EndProcedure
+\end{algorithmic}
+\label{CSVD algorithm}
+\caption{Dual Channel Complex Support Vector Detection Algorithm }
+\end{algorithm}
+
+\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Sequential 2-D solver without Damping}{$1st$, $2nd$} 
+\For{$i=1:N_{r}$}
+\State update $\lambda^{r}_{i}(\lambda_{i}^{i})$ by single direction solver
+\State calculate $\bigtriangledown \theta^{r}_{i}(\bigtriangledown \theta_{i}^{i})$\Comment{ calculate the gain of sub objective function}
+\EndFor
+\State choose the dual variable with first and the second largest gain of sub objective function, denoted as 1st and 2nd
+\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ with respect to 1st and 2nd
+\State \textbf{Return} 1st, 2nd
+\EndProcedure
+\end{algorithmic}
+\caption{Sequential 2-D Solver without Damping}
+\label{1D2D Nodamping}
+\end{algorithm} 
+ 
+ 
+ \begin{algorithm}
+\begin{algorithmic}
+\Procedure{Sequential 2-D solver with Damping}{$1s_{1}t$,$1st_{2}$}
+\For{$i=1:N_{r}$}\Comment{First round searching}
+\State update $\lambda_{i}^{r}(\lambda_{i}^{i})$ by single direction solver
+\State calculate $\bigtriangledown \theta_{i}^{r}(\bigtriangledown \theta_{i}^{i})$ \Comment{calculate the gain of objective function}
+\EndFor
+\State choose the dual variable with the largest gain of objective function as $1st_{1}$
+\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ with respect to $1st_{1}$
+\For{$i=1:N_{r}$} \Comment{Second round searching}
+\State update $\lambda_{i}^{r}(\lambda_{i}^{i})$ by single direction solver
+\State calculate $\bigtriangledown \theta_{i}^{r}(\bigtriangledown \theta_{i}^{i})$ \Comment{calculate the gain of objective function}
+\EndFor
+\State choose the dual variable with the largest gain of objective function as $1st_{2}$
+\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ with respect to $1st_{2}$
+\State \textbf{Return} $1st_{1}$ and $1st_{2}$
+\EndProcedure
+\end{algorithmic}
+\caption{Sequential 2-D Solver with Damping}
+\label{1D2D damping}
+\end{algorithm} 
 
 \section{Initialization}\label{Initialization}
  Computer simulations are made for different sizes of V-BLAST MIMO systems, with $5\leq N_{r} \leq 100, 5 \leq N_{t} \leq N_{r}$, the empirical estimation of logarithmic expectation of $\phi_{om}$, $E[\ln(\phi_{om})]_{em}$, is calculated by taking average over $1e4$ channel realizations for each size of MIMO systems, as shown in Fig.\ref{figure1}, the Theoretical logarithmic expectation of $\phi_{om}$ $E[\ln(\phi_{om})]_{t}$ in (\ref{formula25}) is plotted in Fig.\ref{figure2}. Average deviation between $E[\ln(\phi_{om})]_{em}$ and $E[\ln(\phi_{om})]_{t}$ is also calculated, $V_{em-t}= 7.3043e-04$.
@@ -1347,7 +1422,7 @@ The conclusion goes here.
 
 
 \appendices
-\section{Proof of the First Zonklar Equation}
+%\section{Proof of the First Zonklar Equation}
 Appendix one text goes here.
 
 % you can choose not to have a title for an appendix
@@ -1561,9 +1636,12 @@ f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod
 
 % that's all folks
 %\end{spacing}
+
 \newpage
 \bibliographystyle{IEEEtran}
-\bibliography{citation}
+\bibliography{citation}													
 \end{document}
+
+
 
 

@@ -383,7 +383,8 @@
 
 
 \begin{document}
-%\begin{spacing}{8}
+\begin{spacing}{2}
+%\doublespacing
 %
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
@@ -600,7 +601,7 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \label{primal optimization problem}
 \end{eqnarray}
 In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes risk function, the simplest risk function is $R(x)=x$, risk function is determined by the statistical distribution of noise \cite{A tutorial of Support Vector Regression}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
-\subsection{Risk Functional}
+\subsection{Risk Functional}\label{risk functional}
 From the rationale of regularized risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
 \begin{eqnarray}
 \nonumber
@@ -638,12 +639,12 @@ Thus the cost function in $\epsilon$-SVR can be written as
 \end{equation}
 where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the regularized risk function can written as 
 \begin{equation}
-minimize\quad \lambda||w||^{2}+\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x})),
+minimize\quad \lambda||\mathbf{w}||^{2}+\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x})),
 \label{total cost function}
 \end{equation} 
 where $\lambda$ denotes the weight of regularization term, divide (\ref{total cost function}) by $\frac{1}{2\lambda}$, we have the optimization problem  
 \begin{equation}
-minimize \quad \frac{1}{2}||w||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
+minimize \quad \frac{1}{2}||\mathbf{w}||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
 \label{final cost function}
 \end{equation}
 where $C_{i}=\frac{m_{i}}{2\lambda l}$, based on (\ref{final cost function}), by introducing slack variables, we can easily derive the equivalent optimization problem as same as (\ref{primal optimization problem}):
@@ -658,7 +659,7 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \label{primal objective function}
 \end{eqnarray}
 where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered, we arrive to at a convex minimization problem \cite{smola and skpkof 1998a tutorial of SVR}. 
-\subsection{Lagrange Duality}
+\subsection{Lagrange Duality}\label{section lagrange duality}
 According to Lagrange Theorem, the optimization problem (\ref{primal objective function}) can be transferred to dual form by combining original objective function with linear combination of equality and inequality constraints, the combination coefficient is called Lagrange multiplier. Thus we have Lagrange function. 
 \begin{eqnarray}
 \nonumber
@@ -674,21 +675,24 @@ s.t. \left\{\begin{array}{cc}
 \end{eqnarray}
 where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers.
 
-The sufficient and necessary condition that $f(\mathbf{w}^{*})$ is the global minimum of (\ref{primal objective function}) is called Karush Kuhn Tucker conditions, which can be written as 
+The sufficient and necessary condition that $f(\mathbf{w}^{*})$ is the global minimum of (\ref{primal objective function}) is called Karush-Kuhn-Tucker (KKT) conditions, which can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
-\frac{\partial \Theta}{\partial \mathbf{w}}=w-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})\\\label{partial1}
+\frac{\partial \Theta}{\partial \mathbf{w}}=\mathbf{w}-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})\Phi(\mathbf{x}_{i})=0\\\label{partial1}
 \frac{\partial \Theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0\\\label{partial2}
 \frac{\partial \Theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0\\\label{parial3}
-\frac{\partial \Theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0\\
-\label{partial4}
+\frac{\partial \Theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0\\\label{partial4}
+\nonumber
+\end{IEEEeqnarray}
+\begin{IEEEeqnarray}[\relax]{l}
 \left\{\begin{array}{cc}
 \alpha, \hat{\alpha}\geq 0\\
 \alpha(y-\mathbf{w}^{T}\Phi(\mathbf{x})-b-\epsilon-\xi)=0\\
 \hat{\alpha}(\mathbf{w}^{T}\Phi(\mathbf{x})+b-y-\epsilon-\hat{\xi})=0
-\end{array}\right. \label{KKT complimentary}
+\end{array}\right. 
+\label{KKT complimentary}
 \end{IEEEeqnarray}
  
-The conditions in (\ref{KKT complimentary}) is called KKT complimentary condition. Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality2}) and for sake of brevity, we make $C_{i}$ uniform to all data samples, we have the dual form ：
+The conditions in (\ref{KKT complimentary}) is called KKT complimentary condition. Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality1}) and for sake of brevity, we make $C_{i}$ uniform to all data samples, we have the dual form of objective function ：
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
 \theta(\alpha, \hat{\alpha}) =\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
@@ -704,7 +708,7 @@ s.t.\left\{\begin{array}{l}
 \end{array}\right.
 \label{dual objective function1}
 \end{IEEEeqnarray}
-Obviously $\theta(\alpha,\hat{\alpha})\leq \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})$, Because 
+Obviously $\theta(\alpha,\hat{\alpha})\leq \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})$, notice now (\ref{partial1})-(\ref{partial4})are satisfied, therefore, KKT complimentary condition (\ref{KKT complimentary}) is the only requirement to find global optimal point of original optimization problem. Because 
 \begin{equation}
 \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})=f(\mathbf{w})+\sum_{i}(\alpha_{i} g_{i}(\mathbf{w})+\hat{\alpha}_{i}\hat{g}_{i}(\mathbf{w}))+\sum_{i}(\eta_{i} l_{i}(\mathbf{w})+\hat{\eta}_{i}\hat{l}_{i}(\mathbf{w})),\label{Theta function}
 \end{equation} 
@@ -714,13 +718,14 @@ g_{i}(\mathbf{w})=\mathbf{y}_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\
 \hat{g}_{i}(\mathbf{w})=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-\mathbf{y}_{i}-\epsilon-\hat{\xi}_{i}\leq 0\\
 l_{i}(\mathbf{w})=-\xi_{i}\leq 0\\
 \hat{l}_{i}(\mathbf{w})=-\hat{\xi}_{i}\leq 0\\
+\nonumber
 \end{IEEEeqnarray}
 Hence $\Theta\leq f(\mathbf{w})$, we have $\theta\leq \Theta\leq f(\mathbf{w})$, therefore the upper bound of $\theta$ is determined by the original objective function $f(\mathbf{w})$. when $\theta=f(\mathbf{w})$,  according to (\ref{Theta function}), the linear combination term of inequality constraints equal to zero, that is, KKT complimentary conditions in (\ref{KKT complimentary}) satisfied. hence the global optimal point is found for both $\theta$ and $f(\mathbf{w})$ if and only if the equality holds. Therefore duality gap is defined as $G=f(\mathbf{w})-\theta$, which can be used as an evaluation for the closeness of one solution to the global optimal. 
 
 In conclusion, the dual objective function can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize\quad \Theta =-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
+maximize\quad \theta =-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
 \nonumber
 +C\sum_{i=1}^{l}[\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi_{i}})]\\
 =-\frac{1}{2}(\mathbf{a}-\mathbf{\hat{a}})^{T}\mathbf{K}(\mathbf{a}-\mathbf{\hat{a}})+(\mathbf{y}-\epsilon)^{T}\mathbf{a}+(-\mathbf{y}-\epsilon)^{T}\mathbf{\hat{a}}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
@@ -881,13 +886,13 @@ Therefore
 \end{equation}
 Based on (\ref{conjugate1}), (\ref{complex duality regularization1}) can be changed to
 \begin{equation}
-||\mathbf{w}||^{2}_{\mathbb{H}}=\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{i}-\hat{\alpha}_{i})\mathbf{K}^{r}_{ij}+\sum_{i,j=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{i}-\hat{\beta}_{i})\mathbf{K}^{r}_{ij}-2\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\beta-\hat{\beta}_{i})\mathbf{K}^{i}_{ij}.
+||\mathbf{w}||^{2}_{\mathbb{H}}=\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{i}-\hat{\alpha}_{i})\mathbf{K}^{r}_{ij}+\sum_{i,j=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{i}-\hat{\beta}_{i})\mathbf{K}^{r}_{ij}-2\sum_{i,j=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}.
 \label{complex duality regularization2}
 \end{equation}
 Apply (\ref{complex lagrange duality2}), (\ref{complex duality regression function}), (\ref{conjugate1}) and (\ref{complex duality regularization2}) to (\ref{complex lagrange duality1}), the final form of Lagrange duality can be obtained
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize\quad \Theta=-\frac{1}{2}[\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}+\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}]\\
+maximize\quad \theta=-\frac{1}{2}[\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}+\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}]\\
 \nonumber
 -\sum_{i}^{N_{r}}(\alpha_{i}+\hat{\alpha}_{i}+\beta+\hat{\beta}_{i})\epsilon+[\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})Re(y_{i})+\sum_{i=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})Im(y_{i})]\\
 \nonumber
@@ -1246,57 +1251,91 @@ the similar principle can be also applied to double direction solver. Because in
 
 Fig.\ref{figure3} demonstrates the relation between the number of users ($N_{t}$) and $E[\ln(\phi_{om})]_{t}$ under cases of different numbers of antennas at base station ($N_{r}$). From Fig.\ref{figure3}, we can see, on the one hand, with $N_{r}$ fixed, $E[\ln(\phi_{om})]$ decreases while $N_{t}$ increases, however the gradient of each curve becomes more and more gentle. On the other hand, when $N_{r}$ becomes larger $E[\ln(\phi_{om})]$ becomes more insensitive to variation of $N_{t}$.
 \section{Stopping Criteria}\label{stopping criteria}
-As we have explained in section \ref{Introduce epsilon SVR}, the upper bound of Lagrangian dual objective function is determined by primal objective function further more the Lagrangian dual objective function equals to original objective function only when the optimal is found. Therefore, the gap between primal problem and dual problem is used to evaluate how is close is the current solution to global minimum. In our scenario, feasibility gap is employed as stopping criteria because of low computational cost and reliable performance.
-
-  Based on the dual objective function in (\ref{final complex lagrange duality}) and the primal objective function in (\ref{complex objective function1}), based on the proposition of Lagrangian theorem
+As we have explained in section \ref{section lagrange duality}, the upper bound of Lagrangian dual objective function is determined by primal objective function, further more the optimal of primal and dual objective function is found if and only if the equality holds, that is 
+\begin{equation}
+\theta(\lambda^{r}, \lambda^{i})=f(\mathbf{w},\xi)
+\label{duality equal}
+\end{equation}
+\begin{equation}
+\frac{1}{2}||\mathbf{w}||^{2}_{\mathbb{H}}+C\sum_{i=1}^{N_{r}}[R(\xi^{r}_{i})+R(\hat{\xi}^{r}_{i})+R(\xi^{i}_{i})+R(\hat{\xi}^{i}_{i})],
+\label{simple primal}
+\end{equation}
+(\ref{final complex lagrange duality}) can be rewritten as follow by substituting $\lambda^{r}=\alpha-\hat{\alpha}$, $|\lambda^{r}|=\alpha+\hat{\alpha}$ and $\lambda^{i}=\beta-\hat{\beta}$, $|\lambda^{i}|=\beta+\hat{\beta}$
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
- -\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})+Im(\mathbf{y}^{T})(\beta-\hat{\beta})-\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})\\
-+C\sum_{i=1}^{N_{r}}[\tilde{R}(\xi_{i}^{r})+\tilde{R}(\hat{\xi}_{i}^{r})+\tilde{R}(\xi_{i}^{i})+\tilde{R}(\hat{\xi}_{i}^{i})] \leq \frac{1}{2}||\mathbf{W}||^{2}_{\mathbb{H}}+C\sum_{i=1}^{N_{r}}[R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})+R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})]
-\label{duality gap1}
+\theta(\lambda^{r}, \lambda^{i})=-\frac{1}{2}<(\lambda^{r})^{T}, \mathbf{K}^{r}\lambda^{r}>-\frac{1}{2}<(\lambda^{i})^{T}, \mathbf{K}^{r}\lambda^{i}>+<Re(\mathbf{y})^{T}, \lambda^{r}>+<Im(\mathbf{y})^{T}, \lambda^{i}>\\
+-\epsilon<\mathbf{e}^{T}, (|\lambda^{r}|+|\lambda^{i}|)>+C\sum_{i=1}^{N_{r}}[\tilde{R}(\xi^{r}_{i})+\tilde{R}(\hat{\xi}^{r}_{i})+\tilde{R}(\xi^{i}_{i})+\tilde{R}(\hat{\xi}^{i}_{i})],
+\label{simple dual function}
 \end{IEEEeqnarray}
- where $\mathbf{W}=\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})\mathbf{h}_{i}-i\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{h}_{j}$. The duality gap can be obtained by 
- \begin{IEEEeqnarray}[\relax]{l}
- \nonumber
- G(\alpha, \hat{\alpha}, \beta, \hat{\beta})=\frac{1}{2}||\mathbf{W}||^{2}_{\mathbb{H}}+C\sum_{i=1}^{N_{r}}[R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})+R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})]-\{-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})\\
-\nonumber 
- -\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})+Im(\mathbf{y}^{T})(\beta-\hat{\beta})-\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})+C\sum_{i=1}^{N_{r}}[\tilde{R}(\xi_{i}^{r})+\tilde{R}(\hat{\xi}_{i}^{r})\\
- \nonumber
- +\tilde{R}(\xi_{i}^{i})+\tilde{R}(\hat{\xi}_{i}^{i})]\}=(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha}) +(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})-Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})-Im(\mathbf{y}^{T})(\beta-\hat{\beta})+\\
- \epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{i}(\beta-\hat{\beta})+C\sum_{i=1}^{N_{r}}[\xi_{i}^{r}R^{'}(\xi_{i}^{r})+\hat{\xi}_{i}^{r}R^{'}(\hat{\xi}_{i}^{r})+\xi_{i}^{i}R^{'}(\xi_{i}^{i})+\hat{\xi}_{i}^{i}R^{'}(\hat{\xi}_{i}^{i})]
- \label{duality gap2}
- \end{IEEEeqnarray}
-Because the noise is white Gaussian, therefore the optimal risk function is 
-$R(\xi)=\frac{1}{2}\xi^{2}$, $\xi$ is the slack variable, hence 
+Similarly, (\ref{complex duality regularization1}) can be formulated as 
+\begin{IEEEeqnarray}[\relax]{l}
+||\mathbf{W}||^{2}_{\mathbb{H}}=<(\lambda^{r})^{T}, \mathbf{K}^{r}\lambda^{r}>+<(\lambda^{i})^{T}, \mathbf{K}^{r}\lambda^{i}>-2<\lambda^{r}, \mathbf{K}^{i}\lambda^{i}>,
+\label{simple regularization}
+\end{IEEEeqnarray}
+hence, duality gap can be formulated as
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+G(\lambda^{r}, \lambda^{i})=f(\mathbf{w},\xi)-\theta(\lambda^{r},\lambda^{i})=<(\lambda^{r})^{T}, \mathbf{K}^{r}\lambda^{r}>+<(\lambda^{i})^{T}, \mathbf{K}^{r}\lambda^{i}>-<Re(\mathbf{y})^{T}, \lambda^{r}>-<Im(\mathbf{y})^{T}, \lambda^{i}>\\
+-\epsilon<\mathbf{e}^{T}, (|\lambda^{r}|+|\lambda^{i}|)>+C\sum_{i=1}^{N_{r}}[\xi^{r}_{i}R^{'}(\xi^{r}_{i})+\hat{\xi}^{r}_{i}R^{'}(\hat{\xi}^{r}_{i})+\xi^{i}_{i}R^{'}(\xi^{i}_{i})+\hat{\xi}^{i}_{i}R^{'}(\hat{\xi}^{i}_{i})]-2<\lambda^{r}, \mathbf{K}^{i}\lambda^{i}>.
+\label{simple duality gap}
+\end{IEEEeqnarray}
+As we explained in section \ref{risk functional}, the choice of risk function is determined by distribution of noise, as to Gaussian noise, the risk function is 
 \begin{equation}
-\xi R^{'}(\xi)=\xi^{2},
-\label{risk functional1}
+R(\xi)=\frac{1}{2}\xi^{2},
+\label{risk function1}
 \end{equation} 
+hence 
 \begin{equation}
-\xi_{i}^{r}(\hat{\xi}^{r})=\max(0, |Re(y_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|-\epsilon),
-\label{risk functional2}
+\tilde{R}(\xi)=R(\xi)-\xi R{'}(\xi)=-\frac{1}{2}\xi^{2},
+\label{risk function2}
 \end{equation}
-Because $\xi^{r}\hat{\xi}^{r}=0$ (estimation can only exceed $\epsilon$ tube in one direction), therefore there is only one of $\xi$ and $\hat{\xi}$ need to be considered, notice $Re(y_{i})-Re(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=\Phi_{i}^{r}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}$ and $Im(y_{i})-Im(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=\Phi_{i}^{i}-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}$ hence the last term in (\ref{duality gap2}) can be rewritten as 
-\begin{equation}
-C\sum_{i=1}^{N_{r}}((|\Phi_{i}^{r}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon}+(|\Phi_{i}^{i}-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon})
-\label{risk functional3}
-\end{equation}
-where $()_{\epsilon}$ denotes $\epsilon$ insensitive function.
-duality gap in (\ref{duality gap2}) can be divided into two part
-\begin{equation}
-G(\alpha, \hat{\alpha}, \beta, \hat{\beta})=L(\alpha, \hat{\alpha}, \beta, \hat{\beta})+S(\alpha, \hat{\alpha}, \beta, \hat{\beta}),
-\label{divide duality gap}
-\end{equation}
-where 
-\begin{equation}
-L(\alpha, \hat{\alpha}, \beta, \hat{\beta})=(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha}) +(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})-Re(\mathbf{y}^{T})(\alpha-\hat{\alpha})-Im(\mathbf{y}^{T})(\beta-\hat{\beta})+\epsilon\mathbf{e}^{T}(\alpha+\hat{\alpha}+\beta+\hat{\beta})，
-\label{L sub function}
-\end{equation}
+In $\epsilon$-SVR, the objective to employ slack variables $\xi$ is to deal with the outliers that outside $\epsilon$ tube to compensate the influence from noise.
+Therefore 
+\begin{IEEEeqnarray}[\relax]{l}
+\xi^{r}_{i}=Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})-\epsilon\\
+\hat{\xi}^{r}_{i}=Re(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})-Re(\mathbf{y}_{i})-\epsilon
+\label{outlier1}
+\end{IEEEeqnarray}
+Because $\xi^{r}\hat{\xi}^{r}=0$ (estimation can only exceed $\epsilon$ tube in one direction), therefore there is only one of $\xi$ and $\hat{\xi}$ need to be considered, thus 
+\begin{IEEEeqnarray}[\relax]{l}
+\xi^{r}_{i}(\hat{\xi}^{r}_{i})=\max(0, |Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|-\epsilon)\\
+\xi^{i}_{i}(\hat{\xi}^{i}_{i})=\max(0, |Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|-\epsilon)\\
+\xi\hat{\xi}=0,
+\label{outlier2}
+\end{IEEEeqnarray} 
+Therefore the risk function can be rewritten as 
+\begin{IEEEeqnarray}[\relax]{l}
+R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})=\frac{1}{2}(|Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|)^{2}_{\epsilon}\\
+\label{simple risk function1}
+R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})=\frac{1}{2}(|Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|)^{2}_{\epsilon}
+\label{simple risk function2}
+\end{IEEEeqnarray}
+where $()_{\epsilon}$ denotes $\epsilon$ insensitive function as we mention in section \ref{risk functional}. Based on (\ref{complex duality regression function}), we have 
+\begin{IEEEeqnarray}[\relax]{l}
+Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=Re(\mathbf{y}_{i})-\sum_{j=1}^{N_{r}}\lambda^{r}_{j}\mathbf{K}^{r}_{ij}+\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\mathbf{K}^{i}_{ij}\\
+Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=Im(\mathbf{y}_{i})-\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\mathbf{K}^{r}_{ij}-\sum_{j=1}^{N_{r}}\lambda^{r}_{j}\mathbf{K}^{i}_{ij}
+\label{intermediate function1}
+\end{IEEEeqnarray}
+we define two intermediate variables $\Phi$ and $\Psi$
+\begin{IEEEeqnarray}[\relax]{l}
+\Phi^{r}=Re(\mathbf{y})-\mathbf{K}^{r}
+\lambda^{r};
+\Phi^{i}=Im(\mathbf{y})-\mathbf{K}^{r}\lambda^{i}\\
+\Psi^{r}=\mathbf{K}^{i}\lambda^{i};
+\Psi^{i}=-\mathbf{K}^{i}\lambda^{r}\\
+\nonumber
+\label{intermediate function2}
+\end{IEEEeqnarray} 
+Therefore based on (\ref{simple risk function1})-(\ref{intermediate function2}), duality gap in (\ref{simple duality gap}) can be rewritten as 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+G(\lambda^{r}, \lambda^{i})=<(\lambda^{r})^{T}, \mathbf{K}^{r}\lambda^{r}>+<(\lambda^{i})^{T}, \mathbf{K}^{r}\lambda^{i}>-<Re(\mathbf{y})^{T}, \lambda^{r}>-<Im(\mathbf{y})^{T}, \lambda^{i}>\\
+-\epsilon<\mathbf{e}^{T}, (|\lambda^{r}|+|\lambda^{i}|)>+C\sum_{i=1}^{N_{r}}[(|\Phi^{r}_{i}+\Psi^{r}_{i}|)^{2}_{\epsilon}+(|\Phi^{i}_{i}+\Psi^{i}_{i}|)^{2}_{\epsilon}]-2<\lambda^{r}, \mathbf{K}^{i}\lambda^{i}>.
+\label{simple duality gap final}
+\end{IEEEeqnarray}
+The duality gap between primal problem and dual problem is used to evaluate how close a solution is to global minimum. In our scenario, duality gap is employed as stopping criteria because of low computational cost and reliable performance comparing to monitor KKT complementary condition.
 
-\begin{equation}
-S(\alpha, \hat{\alpha}, \beta, \hat{\beta})=C\sum_{i=1}^{N_{r}}((|\Phi_{i}^{r}+\sum_{j=1}^{N_{r}}(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon}+(|\Phi_{i}^{i}-\sum_{j=1}^{N_{r}}(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{i}_{ij}|)^{2}_{\epsilon})-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{i}(\beta-\hat{\beta})
-\label{S sub function}
-\end{equation}
+ 
 \section{Hyperparameter Setting}
 
 \section{Computer Simulations}
@@ -1639,7 +1678,8 @@ f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod
 
 \newpage
 \bibliographystyle{IEEEtran}
-\bibliography{citation}													
+\bibliography{citation}	
+\end{spacing}												
 \end{document}
 
 

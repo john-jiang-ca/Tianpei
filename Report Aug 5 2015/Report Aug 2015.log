@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  6 SEP 2015 22:32
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  7 SEP 2015 21:08
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -499,6 +499,12 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 
 LaTeX Warning: Label `gain of 2-D objective function1' multiply defined.
 
+
+LaTeX Warning: Label `risk function1' multiply defined.
+
+
+LaTeX Warning: Label `risk function2' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 385.
 LaTeX Font Info:    ... okay on input line 385.
@@ -523,7 +529,7 @@ Requested font "ptmrc7t" at 12.0pt
 Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
-[1]
+[1] [2]
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -536,14 +542,14 @@ Requested font "cmsy6" at 6.0pt
 Requested font "cmex10" at 12.0pt
 Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msa on input line 536.
+LaTeX Font Info:    Try loading font information for U+msa on input line 537.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 Requested font "msam10" at 12.0pt
 Requested font "msam10" at 8.0pt
 Requested font "msam7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msb on input line 536.
+LaTeX Font Info:    Try loading font information for U+msb on input line 537.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -551,9 +557,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Requested font "msbm10" at 12.0pt
 Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
- [2]
-Missing character: There is no ’ in font ptmr7t!
  [3]
+Missing character: There is no ’ in font ptmr7t!
+ [4]
 ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
 File: largeMIMOuplink.pdf Graphic file (type QTm)
 
@@ -589,7 +595,7 @@ Requested font "cmbx12" at 12.0pt
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
 
-[4] ("F:\GitHub\Tianpei\Report Aug 5 2015\epsilon-SVR.pdf_tex"
+[5] [6] ("F:\GitHub\Tianpei\Report Aug 5 2015\epsilon-SVR.pdf_tex"
 File: epsilon-SVR.pdf Graphic file (type QTm)
 
 <use  "epsilon-SVR.pdf"  page1>
@@ -609,136 +615,135 @@ File: epsilon-SVR.pdf Graphic file (type QTm)
 
 <use  "epsilon-SVR.pdf"  page7>
 File: epsilon-SVR.pdf Graphic file (type QTm)
- <use  "epsilon-SVR.pdf"  page8>) [5]
+ <use  "epsilon-SVR.pdf"  page8>)
 
-LaTeX Warning: Citation `AtutorialofSupportVectorRegression' on page 6 undefine
-d on input line 602.
+LaTeX Warning: Citation `AtutorialofSupportVectorRegression' on page 7 undefine
+d on input line 603.
 
-[6] [7]
+[7] [8] [9]
 
-LaTeX Warning: Citation `smolaandskpkof1998atutorialofSVR' on page 8 undefined 
-on input line 660.
+LaTeX Warning: Citation `smolaandskpkof1998atutorialofSVR' on page 10 undefined
+ on input line 661.
 
-[8]
-
-LaTeX Warning: Reference `lagrange duality2' on page 9 undefined on input line 
-691.
-
+[10]
 Missing character: There is no ： in font ptmr7t!
-[9] [10]
+ [11] [12]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 730.
+(amsmath)                 on input line 735.
+
+[13]
+
+LaTeX Warning: Citation `wirtinger'scalculus' on page 14 undefined on input lin
+e 772.
 
 
-LaTeX Warning: Citation `wirtinger'scalculus' on page 11 undefined on input lin
-e 767.
-
-
-LaTeX Warning: Citation `reproducingKernelHilbertSpace' on page 11 undefined on
- input line 767.
+LaTeX Warning: Citation `reproducingKernelHilbertSpace' on page 14 undefined on
+ input line 772.
 
 \c@Lemma=\count136
 \c@Property=\count137
-[11] [12]
+[14] [15]
 
-LaTeX Warning: Reference `lagrange duality2' on page 13 undefined on input line
- 828.
+LaTeX Warning: Reference `lagrange duality2' on page 16 undefined on input line
+ 833.
 
 
-Overfull \hbox (63.48698pt too wide) in alignment at lines 829--843
+Overfull \hbox (63.48698pt too wide) in alignment at lines 834--848
  [] [][]
  []
-
-
-LaTeX Warning: Citation `wirtinger'scalculustoRKHS' on page 13 undefined on inp
-ut line 844.
-
-[13] [14]
-Overfull \hbox (40.80408pt too wide) in alignment at lines 905--915
- [] [][]
- []
-
-
-Overfull \hbox (33.64156pt too wide) in alignment at lines 917--927
- [] [][]
- []
-
-
-Overfull \hbox (39.00984pt too wide) in alignment at lines 930--938
- [] [][]
- []
-
-[15]
-Overfull \hbox (35.3804pt too wide) in alignment at lines 940--948
- [] [][]
- []
-
-
-LaTeX Warning: Citation `SMO' on page 16 undefined on input line 953.
 
 [16]
-Missing character: There is no ， in font ptmr7t!
 
-Overfull \hbox (4.6661pt too wide) in alignment at lines 956--964
+LaTeX Warning: Citation `wirtinger'scalculustoRKHS' on page 17 undefined on inp
+ut line 849.
+
+[17] [18]
+Overfull \hbox (40.80408pt too wide) in alignment at lines 910--920
  [] [][]
  []
 
 
-LaTeX Warning: Citation `inprovedtrainingalgorithmsforsupportvectormachines' on
- page 17 undefined on input line 975.
-
-
-LaTeX Warning: Citation `SMO' on page 17 undefined on input line 975.
-
-
-Overfull \hbox (16.55328pt too wide) in alignment at lines 983--988
+Overfull \hbox (33.64156pt too wide) in alignment at lines 922--932
  [] [][]
  []
 
-[17]
-
-LaTeX Warning: Citation `Trainingwithoutoffset' on page 18 undefined on input l
-ine 1003.
-
-
-Overfull \hbox (19.71176pt too wide) in alignment at lines 1006--1012
- [] [][]
- []
-
-[18] [19]
-
-LaTeX Warning: Citation `trainingSVMwithoutoffset' on page 20 undefined on inpu
-t line 1072.
-
-
-Overfull \hbox (15.35559pt too wide) in alignment at lines 1073--1080
+[19]
+Overfull \hbox (39.00984pt too wide) in alignment at lines 935--943
  [] [][]
  []
 
 
-Overfull \hbox (28.36244pt too wide) in alignment at lines 1082--1089
+Overfull \hbox (35.3804pt too wide) in alignment at lines 945--953
  [] [][]
  []
 
 [20]
-Overfull \hbox (2.28593pt too wide) in alignment at lines 1106--1111
+
+LaTeX Warning: Citation `SMO' on page 21 undefined on input line 958.
+
+Missing character: There is no ， in font ptmr7t!
+
+Overfull \hbox (4.6661pt too wide) in alignment at lines 961--969
  [] [][]
  []
 
-[21] [22]
+[21]
 
-LaTeX Warning: Reference `figure1' on page 23 undefined on input line 1223.
-
-
-LaTeX Warning: Reference `formula25' on page 23 undefined on input line 1223.
+LaTeX Warning: Citation `inprovedtrainingalgorithmsforsupportvectormachines' on
+ page 22 undefined on input line 980.
 
 
-LaTeX Warning: Reference `figure2' on page 23 undefined on input line 1223.
+LaTeX Warning: Citation `SMO' on page 22 undefined on input line 980.
 
 
-Overfull \hbox (7.16684pt too wide) in paragraph at lines 1223--1224
+Overfull \hbox (16.55328pt too wide) in alignment at lines 988--993
+ [] [][]
+ []
+
+[22]
+
+LaTeX Warning: Citation `Trainingwithoutoffset' on page 23 undefined on input l
+ine 1008.
+
+[23]
+Overfull \hbox (19.71176pt too wide) in alignment at lines 1011--1017
+ [] [][]
+ []
+
+[24] [25]
+
+LaTeX Warning: Citation `trainingSVMwithoutoffset' on page 26 undefined on inpu
+t line 1077.
+
+
+Overfull \hbox (15.35559pt too wide) in alignment at lines 1078--1085
+ [] [][]
+ []
+
+
+Overfull \hbox (28.36244pt too wide) in alignment at lines 1087--1094
+ [] [][]
+ []
+
+[26]
+Overfull \hbox (2.28593pt too wide) in alignment at lines 1111--1116
+ [] [][]
+ []
+
+[27] [28] [29]
+
+LaTeX Warning: Reference `figure1' on page 30 undefined on input line 1228.
+
+
+LaTeX Warning: Reference `formula25' on page 30 undefined on input line 1228.
+
+
+LaTeX Warning: Reference `figure2' on page 30 undefined on input line 1228.
+
+
+Overfull \hbox (7.16684pt too wide) in paragraph at lines 1228--1229
 \OML/cmm/m/it/12 N[] \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 100\OML/cmm/m/it/12 ;
  \OT1/cmr/m/n/12 5 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 N[] \OMS/cmsy/m/n/12 ^
 ^T \OML/cmm/m/it/12 N[]$\OT1/ptm/m/n/12 , the em-pir-i-cal es-ti-ma-tion of log
@@ -747,67 +752,44 @@ mm/m/it/12 E\OT1/cmr/m/n/12 [[](\OML/cmm/m/it/12 ^^^[]\OT1/cmr/m/n/12 )][]$\OT1
 /ptm/m/n/12 ,
  []
 
-[23]
+[30]
 
-LaTeX Warning: Reference `figure3' on page 24 undefined on input line 1247.
+LaTeX Warning: Reference `figure3' on page 31 undefined on input line 1252.
 
 
-LaTeX Warning: Reference `figure3' on page 24 undefined on input line 1247.
+LaTeX Warning: Reference `figure3' on page 31 undefined on input line 1252.
 
-[24]
-Overfull \hbox (66.70749pt too wide) in alignment at lines 1252--1257
+[31]
+Overfull \hbox (70.06726pt too wide) in alignment at lines 1276--1281
  [] [][]
  []
 
+[32] [33] [34]
 
-Overfull \hbox (61.9238pt too wide) in alignment at lines 1259--1268
- [] [][]
- []
-
-[25]
-Missing character: There is no ， in font cmr12!
-
-Overfull \hbox (49.91891pt too wide) detected at line 1294
-\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K; []; ^^L; []\OT1/cmr/m/
-n/12 ) = (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/c
-mr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1
-/cmr/m/n/12 ) + (\OML/cmm/m/it/12 ^^L \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[
-]\OT1/cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L \OMS/cmsy/m/n/12 ^^@
- []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Re\OT1/cmr/m/n/12 (\
-OT1/cmr/bx/n/12 y[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ 
-[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Im\OT1/cmr/m/n/12 (\O
-T1/cmr/bx/n/12 y[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 ^^L \OMS/cmsy/m/n/12 ^^@ [
-]\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 ^^O\OT1/cmr/bx/n/12 e[]\OT1/cmr/m/n/12 (\
-OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + [] + \OML/cmm/m/it/12 ^^L \OT1/cmr/m/n/12
- + [])
- []
-
-[26]
-
-LaTeX Warning: Citation `nagar2011expectations' on page 27 undefined on input l
-ine 1435.
+LaTeX Warning: Citation `nagar2011expectations' on page 35 undefined on input l
+ine 1474.
 
 
-LaTeX Warning: Citation `nagar2011expectations' on page 27 undefined on input l
-ine 1445.
+LaTeX Warning: Citation `nagar2011expectations' on page 35 undefined on input l
+ine 1484.
 
-[27] [28]
+[35] [36] [37]
 
-LaTeX Warning: Citation `bhargava1981distribution' on page 29 undefined on inpu
-t line 1524.
+LaTeX Warning: Citation `bhargava1981distribution' on page 38 undefined on inpu
+t line 1563.
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1529.
+(amsmath)                 on input line 1568.
 
 
-LaTeX Warning: Citation `bhargava1981distribution' on page 29 undefined on inpu
-t line 1529.
+LaTeX Warning: Citation `bhargava1981distribution' on page 38 undefined on inpu
+t line 1568.
 
 Missing character: There is no ， in font cmr12!
-[29] [30] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [31])
-[32] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
+[38] [39] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [40])
+[41] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
 LaTeX Warning: There were undefined references.
 
@@ -816,12 +798,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5672 strings out of 429025
- 81228 string characters out of 3166797
- 164077 words of memory out of 3000000
- 8822 multiletter control sequences out of 15000+200000
+ 5678 strings out of 429025
+ 81372 string characters out of 3166797
+ 163175 words of memory out of 3000000
+ 8828 multiletter control sequences out of 15000+200000
  28822 words of font info for 72 fonts, out of 3000000 for 9000
  915 hyphenation exceptions out of 8191
- 36i,13n,38p,1463b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,13n,38p,1463b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report*Aug*2015.pdf (32 pages).
+Output written on Report*Aug*2015.pdf (41 pages).

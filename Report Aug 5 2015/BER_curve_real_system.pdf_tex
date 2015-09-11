@@ -1,0 +1,103 @@
+%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'BER_curve_real_system.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{595.27559055bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.41428571)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{BER_curve_real_system.pdf}}%
+    \put(0.10113385,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{BER_curve_real_system.pdf}}%
+    \put(0.20066791,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{8}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{BER_curve_real_system.pdf}}%
+    \put(0.29320153,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{BER_curve_real_system.pdf}}%
+    \put(0.39273526,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{12}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{BER_curve_real_system.pdf}}%
+    \put(0.49240842,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{14}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{BER_curve_real_system.pdf}}%
+    \put(0.59194215,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{16}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{BER_curve_real_system.pdf}}%
+    \put(0.69147588,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{18}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{BER_curve_real_system.pdf}}%
+    \put(0.79100961,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{BER_curve_real_system.pdf}}%
+    \put(0.89068445,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{22}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,0.40583438){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,0.4213734){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−7}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,0.50662803){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,0.52216705){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−6}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,0.60742168){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,0.6229607){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,0.70821533){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,0.72375435){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−4}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,0.80886955){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,0.82440857){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−3}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,0.9096632){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,0.92520222){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−2}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,1.01045685){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,1.02599587){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{BER_curve_real_system.pdf}}%
+    \put(0.05619668,1.11110939){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.08419447,1.12664841){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{BER_curve_real_system.pdf}}%
+    \put(0.4523715,0.36075744){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{SNR (dB)}}}%
+    \put(0.079375,0.74359367){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{SER}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{BER_curve_real_system.pdf}}%
+    \put(0.19758749,0.50315645){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times40$ MIMO without damping}}}%
+    \put(0.42006955,0.56924414){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.19540903,0.47004117){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times100$ MIMO without damping}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{BER_curve_real_system.pdf}}%
+  \end{picture}%
+\endgroup%

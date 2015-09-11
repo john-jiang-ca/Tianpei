@@ -204,4 +204,15 @@ P.~Bouboulis, S.~Theodoridis, C.~Mavroforakis, and L.~Evaggelatou-Dalla,
   ``Complex support vector machines for regression and quaternary
   classification.''
 
+\bibitem{cristianini2000introduction}
+N.~Cristianini and J.~Shawe-Taylor, \emph{An introduction to support vector
+  machines and other kernel-based learning methods}.\hskip 1em plus 0.5em minus
+  0.4em\relax Cambridge university press, 2000.
+
+\bibitem{bouboulis2011extension}
+P.~Bouboulis and S.~Theodoridis, ``Extension of {W}irtinger's calculus to
+  reproducing kernel {H}ilbert spaces and the complex kernel {LMS},''
+  \emph{Signal Processing, IEEE Transactions on}, vol.~59, no.~3, pp. 964--978,
+  2011.
+
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  8 SEP 2015 17:49
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  11 SEP 2015 00:30
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -521,45 +521,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Requested font "msbm10" at 12.0pt
 Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
-Missing character: There is no – in font ptmr7t!
-Missing character: There is no – in font ptmr7t!
  [3] [4]
-("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page1>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page2>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page3>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page4>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page5>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page6>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page7>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page8>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page9>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page10>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page11>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page12>)
 Requested font "cmbx12" at 12.0pt
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
 
-[5] [6] ("F:\GitHub\Tianpei\Report Aug 5 2015\epsilon-SVR.pdf_tex"
+("F:\GitHub\Tianpei\Report Aug 5 2015\epsilon-SVR.pdf_tex"
 File: epsilon-SVR.pdf Graphic file (type QTm)
 
 <use  "epsilon-SVR.pdf"  page1>
@@ -591,184 +558,188 @@ Requested font "msam10" at 9.0pt
 Requested font "msam5" at 5.0pt
 Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
-
-
-LaTeX Warning: Citation `AtutorialofSupportVectorRegression' on page 7 undefine
-d on input line 604.
-
+ [5] [6]
 [7] [8] [9]
-
-LaTeX Warning: Citation `smolaandskpkof1998atutorialofSVR' on page 10 undefined
- on input line 662.
-
-[10] [11]
 Missing character: There is no ： in font ptmr7t!
- [12]
+ [10] [11]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 736.
+(amsmath)                 on input line 720.
 
-[13]
+("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
+File: largeMIMOuplink.pdf Graphic file (type QTm)
 
-LaTeX Warning: Citation `wirtinger'scalculus' on page 14 undefined on input lin
-e 773.
+<use  "largeMIMOuplink.pdf"  page1>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page2>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
 
+<use  "largeMIMOuplink.pdf"  page3>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page4>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
 
-LaTeX Warning: Citation `reproducingKernelHilbertSpace' on page 14 undefined on
- input line 773.
+<use  "largeMIMOuplink.pdf"  page5>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page6>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
 
+<use  "largeMIMOuplink.pdf"  page7>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page8>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page9>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page10>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page11>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page12>)
+[12] [13] [14]
 \c@Lemma=\count135
 \c@Property=\count136
-[14] [15]
-
-LaTeX Warning: Reference `lagrange duality2' on page 16 undefined on input line
- 834.
-
-
-Overfull \hbox (63.48698pt too wide) in alignment at lines 835--849
- [] [][]
- []
-
-[16]
-
-LaTeX Warning: Citation `wirtinger'scalculustoRKHS' on page 17 undefined on inp
-ut line 850.
-
-[17] [18]
-Overfull \hbox (40.80408pt too wide) in alignment at lines 911--921
- [] [][]
- []
-
-
-Overfull \hbox (33.64156pt too wide) in alignment at lines 923--933
+ [15] [16] [17] [18]
+Overfull \hbox (40.80408pt too wide) in alignment at lines 913--923
  [] [][]
  []
 
 [19]
-Overfull \hbox (39.00984pt too wide) in alignment at lines 936--944
+Overfull \hbox (33.64156pt too wide) in alignment at lines 925--935
  [] [][]
  []
 
 
-Overfull \hbox (35.3804pt too wide) in alignment at lines 946--954
+Overfull \hbox (39.00984pt too wide) in alignment at lines 938--946
+ [] [][]
+ []
+
+
+Overfull \hbox (35.3804pt too wide) in alignment at lines 948--956
  [] [][]
  []
 
 [20]
-
-LaTeX Warning: Citation `SMO' on page 21 undefined on input line 959.
-
 Missing character: There is no ， in font ptmr7t!
 
-Overfull \hbox (4.6661pt too wide) in alignment at lines 962--970
+Overfull \hbox (4.6661pt too wide) in alignment at lines 964--972
  [] [][]
  []
 
 [21]
-
-LaTeX Warning: Citation `inprovedtrainingalgorithmsforsupportvectormachines' on
- page 22 undefined on input line 981.
-
-
-LaTeX Warning: Citation `SMO' on page 22 undefined on input line 981.
-
-
-Overfull \hbox (16.55328pt too wide) in alignment at lines 989--994
- [] [][]
+Overfull \hbox (23.86952pt too wide) detected at line 982
+\OML/cmm/m/it/12 maximize \OT1/cmr/m/n/12 ^^B[] = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
+r/m/n/12 [(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/
+cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
+1/cmr/m/n/12 )[]] + [\OML/cmm/m/it/12 Re\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 y\OT1
+/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS
+/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 K[]\OT1/cmr/m/n/12 ](\OM
+L/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^
+^@ \OML/cmm/m/it/12 ^^O < \OT1/cmr/bx/n/12 e[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + [])[] \OML/cmm/m/it/12 >;
  []
 
 [22]
+Overfull \hbox (16.55328pt too wide) in alignment at lines 991--996
+ [] [][]
+ []
+
 
 LaTeX Warning: Citation `Trainingwithoutoffset' on page 23 undefined on input l
-ine 1009.
+ine 1011.
 
-[23]
-Overfull \hbox (19.71176pt too wide) in alignment at lines 1012--1018
+[23] [24] [25] [26] [27] [28] [29]
+Overfull \hbox (70.06726pt too wide) in alignment at lines 1207--1212
  [] [][]
  []
 
-[24] [25]
+[30] [31]
 
-LaTeX Warning: Citation `trainingSVMwithoutoffset' on page 26 undefined on inpu
-t line 1078.
+LaTeX Warning: Reference `intermediate function2' on page 32 undefined on input
+ line 1260.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1285.
 
-Overfull \hbox (15.35559pt too wide) in alignment at lines 1079--1086
- [] [][]
- []
+Requested font "ptmbc7t" at 12.0pt
+[32] [33] ("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
+<use  "BER_curve_real_system.pdf"  page1>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-Overfull \hbox (28.36244pt too wide) in alignment at lines 1088--1095
- [] [][]
- []
+<use  "BER_curve_real_system.pdf"  page2>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-[26]
-Overfull \hbox (2.28593pt too wide) in alignment at lines 1112--1117
- [] [][]
- []
+<use  "BER_curve_real_system.pdf"  page3>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-[27] [28] [29]
+<use  "BER_curve_real_system.pdf"  page4>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Reference `figure1' on page 30 undefined on input line 1229.
+<use  "BER_curve_real_system.pdf"  page5>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
+<use  "BER_curve_real_system.pdf"  page6>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Reference `formula25' on page 30 undefined on input line 1229.
+<use  "BER_curve_real_system.pdf"  page7>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
+<use  "BER_curve_real_system.pdf"  page8>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Reference `figure2' on page 30 undefined on input line 1229.
+<use  "BER_curve_real_system.pdf"  page9>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
+<use  "BER_curve_real_system.pdf"  page10>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-Overfull \hbox (7.16684pt too wide) in paragraph at lines 1229--1230
-\OML/cmm/m/it/12 N[] \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 100\OML/cmm/m/it/12 ;
- \OT1/cmr/m/n/12 5 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 N[] \OMS/cmsy/m/n/12 ^
-^T \OML/cmm/m/it/12 N[]$\OT1/ptm/m/n/12 , the em-pir-i-cal es-ti-ma-tion of log
--a-rith-mic ex-pec-ta-tion of $\OML/cmm/m/it/12 ^^^[]$\OT1/ptm/m/n/12 , $\OML/c
-mm/m/it/12 E\OT1/cmr/m/n/12 [[](\OML/cmm/m/it/12 ^^^[]\OT1/cmr/m/n/12 )][]$\OT1
-/ptm/m/n/12 ,
- []
+<use  "BER_curve_real_system.pdf"  page11>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-[30]
+<use  "BER_curve_real_system.pdf"  page12>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Reference `figure3' on page 31 undefined on input line 1253.
+<use  "BER_curve_real_system.pdf"  page13>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
+<use  "BER_curve_real_system.pdf"  page14>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Reference `figure3' on page 31 undefined on input line 1253.
+<use  "BER_curve_real_system.pdf"  page15>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-[31]
-Overfull \hbox (70.06726pt too wide) in alignment at lines 1277--1282
- [] [][]
- []
+<use  "BER_curve_real_system.pdf"  page16>
+Missing character: There is no − in font ptmr7t!
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-[32] [33] [34]
+<use  "BER_curve_real_system.pdf"  page17>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Citation `nagar2011expectations' on page 35 undefined on input l
-ine 1475.
+<use  "BER_curve_real_system.pdf"  page18>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
+<use  "BER_curve_real_system.pdf"  page19>
+File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-LaTeX Warning: Citation `nagar2011expectations' on page 35 undefined on input l
-ine 1485.
+<use  "BER_curve_real_system.pdf"  page20>)
 
-[35] [36] [37]
+LaTeX Warning: Float too large for page by 83.09796pt on input line 1426.
 
-LaTeX Warning: Citation `bhargava1981distribution' on page 38 undefined on inpu
-t line 1564.
-
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1569.
-
-
-LaTeX Warning: Citation `bhargava1981distribution' on page 38 undefined on inpu
-t line 1569.
-
-Missing character: There is no ， in font cmr12!
-[38] [39] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [40]
-[41]
+[34] [35] [36] [37] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl"
+[38] [39]
 Missing character: There is no — in font ptmri7t!
 Missing character: There is no — in font ptmri7t!
-) [42] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
+) [40] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
 LaTeX Warning: There were undefined references.
 
@@ -777,12 +748,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4697 strings out of 429025
- 63384 string characters out of 3166797
- 143691 words of memory out of 3000000
- 7844 multiletter control sequences out of 15000+200000
- 31629 words of font info for 83 fonts, out of 3000000 for 9000
+ 4686 strings out of 429025
+ 63215 string characters out of 3166797
+ 150566 words of memory out of 3000000
+ 7829 multiletter control sequences out of 15000+200000
+ 32288 words of font info for 84 fonts, out of 3000000 for 9000
  915 hyphenation exceptions out of 8191
- 32i,13n,24p,1725b,405s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,13n,24p,1725b,404s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report*Aug*2015.pdf (42 pages).
+Output written on Report*Aug*2015.pdf (40 pages).

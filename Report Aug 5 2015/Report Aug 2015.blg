@@ -2,17 +2,10 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: Report Aug 2015.aux
 The style file: IEEEtran.bst
 Database file #1: citation.bib
 Warning--I didn't find a database entry for "AtutorialofSupportVectorRegression"
-Warning--I didn't find a database entry for "smolaandskpkof1998atutorialofSVR"
-Warning--I didn't find a database entry for "wirtinger'scalculus"
-Warning--I didn't find a database entry for "reproducingKernelHilbertSpace"
 Warning--I didn't find a database entry for "wirtinger'scalculustoRKHS"
 Warning--I didn't find a database entry for "SMO"
 Warning--I didn't find a database entry for "inprovedtrainingalgorithmsforsupportvectormachines"
-Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "Trainingwithoutoffset"
-Warning--I didn't find a database entry for "trainingSVMwithoutoffset"
-Warning--I didn't find a database entry for "nagar2011expectations"
-Warning--I didn't find a database entry for "bhargava1981distribution"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -22,4 +15,4 @@ Warning--empty journal in bouboulis2013complex
 Warning--empty year in bouboulis2013complex
 
 Done.
-(There were 16 warnings)
+(There were 9 warnings)

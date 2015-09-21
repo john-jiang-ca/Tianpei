@@ -1,10 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Report Aug 2015.aux
 The style file: IEEEtran.bst
 Database file #1: citation.bib
-Warning--I didn't find a database entry for "AtutorialofSupportVectorRegression"
-Warning--I didn't find a database entry for "wirtinger'scalculustoRKHS"
-Warning--I didn't find a database entry for "SMO"
-Warning--I didn't find a database entry for "inprovedtrainingalgorithmsforsupportvectormachines"
+You're missing a field name---line 323 of file citation.bib
+ :  
+ :  % title={GPU acceleration for fixed complexity sphere decoder in large MIMO uplink systems},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Trainingwithoutoffset"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -15,4 +16,4 @@ Warning--empty journal in bouboulis2013complex
 Warning--empty year in bouboulis2013complex
 
 Done.
-(There were 9 warnings)
+(There was 1 error message)

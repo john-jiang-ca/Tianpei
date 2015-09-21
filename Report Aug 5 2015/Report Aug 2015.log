@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  11 SEP 2015 00:30
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  18 SEP 2015 23:19
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -462,7 +462,23 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip61
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen149
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip62
+\calc@Bskip=\skip63
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count137
+\calc@Cskip=\skip64
+)
+("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux"
 
 LaTeX Warning: Label `gain of 2-D objective function1' multiply defined.
 
@@ -493,7 +509,6 @@ Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
 [1] [2]
-Missing character: There is no ϵ in font ptmr7t!
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -559,7 +574,17 @@ Requested font "msam5" at 5.0pt
 Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
  [5] [6]
-[7] [8] [9]
+[7]
+! Extra }, or forgotten $.
+l.625 ...thbf{w}||^{2}+\tilde{c}(\mathbf{x}, y, f}
+                                                  (\mathbf{x})),
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[8] [9]
 Missing character: There is no ： in font ptmr7t!
  [10] [11]
 
@@ -567,7 +592,7 @@ Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 720.
 
-("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
+[12] ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
 File: largeMIMOuplink.pdf Graphic file (type QTm)
 
 <use  "largeMIMOuplink.pdf"  page1>
@@ -598,39 +623,37 @@ File: largeMIMOuplink.pdf Graphic file (type QTm)
 <use  "largeMIMOuplink.pdf"  page11>
 File: largeMIMOuplink.pdf Graphic file (type QTm)
  <use  "largeMIMOuplink.pdf"  page12>)
-[12] [13] [14]
-\c@Lemma=\count135
-\c@Property=\count136
+[13] [14]
+\c@Lemma=\count138
+\c@Property=\count139
  [15] [16] [17] [18]
-Overfull \hbox (40.80408pt too wide) in alignment at lines 913--923
+Overfull \hbox (37.4673pt too wide) in alignment at lines 913--923
  [] [][]
  []
 
 [19]
-Overfull \hbox (33.64156pt too wide) in alignment at lines 925--935
+Overfull \hbox (30.30478pt too wide) in alignment at lines 925--935
  [] [][]
  []
 
 
-Overfull \hbox (39.00984pt too wide) in alignment at lines 938--946
+Overfull \hbox (35.67307pt too wide) in alignment at lines 938--946
  [] [][]
  []
 
 
-Overfull \hbox (35.3804pt too wide) in alignment at lines 948--956
+Overfull \hbox (32.04362pt too wide) in alignment at lines 948--956
  [] [][]
  []
 
 [20]
-Missing character: There is no ， in font ptmr7t!
-
-Overfull \hbox (4.6661pt too wide) in alignment at lines 964--972
+Overfull \hbox (1.32933pt too wide) in alignment at lines 964--972
  [] [][]
  []
 
 [21]
-Overfull \hbox (23.86952pt too wide) detected at line 982
-\OML/cmm/m/it/12 maximize \OT1/cmr/m/n/12 ^^B[] = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
+Overfull \hbox (14.08963pt too wide) detected at line 982
+\OML/cmm/m/it/12 maximize ^^R[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
 r/m/n/12 [(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/
 cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
 1/cmr/m/n/12 )[]] + [\OML/cmm/m/it/12 Re\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 y\OT1
@@ -638,33 +661,26 @@ cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
 /cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 K[]\OT1/cmr/m/n/12 ](\OM
 L/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^
 ^@ \OML/cmm/m/it/12 ^^O < \OT1/cmr/bx/n/12 e[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
-2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + [])[] \OML/cmm/m/it/12 >;
+2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + []) \OML/cmm/m/it/12 >;
  []
 
 [22]
-Overfull \hbox (16.55328pt too wide) in alignment at lines 991--996
+Overfull \hbox (12.89012pt too wide) in alignment at lines 991--996
  [] [][]
  []
-
-
-LaTeX Warning: Citation `Trainingwithoutoffset' on page 23 undefined on input l
-ine 1011.
 
 [23] [24] [25] [26] [27] [28] [29]
 Overfull \hbox (70.06726pt too wide) in alignment at lines 1207--1212
  [] [][]
  []
 
-[30] [31]
-
-LaTeX Warning: Reference `intermediate function2' on page 32 undefined on input
- line 1260.
-
+[30] [31] [32]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1285.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1286.
 
 Requested font "ptmbc7t" at 12.0pt
-[32] [33] ("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
+ [33] [34] [35]
+("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page1>
@@ -695,31 +711,24 @@ File: BER_curve_real_system.pdf Graphic file (type QTm)
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page10>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page11>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page12>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page13>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page14>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page15>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page16>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page17>
@@ -728,32 +737,25 @@ File: BER_curve_real_system.pdf Graphic file (type QTm)
 <use  "BER_curve_real_system.pdf"  page18>
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-<use  "BER_curve_real_system.pdf"  page19>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page20>)
-
-LaTeX Warning: Float too large for page by 83.09796pt on input line 1426.
-
-[34] [35] [36] [37] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl"
-[38] [39]
+<use  "BER_curve_real_system.pdf"  page19>)
+Requested font "ptmrc7t" at 9.0pt
+ [36] [37]
+("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [38] [39]
 Missing character: There is no — in font ptmri7t!
 Missing character: There is no — in font ptmri7t!
-) [40] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
-
-LaTeX Warning: There were undefined references.
-
+ [40])
+[41] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4686 strings out of 429025
- 63215 string characters out of 3166797
- 150566 words of memory out of 3000000
- 7829 multiletter control sequences out of 15000+200000
- 32288 words of font info for 84 fonts, out of 3000000 for 9000
+ 4778 strings out of 429025
+ 64488 string characters out of 3166797
+ 146627 words of memory out of 3000000
+ 7915 multiletter control sequences out of 15000+200000
+ 32934 words of font info for 85 fonts, out of 3000000 for 9000
  915 hyphenation exceptions out of 8191
- 32i,13n,24p,1725b,404s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,13n,24p,1725b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report*Aug*2015.pdf (40 pages).
+Output written on Report*Aug*2015.pdf (41 pages).

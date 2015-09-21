@@ -88,8 +88,8 @@
 \usepackage{diagbox}
 \usepackage{subfigure}
 \usepackage{algpseudocode}
-
-
+\usepackage{multirow}
+\usepackage{calc}
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
 
@@ -392,7 +392,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Report}
+\title{Report: Complex Support Vector Detector for Large MIMO System}
 
 %
 %
@@ -523,25 +523,25 @@ McGill University\\
 %\hfill mds
  
 %\hfill September 17, 2014
-  One of the biggest challenges the researchers and industry practitioners are facing in wireless communication area is how to bridge the sharp gap between increasing demand of high speed communication of rich multimedia information with high level Quality of Service (QoS) and the limited radio frequency spectrum over a complex space-time varying environment. As the most promising technology for solving this problem, Multiple Input Multiple Output (MIMO) technology has been of immense research interest over the last several tens of years and become mature, which is incorporated into the emerging wireless broadband standard like 802.11ac\cite{IEEE802.11ac} long-term evolution (LTE)\cite{3GLTE}.  The core idea of MIMO system is to use multiple antennas at both transmitting and receiving end, so that multiplexing gain (multiple parallel spatial data pipelines that can improve bandwidth efficiency) and diversity gain (better reliability of communication link) is obtained by employing spatial domain. Large MIMO (also called Massive MIMO) is an upgrade version of conventional MIMO system, it equips   unprecedentedly hundreds of low power low price antennas at base station (BS), serving several tens of terminals simultaneously, It can achieve full potential of conventional MIMO system while providing additional power efficiency as well as system robustness\cite{rusek2013scaling}\cite{larsson2014massive}. 
+  One of the biggest challenges the researchers and industry practitioners are facing in wireless communication area is how to bridge the sharp gap between increasing demand of high speed communication of rich multimedia information with high level Quality of Service (QoS) and the limited radio frequency spectrum over a complex space-time varying environment. As the most promising technology for solving this problem, Multiple Input Multiple Output (MIMO) technology has been of immense research interest over the last several tens of years and become mature, which is incorporated into the emerging wireless broadband standard like 802.11ac\cite{IEEE802.11ac} long-term evolution (LTE)\cite{3GLTE}.  The core idea of MIMO system is to use multiple antennas at both transmitting and receiving end, so that multiplexing gain (multiple parallel spatial data pipelines that can improve bandwidth efficiency) and diversity gain (better reliability of communication link) is obtained by employing spatial domain. Large MIMO (also called Massive MIMO) is an upgrade version of conventional MIMO system, it equips unprecedented hundreds of low power low price antennas at base station (BS), serving several tens of terminals simultaneously, It can achieve full potential of conventional MIMO system while providing additional power efficiency as well as system robustness\cite{rusek2013scaling}\cite{larsson2014massive}. 
     
-  The price paid for large MIMO system is the increasing complexities for signal processing at both transmitting and receiving end. Uplink Detector is one of the key components in large MIMO system. With orders magnitude more antennas equipped at BS, benefit and challenge coexist in designing of detection algorithms for large MIMO uplink, on the one hand, large number of receive antennas provide potential of large diversity gain, on the other hand, complexity of the algorithm becomes extremely crucial to make system practical. 
+  The price paid for large MIMO system is the increasing complexities for signal processing at both transmitting and receiving end. Uplink Detector is one of the key components in large MIMO system. With orders magnitude more antennas equipped at BS, benefits and challenges coexist in designing of detection algorithms for large MIMO uplink, on the one hand, large number of receive antennas provide potential of large diversity gain, on the other hand, complexity of the algorithm becomes extremely crucial to make system practical. 
   
 The optimal maximum likelihood detector (MLD) for MIMO system requires the complexity increase exponentially with number of transmitted antennas with a factor of the size of size of constellation, which is prohibitive in practical implementations. 
 Sphere Decoder (SD)\cite{damen2003maximum} is the most prominent algorithm that utilizes lattice structure of MIMO system. 
 Its variant fixed complexity sphere decoder (FCSD)\cite{barbero2008fixing} make it possible to achieve near optimal performance with a fixed complexity under different signal to noise ratio (SNR). However, all the algorithms that based on lattice structure have the same shortage - their complexities increases exponentially with a factor of the size of symbol constellation. Therefore, they are prohibitive when it comes to a high order modulation scheme, for example in IEEE 802.11ac standard\cite{IEEE802.11ac}, the modulation scheme is 256QAM. 
  
-Suboptimal linear detectors (LD) like minimum mean square error (MMSE) and zero forcing (ZF) along with their sequential interference cancellation with optimized ordering (OSIC) counterparts\cite{wolniansky1998v}\cite{foschini1999simplified}\cite{benesty2003fast}, which have good performance for low loading factor in massive MIMO system (that is the number of receive antennas is much larger than the number of transmit antennas)\cite{hoydis2013massive}. In the last several years, a set of detection algorithms are proposed with complexities that is comparable with LD-OSIC and suboptimal performance can be achieved.  The local search algorithm, such as likelihood ascend searching (LAS)\cite{vardhan2008low}\cite{li2010multiple}, an theoretical analysis of upper bound of bit error rate (BER) and lower bound of on asymptotic multiuser efficiency for the LAS detector was presented\cite{sunfamily}. Layered Tabu search algorithm presented in\cite{srinidhi2011layered} is superior to the LAS algorithms because it can move away to new searching area to avoid local minimal. Message passing detectors based on belief propagation (BF) and Gaussian Approximation (GA) \cite{goldberger2011mimo}\cite{som2011low}\cite{narasimhan2014channel}\cite{som2010improved}. Markov Chain Monte Carlo (MCMC) algorithm\cite{datta2013novel}  and Lattice Reduction (LR) aided detectors\cite{zhou2013element}.
+Suboptimal linear detectors (LD) like minimum mean square error (MMSE) and zero forcing (ZF) along with their sequential interference cancellation with optimized ordering (OSIC) counterparts\cite{wolniansky1998v}\cite{foschini1999simplified}\cite{benesty2003fast}, which have good performance for low loading factor in massive MIMO system (the number of receive antennas is much larger than the number of transmit antennas)\cite{hoydis2013massive}. In the last several years, a set of detection algorithms are proposed with complexities that is comparable with LD-OSIC and suboptimal performance can be achieved.  The local search algorithm, such as likelihood ascend searching (LAS)\cite{vardhan2008low}\cite{li2010multiple}, an theoretical analysis of upper bound of bit error rate (BER) and lower bound of on asymptotic multiuser efficiency for the LAS detector was presented\cite{sunfamily}. Layered Tabu search algorithm presented in\cite{srinidhi2011layered} is superior to the LAS algorithms because it can move away to new searching area to avoid local minimal. Message passing detectors based on belief propagation (BF) and Gaussian Approximation (GA) \cite{goldberger2011mimo}\cite{som2011low}\cite{narasimhan2014channel}\cite{som2010improved}. Markov Chain Monte Carlo (MCMC) algorithm\cite{datta2013novel}  and Lattice Reduction (LR) aided detectors\cite{zhou2013element}.
 
 Firmly grounded in framework of statistical learning theory, Support Vector Machine (SVM) has become a powerful tool to solve real world supervised learning problems such as classification, regression and prediction. SVM method is a nonlinear generalization of Generalized Portrait algorithm developed by Vapnik in 1960s\cite{vapnik1963pattern}\cite{vapnik1964note}, which can give good generalization performance to unseen data\cite{scholkopf2002learning}.
 
-Research and industry interest of SVM boosted since 1990s, promoted by related works of Vapnik and co-workers at AT\& T Bell laboratory\cite{boser1992training}\cite{guyon1993automatic}\cite{vapnik2013nature}\cite{cortes1995support}\cite{scholkopf1996incorporating}\cite{vapnik1996support}
-Moreover, the kernel based methods\cite{scholkopf2002learning} carries out nonlinear learning task by mapping input data sets into high dimensional feature space, then replacing inner product of feature mappings by computational inexpensive kernel functions discarding the actual structure of the feature space. This rational is supported mathematically by Reproducing Kernel Hilbert Space (RKHS). 
-Based on the same regularized risk function principle, ϵ-Support Vector Regression ($\epsilon$-SVR) was developed\cite{vapnik2013nature}\cite{smola2004tutorial}.
+Research and industry interest of SVM boosted since 1990s, promoted by related works of Vapnik and co-workers at AT\& T Bell laboratory\cite{boser1992training}\cite{guyon1993automatic}\cite{vapnik2013nature}\cite{cortes1995support}\cite{scholkopf1996incorporating}\cite{vapnik1996support}.
+Moreover, the kernel based methods\cite{scholkopf2002learning} carries out nonlinear learning task by mapping input data sets into high dimensional feature space, then replacing inner product of feature mappings by computational inexpensive kernel functions discarding the actual structure of the feature space. This rationale is supported mathematically by Reproducing Kernel Hilbert Space (RKHS). 
+Based on the same regularized risk function principle, $\epsilon$-Support Vector Regression ($\epsilon$-SVR) was developed\cite{vapnik2013nature}\cite{smola2004tutorial}.
 
 Like SVM, $\epsilon$-SVR solving original optimization problem by transforming it into Lagrange dual optimization problem, which can be solved by Quadratic Programming (QP), Sequential Minimal Optimization (SMO) algorithm was proposed as a fast algorithm to solve this QP problem by decompose the it into sub QP problems and solve them analytically\cite{platt1999fast}, therefore, the computational intensive numerical method can be avoided. A more general method is decomposition solver, which refers to a set of algorithms that separate the optimization variables (Lagrange multipliers) into two sets W and N, W is the work set and N contains the remaining optimization variables. In each iteration, only the optimization variables in work set is optimized while keeping other variables fixed. SMO algorithm is an extreme case of decomposition solver. An important issue of decomposition solver is the choice of work set, one strategy is to choose Karush-Kuhn-Tucker (KKT) condition violators, and final converge can be guaranteed\cite{osuna1997improved}. SMO algorithm restricts the size of work set to 2, because of linear constraint in dual problem that inducted by offset. In\cite{steinwart2011training}, a method to train SVM without offset was proposed, with the comparable performance to the SVM with offset. The authors work demonstrates that with the combination of two single optimization variable work set selection strategies which requires searching time $O(n)$ and update a work set size of two in each iteration, this method can achieve a iteration time as few as that searching over all pairs of optimization variables which requires $O(n^{2})$ searching times.
 
-Until now, although the mathematical foundation of kernel based methods is RKHS which is defined in complex domain, the most of practitioners are dealing with real data set. In communication and signal processing area, the channel gains, signals, waveforms etc. are all represented in complex form. Recently, a pure complex SVR \& SVM based on complex kernel was proposed in\cite{bouboulis2013complex}, which can process the complex data set purely in complex domain. The simulation of channel realization and equalization in\cite{bouboulis2013complex} demonstrate a better performance as well as reduced complexity comparing to simply split learning task into two real case by real kernel.  
+Until now, although the mathematical foundation of kernel based methods is RKHS which is defined in complex domain, the most of practitioners are dealing with real data set. However in communication and signal processing area, the channel gains, signals, waveforms etc. are all represented in complex form. Recently, a pure complex SVR \& SVM based on complex kernel was proposed in\cite{bouboulis2013complex}, which can process the complex data set purely in complex domain. The simulation of channel realization and equalization in\cite{bouboulis2013complex} demonstrate a better performance as well as reduced complexity comparing to simply split learning task into two real case by real kernel.  
 Based on this work, we construct a prototype of a complexity-performance controllable detector for large MIMO based on dual channel complex SVR. The detector can work in two parallel real SVR pipeline which can be solved independently. Moreover, only real part of kernel matrix is needed in both channel. This means a large amount of computation can be reduced.
 Based on the discrete time MIMO channel model, In our regression model, this CSVR-detector
 is constructed without offset, Therefore, for each real SVR without offset, in principle, only one variable is needed to be updated in each iteration, In our prototype, we propose a sequential single optimization variable searching strategy that find two optimization variable sequentially, which can approximate the optimal double optimization variables searching strategy. 
@@ -562,7 +562,7 @@ Suppose we are given training data set $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2}
 y_{i}=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i\in 1\cdots l 
 \label{equation1}
 \end{equation} 
-where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the mapping of $\mathbf{x}$ to higher dimensional feature space. \ref{equation1}.
+where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the mapping of $\mathbf{\mathbf{x}}$ to higher dimensional feature space.
 
 \begin{figure}
 \centering
@@ -575,7 +575,7 @@ where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the 
 Here we give the primal optimization problem directly
 \begin{eqnarray}
 \nonumber
-\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+\min_{\mathbf{w}} \frac{1}{2}||\mathbf{w}||^{2}+C\sum_{j=1}^{l}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
 s.t. \left\{\begin{array}{ll}
 y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
@@ -583,51 +583,51 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
 \end{array}\right.
 \label{primal optimization problem}
 \end{eqnarray}
-In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes risk function, the simplest risk function is $R(x)=x$, risk function is determined by the statistical distribution of noise\cite{smola2004tutorial}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(\xi_{i}+\hat{\xi}_{i})$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
+In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes risk function, the simplest risk function is $R(u)=u$, risk function is determined by the statistical distribution of noise\cite{smola2004tutorial}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(R(\xi_{i})+R(\hat{\xi}_{i}))$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
 \subsection{Risk Functional}\label{risk functional}
-From the rationale of regularized risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $f_{estimate}(\mathbf{x})$, $c(\mathbf{x},y,f_{estimate}(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
+From the rationale of regularized risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $c(\mathbf{x},y,f(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
 \begin{eqnarray}
 \nonumber
-maximize\quad \prod_{i=1}^{l}P(y_{i}|f_{estimation}(\mathbf{x}_{i}))&=maximize\quad \prod_{i=1}^{l}P(\xi_{i})\\
-&=maximize\quad \prod_{i=1}^{l}P(y_{i}-f(\mathbf{x}_{i})),
+\max_{f()}\quad \prod_{i=1}^{l}P(y_{i}|f_{true}(\mathbf{x}_{i}))&=\max\quad \prod_{i=1}^{l}P(\xi_{i})\\
+&=\max\quad \prod_{i=1}^{l}P(y_{i}-f_{true}(\mathbf{x}_{i})),
 \label{risk function1}
 \end{eqnarray}
 Take the logarithm of (\ref{risk function1}), we have
 \begin{eqnarray}
-maximize\quad \sum_{i=1}^{l}log(P(y_{i}-f_{estimation}(\mathbf{x}_{i}))),
+maximize\quad \sum_{i=1}^{l}log(P(y_{i}-f(\mathbf{x}_{i}))),
 \label{risk function2}
 \end{eqnarray}
 Therefore the $i$th risk function of $(\mathbf{x_{i}}, y_{i})$ can be written as 
 \begin{eqnarray}
-c(\mathbf{x}_{i}, y_{i}, f_{estimation}(\mathbf{x}_{i}))=-log(P(y_{i}-f_{estimation}(\mathbf{x}_{i}))).
+c(\mathbf{x}_{i}, y_{i}, f(\mathbf{x}_{i}))=-log(P(y_{i}-f(\mathbf{x}_{i}))).
 \label{risk function3}
 \end{eqnarray}
 Thus the equivalent formula of (12) can be written as 
 \begin{equation}
-minimize\quad  \sum_{i=1}^{l}c(\mathbf{x}_{i}, y_{i}, f_{estimation}(\mathbf{x}_{i})),
+minimize\quad  \sum_{i=1}^{l}c(\mathbf{x}_{i}, y_{i}, f(\mathbf{x}_{i})),
 \label{Total risk function}
 \end{equation} 
 In $\epsilon$-SVR, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{Vepsilon}), is applied to (\ref{risk function3}).
 \begin{eqnarray}
-|x|_{\epsilon}=\left\{\begin{array}{ll}
-0   &if\quad |x|<\epsilon\\
-|x|-\epsilon  &otherwise\\
+|u|_{\epsilon}=\left\{\begin{array}{ll}
+0   &if\quad |u|<\epsilon\\
+|u|-\epsilon  &otherwise\\
 \end{array}\right.
 \label{Vepsilon}
 \end{eqnarray}
 Thus the cost function in $\epsilon$-SVR can be written as 
 \begin{equation}
-\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x}))=\frac{1}{l}\sum_{i=1}^{l}m_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
+\tilde{c}(\mathbf{x}, y, f(\mathbf{x}))=\frac{1}{l}\sum_{i=1}^{l}m_{i}(-log(P(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon}))),
 \label{cost function}
 \end{equation}
 where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the regularized risk function can written as 
 \begin{equation}
-minimize\quad \lambda||\mathbf{w}||^{2}+\tilde{c}(\mathbf{x}, y, f_{estimation}(\mathbf{x})),
+minimize\quad \lambda||\mathbf{w}||^{2}+\tilde{c}(\mathbf{x}, y, f}(\mathbf{x})),
 \label{total cost function}
 \end{equation} 
 where $\lambda$ denotes the weight of regularization term, divide (\ref{total cost function}) by $\frac{1}{2\lambda}$, we have the optimization problem  
 \begin{equation}
-minimize \quad \frac{1}{2}||\mathbf{w}||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f_{estimation}(\mathbf{x}_{i})|_{\epsilon}))),
+minimize \quad \frac{1}{2}||\mathbf{w}||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon}))),
 \label{final cost function}
 \end{equation}
 where $C_{i}=\frac{m_{i}}{2\lambda l}$, based on (\ref{final cost function}), by introducing slack variables, we can easily derive the equivalent optimization problem as same as (\ref{primal optimization problem}):
@@ -763,7 +763,7 @@ where $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector, $
   Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
 
  
-\section{Dual Channel Complex Support Vector Regression for Large MIMO system}\label{dual channel CSVR}
+\section{Dual Channel Complex Support Vector detection for Large MIMO system}\label{dual channel CSVR}
  Based on discrete time model of large MIMO uplink system in (\ref{discrete time MIMO system}), in our  regression model, the training data sample at detector is $(\mathbf{h}_{1}, y_{1})(\mathbf{h}_{2}, y_{2}), \ldots, (\mathbf{h}_{N_{r}}, y_{N_{r}})$, where $\mathbf{h}_{i}$ denotes $i$th row of channel propagation matrix $\mathbf{H}$, this yields a regression task without offset $b$:  
  \begin{eqnarray}
  y_{i}=f_{true}(\mathbf{h}_{i})+n,\\
@@ -912,7 +912,7 @@ which can be divided into 2 independent regression task,
 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize \quad \Theta^{r}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}-\sum_{i=1}^{N_{r}}(\alpha_{i}+\hat{\alpha}_{i})\epsilon+\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})Re(y_{i})+C\sum_{i=1}^{N_{r}}(\tilde{R}(\xi^{r}_{i})\\
+maximize \quad \theta^{r}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})(\alpha_{j}-\hat{\alpha}_{j})\mathbf{K}^{r}_{ij}-\sum_{i=1}^{N_{r}}(\alpha_{i}+\hat{\alpha}_{i})\epsilon+\sum_{i=1}^{N_{r}}(\alpha_{i}-\hat{\alpha}_{i})Re(y_{i})+C\sum_{i=1}^{N_{r}}(\tilde{R}(\xi^{r}_{i})\\
 \nonumber
 +\tilde{R}(\hat{\xi}^{r}_{i}))\\
 \left\{\begin{array}{ll}
@@ -924,7 +924,7 @@ maximize \quad \Theta^{r}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\alpha_{i}-\hat{\alpha
 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize \quad \Theta^{i}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}-\sum_{i=1}^{N_{r}}(\beta_{i}+\hat{\beta}_{i})\epsilon+\sum_{i=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})Im(y_{i})+C\sum_{i=1}^{N_{r}}(\tilde{R}(\xi^{i}_{i})\\
+maximize \quad \theta^{i}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})(\beta_{j}-\hat{\beta}_{j})\mathbf{K}^{r}_{ij}-\sum_{i=1}^{N_{r}}(\beta_{i}+\hat{\beta}_{i})\epsilon+\sum_{i=1}^{N_{r}}(\beta_{i}-\hat{\beta}_{i})Im(y_{i})+C\sum_{i=1}^{N_{r}}(\tilde{R}(\xi^{i}_{i})\\
 \nonumber
 +\tilde{R}(\hat{\xi}^{i}_{i}))\\
 \left\{\begin{array}{ll}
@@ -937,7 +937,7 @@ maximize \quad \Theta^{i}= -\frac{1}{2}\sum_{i,j}^{N_{r}}(\beta_{i}-\hat{\beta}_
 The alternate form can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize \quad \Theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})+Re(\mathbf{y})^{T}(\alpha-\hat{\alpha})-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})+\tilde{R}(\hat{\xi}^{r})))\\
+maximize \quad \theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\alpha-\hat{\alpha})+Re(\mathbf{y})^{T}(\alpha-\hat{\alpha})-\epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{r})+\tilde{R}(\hat{\xi}^{r})))\\
 \left\{\begin{array}{ll}
 0\leq \alpha(\hat{\alpha})\leq C\tilde{R}(\xi^{r})(\tilde{R}(\hat{\xi}^{r}))\\
 \xi^{r}(\hat{\xi}^{r})\geq 0\\
@@ -947,7 +947,7 @@ maximize \quad \Theta^{r}=-\frac{1}{2}(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}(\a
 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize \quad \Theta^{i}=-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Im(\mathbf{y})^{T}(\beta-\hat{\beta})-\epsilon(\mathbf{e}^{T}(\beta+\hat{\beta}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{i})+\tilde{R}(\hat{\xi}^{i})))\\
+maximize \quad \theta^{i}=-\frac{1}{2}(\beta-\hat{\beta})^{T}\mathbf{K}^{r}(\beta-\hat{\beta})+Im(\mathbf{y})^{T}(\beta-\hat{\beta})-\epsilon(\mathbf{e}^{T}(\beta+\hat{\beta}))+C(\mathbf{e}^{T}(\tilde{R}(\xi^{i})+\tilde{R}(\hat{\xi}^{i})))\\
 \left\{\begin{array}{ll}
 0\leq \beta(\hat{\beta})\leq C\tilde{R}(\xi^{i})(\tilde{R}(\hat{\xi}^{i}))\\
 \xi^{i}(\hat{\xi}^{i})\geq 0\\
@@ -960,10 +960,10 @@ where $(\alpha-\hat{\alpha})$, $(\beta-\hat{\beta})$,$Re(\mathbf{y})$, $Im(\math
  
 Decomposition method is a set of efficient algorithms that can help to conquer this difficulty. Decomposition method works iteratively, the basic idea of decomposition method is to choose a subset of variable pairs $S$ (named work set) to optimize in each iteration step while keep the rest variable pairs $N$ fixed. Sequential Minimal Optimization (SMO) is an extreme case of decomposition method, the work set size is 2, an analytic quadratic programming (QP) step instead of numerical QP step can be taken in each iteration.    
 
-Because (\ref{complex duality real part}) and (\ref{complex duality imaginary part}) are symmetric, in this section we discuss real part only. By dividing the variables into work set $S$ and fixed set $N$, we have $(\alpha, \hat{\alpha})=((\alpha_{N}, \hat{\alpha}_{N})\mathbf{e}_{N}+(\alpha_{S}+\hat{\alpha}_{S})\mathbf{e}_{S})$, where $\mathbf{e}_{K}$ denotes the modified vector of $\mathbf{e}$ with the components in set $K$ zeroed, for sake of brevity， we replace $\alpha_{K}\mathbf{e}_{K}$ by $\alpha_{K}$. Thus (\ref{complex duality real part vectorizes}) can be changed to:
+Because (\ref{complex duality real part}) and (\ref{complex duality imaginary part}) are symmetric, in this section we discuss real part only. By dividing the variables into work set $S$ and fixed set $N$, we can divide vector $\alpha$ into two sub vectors, $[\alpha_{S}, \alpha_{N}]$. Thus (\ref{complex duality real part vectorizes}) can be changed to:
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize\quad \Theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}+2(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}(\alpha-\hat{\alpha})_{S}]
+maximize\quad \theta^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}+2(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}(\alpha-\hat{\alpha})_{S}]
 +Re(\mathbf{y})_{S}^{T}(\alpha-\hat{\alpha})_{S}-\\
 \nonumber
 \epsilon(\mathbf{e}^{T}(\alpha+\hat{\alpha})_{S})
@@ -974,23 +974,23 @@ Where $\mathbf{K}^{r}=\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,
 \mathbf{K}^{r}_{SS}& \mathbf{K}^{r}_{SN}\\
 \mathbf{K}^{r}_{NS}& \mathbf{K}^{r}_{NN}
 \end{IEEEeqnarraybox*}\right]$ is a permutation of $\mathbf{K}^{r}$, $\mathbf{K}^{r}_{SN}=\mathbf{K}^{r}_{NS}$ 
-and  $\alpha_{S}\in \mathbb{R}^{N_{r}}$ denotes the vector with the components that do not belong to $S$ zeroed. In each iteration, in (\ref{real part decomposition}), $\alpha_{N}$ is fixed and only the sub problem that correlated to $\alpha_{S}$ is solved i.e 
+and  $\alpha_{S}\in \mathbb{R}^{|S|}$ denotes the vector constitute of all the $\alpha_{i}\in S$. In each iteration, in (\ref{real part decomposition}), $\alpha_{N}$ is fixed and only the sub problem that correlated to $\alpha_{S}$ is solved i.e 
 \begin{equation}
-maximize\quad \Theta_{S}^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}]+[Re(\mathbf{y})_{S}^{T}-(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}
-](\alpha-\hat{\alpha})_{S}-\epsilon<\mathbf{e}_{S}^{T}, (\alpha+\hat{\alpha})_{S}>,
+maximize\quad \theta_{S}^{r}=-\frac{1}{2}[(\alpha-\hat{\alpha})_{S}^{T}\mathbf{K}_{SS}^{r}(\alpha-\hat{\alpha})_{S}]+[Re(\mathbf{y})_{S}^{T}-(\alpha-\hat{\alpha})_{N}^{T}\mathbf{K}_{NS}^{r}
+](\alpha-\hat{\alpha})_{S}-\epsilon<\mathbf{e}_{S}^{T}, (\alpha+\hat{\alpha})>,
 \label{subset optimization}
 \end{equation}
 In decomposition method, a proper work set selection strategy is required so that speed and performance requirement can be guaranteed. One approach is to choose dual variable pairs that violate KKT conditions, so that after each iteration, the objective function can be increased according to Osuna's theorem\cite{osuna1997improved}, Heuristic methods are used in in order to accelerate process, in work set selection process, the algorithm first searches among the non-bound variables (that is $0<\alpha<C\tilde{R}(\xi)$), which are more likely to violate KKT condition, then searching the whole dual variable set, the second dual variable that can maximize optimization step of the first coordinate is chosen, approximate step size is used as evaluator for sake of reducing computational cost. Lin propose another work set selection strategy based on an alternative form of KKT condition.
 
 Another class of approaches is to choose the dual variables whose update can provide the maximum improvements to objective function. That is 
 \begin{equation}
-maximize\quad \bigtriangledown \Theta_{S}=\Theta_{S}((\alpha_{S}+\delta_{S}\mathbf{e}_{S}), (\hat{\alpha}_{s}+\hat{\delta}_{S}\mathbf{e}_{S}))-\Theta_{S}(\alpha_{S}, \hat{\alpha}_{S}),
+maximize\quad \bigtriangledown \theta_{S}=\theta_{S}((\alpha+\delta_{S}\mathbf{e}_{S}), (\hat{\alpha}+\hat{\delta}_{S}\mathbf{e}_{S}))-\theta_{S}(\alpha, \hat{\alpha}),
 \label{maximum gain work set selection}
 \end{equation} 
 where $\delta_{S}=\alpha_{S}^{new}-\alpha_{S}$, the gain in (\ref{maximum gain work set selection}) can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}[(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+2(\alpha-\hat{\alpha})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}]+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}_{N}\mathbf{K}^{r}_{NS}](\delta-\hat{\delta})_{S}\\
+\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}[(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+2(\alpha-\hat{\alpha})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}]+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}_{N}\mathbf{K}^{r}_{NS}](\delta-\hat{\delta})_{S}\\
 -\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+[Re(\mathbf{y})^{T}_{S}-(\alpha-\hat{\alpha})^{T}\mathbf{K}^{r}_{S}](\delta-\hat{\delta})_{S}-\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}
 \label{gain work set selection1}
 \end{IEEEeqnarray} 
@@ -1005,11 +1005,11 @@ In (\ref{gain work set selection1}), we use
 where $\mathbf{K}^{r}_{S}\in \mathbb{R}^{N_{r}\times S}$ denotes the matrix constructed by all the columns  that belong to work set $S$. Then we define intermediate variable vector $\Phi\in \mathbb{C}^{N_{r}}$, $\Phi^{r}=Re(\mathbf{y})-\mathbf{K}^{r}(\alpha-\hat{\alpha})$ and $\Phi^{i}=Im(\mathbf{y})-\mathbf{K}^{r}(\beta-\hat{\beta})$
 Thus (\ref{gain work set selection1}) can be rewritten as 
 \begin{IEEEeqnarray}[\relax]{l}
-\bigtriangledown \Theta_{S}^{r}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+(\Phi^{r}_{S})^{T}(\delta-\hat{\delta})_{S}-\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}
+\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}(\delta-\hat{\delta})^{T}_{S}\mathbf{K}^{r}_{SS}(\delta-\hat{\delta})_{S}+(\Phi^{r}_{S})^{T}(\delta-\hat{\delta})_{S}-\epsilon\mathbf{e}^{T}_{S}(\delta+\hat{\delta})_{S}
 \label{gain work set selection2}
 \end{IEEEeqnarray} 
-The offset term is omitted in Large MIMO system, therefore different from SMO type algorithms, there is no linear equation constraint as shown in (\ref{dual objective function1}), it is possible to update only one variable pair in each iteration. However, recent work shows more efficient work set selection strategy based on maximum gain selection approaches, that choose two pair of dual variables can reduce computational cost while maintaining the comparable performance with that with offset \cite{Training without offset}. Here we propose sequential 1-D work set selection strategy, which can approximate the performance of optimal 2-D work set selection, while only $O(n)$ searching times required for the former one instead of $O(n^{2})$ searching times.   
-\subsection{Single Direction Solver}
+The offset term is omitted in Large MIMO system, therefore different from SMO type algorithms, there is no linear equation constraint as shown in (\ref{dual objective function1}), it is possible to update only one variable pair in each iteration. However, recent work shows more efficient work set selection strategy based on maximum gain selection approaches, that choose two pair of dual variables can reduce computational cost while maintaining the comparable performance with that with offset \cite{steinwart2011training}. Here we propose sequential 1-D work set selection strategy, which can approximate the performance of optimal 2-D work set selection, while only $O(n)$ searching times required for the former one instead of $O(n^{2})$ searching times.   
+\subsection{Single Direction Solver}\label{single direction solver}
 Recall KKT complementary condition
 \begin{IEEEeqnarray}[\relax]{l}
 \left\{\begin{array}{ll}
@@ -1041,7 +1041,7 @@ For 1-D solver, the sub optimization objective function can be written as
 take the partial derivative of $\theta_{1}^{r}$ respect to $\lambda^{new}_{1}$, where we define $\Phi_{i}^{r}=Re(y_{i})-\sum_{j=1}^{N_{r}}\lambda^{r}_{j}\mathbf{K}_{ij}^{r}$, similarly, as to dual variable $\lambda^{i}$ , we define $\Phi_{i}^{i}=Im(y_{i})-\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\mathbf{K}_{ij}^{r}$. Here for sake of brevity, we use $\lambda$. Hence we have 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\frac{\partial \theta_{1}^{r}}{\partial \lambda^{new}_{1}}=-\lambda_{1}^{new}\mathbf{K}_{11}^{r}+Re(y_{1})-\sum_{j=2}^{N_{r}}\lambda_{j}^{new}\mathbf{K}_{1j}^{r}-\epsilon(sgn(\lambda^{new}_{1}))=\\
+\frac{\partial \theta_{1}^{r}}{\partial \lambda^{new}_{1}}=-\lambda_{1}^{new}\mathbf{K}_{11}^{r}+Re(y_{1})-\sum_{j=2}^{N_{r}}\lambda_{j}\mathbf{K}_{1j}^{r}-\epsilon(sgn(\lambda^{new}_{1}))=\\
 \nonumber
 -\lambda_{1}^{new}\mathbf{K}_{11}^{r}+\Phi^{r}_{1}+\lambda_{1}\mathbf{K}^{r}_{11}-\epsilon(sgn(\lambda^{new}_{1}))\\
 \Rightarrow \lambda_{1}^{new}=\lambda_{1}+\frac{\Phi_{1}^{r}-\epsilon(sgn(\lambda^{new}_{1}))}{\mathbf{K}_{11}^{r}},
@@ -1077,7 +1077,7 @@ In 1-D searching procedure, the optimization variable which has the maximum gain
 1=arg_{(i=1,\ldots, N_{r})}\max \bigtriangledown \Theta_{i}^{r},
 \label{1-D direction}
 \end{equation}
-\subsection{Double Direction Solver}
+\subsection{Double Direction Solver}\label{double direction solver}
 Although omission of offset in the CSVR-MIMO detector makes 1-D solver possible, however recent work in machine learning field shows training SVM without offset by 2-D solver with special work set selection strategies has more rapid training speed while the comparable performance is retained. The 2-D solver uses the same principle as 1-D solver, the work set size is 2, that is $\lambda_{S}=\lambda_{1}\mathbf{e}_{1}+\lambda_{2}\mathbf{e}_{2}$. Based on (\ref{gain work set selection lambda}), the sub objective function can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
@@ -1140,11 +1140,11 @@ where $\bigtriangledown \Theta^{r}_{i}$, $\bigtriangledown \Theta^{r}_{j}$ denot
 \subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}\label{approximate 2D solver}
 From (\ref{gain of 2-D objective function1}), it is obviously that the gain of 2-D solver is a summation of the gain of 2 independent 1-D solver and a correlation term $\sigma_{i}\sigma_{j}\mathbf{K}^{r}_{ij}$.
  
-Obviously optimal 2-D coordinate combination ($i, j$) can be determined by comparing the gains of all the possibilities exhaustively, which requires $O(n^{2})$ times of searching. Based on (\ref{gain of 2-D objective function1}), we can approximate optimal 2-D solution by 1-D search approach, we will prove in large MIMO scenario, when $N_{t}$ is sufficient large, with channel hardening become effective, this approximation is very efficient. Here we propose two kinds of 1-D approximate searching strategy:\\
-1. 1-D searching without damping:\\
-do one time 1-D searching and calculate all the 1-D gain based on (\ref{gain of 1-D objective function}), then choose the coordinate with first and second largest 1-D gain as the candidates, then update the two candidates by 2-D solver as shown in (\ref{update lambda1}) and (\ref{update lambda2})\\
-2. 1-D searching with damping:\\
-do two times 1-D searchings, in the first round find optimization variable $i$ that can maximize 1-D gain, then in the second round, find $j$th optimization variable with the value of $i$th coordinate updated.
+Obviously optimal 2-D coordinate combination ($i, j$) can be determined by comparing the gains of all the possibilities exhaustively, which requires $O(n^{2})$ times of searching. Based on (\ref{gain of 2-D objective function1}), we can approximate optimal 2-D solution by 1-D search approach, we will prove in large MIMO scenario, when $N_{t}$ is sufficient large, with channel hardening become effective, this approximation is very efficient. Here we propose two kinds of 1-D approximate searching strategy:
+\subsubsection{ 1-D searching without damping}
+do one round 1-D searching and calculate all the 1-D gain based on (\ref{gain of 1-D objective function}), then choose the coordinates with first and second largest 1-D gain as the candidates, then update the two candidates by 2-D solver as shown in (\ref{update lambda1}) and (\ref{update lambda2})
+\subsubsection{ 1-D searching with damping}
+do two rounds 1-D searchings, in the first round find optimization variable $i$ that can maximize 1-D gain, then in the second round, find $j$th optimization variable with the value of $i$th coordinate updated.
 
 From (\ref{gain of 2-D objective function1}), it can be easily interpreted the efficient of 1-D approximation approach is majorly determined by the approximation ratio $\frac{\sigma_{i}\sigma_{j}\mathbf{K}^{r}_{ij}}{\bigtriangledown \theta^{r}_{i}+\bigtriangledown \theta^{r}_{j}}$, hence we provide theoretical analyse from the view of channel hardening phenomenon. Prior the theoretical analyse, we first investigate some mathematical properties of channel hardening (to be completed).    
 
@@ -1253,11 +1253,12 @@ we define two intermediate variables $\Phi$ and $\Psi$
 \Phi^{r}=Re(\mathbf{y})-\mathbf{K}^{r}
 \lambda^{r};
 \Phi^{i}=Im(\mathbf{y})-\mathbf{K}^{r}\lambda^{i}\\
+\label{intermediate function 2b}
 \Psi^{r}=\mathbf{K}^{i}\lambda^{i};
-\Psi^{i}=-\mathbf{K}^{i}\lambda^{r}\\\label{intermediate function 2b}
+\Psi^{i}=-\mathbf{K}^{i}\lambda^{r}\\
 \nonumber
 \end{IEEEeqnarray} 
-Therefore based on (\ref{simple risk function1})-(\ref{intermediate function2}), duality gap in (\ref{simple duality gap}) can be rewritten as 
+Therefore based on (\ref{simple risk function1})-(\ref{intermediate function 2b}), duality gap in (\ref{simple duality gap}) can be rewritten as 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
 G(\lambda^{r}, \lambda^{i})=<(\lambda^{r})^{T}, \mathbf{K}^{r}\lambda^{r}>+<(\lambda^{i})^{T}, \mathbf{K}^{r}\lambda^{i}>-<Re(\mathbf{y})^{T}, \lambda^{r}>-<Im(\mathbf{y})^{T}, \lambda^{i}>\\
@@ -1277,7 +1278,7 @@ Therefore to make stopping criteria more effective to monitor if algorithm conve
 \label{simple duality gap ratio2}
 \end{equation}
 \subsection{Update $\Phi$, $\Psi$ and $G$}
-Here we give the pseudo code to update $\Phi$, $\Psi$ and $G$.
+In each iteration $\Phi$, $\Psi$ and $G$ are updated partially based on 2 updated optimization variables. Here we give the pseudo code to update $\Phi$, $\Psi$ and $G$.
 
 Based on the definition of $\Phi$ and $\Psi$ in (\ref{intermedia function 2a}) and (\ref{intermediate function 2b}), we have the following procedure to update $\Phi$ and $\Psi$ in real channel and imaginary channel, assume the optimization coordinate updated in each channel are $1$ and $2$.\\
 \begin{algorithm}[htb]
@@ -1327,60 +1328,35 @@ Then the risk function term in (\ref{simple duality gap final}) is updated as fo
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
-The pseudo code to update duality gap $G$ based on (\ref{simple duality gap final}) is shown as follow (assume the coordinate updated in real channel is $i$ and $j$, in imaginary channel is $m$ and $f$.
+The pseudo code to update duality gap $G$ based on (\ref{simple duality gap final}) is shown as follow assume the coordinate updated in real channel is $i$ and $j$, in imaginary channel is $m$ and $f$.
 \begin{algorithm}[htb]
 \begin{algorithmic}
-\Procedure{\textbf{5}. Update $G$}{ratio of $G$}
+\Procedure{\textbf{5}. Update $G$}{}
 \State $G+=Re(\mathbf{y}_{1})\sigma^{r}_{i}+Re(\mathbf{y}_{2})\sigma^{r}_{j}$
 \State $G+=Im(\mathbf{y}_{1})\sigma^{i}_{m}+Re(\mathbf{y}_{2})\sigma^{i}_{f}$
 \State $G-=\epsilon(|\lambda^{r}_{i}+\sigma^{r}_{i}|-|\lambda^{r}_{i}|+|\lambda^{r}_{j}+\sigma^{r}_{j}|-|\lambda^{r}_{j}|)$
 \State $G-=\epsilon(|\lambda^{i}_{m}+\sigma^{i}_{m}|-|\lambda^{i}_{m}|+|\lambda^{i}_{f}+\sigma^{i}_{f}|-|\lambda^{i}_{f}|)$
-\State $G-=2(\bigtriangledown \theta(\sigma^{r}_{i},\sigma^{r}_{j},\sigma^{i}_{m},\sigma^{i}_{f}))$
-\State $G-=$
+\State $G-=2(\bigtriangledown \theta_{i,j,m,f}(\sigma^{r}_{i},\sigma^{r}_{j},\sigma^{i}_{m},\sigma^{i}_{f}))$\Comment{Update sub objective function based on (\ref{gain of 2-D objective function1})}
+\State $G+=C(\chi^{r}+\chi^{i})^{new}-(\chi^{r}+\chi^{i})$ \Comment{Update risk function term based on \textbf{Procedure 3} and \textbf{Procedure 4}}
+\State $G-=\sigma^{r}_{i}\sigma^{i}_{m}\mathbf{K}^{i}_{im}+\sigma^{r}_{i}\sigma^{i}_{f}\mathbf{K}^{i}_{if}+\sigma^{r}_{j}\sigma^{i}_{m}\mathbf{K}^{i}_{jm}+\sigma^{r}_{j}\sigma^{i}_{f}\mathbf{K}^{i}_{jf}+\sigma^{i}_{m}\sum_{k=1}^{N_{r}}\lambda_{k}^{r}\mathbf{K}^{i}_{km}+\sigma^{i}_{f}\sum_{k=1}^{N_{r}}\lambda_{k}^{r}\mathbf{K}^{i}_{kf}-\sigma^{r}_{i}\sum_{k=1}^{N_{r}}\lambda_{k}^{i}\mathbf{K}^{i}_{ki}-\sigma^{r}_{j}\sum_{k=1}^{N_{r}}\lambda_{k}^{i}\mathbf{K}^{i}_{kj}$ \Comment{Update $<\lambda^{r},\mathbf{K}^{i}\lambda^{i}>$}
 \EndProcedure
 \label{update G Phi and Psi}
 \end{algorithmic}
 \end{algorithm}
 
 
-Here we give the pseudo code for sequential 1-D searching 2-D solver
-
+Pseudo code for sequential single searching 2-D solver is shown as following 
 \begin{algorithm}[htb]
 \begin{algorithmic}
-\Procedure{CSVD}{$\mathbf{y}$,$\mathbf{H}$}
-\State Step 1. Initialization
-\For{$i=1:N_{r}$}\Comment{initialize $\lambda^{r}$, $\lambda^{i}$, $\Phi^{r}$, $\Phi^{i}$, $\Psi^{r}$, $\Psi^{i}$ and duality gap $G$}
-\State $\lambda_{i}^{r}=0, \lambda_{i}^{i}=0$
-\State $\Phi_{i}^{r}=Re(y_{i}), \Phi_{i}^{i}=Im(y_{i})$
-\State $\Psi_{i}^{r}=0, \Psi_{i}^{i}=0$
-\EndFor 
-\State  Step 2. if $G>tol$, go to step 3, else go to Step 6
-\State Step 3.
-\State Sequentia 1-D searching 2-D solver with or without damping \Comment{find two optimization variables to be updated} 
-\State Step 4.
-\State \textbf{Procedure 1} update $G$, $\Phi$ and $\Psi$
-\State Step 5.
-\State $\tilde{x}=(\lambda^{r}+i\lambda^{i})\mathbf{H}$ \Comment{reconstruct $\mathbf{x}$}
-\State $\mathbf{x}=\mathbb{Q}(\tilde{x})$\Comment{$\mathbb{Q}(\cdot)$ denotes quantization operation based on symbol constellation}
-\State go back to Step 2
-\State Step 6. \textbf{Return} $\mathbf{x}$ 
-
-\EndProcedure
-\end{algorithmic}
-\label{CSVD algorithm}
-\caption{Dual Channel Complex Support Vector Detection Algorithm }
-\end{algorithm}
-
-\begin{algorithm}[htb]
-\begin{algorithmic}
-\Procedure{\textbf{2}. Sequential 2-D solver without Damping}{$1st$, $2nd$} 
+\Procedure{\textbf{6}. Sequential single searching 2-D solver without Damping}{} 
+\State Step 1. Search for two optimization variables based on single direction solver
 \For{$i=1:N_{r}$}
-\State update $\lambda^{r}_{i}(\lambda_{i}^{i})$ by single direction solver
-\State calculate $\bigtriangledown \theta^{r}_{i}(\bigtriangledown \theta_{i}^{i})$\Comment{ calculate the gain of sub objective function}
+\State calculate $\bigtriangledown \theta^{r}_{i}(\bigtriangledown \theta_{i}^{i})$\Comment{Based on single direction solver \ref{single direction solver}}
 \EndFor
 \State choose the dual variable with first and the second largest gain of sub objective function, denoted as 1st and 2nd
-\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ with respect to 1st and 2nd
-\State \textbf{Return} 1st, 2nd
+\State Step 2. Update 1st and 2nd optimization variables based on double direction solver 
+\State update $\lambda^{r}_{1st}(\lambda^{i}_{1st})$ and $\lambda^{r}_{2nd}(\lambda^{i}_{2nd})$\Comment{Based on double direction solver \ref{double direction solver}}
+\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ by \textbf{Procedure 1} and \textbf{Procedure 2}
 \EndProcedure
 \end{algorithmic}
 %\caption{Sequential 2-D Solver without Damping}
@@ -1390,40 +1366,63 @@ Here we give the pseudo code for sequential 1-D searching 2-D solver
  
  \begin{algorithm}
 \begin{algorithmic}
-\Procedure{\textbf{3}. Sequential 2-D solver with Damping}{$1s_{1}t$,$1st_{2}$}
+\Procedure{\textbf{7}. Sequential single searching 2-D solver with Damping}{}
+\State Step 1. Search for two optimization variables based on single direction solver
 \For{$i=1:N_{r}$}\Comment{First round searching}
-\State update $\lambda_{i}^{r}(\lambda_{i}^{i})$ by single direction solver
-\State calculate $\bigtriangledown \theta_{i}^{r}(\bigtriangledown \theta_{i}^{i})$ \Comment{calculate the gain of objective function}
+\State calculate $\bigtriangledown \theta_{i}^{r}(\bigtriangledown \theta_{i}^{i})$ \Comment{Based on single direction solver \ref{single direction solver}}
 \EndFor
-\State choose the dual variable with the largest gain of objective function as $1st_{1}$
+\State choose the optimization variable with the largest gain of objective function as $1st_{1}$
 \State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ with respect to $1st_{1}$
 \For{$i=1:N_{r}$} \Comment{Second round searching}
-\State update $\lambda_{i}^{r}(\lambda_{i}^{i})$ by single direction solver
-\State calculate $\bigtriangledown \theta_{i}^{r}(\bigtriangledown \theta_{i}^{i})$ \Comment{calculate the gain of objective function}
+\State calculate $\bigtriangledown \theta_{i}^{r}(\bigtriangledown \theta_{i}^{i})$ \Comment{Based on single direction solver \ref{single direction solver}}
 \EndFor
-\State choose the dual variable with the largest gain of objective function as $1st_{2}$
-\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ with respect to $1st_{2}$
-\State \textbf{Return} $1st_{1}$ and $1st_{2}$
+\State choose the optimization variable with the largest gain of objective function as $1st_{2}$
+\State Step 2. Update $1st_{1}$ and $1st_{2}$ optimization variables based on double direction solver 
+\State update $\lambda^{r}_{1st_{1}}(\lambda^{i}_{1st_{1}})$ and $\lambda^{r}_{1st_{2}}(\lambda^{i}_{1st_{2}})$\Comment{Based on double direction solver \ref{double direction solver}}
+\State update $\Phi^{r}(\Phi^{i})$ and $\Psi^{r}(\Psi^{i})$ by \textbf{Procedure 1} and \textbf{Procedure 2}
+
 \EndProcedure
 \end{algorithmic}
 %\caption{Sequential 2-D Solver with Damping}
 \label{1D2D damping}
 \end{algorithm} 
- 
-\section{Hyperparameter Setting}
 
+The following is the pseudo code of complex support vector detector (CSVD) is shown in Appendix \ref{Pseudo code of CSVD}
+
+
+ 
+%\section{Hyperparameter Setting}
+\newpage
 \section{Computer Simulations}
 Computer simulation is launched to test the detection and run time performance of proposed dual channel complex support vector detection algorithm. For sake of brevity, the real case is tested first, all the experiments are made by C, compiled by gcc version 4.8.3 on 64 bit Fedora (release 19) Linux system. The experiment platform is a desktop computer with I5-4th generation CPU with quad processing cores, 3.2 GHz clock rate, 8 GB RAM. 
 
 For sake of brevity, we consider a real uncoded spatial multiplex large MIMO system to simulate one channel of the proposed dual channel complex support vector detection algorithm.  with $N_{r}$ received antennas and $N_{t}$ transmitted antennas. The propagation channel matrix is constructed by channel gain components that are identically independent distributed (i.i.d) Gaussian random variables with zero mean and unit variance. transmitted symbols are mutually independent modulated by $M$ PAM with normalized average energy $\frac{1}{N_{t}}$, transmitted over flat fading channel, the sample of noise is AWGN with zero mean and variance $\frac{1}{10^{SNR/10}}$, where $SNR$ denotes the signal to noise ratio. 
-We make experiment to low loading factor system $100\times 40$ and full loading factor $100\times 100$, Fig \ref{SER performance} shows the symbol error rate (SER) performance.  
-\begin{figure}
+We make experiment to low loading factor system $100\times 40$ and full loading factor $100\times 100$, with at least $1e^{5}$ channel realizations and at least $500$ symbol errors accumulated. Fig.\ref{SER performance} shows the symbol error rate (SER) performance, Table.\ref{iteration time} shows the average iteration time of real SVD for different SNR. 
+\begin{figure}[htb]
 \centering
+%\def\svgscale{0.5}
 \def\svgwidth{\columnwidth}
 \input{BER_curve_real_system.pdf_tex}
 \caption{SER performance of $100\times 100 $ and $100\times 40$ MIMO system}
 \label{SER performance}
 \end{figure}
+\begin{table}[htb]
+\renewcommand{\arraystretch}{1.3}
+\caption{Average Iteration Time of Real Support Vector Detector}
+\label{iteration time}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*} {\bfseries Array Size} & \multicolumn{9}{|c|}{\bfseries SNR}\\
+\cline{2-10}
+ &6& 8 &10& 12& 14& 16& 18& 20& 22\\
+\hline
+$100\times 40$&682 &681 &681 &681& 680 &679 &678&677 & 680\\
+\hline
+$100\times 100$&1925 &1916& 1903& 1885& 1862& 1827& 1782&1723&1654 \\
+\hline
+\end{tabular}
+\end{table}
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
 % For figures, \caption should occur after the \includegraphics.
@@ -1517,11 +1516,11 @@ We make experiment to low loading factor system $100\times 40$ and full loading 
 % Note that, LaTeX2e, unlike IEEE journals/conferences, places
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
-\section{Complexity Analysis}
+%\section{Complexity Analysis}
 
 
-\section{Conclusion}
-The conclusion goes here.
+%\section{Conclusion}
+%The conclusion goes here.
 
 
 
@@ -1541,15 +1540,48 @@ The conclusion goes here.
 % starts a section numbered zero.)
 %
 
-
 \appendices
 %\section{Proof of the First Zonklar Equation}
-Appendix one text goes here.
+%Appendix one text goes here.
 
 % you can choose not to have a title for an appendix
 % if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
+\section{Pseudo Code of CSVD}\label{Pseudo code of CSVD}
+\begin{algorithm}[htb]
+\begin{algorithmic}
+\Procedure{CSVD}{$\mathbf{y}$,$\mathbf{H}$}
+\State Step 1. Initialization
+\State $\mathbf{K}=\mathbf{H}\mathbf{H}^{H}$ \Comment{kernel matrix}
+\State $\chi^{r}=0$, $\chi^{i}=0$ \Comment{risk function}
+\For{$i=1:N_{r}$}\Comment{initialize $\lambda^{r}$, $\lambda^{i}$, $\Phi^{r}$, $\Phi^{i}$, $\Psi^{r}$, $\Psi^{i}$ and duality gap $G$}
+\State $\lambda_{i}^{r}=0, \lambda_{i}^{i}=0$
+\State $\Phi_{i}^{r}=Re(y_{i}), \Phi_{i}^{i}=Im(y_{i})$
+\State $\Psi_{i}^{r}=0, \Psi_{i}^{i}=0$
+\If{$|\Phi^{r}_{i}|>\epsilon$}
+\State $\chi^{r}+=(|\Phi^{r}_{i}|-\epsilon)^{2}$
+\EndIf
+\If{$|\Phi^{i}_{i}|>\epsilon$}
+\State $\chi^{i}+=(|\Phi_{i}^{i}|-\epsilon)^{2}$
+\EndIf
+\EndFor 
+\State $G=C(\chi^{r}+\chi^{i})$ \Comment{initialize duality gap}
+\State $\theta=-0.5G$ \Comment{initialize objective function}
+\State  Step 2. if $G>tol$, go to step 3, else go to Step 5
+\State Step 3.
+\State Sequentia single searching 2-D solver with or without damping \Comment{find two optimization variables to be updated} 
+\State Step 4. \textbf{Procedure 5} update $G$
+\State Step 5.
+\State $\tilde{x}=(\lambda^{r}+i\lambda^{i})^{T}\mathbf{H}$ \Comment{reconstruct $\mathbf{x}$}
+\State $\mathbf{x}=\mathbb{Q}(\tilde{x})$\Comment{$\mathbb{Q}(\cdot)$ denotes quantization operation based on symbol constellation}
+\State go back to Step 2
+\State Step 6. \textbf{Return} $\mathbf{x}$ 
+
+\EndProcedure
+\end{algorithmic}
+\label{CSVD algorithm}
+\caption{Dual Channel Complex Support Vector Detection Algorithm }
+\end{algorithm}
+%Appendix two text goes here.
 
 
 % use section* for acknowledgment

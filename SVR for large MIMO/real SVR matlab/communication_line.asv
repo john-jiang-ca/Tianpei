@@ -13,7 +13,7 @@ for i=1:M
     symbolReal(i)=-(M-1)*d+(i-1)*2*d;
 end
 
-SNR=[20];  %signal to noise ratio of output
+SNR=[10];  %signal to noise ratio of output
 noiseVariance=zeros(length(SNR)); %noise variance
 SNRd=zeros(length(SNR),1);
 SNRd=10.^(SNR./10);
@@ -50,26 +50,21 @@ for count=1:length(SNR)
      
          x_candidate=zeros(M^(N),N);
         x_candidate=fullfact([M M M M]);
-        for count2=1:M^N
-            for count3=1:N
-                x_candidate(count2,count3)=symbolReal(x_candidate(count2,count3));
-            end
-        end
         y_candidate=zeros(Nr,M^N);
         symOut_candidate=zeros(Nt,M^N);
-        Euclidean=zeros(M^N,1);
-        symOut_SVR=zeros(Nt-N,M^N);
+        Euclidean=zeros(M^N);
         for count2=1:M^(N)
+        for count3=1:N
+         x_candidate(count2,count3)=symbolReal(x_candidate(count2, count3));   %generate symbol candiate list for the first length N subvector
+        end
         y_candidate(:,count2)=y-pH(:,1:N)*x_candidate(count2,:)';
         %% real SVR 
-         [symOut_SVR(:,count2), lamida, Theta, G, iteration, MSE1]=real_SVR_WSSS1D_2Dsolver(pH(:,N+1:Nt), y_candidate(:,count2), SNRd(count), symbolReal, Nr, Nt-N,...
-             M,d);
+         [symOut_SVR, lamida, Theta, G, iteration, MSE1]=real_SVR_WSSS1D_2Dsolver(pH(:,N+1:Nt), y_candidate(:,count2), SNRd(count), symbolReal, Nr, Nt-N, M);
 %          symOut_candidate(count2)=[x_candidate(count2,:),symOut]';
-         Euclidean(count2)=MSE1;
-         
+         Euclidean(count2)=norm(y_candidate-pH(:,N+1:Nt)*symOut);
         end
         [value,index]=min(Euclidean);
-        symOut=[x_candidate(index,:),symOut_SVR(:,index)'];
+        symOut
         
 %          [symOut, lamida, Theta, G, iteration, MSE]=real_SVR_WSSS1D_2Dsolver_withoutNoise(pH, y, 10^(SNR(count)/10), symbolReal, Nr, Nt, M);
          [  symOut2,   MSE2] = MMSE(pH,  y, SNRd, symbolReal, Nr, Nt, M );

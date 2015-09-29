@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  21 SEP 2015 11:40
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  25 SEP 2015 17:36
 entering extended mode
-**Report*Aug*2015.tex
-("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
+**Thesis*Plan.tex
+("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,7 +13,7 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("F:\GitHub\Tianpei\Report Aug 5 2015\IEEEtran.cls"
+("F:\GitHub\Tianpei\Thesis Plan\IEEEtran.cls"
 Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -478,37 +478,49 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count137
 \calc@Cskip=\skip64
 )
-("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-LaTeX Warning: Label `gain of 2-D objective function1' multiply defined.
-
-
-LaTeX Warning: Label `risk function1' multiply defined.
-
-
-LaTeX Warning: Label `risk function2' multiply defined.
-
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen152
+\captionmargin@=\dimen153
+\captionwidth=\dimen154
+\caption@tempdima=\dimen155
+\caption@indent=\dimen156
+\caption@parindent=\dimen157
+\caption@hangindent=\dimen158
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 385.
-LaTeX Font Info:    ... okay on input line 385.
+\c@KVtest=\count138
+\sf@farskip=\skip65
+\sf@captopadj=\dimen159
+\sf@capskip=\skip66
+\sf@nearskip=\skip67
+\sf@top=\skip68
+\sf@bottom=\skip69
+)
+("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
 
 -- Lines per column: 29 (approximate, difference = 13.19727pt).
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 Requested font "ptmrc7t" at 12.0pt
-
-Overfull \vbox (5.4559pt too high) has occurred while \output is active []
-
-
-[1] [2]
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -521,14 +533,14 @@ Requested font "cmsy6" at 6.0pt
 Requested font "cmex10" at 12.0pt
 Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msa on input line 540.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+LaTeX Font Info:    Try loading font information for U+msa on input line 536.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 Requested font "msam10" at 12.0pt
 Requested font "msam10" at 8.0pt
 Requested font "msam7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msb on input line 540.
+LaTeX Font Info:    Try loading font information for U+msb on input line 536.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -536,216 +548,115 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Requested font "msbm10" at 12.0pt
 Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
- [3] [4]
-Requested font "cmbx12" at 12.0pt
-Requested font "cmbx8" at 8.0pt
-Requested font "cmbx6" at 6.0pt
 
-("F:\GitHub\Tianpei\Report Aug 5 2015\epsilon-SVR.pdf_tex"
-File: epsilon-SVR.pdf Graphic file (type QTm)
-
-<use  "epsilon-SVR.pdf"  page1>
-File: epsilon-SVR.pdf Graphic file (type QTm)
- <use  "epsilon-SVR.pdf"  page2>
-File: epsilon-SVR.pdf Graphic file (type QTm)
-
-<use  "epsilon-SVR.pdf"  page3>
-File: epsilon-SVR.pdf Graphic file (type QTm)
- <use  "epsilon-SVR.pdf"  page4>
-File: epsilon-SVR.pdf Graphic file (type QTm)
-
-<use  "epsilon-SVR.pdf"  page5>
-File: epsilon-SVR.pdf Graphic file (type QTm)
- <use  "epsilon-SVR.pdf"  page6>
-File: epsilon-SVR.pdf Graphic file (type QTm)
-
-<use  "epsilon-SVR.pdf"  page7>
-File: epsilon-SVR.pdf Graphic file (type QTm)
- <use  "epsilon-SVR.pdf"  page8>)
-Requested font "cmr9" at 9.0pt
-Requested font "cmmi9" at 9.0pt
-Requested font "cmsy9" at 9.0pt
-Requested font "cmex9" at 9.0pt
-Requested font "cmex7" at 5.0pt
-Requested font "cmbx9" at 9.0pt
-Requested font "cmbx5" at 5.0pt
-Requested font "msam10" at 9.0pt
-Requested font "msam5" at 5.0pt
-Requested font "msbm10" at 9.0pt
-Requested font "msbm5" at 5.0pt
- [5] [6]
-[7] [8] [9]
-Missing character: There is no ： in font ptmr7t!
- [10] [11]
-
-Package amsmath Warning: Foreign command \atop;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 720.
-
-[12] ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page1>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page2>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page3>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page4>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page5>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page6>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page7>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page8>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page9>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page10>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
-
-<use  "largeMIMOuplink.pdf"  page11>
-File: largeMIMOuplink.pdf Graphic file (type QTm)
- <use  "largeMIMOuplink.pdf"  page12>)
-[13] [14]
-\c@Lemma=\count138
-\c@Property=\count139
- [15] [16] [17] [18]
-Overfull \hbox (37.4673pt too wide) in alignment at lines 913--923
- [] [][]
- []
-
-[19]
-Overfull \hbox (30.30478pt too wide) in alignment at lines 925--935
- [] [][]
- []
+Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
-Overfull \hbox (35.67307pt too wide) in alignment at lines 938--946
- [] [][]
- []
-
-
-Overfull \hbox (32.04362pt too wide) in alignment at lines 948--956
- [] [][]
- []
-
-[20]
-Overfull \hbox (1.32933pt too wide) in alignment at lines 964--972
- [] [][]
- []
-
-[21]
-Overfull \hbox (14.08963pt too wide) detected at line 982
-\OML/cmm/m/it/12 maximize ^^R[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
-r/m/n/12 [(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/
-cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
-1/cmr/m/n/12 )[]] + [\OML/cmm/m/it/12 Re\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 y\OT1
-/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS
-/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 K[]\OT1/cmr/m/n/12 ](\OM
-L/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^
-^@ \OML/cmm/m/it/12 ^^O < \OT1/cmr/bx/n/12 e[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
-2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + []) \OML/cmm/m/it/12 >;
- []
-
-[22]
-Overfull \hbox (12.89012pt too wide) in alignment at lines 991--996
- [] [][]
- []
-
-[23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (70.06726pt too wide) in alignment at lines 1207--1212
- [] [][]
- []
-
-[30] [31] [32]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1286.
-
-Requested font "ptmbc7t" at 12.0pt
- [33] [34] [35]
-("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page1>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page2>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page3>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page4>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page5>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page6>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page7>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page8>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page9>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page10>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page11>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page12>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page13>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page14>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page15>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page16>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page17>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page18>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page19>)
+[1]
 Requested font "ptmrc7t" at 9.0pt
- [36] [37]
-("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [38] [39]
-Missing character: There is no — in font ptmri7t!
-Missing character: There is no — in font ptmri7t!
- [40])
-[41] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
-LaTeX Warning: There were multiply-defined labels.
+Overfull \hbox (1.65709pt too wide) in paragraph at lines 662--662
+[]|[]| 
+ []
 
- ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\OT1/ptm/m/n/12 Scheme (BPSK,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\OT1/ptm/m/n/12 Scheme (16QAM,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+[]|\OT1/ptm/m/n/12 complexity gets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
+\OT1/ptm/m/n/12 higher for large
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+[]|\OT1/ptm/m/n/12 complexity gets
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 668--669
+\OT1/ptm/m/n/12 higher for higher
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+\OT1/ptm/m/n/12 for high or-der
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+\OT1/ptm/m/n/12 mod-u-la-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
+[]|\OT1/ptm/m/n/12 FG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--676
+[]|\OT1/ptm/m/n/12 MR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+[]|\OT1/ptm/m/n/12 complexity is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[]n[]\OT1/cmr/m/n/12 )$\OT
+1/ptm/m/n/12 , but
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+\OT1/ptm/m/n/12 nom-i-nal, with-out
+ []
+
+
+Overfull \hbox (61.59996pt too wide) in paragraph at lines 660--679
+ [][] 
+ []
+
+[2]
+Overfull \hbox (8.11359pt too wide) in paragraph at lines 685--686
+ \OT1/ptm/m/it/12 2) Per-for-mance Anal-y-sis and Com-par-i-son (High Or-der Mo
+d-u-la-tion Scheme): [][] \OT1/ptm/m/n/12 16QAM, 64QAM. 
+ []
+
+
+Overfull \hbox (8.11359pt too wide) in paragraph at lines 690--691
+ \OT1/ptm/m/it/12 2) Per-for-mance Anal-y-sis and Com-par-i-son (High Or-der Mo
+d-u-la-tion Scheme): [][] \OT1/ptm/m/n/12 16QAM, 64QAM. 
+ []
+
+[3]
+Overfull \hbox (8.11359pt too wide) in paragraph at lines 695--700
+ \OT1/ptm/m/it/12 2) Per-for-mance Anal-y-sis and Com-par-i-son (High Or-der Mo
+d-u-la-tion Scheme): [][] \OT1/ptm/m/n/12 16QAM, 64QAM. 
+ []
+
+No file "Thesis Plan".bbl.
+[4] ("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.aux") ) 
 Here is how much of TeX's memory you used:
- 4778 strings out of 429025
- 64488 string characters out of 3166797
- 146627 words of memory out of 3000000
- 7915 multiletter control sequences out of 15000+200000
- 32934 words of font info for 85 fonts, out of 3000000 for 9000
- 915 hyphenation exceptions out of 8191
- 32i,13n,24p,1725b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 5198 strings out of 429025
+ 72142 string characters out of 3166797
+ 157412 words of memory out of 3000000
+ 8357 multiletter control sequences out of 15000+200000
+ 28540 words of font info for 70 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 36i,13n,38p,363b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report*Aug*2015.pdf (41 pages).
+Output written on Thesis*Plan.pdf (4 pages).

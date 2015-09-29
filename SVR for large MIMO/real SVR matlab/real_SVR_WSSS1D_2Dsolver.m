@@ -1,4 +1,4 @@
-function [ symOut, lamida, Theta,G,  iteration, MSE ] = real_SVR_WSSS1D_2Dsolver( pH,  y, SNRd, symbolContellation, Nr, Nt, M)
+function [ symOut, lamida, Theta,G,  iteration, MSE ] = real_SVR_WSSS1D_2Dsolver( pH,  y, SNRd, symbolContellation, Nr, Nt, M,d)
 %real SVR detection 
 %   Output
 % symOut: regression coefficiences estimation
@@ -155,7 +155,7 @@ symOut=(lamida'*pH)';
 %   I=ones(Nt,Nt);
 %   symOut_MMSE=(inv(pH'*pH)+SNRd^(-1)*I)*pH'*y;
 %% rounding 
-d=sqrt(3/(Nt*(M^2-1))); %the distance of constellation
+
 for count=1:Nt
 if(M==4)
     if(symOut(count)<=-2*d)

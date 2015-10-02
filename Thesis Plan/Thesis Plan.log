@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  25 SEP 2015 17:36
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  30 SEP 2015 15:42
 entering extended mode
 **Thesis*Plan.tex
 ("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.tex"
@@ -585,18 +585,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 668--669
  []
 
 
-Underfull \hbox (badness 2293) in paragraph at lines 668--669
-\OT1/ptm/m/n/12 higher for higher
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+\OT1/ptm/m/n/12 higher for high
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 668--669
-\OT1/ptm/m/n/12 for high or-der
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
-\OT1/ptm/m/n/12 mod-u-la-tion
+\OT1/ptm/m/n/12 or-der mod-u-la-tion
  []
 
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  21 SEP 2015 11:40
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  2 OCT 2015 13:57
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -508,7 +508,7 @@ Requested font "ptmrc7t" at 12.0pt
 Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
-[1] [2]
+[1] [2] [3]
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -521,14 +521,14 @@ Requested font "cmsy6" at 6.0pt
 Requested font "cmex10" at 12.0pt
 Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msa on input line 540.
+LaTeX Font Info:    Try loading font information for U+msa on input line 545.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 Requested font "msam10" at 12.0pt
 Requested font "msam10" at 8.0pt
 Requested font "msam7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msb on input line 540.
+LaTeX Font Info:    Try loading font information for U+msb on input line 545.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -536,7 +536,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Requested font "msbm10" at 12.0pt
 Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
- [3] [4]
+ [4] [5]
 Requested font "cmbx12" at 12.0pt
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
@@ -573,16 +573,16 @@ Requested font "msam10" at 9.0pt
 Requested font "msam5" at 5.0pt
 Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
- [5] [6]
-[7] [8] [9]
+ [6] [7]
+[8] [9] [10]
 Missing character: There is no ： in font ptmr7t!
- [10] [11]
+ [11] [12]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 720.
+(amsmath)                 on input line 725.
 
-[12] ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
+("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
 File: largeMIMOuplink.pdf Graphic file (type QTm)
 
 <use  "largeMIMOuplink.pdf"  page1>
@@ -613,36 +613,36 @@ File: largeMIMOuplink.pdf Graphic file (type QTm)
 <use  "largeMIMOuplink.pdf"  page11>
 File: largeMIMOuplink.pdf Graphic file (type QTm)
  <use  "largeMIMOuplink.pdf"  page12>)
-[13] [14]
+[13] [14] [15]
 \c@Lemma=\count138
 \c@Property=\count139
- [15] [16] [17] [18]
-Overfull \hbox (37.4673pt too wide) in alignment at lines 913--923
- [] [][]
- []
-
-[19]
-Overfull \hbox (30.30478pt too wide) in alignment at lines 925--935
- [] [][]
- []
-
-
-Overfull \hbox (35.67307pt too wide) in alignment at lines 938--946
- [] [][]
- []
-
-
-Overfull \hbox (32.04362pt too wide) in alignment at lines 948--956
+ [16] [17] [18] [19]
+Overfull \hbox (37.4673pt too wide) in alignment at lines 918--928
  [] [][]
  []
 
 [20]
-Overfull \hbox (1.32933pt too wide) in alignment at lines 964--972
+Overfull \hbox (30.30478pt too wide) in alignment at lines 930--940
+ [] [][]
+ []
+
+
+Overfull \hbox (35.67307pt too wide) in alignment at lines 943--951
+ [] [][]
+ []
+
+
+Overfull \hbox (32.04362pt too wide) in alignment at lines 953--961
  [] [][]
  []
 
 [21]
-Overfull \hbox (14.08963pt too wide) detected at line 982
+Overfull \hbox (1.32933pt too wide) in alignment at lines 969--977
+ [] [][]
+ []
+
+[22]
+Overfull \hbox (14.08963pt too wide) detected at line 987
 \OML/cmm/m/it/12 maximize ^^R[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
 r/m/n/12 [(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/
 cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
@@ -654,22 +654,22 @@ L/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^
 2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + []) \OML/cmm/m/it/12 >;
  []
 
-[22]
-Overfull \hbox (12.89012pt too wide) in alignment at lines 991--996
+[23]
+Overfull \hbox (12.89012pt too wide) in alignment at lines 996--1001
  [] [][]
  []
 
-[23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (70.06726pt too wide) in alignment at lines 1207--1212
+[24] [25] [26] [27] [28] [29] [30]
+Overfull \hbox (70.06726pt too wide) in alignment at lines 1212--1217
  [] [][]
  []
 
-[30] [31] [32]
+[31] [32] [33]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1286.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1291.
 
 Requested font "ptmbc7t" at 12.0pt
- [33] [34] [35]
+ [34] [35] [36]
 ("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
@@ -729,23 +729,24 @@ File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page19>)
 Requested font "ptmrc7t" at 9.0pt
- [36] [37]
-("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [38] [39]
+ [37] [38]
+("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [39] [40]
 Missing character: There is no — in font ptmri7t!
+ [41]
 Missing character: There is no — in font ptmri7t!
- [40])
-[41] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
+)
+[42] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4778 strings out of 429025
- 64488 string characters out of 3166797
- 146627 words of memory out of 3000000
- 7915 multiletter control sequences out of 15000+200000
+ 4779 strings out of 429025
+ 64534 string characters out of 3166797
+ 146637 words of memory out of 3000000
+ 7919 multiletter control sequences out of 15000+200000
  32934 words of font info for 85 fonts, out of 3000000 for 9000
- 915 hyphenation exceptions out of 8191
- 32i,13n,24p,1725b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 912 hyphenation exceptions out of 8191
+ 32i,13n,24p,1861b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report*Aug*2015.pdf (41 pages).
+Output written on Report*Aug*2015.pdf (42 pages).

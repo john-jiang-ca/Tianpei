@@ -6,6 +6,7 @@ symOut=zeros(Nt,1);
 I=ones(Nt,Nt);
 G=(inv(pH'*pH+SNRd^(-1)*I))*pH';
 symOut=G*y;
+MSE=norm(y-pH*symOut);
 %% rounding 
 d=sqrt(3/(Nt*(M^2-1))); %the distance of constellation
 for count=1:Nt
@@ -44,7 +45,8 @@ elseif (M==8)
     
 end
 end
-MSE=norm(y-pH*symOut);
+%% Mean Square Error
+% MSE=norm(y-pH*symOut);
 
 end
 

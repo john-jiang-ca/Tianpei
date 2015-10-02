@@ -1,4 +1,4 @@
-function [ symOut, lamida, Theta,G,  iteration, MSE ] = real_SVR_WSSS1D_2Dsolver( pH,  y, SNRd, symbolContellation, Nr, Nt, M,d)
+function [ symOut, lamida, Theta,G,  iteration, MSE , NumReliable] = real_SVR_WSSS1D_2Dsolver( pH,  y, SNRd, symbolContellation, Nr, Nt, M,d, epsilon ,C , tol,tau)
 %real SVR detection 
 %   Output
 % symOut: regression coefficiences estimation
@@ -13,10 +13,10 @@ function [ symOut, lamida, Theta,G,  iteration, MSE ] = real_SVR_WSSS1D_2Dsolver
 % SNRd: signal to noise ratio at output 
 % symbolConstellation: the symbol constellation
 % iteration: iteration time
-epsilon=1e-7;   %epsilon
-tol=1e-3;  %tolerance of duality gap
+% epsilon=1e-7;   %epsilon
+% tol=1e-2;  %tolerance of duality gap
 K=pH*pH';
-C=1;
+% C=5;
 Phi=zeros(Nr,1);
 sigma=zeros(Nr,1);
 lamida=zeros(Nr,1);
@@ -151,23 +151,37 @@ G(iteration)=G(iteration)/abs(G(iteration)+Theta(iteration));
 
 end
 symOut=(lamida'*pH)';
+
+MSE=norm(y-pH*symOut);
 %   symOut_MMSE=zeros(Nt,1);
 %   I=ones(Nt,Nt);
 %   symOut_MMSE=(inv(pH'*pH)+SNRd^(-1)*I)*pH'*y;
 %% rounding 
-
+NumReliable=zeros(Nt,1);
 for count=1:Nt
 if(M==4)
     if(symOut(count)<=-2*d)
+        if(abs(symOut(count)+3*d)<tau*d)
+            NumReliable(count)=1;
+        end
          symOut(count)=-3*d;
 %           symOut_MMSE(count)=-3*d;
     elseif(symOut(count)>-2*d&&symOut(count)<=0)
+        if(abs(symOut(count)+d)<tau*d)
+            NumReliable(count)=1;
+        end
          symOut(count)=-1*d;
 %          symOut_MMSE(count)=-1*d;
     elseif(symOut(count)>0&&symOut(count)<=2*d)
+                if(abs(symOut(count)-d)>tau*d)
+            NumReliable(count)=1;
+        end
          symOut(count)=d;
 %          symOut_MMSE(count)=d;
     elseif(symOut(count)>=2*d)
+          if(abs(symOut(count)-3*d)>tau*d)
+            NumReliable(count)=1;
+        end
          symOut(count)=3*d;
 %           symOut_MMSE(count)=3*d;
     end
@@ -194,6 +208,6 @@ end
 end
 
 %% mean square error
-MSE=norm(y-pH*symOut);
+% MSE=norm(y-pH*symOut);
 end
 

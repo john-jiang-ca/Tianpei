@@ -3,8 +3,8 @@
 close all;
 clear all;
 cd 'F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab'
-Nr=32;
-Nt=32;
+Nr=100;
+Nt=100;
 N=4;
 M=4; %modulation sheme
 d=sqrt(3/(Nt*(M^2-1)));
@@ -17,7 +17,7 @@ for i=1:M
     symbolReal(i)=-(M-1)*d+(i-1)*2*d;
 end
 
-SNR=[20];  %signal to noise ratio of output
+SNR=[10];  %signal to noise ratio of output
 noiseVariance=zeros(length(SNR)); %noise variance
 SNRd=zeros(length(SNR),1);
 SNRd=10.^(SNR./10);
@@ -124,7 +124,8 @@ fid3=fopen('D_original.txt','a');
         end
         n=normrnd(0,sqrt(noiseVariance(count)),Nr, 1);
         y=pH*x+n;    
-        
+        y_hat=pH'*y;
+         pH_hat=pH'*pH;
         
         %% channel partition
      
@@ -145,7 +146,10 @@ fid3=fopen('D_original.txt','a');
         %% real SVR 
 %           [symOut_SVR(:,count2), lamida, Theta, G, iteration, MSE1]=real_SVR_WSSS1D_2Dsolver(pH(:,N+1:Nt), y_candidate(:,count2), SNRd(count), symbolReal, Nr, Nt-N,...
 %               M,d);
-[symOut, lamida, Theta, G, iteration, MSE1, NumReliable]=real_SVR_WSSS1D_2Dsolver(pH, y, SNRd(count), symbolReal, Nr, Nt, M,d,epsilon, C, tol,tau);
+[symOut, lamida, Theta, G, iteration, MSE1, NumReliable]=real_SVR_WSSS1D_2Dsolver(pH_hat, y_hat, SNRd(count), symbolReal, Nr, Nt, M,d,epsilon, C, tol,tau);
+I=eye(Nt,Nt);
+Dia=diag(I/(pH'*pH));
+
 numberR=0;
 subsymOut1=[];
 subpH1=[];
@@ -178,8 +182,8 @@ end
 
 
     
-%           symOut_candidate(count2)=[x_candidate(:,count2);symOut'];
-%           Euclidean(count2)=MSE1;
+%            symOut_candidate(count2)=[x_candidate(:,count2);symOut'];
+%            Euclidean(count2)=MSE1;
          
 %         end
 %         [value,index]=min(Euclidean);

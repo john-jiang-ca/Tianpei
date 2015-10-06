@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  2 OCT 2015 13:57
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  6 OCT 2015 00:13
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -482,12 +482,6 @@ LaTeX Info: Redefining \addtolength on input line 77.
 
 LaTeX Warning: Label `gain of 2-D objective function1' multiply defined.
 
-
-LaTeX Warning: Label `risk function1' multiply defined.
-
-
-LaTeX Warning: Label `risk function2' multiply defined.
-
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 385.
 LaTeX Font Info:    ... okay on input line 385.
@@ -575,14 +569,26 @@ Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
  [6] [7]
 [8] [9] [10]
-Missing character: There is no ： in font ptmr7t!
- [11] [12]
+Overfull \hbox (27.06242pt too wide) in alignment at lines 713--720
+ [] [][]
+ []
+
+[11]
+Overfull \hbox (64.00009pt too wide) in paragraph at lines 740--742
+\U/msb/m/n/12 R[]$\OT1/ptm/m/n/12 , $\OT1/cmr/bx/n/12 e[]$ \OT1/ptm/m/n/12 de-n
+otes the vec-tor that only $\OML/cmm/m/it/12 i$\OT1/ptm/m/n/12 th com-po-nent i
+s 1 while the rest are all 0, $\OT1/cmr/bx/n/12 R[] \OT1/cmr/m/n/12 = [[](\OML/
+cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cm
+m/m/it/12 ^^X[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; []\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 )][]$\OT1/ptm/m/n/12 ,
+ []
+
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 725.
+(amsmath)                 on input line 747.
 
-("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
+[12] ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
 File: largeMIMOuplink.pdf Graphic file (type QTm)
 
 <use  "largeMIMOuplink.pdf"  page1>
@@ -613,36 +619,36 @@ File: largeMIMOuplink.pdf Graphic file (type QTm)
 <use  "largeMIMOuplink.pdf"  page11>
 File: largeMIMOuplink.pdf Graphic file (type QTm)
  <use  "largeMIMOuplink.pdf"  page12>)
-[13] [14] [15]
+[13] [14]
 \c@Lemma=\count138
 \c@Property=\count139
- [16] [17] [18] [19]
-Overfull \hbox (37.4673pt too wide) in alignment at lines 918--928
+ [15] [16] [17] [18] [19]
+Overfull \hbox (37.4673pt too wide) in alignment at lines 970--980
+ [] [][]
+ []
+
+
+Overfull \hbox (30.30478pt too wide) in alignment at lines 982--992
  [] [][]
  []
 
 [20]
-Overfull \hbox (30.30478pt too wide) in alignment at lines 930--940
+Overfull \hbox (35.67307pt too wide) in alignment at lines 995--1003
  [] [][]
  []
 
 
-Overfull \hbox (35.67307pt too wide) in alignment at lines 943--951
- [] [][]
- []
-
-
-Overfull \hbox (32.04362pt too wide) in alignment at lines 953--961
+Overfull \hbox (32.04362pt too wide) in alignment at lines 1005--1013
  [] [][]
  []
 
 [21]
-Overfull \hbox (1.32933pt too wide) in alignment at lines 969--977
+Overfull \hbox (1.32933pt too wide) in alignment at lines 1021--1029
  [] [][]
  []
 
 [22]
-Overfull \hbox (14.08963pt too wide) detected at line 987
+Overfull \hbox (14.08963pt too wide) detected at line 1039
 \OML/cmm/m/it/12 maximize ^^R[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
 r/m/n/12 [(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/
 cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
@@ -654,22 +660,31 @@ L/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^
 2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + []) \OML/cmm/m/it/12 >;
  []
 
-[23]
-Overfull \hbox (12.89012pt too wide) in alignment at lines 996--1001
+
+Overfull \hbox (12.89012pt too wide) in alignment at lines 1048--1053
  [] [][]
  []
 
-[24] [25] [26] [27] [28] [29] [30]
-Overfull \hbox (70.06726pt too wide) in alignment at lines 1212--1217
+[23] [24] [25] [26] [27] [28] [29] [30]
+Overfull \hbox (70.06726pt too wide) in alignment at lines 1264--1269
  [] [][]
  []
 
-[31] [32] [33]
+
+LaTeX Warning: Reference `risk functional' on page 31 undefined on input line 1
+270.
+
+[31]
+
+LaTeX Warning: Reference `risk functional' on page 32 undefined on input line 1
+301.
+
+[32]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1291.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1343.
 
 Requested font "ptmbc7t" at 12.0pt
- [34] [35] [36]
+ [33] [34] [35]
 ("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
@@ -729,7 +744,7 @@ File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page19>)
 Requested font "ptmrc7t" at 9.0pt
- [37] [38]
+ [36] [37] [38]
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [39] [40]
 Missing character: There is no — in font ptmri7t!
  [41]
@@ -737,16 +752,19 @@ Missing character: There is no — in font ptmri7t!
 )
 [42] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4779 strings out of 429025
- 64534 string characters out of 3166797
- 146637 words of memory out of 3000000
- 7919 multiletter control sequences out of 15000+200000
+ 4787 strings out of 429025
+ 64715 string characters out of 3166797
+ 146707 words of memory out of 3000000
+ 7927 multiletter control sequences out of 15000+200000
  32934 words of font info for 85 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 32i,13n,24p,1861b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,13n,24p,1861b,422s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on Report*Aug*2015.pdf (42 pages).

@@ -562,12 +562,11 @@ is constructed without offset, Therefore, for each real SVR without offset, in p
 
 \section{Brief Introduction to $\epsilon$-Support Vector Regression}\label{Introduce epsilon SVR}
 \subsection{Regression Model}
-Suppose we are given training data set $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2},y_{2}),\cdots,(\mathbf{x}_{l},y_{l}))$, $l$ denotes the number of training samples, $\mathbf{x}\in \mathbb{R}^{v}$ denotes input data vector, $v$ is the number of features in $\mathbf{x}$. $y$ denotes output. The regression model (either linear or non-linear regression) is given by 
+Suppose we are given training data set $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2},y_{2}),\cdots,(\mathbf{x}_{L},y_{L}))$, $L$ denotes the number of training samples, $\mathbf{x}_{i}\in \mathbb{R}^{V}$ denotes input data vector, $V$ is the number of features in $\mathbf{x}_{i}$. $y_{i}$ denotes output. Let $\mathbf{w}$ denotes regression coefficient vector, $\Phi(\mathbf{x}_{i})$ denotes the mapping of $\mathbf{x}_{i}$ to higher dimensional feature space, $\mathbf{w},\Phi(\mathbf{x}_{i})\in \mathbb{R}^{\Lambda}$, $\Lambda \in \mathbb{R}$ denotes the dimension of mapped feature space (For linear model, $\mathbf{x}_{i}=\Phi(\mathbf{x}_{i})$). The regression model (either linear or non-linear) is given by 
 \begin{equation}
-y_{i}=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i\in 1\cdots l 
+y_{i}=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i= 1\cdots L 
 \label{equation1}
 \end{equation} 
-where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the mapping of $\mathbf{\mathbf{x}}$ to higher dimensional feature space.
 
 \begin{figure}
 \centering
@@ -577,120 +576,154 @@ where $\mathbf{w}$ denotes regression coefficient vector, $\Phi(x)$ denotes the 
 \label{epsilon-SVR}
 \end{figure}
 
-Here we give the primal optimization problem directly
-\begin{eqnarray}
+We present the primal optimization problem directly
+\begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\min_{\mathbf{w}} \frac{1}{2}||\mathbf{w}||^{2}+C\sum_{j=1}^{l}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+\min_{\mathbf{w}} f(\mathbf{w})=\frac{1}{2}||\mathbf{w}||^{2}+C\sum_{i=1}^{L}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
 s.t. \left\{\begin{array}{ll}
-y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
-\epsilon, \xi,\hat{\xi} &\geq 0
+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b \leq \epsilon+\xi_{i}, i=1,2\cdots, L \\
+\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} \leq \epsilon+\hat{\xi}_{i}, i=1,2\cdots, L\\
+\epsilon_{i}, \xi_{i},\hat{\xi}_{i} \geq 0, i=1,2\cdots, L
 \end{array}\right.
 \label{primal optimization problem}
-\end{eqnarray}
-In \ref{primal optimization problem}, $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model. $\epsilon$ denotes the precision, if the error between estimation and real output is less than $\epsilon$, As shown in Fig \ref{epsilon-SVR}, only those data points outside the shadow part, which is called $\epsilon$ tube, contribute to cost function. $\xi$ and $\hat{\xi}$ denote slack variables that cope with noise of input data set, $R(x)$ denotes risk function, the simplest risk function is $R(u)=u$, risk function is determined by the statistical distribution of noise\cite{smola2004tutorial}, for example if the noise subject to Gaussian distribution, the optimal cost function is $R(x)=\frac{1}{2}x^{2}$. $C\sum_{i=1}^{l}(R(\xi_{i})+R(\hat{\xi}_{i}))$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ controls the trade off between regularization term and noise penalty term.
-\subsection{Risk Functional}\label{risk functional}
-From the rationale of regularized risk function, let $f_{true}(\mathbf{x})$ denotes true regression function and $c(\mathbf{x},y,f(\mathbf{x}))$ denotes the risk function, the regression model can be written as $y=f_{true}(\mathbf{x})+\xi$, $\xi$ denotes additive noise. Assume the data samples are i.i.d. Based on Maximum Likelihood (ML) principle we want to  
-\begin{eqnarray}
+\end{IEEEeqnarray}
+In (\ref{primal optimization problem}), $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model, $\epsilon$ denotes the precision, As shown in Fig \ref{epsilon-SVR}, the area between two dash line is called $\epsilon$ tube. Only those data samples located outside $\epsilon$ tube contribute to cost. Furthermore $\xi_{i}$ and $\hat{\xi}_{i}$ denote slack variables that cope with noise of input data samples, $R(u)$ denotes risk function, the simplest risk function is $R(u)=u$, The type of cost function is determined by the statistical distribution of noise\cite{smola2004tutorial}. For example if the noise is Gaussian noise, then the optimal cost function is $R(u)=\frac{1}{2}u^{2}$. The term $C\sum_{i=1}^{L}(R(\xi_{i})+R(\hat{\xi}_{i}))$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ that controls the trade off between regularization term and cost function term.
+
+\subsection{Cost Function}\label{cost function}
+The optimal cost function in (\ref{primal optimization problem}) can be derived based on maximum likelihood (ML) principle. Assume the data samples $\mathbf{x}_{i}$ in data set are iid, Let $f_{true}(\mathbf{x}_{i}), i=1,2,\cdots L$ denotes true regression function. the underlying assumption is $y_{i}=f_{true}(\mathbf{x}_{i})+\xi_{i}, i=1,2,\cdots, L$, $\xi_{i}$ denotes additive noise of the $i$th data sample, with probability density function (pdf) $Pr(\cdot)$. Let $P(\cdot)$ denotes the pdf of $y_{i}$. Based on ML principle we want to 
+\begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\max_{f()}\quad \prod_{i=1}^{l}P(y_{i}|f_{true}(\mathbf{x}_{i}))&=\max\quad \prod_{i=1}^{l}P(\xi_{i})\\
-&=\max\quad \prod_{i=1}^{l}P(y_{i}-f_{true}(\mathbf{x}_{i})),
-\label{risk function1}
-\end{eqnarray}
-Take the logarithm of (\ref{risk function1}), we have
-\begin{eqnarray}
-maximize\quad \sum_{i=1}^{l}log(P(y_{i}-f(\mathbf{x}_{i}))),
-\label{risk function2}
-\end{eqnarray}
-Therefore the $i$th risk function of $(\mathbf{x_{i}}, y_{i})$ can be written as 
-\begin{eqnarray}
+\max_{f}\quad \prod_{i=1}^{L}P(y_{i}|f(\mathbf{x}_{i}))=\prod_{i=1}^{L}P(f(\mathbf{x}_{i})+\xi_{i}|f(\mathbf{x}_{i}))=\prod_{i=1}^{L}Pr(\xi_{i})=\prod_{i=1}^{L}Pr(y_{i}-f(\mathbf{x}_{i}))\\
+\label{cost function1}
+\end{IEEEeqnarray}
+Take the logarithm of $\prod_{i=1}^{L}Pr(y_{i}-f(\mathbf{x}_{i}))$, we have
+\begin{IEEEeqnarray}[\relax]{l}
+\sum_{i=1}^{L}log(Pr(y_{i}-f(\mathbf{x}_{i}))),
+\label{cost function2}
+\end{IEEEeqnarray}
+maximizing (\ref{cost function2}) is equivalent to minimizing $-\sum_{i=1}^{L}log(Pr(y_{i}-f(\mathbf{x}_{i})))$
+Let $c(\mathbf{x}_{i}, y_{i}, f(\mathbf{x}_{i}))$ denotes the $i$th cost function, which is defined as  
+\begin{IEEEeqnarray}[\relax]{l}
 c(\mathbf{x}_{i}, y_{i}, f(\mathbf{x}_{i}))=-log(P(y_{i}-f(\mathbf{x}_{i}))).
-\label{risk function3}
-\end{eqnarray}
-Thus the equivalent formula of (12) can be written as 
+\label{cost function3}
+\end{IEEEeqnarray}
+Thus (\ref{cost function1}) can be rewritten as 
 \begin{equation}
-minimize\quad  \sum_{i=1}^{l}c(\mathbf{x}_{i}, y_{i}, f(\mathbf{x}_{i})),
+\min_{f}\quad  \sum_{i=1}^{L}c(\mathbf{x}_{i}, y_{i}, f(\mathbf{x}_{i})),
 \label{Total risk function}
 \end{equation} 
-In $\epsilon$-SVR, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{Vepsilon}), is applied to (\ref{risk function3}).
-\begin{eqnarray}
+In $\epsilon$-SVR, in order to provide more flexibility to precision control, Vapnik's $\epsilon$-insensitive function, as shown in (\ref{Vepsilon}), is applied to (\ref{cost function3}).
+\begin{IEEEeqnarray}[\relax]{l}
 |u|_{\epsilon}=\left\{\begin{array}{ll}
 0   &if\quad |u|<\epsilon\\
 |u|-\epsilon  &otherwise\\
 \end{array}\right.
 \label{Vepsilon}
-\end{eqnarray}
-Thus the cost function in $\epsilon$-SVR can be written as 
+\end{IEEEeqnarray}
+Thus the final form of cost function in $\epsilon$-SVR can be written as 
 \begin{equation}
-\tilde{c}(\mathbf{x}, y, f(\mathbf{x}))=\frac{1}{l}\sum_{i=1}^{l}m_{i}(-log(P(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon}))),
-\label{cost function}
-\end{equation}
-where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the regularized risk function can written as 
-\begin{equation}
-minimize\quad \lambda||\mathbf{w}||^{2}+\tilde{c}(\mathbf{x}, y, f(\mathbf{x})),
-\label{total cost function}
-\end{equation} 
-where $\lambda$ denotes the weight of regularization term, divide (\ref{total cost function}) by $\frac{1}{2\lambda}$, we have the optimization problem  
-\begin{equation}
-minimize \quad \frac{1}{2}||\mathbf{w}||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon}))),
+\tilde{c}(y_{i}, \mathbf{x}_{i}, f(\mathbf{x}_{i}))=-log(Pr(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon})),
 \label{final cost function}
 \end{equation}
-where $C_{i}=\frac{m_{i}}{2\lambda l}$, based on (\ref{final cost function}), by introducing slack variables, we can easily derive the equivalent optimization problem as same as (\ref{primal optimization problem}):
-\begin{eqnarray}
-\nonumber
-minimize \quad f(\mathbf{w})=\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
-s.t. \left\{\begin{array}{ll}
-y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
-\epsilon, \xi,\hat{\xi} &\geq 0\\
-\end{array}\right.
-\label{primal objective function}
-\end{eqnarray}
-where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered. 
+Consider the cost function term in (\ref{primal optimization problem}),
+\begin{equation}
+\sum_{i=1}^{L}R(\xi_{i})+R(\hat{\xi}_{i})=\sum_{i=1}^{L}\tilde{c}(y_{i}, \mathbf{x}_{i}, f(\mathbf{x}_{i}))=\sum_{i=1}^{L}-log(Pr(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon}))
+\end{equation}  
+the cost function term is determined according to noise distribution.  
+%where $m_{i}\in \mathbb{R}$, $m_{i}>0$ denotes the weight parameter, if $y_{i}>f_{estiamtion}(\mathbf{x})$, $m_{i}=m_{positive}$, else $m_{i}=m_{negative}$, Therefore the regularized risk function can written as 
+%\begin{equation}
+%minimize\quad \lambda||\mathbf{w}||^{2}+\tilde{c}(\mathbf{x}, y, f(\mathbf{x})),
+%\label{total cost function}
+%\end{equation} 
+%where $\lambda$ denotes the weight of regularization term, divide (\ref{total cost function}) by $\frac{1}{2\lambda}$, we have the optimization problem  
+%\begin{equation}
+%minimize \quad \frac{1}{2}||\mathbf{w}||^{2}+\sum_{i=1}^{l}C_{i}(-log(P(|y_{i}-f(\mathbf{x}_{i})|_{\epsilon}))),
+%\label{final cost function}
+%\end{equation}
+%where $C_{i}=\frac{m_{i}}{2\lambda l}$, based on (\ref{final cost function}), by introducing slack variables, we can easily derive the equivalent optimization problem as same as (\ref{primal optimization problem}):
+%\begin{eqnarray}
+%\nonumber
+%minimize \quad f(\mathbf{w})=\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+%s.t. \left\{\begin{array}{ll}
+%y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b &\leq \epsilon+\xi_{i}\\
+%\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} &\leq \epsilon+\hat{\xi}_{i}\\
+%\epsilon, \xi,\hat{\xi} &\geq 0\\
+%\end{array}\right.
+%\label{primal objective function}
+%\end{eqnarray}
+%where $R(x)=-log(P(x))$, by this way, the discontinuity of $\epsilon$-insensitive function is conquered. 
 \subsection{Lagrange Duality}\label{section lagrange duality}
-According to Lagrange Theorem, the optimization problem (\ref{primal objective function}) can be transferred to dual form by combining original objective function with linear combination of equality and inequality constraints, the combination coefficient is called Lagrange multiplier. Thus we have Lagrange function. 
-\begin{eqnarray}
+According to Lagrange Theorem, the constraint optimization problem (\ref{primal optimization problem}) can be transformed to Lagrangian dual form by combining the original optimization function with inequality constraints, the combination coefficient is called Lagrange multiplier. The Lagrange function is given by. 
+\begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\Theta(\mathbf{w}, b, \xi, \hat{\xi}, \alpha, \hat{\alpha}, \eta, \hat{\eta})=
-\frac{1}{2}||\mathbf{w}||^{2}+\sum_{j=1}^{l}C_{i}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{l}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
+L(\mathbf{w}, b, \xi_{i}, \hat{\xi}_{i}, \alpha_{i}, \hat{\alpha}_{i}, \eta_{i}, \hat{\eta}_{i})=
+\frac{1}{2}||\mathbf{w}||^{2}+C\sum_{i=1}^{L}(R(\xi_{i})+R(\hat{\xi}_{i}))-\sum_{i=1}^{L}(\eta_{i}\xi_{i}+\hat{\eta}_{i}\hat{\xi}_{i})\\
 \nonumber
--\sum_{i=1}^{l}\alpha_{i}(\epsilon+\xi_{i}-y_{i}+\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))-\sum_{i=1}^{l}\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i}))\\
++\sum_{i=1}^{L}\alpha_{i}(y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i})+\sum_{i=1}^{L}\hat{\alpha}_{i}(\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i}-\epsilon-\hat{\xi}_{i})\\
 s.t. \left\{\begin{array}{cc}
-\eta, \hat{\eta}, \alpha, \hat{\alpha}\geq 0\\
-\xi, \hat{\xi}\geq  0\\
+\eta_{i}, \hat{\eta}_{i}, \alpha_{i}, \hat{\alpha}_{i}\geq 0, i=1,2,\cdots L\\
+\xi_{i}, \hat{\xi}_{i}\geq  0, i=1,2,\cdots L\\
 \end{array}\right.
 \label{lagrange duality1}
-\end{eqnarray}
-where $\eta$,$\hat{\eta}$, $\alpha$, $\hat{\alpha}$ are Lagrange multipliers.
+\end{IEEEeqnarray}
+where $\eta_{i}$, $\hat{\eta}_{i}$, $\alpha_{i}$, $\hat{\alpha}_{i}$ are Lagrange multipliers.
 
-The sufficient and necessary condition that $f(\mathbf{w}^{*})$ is the global minimum of (\ref{primal objective function}) is called Karush-Kuhn-Tucker (KKT) conditions, which can be written as\cite{cristianini2000introduction} 
+The sufficient and necessary conditions such that a solution $\mathbf{w}$ of the constrained optimization problem in (\ref{primal optimization problem}) satisfies, are called Karush-Kuhn-Tucker (KKT) conditions. Here we briefly introduce how the dual objective problem is derived from KKT conditions.
+
+Assume a constraint optimization problem is given by 
 \begin{IEEEeqnarray}[\relax]{l}
-\frac{\partial \Theta}{\partial \mathbf{w}}=\mathbf{w}-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})\Phi(\mathbf{x}_{i})=0\\\label{partial1}
-\frac{\partial \Theta}{\partial \xi}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0\\\label{partial2}
-\frac{\partial \Theta}{\partial \hat{\xi}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0\\\label{parial3}
-\frac{\partial \Theta}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0\\\label{partial4}
 \nonumber
+\min_{\mathbf{w}} \quad f(\mathbf{w})\\
+s.t. \quad c_{i}(\mathbf{w})\leq 0, i=1,2,\ldots L,
+\label{constraint optimization problem}
 \end{IEEEeqnarray}
+its Lagrange function is given by 
+\begin{equation}
+L(\mathbf{w}, a_{i})=f(\mathbf{w})+\sum_{i=1}^{L}a_{i}c_{i}(\mathbf{w}),
+\label{orginal Lagrange}
+\end{equation}
+where $a_{i}$ denote Lagrange multipliers.
+ Based on Theorem 6.21 in \cite{scholkopf2002learning}, For a variable set $[\bar{\mathbf{w}}, \bar{a}_{i}]$, $\bar{\mathbf{w}}$ is the solution to (\ref{constraint optimization problem}) only when the following inequalities are satisfied
+ \begin{equation}
+ L(\mathbf{x}, \bar{a}_{i})\geq L(\bar{\mathbf{x}}, \bar{a}_{i})\geq L(\bar{\mathbf{w}}, a_{i})
+ \label{KKT inequalities}
+ \end{equation}
+This inequalities yield KKT conditions (see Theorem 6.26 \cite{scholkopf2002learning}), which are 
 \begin{IEEEeqnarray}[\relax]{l}
-\left\{\begin{array}{cc}
-\alpha, \hat{\alpha}\geq 0\\
-\alpha(y-\mathbf{w}^{T}\Phi(\mathbf{x})-b-\epsilon-\xi)=0\\
-\hat{\alpha}(\mathbf{w}^{T}\Phi(\mathbf{x})+b-y-\epsilon-\hat{\xi})=0\\
-y-\mathbf{w}^{T}\Phi(\mathbf{x})-b-\epsilon-\xi\leq 0\\
-\mathbf{w}^{T}\Phi(\mathbf{x})+b-y-\epsilon-\hat{\xi}\leq 0
-\end{array}\right. 
-\label{KKT complimentary}
+\label{original KKT condition1}
+\partial_{\mathbf{w}}L(\bar{\mathbf{w}}, a_{i})=\partial_{\mathbf{w}}f(\bar{\mathbf{w}})+\sum_{i=1}^{L}a_{i}\partial_{\mathbf{w}}c_{i}(\bar{\mathbf{w}})=0,\\
+\label{original KKT condition2}
+\partial_{a_{i}}L(\bar{\mathbf{w}}, \bar{a}_{i})=c_{i}(\bar{\mathbf{w}})\leq 0, i=1,2,\ldots L\\
+\label{original KKT condition3}
+\bar{a}_{i}c_{i}(\bar{\mathbf{w}})=0, i=1,2,\ldots L
 \end{IEEEeqnarray}
- 
-The conditions in (\ref{KKT complimentary}) is called KKT complimentary condition. Then substitute (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality1}) and for sake of brevity, we make $C_{i}$ uniform to all data samples, we have the dual form of objective function ：
+In order to satisfy the first inequality in (\ref{KKT inequalities}), (\ref{original KKT condition1}) has to hold,
+applying (\ref{original KKT condition1}) to (\ref{lagrange duality1}), which are  
+\begin{IEEEeqnarray}[\relax]{l}
+\label{partial1}
+\frac{\partial L}{\partial \mathbf{w}}=\mathbf{w}-\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})\Phi(\mathbf{x}_{i})=0\\
+\label{partial2}
+\frac{\partial L}{\partial \xi_{i}}=C_{i}R^{'}(\xi_{i})-\eta_{i}-\alpha_{i}=0, i=1,2,\cdots L\\
+\label{parial3}
+\frac{\partial L}{\partial \hat{\xi}_{i}}=C_{i}R^{'}(\hat{\xi_{i}})-\hat{\eta}_{i}-\hat{\alpha}_{i}=0, i=1,2,\cdots L\\
+\label{partial4}
+\frac{\partial L}{\partial b}=\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha}_{i})=0\\
+\end{IEEEeqnarray}
+Then by substituting (\ref{partial1})-(\ref{partial4}) to (\ref{lagrange duality1}), (\ref{lagrange duality1}) can be rewritten as :
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\theta(\alpha, \hat{\alpha}) =\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{l}[(R(\xi_{i})-\xi_{i}R^{'}(\xi_{i}))\\
+\theta(\alpha_{i}, \hat{\alpha}_{i})=\frac{1}{2}\sum_{i=1}^{L}\sum_{j=1}^{L}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi^{T}(\mathbf{x}_{j})\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{L}[R(\xi_{i})+R(\hat{\xi}_{i})]-\sum_{i=1}^{L}[(CR^{'}(\xi_{i})-\alpha_{i})\xi_{i}\\
 \nonumber
-+(R(\hat{\xi}_{i})-\hat{\xi}_{i}R^{'}(\hat{\xi}_{i}))]
-+\sum_{i=1}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
++(CR^{'}(\hat{\xi}_{i})-\hat{\alpha}_{i})\hat{\xi}_{i}]+\sum_{i=1}^{L}\alpha_{i}(y_{i}-\sum_{j=1}^{L}(\alpha_{j}-\hat{\alpha}_{j})\Phi^{T}(\mathbf{x}_{j})\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i})+\\
+\sum_{i=1}^{L}\hat{\alpha}_{i}(\sum_{j=1}^{L}(\alpha_{j}-\hat{\alpha}_{j})\Phi^{T}(\mathbf{x}_{j})\Phi(\mathbf{x}_{i})+b-y_{i}-\epsilon-\hat{\xi}_{i})
+\label{lagrange duality1 inter}
+\end{IEEEeqnarray}
+notice in (\ref{partial4}), $\sum_{i=1}^{L}(\alpha_{i}-\hat{\alpha}_{i})=0$, define $\tilde{R}(u)=R(u)-uR^{'}(u)$, (\ref{lagrange duality1 inter}) can be further simplified to
+\begin{IEEEeqnarray}[\relax]{l}
 \nonumber
--\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i}),\\
+\theta(\alpha_{i}, \hat{\alpha}_{i}) =-\frac{1}{2}\sum_{i=1}^{L}\sum_{i=1}^{L}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{L}[(\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi}_{i})]\\
+\nonumber
++\sum_{i=1}^{L}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
 s.t.\left\{\begin{array}{l}
 \sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})=0\\
 0<\alpha<C\tilde{R}^{'}(\alpha)\\
@@ -698,38 +731,27 @@ s.t.\left\{\begin{array}{l}
 \end{array}\right.
 \label{dual objective function1}
 \end{IEEEeqnarray}
-Obviously $\theta(\alpha,\hat{\alpha})\leq \Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})$, notice by transforming $\Theta(\mathbf{w}, \alpha, \hat{\alpha},\eta, \hat{\eta})$, (\ref{partial1})-(\ref{partial4}) are satisfied, therefore, KKT complimentary condition (\ref{KKT complimentary}) is the only requirement to find global optimal point of original optimization problem. Because 
-\begin{equation}
-\Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})=f(\mathbf{w})+\sum_{i}(\alpha_{i} g_{i}(\mathbf{w})+\hat{\alpha}_{i}\hat{g}_{i}(\mathbf{w}))+\sum_{i}(\eta_{i} l_{i}(\mathbf{w})+\hat{\eta}_{i}\hat{l}_{i}(\mathbf{w})),\label{Theta function}
-\end{equation} 
-where $g_{i}(\mathbf{w})$, $\hat{g_{i}(\mathbf{w})}$, $l_{i}(\mathbf{w})$, $\hat{l}_{i}(\mathbf{w})$ denote inequality constraints.
-\begin{IEEEeqnarray}[\relax]{l}
-g_{i}(\mathbf{w})=\mathbf{y}_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i}\leq 0\\
-\hat{g}_{i}(\mathbf{w})=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-\mathbf{y}_{i}-\epsilon-\hat{\xi}_{i}\leq 0\\
-l_{i}(\mathbf{w})=-\xi_{i}\leq 0\\
-\hat{l}_{i}(\mathbf{w})=-\hat{\xi}_{i}\leq 0\\
-\nonumber
-\end{IEEEeqnarray}
-Hence $\Theta\leq f(\mathbf{w})$, we have $\theta\leq \Theta\leq f(\mathbf{w})$, therefore the upper bound of $\theta$ is determined by the original objective function $f(\mathbf{w})$. when $\theta=f(\mathbf{w})$,  according to (\ref{Theta function}), the linear combination term of inequality constraints equal to zero, that is, KKT complimentary conditions in (\ref{KKT complimentary}) satisfied. hence the global optimal point is found for both $\theta$ and $f(\mathbf{w})$ if and only if the equality holds. Therefore duality gap is defined as $G=f(\mathbf{w})-\theta$, which can be used as an evaluation for the closeness of one solution to the global optimal. 
-
-In conclusion, the dual objective function can be written as 
+In order to satisfy the second inequality in (\ref{KKT inequalities}), (\ref{original KKT condition2}) and  (\ref{original KKT condition3}) have to hold. Satisfying the condition (\ref{original KKT condition2}) is equivalent to find the maximum of $L(\bar{\mathbf{w}}, a_{i})$, notice $\theta(\alpha_{i}, \hat{\alpha}_{i})$ is equivalent to $L(\bar{\mathbf{w}}, a_{i})$ in (\ref{KKT inequalities}), thus yield the dual optimization problem which is given by 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-maximize\quad \theta =-\frac{1}{2}\sum_{i=1}^{l}\sum_{i=1}^{l}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})+\sum_{i=i}^{l}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]\\
-\nonumber
-+C\sum_{i=1}^{l}[\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi_{i}})]\\
-=-\frac{1}{2}(\mathbf{a}-\mathbf{\hat{a}})^{T}\mathbf{K}(\mathbf{a}-\mathbf{\hat{a}})+(\mathbf{y}-\epsilon)^{T}\mathbf{a}+(-\mathbf{y}-\epsilon)^{T}\mathbf{\hat{a}}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
+\max_{\alpha_{i}, \hat{\alpha}_{i}}\quad \theta(\alpha_{i}, \hat{\alpha}_{i}) =-\frac{1}{2}\sum_{i=1}^{L}\sum_{j=1}^{L}(\alpha_{i}-\hat{\alpha_{i}})(\alpha_{j}-\hat{\alpha_{j}})\Phi^{T}(\mathbf{x}_{j})\Phi(\mathbf{x}_{i})+C\sum_{i=1}^{L}(\tilde{R}(\xi_{i})+\tilde{R}(\hat{\xi}_{i}))\\
++\sum_{i=i}^{L}[(\alpha_{i}-\hat{\alpha_{i}})y_{i}-(\alpha_{i}+\hat{\alpha_{i}})\epsilon]
 \label{dual optimization function2}
 \end{IEEEeqnarray}
-where $\mathbf{a}=[\alpha_{1},\alpha_{2}, \ldots, \alpha_{l}]^{T} $, $\mathbf{\hat{a}}=[\hat{\alpha}_{1},\hat{\alpha}_{2}, \ldots, \hat{\alpha}_{l}]^{T} $, $\mathbf{y}=[y_{1}, y_{2}, \ldots y_{l}]^{T}$, $ \mathbf{e}=[1,1,\ldots,1]^{T}\in \mathbb{R}^{l}$, $\mathbf{e}_{i}$ denotes the vector that only $i$th component is 1 while the rest are all 0,  $\tilde{R}(\xi)=R(\xi)-\xi R^{'}(\xi)\in \mathbb{R}^{l}$, $\mathbf{K}_{ij}=\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})$ denotes data kernel matrix. We define the following $2l$ vectors 
-$\mathbf{a}^{(*)}$= [$\mathbf{a} \atop \mathbf{\hat{a}}$], $\mathbf{v}\in \mathbb{R}^{2l}$, 
+Define $\mathbf{a}=[\alpha_{1},\alpha_{2}, \ldots, \alpha_{L}]^{T} $, $\mathbf{\hat{a}}=[\hat{\alpha}_{1},\hat{\alpha}_{2}, \ldots, \hat{\alpha}_{L}]^{T} $, $\mathbf{y}=[y_{1}, y_{2}, \ldots y_{L}]^{T}$, $ \mathbf{e}=[1,1,\ldots,1]^{T}\in \mathbb{R}^{L}$, $\mathbf{e}_{i}$ denotes the vector that only $i$th component is 1 while the rest are all 0, $\mathbf{R}_{\xi}=[\tilde{R}(\xi_{1}), \tilde{R}(\xi_{2}), \ldots, \tilde{R}(\xi_{L})]^{T}$, $\mathbf{R}_{\hat{\xi}}=[\tilde{R}(\hat{\xi}_{1}), \tilde{R}(\hat{\xi}_{2}), \ldots, \tilde{R}(\hat{\xi}_{L})]^{T}$, $[\mathbf{K}]_{ij}=\Phi(\mathbf{x}_{j})^{T}\Phi(\mathbf{x}_{i})$ denotes a component of data kernel matrix at $i$th row and $j$th column. An alternative vector form of (\ref{dual optimization function2}) can be written as 
+\begin{equation}
+\max_{\mathbf{a}, \hat{\mathbf{a}}}\theta(\mathbf{a},\hat{\mathbf{a}})=-\frac{1}{2}(\mathbf{a}-\mathbf{\hat{a}})^{T}\mathbf{K}(\mathbf{a}-\mathbf{\hat{a}})+(\mathbf{y}-\epsilon \mathbf{e})^{T}\mathbf{a}+(-\mathbf{y}-\epsilon\mathbf{e})^{T}\mathbf{\hat{a}}+C\mathbf{e}^{T}(\mathbf{R}_{\xi}+\mathbf{R}_{\hat{\xi}}),
+\label{dual objective alternative}
+\end{equation} 
+We define the following $2L$ vectors 
+$\mathbf{a}^{(*)}$= [$\mathbf{a} \atop \mathbf{\hat{a}}$], $\mathbf{v}\in \mathbb{R}^{2L}$, 
 \begin{IEEEeqnarray}[\relax]{l}
-\mathbf{v}_{i}=\left\{\begin{array}{ll}
+[\mathbf{v}]_{i}=\left\{\begin{array}{ll}
 1\quad i=1,\ldots, l\\
 -1\quad i=l+1,\ldots, 2l\\ 
 \end{array}\right.
 \end{IEEEeqnarray}
-(\ref{dual optimization function2}) can also be reformulate as 
+(\ref{dual objective alternative}) can also be reformulate as 
 \newcommand{\mysmallarraydecl}{\renewcommand{%
 \IEEEeqnarraymathstyle}{\scriptscriptstyle}%
 \renewcommand{\IEEEeqnarraytextstyle}{\scriptsize}%
@@ -740,16 +762,46 @@ $\mathbf{a}^{(*)}$= [$\mathbf{a} \atop \mathbf{\hat{a}}$], $\mathbf{v}\in \mathb
 \setlength{\jot}{0.25\normalbaselineskip}%
 \setlength{\arraycolsep}{2pt}}
 \begin{equation}
-maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\max_{\mathbf{a}^{*}}\quad \theta(\mathbf{a}^{*})=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
 \mathbf{K}& -\mathbf{K}\\
 -\mathbf{K}& \mathbf{K}
 \end{IEEEeqnarraybox*}\right]
-\mathbf{a}^{(*)}+[(\mathbf{y}-\epsilon)^{T}, (-\mathbf{y}-\epsilon)^{T}]\mathbf{a}^{(*)}+\mathbf{e}^{T}C(\tilde{R}(\xi)+\tilde{R}(\hat{\xi})),
+\mathbf{a}^{(*)}+[(\mathbf{y}-\epsilon)^{T}, (-\mathbf{y}-\epsilon)^{T}]\mathbf{a}^{(*)}+C\mathbf{e}^{T}(\mathbf{R}_{\xi}+\mathbf{R}_{\hat{\xi}}),
 \label{vectorize dual optimization function}
-\end{equation}
+\end{equation} 
+
+Condition in (\ref{original KKT condition3}) is called KKT complementary condition, the value of $\sum_{i=1}^{L}\bar{a}_{i}c_{i}(\bar{\mathbf{w}})$ can monitor how close the solution is to the global optimum. Thus it can be used as a stopping criterion. In the constraint optimization problem of (\ref{lagrange duality1}), the KKT complementary conditions are given by 
+\begin{IEEEeqnarray}[\relax]{l}
+\left\{\begin{array}{cc}
+\alpha_{i}(y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i})=0, i=1,2\cdots L\\
+\hat{\alpha}_{i}(\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i}-\epsilon-\hat{\xi}_{i})=0, i=1,2\cdots L
+\end{array}\right. 
+\label{KKT complimentary}
+\end{IEEEeqnarray}
+ 
+
+
+ 
+%The conditions in (\ref{KKT complimentary}) are called KKT complimentary condition. 
+%Obviously by taking partial derivations of (\ref{lagrange duality1}) with respect to $\mathbf{w}$, $\xi_{i}$, $\hat{\xi}_{i}$ and $b$, $\theta(\alpha_{i},\hat{\alpha}_{i})\leq \Theta(\mathbf{w},\alpha_{i}, \hat{\alpha}_{i}, \eta_{i}, \hat{\eta}_{i})$, notice in $\theta(\alpha_{i}, \hat{\alpha}_{i})$ KKT conditions in (\ref{partial1}) to (\ref{partial4}) are satisfied. Therefore, KKT complimentary conditions (\ref{KKT complimentary}) is the only requirement to find global optimal point of original optimization problem. Because 
+%\begin{equation}
+%\Theta(\mathbf{w},\alpha, \hat{\alpha}, \eta, \hat{\eta})=f(\mathbf{w})+\sum_{i}(\alpha_{i} g_{i}(\mathbf{w})+\hat{\alpha}_{i}\hat{g}_{i}(\mathbf{w}))+\sum_{i}(\eta_{i} l_{i}(\mathbf{w})+\hat{\eta}_{i}\hat{l}_{i}(\mathbf{w})),\label{Theta function}
+%\end{equation} 
+%where $g_{i}(\mathbf{w})$, $\hat{g_{i}(\mathbf{w})}$, $l_{i}(\mathbf{w})$, $\hat{l}_{i}(\mathbf{w})$ denote inequality constraints.
+%\begin{IEEEeqnarray}[\relax]{l}
+%g_{i}(\mathbf{w})=\mathbf{y}_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i}\leq 0\\
+%\hat{g}_{i}(\mathbf{w})=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-\mathbf{y}_{i}-\epsilon-\hat{\xi}_{i}\leq 0\\
+%l_{i}(\mathbf{w})=-\xi_{i}\leq 0\\
+%\hat{l}_{i}(\mathbf{w})=-\hat{\xi}_{i}\leq 0\\
+%\nonumber
+%\end{IEEEeqnarray}
+%Hence $\Theta\leq f(\mathbf{w})$, we have $\theta\leq \Theta\leq f(\mathbf{w})$, therefore the upper bound of $\theta$ is determined by the original objective function $f(\mathbf{w})$. when $\theta=f(\mathbf{w})$,  according to (\ref{Theta function}), the linear combination term of inequality constraints equal to zero, that is, KKT complimentary conditions in (\ref{KKT complimentary}) satisfied. hence the global optimal point is found for both $\theta$ and $f(\mathbf{w})$ if and only if the equality holds. Therefore duality gap is defined as $G=f(\mathbf{w})-\theta$, which can be used as an evaluation for the closeness of one solution to the global optimal. 
+
+%In conclusion, the dual objective function can be written as 
+
 
 \section{System Model}\label{system model}
-  Consider a complex large MIMO uplink multiplexing system with $N_{t}$ users, each user has one transmit antenna. The number of receive antennas at Base Station (BS) is $N_{r}$, $N_{r}\geq N_{t}$. Typically large MIMO systems have hundreds of antennas at BS serving several tens of terminals, as shown in Fig {\ref{large MIMO uplink model}}.
+  Consider a uncoded complex large MIMO uplink spatial multiplexing (SM) system with $N_{t}$ users, where each is equipped with transmit antenna. The number of receive antennas at the Base Station (BS) is $N_{r}$, $N_{r}\geq N_{t}$. Typically large MIMO systems have hundreds of antennas at the BS, as shown in Fig {\ref{large MIMO uplink model}}.
   \begin{figure}[htb]
   \centering
   \def\svgwidth{\columnwidth}
@@ -759,13 +811,13 @@ maximize\quad \Theta=-\frac{1}{2}(\mathbf{a}^{*})^{T}\left[\begin{IEEEeqnarraybo
   \label{large MIMO uplink model}
   \end{figure}
     
-  Uncoded bit sequences, which are modulated to complex symbols, are transmitted by users over a flat fading channel. The discrete time model is:
+Bit sequences, which are modulated to complex symbols, are transmitted by the users over a flat fading channel. The discrete time model of the system is given by:
 \begin{equation}
 \mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{discrete time MIMO system}
 \end{equation}
-where $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector, $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. 4-QAM, 16-QAM, 64-QAM) of size $M$. The transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, and $\mathbb{E}[\cdot]$ denotes the expectation operation. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix with independent identically distributed (i.i.d) circularly symmetric complex Gaussian zero mean components with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
+where $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector, $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. BPSK, 4-QAM, 16-QAM, 64-QAM), $|\mathbb{O}|=M$. The transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, $\mathbb{E}[\cdot]$ denotes the expectation operation, $\mathbf{I}_{N_{t}}$ denotes identity matrix of size $N_{r}\times N_{t}$. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix, each component is independent identically distributed (i.i.d) circularly symmetric complex Gaussian random variable with zero mean and unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
-  Assume the receiver has perfect channel state information (CSI), meaning that $ \mathbf{H}$ is known, as well as the SNR. The task of the MIMO decoder is to recover $\mathbf{s}$ based on $\mathbf{y}$ and $\mathbf{H}$.
+The task of a MIMO detector is to estimate the transmit symbol vector $\mathbf{s}$, based on the knowledge of receive symbol vector $\mathbf{y}$ and channel matrix $\mathbf{H}$.
 
  
 \section{Dual Channel Complex Support Vector detection for Large MIMO system}\label{dual channel CSVR}

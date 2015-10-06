@@ -3,7 +3,7 @@ function [  symOut,   MSE] = MMSE(pH,  y, SNRd, symbolContellation, Nr, Nt, M )
 %Output: symOut, and mean square error
 G=zeros(Nt,Nr);
 symOut=zeros(Nt,1);
-I=ones(Nt,Nt);
+I=eye(Nt,Nt);
 G=(inv(pH'*pH+SNRd^(-1)*I))*pH';
 symOut=G*y;
 MSE=norm(y-pH*symOut);

@@ -694,4 +694,16 @@ AMMSE
 hyperparameters
 epsilon is 0.2000000000
 C is 1.000000
+tolerance is This document stores the information for original MMSE
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
 tolerance is 

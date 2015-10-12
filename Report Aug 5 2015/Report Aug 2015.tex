@@ -589,6 +589,15 @@ y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b \leq \epsilon+\xi_{i}, i=1,2\cdots, L
 \end{IEEEeqnarray}
 In (\ref{primal optimization problem}), $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model, $\epsilon$ denotes the precision, As shown in Fig \ref{epsilon-SVR}, the area between two dash line is called $\epsilon$ tube. Only those data samples located outside $\epsilon$ tube contribute to cost. Furthermore $\xi_{i}$ and $\hat{\xi}_{i}$ denote slack variables that cope with noise of input data samples, $R(u)$ denotes risk function, the simplest risk function is $R(u)=u$, The type of cost function is determined by the statistical distribution of noise\cite{smola2004tutorial}. For example if the noise is Gaussian noise, then the optimal cost function is $R(u)=\frac{1}{2}u^{2}$. The term $C\sum_{i=1}^{L}(R(\xi_{i})+R(\hat{\xi}_{i}))$ denotes the penalty of noise, $C\in \mathbb{R}$ and $C\geq 0$ that controls the trade off between regularization term and cost function term.
 
+In $\epsilon$-SVR, the objective to exploit slack variables $\xi_{i}$ and $\hat{\xi}_{i}$ is to compensate the influences from the outliers that exceed the $\epsilon$-tube which are caused by noise.
+Therefore in $\epsilon$-SVR, $\xi_{i}$ and $\hat{\xi}$ are defined as  
+\begin{IEEEeqnarray}[\relax]{l}
+\label{definition of slack variable1}
+\xi_{i}=\max(0, \mathbf{y}_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon)\\
+\label{definition of slack variable2}
+\hat{\xi}_{i}=\max(0, \mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-\mathbf{y}_{i}-\epsilon)
+\end{IEEEeqnarray} 
+Because the distance of the estimations $\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b$ and the observation $\mathbf{y}_{i}$ can only exceeds the $\epsilon$-tube in one direction, therefore there is at most one of $\xi_{i}$ and $\hat{\xi}_{i}$ can be non zero. That is $\xi_{i}\hat{\xi}_{i}=0$.
 \subsection{Cost Function}\label{cost function}
 The optimal cost function in (\ref{primal optimization problem}) can be derived based on maximum likelihood (ML) principle. Assume the data samples $\mathbf{x}_{i}$ in data set are iid, Let $f_{true}(\mathbf{x}_{i}), i=1,2,\cdots L$ denotes true regression function. the underlying assumption is $y_{i}=f_{true}(\mathbf{x}_{i})+\xi_{i}, i=1,2,\cdots, L$, $\xi_{i}$ denotes additive noise of the $i$th data sample, with probability density function (pdf) $Pr(\cdot)$. Let $P(\cdot)$ denotes the pdf of $y_{i}$. Based on ML principle we want to 
 \begin{IEEEeqnarray}[\relax]{l}
@@ -778,10 +787,13 @@ Condition in (\ref{original KKT condition3}) is called KKT complementary conditi
 \end{array}\right. 
 \label{KKT complimentary}
 \end{IEEEeqnarray}
- 
+Based on the definitions of slack variables in (\ref{definition of slack variable1}) an (\ref{definition of slack variable2}), only when there is a outlier exists, $\xi_{i}$ or $\hat{\xi}_{i}$ can be non zero, that is 
+\begin{equation}
+\xi_{i}(\hat{\xi}_{i})=|\mathbf{y}_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})|_{\epsilon},
+\label{definition of slack variable3}
+\end{equation} 
+because the distance of the estimation $\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b$ and the observation $\mathbf{y}_{i}$ can only exceeds the $\epsilon$-tube in one direction, as shown in Fig. \ref{epsilon-SVR}. Therefore at most one of $(y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon-\xi_{i})$  and $(\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i}-\epsilon-\hat{\xi}_{i})$ can be zero. In order to satisfy the KKT complementary conditions in (\ref{KKT complimentary}), at least one of $\alpha_{i}$ and $\hat{\alpha}_{i}$ need to be zero, that is $\alpha_{i}\hat{\alpha}_{i}=0$.
 
-
- 
 %The conditions in (\ref{KKT complimentary}) are called KKT complimentary condition. 
 %Obviously by taking partial derivations of (\ref{lagrange duality1}) with respect to $\mathbf{w}$, $\xi_{i}$, $\hat{\xi}_{i}$ and $b$, $\theta(\alpha_{i},\hat{\alpha}_{i})\leq \Theta(\mathbf{w},\alpha_{i}, \hat{\alpha}_{i}, \eta_{i}, \hat{\eta}_{i})$, notice in $\theta(\alpha_{i}, \hat{\alpha}_{i})$ KKT conditions in (\ref{partial1}) to (\ref{partial4}) are satisfied. Therefore, KKT complimentary conditions (\ref{KKT complimentary}) is the only requirement to find global optimal point of original optimization problem. Because 
 %\begin{equation}
@@ -1105,27 +1117,27 @@ A proper work set selection strategy is required so that speed and performance r
 \left\{\begin{array}{ll}
 (C\tilde{R}(\xi_{i}^{r})-\alpha_{i})\xi_{i}^{r}=0, i=1,2,\ldots, L\\
 (C\tilde{R}(\hat{\xi}_{i}^{r})-\hat{\alpha}_{i})\hat{\xi}_{i}^{r}=0, i=1,2,\ldots, L\\
-\alpha(\epsilon+\xi_{i}^{r}-\Re{(\mathbf{y}_{i})}+<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})=0, i=1,2,\ldots, L\\
-\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}^{r}-<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}+\Re{(\mathbf{y}_{i})})=0, i=1,2,\ldots, L\\
+\alpha_{i}(\Re{(\mathbf{y}_{i})}-<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}-\epsilon-\xi_{i}^{r})=0, i=1,2,\ldots, L\\
+\hat{\alpha}_{i}(-\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}-\Re{(\mathbf{y}_{i})}-\epsilon-\hat{\xi}_{i}^{r})=0, i=1,2,\ldots, L\\
 \end{array}\right.
 \label{complementary KKT condition1}
 \end{IEEEeqnarray}
 According to Osuna's theorem\cite{osuna1997improved}, the final convergence can be guaranteed. In SMO algorithm, heuristic methods are used to find a work set of size two in order to accelerate the decomposition process\cite{platt1999fast}. The heuristic method first searches among the non-bound variables (that is $0<\alpha_{i}<C\tilde{R}(\xi^{r}_{i})$ and $0<\hat{\alpha}_{i}<C\tilde{R}(\hat{\xi}_{i})$), which are more likely to violate the complementary KKT conditions, Then searching the whole dual variable set. The second dual variable that can maximize optimization step size is chosen. An approximate step size is used as evaluator for sake of reducing computational cost.
 
-Another idea for work set selection is to choose the dual variables whose update can provide the maximum improvements to dual objective function. That is
+Another idea for work set selection is to choose the dual variables whose update can provide the maximum improvement to dual objective function. The improvement of the sub dual objective function is
 \begin{equation}
 \bigtriangledown \theta^{r}_{S}=\theta^{r}_{S}((\mathbf{a}_{S}+\Delta_{S}), (\hat{\mathbf{a}}_{S}+\hat{\Delta}_{S}))-\theta^{r}_{S}(\mathbf{a}_{S}, \hat{\mathbf{a}}_{S}),
 \label{maximum gain work set selection}
 \end{equation} 
-where $\Delta_{S}=\mathbf{a}_{S}^{new}-\mathbf{a}_{S}$, $\mathbf{a}_{S}$ is the update of $\mathbf{a}^{new}_{S}$. $\bigtriangledown \theta_{S}^{r}$ in (\ref{maximum gain work set selection}),  based on (\ref{subset optimization}), can be written as 
+where $\Delta_{S}=\mathbf{a}_{S}^{new}-\mathbf{a}_{S}$, $\hat{\Delta}_{S}=\hat{\mathbf{a}}_{S}^{new}-\hat{\mathbf{a}}_{S}$, $\mathbf{a}^{new}_{S}$ and $\hat{\mathbf{a}}^{new}_{S}$ are the updates of $\mathbf{a}_{S}$ and $\hat{\mathbf{a}}_{S}$. $\bigtriangledown \theta_{S}^{r}$ in (\ref{maximum gain work set selection}),  based on (\ref{subset optimization}), can be written as
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
-\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}[(\Delta_{S}-\hat{\Delta}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\mathfrak{n}_{S}-\hat{\Delta}_{S})+2(\mathbf{a}_{S}-\hat{\mathbf{a}}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\Delta_{S}-\hat{\Delta})_{S}]+[\Re{(\mathbf{y}^{T}_{S})}-(\mathbf{a}_{N}-\hat{\mathbf{a}}_{N})^{T}\Re{(\mathbf{K})}_{NS}](\Delta_{S}-\hat{\Delta}_{S})\\
--\epsilon\mathbf{e}^{T}_{S}(\Delta_{S}+\hat{\Delta}_{S})=-\frac{1}{2}\Delta_{S}-\hat{\Delta}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\Delta_{S}-\hat{\Delta}_{S})+[\Re{(\mathbf{y}^{T}_{S})}-(\mathbf{a}-\hat{\mathbf{a}})^{T}\Re{(\mathbf{K})}_{S}](\Delta_{S}-\hat{\Delta}_{S})\\
+\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}[(\Delta_{S}-\hat{\Delta}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\Delta_{S}-\hat{\Delta}_{S})+2(\mathbf{a}_{S}-\hat{\mathbf{a}}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\Delta_{S}-\hat{\Delta}_{S})]+[\Re{(\mathbf{y}^{T}_{S})}-(\mathbf{a}_{N}-\hat{\mathbf{a}}_{N})^{T}\\\nonumber\Re{(\mathbf{K})}_{NS}](\Delta_{S}-\hat{\Delta}_{S})-\epsilon\mathbf{e}^{T}_{S}(\Delta_{S}+\hat{\Delta}_{S})=-\frac{1}{2}(\Delta_{S}-\hat{\Delta}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\Delta_{S}-\hat{\Delta}_{S})+\{\Re{(\mathbf{y}^{T}_{S})}-[(\mathbf{a}_{S}-\hat{\mathbf{a}}_{S})^{T}\\
+\Re{(\mathbf{K})}_{SS}+(\mathbf{a}_{N}-\hat{\mathbf{a}}_{N})^{T}\Re{(\mathbf{K})}_{NS}]\}(\Delta_{S}-\hat{\Delta}_{S})
 -\epsilon\mathbf{e}^{T}_{S}(\Delta_{S}+\hat{\Delta}_{S}),
 \label{gain work set selection1}
 \end{IEEEeqnarray} 
-Notice in (\ref{gain work set selection1}), we use 
+where we have 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
 (\mathbf{a}_{S}-\hat{\mathbf{a}}_{S})^{T}\Re{(\mathbf{K})}_{SS}+(\mathbf{a}_{N}-\hat{\mathbf{a}}_{N})^{T}\Re{(\mathbf{K})}_{NS}=[(\mathbf{a}_{S}-\hat{\mathbf{a}}_{S})^{T}, (\mathbf{a}_{N}-\hat{\mathbf{a}}_{N})^{T}]\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
@@ -1135,10 +1147,21 @@ Notice in (\ref{gain work set selection1}), we use
 (\mathbf{a}-\hat{\mathbf{a}})^{T}\Re{(\mathbf{K})}_{S},
 \label{modification of gain work set selection}
 \end{IEEEeqnarray}
-where $\Re{(\mathbf{K})}_{S}\in \mathbb{R}^{N_{r}\times S}$ denotes the matrix constructed by all the columns corresponding to the work set $S$. Then we define intermediate variable vector $\Phi\in \mathbb{C}^{N_{r}}$, $\Re{(\Phi)}=\Re{(\mathbf{y})}-\Re{(\mathbf{K})}(\mathbf{a}-\hat{\mathbf{a}})$ and $\Im{(\Phi)}=\Im{(\mathbf{y})}-\Re{(\mathbf{K})}(\mathbf{b}-\hat{\mathbf{b}})$
-Thus (\ref{gain work set selection1}) can be rewritten as 
+where $\Re{(\mathbf{K})}_{S}\in \mathbb{R}^{N_{r}\times S}$ denotes the matrix constructed by all the columns corresponding to the work set $S$. Therefore, (\ref{gain work set selection1}) can be rewritten as
 \begin{IEEEeqnarray}[\relax]{l}
-\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}(\Delta_{S}-\hat{\Delta})^{T}_{S}\Re{(\mathbf{K})}_{SS}(\Delta-\hat{\Delta})_{S}+(\Re{(\Phi)}_{S})^{T}(\Delta-\hat{\Delta})_{S}-\epsilon\mathbf{e}^{T}_{S}(\Delta+\hat{\Delta})_{S}
+\nonumber
+\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}(\Delta_{S}-\hat{\Delta}_{S})^{T}\Re{(\mathbf{K})}_{SS}(\Delta_{S}-\hat{\Delta}_{S})+[\Re{(\mathbf{y}^{T}_{S})}-(\mathbf{a}-\hat{\mathbf{a}})^{T}\Re{(\mathbf{K})}_{S}]
+(\Delta_{S}-\hat{\Delta}_{S})
+-\epsilon\mathbf{e}^{T}_{S}\\
+(\Delta_{S}+\hat{\Delta}_{S}),
+\label{gain of work set selection1 inter}
+\end{IEEEeqnarray}
+define intermediate variable vector $\Phi\in \mathbb{C}^{N_{r}}$, $\Re{(\Phi)}=\Re{(\mathbf{y})}-\Re{(\mathbf{K})}(\mathbf{a}-\hat{\mathbf{a}})$ and $\Im{(\Phi)}=\Im{(\mathbf{y})}-\Re{(\mathbf{K})}(\mathbf{b}-\hat{\mathbf{b}})$, let $\Phi_{S}$ denote the vector that consists of the components in $\Phi$ that corresponding to $S$.
+Thus (\ref{gain of work set selection1 inter}) can be rewritten as 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\bigtriangledown \theta_{S}^{r}=-\frac{1}{2}(\Delta_{S}-\hat{\Delta})^{T}_{S}\Re{(\mathbf{K})}_{SS}(\Delta-\hat{\Delta})_{S}+(\Re{(\Phi)}_{S})^{T}(\Delta-\hat{\Delta})_{S}-\epsilon\mathbf{e}^{T}_{S}\\
+(\Delta+\hat{\Delta})_{S}
 \label{gain work set selection2}
 \end{IEEEeqnarray} 
 Because the offset term is omitted in Large MIMO regression model, therefore different from SMO type algorithms, there is no linear equation constraint, which is inducted by offset $b$, as shown in (\ref{partial4}). Therefore it is possible to update only one variable pair in each iteration. However, more efficient work set selection strategies based on maximum dual objective gain selection without considering offset term, is proposed in \cite{steinwart2011training}.   A work set of size two is updated in each iteration. The computational cost is reduced while maintaining the comparable performance with that with offset. In CSVR large MIMO detector, the work set selection strategy in \cite{steinwart2011training} is exploited. Basically, in each iteration this strategy uses sequential single variable searchings, whose searching time is $O(n)$, where $n$ is the number of data set, to determine a work set of size two. On the one hand, this strategy can find a work set of size two, whose update approximately maximize the gain in the dual objective function. On the other hand, the brute-force searching for the work size of two, whose update can maximize the gain in the dual objective function, requires $O(n^{2})$ searching time. The former strategy requires as few iterations as the latter one, since in each iteration, the latter strategy is more expensive, the former one can enjoy significantly faster running speed.   
@@ -1146,16 +1169,24 @@ Because the offset term is omitted in Large MIMO regression model, therefore dif
 Recall the KKT complementary conditions 
 \begin{IEEEeqnarray}[\relax]{l}
 \label{KKT complementary1}
-(C\tilde{R}(\xi_{i}^{r})-\alpha_{i})\xi_{i}^{r}=0, i=1,2,\ldots, L\\
+(C\tilde{R}(\xi_{i}^{r})-\alpha_{i})\xi_{i}^{r}=0, i=1,2,\ldots, N_{r}\\
 \label{KKT complementary2}
-(C\tilde{R}(\hat{\xi}_{i}^{r})-\hat{\alpha}_{i})\hat{\xi}_{i}^{r}=0, i=1,2,\ldots, L\\
+(C\tilde{R}(\hat{\xi}_{i}^{r})-\hat{\alpha}_{i})\hat{\xi}_{i}^{r}=0, i=1,2,\ldots, N_{r}\\
 \label{KKT complementary3}
-\alpha(\epsilon+\xi_{i}^{r}-\Re{(\mathbf{y}_{i})}+<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})=0, i=1,2,\ldots, L\\
+\alpha_{i}(\Re{(\mathbf{y}_{i})}-<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}-\epsilon-\xi_{i}^{r})=0, i=1,2,\ldots, N_{r}\\
 \label{KKT complementary4}
-\hat{\alpha}_{i}(\epsilon+\hat{\xi}_{i}^{r}-<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}+\Re{(\mathbf{y}_{i})})=0, i=1,2,\ldots, L\\\nonumber
+\hat{\alpha}_{i}(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}-\Re{(\mathbf{y}_{i})}-\epsilon-\hat{\xi}_{i}^{r})=0, i=1,2,\ldots, N_{r}
 \label{complementary KKT condition2}
 \end{IEEEeqnarray}
-notice that in (\ref{KKT complementary3}) and (\ref{KKT complementary4}), there is at least one of $\epsilon+\xi_{i}^{r}-\Re{(\mathbf{y}_{i})}+<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}$ and  $\epsilon+\hat{\xi}_{i}^{r}-<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}+\Re{(\mathbf{y}_{i})}$ can be non zero, therefore in order to satisfy the equalities, at least one of $\alpha_{i}$ and $\hat{\alpha}_{i}$ need to be zero, that is $\alpha_{i}\hat{\alpha}_{i}=0$, because $0\leq \alpha_{i}(\hat{\alpha}_{i})\leq C\tilde{R}(\xi_{i}^{r})(C\tilde{R}(\hat{\xi}_{i}^{r}))$ and $\alpha_{i}\hat{\alpha}_{i}=0$, there is at least one of $C\tilde{R}(\xi_{i}^{r})-\alpha_{i}$ and $C\tilde{R}(\hat{\xi}_{i}^{r})-\hat{\alpha}_{i}$ in (\ref{KKT complementary1}) and (\ref{KKT complementary2}) is non zero, in order to satisfy the equalities, there is at least one of $\xi_{i}$ and $\hat{\xi}_{i}$ need to be zero, that is $\xi_{i}^{r}\hat{\xi}_{i}^{r}=0$. Hence we can substitute $\lambda_{i}=\alpha_{i}-\hat{\alpha}_{i}$ and $|\lambda_{i}|=\alpha_{i}+\hat{\alpha}_{i}$, therefore the update unit is the single optimization variable $\lambda_{i}$ rather than the pair $\alpha_{i}$ and $\hat{\alpha}_{i}$. 
+Recall the discussions of slack variables by (\ref{definition of slack variable1}) and (\ref{definition of slack variable2}) in section \ref{section lagrange duality}. we have $\xi^{r}_{i}\hat{\xi}^{r}_{i}=0$. 
+similar to the definitions in (\ref{definition of slack variable3}), we have
+\begin{equation}
+\xi^{r}_{i}(\hat{\xi}_{i}^{r})=|\Re{(\mathbf{y}_{i})}-\Re{(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})}|_{\epsilon},
+\label{definition of complex slack variables}
+\end{equation} 
+ therefore in (\ref{KKT complementary3}) and (\ref{KKT complementary4}), there is at least one of $(\Re{(\mathbf{y}_{i})}-<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}-\epsilon-\xi_{i}^{r})$ and  $(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}}-\Re{(\mathbf{y}_{i})}-\epsilon-\hat{\xi}_{i}^{r})$ can be non zero, therefore in order to satisfy equalities (\ref{KKT complementary3}) and (\ref{KKT complementary4}), at least one of $\alpha_{i}$ and $\hat{\alpha}_{i}$ need to be zero, that is $\alpha_{i}\hat{\alpha}_{i}=0$. 
+
+ Hence we can substitute $\lambda_{i}=\alpha_{i}-\hat{\alpha}_{i}$ and $|\lambda_{i}|=\alpha_{i}+\hat{\alpha}_{i}$, therefore the update unit is changed to the single optimization variable $\lambda_{i}$ rather than the pair $\alpha_{i}$ and $\hat{\alpha}_{i}$. 
 
   We first introduce 1-D work set selection strategy in which single optimization variable whose update can maximize the gain of dual objective function is chosen as the work set in each iteration. Define $\Lambda=[\lambda_{1}, \lambda_{2}, \ldots, \lambda_{N_{r}}]$, $\sigma_{i}=\lambda_{i}^{new}-\lambda_{i}$, $\Sigma=[\sigma_{1}, \sigma_{2}, \ldots, \sigma_{N_{r}}]$. Substitute $\mathbf{a}, \hat{\mathbf{a}}$ with $\Lambda$ and using $\Sigma$. Let $\Lambda_{S}$ and $\Sigma_{S}$ denote the vector that consist of the components in $\Lambda$ and $\Sigma$ that belong to work set $S$, the sub dual objective function in (\ref{subset optimization}) and its gain (\ref{gain work set selection2})
   \begin{equation}
@@ -1168,7 +1199,7 @@ notice that in (\ref{KKT complementary3}) and (\ref{KKT complementary4}), there 
 \bigtriangledown \theta_{S}^{r}=-\frac{1}{2}\Sigma^{T}_{S}\Re{(\mathbf{K})}_{SS}\Sigma_{S}+(\Phi^{r}_{S})^{T}\Sigma_{S}-\epsilon<\mathbf{e}^{T}_{S},|\Lambda^{new}_{S}|-|\Lambda_{S}|>,
 \label{gain work set selection lambda}
 \end{IEEEeqnarray} 
-In 1-D solver, $|S|=1$, the sub dual objective function corresponding to $\lambda_{m}$, $m=1,2,\ldots, N_{r}$ can be written as
+In 1-D solver, $|S|=1$, based on (\ref{gain work set selection lambda}), the sub dual objective function corresponding to $\lambda_{m}$, $m=1,2,\ldots, N_{r}$ can be written as
 \begin{IEEEeqnarray}[\relax]{l}
  \max_{\lambda_{m}}\quad \theta_{m}^{r}=-\frac{1}{2}(\lambda_{m}^{new})^{2}\Re{(\mathbf{K})}_{mm}
 +[\Re{(\mathbf{y}_{m})}-\sum_{j\neq m}^{N_{r}}\Re{(\mathbf{K})}_{mj}\lambda_{j}]\lambda_{m}^{new}-\epsilon(|\lambda^{new}_{m}|),
@@ -1184,8 +1215,7 @@ Take the partial derivative of $\theta_{m}^{r}$ respect to $\tilde{\lambda}^{new
 \Rightarrow \tilde{\lambda}_{m}^{new}=\lambda_{m}+\frac{\Re{(\Phi)}_{m}-\epsilon(sgn(\tilde{\lambda}^{new}_{m}))}{\Re{(\mathbf{K})}_{mm}},
 \label{partial optimization function 1-D lambda}
 \end{IEEEeqnarray} 
-
- The update of $\alpha_{1}$ or $\hat{\alpha}_{1}$ is completed by clipping
+ The update of $\lambda_{m}$ is completed by clipping
 \begin{IEEEeqnarray}[\relax]{l}
 \lambda^{new}_{m}=[\tilde{\lambda}^{new}_{m}]^{CR^{'}(\xi_{m})}_{-CR^{'}(\xi_{m})}
 \label{clipped new dual variable}
@@ -1200,7 +1230,7 @@ b \quad if\quad x\geq b\\
 \end{array}\right.
 \label{clipping function}
 \end{IEEEeqnarray}
-based on (\ref{gain work set selection lambda}), The maximum gain of objective function respect to the $m$th optimization variable $\lambda_{m}$ is 
+based on (\ref{gain work set selection lambda}), The maximal gain of objective function with respect to the $m$th optimization variable $\lambda_{m}$ is 
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
 \bigtriangledown \theta_{m}^{r}=\theta_{m}^{r}(\lambda_{m}+\sigma_{m})-\theta_{m}^{r}(\lambda_{m})\\
@@ -1209,11 +1239,12 @@ based on (\ref{gain work set selection lambda}), The maximum gain of objective f
 =\sigma_{m}[-\frac{1}{2}\sigma_{m}\Re{(\mathbf{K})}_{mm}+\Re{(\Phi)}_{m}]-\epsilon(|\lambda^{new}_{m}|-|\lambda_{m}|),
 \label{gain of 1-D objective function}
 \end{IEEEeqnarray}
-In 1-D searching procedure, the optimization variable whose update has the maximum gain of sub dual objective function is chosen, assume the $k$th optimization variable is chosen, that is 
+In 1-D searching procedure, the optimization variable whose update can achieve the maximum gain of sub dual objective function is chosen, assume the $k$th optimization variable is chosen, based on the this principle 
 \begin{equation}
-k=\arg\max_{(m=1,2,\ldots, N_{r})} \bigtriangledown \theta_{m}^{r},
+k=\arg\max_{(m=1,2,\ldots, N_{r})} \bigtriangledown \theta_{m}^{r}.
 \label{1-D direction}
 \end{equation}
+Notice in (\ref{partial optimization function 1-D lambda}), $sgn(\tilde{\lambda}^{new}_{m})$ is unknown before $\lambda_{m}$ is updated, therefore two conditions $sgn(\tilde{\lambda}^{new}_{m})=1$ and $sgn(\tilde{\lambda}^{new}_{m})=-1$ are considered. The final decision of $sgn(\tilde{\lambda}_{m}^{new})$ is made by comparing the corresponding gains of the sub objective functions in (\ref{gain of 1-D objective function}).
 \subsection{Double Direction Solver}\label{double direction solver}
 Although the omission of offset in the CSVR-MIMO detector makes 1-D solver possible, however, recent work in machine learning field shows training SVM without offset by 2-D solver with special work set selection strategies has more rapid training speed while the comparable performance is retained\cite{steinwart2011training}. The optimal 2-D solver uses the same principle as 1-D solver, $|S|=2$, assume the work set consists of the $m$th and $n$th optimization variables, that are $\Lambda_{S}=[\lambda_{m}, \lambda_{n}]$. Based on (\ref{gain work set selection lambda}), the sub dual objective function can be written as 
 \begin{IEEEeqnarray}[\relax]{l}
@@ -1276,30 +1307,44 @@ assume the $i$th and $j$th optimization variables are chosen, the optimization v
 [i,j]=\arg\max_{m,n=1,2,\ldots, N_{r}}\bigtriangledown \theta_{m,n}^{r}.
 \label{dual optimization variables}
 \end{equation}
-Recall the gain of objective function of 1-D solver in (\ref{gain of 1-D objective function}), we obtain
+ modify (\ref{gain of 2-D objective function1}), we have 
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\bigtriangledown \theta^{r}_{mn}=\sigma_{m}[-\frac{1}{2}\sigma_{m}\Re{(\mathbf{K})}_{mm}+\Re{(\Phi)}_{m}]-\epsilon(|\lambda^{new}_{m}|-|\lambda_{m}|)+\sigma_{n}[-\frac{1}{2}\sigma_{n}\Re{(\mathbf{K})}_{nn}+\Re{(\Phi)}_{n}]-\epsilon(|\lambda^{new}_{n}|-|\lambda_{n}|)\\
+-\sigma_{m}\sigma_{n}\Re{(\mathbf{K})}_{mn},
+\end{IEEEeqnarray}
+
+Similar to single direction solver, notice in (\ref{update lambda1}) and (\ref{update lambda2}), $sgn(\tilde{\lambda}^{new}_{m})$ and $sgn(\tilde{\lambda}^{new}_{n})$ are unknown before $\lambda_{m}$ and $\lambda_{n}$ are updated, therefore four conditions are considered
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+sgn(\tilde{\lambda}^{new}_{m})=1, sgn(\tilde{\lambda}^{new}_{n})=1\\
+\nonumber
+sgn(\tilde{\lambda}^{new}_{m})=1, sgn(\tilde{\lambda}^{new}_{n})=-1\\
+\nonumber
+sgn(\tilde{\lambda}^{new}_{m})=-1, sgn(\tilde{\lambda}^{new}_{n})=1\\
+\nonumber
+sgn(\tilde{\lambda}^{new}_{m})=-1, sgn(\tilde{\lambda}^{new}_{n})=-1
+\label{four conditions of sign}
+\end{IEEEeqnarray} 
+The final decisions of $sgn(\tilde{\lambda}_{m}^{new})$ and $sgn(\tilde{\lambda}_{n}^{new})$ are made by comparing the corresponding possible gains of the sub objective functions in (\ref{gain of 2-D objective function1}).
+
+Recall the gain of dual objective function of 1-D solver in (\ref{gain of 1-D objective function}), we obtain
  \begin{IEEEeqnarray}[\relax]{l}
-\bigtriangledown \theta^{r}_{ij}=\bigtriangledown \theta^{r}_{i}+\bigtriangledown \theta^{r}_{j}-\sigma_{i}\sigma_{j}\mathbf{K}^{r}_{ij},
+\bigtriangledown \theta^{r}_{ij}=\bigtriangledown \theta^{r}_{i}+\bigtriangledown \theta^{r}_{j}-\sigma_{i}\sigma_{j}\Re{(\mathbf{K})}_{ij},
 \label{gain of 2-D objective function1}
 \end{IEEEeqnarray}
 where $\bigtriangledown \theta^{r}_{i}$, $\bigtriangledown \theta^{r}_{j}$ denote gains of 1-D solver with $m$th and $n$th dual variable pairs are chosen. 
-\subsection{Approximation to Optimal Double Direction Solver based on Single Direction Solver}\label{approximate 2D solver}
-From (\ref{gain of 2-D objective function1}), it is obviously that the gain of 2-D solver is a summation of the gain of 2 independent 1-D solver and a correlation term $\sigma_{i}\sigma_{j}\mathbf{K}^{r}_{ij}$.
+\subsection{Approximation of Optimal Double Direction Solver based on Single Direction Solver}\label{approximate 2D solver}
+From (\ref{gain of 2-D objective function1}), we can observe that the gain of 2-D solver is a summation of the gain of 2 independent 1-D solver and a correlation term $\sigma_{i}\sigma_{j}\Re{(\mathbf{K})}_{ij}$.
  
-Obviously optimal 2-D coordinate combination ($i, j$) can be determined by comparing the gains of all the possibilities exhaustively, which requires $O(n^{2})$ times of searching. Based on (\ref{gain of 2-D objective function1}), we can approximate optimal 2-D solution by 1-D search approach, we will prove in large MIMO scenario, when $N_{t}$ is sufficient large, with channel hardening become effective, this approximation is very efficient. Here we propose two kinds of 1-D approximate searching strategy:
-\subsubsection{ 1-D searching without damping}
-do one round 1-D searching and calculate all the 1-D gain based on (\ref{gain of 1-D objective function}), then choose the coordinates with first and second largest 1-D gain as the candidates, then update the two candidates by 2-D solver as shown in (\ref{update lambda1}) and (\ref{update lambda2})
-\subsubsection{ 1-D searching with damping}
-do two rounds 1-D searchings, in the first round find optimization variable $i$ that can maximize 1-D gain, then in the second round, find $j$th optimization variable with the value of $i$th coordinate updated.
+Obviously optimal 2-D work set $[i,j]$ can be determined by brute-force searching manner, which requires $O(n^{2})$ searching times. Based on (\ref{gain of 2-D objective function1}), we can approximate optimal 2-D searching strategy by the combinations of optimal 1-D searching approach, we will prove in the large MIMO systems, when $N_{t}$ is sufficient large, this approximation is very effective. Here we propose two kinds of 1-D approximate searching strategy:
+\subsubsection{ One-shot 1-D Searching}
+do one round 1-D searching and calculate all the 1-D gain based on (\ref{gain of 1-D objective function}), then choose the two optimization variables indexed by $i$ and $j$, whose update can achieve the first and the second largest gain of the sub dual objective functions.
+\subsubsection{ Sequential 1-D Searching}
+do two rounds 1-D searchings, in the first round find optimization variable indexed by $i$ whose update can achieve the maximal 1-D gain of the sub dual objective functions, then update the $i$th optimization variable. In the second round, find $j$th optimization variable whose update can achieve the maximal 1-D gain of the sub dual objective functions.
 
-From (\ref{gain of 2-D objective function1}), it can be easily interpreted the efficient of 1-D approximation approach is majorly determined by the approximation ratio $\frac{\sigma_{i}\sigma_{j}\mathbf{K}^{r}_{ij}}{\bigtriangledown \theta^{r}_{i}+\bigtriangledown \theta^{r}_{j}}$, hence we provide theoretical analyse from the view of channel hardening phenomenon. Prior the theoretical analyse, we first investigate some mathematical properties of channel hardening (to be completed).    
+ The effectiveness of 1-D approximation strategies are majorly determined by the ratio $\frac{\sigma_{i}\sigma_{j}\Re{(\mathbf{K})}_{ij}}{\bigtriangledown \theta^{r}_{i}+\bigtriangledown \theta^{r}_{j}}$. Hence we provide theoretical analyses based on the view of channel hardening phenomenon. It can be proved that in the large MIMO systems, the correlation term is ignorable comparing to 1-D gains of the sub objective function. Prior to the theoretical analyse, we first investigate some mathematical properties of channel hardening (to be completed).    
 
-For 1-D solver the gradient of (\ref{partial optimization function 1-D lambda}) with respect to $\lambda$ can be written as
-\begin{equation}
-\lambda_{1}^{new}=\lambda_{1}+\frac{\Phi_{1}-sgn(\lambda_{1}^{new})\epsilon}{\mathbf{K}^{r}_{11}},
-\label{gradient lambda}
-\end{equation}
-In the update process the $sgn(\lambda^{new})$ is unknown at current step, therefore, we need to consider both the case $sgn(\lambda^{new})=-1 $ or $1$ and choose the one with the larger objective function gain $\bigtriangledown \theta^{r}_{S}$.
- 
 
 
 
@@ -1355,44 +1400,43 @@ G(\lambda^{r}, \lambda^{i})=f(\mathbf{w},\xi)-\theta(\lambda^{r},\lambda^{i})=<(
 -\epsilon<\mathbf{e}^{T}, (|\lambda^{r}|+|\lambda^{i}|)>+C\sum_{i=1}^{N_{r}}[\xi^{r}_{i}R^{'}(\xi^{r}_{i})+\hat{\xi}^{r}_{i}R^{'}(\hat{\xi}^{r}_{i})+\xi^{i}_{i}R^{'}(\xi^{i}_{i})+\hat{\xi}^{i}_{i}R^{'}(\hat{\xi}^{i}_{i})]-2<\lambda^{r}, \mathbf{K}^{i}\lambda^{i}>.
 \label{simple duality gap}
 \end{IEEEeqnarray}
-As we explained in section \ref{risk functional}, the choice of risk function is determined by distribution of noise, as to Gaussian noise, the risk function is 
+As we explained in section \ref{cost function}, the choice of risk function is determined by distribution of noise, as to Gaussian noise, the risk function is 
 \begin{equation}
-R(\xi)=\frac{1}{2}\xi^{2},
+R(u)=\frac{1}{2}u^{2},
 \label{risk function1}
 \end{equation} 
 hence 
 \begin{equation}
-\tilde{R}(\xi)=R(\xi)-\xi R{'}(\xi)=-\frac{1}{2}\xi^{2},
+\tilde{R}(u)=R(u)-u R{'}(u)=-\frac{1}{2}u^{2},
 \label{risk function2}
 \end{equation}
-In $\epsilon$-SVR, the objective to employ slack variables $\xi$ is to deal with the outliers that outside $\epsilon$ tube to compensate the influence from noise.
-Therefore 
+In $\epsilon$-SVR, the objective to exploit slack variables $\xi^{r}_{i}$ and $\hat{\xi}_{i}^{r}$ is to compensate the influences from the outliers that exceed the $\epsilon$-tube which are caused by noise.
+Therefore in $\epsilon$-SVR, $\xi^{r}_{i}$ and $\hat{\xi}^{r}$ are defined as  
 \begin{IEEEeqnarray}[\relax]{l}
-\xi^{r}_{i}=Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})-\epsilon\\
-\hat{\xi}^{r}_{i}=Re(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})-Re(\mathbf{y}_{i})-\epsilon
-\label{outlier1}
-\end{IEEEeqnarray}
-Because $\xi^{r}\hat{\xi}^{r}=0$ (estimation can only exceed $\epsilon$ tube in one direction), therefore there is only one of $\xi$ and $\hat{\xi}$ need to be considered, thus 
-\begin{IEEEeqnarray}[\relax]{l}
-\xi^{r}_{i}(\hat{\xi}^{r}_{i})=\max(0, |Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|-\epsilon)\\
-\xi^{i}_{i}(\hat{\xi}^{i}_{i})=\max(0, |Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|-\epsilon)\\
-\xi\hat{\xi}=0,
+\xi^{r}_{i}=\max(0, \Re{(\mathbf{y}_{i})}-\Re{(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})}-\epsilon)\\
+\hat{\xi}^{r}_{i}=\max(0, \Re{(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})}-\Re{(\mathbf{y}_{i})}-\epsilon)
 \label{outlier2}
 \end{IEEEeqnarray} 
+Because the distance between the estimations $\Re{(<\mathbf{h}_{i},\mathbf{w}>_{\mathbb{H}})}$ and the observations $\Re{(\mathbf{y}_{i})}$ can only exceeds the $\epsilon$-tube in one direction, therefore there is at most one of $\xi^{r}_{i}$ and $\hat{\xi}^{r}_{i}$ can be non zero. That is $\xi_{i}^{r}\hat{\xi}_{i}^{r}=0$.
 Therefore the risk function can be rewritten as 
 \begin{IEEEeqnarray}[\relax]{l}
-R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})=\frac{1}{2}(|Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|)^{2}_{\epsilon}\\
+R(\xi_{i}^{r})+R(\hat{\xi}_{i}^{r})=\frac{1}{2}|Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|_{\epsilon}^{2}\\
 \label{simple risk function1}
-R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})=\frac{1}{2}(|Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|)^{2}_{\epsilon}
+R(\xi_{i}^{i})+R(\hat{\xi}_{i}^{i})=\frac{1}{2}|Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}})|^{2}_{\epsilon}
 \label{simple risk function2}
 \end{IEEEeqnarray}
-where $()_{\epsilon}$ denotes $\epsilon$ insensitive function as we mention in section \ref{risk functional}. Based on (\ref{complex duality regression function}), we have 
+where $|\cdot|_{\epsilon}$ denotes $\epsilon$ insensitive function as mentioned in section \ref{cost function}. Recall (\ref{complex duality regression function}),
+\begin{IEEEeqnarray}[\relax]{l}
+<\mathbf{h}_{i}, \mathbf{w}>_{\mathbb{H}}
+=\sum_{j=1}^{N_{r}}\lambda_{j}^{r}\Re{(\mathbf{K})}_{ij}-\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\Im{(\mathbf{K})}_{ij}+i(\sum_{j=1}^{N_{r}}\lambda_{j}^{r}\Im{(\mathbf{K})}_{ij}+\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\Re{(\mathbf{K})}_{ij}),
+\end{IEEEeqnarray}
+ we obtain 
 \begin{IEEEeqnarray}[\relax]{l}
 Re(\mathbf{y}_{i})-Re(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=Re(\mathbf{y}_{i})-\sum_{j=1}^{N_{r}}\lambda^{r}_{j}\mathbf{K}^{r}_{ij}+\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\mathbf{K}^{i}_{ij}\\
 Im(\mathbf{y}_{i})-Im(<\mathbf{h}_{i}, \mathbf{W}>_{\mathbb{H}})=Im(\mathbf{y}_{i})-\sum_{j=1}^{N_{r}}\lambda^{i}_{j}\mathbf{K}^{r}_{ij}-\sum_{j=1}^{N_{r}}\lambda^{r}_{j}\mathbf{K}^{i}_{ij}
 \label{intermediate function1}
 \end{IEEEeqnarray}
-we define two intermediate variables $\Phi$ and $\Psi$
+Two intermediate variables $\Phi$ and $\Psi$ are defined
 \begin{IEEEeqnarray}[\relax]{l}
 \label{intermedia function 2a}
 \Phi^{r}=Re(\mathbf{y})-\mathbf{K}^{r}

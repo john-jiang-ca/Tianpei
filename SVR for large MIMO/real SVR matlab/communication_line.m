@@ -3,13 +3,13 @@
 close all;
 clear all;
 cd 'F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab'
-Nr=50;
-Nt=50;
+Nr=100;
+Nt=100;
 N=4;
 M=4; %modulation sheme
 d=sqrt(3/(Nt*(M^2-1)));
 symbolReal=zeros(M,1);
-epsilon=2*(1e-1);
+epsilon=1e-7;
 C=1;
 tol=1e-2;
 tau=0.2;
@@ -115,7 +115,7 @@ for count=1:length(SNR)
     MMSE_SUM=0; %average minimum mean square error of original one 
     channel_realization=0;   %channel realization times
     symError2=0;
-    while(symError<300||channel_realization<1e3)
+    while(symError2<200||symError1<200||channel_realization<1e3)
         symOut1=zeros(Nt,1);
         symOut2=zeros(Nt,1);
         %% generate data sample and output (with white gaussian noise)

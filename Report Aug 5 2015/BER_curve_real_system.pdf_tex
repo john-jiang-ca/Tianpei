@@ -96,7 +96,7 @@
     \put(0.11121108,0.41617647){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{SER}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=19]{BER_curve_real_system.pdf}}%
     \put(0.23567921,0.18143561){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
-    \put(0.21573674,0.17582896){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times 100$ MIMO without damping}}}%
-    \put(0.2150008,0.14596573){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times 40$ MIMO without damping}}}%
+    \put(0.21573674,0.17582896){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times 100$ MIMO }}}%
+    \put(0.2150008,0.14596573){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times 40$ MIMO }}}%
   \end{picture}%
 \endgroup%

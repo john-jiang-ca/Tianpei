@@ -1,18 +1,21 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Report Aug 2015.aux
 The style file: IEEEtran.bst
 Database file #1: citation.bib
-Warning--I didn't find a database entry for "AtutorialofSupportVectorRegression"
-Warning--I didn't find a database entry for "wirtinger'scalculustoRKHS"
-Warning--I didn't find a database entry for "SMO"
-Warning--I didn't find a database entry for "inprovedtrainingalgorithmsforsupportvectormachines"
-Warning--I didn't find a database entry for "Trainingwithoutoffset"
+Repeated entry---line 100 of file citation.bib
+ : @inproceedings{wolniansky1998v
+ :                               ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 383 of file citation.bib
+ :  
+ :  % title={GPU acceleration for fixed complexity sphere decoder in large MIMO uplink systems},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty author in IEEE802.11ac
-Warning--empty year in sunfamily
 Warning--empty journal in bouboulis2013complex
 Warning--empty year in bouboulis2013complex
 
 Done.
-(There were 9 warnings)
+(There were 2 error messages)

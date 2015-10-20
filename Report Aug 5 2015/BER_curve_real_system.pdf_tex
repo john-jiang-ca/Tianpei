@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{595.27559055bp}%
+    \setlength{\unitlength}{611.00001057bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,56 +48,55 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.41428571)%
+  \begin{picture}(1,0.84315384)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{BER_curve_real_system.pdf}}%
-    \put(0.10113385,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{6}}}%
+    \put(0.12343175,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{6}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{BER_curve_real_system.pdf}}%
-    \put(0.20066791,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{8}}}%
+    \put(0.22040425,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{8}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{BER_curve_real_system.pdf}}%
-    \put(0.29320153,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.31055646,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{BER_curve_real_system.pdf}}%
-    \put(0.39273526,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{12}}}%
+    \put(0.40752863,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{12}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{BER_curve_real_system.pdf}}%
-    \put(0.49240842,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{14}}}%
+    \put(0.50463665,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{14}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{BER_curve_real_system.pdf}}%
-    \put(0.59194215,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{16}}}%
+    \put(0.60160883,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{16}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{BER_curve_real_system.pdf}}%
-    \put(0.69147588,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{18}}}%
+    \put(0.698581,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{18}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{BER_curve_real_system.pdf}}%
-    \put(0.79100961,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20}}}%
+    \put(0.79555318,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=9]{BER_curve_real_system.pdf}}%
-    \put(0.89068445,0.38693557){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{22}}}%
+    \put(0.89266283,0.06533029){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{22}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=10]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,0.40583438){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,0.4213734){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−7}}}%
+    \put(0.08226972,0.08374272){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.10954697,0.09888184){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-7}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,0.50662803){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,0.52216705){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−6}}}%
+    \put(0.08226972,0.1819424){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.10954697,0.19708151){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-6}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=12]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,0.60742168){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,0.6229607){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−5}}}%
+    \put(0.08226972,0.28014207){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.10954697,0.29528118){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-5}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,0.70821533){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,0.72375435){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−4}}}%
+    \put(0.08226972,0.37834174){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.10954697,0.39348085){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-4}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,0.80886955){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,0.82440857){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−3}}}%
+    \put(0.08226972,0.47640555){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.10954697,0.49154467){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-3}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,0.9096632){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,0.92520222){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−2}}}%
+    \put(0.08428024,0.57553109){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.11155749,0.59067021){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-2}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=16]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,1.01045685){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,1.02599587){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−1}}}%
+    \put(0.08488838,0.67280489){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.11216562,0.68794401){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{-1}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=17]{BER_curve_real_system.pdf}}%
-    \put(0.05619668,1.11110939){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
-    \put(0.08419447,1.12664841){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.09012569,0.76562978){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.11740293,0.78076889){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=18]{BER_curve_real_system.pdf}}%
-    \put(0.4523715,0.36075744){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{SNR (dB)}}}%
-    \put(0.079375,0.74359367){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{SER}}}}%
+    \put(0.46563011,0.03982587){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{SNR (dB)}}}%
+    \put(0.11121108,0.41617647){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lb]{\smash{SER}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=19]{BER_curve_real_system.pdf}}%
-    \put(0.19758749,0.50315645){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times40$ MIMO without damping}}}%
-    \put(0.42006955,0.56924414){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
-    \put(0.19540903,0.47004117){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times100$ MIMO without damping}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=20]{BER_curve_real_system.pdf}}%
+    \put(0.23567921,0.18143561){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.21573674,0.17582896){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times 100$ MIMO }}}%
+    \put(0.2150008,0.14596573){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$100\times 40$ MIMO }}}%
   \end{picture}%
 \endgroup%

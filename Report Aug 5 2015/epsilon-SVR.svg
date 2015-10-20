@@ -263,6 +263,21 @@
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path5628-2" />
     </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5626-5-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path5628-9-9" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -271,9 +286,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.84852814"
-     inkscape:cx="213.51763"
-     inkscape:cy="605.7191"
+     inkscape:zoom="0.42426407"
+     inkscape:cx="819.15071"
+     inkscape:cy="710.26473"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
@@ -428,13 +443,13 @@
          inkscape:connector-curvature="0"
          id="path7220"
          d="M 115.97053,671.92327 581.94386,527.70447"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02984738;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12.35816855,12.35816855;stroke-dashoffset:1.59965017;stroke-opacity:1" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.22673906;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:14.72086871,14.72086871;stroke-dashoffset:1.90547977;stroke-opacity:1" />
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
          id="path7224"
          d="M 121.61573,761.05274 584.07685,615.35167"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96642658;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:11.59711901,11.59711901;stroke-dashoffset:1.49796116;stroke-opacity:1" />
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.22673906;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:14.72086871,14.72086871;stroke-dashoffset:1.90144548;stroke-opacity:1" />
       <path
          style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.52600002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 554.569,576.32388 9.92831,0.492"
@@ -535,7 +550,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.85947466px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start"
            y="499.00864"
            x="396.27509"
-           sodipodi:role="line">$f_{estimate}(\mathbf{x})=\mathbf{w}^{T}\Phi(\mathbf{x})+b$</tspan></text>
+           sodipodi:role="line">$f(\mathbf{x}_{i})=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b$</tspan></text>
       <path
          inkscape:connector-curvature="0"
          id="path7291"
@@ -579,7 +594,7 @@
            sodipodi:role="line">data sample </tspan></text>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05499995;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:8.43999958,8.43999958;stroke-dashoffset:1.37149988"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.755;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:10.53,1.755;stroke-dashoffset:2.28149971"
        d="m 527.39151,785.12271 -80.84813,-2.97954 2.12758,-373.93344 78.72055,1.48977 1.06378,373.93344"
        id="path4888"
        inkscape:connector-curvature="0"
@@ -606,7 +621,7 @@
          sodipodi:role="line"
          id="tspan4921"
          x="379.66666"
-         y="466.33334">$\xi$</tspan></text>
+         y="466.33334">$\xi_{i}$</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 523.33333,675.66667 56.66667,0"
@@ -629,7 +644,7 @@
          sodipodi:role="line"
          id="tspan4937"
          x="567.66669"
-         y="743.33331">$\xi$</tspan></text>
+         y="743.33331">$\hat{\xi}_{i}$</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4.239;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="M 870,991.66667 1508.3333,990"
@@ -696,7 +711,7 @@
          sodipodi:role="line"
          id="tspan6079"
          x="1460"
-         y="720">$R(\xi)$</tspan></text>
+         y="720">$R(\xi_{i})$</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker5626);stroke-miterlimit:4;stroke-dasharray:none"
        d="m 1412.2876,750.64129 98.4925,-17.71236"
@@ -713,7 +728,7 @@
          sodipodi:role="line"
          x="1240"
          y="320"
-         id="tspan6405">Risk Function</tspan></text>
+         id="tspan6405">Cost Function</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -724,7 +739,7 @@
          sodipodi:role="line"
          id="tspan6411"
          x="1060"
-         y="260"></tspan></text>
+         y="260" /></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5626-5)"
        d="m 155.85788,657.74706 5.3901,-86.06603"
@@ -737,5 +752,57 @@
        id="path6081-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.51332211;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5626-5-1)"
+       d="m 168.39873,855.76499 84.01594,87.26114"
+       id="path6081-6-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="254.07275"
+       y="952.96362"
+       id="text3466"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3468"
+         x="254.07275"
+         y="952.96362">$\epsilon$-bound</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="238.09296"
+       y="875.9104"
+       id="text3470"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3472"
+         x="238.09296"
+         y="875.9104">estimation function</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1920"
+       y="330"
+       id="text4366"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4368"
+         x="1920"
+         y="330" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="154.07275"
+       y="278.85617"
+       id="text4370"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4372"
+         x="154.07275"
+         y="278.85617"><tspan
+           style="font-size:35px"
+           id="tspan4374"> Regression Model</tspan></tspan></text>
   </g>
 </svg>

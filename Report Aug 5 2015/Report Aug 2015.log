@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  11 SEP 2015 00:30
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  18 OCT 2015 14:27
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -462,15 +462,28 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \ALG@tmplength=\skip61
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen149
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip62
+\calc@Bskip=\skip63
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count137
+\calc@Cskip=\skip64
+)
+("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux"
 
-LaTeX Warning: Label `gain of 2-D objective function1' multiply defined.
+LaTeX Warning: Label `cost function3' multiply defined.
 
 
-LaTeX Warning: Label `risk function1' multiply defined.
-
-
-LaTeX Warning: Label `risk function2' multiply defined.
+LaTeX Warning: Label `CHSProperty4 inter2' multiply defined.
 
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 385.
@@ -492,8 +505,7 @@ Requested font "ptmrc7t" at 12.0pt
 Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
-[1] [2]
-Missing character: There is no ϵ in font ptmr7t!
+[1] [2] [3]
 Requested font "cmr12" at 12.0pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -506,14 +518,14 @@ Requested font "cmsy6" at 6.0pt
 Requested font "cmex10" at 12.0pt
 Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msa on input line 540.
+LaTeX Font Info:    Try loading font information for U+msa on input line 545.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 Requested font "msam10" at 12.0pt
 Requested font "msam10" at 8.0pt
 Requested font "msam7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msb on input line 540.
+LaTeX Font Info:    Try loading font information for U+msb on input line 545.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -521,7 +533,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Requested font "msbm10" at 12.0pt
 Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
- [3] [4]
+ [4] [5]
 Requested font "cmbx12" at 12.0pt
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
@@ -558,16 +570,33 @@ Requested font "msam10" at 9.0pt
 Requested font "msam5" at 5.0pt
 Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
- [5] [6]
-[7] [8] [9]
-Missing character: There is no ： in font ptmr7t!
- [10] [11]
+ [6] [7]
+[8] [9] [10] [11]
+Overfull \hbox (27.06242pt too wide) in alignment at lines 728--735
+ [] [][]
+ []
+
+[12]
+Overfull \hbox (36.00719pt too wide) in alignment at lines 744--749
+ [] [][]
+ []
+
+
+Overfull \hbox (64.00009pt too wide) in paragraph at lines 749--751
+\U/msb/m/n/12 R[]$\OT1/ptm/m/n/12 , $\OT1/cmr/bx/n/12 e[]$ \OT1/ptm/m/n/12 de-n
+otes the vec-tor that only $\OML/cmm/m/it/12 i$\OT1/ptm/m/n/12 th com-po-nent i
+s 1 while the rest are all 0, $\OT1/cmr/bx/n/12 R[] \OT1/cmr/m/n/12 = [[](\OML/
+cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []\OT1/cmr/m/n/12 (\OML/cm
+m/m/it/12 ^^X[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; []\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 ^^X[]\OT1/cmr/m/n/12 )][]$\OT1/ptm/m/n/12 ,
+ []
+
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 720.
+(amsmath)                 on input line 756.
 
-("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
+[13] ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
 File: largeMIMOuplink.pdf Graphic file (type QTm)
 
 <use  "largeMIMOuplink.pdf"  page1>
@@ -598,73 +627,120 @@ File: largeMIMOuplink.pdf Graphic file (type QTm)
 <use  "largeMIMOuplink.pdf"  page11>
 File: largeMIMOuplink.pdf Graphic file (type QTm)
  <use  "largeMIMOuplink.pdf"  page12>)
-[12] [13] [14]
-\c@Lemma=\count135
-\c@Property=\count136
- [15] [16] [17] [18]
-Overfull \hbox (40.80408pt too wide) in alignment at lines 913--923
+[14] [15] [16]
+\c@Lemma=\count138
+\c@Property=\count139
+ [17]
+Overfull \hbox (9.77817pt too wide) in alignment at lines 904--909
  [] [][]
  []
 
-[19]
-Overfull \hbox (33.64156pt too wide) in alignment at lines 925--935
+[18] [19] [20]
+Overfull \hbox (14.93057pt too wide) detected at line 984
+\OMS/cmsy/m/n/12 jj\OT1/cmr/bx/n/12 w\OMS/cmsy/m/n/12 jj[] \OT1/cmr/m/n/12 = []
+(\OML/cmm/m/it/12 ^^K[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )(\OML/cmm/m/it/
+12 ^^K[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 <[][] \OT1/cm
+r/m/n/12 + [](\OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )(\
+OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 
+<[][] ^^@ \OT1/cmr/m/n/12 2 [](\OML/cmm/m/it/12 ^^K[] \OMS/cmsy/m/n/12 ^^@ []\O
+T1/cmr/m/n/12 )(\OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )
+\OMS/cmsy/m/n/12 =[][]\OML/cmm/m/it/12 :
+ []
+
+
+Overfull \hbox (56.27542pt too wide) in alignment at lines 986--997
  [] [][]
  []
 
 
-Overfull \hbox (39.00984pt too wide) in alignment at lines 938--946
- [] [][]
- []
-
-
-Overfull \hbox (35.3804pt too wide) in alignment at lines 948--956
- [] [][]
- []
-
-[20]
-Missing character: There is no ， in font ptmr7t!
-
-Overfull \hbox (4.6661pt too wide) in alignment at lines 964--972
+Overfull \hbox (40.04997pt too wide) in alignment at lines 1000--1006
  [] [][]
  []
 
 [21]
-Overfull \hbox (23.86952pt too wide) detected at line 982
-\OML/cmm/m/it/12 maximize \OT1/cmr/m/n/12 ^^B[] = \OMS/cmsy/m/n/12 ^^@[]\OT1/cm
-r/m/n/12 [(\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/
-cmr/bx/n/12 K[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT
-1/cmr/m/n/12 )[]] + [\OML/cmm/m/it/12 Re\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 y\OT1
-/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^K \OMS
-/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[]\OT1/cmr/bx/n/12 K[]\OT1/cmr/m/n/12 ](\OM
-L/cmm/m/it/12 ^^K \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^
-^@ \OML/cmm/m/it/12 ^^O < \OT1/cmr/bx/n/12 e[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
-2 (\OML/cmm/m/it/12 ^^K \OT1/cmr/m/n/12 + [])[] \OML/cmm/m/it/12 >;
+Overfull \hbox (26.28464pt too wide) in alignment at lines 1025--1035
+ [] [][]
  []
 
 [22]
-Overfull \hbox (16.55328pt too wide) in alignment at lines 991--996
+Overfull \hbox (19.12212pt too wide) in alignment at lines 1037--1047
  [] [][]
  []
 
 
-LaTeX Warning: Citation `Trainingwithoutoffset' on page 23 undefined on input l
-ine 1011.
+Overfull \hbox (5.15166pt too wide) in paragraph at lines 1047--1049
+\OT1/ptm/m/n/12 Let $\OT1/cmr/bx/n/12 a \OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 ^^K
+[]; ^^K[]; [] ; ^^K[]\OT1/cmr/m/n/12 ][]$\OT1/ptm/m/n/12 , $[] \OT1/cmr/m/n/12 
+= [[]\OML/cmm/m/it/12 ; []; [] ; []\OT1/cmr/m/n/12 ][]$\OT1/ptm/m/n/12 , $\OT1/
+cmr/bx/n/12 b \OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 ^^L[]; ^^L[]; [] ; ^^L[]\OT1/
+cmr/m/n/12 ][]$\OT1/ptm/m/n/12 ,$[] \OT1/cmr/m/n/12 = [[]\OML/cmm/m/it/12 ; [];
+ [] ; []\OT1/cmr/m/n/12 ][]$\OT1/ptm/m/n/12 ,
+ []
 
-[23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (70.06726pt too wide) in alignment at lines 1207--1212
+[23] [24]
+Overfull \hbox (49.93112pt too wide) in alignment at lines 1076--1097
  [] [][]
+ []
+
+
+Overfull \hbox (37.56808pt too wide) in alignment at lines 1103--1116
+ [] [][]
+ []
+
+[25] [26]
+Overfull \hbox (46.2043pt too wide) in alignment at lines 1148--1154
+ [] [][]
+ []
+
+[27] [28] [29]
+Overfull \hbox (5.60997pt too wide) in paragraph at lines 1223--1227
+\OT1/ptm/m/n/12 where $[]$ is the up-date of $\OML/cmm/m/it/12 ^^U[]$\OT1/ptm/m
+/n/12 . Based on the def-i-ni-tion of $\OT1/cmr/m/n/12 ^^H$ \OT1/ptm/m/n/12 in 
+(64[]), $\OT1/cmr/m/n/12 ^^H[] = \OMS/cmsy/m/n/12 <[] ^^@ [][] \OML/cmm/m/it/12
+ ^^U[]\OMS/cmsy/m/n/12 <[][]$\OT1/ptm/m/n/12 ,
  []
 
 [30] [31]
+Overfull \hbox (2.02061pt too wide) in paragraph at lines 1266--1268
+\OT1/ptm/m/n/12 Notice in (74[]), $\OML/cmm/m/it/12 sgn\OT1/cmr/m/n/12 ([])$ \O
+T1/ptm/m/n/12 is un-known be-fore $\OML/cmm/m/it/12 ^^U[]$ \OT1/ptm/m/n/12 is u
+p-dated, there-fore two con-di-tions $\OML/cmm/m/it/12 sgn\OT1/cmr/m/n/12 ([]) 
+=
+ []
 
-LaTeX Warning: Reference `intermediate function2' on page 32 undefined on input
- line 1260.
+[32] [33] [34]
+Overfull \hbox (20.89584pt too wide) in alignment at lines 1346--1350
+ [] [][]
+ []
 
+[35]
+Overfull \hbox (3.50377pt too wide) in paragraph at lines 1366--1367
+[]\OT1/ptm/m/n/12 The ef-fec-tive-ness of 1-D ap-prox-i-ma-tion strate-gies are
+ ma-jorly de-ter-mined by the ra-tio $[]$.
+ []
+
+[36] [37]
+Overfull \hbox (45.77774pt too wide) in alignment at lines 1447--1451
+ [] [][]
+ []
+
+
+Overfull \hbox (12.80127pt too wide) in alignment at lines 1453--1458
+ [] [][]
+ []
+
+[38]
+Overfull \hbox (52.74135pt too wide) in alignment at lines 1461--1466
+ [] [][]
+ []
+
+[39] [40] [41]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1285.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1552.
 
 Requested font "ptmbc7t" at 12.0pt
-[32] [33] ("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
+ [42] [43] [44]
+("F:\GitHub\Tianpei\Report Aug 5 2015\BER_curve_real_system.pdf_tex"
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page1>
@@ -695,31 +771,24 @@ File: BER_curve_real_system.pdf Graphic file (type QTm)
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page10>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page11>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page12>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page13>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page14>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page15>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page16>
-Missing character: There is no − in font ptmr7t!
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
 <use  "BER_curve_real_system.pdf"  page17>
@@ -728,32 +797,26 @@ File: BER_curve_real_system.pdf Graphic file (type QTm)
 <use  "BER_curve_real_system.pdf"  page18>
 File: BER_curve_real_system.pdf Graphic file (type QTm)
 
-<use  "BER_curve_real_system.pdf"  page19>
-File: BER_curve_real_system.pdf Graphic file (type QTm)
-
-<use  "BER_curve_real_system.pdf"  page20>)
-
-LaTeX Warning: Float too large for page by 83.09796pt on input line 1426.
-
-[34] [35] [36] [37] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl"
-[38] [39]
+<use  "BER_curve_real_system.pdf"  page19>) [45]
+Requested font "ptmrc7t" at 9.0pt
+ [46] [47]
+("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.bbl" [48] [49]
 Missing character: There is no — in font ptmri7t!
+ [50]
 Missing character: There is no — in font ptmri7t!
-) [40] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
-
-LaTeX Warning: There were undefined references.
-
+)
+[51] ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4686 strings out of 429025
- 63215 string characters out of 3166797
- 150566 words of memory out of 3000000
- 7829 multiletter control sequences out of 15000+200000
- 32288 words of font info for 84 fonts, out of 3000000 for 9000
- 915 hyphenation exceptions out of 8191
- 32i,13n,24p,1725b,404s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 4813 strings out of 429025
+ 65516 string characters out of 3166797
+ 146008 words of memory out of 3000000
+ 7953 multiletter control sequences out of 15000+200000
+ 32934 words of font info for 85 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 32i,13n,24p,1849b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report*Aug*2015.pdf (40 pages).
+Output written on Report*Aug*2015.pdf (51 pages).

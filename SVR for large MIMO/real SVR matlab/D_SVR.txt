@@ -1,0 +1,767 @@
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 5.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 5.000000
+tolerance is 0.01000000
+symbol error rate is 0.4695000000 Average Mean Square Error is 0.3731778548 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3954375000 Average Mean Square Error is 0.5696290200 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3968406250 Average Mean Square Error is 0.5704109934 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 0.100000
+tolerance is 0.01000000
+symbol error rate is 0.3978250000 Average Mean Square Error is 1.2621737351 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 5.000000
+tolerance is 0.01000000
+symbol error rate is 0.4687781250 Average Mean Square Error is 0.3626529618 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 1.000000
+tolerance is 0.00100000
+symbol error rate is 0.3981406250 Average Mean Square Error is 0.5675329636 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3952500000 Average Mean Square Error is 0.5688937412 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.0010000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3957000000 Average Mean Square Error is 0.5731547045 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.1000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3726875000 Average Mean Square Error is 0.7883519874 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 1.5000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3934437500 Average Mean Square Error is 1.1505424051 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+   14  
+
+   25.118864  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.4068750000 Average Mean Square Error is 1.0210769376 This document stores the information for SVR
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+   16  
+
+   39.810717  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3506250000 Average Mean Square Error is 0.9040852677 This document stores the information for SVR
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3912500000 Average Mean Square Error is 0.9193978320 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+symbol error rate is 0.3521875000 Average Mean Square Error is 1.2233941518 This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+   20  
+
+   100.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000
+This document stores the information for SVR
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+   10  
+
+   10.000000  
+
+SER AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 0.01000000

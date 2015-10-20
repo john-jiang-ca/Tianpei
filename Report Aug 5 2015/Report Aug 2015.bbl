@@ -48,16 +48,6 @@ E.~Larsson, O.~Edfors, F.~Tufvesson, and T.~Marzetta, ``Massive {MIMO} for next
   generation wireless systems,'' \emph{Communications Magazine, IEEE}, vol.~52,
   no.~2, pp. 186--195, 2014.
 
-\bibitem{damen2003maximum}
-M.~O. Damen, H.~El~Gamal, and G.~Caire, ``On maximum-likelihood detection and
-  the search for the closest lattice point,'' \emph{Information Theory, IEEE
-  Transactions on}, vol.~49, no.~10, pp. 2389--2402, 2003.
-
-\bibitem{barbero2008fixing}
-L.~G. Barbero and J.~S. Thompson, ``Fixing the complexity of the sphere decoder
-  for {MIMO} detection,'' \emph{Wireless Communications, IEEE Transactions on},
-  vol.~7, no.~6, pp. 2131--2142, 2008.
-
 \bibitem{wolniansky1998v}
 P.~W. Wolniansky, G.~J. Foschini, G.~Golden, R.~Valenzuela \emph{et~al.},
   ``{V}-{BLAST}: An architecture for realizing very high data rates over the
@@ -76,10 +66,30 @@ J.~Benesty, Y.~Huang, and J.~Chen, ``A fast recursive algorithm for optimum
   sequential signal detection in a blast system,'' \emph{Signal Processing,
   IEEE Transactions on}, vol.~51, no.~7, pp. 1722--1730, 2003.
 
-\bibitem{hoydis2013massive}
-J.~Hoydis, S.~Ten~Brink, and M.~Debbah, ``Massive {MIMO} in the {UL}/{DL} of
-  cellular networks: How many antennas do we need?'' \emph{Selected Areas in
-  Communications, IEEE Journal on}, vol.~31, no.~2, pp. 160--171, 2013.
+\bibitem{damen2003maximum}
+M.~O. Damen, H.~El~Gamal, and G.~Caire, ``On maximum-likelihood detection and
+  the search for the closest lattice point,'' \emph{Information Theory, IEEE
+  Transactions on}, vol.~49, no.~10, pp. 2389--2402, 2003.
+
+\bibitem{jalden2005complexity}
+J.~Jald{\'e}n and B.~Otterste, ``On the complexity of sphere decoding in
+  digital communications,'' \emph{Signal Processing, IEEE Transactions on},
+  vol.~53, no.~4, pp. 1474--1484, 2005.
+
+\bibitem{barbero2008fixing}
+L.~G. Barbero and J.~S. Thompson, ``Fixing the complexity of the sphere decoder
+  for {MIMO} detection,'' \emph{Wireless Communications, IEEE Transactions on},
+  vol.~7, no.~6, pp. 2131--2142, 2008.
+
+\bibitem{luo2008generalized}
+Z.~Luo, M.~Zhao, S.~Liu, and Y.~Liu, ``Generalized parallel interference
+  cancellation with near-optimal detection performance,'' \emph{Signal
+  Processing, IEEE Transactions on}, vol.~56, no.~1, pp. 304--312, 2008.
+
+\bibitem{radji2009interference}
+D.~Radji and H.~Leib, ``Interference cancellation based detection for v-blast
+  with diversity maximizing channel partition,'' \emph{Selected Topics in
+  Signal Processing, IEEE Journal of}, vol.~3, no.~6, pp. 1000--1015, 2009.
 
 \bibitem{vardhan2008low}
 K.~V. Vardhan, S.~K. Mohammed, A.~Chockalingam, and B.~S. Rajan, ``A
@@ -92,20 +102,16 @@ P.~Li and R.~D. Murch, ``Multiple output selection-{LAS} algorithm in large
   {MIMO} systems,'' \emph{Communications Letters, IEEE}, vol.~14, no.~5, pp.
   399--401, 2010.
 
-\bibitem{sunfamily}
-Y.~Sun, ``A family of likelihood ascent search multiuser detectors,''
-  \emph{submitted to IEEE Trans. on Information Theory}.
-
 \bibitem{srinidhi2011layered}
 N.~Srinidhi, T.~Datta, A.~Chockalingam, and B.~S. Rajan, ``Layered tabu search
   algorithm for large-{MIMO} detection and a lower bound on {ML} performance,''
   \emph{Communications, IEEE Transactions on}, vol.~59, no.~11, pp. 2955--2963,
   2011.
 
-\bibitem{goldberger2011mimo}
-J.~Goldberger and A.~Leshem, ``{MIMO} detection for high-order {QAM} based on a
-  {G}aussian tree approximation,'' \emph{Information Theory, IEEE Transactions
-  on}, vol.~57, no.~8, pp. 4973--4982, 2011.
+\bibitem{datta2010random}
+T.~Datta, N.~Srinidhi, A.~Chockalingam, and B.~S. Rajan, ``Random-restart
+  reactive tabu search algorithm for detection in large-mimo systems,''
+  \emph{Communications Letters, IEEE}, vol.~14, no.~12, pp. 1107--1109, 2010.
 
 \bibitem{som2011low}
 P.~Som, T.~Datta, N.~Srinidhi, A.~Chockalingam, and B.~S. Rajan,
@@ -113,17 +119,28 @@ P.~Som, T.~Datta, N.~Srinidhi, A.~Chockalingam, and B.~S. Rajan,
   graphical models,'' \emph{Selected Topics in Signal Processing, IEEE Journal
   of}, vol.~5, no.~8, pp. 1497--1511, 2011.
 
+\bibitem{som2010improved}
+P.~Som, T.~Datta, A.~Chockalingam, and B.~S. Rajan, ``Improved large-{MIMO}
+  detection based on damped belief propagation,'' in \emph{Information Theory
+  Workshop (ITW), 2010 IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2010, pp. 1--5.
+
 \bibitem{narasimhan2014channel}
 T.~L. Narasimhan and A.~Chockalingam, ``Channel hardening-exploiting message
   passing ({CHEMP}) receiver in large-scale {MIMO} systems,'' \emph{Selected
   Topics in Signal Processing, IEEE Journal of}, vol.~8, no.~5, pp. 847--860,
   2014.
 
-\bibitem{som2010improved}
-P.~Som, T.~Datta, A.~Chockalingam, and B.~S. Rajan, ``Improved large-{MIMO}
-  detection based on damped belief propagation,'' in \emph{Information Theory
-  Workshop (ITW), 2010 IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2010, pp. 1--5.
+\bibitem{goldberger2011mimo}
+J.~Goldberger and A.~Leshem, ``{MIMO} detection for high-order {QAM} based on a
+  {G}aussian tree approximation,'' \emph{Information Theory, IEEE Transactions
+  on}, vol.~57, no.~8, pp. 4973--4982, 2011.
+
+\bibitem{mohammed2009low}
+S.~Mohammed, A.~Chockalingam, and B.~S. Rajan, ``Low-complexity near-map
+  decoding of large non-orthogonal stbcs using pda,'' in \emph{Information
+  Theory, 2009. ISIT 2009. IEEE International Symposium on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2009, pp. 1998--2002.
 
 \bibitem{datta2013novel}
 T.~Datta, N.~A. Kumar, A.~Chockalingam, and B.~S. Rajan, ``A novel

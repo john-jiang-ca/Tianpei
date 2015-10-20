@@ -1,0 +1,709 @@
+This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 5.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 5.000000
+tolerance is original Mean Square Error is 1.7933763944 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7783108602 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7775609440 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 0.100000
+tolerance is original Mean Square Error is 1.7746609373 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 5.000000
+tolerance is original Mean Square Error is 1.7747096815 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000001000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7732419073 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0000000000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7695912281 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.0010000000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7742463463 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.1000000000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7730672725 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 1.5000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is original Mean Square Error is 1.7731268084 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+  14  
+
+  25.118864  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is original Mean Square Error is 0.7954504393 This document stores the information for original MMSE
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+  16  
+
+  39.810717  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is original Mean Square Error is 0.6369909340 This document stores the information for original MMSE
+16 X 16 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is original Mean Square Error is 0.3933550204 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is original Mean Square Error is 0.5465991461 This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+32 X 32 MIMO system
+4 PAM modulation scheme
+SNR are
+  20  
+
+  100.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is This document stores the information for original MMSE
+100 X 100 MIMO system
+4 PAM modulation scheme
+SNR are
+  10  
+
+  10.000000  
+
+AMMSE
+hyperparameters
+epsilon is 0.2000000000
+C is 1.000000
+tolerance is 

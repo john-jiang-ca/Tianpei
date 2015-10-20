@@ -1,9 +1,10 @@
-function [ symOut ] = MIC_Recursive(y, H, symOut_prev, SNRd, M, pav, stage, maxStage,W,G, symConstell)
+function [ symOut ] = MIC_ordering_ascend_Recursive(y, H, symOut_prev, SNRd, M, pav, stage, maxStage,W,G, symConstell, order)
 %Multistage Interference Cancellation (MIC) recursive algorithm
 %   Detailed explanation goes here
 % W is weight matrix with the diagonal elements represent the weight of
 % each estimation
 %is W is an identity matrix, that this is the original version MIC
+%the strongest data stream is detected firstly
 Nr=length(H(:,1)); %number of receive antennas
 Nt=length(H(1,:));  %number of transmit antennas
 I=eye(Nt);
@@ -14,6 +15,21 @@ symOut_current=zeros(Nt,1);
 if(stage==1)
 INV=(I/(H'*H+SNRd^(-1)*I));
 G=INV*H';
+D=diag(INV);
+[value, order]=sort(D,'ascend');
+% H_tmp=H;
+% G_tmp=INV;
+% order=zeros(Nt,1);
+% list=1:Nt;
+% for count=1:Nt-1
+%     [value, i]=max(diag(G_tmp));
+%     order(count)=list(i);
+%     H_tmp(:,i)=[];
+%     list(i)=[];
+%     I=eye(Nt-count);
+%     G_tmp=(I/(H_tmp'*H_tmp+SNRd^(-1)*I));
+% end
+% order(Nt)=list(1);
 symOut_current=G*y;
 [symOut_current]=Rectangular_QAM_slicer(symOut_current, M, pav);
 symOut_prev=symOut_current;
@@ -32,14 +48,18 @@ end
 %% weighted PIC
 % [W]=weightCal(G,SNRd, symOut_prev, symConstell);
 W=eye(Nt,Nt);
+symOut_tmp=symOut_prev;
 for i=1:Nt
-    symOut_tmp=symOut_prev;
-    symOut_tmp(i)=0;
-    y_tmp=y-H*W*symOut_tmp;
-    symOut_current(i)=((H(:,i)')/(H(:,i)'*H(:,i)+SNRd^(-1)))*y_tmp;
+    count=order(i);
+    W_t=W;
+    W_t(count,count)=0;
+    y_tmp=y-H*W_t*symOut_tmp;
+    symOut_tmp(count)=((H(:,count)')/(H(:,count)'*H(:,count)+SNRd^(-1)))*y_tmp;
+    [symOut_tmp(count)]=Rectangular_QAM_slicer(symOut_tmp(count),M, pav);
 %     symI(i)=sym2(i);
 end
-[symOut_current]=Rectangular_QAM_slicer(symOut_current,M, pav);
+symOut_current=symOut_tmp;
+% [symOut_current]=Rectangular_QAM_slicer(symOut_current,M, pav);
 %   symOut=sym2;
 %   return;
 if(stage==maxStage)
@@ -131,6 +151,4 @@ end
 end
 X_hat=X;
 end
-
-
 

@@ -1204,7 +1204,7 @@ similar to the definitions in (\ref{definition of slack variable3}), we have
 
  Hence we can substitute $\lambda_{i}=\alpha_{i}-\hat{\alpha}_{i}$ and $|\lambda_{i}|=\alpha_{i}+\hat{\alpha}_{i}$, therefore the update unit is changed to the single optimization variable $\lambda_{i}$ rather than the pair $\alpha_{i}$ and $\hat{\alpha}_{i}$. 
 
-  We first introduce 1-D work set selection strategy in which single optimization variable whose update can maximize the gain of the sub dual objective function is chosen as the work set in each iteration. Define $\Lambda=[\lambda_{1}, \lambda_{2}, \ldots, \lambda_{N_{r}}]^{T}$, $\sigma_{i}=\lambda_{i}^{new}-\lambda_{i}$, $\Sigma=[\sigma_{1}, \sigma_{2}, \ldots, \sigma_{N_{r}}]^{T}$. Substitute $\mathbf{a}, \hat{\mathbf{a}}$ with $\Lambda$ and using $\Sigma$. Let $\Lambda_{S}$ and $\Sigma_{S}$ denote the vector that consist of the components in $\Lambda$ and $\Sigma$ that belong to work set $S$, the sub dual objective function in (\ref{subset optimization}) and its gain (\ref{gain work set selection2}) can be rewritten as 
+  We first introduce 1-D work set selection strategy in which single optimization variable whose update can maximize the gain of the sub dual objective function is chosen as the work set in each iteration. Define $\Lambda=[\lambda_{1}, \lambda_{2}, \ldots, \lambda_{N_{r}}]^{T}$, $\sigma_{i}=\lambda_{i}^{new}-\lambda_{i}$, $\Sigma=[\sigma_{1}, \sigma_{2}, \ldots, \sigma_{N_{r}}]^{T}$. In (\ref{subset optimization}), substitute $\mathbf{a}, \hat{\mathbf{a}}$ by $\Lambda$ and in (\ref{gain work set selection2}), substitute $\Delta$ by $\Sigma$. Let $\Lambda_{S}$ and $\Sigma_{S}$ denote the vector that consist of the components in $\Lambda$ and $\Sigma$ that belong to work set $S$, the sub dual objective function in (\ref{subset optimization}) and its gain (\ref{gain work set selection2}) can be rewritten as 
   \begin{equation}
 \max_{\Lambda_{S}}\quad \theta_{S}^{r}=-\frac{1}{2}[\Lambda_{S}^{T}\Re{(\mathbf{K})}_{SS}\Lambda_{S}]+[\Re{(\mathbf{y}_{S}^{T})}-\Lambda_{N}^{T}\Re{(\mathbf{K})}_{NS}
 ]\Lambda_{S}-\epsilon<\mathbf{e}_{S}^{T}, |\Lambda_{S}|>,
@@ -1215,7 +1215,7 @@ similar to the definitions in (\ref{definition of slack variable3}), we have
 \bigtriangledown \theta_{S}^{r}=-\frac{1}{2}\Sigma^{T}_{S}\Re{(\mathbf{K})}_{SS}\Sigma_{S}+(\Phi^{r}_{S})^{T}\Sigma_{S}-\epsilon<\mathbf{e}^{T}_{S},|\Lambda^{new}_{S}|-|\Lambda_{S}|>,
 \label{gain work set selection lambda}
 \end{IEEEeqnarray} 
-In 1-D solver, $|S|=1$, based on (\ref{gain work set selection lambda}), the sub dual objective function corresponding to the $m$th optimization variable $\tilde{\lambda}^{new}_{m}$, $m=1,2,\ldots, N_{r}$ can be written as
+In 1-D solver, $|S|=1$, based on (\ref{subset optimization lambda}), the sub dual objective function corresponding to the $m$th optimization variable $\tilde{\lambda}^{new}_{m}$, $m=1,2,\ldots, N_{r}$ can be written as
 \begin{IEEEeqnarray}[\relax]{l}
  \max_{\tilde{\lambda}^{new}_{m}}\quad \theta_{m}^{r}=-\frac{1}{2}(\tilde{\lambda}_{m}^{new})^{2}\Re{(\mathbf{K})}_{mm}
 +[\Re{(\mathbf{y}_{m})}-\sum_{j\neq m}^{N_{r}}\Re{(\mathbf{K})}_{mj}\lambda_{j}]\tilde{\lambda}_{m}^{new}-\epsilon(|\tilde{\lambda}^{new}_{m}|),

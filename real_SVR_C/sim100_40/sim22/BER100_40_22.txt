@@ -1,0 +1,11 @@
+
+formal
+hyperparameter settings: 
+epsilon 0.00000010000000000000, tol 0.00100000000000000002, C 1.000000
+
+100 X 40 MIMO system  4 PAM modulation
+The SNR point is: 22 158.489319
+
+Bit error rate are: 
+
+The program end

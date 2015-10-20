@@ -3,7 +3,7 @@
 close all;
 clear all;
 Nr=100;
-Nt=100;
+Nt=40;
 M=4; %modulation sheme
 d=sqrt(3/(Nt*(M^2-1)));
 symbolReal=zeros(M,1);
@@ -11,7 +11,7 @@ for i=1:M
     symbolReal(i)=-(M-1)*d+(i-1)*2*d;
 end
 
-SNR=[18];  %signal to noise ratio of output
+SNR=[6];  %signal to noise ratio of output
 noiseVariance=zeros(length(SNR)); %noise variance
 SNRd=zeros(length(SNR),1);
 SNRd=10.^(SNR./10);
@@ -32,7 +32,7 @@ for count=1:length(SNR)
     symError=0; %symbol errors
     MSE=0; %average mean square errors
     channel_realization=0;   %channel realization times
-    while(symError<10||channel_realization<50)
+    while(symError<50||channel_realization<100)
         %% generate data sample and output (with white gaussian noise)
         transmitNum=randi(M, Nt, 1);
         pH=normrnd(0,1, [Nr, Nt]);
@@ -43,7 +43,7 @@ for count=1:length(SNR)
         y=pH*x+n;      
         %% real SVR 
          
-         [symOut, lamida, Theta, G, iteration, MSE]=real_SVR_WSSS1D_2Dsolver(pH, y, 10^(SNR(count)/10), symbolReal, Nr, Nt, M);
+         [symOut, lamida, Theta, G, iteration, MSE]=real_SVR_WSSS1D_2Dsolver(pH, y, SNRd(count), symbolReal, Nr, Nt, M);
 %          [symOut, lamida, Theta, G, iteration, MSE]=real_SVR_WSSS1D_2Dsolver_withoutNoise(pH, y, 10^(SNR(count)/10), symbolReal, Nr, Nt, M);
         MSE_original=norm(y-pH*x);
         
@@ -52,7 +52,7 @@ for count=1:length(SNR)
                 symError=symError+1;
             end
         end
-        channel_realization=channel_realization+1;
+       channel_realization=channel_realization+1;
     end
     
     SymErrorRate(count)=symError*(1/(channel_realization*Nt));

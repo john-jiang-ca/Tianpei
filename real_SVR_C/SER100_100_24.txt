@@ -1,0 +1,28 @@
+
+formal
+hyperparameters settings: 
+epsilon 0.00000010000000000000, tol 0.00100000000000000002, C 1.000000
+100 X 100 MIMO system  4 PAM modulation
+The SNR point is: 24 251.188643
+
+symbol error rate are: 
+0.05899999999999999689 
+The program end
+formal
+hyperparameters settings: 
+epsilon 0.00000010000000000000, tol 0.00100000000000000002, C 1.000000
+100 X 100 MIMO system  4 PAM modulation
+The SNR point is: 24 251.188643
+
+symbol error rate are: 
+0.06800000000000000488 
+The program end
+formal
+hyperparameters settings: 
+epsilon 0.00000010000000000000, tol 0.00100000000000000002, C 1.000000
+100 X 100 MIMO system  4 PAM modulation
+The SNR point is: 24 251.188643
+
+symbol error rate are: 
+0.09900000000000000466 
+The program end

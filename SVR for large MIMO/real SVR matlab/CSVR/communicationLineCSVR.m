@@ -1,6 +1,6 @@
 close all
 clear all
-cd('F:\GitHub\Tianpei\SVR for large MIMO')
+cd('/home/tchen44/code/Tianpei')
 tic
 % cd('/home/tchen44/Documents/spheredecodingtest/4X4')
 %% Signal Modulation and MIMO Channel modeling %% 

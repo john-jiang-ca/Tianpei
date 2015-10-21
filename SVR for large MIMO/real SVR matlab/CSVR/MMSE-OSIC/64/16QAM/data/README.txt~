@@ -1,0 +1,20 @@
+this is 64 X 64 MIMO
+16 QAM modulation
+The detectors tested are
+MMSE-OSIC-SER1
+SNR in dB are
+10 12 14 16 18 20 22 24 
+SNR in decimal are
+10.000000 15.848932 25.118864 39.810717 63.095734 100.000000 158.489319 251.188643 
+The whole program end successfully!
+
+
+this is 64 X 64 MIMO
+16 QAM modulation
+The detectors tested are
+MMSE-OSIC-SER2
+SNR in dB are
+26 28 30 32 34 
+SNR in decimal are
+398.107171 630.957344 1000.000000 1584.893192 2511.886432 
+The whole program end successfully!

@@ -15,8 +15,8 @@ function [ symOut] = RSVR( H,  y, SNRd,  M, pav)
 % iteration: iteration time
 % epsilon=1e-7;   %epsilon
 % tol=1e-2;  %tolerance of duality gap
-tol=1e-1;
-C=1;
+tol=1e-2;
+C=4;
 epsilon=1e-7;
 K=H*H';
 Nt=length(H(1,:));

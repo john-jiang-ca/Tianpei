@@ -1,23 +1,24 @@
 close all
 clear all
 tic
+
 % cd('/home/tchen44/Documents/spheredecodingtest/4X4')
 %% Signal Modulation and MIMO Channel modeling %% 
 M =4;         %size of constellation
 Nt=32;         %number of transmit antennas
 Nr=32;         %number of receive antennas
 x=6;            %diversity gain that required
-SNR=[20];       %signal to noise ratio per bit in dB
+SNR=[10:2:24];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
 % numFlop=zeros(length(SNR),1);    %complexity of the algorithm
-SER1=zeros(length(SNR),1);  %symbol error rate of MIC
-SER2=zeros(length(SNR),1); %symbol error rate of MMSE-OSIC
-SER3=zeros(length(SNR),1); %symbol error rate of partial-MIC
-SER4=zeros(length(SNR),1); %symbol error rate of ordered-MIC(ascend)
-SER5=zeros(length(SNR),1); %symbol error rate of ordered-MIC(descend)
-SER6=zeros(length(SNR),1); %symbol error rate of CSVD
+SER1=zeros(length(SNR),1);  %symbol error rate of RSVD
+% SER2=zeros(length(SNR),1); %symbol error rate of MMSE-OSIC
+% SER3=zeros(length(SNR),1); %symbol error rate of partial-MIC
+% SER4=zeros(length(SNR),1); %symbol error rate of ordered-MIC(ascend)
+% SER5=zeros(length(SNR),1); %symbol error rate of ordered-MIC(descend)
+% SER6=zeros(length(SNR),1); %symbol error rate of CSVD
 % symNum=1e3;   %the number of symbol
 % symMap=[11 10 14 15 9 8 12 13 1 0 4 5 3 2 6 7];    %symbol map
 pav=1/Nt;  %average symbol power
@@ -47,7 +48,20 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- 
+ fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\SER_RSVD.txt', 'a');
+ fprintf(fid, '-----------------\n');
+fprintf(fid, 'this is the test data for %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
+fprintf(fid, 'the hyperparameters for RSVD are\n');
+fprintf(fid, 'epsilon: %0.10f\n', 1e-7);
+fprintf(fid, 'C: %f\n', 1);
+fprintf(fid, 'tolerence: %0.10f\n', 1e-2);
+fprintf(fid,'the SNR are:\n');
+for count=1:length(SNR)
+    fprintf(fid, '%d ', SNR(count));
+end
+fprintf(fid, '\n');
+fprintf(fid,'the symbol error rates are\n');
+fclose(fid);
 %% Monte-Carlo simulation
 for count=1:length(SNR)     %under the SNR from 0 to 10
     symError1=0;
@@ -59,9 +73,9 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     bitError=0;
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
-
- while(symError6<100||channelRealization<1e3)
-symOut=zeros(Nt,1);
+ fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\SER_RSVD.txt', 'a');
+ while(symError1<200||channelRealization<5e3)
+% symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
 % for i=1:Nt
 %     for j=1:Nr
@@ -77,7 +91,7 @@ dataMod=zeros(Nt,1);
 for count1=1:Nt
     dataMod(count1)=symConstell(dataIn(count1));
 end
-H=complex(normrnd(0,1/2,[Nr,Nt]), normrnd(0,1/2,[Nr,Nt]));   %channel matrix
+H=complex(normrnd(0,sqrt(1/2),[Nr,Nt]), normrnd(0,sqrt(1/2),[Nr,Nt]));   %channel matrix
 %      H(k,1,:,:)=H1';
 % channelOutput=H*dataMod;
 % hAWGN = comm.AWGNChannel('EbNo',SNR(i),'SignalPower',10,...
@@ -119,34 +133,35 @@ sigRec=H*dataMod+n;
 %    [symOut3]=Partial_MIC_recursive( sigRec, H, list, W, sym_prev, sym_total, SNRd(count), M, pav, stage, maxStage2, symConstell, tol);
 % [ symOut4 ] = MIC_ordering_ascend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
 % [ symOut5 ] = MIC_ordering_descend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
-[symOut5]=CSVD(sigRec, H, SNRd(count), M);
+% [symOut5]=CSVD(sigRec, H, SNRd(count), M);
 sigRec_r=[real(sigRec);imag(sigRec)];
 H_r=[real(H), -imag(H); imag(H), real(H)];
- [symOut6]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav);
+ [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav);
 %  bitOut=step(hDmod,symOut);
 %      rxBits = step(hSpDec, channelOutput, squeeze(H));
 %      ber = step(hBER, dataIn, double(rxBits(:)));
-for j=1:Nt
-%     if(abs(dataMod(j)-symOut1(j))>1e-4)
-%         symError1=symError1+1;
-%     end
-%     if(abs(dataMod(j)-symOut2(j))>1e-4)
-%         symError2=symError2+1;
-%     end
-%         if(abs(dataMod(j)-symOut3(j))>1e-4)
-%         symError3=symError3+1;
+% for j=1:Nt
+% %     if(abs(dataMod(j)-symOut1(j))>1e-4)
+% %         symError1=symError1+1;
+% %     end
+% %     if(abs(dataMod(j)-symOut2(j))>1e-4)
+% %         symError2=symError2+1;
+% %     end
+% %         if(abs(dataMod(j)-symOut3(j))>1e-4)
+% %         symError3=symError3+1;
+% %         end
+% %         if(abs(dataMod(j)-symOut4(j))>1e-4)
+% %         symError4=symError4+1;
+% %         end
+%          if(abs(dataMod(j)-symOut5(j))>1e-4)
+%         symError5=symError5+1;
+%          end
+%           if(abs(dataMod(j)-symOut6(j))>1e-4)
+%         symError6=symError6+1;
 %         end
-%         if(abs(dataMod(j)-symOut4(j))>1e-4)
-%         symError4=symError4+1;
-%         end
-         if(abs(dataMod(j)-symOut5(j))>1e-4)
-        symError5=symError5+1;
-         end
-          if(abs(dataMod(j)-symOut6(j))>1e-4)
-        symError6=symError6+1;
-        end
-end
-
+% end
+symError_v=abs(dataMod-symOut1);
+symError1=symError1+length(find(symError_v)>1e-4);
 % for j=1:nBits
 %     if(abs(dataIn(j)-bitOut(j))>1e-4)
 %         bitError=bitError+1;
@@ -155,14 +170,18 @@ end
 
 channelRealization=channelRealization+1;
  end
-% SER1(count)=symError1/(channelRealization*Nt);  %caculate symbol error rate of MIC
-SER2(count)=symError2/(channelRealization*Nt);  %calculate symbol error rate of MMSE-OSIC
+SER1(count)=symError1/(channelRealization*Nt);  %caculate symbol error rate of MIC
+fprintf(fid,'%0.10f, ', SER1(count));
+% SER2(count)=symError2/(channelRealization*Nt);  %calculate symbol error rate of MMSE-OSIC
 %  SER3(count)=symError3/(channelRealization*Nt); %calculate symbol error rate of partial-MIC
-SER4(count)=symError4/(channelRealization*Nt); %calculate symbol error rate of ordered-MIC(ascend)
-SER5(count)=symError5/(channelRealization*Nt); %calculate symbol error rate of ordered-MIC(descend)
-SER6(count)=symError6/(channelRealization*Nt); %calculate symbol error rate of Complex Support Vector Detector(CSVD)
+% SER4(count)=symError4/(channelRealization*Nt); %calculate symbol error rate of ordered-MIC(ascend)
+% SER5(count)=symError5/(channelRealization*Nt); %calculate symbol error rate of ordered-MIC(descend)
+% SER6(count)=symError6/(channelRealization*Nt); %calculate symbol error rate of Complex Support Vector Detector(CSVD)
 % BER(count)=bitError/(channelRealization*nBits);   %caculate bit error rate
 end
+fprintf(fid,'\n');
+fprintf(fid, 'The program ends successfully!\n');
+fclose(fid);
 % fid1=fopen('BER_8.txt','w');
 % fprintf(fid1,'%e\n',BER);
 % fclose(fid1);

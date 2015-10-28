@@ -1,0 +1,76 @@
+
+-----------------
+this is the test data for 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+26 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this is the test data for 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+26 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this is the test data for 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this is the test data for 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0370937500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this is the test data for 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+18 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0005461989, 
+The program ends successfully!
+-----------------

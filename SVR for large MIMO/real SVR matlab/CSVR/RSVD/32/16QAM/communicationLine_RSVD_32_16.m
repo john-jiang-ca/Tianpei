@@ -8,7 +8,7 @@ M =16;         %size of constellation
 Nt=32;         %number of transmit antennas
 Nr=32;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[10:2:28];       %signal to noise ratio per bit in dB
+SNR=[20];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
@@ -38,7 +38,7 @@ fprintf(fid_t, 'RSVD-SER1\n');
 % fprintf(fid_t, 'RSVD-OMIC(descend)-SER6\n');
 
 
-fid1=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/16QAM/data/SER1.txt','a');  %the file store the SER values
+fid1=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/16QAM/data/SER1_test.txt','a');  %the file store the SER values
 % fid2=fopen('SER2.txt','a');
 % fid3=fopen('SER3.txt','a');
 % fid4=fopen('SER4.txt','a');
@@ -132,14 +132,14 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
 
-fid1=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/16QAM/data/SER1.txt','a');  %the file store the SER values
+fid1=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/16QAM/data/SER1_test.txt','a');  %the file store the SER values
 % fid2=fopen('SER2.txt','a');
 % fid3=fopen('SER3.txt','a');
 % fid4=fopen('SER4.txt','a');
 % fid5=fopen('SER5.txt','a');
 % fid6=fopen('SER6.txt','a');
 % fid7=fopen('SER6.txt','a');
- while(symError1<200||channelRealization<5*1e3)
+ while(symError1<200||channelRealization<1e3)
 % symOut=zeros(Nt,1)
 % for k=1:symNum/Nt
 % for i=1:Nt

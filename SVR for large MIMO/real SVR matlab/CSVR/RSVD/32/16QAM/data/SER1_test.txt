@@ -1,0 +1,11 @@
+symbol error rate of RSVD
+SNR in dB are
+20 
+SNR in decimal are
+100.000000 
+symbol error rate of RSVD
+SNR in dB are
+20 
+SNR in decimal are
+100.000000 
+0.4977812500 

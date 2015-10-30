@@ -4,11 +4,11 @@ tic
 
 % cd('/home/tchen44/Documents/spheredecodingtest/4X4')
 %% Signal Modulation and MIMO Channel modeling %% 
-M =4;         %size of constellation
-Nt=64;         %number of transmit antennas
-Nr=64;         %number of receive antennas
+M =16;         %size of constellation
+Nt=128;         %number of transmit antennas
+Nr=128;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[4:2:16];       %signal to noise ratio per bit in dB
+SNR=[10:2:30];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
@@ -56,14 +56,14 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/BER_RSVD.txt', 'a');
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/128/16QAM/data/BER.txt', 'a');
  fprintf(fid, '\n');
  fprintf(fid, '-----------------\n');
  fprintf(fid ,'this file record the simulation results of RSVD\n');
  fprintf(fid, 'RSVD\n');
  fprintf(fid, 'the order method 1\n');
 fprintf(fid, 'this is the bit error rate of %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
-fprintf(fid, 'the hyperparameters for RSVD-OMIC are\n');
+fprintf(fid, 'the hyperparameters for RSVD are\n');
 fprintf(fid, 'test the epsilon and C\n');
 % fprintf(fid, 'epsilon: %0.10f\n', epsilon);
 fprintf(fid, 'tolerence: %0.10f\n', tol);
@@ -100,7 +100,7 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     bitError1=0;
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/BER_RSVD.txt', 'a');
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/128/16QAM/data/BER.txt', 'a');
  while(symError1<100||channelRealization<1e3)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt

@@ -1,0 +1,18 @@
+
+-----------------
+this file record the simulation results of RSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 12 14 16 18 20 22 24 26 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.1348593750, 0.0840781250, 0.0493437500, 0.0236093750, 0.0091562500, 0.0032187500, 0.0012821802, 0.0008618924, 0.0004170003, 
+The program ends successfully!
+-----------------

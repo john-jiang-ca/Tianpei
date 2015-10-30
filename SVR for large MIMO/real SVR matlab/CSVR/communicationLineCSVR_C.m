@@ -7,13 +7,19 @@ tic
 M =4;         %size of constellation
 Nt=32;         %number of transmit antennas
 Nr=32;         %number of receive antennas
-x=6;            %diversity gain that required
-SNR=[10:2:24];       %signal to noise ratio per bit in dB
+% x=6;            %diversity gain that required
+SNR=[20];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
 % numFlop=zeros(length(SNR),1);    %complexity of the algorithm
-SER1=zeros(length(SNR),1);  %symbol error rate of RSVD
+global C;
+global tol;
+global epsilon;
+C=0.5:0.2:10;
+tol =1e-3;
+epsilon=1e-7;
+SER1=zeros(length(SNR),length(C));  %symbol error rate of RSVD
 % SER2=zeros(length(SNR),1); %symbol error rate of MMSE-OSIC
 % SER3=zeros(length(SNR),1); %symbol error rate of partial-MIC
 % SER4=zeros(length(SNR),1); %symbol error rate of ordered-MIC(ascend)
@@ -48,23 +54,30 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\SER_RSVD.txt', 'a');
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/SER_hyperparameters_C.txt', 'a');
  fprintf(fid, '-----------------\n');
 fprintf(fid, 'this is the test data for %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
 fprintf(fid, 'the hyperparameters for RSVD are\n');
-fprintf(fid, 'epsilon: %0.10f\n', 1e-7);
-fprintf(fid, 'C: %f\n', 1);
-fprintf(fid, 'tolerence: %0.10f\n', 1e-2);
+fprintf(fid, 'test the C\n');
+fprintf(fid, 'epsilon: %0.10f\n', epsilon);
+fprintf(fid, 'tolerence: %0.10f\n', tol);
+fprintf(fid, 'add the clipper\n');
+% fprintf(fid, 'use the abs of feasibility gap\n');
 fprintf(fid,'the SNR are:\n');
 for count=1:length(SNR)
     fprintf(fid, '%d ', SNR(count));
+end
+fprintf(fid, '\n');
+fprintf(fid,'the C are:\n');
+for count=1:length(C)
+    fprintf(fid, '%d ', C(count));
 end
 fprintf(fid, '\n');
 fprintf(fid,'the symbol error rates are\n');
 fclose(fid);
 %% Monte-Carlo simulation
 for count=1:length(SNR)     %under the SNR from 0 to 10
-    symError1=0;
+    symError1=zeros(length(C));
     symError2=0;
     symError3=0;
     symError4=0;
@@ -73,8 +86,8 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     bitError=0;
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
- fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\SER_RSVD.txt', 'a');
- while(symError1<200||channelRealization<5e3)
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/SER_hyperparameters_C.txt', 'a');
+ while(channelRealization<1e1)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
 % for i=1:Nt
@@ -121,7 +134,7 @@ sigRec=H*dataMod+n;
   G=zeros(Nt,Nr);
 %   [symOut1]=MIC_Recursive(sigRec, H, symOut1, SNRd(count), M, pav, stage,maxStage, W,G, symConstell);
   symOut_total=zeros(Nt,1);
-  tol=0.1;
+%   tol=0.1;
   list=1:Nt;
   W=zeros(Nt,1);
   sym_prev=zeros(Nt,1);
@@ -136,7 +149,12 @@ sigRec=H*dataMod+n;
 % [symOut5]=CSVD(sigRec, H, SNRd(count), M);
 sigRec_r=[real(sigRec);imag(sigRec)];
 H_r=[real(H), -imag(H); imag(H), real(H)];
- [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav);
+% symOut=zeros(Nt,length(C));
+for count1=1:length(C)
+ [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav, C(count1), tol ,epsilon);
+ symError_v=abs(dataMod-symOut1);
+symError1(count1)=symError1(count1)+length(find(symError_v)>1e-4);
+end
 %  bitOut=step(hDmod,symOut);
 %      rxBits = step(hSpDec, channelOutput, squeeze(H));
 %      ber = step(hBER, dataIn, double(rxBits(:)));
@@ -160,8 +178,7 @@ H_r=[real(H), -imag(H); imag(H), real(H)];
 %         symError6=symError6+1;
 %         end
 % end
-symError_v=abs(dataMod-symOut1);
-symError1=symError1+length(find(symError_v)>1e-4);
+
 % for j=1:nBits
 %     if(abs(dataIn(j)-bitOut(j))>1e-4)
 %         bitError=bitError+1;
@@ -170,8 +187,11 @@ symError1=symError1+length(find(symError_v)>1e-4);
 
 channelRealization=channelRealization+1;
  end
-SER1(count)=symError1/(channelRealization*Nt);  %caculate symbol error rate of MIC
-fprintf(fid,'%0.10f, ', SER1(count));
+ for count12=1:length(C)
+SER1(count,count2)=symError1(count2)/(channelRealization*Nt);  %caculate symbol error rate of MIC
+fprintf(fid,'%0.10f, ', SER1(count, count2));
+ end
+fprintf(fid, '\n');
 % SER2(count)=symError2/(channelRealization*Nt);  %calculate symbol error rate of MMSE-OSIC
 %  SER3(count)=symError3/(channelRealization*Nt); %calculate symbol error rate of partial-MIC
 % SER4(count)=symError4/(channelRealization*Nt); %calculate symbol error rate of ordered-MIC(ascend)

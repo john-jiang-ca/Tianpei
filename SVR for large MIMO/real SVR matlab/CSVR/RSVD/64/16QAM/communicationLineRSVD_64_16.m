@@ -8,7 +8,7 @@ M =16;         %size of constellation
 Nt=64;         %number of transmit antennas
 Nr=64;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[20];       %signal to noise ratio per bit in dB
+SNR=[28:2:36];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
@@ -21,6 +21,7 @@ C=4;
 tol =1e-3;
 epsilon=1e-7;
 SER1=zeros(length(SNR),1);  %symbol error rate of RSVD
+BER1=zeros(length(SNR), 1); %bit error rate of RSVD
 % SER2=zeros(length(SNR),1); %symbol error rate of MMSE-OSIC
 % SER3=zeros(length(SNR),1); %symbol error rate of partial-MIC
 % SER4=zeros(length(SNR),1); %symbol error rate of ordered-MIC(ascend)
@@ -55,11 +56,13 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/SER_RSVD_OMIC_MMSE.txt', 'a');
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/64/16QAM/data/BER.txt', 'a');
  fprintf(fid, '\n');
  fprintf(fid, '-----------------\n');
- fprintf(fid ,'this file record the simulation results of RSVD-OMIC-MMSE\n');
-fprintf(fid, 'this is the test data for %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
+ fprintf(fid ,'this file record the simulation results of RSVD\n');
+ fprintf(fid, 'RSVD\n');
+ fprintf(fid, 'the order method 1\n');
+fprintf(fid, 'this is the bit error rate of %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
 fprintf(fid, 'the hyperparameters for RSVD are\n');
 fprintf(fid, 'test the epsilon and C\n');
 % fprintf(fid, 'epsilon: %0.10f\n', epsilon);
@@ -94,11 +97,11 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     symError4=0;
     symError5=0;
     symError6=0;
-    bitError=0;
+    bitError1=0;
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/SER_RSVD_OMIC_MMSE.txt', 'a');
- while(symError1<100||channelRealization<1e3)
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/64/16QAM/data/BER.txt', 'a');
+ while(symError1<200||channelRealization<2e3)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
 % for i=1:Nt
@@ -114,6 +117,7 @@ dataIn = randi(M,Nt,1);  % Generate vector of input data (1 to M)
 dataMod=zeros(Nt,1);
 for count1=1:Nt
     dataMod(count1)=symConstell(dataIn(count1));
+    grayData(count1)=graycode(dataIn(count1));
 end
 H=complex(normrnd(0,sqrt(1/2),[Nr,Nt]), normrnd(0,sqrt(1/2),[Nr,Nt]));   %channel matrix
 %      H(k,1,:,:)=H1';
@@ -163,11 +167,13 @@ H_r=[real(H), -imag(H); imag(H), real(H)];
 % symOut=zeros(Nt,length(C));
 % for count0=1:length(epsilon)
 % for count1=1:length(C)
-%  [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav, C, tol ,epsilon);
-[ symOut1 ] = RSVR_OMIC_MMSE(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
+ [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav, C, tol ,epsilon);
+% [ symOut1 ] = RSVR_OMIC_MMSE(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
+% [ symOut1 ] = RSVR_OMIC_total(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
  symError_v=abs(dataMod-symOut1);
 symError1=symError1+length(find(symError_v>1e-4));
-bitOut1=
+bitOut1=grayDecoder(symOut1, graycode,symConstell);
+bitError1=bitError1+checkBitError(bitOut1, grayData, M);
 % end
 % end
 %  bitOut=step(hDmod,symOut);
@@ -205,7 +211,8 @@ channelRealization=channelRealization+1;
 %  for count0=1:length(epsilon)
 %  for count1=1:length(C)
 SER1(count)=symError1/(channelRealization*Nt);  %caculate symbol error rate of MIC
-fprintf(fid,'%0.10f, ', SER1(count));
+BER1(count)=bitError1/(channelRealization*Nt*ceil(log2(M))); %calculate bit error rate of RSVD
+fprintf(fid,'%0.10f, ', BER1(count));
 %  end
 %  fprintf(fid, '\n');
 % end

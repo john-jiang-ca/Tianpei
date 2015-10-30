@@ -49,13 +49,25 @@ end
 % [W]=weightCal(G,SNRd, symOut_prev, symConstell);
 W=eye(Nt,Nt);
 symOut_tmp=symOut_prev;
+E=zeros(M,1);
 for i=1:Nt
     count=order(i);
-    W_t=W;
+
+    if(i==1)
+            W_t=W;
     W_t(count,count)=0;
     y_tmp=y-H*W_t*symOut_tmp;
-    symOut_tmp(count)=((H(:,count)')/(H(:,count)'*H(:,count)+SNRd^(-1)))*y_tmp;
-    [symOut_tmp(count)]=Rectangular_QAM_slicer(symOut_tmp(count),M, pav);
+    else
+        y_tmp=E_matrix(:,index1)+H(:,count)*symOut_tmp(count);
+    end
+%     symOut_tmp(count)=((H(:,count)')/(H(:,count)'*H(:,count)+SNRd^(-1)))*y_tmp;
+%     [symOut_tmp(count)]=Rectangular_QAM_slicer(symOut_tmp(count),M, pav);
+ E_matrix=y_tmp*ones(1,M)-H(:,count)*symConstell.';
+    for count1=1:M
+        E(count1)=norm(E_matrix(:,count1));
+    end
+    [value1, index1]=min(E);
+    symOut_tmp(count)=symConstell(index1);
 %     symI(i)=sym2(i);
 end
 symOut_current=symOut_tmp;

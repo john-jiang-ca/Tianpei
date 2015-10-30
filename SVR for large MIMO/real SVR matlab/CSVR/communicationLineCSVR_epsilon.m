@@ -5,14 +5,16 @@ tic
 % cd('/home/tchen44/Documents/spheredecodingtest/4X4')
 %% Signal Modulation and MIMO Channel modeling %% 
 M =4;         %size of constellation
-Nt=64;         %number of transmit antennas
-Nr=64;         %number of receive antennas
+Nt=32;         %number of transmit antennas
+Nr=32;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[4:2:16];       %signal to noise ratio per bit in dB
+SNR=[12];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
 graycode=grayEncoder(M); %gray encoder
+maxGeneration=7;
+population=32;
 % numFlop=zeros(length(SNR),1);    %complexity of the algorithm
 global C;
 global tol;
@@ -56,11 +58,13 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/BER_RSVD_OMIC.txt', 'a');
+ fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_RSVD_GA.txt', 'a');
  fprintf(fid, '\n');
  fprintf(fid, '-----------------\n');
- fprintf(fid ,'this file record the simulation results of RSVD-OMIC\n');
- fprintf(fid, 'RSVD-OMIC with optimal local search\n');
+ fprintf(fid ,'this file record the simulation results of RSVD-GA\n');
+ fprintf(fid, 'the population is %d\n', population);
+ fprintf(fid, 'the number of generation is %d\n', maxGeneration);
+ fprintf(fid, 'RSVD-GA with OMIC\n');
  fprintf(fid, 'the order method 1\n');
 fprintf(fid, 'this is the bit error rate of %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
 fprintf(fid, 'the hyperparameters for RSVD-OMIC are\n');
@@ -100,7 +104,7 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     bitError1=0;
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/BER_RSVD_OMIC.txt', 'a');
+ fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_RSVD_GA.txt', 'a');
  while(symError1<100||channelRealization<1e3)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
@@ -160,7 +164,7 @@ sigRec=H*dataMod+n;
 %   [symOut2]=MMSE_OSIC(sigRec, H, SNRd(count), M, pav);
 %    [symOut3]=Partial_MIC_recursive( sigRec, H, list, W, sym_prev, sym_total, SNRd(count), M, pav, stage, maxStage2, symConstell, tol);
 % [ symOut4 ] = MIC_ordering_ascend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
-% [ symOut5 ] = MIC_ordering_descend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
+% [ symOut1 ] = MIC_ordering_descend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
 % [symOut5]=CSVD(sigRec, H, SNRd(count), M);
 sigRec_r=[real(sigRec);imag(sigRec)];
 H_r=[real(H), -imag(H); imag(H), real(H)];
@@ -168,8 +172,12 @@ H_r=[real(H), -imag(H); imag(H), real(H)];
 % for count0=1:length(epsilon)
 % for count1=1:length(C)
 %  [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav, C, tol ,epsilon);
-[ symOut1 ] = RSVR_OMIC_MMSE(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
+% [ symOut1 ] = RSVR_OMIC_MMSE(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
 % [ symOut1 ] = RSVR_OMIC_total(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
+generation=0;
+
+symGeneration=zeros(Nt, population);
+[ symOut1 ] = RSVD_GA( sigRec, H, symGeneration, M, symConstell, C, tol, epsilon, SNRd(count), pav, population, generation, maxGeneration );
  symError_v=abs(dataMod-symOut1);
 symError1=symError1+length(find(symError_v>1e-4));
 bitOut1=grayDecoder(symOut1, graycode,symConstell);

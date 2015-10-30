@@ -1,0 +1,1068 @@
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 64 X 64 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 64 X 64 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 64 X 64 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 64 X 64 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 64 X 64 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+16 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0073437500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0146562500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0034062500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0157031250, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0120468750, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0072656250, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0014061186, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 10
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.1453593750, 0.0865625000, 0.0354375000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 10
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 10
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 10
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0418750000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 5
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0100312500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0079062500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 100
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0169375000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 30
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 30
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0174531250, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0095937500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0078125000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0074843750, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0024062500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0015293167, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0016254686, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0046406250, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0020312500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+10 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0031250000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 16 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+18 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0180390625, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+18 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are
+0.0241562500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of RSVD-GA
+the population is 32
+the number of generation is 7
+RSVD-GA with OMIC
+the order method 1
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+test the epsilon and C
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+12 
+the C are:
+4 
+the epsilon are:
+1.000000e-07 
+the symbol error rates are

@@ -5,6 +5,7 @@ function [ symOut ] = RSVR_OMIC_MMSE(y, H, symOut_prev, SNRd, M, pav, stage, max
 % each estimation
 %is W is an identity matrix, that this is the original version MIC
 %the weakest data stream is detected firsly
+%add the local search strategy to PIC
 Nr=length(H(:,1)); %number of receive antennas
 Nt=length(H(1,:));  %number of transmit antennas
 I=eye(Nt);
@@ -58,9 +59,13 @@ E=zeros(M, 1);  %record the Euclidean distance
 E_matrix=zeros(Nr, M); %record the Euclidean matrix
 for i=1:Nt
     count=order(i);
+    if(i==1)
     W_t=W;
     W_t(count,count)=0;
     y_tmp=y-H*W_t*symOut_tmp;
+    else
+        y_tmp=E_matrix(:,index1)+H(:,count)*symOut_tmp(count);
+    end
     E_matrix=y_tmp*ones(1,M)-H(:,count)*symConstell.';
     for count1=1:M
         E(count1)=norm(E_matrix(:,count1));

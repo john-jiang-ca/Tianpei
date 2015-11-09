@@ -1,0 +1,674 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  8 NOV 2015 12:29
+entering extended mode
+**ThesisEx.tex
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\ThesisEx.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+Requested font "cmr12" at 12.0pt
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks15
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetex-def\xetex.def"
+File: xetex.def 2014/07/25 v4.03 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip46
+\LTright=\skip47
+\LTpre=\skip48
+\LTpost=\skip49
+\LTchunksize=\count101
+\LTcapwidth=\dimen112
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count102
+\LT@rows=\count103
+\c@LT@tables=\count104
+\c@LT@chunks=\count105
+\LT@p@ftn=\toks19
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
+\thm@preskip=\skip50
+\thm@postskip=\skip51
+\thm@headsep=\skip52
+\dth@everypar=\toks27
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\preprint\fullpage.sty"
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip53
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks28
+)
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psfrag\psfrag.sty"
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count106
+\pfg@scount=\count107
+\pfg@temp=\write3
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: xetex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen115
+\epsfysize=\dimen116
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count108
+\float@exts=\toks29
+\float@box=\box32
+\@float@everytoks=\toks30
+\@floatcapt=\box33
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks31
+\c@algorithm=\count109
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen117
+\extrarowheight=\dimen118
+\NC@list=\toks32
+\extratabsurround=\skip54
+\backup@length=\skip55
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sttools\stfloats.sty"
+Package: stfloats 2012/05/29 v1.1 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count110
+\c@dblbotnumber=\count111
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: The control sequence `\[' is already robust on input line 471.
+LaTeX Info: The control sequence `\]' is already robust on input line 472.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\diagbox\diagbox.sty"
+Package: diagbox 2011/11/23 v2.0 Making table heads with diagonal lines
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\pict2e.sty"
+Package: pict2e 2014/01/12 v0.2z Improved picture commands (HjG,RN,JT)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\pict2e.cfg"
+File: pict2e.cfg 2005/12/29 v1.0 MiKTeX 'pict2e' configuration
+)
+Package pict2e Info: Driver file: dvips.def on input line 119.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+Package pict2e Info: Driver file for pict2e: p2e-dvips.def on input line 121.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\p2e-dvips.def"
+File: p2e-dvips.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks33
+\@arclen=\dimen119
+\@arcrad=\dimen120
+\@tempdimd=\dimen121
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp.sty"
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\defpattern.sty"
+Package: defpattern 1994/10/12
+\actioncount=\count112
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-basic.sty"
+Package: fp-basic 1996/05/13
+\FP@xs=\count113
+\FP@xia=\count114
+\FP@xib=\count115
+\FP@xfa=\count116
+\FP@xfb=\count117
+\FP@rega=\count118
+\FP@regb=\count119
+\FP@regs=\count120
+\FP@times=\count121
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-addons.sty"
+Package: fp-addons 1995/03/15
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-snap.sty"
+Package: fp-snap 1995/04/05
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-exp.sty"
+Package: fp-exp 1995/04/03
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-trigo.sty"
+Package: fp-trigo 1995/04/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-pas.sty"
+Package: fp-pas 1994/08/29
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-random.sty"
+Package: fp-random 1995/02/23
+\FPseed=\count122
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eqn.sty"
+Package: fp-eqn 1995/04/03
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-upn.sty"
+Package: fp-upn 1996/10/21
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eval.sty"
+Package: fp-eval 1995/04/03
+))
+\diagbox@boxa=\box34
+\diagbox@boxb=\box35
+\diagbox@boxm=\box36
+\diagbox@wd=\dimen122
+\diagbox@ht=\dimen123
+\diagbox@sepl=\dimen124
+\diagbox@sepr=\dimen125
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip56
+\subfigcapskip=\skip57
+\subfigcaptopadj=\dimen126
+\subfigbottomskip=\skip58
+\subfigcapmargin=\dimen127
+\subfiglabelskip=\skip59
+\c@subfigure=\count123
+\c@lofdepth=\count124
+\c@subtable=\count125
+\c@lotdepth=\count126
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip60
+\subfig@bottom=\skip61
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+Package: algpseudocode 
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count127
+\c@ALG@rem=\count128
+\c@ALG@nested=\count129
+\ALG@tlm=\skip62
+\ALG@thistlm=\skip63
+\c@ALG@Lnr=\count130
+\c@ALG@blocknr=\count131
+\c@ALG@storecount=\count132
+\c@ALG@tmpcounter=\count133
+\ALG@tmplength=\skip64
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen128
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count134
+\calc@Bcount=\count135
+\calc@Adimen=\dimen129
+\calc@Bdimen=\dimen130
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count136
+\calc@Cskip=\skip67
+)
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\datestamp.sty"
+Package: datestamp 2000/03/25
+\datestampoffset=\dimen131
+\datestampcount=\count137
+\datestamplimit=\count138
+)
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\McECEThesis.sty"
+Package: McECEThesis 2005/02/15
+\insidemargin=\dimen132
+\outsidemargin=\dimen133
+\abovemargin=\dimen134
+\belowmargin=\dimen135
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip68
+\f@ncyO@elh=\skip69
+\f@ncyO@erh=\skip70
+\f@ncyO@olh=\skip71
+\f@ncyO@orh=\skip72
+\f@ncyO@elf=\skip73
+\f@ncyO@erf=\skip74
+\f@ncyO@olf=\skip75
+\f@ncyO@orf=\skip76
+)
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 131.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 132.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 133.
+
+\aboveTcaptionskip=\dimen136
+\belowTcaptionskip=\dimen137
+) ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\McGillLogo.sty"
+Package: McGillLogo 2004/08/31
+) ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\ThesisEx.aux"
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-Intro.aux")
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-2.aux")
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-3.aux"))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+Requested font "cmr17" at 20.74pt
+Requested font "cmbx12" at 20.74pt
+Requested font "cmr12" at 14.4pt
+Requested font "cmmi12" at 20.74pt
+Requested font "cmmi12" at 14.4pt
+Requested font "cmmi12" at 12.0pt
+Requested font "cmsy10" at 20.74pt
+Requested font "cmsy10" at 14.4pt
+Requested font "cmsy10" at 12.0pt
+Requested font "cmex10" at 20.74pt
+Requested font "cmex10" at 14.4pt
+Requested font "cmex10" at 12.0pt
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+Requested font "msam10" at 20.74pt
+Requested font "msam10" at 14.4pt
+Requested font "msam10" at 12.0pt
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Requested font "msbm10" at 20.74pt
+Requested font "msbm10" at 14.4pt
+Requested font "msbm10" at 12.0pt
+Requested font "cmbx12" at 14.4pt
+Requested font "cmr17" at 17.28pt
+Requested font "cmti12" at 17.28pt
+Requested font "cmex7" at 7.0pt
+Requested font "msam10" at 10.0pt
+Requested font "msam7" at 7.0pt
+Requested font "msbm10" at 10.0pt
+Requested font "msbm7" at 7.0pt
+File: McGillcrest.eps Graphic file (type eps)
+
+<McGillcrest.eps>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 82.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
+Requested font "cmbx12" at 12.0pt
+Requested font "cmbx8" at 8.0pt
+ [1
+
+]
+Requested font "cmr8" at 8.0pt
+Requested font "cmr6" at 6.0pt
+Requested font "cmmi8" at 8.0pt
+Requested font "cmmi6" at 6.0pt
+Requested font "cmsy8" at 8.0pt
+Requested font "cmsy6" at 6.0pt
+Requested font "cmex8" at 8.0pt
+Requested font "cmex7" at 6.0pt
+Requested font "msam10" at 8.0pt
+Requested font "msam7" at 6.0pt
+Requested font "msbm10" at 8.0pt
+Requested font "msbm7" at 6.0pt
+Requested font "cmr10" at 10.95pt
+ [1] [2]
+Requested font "cmr17" at 24.88pt
+Requested font "cmbx12" at 24.88pt
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\ThesisEx.toc")
+\tf@toc=\write4
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 111.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 111.
+
+[3
+
+] ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\ThesisEx.lof")
+\tf@lof=\write5
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 112.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 112.
+
+[4
+
+] ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\ThesisEx.lot")
+\tf@lot=\write6
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 114.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 114.
+
+[5
+
+]
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 127.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 127.
+
+[6
+
+]
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-Intro.tex"
+Chapter 1.
+
+LaTeX Warning: Citation `McGillTG:P1994' on page 1 undefined on input line 14.
+
+)
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 132.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 132.
+
+[1
+
+
+
+]
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-2.tex"
+Chapter 2.
+Requested font "cmtt12" at 12.0pt
+Requested font "cmti12" at 12.0pt
+Requested font "cmti8" at 8.0pt
+
+LaTeX Warning: Citation `Goossens:1997' on page 2 undefined on input line 17.
+
+Requested font "cmex7" at 5.0pt
+Requested font "msam5" at 5.0pt
+Requested font "msbm5" at 5.0pt
+Requested font "cmbx6" at 6.0pt
+Requested font "cmmib10" at 12.0pt
+Requested font "cmmib8" at 8.0pt
+Requested font "cmmib6" at 6.0pt
+Requested font "cmbsy10" at 12.0pt
+Requested font "cmbsy8" at 8.0pt
+Requested font "cmbsy6" at 6.0pt
+)
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 136.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 136.
+
+[2
+
+
+
+]
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-3.tex"
+Chapter 3.
+Requested font "cmbx10" at 10.0pt
+Requested font "cmbx10" at 10.95pt
+Requested font "cmmi10" at 10.95pt
+Requested font "cmsy10" at 10.95pt
+Requested font "cmex10" at 10.95pt
+Requested font "msam10" at 10.95pt
+Requested font "msbm10" at 10.95pt
+)
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 140.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 140.
+
+[3
+
+
+
+] [4]
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\A-A.tex"
+Appendix A.
+Requested font "cmmi12" at 24.88pt
+Requested font "cmmi12" at 17.28pt
+Requested font "cmsy10" at 24.88pt
+Requested font "cmsy10" at 17.28pt
+Requested font "cmex10" at 24.88pt
+Requested font "cmex10" at 17.28pt
+Requested font "msam10" at 24.88pt
+Requested font "msam10" at 17.28pt
+Requested font "msbm10" at 24.88pt
+Requested font "msbm10" at 17.28pt
+)
+
+No file ThesisEx.bbl.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 156.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 156.
+
+[5
+
+
+] ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\ThesisEx.aux" (
+"F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-Intro.aux")
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-2.aux")
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Template\C-3.aux"))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4180 strings out of 429025
+ 49720 string characters out of 3166797
+ 127953 words of memory out of 3000000
+ 7281 multiletter control sequences out of 15000+200000
+ 23236 words of font info for 88 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 32i,22n,45p,275b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on ThesisEx.pdf (12 pages).

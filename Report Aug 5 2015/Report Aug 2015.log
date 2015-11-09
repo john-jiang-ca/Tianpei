@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  18 OCT 2015 14:27
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  3 NOV 2015 11:55
 entering extended mode
 **Report*Aug*2015.tex
 ("F:\GitHub\Tianpei\Report Aug 5 2015\Report Aug 2015.tex"
@@ -572,17 +572,17 @@ Requested font "msbm10" at 9.0pt
 Requested font "msbm5" at 5.0pt
  [6] [7]
 [8] [9] [10] [11]
-Overfull \hbox (27.06242pt too wide) in alignment at lines 728--735
+Overfull \hbox (27.06242pt too wide) in alignment at lines 729--736
  [] [][]
  []
 
 [12]
-Overfull \hbox (36.00719pt too wide) in alignment at lines 744--749
+Overfull \hbox (36.00719pt too wide) in alignment at lines 745--750
  [] [][]
  []
 
 
-Overfull \hbox (64.00009pt too wide) in paragraph at lines 749--751
+Overfull \hbox (64.00009pt too wide) in paragraph at lines 750--752
 \U/msb/m/n/12 R[]$\OT1/ptm/m/n/12 , $\OT1/cmr/bx/n/12 e[]$ \OT1/ptm/m/n/12 de-n
 otes the vec-tor that only $\OML/cmm/m/it/12 i$\OT1/ptm/m/n/12 th com-po-nent i
 s 1 while the rest are all 0, $\OT1/cmr/bx/n/12 R[] \OT1/cmr/m/n/12 = [[](\OML/
@@ -594,7 +594,7 @@ m/m/it/12 ^^X[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; []\OT1/cmr/m/n/12 (\OML
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 756.
+(amsmath)                 on input line 757.
 
 [13] ("F:\GitHub\Tianpei\Report Aug 5 2015\largeMIMOuplink.pdf_tex"
 File: largeMIMOuplink.pdf Graphic file (type QTm)
@@ -631,12 +631,12 @@ File: largeMIMOuplink.pdf Graphic file (type QTm)
 \c@Lemma=\count138
 \c@Property=\count139
  [17]
-Overfull \hbox (9.77817pt too wide) in alignment at lines 904--909
+Overfull \hbox (9.77817pt too wide) in alignment at lines 905--910
  [] [][]
  []
 
 [18] [19] [20]
-Overfull \hbox (14.93057pt too wide) detected at line 984
+Overfull \hbox (14.93057pt too wide) detected at line 985
 \OMS/cmsy/m/n/12 jj\OT1/cmr/bx/n/12 w\OMS/cmsy/m/n/12 jj[] \OT1/cmr/m/n/12 = []
 (\OML/cmm/m/it/12 ^^K[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )(\OML/cmm/m/it/
 12 ^^K[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 <[][] \OT1/cm
@@ -648,27 +648,27 @@ T1/cmr/m/n/12 )(\OML/cmm/m/it/12 ^^L[] \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 )
  []
 
 
-Overfull \hbox (56.27542pt too wide) in alignment at lines 986--997
+Overfull \hbox (56.27542pt too wide) in alignment at lines 987--998
  [] [][]
  []
 
 
-Overfull \hbox (40.04997pt too wide) in alignment at lines 1000--1006
+Overfull \hbox (40.04997pt too wide) in alignment at lines 1001--1007
  [] [][]
  []
 
 [21]
-Overfull \hbox (26.28464pt too wide) in alignment at lines 1025--1035
+Overfull \hbox (26.28464pt too wide) in alignment at lines 1026--1036
  [] [][]
  []
 
 [22]
-Overfull \hbox (19.12212pt too wide) in alignment at lines 1037--1047
+Overfull \hbox (19.12212pt too wide) in alignment at lines 1038--1048
  [] [][]
  []
 
 
-Overfull \hbox (5.15166pt too wide) in paragraph at lines 1047--1049
+Overfull \hbox (5.15166pt too wide) in paragraph at lines 1048--1050
 \OT1/ptm/m/n/12 Let $\OT1/cmr/bx/n/12 a \OT1/cmr/m/n/12 = [\OML/cmm/m/it/12 ^^K
 []; ^^K[]; [] ; ^^K[]\OT1/cmr/m/n/12 ][]$\OT1/ptm/m/n/12 , $[] \OT1/cmr/m/n/12 
 = [[]\OML/cmm/m/it/12 ; []; [] ; []\OT1/cmr/m/n/12 ][]$\OT1/ptm/m/n/12 , $\OT1/
@@ -678,22 +678,22 @@ cmr/m/n/12 ][]$\OT1/ptm/m/n/12 ,$[] \OT1/cmr/m/n/12 = [[]\OML/cmm/m/it/12 ; [];
  []
 
 [23] [24]
-Overfull \hbox (49.93112pt too wide) in alignment at lines 1076--1097
+Overfull \hbox (49.93112pt too wide) in alignment at lines 1077--1098
  [] [][]
  []
 
 
-Overfull \hbox (37.56808pt too wide) in alignment at lines 1103--1116
+Overfull \hbox (37.56808pt too wide) in alignment at lines 1104--1117
  [] [][]
  []
 
 [25] [26]
-Overfull \hbox (46.2043pt too wide) in alignment at lines 1148--1154
+Overfull \hbox (46.2043pt too wide) in alignment at lines 1149--1155
  [] [][]
  []
 
 [27] [28] [29]
-Overfull \hbox (5.60997pt too wide) in paragraph at lines 1223--1227
+Overfull \hbox (5.60997pt too wide) in paragraph at lines 1224--1228
 \OT1/ptm/m/n/12 where $[]$ is the up-date of $\OML/cmm/m/it/12 ^^U[]$\OT1/ptm/m
 /n/12 . Based on the def-i-ni-tion of $\OT1/cmr/m/n/12 ^^H$ \OT1/ptm/m/n/12 in 
 (64[]), $\OT1/cmr/m/n/12 ^^H[] = \OMS/cmsy/m/n/12 <[] ^^@ [][] \OML/cmm/m/it/12
@@ -701,7 +701,7 @@ Overfull \hbox (5.60997pt too wide) in paragraph at lines 1223--1227
  []
 
 [30] [31]
-Overfull \hbox (2.02061pt too wide) in paragraph at lines 1266--1268
+Overfull \hbox (2.02061pt too wide) in paragraph at lines 1267--1269
 \OT1/ptm/m/n/12 Notice in (74[]), $\OML/cmm/m/it/12 sgn\OT1/cmr/m/n/12 ([])$ \O
 T1/ptm/m/n/12 is un-known be-fore $\OML/cmm/m/it/12 ^^U[]$ \OT1/ptm/m/n/12 is u
 p-dated, there-fore two con-di-tions $\OML/cmm/m/it/12 sgn\OT1/cmr/m/n/12 ([]) 
@@ -709,34 +709,34 @@ p-dated, there-fore two con-di-tions $\OML/cmm/m/it/12 sgn\OT1/cmr/m/n/12 ([])
  []
 
 [32] [33] [34]
-Overfull \hbox (20.89584pt too wide) in alignment at lines 1346--1350
+Overfull \hbox (20.89584pt too wide) in alignment at lines 1347--1351
  [] [][]
  []
 
 [35]
-Overfull \hbox (3.50377pt too wide) in paragraph at lines 1366--1367
+Overfull \hbox (3.50377pt too wide) in paragraph at lines 1367--1368
 []\OT1/ptm/m/n/12 The ef-fec-tive-ness of 1-D ap-prox-i-ma-tion strate-gies are
  ma-jorly de-ter-mined by the ra-tio $[]$.
  []
 
 [36] [37]
-Overfull \hbox (45.77774pt too wide) in alignment at lines 1447--1451
+Overfull \hbox (45.77774pt too wide) in alignment at lines 1448--1452
  [] [][]
  []
 
 
-Overfull \hbox (12.80127pt too wide) in alignment at lines 1453--1458
+Overfull \hbox (12.80127pt too wide) in alignment at lines 1454--1459
  [] [][]
  []
 
 [38]
-Overfull \hbox (52.74135pt too wide) in alignment at lines 1461--1466
+Overfull \hbox (52.74135pt too wide) in alignment at lines 1462--1467
  [] [][]
  []
 
 [39] [40] [41]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1552.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1553.
 
 Requested font "ptmbc7t" at 12.0pt
  [42] [43] [44]

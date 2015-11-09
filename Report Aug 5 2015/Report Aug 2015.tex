@@ -703,7 +703,7 @@ where $\mathbf{a}=[a_{1},a_{2},\ldots, a_{L}]^{T}$ denotes the vector consist of
  L(\mathbf{w}, \bar{\mathbf{a}})\geq L(\bar{\mathbf{w}}, \bar{\mathbf{a}})\geq L(\bar{\mathbf{w}}, \mathbf{a})
  \label{KKT inequalities}
  \end{equation}
-This inequalities (also called saddle point conditions) yield KKT conditions (see Theorem 6.26 \cite{scholkopf2002learning}), which are 
+These inequalities (also called saddle point conditions) holds if and only if KKT conditions holds (see Theorem 6.26 \cite{scholkopf2002learning}), which are 
 \begin{IEEEeqnarray}[\relax]{l}
 \label{original KKT condition1}
 \partial_{\mathbf{w}}L(\bar{\mathbf{w}}, \mathbf{a})=\partial_{\mathbf{w}}f(\bar{\mathbf{w}})+\sum_{i=1}^{L}a_{i}\partial_{\mathbf{w}}c_{i}(\bar{\mathbf{w}})=0,\\
@@ -712,6 +712,7 @@ This inequalities (also called saddle point conditions) yield KKT conditions (se
 \label{original KKT condition3}
 \bar{a}_{i}c_{i}(\bar{\mathbf{w}})=0, i=1,2,\ldots L
 \end{IEEEeqnarray}
+Therefore, KKT conditions are the necessary and sufficient conditions for optimality.
 In order to satisfy the first inequality in (\ref{KKT inequalities}), (\ref{original KKT condition1}) has to hold,
 applying (\ref{original KKT condition1}) to (\ref{lagrange duality1}), which are  
 \begin{IEEEeqnarray}[\relax]{l}

@@ -1,4 +1,4 @@
-function [ symOut] = RSVR( H,  y, SNRd,  M, pav, C, tol , epsilon)
+function [ symOut, MSE] = RSVR( H,  y, SNRd,  M, pav, C, tol , epsilon,dataMod)
 %real SVR detection 
 %   Output
 % symOut: regression coefficiences estimation
@@ -163,6 +163,7 @@ Phi=Phi_new;
 
 end
 symOut_tmp=H'*lambda;
+MSE=norm(H*[real(dataMod);imag(dataMod)]-H*symOut_tmp);
 if(length(symOut_tmp)==2)
     symOut=symOut_tmp(1)+1i*symOut_tmp(2);
 else

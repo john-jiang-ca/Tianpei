@@ -1,0 +1,16 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Large MIMO system}{1}
+\contentsline {section}{\numberline {1.2}Large MIMO detections}{1}
+\contentsline {section}{\numberline {1.3}Support Vector Regression}{3}
+\contentsline {section}{\numberline {1.4}Thesis Contribution}{5}
+\contentsline {section}{\numberline {1.5}Thesis Outline}{5}
+\contentsline {chapter}{\numberline {2}Theoretical Analysis of Channel Hardening Phenomenon}{6}
+\contentsline {section}{\numberline {2.1}System Model}{6}
+\contentsline {chapter}{\numberline {3}Complex Support Vector Preliminary Detector (CSVPD) for Large-Scale MIMO Uplink Systems}{7}
+\contentsline {section}{\numberline {3.1}The Algorithm}{8}
+\contentsline {chapter}{\numberline {4}Mathematical Layout Styles}{9}
+\contentsline {chapter}{\numberline {5}Tables}{10}
+\contentsline {section}{\numberline {5.1}Tables in \LaTeX {}}{10}
+\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{12}
+\contentsline {section}{\numberline {A.1}Thesis Preamble}{12}
+\contentsline {chapter}{References}{13}

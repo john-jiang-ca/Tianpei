@@ -391,7 +391,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Low Complexity-Near Optimal Complex Support Vector Detection for Large MIMO Systems}
+\title{Low Complexity Near Optimal Hybrid Detectors for Large MIMO Uplink Systems Based on Complex Support Vector Regression}
 %
 %
 % author names and IEEE memberships
@@ -537,14 +537,16 @@ Introduce the development and history of Large MIMO systems. The challenges and 
 \item Probabilistic Data Association (PDA and its variances) 
 \item Message Passing Scheme based on Graph Model (Belief Propagation and its variances)
 \item Monte Carlo Markov Chain detection (Gibbs sampling and its variances)
+\item Element Based Lattice Reduction aided linear detectors (Lattice reduction)
 \end{itemize}
 Evaluate advantages and disadvantages.
 \subsection{Support Vector Regression}
 History and applications.
 %\subsection{General Purpose Graphic Processing Units Computing}
 \subsection{Thesis Contribution}
-\subsubsection{Theoretical Analysis of Channel Hardening Phenomenon}
-\subsubsection{Complex Support Vector Detectors for Large MIMO systems}
+\subsubsection{Propose a complex support vector detector which can generate more reliable preliminary estimates than linear detectors (ZF, MMSE) in large MIMO systems but cost less complexity}
+\subsubsection{Proposed a low complexity hybrid detector based on complex support vector preliminary detector and hybrid genetic algorithm which achieve near optimal performance at both low order and high order modulation scheme}
+\subsubsection{Provide theoretical analysis of channel hardening phenomenon and its application in the design of large MIMO detectors}
 %\subsubsection{GPGPU Acceleration for Proposed Detectors}
 \subsection{Thesis Outline}
 % An example of a floating figure using the graphicx package.
@@ -640,65 +642,56 @@ History and applications.
 % Note that, LaTeX2e, unlike IEEE journals/conferences, places
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
+
 \section{Theoretical Analysis of Channel Hardening Phenomenon}\label{CH}
-\section{Complex Support Vector Detector for Large MIMO systems}
+\section{Complex Support Vector Preliminary Detector (CSVD) for Large MIMO systems}
 \subsection{The Algorithm}
 \subsection{Channel Hardening Approximation}
-Employ channel hardening phenomenon to the detector proposed based on the theoretical analysis in \ref{CH}.
-\subsection{Complexity Analysis and Comparisons}
-Compare proposed detector with candidate detectors in Table.\ref{Algorithm Candidates}.
-\section{Computer Simulations}
-\subsection{Candidate Detectors for Comparison}
-SISO AWGN channel without fading which is a lower bound of ML performance can be used as a benchmark to evaluate the performance of proposed algorithm.
-Table. \ref{Algorithm Candidates} shows the candidate detectors to  be compared. 
-Layered Tabu Search (LTS), Random Restart Reactive Tabu Search (R3TS), Belief Propagation based on Markov Random Field (BP-MRF) with damping, Belief Propagation based on Scalar Gaussian Approximation and Factor Graph (FG BP-SGA), Probability Data Association based on Gaussian Approximation (PDA-GA), Multi-Restart Mixed Gibbs Sampling (MR-MGS).
-\begin{table}[htb]
-\renewcommand{\arraystretch}{1.3}
-\caption{Detector Candidates for Comparison}
-\label{Algorithm Candidates}
-\centering
-\begin{tabular}{p{0.1\columnwidth}|p{0.2\columnwidth}|p{0.25\columnwidth}|p{0.25\columnwidth}|p{0.2\columnwidth}}
-\hline 
-\multirow{2}{*}{\bfseries Detectors} & \multirow{2}{*}{\bfseries Complexity} & \multicolumn{2}{|c|}{\bfseries BER Performance} & \multirow{2}{*}{\bfseries Note}\\
-\cline{3-4}
-&&Low Order Modulation Scheme (BPSK, 4QAM)& High Order Modulation Scheme (16QAM, 64QAM)&\\
-\hline
-LTS &$O(n^{3}_{t})$ &near optimum (at several tens of antennas region) & near optimum (at several tens of antennas region) &complexity gets higher for large system but with out order increasing. \\
-\hline
-R3TS& $O(n^{3}_{t})$  &near optimum (at several tens of antennas region)& near optimum (at several tens of antennas region)&complexity gets higher for high order modulation scheme.\\
-\hline
-BP-MRF &$O(n_{t}^{2}n_{r})$& near optimum (at several tens of antennas region) & far from optimum performance&\\
-\hline
-FG BP-SGA &$O(n_{t}^{2})$&near optimum (at several tens of antennas region) & far from optimum performance&\\
-\hline
-PDA-GA &$O(n_{t}^{3})$&near optimum (at over one hundred of antennas region)&Not clear&\\
-\hline
-MR-MGS &$O(\log_{2}(M)n_{t}^{3})$&near optimum (at several tens of antennas region) & near optimum (at several tens of antennas region) &complexity is higher than MMSE $O(n_{t}n^{2}_{r})$, but nominal, without order increasing.\\
-\hline
-\end{tabular}
-\end{table}
-\newpage
-\subsection{BER Results for Spatial Uncorrelated Channel}
-\subsubsection{Performance Analysis and Comparison (Low Order Modulation Scheme)}
-BPSK, 4QAM.
-\subsubsection{Performance Analysis and Comparison (High Order Modulation Scheme)}
-16QAM, 64QAM.
-\subsection{BER Results for Spatial Correlated Channel}
-\subsubsection{Performance Analysis and Comparison (Low Order Modulation Scheme)}
-BPSK, 4QAM.
-\subsubsection{Performance Analysis and Comparison (High Order Modulation Scheme)}
-16QAM, 64QAM.
-\subsection{Influences of Imperfect Channel State Information}
-\subsubsection{Performance Analysis and Comparison (Low Order Modulation Scheme)}
-BPSK, 4QAM.
-\subsubsection{Performance Analysis and Comparison (High Order Modulation Scheme)}
-16QAM, 64QAM.
+Employ channel hardening phenomenon to the detector proposed based on the theoretical analysis.
+\subsubsection{Complexity Analysis}
+Including original version and modified version (with channel hardening approximation).
+\subsubsection{CSVD Aided Detectors}
+\begin{itemize}
+\item Ordered Parallel Interference Cancellation (OPIC).
+\item Likelihood Ascend Search (LAS)
+\end{itemize}
+\subsubsection{Computer Simulation Results (Spatial Uncorrelated Channel)}
+\begin{itemize}
+\item Bit error rate (BER) performance comparisons between CSVD and MMSE detectors.
+\item BER performance comparison between original CSVD and modified CSVD (with channel hardening approximation).
+\item BER performance comparisons between CSVD-OPIC and MMSE-OPIC detectors.
+\item BER performance comparisons between CSVD-LAS and MMSE-LAS detectors.
+\end{itemize}
+\section{Low Complexity Near Optimal Hybrid Detector Based on Genetic Algorithm and Complex Support Vector Preliminary Detector}
+\subsection{The Algorithm}
+\subsection{Parameter settings}
+\subsubsection{Population Size}
+\subsubsection{Number of Generations}
+Discuss the influence of the population size and number of generations to convergence performance (with respect to the performance of ML detector). 
+\subsubsection{Initial Searching Area}
+Discuss the influence of initial searching area to the BER performance.
+
+\subsection{Computer Simulation Results (Spatial Uncorrelated Channel)}
+\begin{itemize}
+\item BER performance under fixed SNR against number of generations for different values of population sizes.
+\item BER performance under a fixed SNR against different initial searching areas.
+\item BER performance Comparison between CSVD-GA and other advanced detectors (LAS, RTS, LTS, R3TS).
+\end{itemize}
+\subsection{Complexity Analysis}
+
+\section{Influences of Spatial Correlated Channel and Imperfect Channel State Information (4QAM and 16QAM) ($32\times 32 $ MIMO, $64\times 64 $ MIMO, $128\times 128$ MIMO)}
+\subsection{BER performance of Complex Support Vector Preliminary Detectors}
+CSVD, CSVD-LAS, CSVD-OPIC 
+\subsection{BER performance of Complex Support Vector Detector with Channel Hardening Approximation}
+\subsection{BER performance of Complex Support Vector Detector Aided Hybrid Genetic Algorithm (CSVD-GA)}
+
+\section{Conclusion}
+
 %\subsection{GPU Acceleration for Proposed Algorithm}
 %\subsubsection{Parallelism}
 %Introduce parallel implementation of the proposed detector based on Computed Unified Device Architecture (CUDA).
 %\subsubsection{Speed Performance Comparison}
 
-\section{Conclusion}
 
 
 

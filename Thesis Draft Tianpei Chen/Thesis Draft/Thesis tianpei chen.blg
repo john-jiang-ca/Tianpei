@@ -19,6 +19,10 @@ Repeated entry---line 468 of file citation.bib
  : @inproceedings{osuna1997improved
  :                                 ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 498 of file citation.bib
+ : @article{cortes1995support
+ :                           ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Goossens:1997"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -28,4 +32,4 @@ Warning--empty journal in bouboulis2013complex
 Warning--empty year in bouboulis2013complex
 
 Done.
-(There were 3 error messages)
+(There were 4 error messages)

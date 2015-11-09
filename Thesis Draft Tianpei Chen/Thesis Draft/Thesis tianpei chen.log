@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  8 NOV 2015 17:44
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  9 NOV 2015 14:27
 entering extended mode
 **Thesis*tianpei*chen.tex
 
@@ -500,20 +500,20 @@ Requested font "cmr17" at 24.88pt
 Requested font "cmbx12" at 24.88pt
 
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\Thesis tianpei chen.
-toc")
-\tf@toc=\write4
-
+toc"
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 404.
+less on input line 21.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 404.
+less on input line 21.
 
 [3
 
-]
+])
+\tf@toc=\write4
+ [4]
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\Thesis tianpei chen.
 lof")
 \tf@lof=\write5
@@ -526,7 +526,7 @@ less on input line 405.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 405.
 
-[4
+[5
 
 ]
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\Thesis tianpei chen.
@@ -541,7 +541,7 @@ less on input line 407.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 407.
 
-[5
+[6
 
 ]
 
@@ -552,7 +552,7 @@ less on input line 420.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 420.
 
-[6
+[7
 
 ]
 
@@ -570,17 +570,46 @@ less on input line 28.
 
 
 
-] [2] [3]
-
-LaTeX Warning: Citation `osuna1997training' on page 4 undefined on input line 5
-5.
-
-[4]) [5]
+] [2] [3]) [4] [5]
 
 
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-ChannelHardening.t
 ex"
 Chapter 2.
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\largeMIMOuplink.pdf_
+tex"
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page1>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page2>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page3>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page4>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page5>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page6>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page7>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page8>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page9>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page10>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+
+<use  "largeMIMOuplink.pdf"  page11>
+File: largeMIMOuplink.pdf Graphic file (type QTm)
+ <use  "largeMIMOuplink.pdf"  page12>)
+Requested font "cmbx10" at 10.95pt
+Requested font "cmbx6" at 6.0pt
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
@@ -594,30 +623,74 @@ less on input line 428.
 
 
 
-]
+] [7]
 
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-CSVR.tex"
 Chapter 3.
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 14.
+less on input line 11.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 14.
+less on input line 11.
 
-[7
+[8
 
 
 
-])
+]
+Requested font "cmbx10" at 10.0pt
+Requested font "cmbx7" at 7.0pt
+
+("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\regression_model.pdf
+_tex"
+File: regression_model.pdf Graphic file (type QTm)
+ <use  "regression_model.pdf"  page1>
+File: regression_model.pdf Graphic file (type QTm)
+
+<use  "regression_model.pdf"  page2>
+File: regression_model.pdf Graphic file (type QTm)
+ <use  "regression_model.pdf"  page3>
+File: regression_model.pdf Graphic file (type QTm)
+
+<use  "regression_model.pdf"  page4>
+File: regression_model.pdf Graphic file (type QTm)
+ <use  "regression_model.pdf"  page5>)
+Requested font "cmmi10" at 10.95pt
+Requested font "cmsy10" at 10.95pt
+Requested font "cmex10" at 10.95pt
+Requested font "msam10" at 10.95pt
+Requested font "msbm10" at 10.95pt
+
 
 Package Fancyhdr Warning: \headheight is too small (15.0pt): 
  Make it at least 27.85004pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[9]
+
+Package Fancyhdr Warning: \headheight is too small (15.0pt): 
+ Make it at least 27.85004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+
+Package Fancyhdr Warning: \headheight is too small (15.0pt): 
+ Make it at least 27.85004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11])
+
+Package Fancyhdr Warning: \headheight is too small (15.0pt): 
+ Make it at least 27.85004pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
 
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-2.tex"
 Chapter 4.
@@ -625,12 +698,12 @@ Requested font "cmtt12" at 12.0pt
 Requested font "cmti12" at 12.0pt
 Requested font "cmti8" at 8.0pt
 
-LaTeX Warning: Citation `Goossens:1997' on page 9 undefined on input line 17.
+LaTeX Warning: Citation `Goossens:1997' on page 13 undefined on input line 17.
 
 Requested font "cmex7" at 5.0pt
+Requested font "cmbx5" at 5.0pt
 Requested font "msam5" at 5.0pt
 Requested font "msbm5" at 5.0pt
-Requested font "cmbx6" at 6.0pt
 Requested font "cmmib10" at 12.0pt
 Requested font "cmmib8" at 8.0pt
 Requested font "cmmib6" at 6.0pt
@@ -646,7 +719,7 @@ less on input line 434.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 434.
 
-[9
+[13
 
 
 
@@ -654,13 +727,6 @@ less on input line 434.
 
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-3.tex"
 Chapter 5.
-Requested font "cmbx10" at 10.0pt
-Requested font "cmbx10" at 10.95pt
-Requested font "cmmi10" at 10.95pt
-Requested font "cmsy10" at 10.95pt
-Requested font "cmex10" at 10.95pt
-Requested font "msam10" at 10.95pt
-Requested font "msbm10" at 10.95pt
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
@@ -670,11 +736,11 @@ less on input line 438.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 438.
 
-[10
+[14
 
 
 
-] [11]
+] [15]
 
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\A-A.tex"
 Appendix A.
@@ -687,6 +753,7 @@ Requested font "cmsy10" at 17.28pt
 Requested font "cmex10" at 24.88pt
 Requested font "cmex10" at 20.74pt
 Requested font "cmex10" at 17.28pt
+Requested font "cmbx12" at 17.28pt
 Requested font "msam10" at 24.88pt
 Requested font "msam10" at 20.74pt
 Requested font "msam10" at 17.28pt
@@ -706,7 +773,7 @@ less on input line 2.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 2.
 
-[12
+[16
 
 
 ]
@@ -718,13 +785,13 @@ less on input line 79.
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 79.
 
-[13
+[17
 
 
-] [14] [15]
+] [18] [19]
 Missing character: There is no — in font cmti12!
 Missing character: There is no — in font cmti12!
-) [16]
+) [20]
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\Thesis tianpei chen.
 aux" ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-Intro.aux")
 ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-ChannelHardening.a
@@ -734,17 +801,14 @@ ux") ("F:\GitHub\Tianpei\Thesis Draft Tianpei Chen\Thesis Draft\C-CSVR.aux")
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 4249 strings out of 429025
- 51459 string characters out of 3166797
- 129010 words of memory out of 3000000
- 7333 multiletter control sequences out of 15000+200000
- 23236 words of font info for 88 fonts, out of 3000000 for 9000
+ 4278 strings out of 429025
+ 52085 string characters out of 3166797
+ 130108 words of memory out of 3000000
+ 7352 multiletter control sequences out of 15000+200000
+ 24162 words of font info for 91 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 32i,22n,49p,1760b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,22n,50p,1698b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Thesis*tianpei*chen.pdf (24 pages).
+Output written on Thesis*tianpei*chen.pdf (29 pages).

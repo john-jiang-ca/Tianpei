@@ -3,6 +3,55 @@
 
 
 \chapter{Complex Support Vector Preliminary Detector (CSVPD) for Large-Scale MIMO Uplink Systems}
+In this chapter, we proposed a complex support vector preliminary detector (CSVPD), which has a complexity  comparable with linear detectors but performs much better. The proposed CSVPD can work in the complex valued Large-Scale MIMO (LS-MIMO) systems in an elegant and efficient manner. We exploit the specific widely linear regression model without constant offset, which is suitable for LS-MIMO systems model. Furthermore, based on the analysis of channel hardening phenomenon from Chapter 2 and the recent advances in machine learning field concerning decomposition process for SVM\cite{steinwart2011training}, we propose a combined single direction searching strategy in CSVR training process which can approximately maximize the gain of the sub dual objective functions whose work set size are two. The combined single direction searching strategy proposed can achieve a much smaller searching times than the optimal double direction searching while make dual objective function converge using as few iterations as the latter one. 
+  
+  Furthermore, we show that channel hardening phenomenon can be further exploited in CSVPD to reduce the computational complexity and simplify the implementation of the algorithm for LS-MIMO systems. Finally, we compare the performance of CSVPD aided likelihood ascend search (LAS) detector and CSVPD aided parallel interference cancellation with ordering (OPIC) detector with MMSE-LAS and MMSE-OPIC. These results demonstrate the potential of CSVPD to be utilized as a preliminary detector that can improve the LS-MIMO detectors whose performances are influenced by the reliability of initial solutions.  
+
+
+\section{Brief Introduction to $\epsilon$-Support Vector Regression ($\epsilon$-SVR)}
+  Suppose we are given a training data $((\mathbf{x}_{1}, y_{1}),(\mathbf{x}_{2},y_{2}),\cdots,(\mathbf{x}_{L},y_{L}))$, $L$ denotes the size of the training data set, $\mathbf{x}_{i}\in \mathbb{R}^{V}$ denotes input data vector, $V$ is the number of features in $\mathbf{x}_{i}$. $y_{i}$ denotes the output. Let $\mathbf{w}$ denotes regression coefficient vector, $\Phi(\mathbf{x}_{i})$ denotes the feature mapping of $\mathbf{x}_{i}$, $\mathbf{w},\Phi(\mathbf{x}_{i})\in \mathbb{R}^{\Omega}$, $\Omega \in \mathbb{R}$ denotes the dimension of mapped feature space (For linear model, $\mathbf{x}_{i}=\Phi(\mathbf{x}_{i})$, $\Omega=V$). The regression estimate $g(\mathbf{x}_{i})$ (either linear or non-linear) is given by 
+\begin{equation}
+g(\mathbf{x}_{i})=\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b  \quad i= 1,2,\ldots, L
+\label{regression estimates}
+\end{equation} 
+\begin{figure}
+\centering
+\def\svgwidth{\columnwidth}
+\input{regression_model.pdf_tex}
+\caption{Regression Model of $\epsilon$-SVR}
+\label{regression model}
+\end{figure}
+
+ In $\epsilon$-SVR, as shown in Fig \ref{regression model}, the solid line represents the regression estimate in \ref{regression estimates}, $\epsilon$ controls the precision of the regression, the area between two dash lines ($\epsilon$-bound) is called $\epsilon$-tube. Only the regression estimates that have the deviation larger than $\epsilon$ (the data points located outside $\epsilon$-tube in Fig.\ref{regression model}) denoted by $\xi_{i}$ and $\hat{\xi}_{i}$, contribute to the estimation errors.
+the goal of $\epsilon$-SVR is to minimize the risk introduced by estimate errors while keeping $\mathbf{w}$ small, which is also called regularized risk minimization principle, therefore, the primal constraint optimization problem is formulated as
+\begin{eqnarray}
+\nonumber
+\min_{\mathbf{w}, \xi, \hat{\xi}_{i}} f(\mathbf{w}, \xi_{i}, \hat{\xi}_{i})=\frac{1}{2}||\mathbf{w}||^{2}+C\sum_{i=1}^{L}(R(\xi_{i})+R(\hat{\xi}_{i}))\\
+s.t. \left\{\begin{array}{ll}
+y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b \leq \epsilon+\xi_{i}, i=1,2\cdots, L \\
+\mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i} \leq \epsilon+\hat{\xi}_{i}, i=1,2\cdots, L\\
+\epsilon, \xi_{i},\hat{\xi}_{i} \geq 0, i=1,2\cdots, L
+\end{array}\right.
+\label{primal optimization problem}
+\end{eqnarray} 
+In (\ref{primal optimization problem}), $\frac{1}{2}||\mathbf{w}||^{2}$ is the regularization term in order to ensure the flatness of regression model.
+ slack variables $\xi_{i}$ and $\hat{\xi}_{i}$ are introduced based on the "soft margin" principle\cite{cortes1995support} that can cope with the infeasible constraints of the optimization problem and allows the existence of some additive noise to the observations. $R(u)$ denotes the cost function. The simplest cost function is $R(u)=u$, The choice of the cost function is determined by the statistical distribution of the additive noise\cite{smola2004tutorial}. For example if the noise is Gaussian distributed, then the optimal cost function is $R(u)=\frac{1}{2}u^{2}$. The term $C\sum_{i=1}^{L}(R(\xi_{i})+R(\hat{\xi}_{i}))$ denotes the penalty of the additive noise, $C\in \mathbb{R}$ and $C\geq 0$ that controls the trade off between regularization term and cost function term.
+ 
+In $\epsilon$-SVR, the objective to exploit slack variables $\xi_{i}$ and $\hat{\xi}_{i}$ is to compensate the influences from the outliers that exceed the $\epsilon$-tube which are caused by noise.
+Therefore in $\epsilon$-SVR, $\xi_{i}$ and $\hat{\xi}_{i}$ are defined as  
+\begin{eqnarray}
+\label{definition of slack variable1}
+\xi_{i}=\max(0, y_{i}-\mathbf{w}^{T}\Phi(\mathbf{x}_{i})-b-\epsilon)\\
+\label{definition of slack variable2}
+\hat{\xi}_{i}=\max(0, \mathbf{w}^{T}\Phi(\mathbf{x}_{i})+b-y_{i}-\epsilon).
+\end{eqnarray} 
+Because the deviation between the estimates $g(\mathbf{x}_{i})$ and the observation $y_{i}$ as defined in \ref{regression estimates} can only exceeds the $\epsilon$-tube in one direction, therefore there is at most one of $\xi_{i}$ and $\hat{\xi}_{i}$ can be non zero. That is $\xi_{i}\hat{\xi}_{i}=0$.
+
+
+
+
+
+\section{Combined Single Direction Searching Strategy}
 Decomposition methods were proposed to solve this QP problem by decomposing it into sub QP problems and solving them iteratively\cite{platt1999fast}. Therefore, the computational intensive numerical methods can be avoided. Decomposition is performed by sub set selection solver, which refers to a set of algorithms that separate the optimization variables (Lagrange multipliers) into two sets S and N, S is the work set and N contains the remaining optimization variables. In each iteration, only the optimization variables in the work set is updated while keeping other optimization variables fixed. The Sequential Minimal Optimization (SMO) algorithm\cite{platt1999fast} is an extreme case of the decomposition solvers. An important issue of the sub set selection solvers is the selection of the work set. One strategy is to choose Karush-Kuhn-Tucker (KKT) condition violators, ensuring the final converge\cite{osuna1997improved}. The SMO algorithm restricts the size of the work set to two. A method to train SVM without offset was proposed In\cite{steinwart2011training}, with the comparable performance to the SVM with offset. A set of sequential single variable work set selection strategies, which require $O(n)$ searching time are proposed. The optimal double variable work set selection strategy, which performs exhaustively searching, however, requires $O(n^{2})$ searching time. The authors demonstrate that with the combination of two different proposed single variable work set selection strategies, convergence can be achieved by a iteration time that is as few as optimal double variable work set selection strategy.
 
 The mathematical foundation of kernel based methods is RKHS which is defined in complex domain, however most of the practitioners are dealing with real data sets. In communication and signal processing area, the channel gains, signals, waveforms etc. are all represented in complex form. Recently, a pure complex SVR \& SVM based on complex kernel was proposed in\cite{bouboulis2013complex}, which can deal with the complex data set purely in complex domain. The results in\cite{bouboulis2013complex} demonstrate the better performance as well as reduced complexity comparing to simply split learning task into two real case by real kernels.  
@@ -11,4 +60,7 @@ Based on the discrete time MIMO channel model, in our regression model, this CSV
 is constructed without offset, Therefore, for each real SVR without offset, 
 %in principle, only one variable is needed to be updated in each iteration, In our scheme, a sequential single variable selection strategy is proposed. By this strategy, two variables can be updated at each iteration, with much smaller searching time.
 Two types of combined single optimization variable selection strategy are proposed based on the work in \cite{steinwart2011training}. The proposed combined single optimization variable selection strategy can approximate optimal double optimization variable selection strategy. The former one can achieve as few as iteration time while enjoy significant speed gain in each iteration.
-\section{The Algorithm}
+\section{Complex Support Vector Preliminary Detector}
+\section{Channel Hardening Approximation}
+\section{CSVPD-LAS versus MMSE-LAS}
+\section{CSVPD-OPIC versus MMSE-OPIC}

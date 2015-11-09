@@ -6,11 +6,16 @@
 \contentsline {section}{\numberline {1.5}Thesis Outline}{5}
 \contentsline {chapter}{\numberline {2}Theoretical Analysis of Channel Hardening Phenomenon}{6}
 \contentsline {section}{\numberline {2.1}System Model}{6}
-\contentsline {chapter}{\numberline {3}Complex Support Vector Preliminary Detector (CSVPD) for Large-Scale MIMO Uplink Systems}{7}
-\contentsline {section}{\numberline {3.1}The Algorithm}{8}
-\contentsline {chapter}{\numberline {4}Mathematical Layout Styles}{9}
-\contentsline {chapter}{\numberline {5}Tables}{10}
-\contentsline {section}{\numberline {5.1}Tables in \LaTeX {}}{10}
-\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{12}
-\contentsline {section}{\numberline {A.1}Thesis Preamble}{12}
-\contentsline {chapter}{References}{13}
+\contentsline {chapter}{\numberline {3}Complex Support Vector Preliminary Detector (CSVPD) for Large-Scale MIMO Uplink Systems}{8}
+\contentsline {section}{\numberline {3.1}Brief Introduction to $\epsilon $-Support Vector Regression ($\epsilon $-SVR)}{9}
+\contentsline {section}{\numberline {3.2}Combined Single Direction Searching Strategy}{11}
+\contentsline {section}{\numberline {3.3}Complex Support Vector Preliminary Detector}{12}
+\contentsline {section}{\numberline {3.4}Channel Hardening Approximation}{12}
+\contentsline {section}{\numberline {3.5}CSVPD-LAS versus MMSE-LAS}{12}
+\contentsline {section}{\numberline {3.6}CSVPD-OPIC versus MMSE-OPIC}{12}
+\contentsline {chapter}{\numberline {4}Mathematical Layout Styles}{13}
+\contentsline {chapter}{\numberline {5}Tables}{14}
+\contentsline {section}{\numberline {5.1}Tables in \LaTeX {}}{14}
+\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{16}
+\contentsline {section}{\numberline {A.1}Thesis Preamble}{16}
+\contentsline {chapter}{References}{17}

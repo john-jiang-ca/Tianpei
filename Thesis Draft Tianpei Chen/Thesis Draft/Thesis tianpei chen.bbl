@@ -271,6 +271,11 @@ P.~Bouboulis, S.~Theodoridis, C.~Mavroforakis, and L.~Evaggelatou-Dalla,
   ``Complex support vector machines for regression and quaternary
   classification.''
 
+\bibitem{oestges2010mimo}
+C.~Oestges and B.~Clerckx, \emph{MIMO wireless communications: From real-world
+  propagation to space-time code design}.\hskip 1em plus 0.5em minus
+  0.4em\relax Academic Press, 2010.
+
 \bibitem{steinwart2011training}
 I.~Steinwart, D.~Hush, and C.~Scovel, ``Training svms without offset,''
   \emph{The Journal of Machine Learning Research}, vol.~12, pp. 141--202, 2011.

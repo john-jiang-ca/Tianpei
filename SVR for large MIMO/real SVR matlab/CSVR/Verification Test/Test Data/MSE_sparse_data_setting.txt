@@ -1,0 +1,291 @@
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 10 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 40 feature
+The training data set size is 60 with 100 feature
+The training data set size is 150 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 10 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, MSE of training data set
+0.0103811978, 
+MSE of testing data set
+0.1095096026, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, MSE of training data set
+0.0102462151, 
+MSE of testing data set
+0.3648822287, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 10 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, MSE of training data set
+0.0113856563, 
+MSE of testing data set
+0.1295952952, 0.0321572970, 0.0147917760, 0.0095343874, 0.0083146688, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, MSE of training data set
+0.0099566319, 0.0074270982, 0.0049593504, 0.0029696400, 0.0019088942, 
+MSE of testing data set
+0.2495818126, 0.0281445401, 0.0105983520, 0.0042686523, 0.0023363962, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 10 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0098579815, 
+MSE of testing data set
+0.0992399386, 0.0268436863, 0.0136568243, 0.0099643765, 0.0081028504, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0094815402, 0.0069796175, 0.0050307208, 0.0028232266, 0.0019548072, 
+MSE of testing data set
+0.2076842628, 0.0251263048, 0.0101117124, 0.0039963800, 0.0023133981, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 10 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0098251400, 0.0084498377, 0.0081348224, 0.0075635207, 0.0075942151, 
+MSE of testing data set
+0.0843037935, 0.0241676655, 0.0151283496, 0.0093566139, 0.0084611141, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0094579965, 0.0068097565, 0.0048165770, 0.0032901740, 0.0019726069, 
+MSE of testing data set
+0.4302555504, 0.0251861807, 0.0095732949, 0.0045917518, 0.0025642726, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparsenessall the result are based on 100 realizationsthe SNR(dB) are
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence 0.0010000000
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 100 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0099477374, 0.0092137704, 0.0086113304, 0.0077289118, 0.0075665628, 
+MSE of testing data set
+0.1089421120, 0.0313815930, 0.0146697577, 0.0095572386, 0.0084997970, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0093363824, 0.0075790986, 0.0050010477, 0.0030772140, 0.0020900068, 
+MSE of testing data set
+0.2917984271, 0.0291086111, 0.0100277361, 0.0042572499, 0.0026139707, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 100 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0104497853, 0.0092131312, 0.0080001568, 0.0077564983, 0.0075526984, 
+MSE of testing data set
+0.1078332727, 0.0308899797, 0.0141183463, 0.0098250528, 0.0085911156, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0097795410, 0.0076138559, 0.0048077470, 0.0030021579, 0.0020605510, 
+MSE of testing data set
+0.2901227031, 0.0292519060, 0.0096315928, 0.0043194489, 0.0026135438, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+all the result are based on 100 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0105199800, 0.0091738288, 0.0083609536, 0.0079283790, 0.0072394730, 
+MSE of testing data set
+0.1229825345, 0.0316454774, 0.0150932841, 0.0100021081, 0.0082815926, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0096051728, 0.0075115165, 0.0050615577, 0.0030352547, 0.0019829346, 
+MSE of testing data set
+0.2702152756, 0.0295164408, 0.0103358985, 0.0043126780, 0.0025255474, 
+-----------------
+the program ends successfully
+--------------
+-------------
+this document record the data of SVR from testing
+this document compare the SVR and MMSE from the view of data sparseness under a given SNR
+this document also records the MSE comparison between the coefficience vector of SVR and MMSE
+all the result are based on 100 realizationsthe given SNR(dB) are
+20 
+
+The training data set size is 30 with 30 feature
+The testing data set size is 1000
+the hyperparameters of SVR are
+C 1.000000 
+epsilon 0.0000001000
+tolerence of the duality gap 0.0010000000
+-----------------
+SVR
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0102386818, 0.0093094169, 0.0085926330, 0.0078841363, 0.0072610577, 
+MSE of testing data set
+0.1207533043, 0.0318646241, 0.0149510465, 0.0101633588, 0.0081964267, 
+-----------------
+-----------------
+MMSE
+the data sizes are
+30, 40, 60, 100, 150, 
+MSE of training data set
+0.0094374430, 0.0075999304, 0.0049695780, 0.0030837007, 0.0019851872, 
+MSE of testing data set
+0.3214988304, 0.0300153372, 0.0099848272, 0.0044151383, 0.0024546572, 
+-----------------
+-----------------
+SVR
+the number of data samples are
+30, 40, 60, 100, 150, 
+MSE of the coefficience vector
+0.0039883608, 0.0007940448, 0.0002493414, 0.0001016081, 0.0000542913, 
+-----------------
+-----------------
+MMSE
+the number of the data samples are
+30, 40, 60, 100, 150, 
+MSE of the coefficience vector
+0.0106680146, 0.0007462838, 0.0001668552, 0.0000440892, 0.0000162667, 
+-----------------
+the program ends successfully
+--------------

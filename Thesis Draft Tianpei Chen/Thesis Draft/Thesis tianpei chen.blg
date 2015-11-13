@@ -6,20 +6,20 @@ A level-1 auxiliary file: C-2.aux
 A level-1 auxiliary file: C-3.aux
 The style file: IEEEtran.bst
 Database file #1: citation.bib
-Repeated entry---line 100 of file citation.bib
+Repeated entry---line 105 of file citation.bib
  : @inproceedings{wolniansky1998v
  :                               ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 383 of file citation.bib
+You're missing a field name---line 388 of file citation.bib
  :  
  :  % title={GPU acceleration for fixed complexity sphere decoder in large MIMO uplink systems},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 468 of file citation.bib
+Repeated entry---line 473 of file citation.bib
  : @inproceedings{osuna1997improved
  :                                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 498 of file citation.bib
+Repeated entry---line 503 of file citation.bib
  : @article{cortes1995support
  :                           ,
 I'm skipping whatever remains of this entry

@@ -8,7 +8,7 @@ M =4;         %size of constellation
 Nt=32;         %number of transmit antennas
 Nr=32;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[16];       %signal to noise ratio per bit in dB
+SNR=[26];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
@@ -58,10 +58,10 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_CSVD_test.txt', 'a');
+ fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_RegularizatonTest.txt', 'a');
  fprintf(fid, '\n');
  fprintf(fid, '-----------------\n');
- fprintf(fid ,'this file record the simulation results of CSVD\n');
+ fprintf(fid ,'this file record the simulation results to test the influence of from the regularizationTest\n');
 %  fprintf(fid, 'the population is %d\n', population);
 %  fprintf(fid, 'the number of generation is %d\n', maxGeneration);
 %  fprintf(fid, 'RSVD-GA with OMIC\n');
@@ -106,7 +106,7 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
 %  fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_CSVD_test.txt', 'a');
- while(symError1<100||channelRealization<1e3)
+ while(channelRealization<1e2)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
 % for i=1:Nt
@@ -172,16 +172,19 @@ H_r=[real(H), -imag(H); imag(H), real(H)];
 % symOut=zeros(Nt,length(C));
 % for count0=1:length(epsilon)
 % for count1=1:length(C)
+% C1=100;
 
  [symOut1, MSE1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav, C, tol ,epsilon, dataMod);
- [ symOut2 ] = CSVD( sigRec, H, SNRd, M, pav, C, epsilon, tol );
+%  C1=10;
+%  [symOut2, MSE2]=RSVR_uniform(H_r,  sigRec_r, SNRd(count),  M, pav, C1, tol ,epsilon, dataMod);
+%  [ symOut2 ] = CSVD( sigRec, H, SNRd, M, pav, C, epsilon, tol );
 %  tol1=1e-1;
 % C1=1000;
 % epsilon1=1e-5;
 % C1=;
 % epsilon1=1e-3;
-C1=1000;
-% [symOut2, MSE2]=CSVD_modified(sigRec, H, SNRd(count), M, pav, C1, epsilon, tol, dataMod);
+% C1=1000;
+% [symOut2, MSE2]=CSVD_modified(sigRec, H, SNRd(count), M, pav, C, epsilon, tol, dataMod);
 % [ symOut1 ] = RSVR_OMIC_MMSE(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
 % [ symOut1 ] = RSVR_OMIC_total(sigRec, H, sym_prev, SNRd(count), M, pa, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
 % generation=0;
@@ -189,10 +192,10 @@ C1=1000;
 % symGeneration=zeros(Nt, population);
 % [ symOut1 ] = RSVD_GA( sigRec, H, symGeneration, M, symConstell, C, tol, epsilon, SNRd(count), pav, population, generation, maxGeneration );
  symError_v=abs(dataMod-symOut1);
- symError_v2=abs(dataMod-symOut2);
+%  symError_v2=abs(dataMod-symOut2);
 %  symError_v3=abs(dataMod-symOut3);
 symError1=symError1+length(find(symError_v>1e-4));
-symError2=symError2+length(find(symError_v2>1e-4));
+% symError2=symError2+length(find(symError_v2>1e-4));
 % symError3=symError2+length(find(symError_v3>1e-4));
 bitOut1=grayDecoder(symOut1, graycode,symConstell);
 bitError1=bitError1+checkBitError(bitOut1, grayData, M);

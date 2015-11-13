@@ -19,17 +19,22 @@ LambdaI=zeros(Nr,1);
 
 %%Reconstruction
 Lambda=complex(LambdaR, LambdaI);
-% I=eye(Nr);
-% G=H'*(I/K);
-% G=(I/(H'*H))*H';
+I=eye(Nr);
+G=H'*(I/(K+SNRd^(-1)*I));
+% G=(I/(H'*H)+SNRd)*H';
 % symOut_mmse=G*y;
-% symOut_hat=2*G*Kr*Lambda;
-symOut_hat=H'*Lambda;
+symOut_hat=2*G*Kr*Lambda;
+U_conj=H'*Lambda;
+V_conj=H.'*Lambda;
+% symOut_hat=(H'+H.')*Lambda;
+% symOut_hat=U_conj+V_conj;
+
 % u_c=H'*Lambda;   %conjugate of u
 % v_c=H.'*Lambda;   %conjugate of v
 % H_c=complex(real(H), -imag(H));
 % symOut_hat=u_c+G*H_c*v_c;
-MSE=norm(H*dataMod-2*Kr*Lambda);
+MSE=norm(H*dataMod-H*symOut_hat);
+% MSE=norm(H*dataMod-2*Kr*Lambda);
 % MSE2=norm(H*dataMod-H*symOut_mmse);
 MSE3=norm(H*dataMod-H*symOut_hat);
 symOut=Rectangular_QAM_slicer(symOut_hat,M, pav);

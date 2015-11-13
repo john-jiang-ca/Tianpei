@@ -52,19 +52,21 @@ for count=1:Nr
 %       lambda_tmp2=lambda(count)*(K(count,count)/k)+(Phi(count)-epsilon*(1))/k;
   lambda_tmp1=lambda(count)+(Phi(count)-epsilon*(-1))/(K(count,count));
   lambda_tmp2=lambda(count)+(Phi(count)-epsilon*(1))/(K(count,count));
-%         clipping
-% xi_tmp=(abs(Phi(count))-epsilon);
-% clipper=C*xi_tmp;
-%     if(lambda_tmp1<-clipper)
-%         lambda_tmp1=-clipper;
-%     elseif(lambda_tmp1>clipper)
-%         lambda_tmp1=clipper;
+% %         clipping
+% xi_tmp_upper=max(0, Phi(count)-epsilon);
+% xi_tmp_lower=max(0, -Phi(count)-epsilon);
+% clipper_upper=C*xi_tmp_upper;
+% clipper_lower=-C*xi_tmp_lower;
+%     if(lambda_tmp1<-clipper_lower)
+%         lambda_tmp1=-clipper_lower;
+%     elseif(lambda_tmp1>clipper_upper)
+%         lambda_tmp1=clipper_upper;
 %     end
-% %        clipping
-%     if(lambda_tmp2<-clipper)
-%         lambda_tmp2=-clipper;
-%     elseif(lambda_tmp2>clipper)
-%         lambda_tmp2=clipper;
+% % clipping
+%     if(lambda_tmp2<-clipper_lower)
+%         lambda_tmp2=-clipper_lower;
+%     elseif(lambda_tmp2>clipper_upper)
+%         lambda_tmp2=clipper_upper;
 %     end
     delta1=(lambda_tmp1-lambda(count))*((-1/2)*(lambda_tmp1-lambda(count))*K(count,count)+Phi(count))-epsilon*(abs(lambda_tmp1)-abs(lambda(count)));
 %     -(1/C)*(lambda_tmp1^2-(lambda(count)^2));
@@ -99,13 +101,7 @@ K_tmp=K(First,First)*K(Second,Second)-(K(First,Second))^2;
 %update lambda(First)
 lambda_tmp1=lambda(First)+(Phi(First)*K(Second,Second)-Phi(Second)...
     *K(First,Second)-epsilon*(sgn(First)*K(Second,Second)-sgn(Second)*K(First,Second)))/K_tmp;
-% %clipping 
-% clipper=C*abs((Phi(First))-epsilon);
-%     if(lambda_tmp1<-clipper)
-%         lambda_tmp1=-clipper;
-%     elseif(lambda_tmp1>clipper)
-%         lambda_tmp1=clipper;
-%     end
+
 sigma(First)=lambda_tmp1-lambda(First);
 sigma1_abs=abs(lambda_tmp1)-abs(lambda(First));
 lambda(First)=lambda_tmp1;
@@ -114,13 +110,7 @@ lambda(First)=lambda_tmp1;
 lambda_tmp2=lambda(Second)+(Phi(Second)*K(First,First)-Phi(First)...
     *K(First,Second)-epsilon*(sgn(Second)*K(First,First)...
     -sgn(First)*K(First,Second)))/K_tmp;
-% %clipping 
-% clipper=C*abs((Phi(Second))-epsilon);
-%     if(lambda_tmp2<-clipper)
-%         lambda_tmp2=-clipper;
-%     elseif(lambda_tmp2>clipper)
-%         lambda_tmp2=clipper;
-%     end
+
 sigma(Second)=lambda_tmp2-lambda(Second);
 sigma2_abs=abs(lambda_tmp2)-abs(lambda(Second));
 lambda(Second)=lambda_tmp2;

@@ -35,7 +35,7 @@ Theta(1)=(-0.5)*C*(ChiR+ChiI);
 G(1)=-2*Theta;
 ratio(1)=abs(G(1))/(abs(G(1))+abs(Theta(1)));
 iteration=1;
-while (ratio(iteration)>=tol)
+while (ratio(iteration)>=tol&& iteration<=1e3)
 %% double channel solver
 % LambdaR_new=zeros(Nr, 1);
 % LambdaI_new=zeros(Nr,1);
@@ -89,6 +89,7 @@ Delta_GR_v(iteration)=Delta_GR;
 ChiI_tmp=abs(PhiI_new+PsiI_new)-epsilon;
 ChiI_tmp=ChiI_tmp(find(ChiI_tmp>0));
 ChiI_new=norm(ChiI_tmp)^(2);
+ChiI_v(iteration)=ChiI_new;
 Delta_ChiI=ChiI_new-ChiI;    %noise term change of imaginary channel
 Delta_ThetaI=DeltaThetaI-0.5*C*Delta_ChiI;   %Theta change of imaginary channel
 DeltaThetaI_v(iteration)=Delta_ThetaI;

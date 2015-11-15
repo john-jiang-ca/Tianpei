@@ -2,11 +2,11 @@
 close all;
 clear all;
 tic
-SNR=2:2:40;   %receive signal to noise ratio in dB
+SNR=2:2:60;   %receive signal to noise ratio in dB
 SNRd=10.^(SNR./10);   %receive signal to noise ratio decimal
-M=30;   %number of training data samples
+M=150;   %number of training data samples
 M_t=1000; %number of testing data samples
-N=30; %the number of features
+N=150; %the dimensions of the linear function
 pav=1/N;      %the average power of the regression coefficiences
 w=complex(normrnd(0, sqrt(pav/2), [N,1]), normrnd(0, sqrt(pav/2),[N,1]));   %the true regression coeffeciences
 % Pt=norm(w)^(2);   %the total power of the true function 
@@ -24,24 +24,26 @@ MSE_testing=zeros(length(SNR),1);   %testing output MSE for SVR
 MSE_mmse_training=zeros(length(SNR),1); %training of the output of MSE for MMSE
 MSE_mmseco_training=zeros(length(SNR),1); %training MSE for coefficiences vector for MMSE
 MSE_mmse_testing=zeros(length(SNR),1); %testing MSE for MMSE
+
+%% generate the file to record the simulation results
 fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\Verification Test\Test Data\MSE_SNR.txt', 'a');
 fprintf(fid, '-------------\n');
 fprintf(fid, 'this document record the data of SVR from testing\n');
-fprintf(fid, 'this document compare the SVR and MMSE from the view of SNR');
+fprintf(fid, 'this document compare the output of SVR and MMSE regression from the view of SNR\n');
 fprintf(fid, 'this document also record the MSE comparison of the regression coefficience vector (coefficience vector) of SVR and MMSE\n');
-fprintf(fid, 'all the result are based on %d realizations', realization);
+fprintf(fid, 'all the result are based on %d realizations\n', realization);
 fprintf(fid, 'the SNR(dB) are\n');
 for count=1:length(SNR)
     fprintf(fid, '%d ', SNR(count));
 end
 fprintf(fid, '\n');
-fprintf(fid, 'The training data set size is %d with %d feature\n', M, N);
+fprintf(fid, 'The training data set size is %d with dimension %d\n', M, N);
 fprintf(fid, 'The testing data set size is %d\n', M_t);
 fprintf(fid, 'the hyperparameters of SVR are\n');
 fprintf(fid, 'C %f \n', C);
 fprintf(fid, 'epsilon %0.10f\n', epsilon);
 fprintf(fid, 'tolerence %0.10f\n', tol);
-
+    
 for count=1:length(SNR)
     
 
@@ -176,35 +178,35 @@ fclose(fid);
    
 
 %% figure plotting
-figure(1)
-title('Prediction accuraccy of output comparison between SVR and MMSE versus SNR');
-hold on 
-plot(SNR, MSE_testing, '-*', 'MarkerSize', 8), xlabel('SNR(dB)'), ylabel('Prediction Risk');
-hold on 
-plot(SNR, MSE_mmse_testing, '--+', 'MarkerSize', 8), xlabel('SNR(dB)'), ylabel('Prediction Risk');
-hold on 
-legend('SVR', 'MMSE');
-hold off
-
-figure(2)
-title('Training Error of output comparison between SVR and MMSE versus SNR');
-hold on 
-plot(SNR, MSE_training, '-*', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
-hold on 
-plot(SNR, MSE_mmse_training, '--+', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
-hold on 
-legend('SVR', 'MMSE');
-hold off
-
-figure(3)
-title('Training Error comparison of coefficience vector between SVR and MMSE versus SNR');
-hold on 
-plot(SNR, MSE_svrco_training, '-*', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
-hold on 
-plot(SNR, MSE_mmseco_training, '--+', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
-hold on 
-legend('SVR', 'MMSE');
-hold off
+% figure(1)
+% title('Prediction accuraccy of output comparison between SVR and MMSE versus SNR');
+% hold on 
+% plot(SNR, MSE_testing, '-*', 'MarkerSize', 8), xlabel('SNR(dB)'), ylabel('Prediction Risk');
+% hold on 
+% plot(SNR, MSE_mmse_testing, '--+', 'MarkerSize', 8), xlabel('SNR(dB)'), ylabel('Prediction Risk');
+% hold on 
+% legend('SVR', 'MMSE');
+% hold off
+% 
+% figure(2)
+% title('Training Error of output comparison between SVR and MMSE versus SNR');
+% hold on 
+% plot(SNR, MSE_training, '-*', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
+% hold on 
+% plot(SNR, MSE_mmse_training, '--+', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
+% hold on 
+% legend('SVR', 'MMSE');
+% hold off
+% 
+% figure(3)
+% title('Training Error comparison of coefficience vector between SVR and MMSE versus SNR');
+% hold on 
+% plot(SNR, MSE_svrco_training, '-*', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
+% hold on 
+% plot(SNR, MSE_mmseco_training, '--+', 'MarkerSize', 5), xlabel('SNR(dB)'), ylabel('Training Error');
+% hold on 
+% legend('SVR', 'MMSE');
+% hold off
 
 
 toc

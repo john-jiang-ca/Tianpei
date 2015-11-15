@@ -1,8 +1,5 @@
-
+ 
 function [X_hat] = Rectangular_QAM_slicer(X, M, pav)    %slicer
-%need to be modified
-
-% sq10=sqrt(10);
 if(M==2)
     d=sqrt(pav);
 else

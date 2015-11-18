@@ -1,0 +1,22 @@
+
+-----------------
+this is the bit error rate of 32 X 32 MIMO system with 16 QAM modulation
+this file record the simulation results of RSVD-GA
+the population is 64
+the number of generation is 7
+the searching area is 12
+mutation probability is 0.0500000000
+alpha is 0.8000000000
+RSVD-GA with OMIC
+the order method is weakest first
+the hyperparameters for RSVD are
+ C: 4.000000
+epsilon: 0.0000001000
+tolerence: 0.0010000000
+without the clipper
+the SNR are:
+4 6 8 10 12 14 16 18 20 22 
+the bit error rates are
+0.2870507812, 0.2520664062, 0.2172187500, 0.1861093750, 0.1514804688, 0.1044882812, 0.0398359375, 0.0083007812, 0.0015859375, 0.0010937500, 
+The program ends successfully!
+-----------------

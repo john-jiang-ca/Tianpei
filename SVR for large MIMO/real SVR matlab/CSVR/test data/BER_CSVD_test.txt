@@ -1,0 +1,1746 @@
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+18 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+0.0847500000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+0.0878437500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+0.0869062500, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+12 
+
+the bit error rates are
+0.0869218750, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+20 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+20 
+
+the bit error rates are
+0.0814843750, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+0.0894843750, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+0.0880156250, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+0.0878906250, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+0.0872968750, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+0.0856250000, 
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000001000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000000000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000000000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000000000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000000000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000000000without the clipper
+the SNR are:
+16 
+
+the bit error rates are
+
+-----------------
+this file record the simulation results of CSVD
+this is the bit error rate of 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD-OMIC are
+tolerence: 0.0010000000
+C is 4.0000000000epsilon is 0.0000000000without the clipper
+the SNR are:
+16 
+
+the bit error rates are

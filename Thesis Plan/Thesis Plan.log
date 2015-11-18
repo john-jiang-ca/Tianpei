@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  30 SEP 2015 15:42
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  4 NOV 2015 17:15
 entering extended mode
 **Thesis*Plan.tex
 ("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.tex"
@@ -552,106 +552,16 @@ Requested font "msbm7" at 6.0pt
 Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
-[1]
-Requested font "ptmrc7t" at 9.0pt
-
-Overfull \hbox (1.65709pt too wide) in paragraph at lines 662--662
-[]|[]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--664
-\OT1/ptm/m/n/12 Scheme (BPSK,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 664--664
-\OT1/ptm/m/n/12 Scheme (16QAM,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
-[]|\OT1/ptm/m/n/12 complexity gets
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
-\OT1/ptm/m/n/12 higher for large
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
-[]|\OT1/ptm/m/n/12 complexity gets
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
-\OT1/ptm/m/n/12 higher for high
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
-\OT1/ptm/m/n/12 or-der mod-u-la-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 672--672
-[]|\OT1/ptm/m/n/12 FG
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 676--676
-[]|\OT1/ptm/m/n/12 MR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
-[]|\OT1/ptm/m/n/12 complexity is
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
-\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[]n[]\OT1/cmr/m/n/12 )$\OT
-1/ptm/m/n/12 , but
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 676--677
-\OT1/ptm/m/n/12 nom-i-nal, with-out
- []
-
-
-Overfull \hbox (61.59996pt too wide) in paragraph at lines 660--679
- [][] 
- []
-
-[2]
-Overfull \hbox (8.11359pt too wide) in paragraph at lines 685--686
- \OT1/ptm/m/it/12 2) Per-for-mance Anal-y-sis and Com-par-i-son (High Or-der Mo
-d-u-la-tion Scheme): [][] \OT1/ptm/m/n/12 16QAM, 64QAM. 
- []
-
-
-Overfull \hbox (8.11359pt too wide) in paragraph at lines 690--691
- \OT1/ptm/m/it/12 2) Per-for-mance Anal-y-sis and Com-par-i-son (High Or-der Mo
-d-u-la-tion Scheme): [][] \OT1/ptm/m/n/12 16QAM, 64QAM. 
- []
-
-[3]
-Overfull \hbox (8.11359pt too wide) in paragraph at lines 695--700
- \OT1/ptm/m/it/12 2) Per-for-mance Anal-y-sis and Com-par-i-son (High Or-der Mo
-d-u-la-tion Scheme): [][] \OT1/ptm/m/n/12 16QAM, 64QAM. 
- []
-
+[1] [2]
 No file "Thesis Plan".bbl.
-[4] ("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.aux") ) 
+[3] [4] ("F:\GitHub\Tianpei\Thesis Plan\Thesis Plan.aux") ) 
 Here is how much of TeX's memory you used:
- 5198 strings out of 429025
- 72142 string characters out of 3166797
- 157412 words of memory out of 3000000
- 8357 multiletter control sequences out of 15000+200000
- 28540 words of font info for 70 fonts, out of 3000000 for 9000
+ 5194 strings out of 429025
+ 72086 string characters out of 3166797
+ 152412 words of memory out of 3000000
+ 8353 multiletter control sequences out of 15000+200000
+ 27894 words of font info for 69 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 36i,13n,38p,363b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,6n,38p,348b,209s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on Thesis*Plan.pdf (4 pages).

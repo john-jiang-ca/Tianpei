@@ -1,0 +1,36 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Thesis tianpei chen.aux
+A level-1 auxiliary file: C-Intro.aux
+A level-1 auxiliary file: C-ChannelHardening.aux
+A level-1 auxiliary file: C-CSVR.aux
+A level-1 auxiliary file: C-GA.aux
+A level-1 auxiliary file: C-2.aux
+A level-1 auxiliary file: C-3.aux
+The style file: IEEEtran.bst
+Database file #1: citation.bib
+Repeated entry---line 105 of file citation.bib
+ : @inproceedings{wolniansky1998v
+ :                               ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 388 of file citation.bib
+ :  
+ :  % title={GPU acceleration for fixed complexity sphere decoder in large MIMO uplink systems},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 473 of file citation.bib
+ : @inproceedings{osuna1997improved
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 503 of file citation.bib
+ : @article{cortes1995support
+ :                           ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Goossens:1997"
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty author in IEEE802.11ac
+Warning--empty journal in bouboulis2013complex
+Warning--empty year in bouboulis2013complex
+
+Done.
+(There were 4 error messages)

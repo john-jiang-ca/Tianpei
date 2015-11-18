@@ -1,0 +1,664 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  4 NOV 2015 17:12
+entering extended mode
+**Candidate*Detector*for*Comparison.tex
+("F:\GitHub\Tianpei\Thesis Plan\Candidate Detector for Comparison.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("F:\GitHub\Tianpei\Thesis Plan\IEEEtran.cls"
+Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count80
+\@IEEEtrantmpcountB=\count81
+\@IEEEtrantmpcountC=\count82
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+Requested font "ptmr7t" at 10.0pt
+
+-- Using 8.5in x 11in (letter) paper.
+-- Using DVI output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 12 point document.
+Requested font "ptmr7t" at 12.0pt
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+Requested font "ptmr7t" at 6.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 6.0pt
+Requested font "ptmri7t" at 6.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 6.0pt
+Requested font "ptmr7t" at 8.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 8.0pt
+Requested font "ptmri7t" at 8.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 8.0pt
+Requested font "ptmr7t" at 9.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 9.0pt
+Requested font "ptmri7t" at 9.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 9.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 10.0pt
+Requested font "ptmri7t" at 10.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 10.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 12.0pt
+Requested font "ptmri7t" at 12.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 12.0pt
+Requested font "ptmr7t" at 14.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 14.0pt
+Requested font "ptmri7t" at 14.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 14.0pt
+Requested font "ptmr7t" at 20.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 20.0pt
+Requested font "ptmri7t" at 20.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 20.0pt
+Requested font "ptmr7t" at 22.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <22> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 22.0pt
+Requested font "ptmri7t" at 22.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <22> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 22.0pt
+Requested font "ptmr7t" at 24.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
+Requested font "ptmb7t" at 24.0pt
+Requested font "ptmri7t" at 24.0pt
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+Requested font "ptmbi7t" at 24.0pt
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@IEEEsubequation=\count87
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count88
+\c@table=\count89
+\@IEEEeqnnumcols=\count90
+\@IEEEeqncolcnt=\count91
+\@IEEEsubeqnnumrollback=\count92
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count93
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\c@IEEEbiography=\count94
+\@IEEEtranrubishbin=\box27
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks18
+\thm@bodyfont=\toks19
+\thm@headfont=\toks20
+\thm@notefont=\toks21
+\thm@headpunct=\toks22
+\thm@preskip=\skip44
+\thm@postskip=\skip45
+\thm@headsep=\skip46
+\dth@everypar=\toks23
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\preprint\fullpage.sty"
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip47
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetex-def\xetex.def"
+File: xetex.def 2014/07/25 v4.03 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psfrag\psfrag.sty"
+Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
+\pfg@pcount=\count95
+\pfg@scount=\count96
+\pfg@temp=\write3
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: xetex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen127
+\epsfysize=\dimen128
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip48
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks25
+\ex@=\dimen129
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen130
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen131
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks26
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks27
+\eqnshift@=\dimen132
+\alignsep@=\dimen133
+\tagshift@=\dimen134
+\tagwidth@=\dimen135
+\totwidth@=\dimen136
+\lineht@=\dimen137
+\@envbody=\toks28
+\multlinegap=\skip49
+\multlinetaggap=\skip50
+\mathdisplay@stack=\toks29
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count109
+\float@exts=\toks30
+\float@box=\box30
+\@float@everytoks=\toks31
+\@floatcapt=\box31
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks32
+\c@algorithm=\count110
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen138
+\extrarowheight=\dimen139
+\NC@list=\toks33
+\extratabsurround=\skip51
+\backup@length=\skip52
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sttools\stfloats.sty"
+Package: stfloats 2012/05/29 v1.1 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count111
+\c@dblbotnumber=\count112
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: The control sequence `\[' is already robust on input line 471.
+LaTeX Info: The control sequence `\]' is already robust on input line 472.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\diagbox\diagbox.sty"
+Package: diagbox 2011/11/23 v2.0 Making table heads with diagonal lines
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\pict2e.sty"
+Package: pict2e 2014/01/12 v0.2z Improved picture commands (HjG,RN,JT)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\pict2e.cfg"
+File: pict2e.cfg 2005/12/29 v1.0 MiKTeX 'pict2e' configuration
+)
+Package pict2e Info: Driver file: dvips.def on input line 119.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+Package pict2e Info: Driver file for pict2e: p2e-dvips.def on input line 121.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pict2e\p2e-dvips.def"
+File: p2e-dvips.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks34
+\@arclen=\dimen140
+\@arcrad=\dimen141
+\@tempdimd=\dimen142
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp.sty"
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\defpattern.sty"
+Package: defpattern 1994/10/12
+\actioncount=\count113
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-basic.sty"
+Package: fp-basic 1996/05/13
+\FP@xs=\count114
+\FP@xia=\count115
+\FP@xib=\count116
+\FP@xfa=\count117
+\FP@xfb=\count118
+\FP@rega=\count119
+\FP@regb=\count120
+\FP@regs=\count121
+\FP@times=\count122
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-addons.sty"
+Package: fp-addons 1995/03/15
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-snap.sty"
+Package: fp-snap 1995/04/05
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-exp.sty"
+Package: fp-exp 1995/04/03
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-trigo.sty"
+Package: fp-trigo 1995/04/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-pas.sty"
+Package: fp-pas 1994/08/29
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-random.sty"
+Package: fp-random 1995/02/23
+\FPseed=\count123
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eqn.sty"
+Package: fp-eqn 1995/04/03
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-upn.sty"
+Package: fp-upn 1996/10/21
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fp\fp-eval.sty"
+Package: fp-eval 1995/04/03
+))
+\diagbox@boxa=\box32
+\diagbox@boxb=\box33
+\diagbox@boxm=\box34
+\diagbox@wd=\dimen143
+\diagbox@ht=\dimen144
+\diagbox@sepl=\dimen145
+\diagbox@sepr=\dimen146
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip53
+\subfigcapskip=\skip54
+\subfigcaptopadj=\dimen147
+\subfigbottomskip=\skip55
+\subfigcapmargin=\dimen148
+\subfiglabelskip=\skip56
+\c@subfigure=\count124
+\c@lofdepth=\count125
+\c@subtable=\count126
+\c@lotdepth=\count127
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip57
+\subfig@bottom=\skip58
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+Package: algpseudocode 
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count128
+\c@ALG@rem=\count129
+\c@ALG@nested=\count130
+\ALG@tlm=\skip59
+\ALG@thistlm=\skip60
+\c@ALG@Lnr=\count131
+\c@ALG@blocknr=\count132
+\c@ALG@storecount=\count133
+\c@ALG@tmpcounter=\count134
+\ALG@tmplength=\skip61
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen149
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip62
+\calc@Bskip=\skip63
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count137
+\calc@Cskip=\skip64
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen152
+\captionmargin@=\dimen153
+\captionwidth=\dimen154
+\caption@tempdima=\dimen155
+\caption@indent=\dimen156
+\caption@parindent=\dimen157
+\caption@hangindent=\dimen158
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@KVtest=\count138
+\sf@farskip=\skip65
+\sf@captopadj=\dimen159
+\sf@capskip=\skip66
+\sf@nearskip=\skip67
+\sf@top=\skip68
+\sf@bottom=\skip69
+)
+("F:\GitHub\Tianpei\Thesis Plan\Candidate Detector for Comparison.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 386.
+LaTeX Font Info:    ... okay on input line 386.
+
+-- Lines per column: 29 (approximate, difference = 13.19727pt).
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+Requested font "ptmrc7t" at 12.0pt
+Requested font "ptmrc7t" at 9.0pt
+Requested font "cmr12" at 12.0pt
+Requested font "cmr8" at 8.0pt
+Requested font "cmr6" at 6.0pt
+Requested font "cmmi12" at 12.0pt
+Requested font "cmmi8" at 8.0pt
+Requested font "cmmi6" at 6.0pt
+Requested font "cmsy10" at 12.0pt
+Requested font "cmsy8" at 8.0pt
+Requested font "cmsy6" at 6.0pt
+Requested font "cmex10" at 12.0pt
+Requested font "cmex8" at 8.0pt
+Requested font "cmex7" at 6.0pt
+LaTeX Font Info:    Try loading font information for U+msa on input line 641.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+Requested font "msam10" at 12.0pt
+Requested font "msam10" at 8.0pt
+Requested font "msam7" at 6.0pt
+LaTeX Font Info:    Try loading font information for U+msb on input line 641.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Requested font "msbm10" at 12.0pt
+Requested font "msbm10" at 8.0pt
+Requested font "msbm7" at 6.0pt
+
+Overfull \hbox (1.65709pt too wide) in paragraph at lines 643--643
+[]|[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
+\OT1/ptm/m/n/12 Scheme (16QAM,
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 647--647
+[]|\OT1/ptm/m/n/12 near op-ti-mal at hun-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+[]|\OT1/ptm/m/n/12 comparable with
+ []
+
+
+Underfull \hbox (badness 3302) in paragraph at lines 649--649
+[]|\OT1/ptm/m/n/12 higher than LAS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
+[]|\OT1/ptm/m/n/12 complexity gets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 651--652
+\OT1/ptm/m/n/12 higher for large
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+[]|\OT1/ptm/m/n/12 complexity gets
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+\OT1/ptm/m/n/12 higher for high
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
+\OT1/ptm/m/n/12 or-der mod-u-la-tion
+ []
+
+
+Overfull \hbox (61.59996pt too wide) in paragraph at lines 641--656
+ [][] 
+ []
+
+
+Overfull \hbox (1.65709pt too wide) in paragraph at lines 665--665
+[]|[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--667
+\OT1/ptm/m/n/12 Scheme (16QAM,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+[]|\OT1/ptm/m/n/12 FG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
+[]|\OT1/ptm/m/n/12 MR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+[]|\OT1/ptm/m/n/12 complexity is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n[]n[]\OT1/cmr/m/n/12 )$\OT
+1/ptm/m/n/12 , but
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+\OT1/ptm/m/n/12 nom-i-nal, with-out
+ []
+
+
+Overfull \hbox (61.59996pt too wide) in paragraph at lines 663--678
+ [][] 
+ []
+
+No file "Candidate Detector for Comparison".bbl.
+
+Overfull \vbox (5.4559pt too high) has occurred while \output is active []
+
+
+[1] [2] [3]
+("F:\GitHub\Tianpei\Thesis Plan\Candidate Detector for Comparison.aux") ) 
+Here is how much of TeX's memory you used:
+ 5198 strings out of 429025
+ 72427 string characters out of 3166797
+ 159412 words of memory out of 3000000
+ 8357 multiletter control sequences out of 15000+200000
+ 28540 words of font info for 70 fonts, out of 3000000 for 9000
+ 912 hyphenation exceptions out of 8191
+ 36i,12n,38p,469b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on Candidate*Detector*for*Comparison.pdf (3 pages).

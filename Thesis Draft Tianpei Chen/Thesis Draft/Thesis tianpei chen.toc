@@ -1,0 +1,31 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Large MIMO system}{1}
+\contentsline {section}{\numberline {1.2}Large MIMO detections}{2}
+\contentsline {section}{\numberline {1.3}Support Vector Regression}{4}
+\contentsline {section}{\numberline {1.4}Thesis Contribution}{5}
+\contentsline {section}{\numberline {1.5}Thesis Outline}{5}
+\contentsline {chapter}{\numberline {2}Theoretical Analysis of Channel Hardening Phenomenon}{6}
+\contentsline {section}{\numberline {2.1}System Model}{6}
+\contentsline {chapter}{\numberline {3}Complex Support Vector Preliminary Detector (CSVPD) for Large-Scale MIMO Uplink Systems}{8}
+\contentsline {section}{\numberline {3.1}Brief Introduction to $\epsilon $-Support Vector Regression ($\epsilon $-SVR)}{9}
+\contentsline {subsection}{\numberline {3.1.1}primal Objective Function}{9}
+\contentsline {subsection}{\numberline {3.1.2}Cost Function}{11}
+\contentsline {subsection}{\numberline {3.1.3}Dual Objective Function}{12}
+\contentsline {section}{\numberline {3.2}Combined Single Direction Searching Strategy}{16}
+\contentsline {section}{\numberline {3.3}Complex Support Vector Preliminary Detector}{18}
+\contentsline {section}{\numberline {3.4}Channel Hardening Approximation}{18}
+\contentsline {section}{\numberline {3.5}CSVPD-LAS versus MMSE-LAS}{18}
+\contentsline {section}{\numberline {3.6}CSVPD-OPIC versus MMSE-OPIC}{18}
+\contentsline {chapter}{\numberline {4}Low Complexity Near Optimal Hybrid Detector based on Genetic Algorithm}{19}
+\contentsline {section}{\numberline {4.1}CSVPD aided Hybrid Genetic Algorithm}{19}
+\contentsline {subsection}{\numberline {4.1.1}Initialization}{20}
+\contentsline {subsection}{\numberline {4.1.2}Selection}{20}
+\contentsline {subsection}{\numberline {4.1.3}Mutation}{20}
+\contentsline {subsection}{\numberline {4.1.4}OPIC}{20}
+\contentsline {subsection}{\numberline {4.1.5}Stopping Criteria}{20}
+\contentsline {chapter}{\numberline {5}Mathematical Layout Styles}{21}
+\contentsline {chapter}{\numberline {6}Tables}{22}
+\contentsline {section}{\numberline {6.1}Tables in \LaTeX {}}{22}
+\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{24}
+\contentsline {section}{\numberline {A.1}Thesis Preamble}{24}
+\contentsline {chapter}{References}{25}

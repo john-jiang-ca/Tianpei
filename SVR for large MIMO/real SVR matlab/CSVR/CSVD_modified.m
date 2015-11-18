@@ -1,187 +1,41 @@
-function [ symOut ] = CSVD_modified( y, H, SNRd, M, G_v )
-%omplex support vector detector
-%   Detailed explanation goes here
-%% hyperparameter settings
-epsilon=1e-2;
-tol=1e-2;
-C=1;
-G_v=[];
-%% initialization 
-Nr=length(H(1,:));
-Nt=length(H(:,1));
+function [ symOut, MSE ] = CSVD_modified( y, H, SNRd, M, pav, C,  epsilon, tol, dataMod )
+% this routine implement complex Support vector detector for MIMO system
+% the global dual optimizaiton problem is divided into two separate dual
+% optimizaiton problems
 K=H*H';
+% y=y+conj(y);
+Nr=length(K(1,:));
 Kr=real(K);
 Ki=imag(K);
-Lambda=zeros(Nr,1);
+Yr=real(y);
+Yi=imag(y);
 LambdaR=zeros(Nr,1);
 LambdaI=zeros(Nr,1);
-Phi=zeros(Nr,1);
-PhiR=real(y);
-PhiI=imag(y);
-Phi=PhiR+1i*PhiI;
-% Psi=zeros(Nr,1);
-% PsiR=zeros(Nr,1);
-% PsiI=zeros(Nr,1);
-% Psi=PhiR+1i*PsiI;
-% ChiR=0;
-% ChiI=0;
-ChiR_tmp=abs(PhiR)-epsilon;
-ChiR_tmp=ChiR_tmp(find(ChiR_tmp>0));
-ChiR=norm(ChiR_tmp, 2)^(2);
-ChiI_tmp=abs(PhiI)-epsilon;
-ChiI_tmp=ChiI_tmp(find(ChiI_tmp>0));
-ChiI=norm(ChiI_tmp,2)^(2);
-ThetaR=(-C/2)*(ChiR);
-ThetaI=(-C/2)*(ChiI);
-GR=-2*ThetaR;
-GI=-2*ThetaI;
-ratioR=GR/(GR+ThetaR);
-iteration=0;
-%% double channel solver
-LambdaR_new=zeros(Nr, 1);
-LambdaI_new=zeros(Nr,1);
-PhiR_new=zeros(Nr,1);
-PhiI_new=zeros(Nr,1);
-i=0;
-j=0;
-m=0;
-n=0;
-%% real channel
-while (ratioR>=tol)
+%% real channel 
+[LambdaR]=a2DSolver_modified(Yr, Kr, C, epsilon, tol);
 
-labelR=1;
-sigmaR1=0;
-sigmaR2=0;
-sigmaR1_a=0;
-sigmaR2_a=0;
-[i,j, sigmaR1, sigmaR2, sigmaR1_a, sigmaR2_a, LambdaR_new, PhiR_new,  DeltaThetaR]=a2DSolver_modified(Kr,  LambdaR, PhiR,  epsilon);
-ChiR_tmp=abs(PhiR_new)-epsilon;
-ChiR_tmp=ChiR_tmp(find(ChiR_tmp>0));
-ChiR_new=norm(ChiR_tmp, 2)^(2);
-ThetaR=ThetaR+DeltaThetaR-(C/2)*(ChiR_new-ChiR);  %update thetaR
-deltaGR=real(y(i))*sigmaR1+real(y(j))*sigmaR2-epsilon*(sigmaR1_a+sigmaR2_a)-2*(DeltaThetaR-(C/2)*(ChiR_new-ChiR));
-GR=GR+deltaGR;
-ratioR=GR/(GR+ThetaR);
-LambdaR=LambdaR_new;
-PhiR=PhiR_new;
-end
-% [index1,index2, sigma1, sigma2, sigma1_a, sigma2_a, Lambda_new, Phi_new, Psi_new, deltaTheta]=a2DSolver(Kr, Ki, Lambda, Phi, Psi, epsilon,  label)
-%% imaginary channel 
-while(ratioI>tol)
-labelI=0;
-sigmaI1=0;
-sigmI2=0;
-sigmaI1_a=0;
-sigmaI2_a=0;
-[m,n, sigmaI1, sigmaI2, sigmaI1_a, sigmaI2_a, LambdaI_new, PhiI_new,  DeltaThetaI]=a2DSolver_modified(Kr,  LambdaI, PhiI, epsilon);
-ChiI_tmp=abs(PhiI_new)-epsilon;
-ChiI_tmp=ChiI_tmp(find(ChiI_tmp>0));
-ChiI_new=norm(ChiI_tmp, 2)^(2);
-ThetaI=ThetaI+DeltaThetaI-(C/2)*(ChiI_new-ChiI);  %update thetaR
-deltaGI=imag(y(m))*sigmaI1+imag(y(n))*sigmaI2-epsilon*(sigmaI1_a+sigmaI2_a)-2*(DeltaThetaI-(C/2)*(ChiI_new-ChiI));
-GI=GI+deltaGI;
-ratioI=GI/(GI+ThetaI);
-LambdaI=LambdaI_new;
-PhiI=PhiI_new;
-end
-%% update G and Theta
-% sigmaR1=LambdaR_new(i)-LambdaR(i);  %calculate the sigma=lambda^{new}_{i}-lambda_{i}
-% sigmaR1_a=abs(LambdaR_new(i))-abs(LambdaR(i));
-% sigmaR2=LambdaR_new(j)-LambdaR(j);
-% sigmaR2_a=abs(LambdaR_new(j))-abs(LambdaR(j));
-% sigmaI1=LambdaI_new(m)-LambdaI(m);
-% sigmaI1_a=abs(LambdaI_new(m))-abs(LambdaI(m));
-% sigmaI2=LambdaI_new(n)-LambdaI(n);
-% sigmaI2_a=abs(LambdaI_new(n))-abs(LambdaI(n));
-% ChiR_tmp=abs(PhiR_new)-epsilon;   %update noise term
-% ChiR_tmp=ChiR_tmp(find(ChiR_tmp>0));
-% ChiR_new=norm(ChiR_tmp,2)^(2);
-% ChiI_tmp=abs(PhiI_new)-epsilon;
-% ChiI_tmp=ChiI_tmp(find(ChiI_tmp>0));
-% ChiI_new=norm(ChiI_tmp,2)^(2);
-% DeltaTheta=DeltaThetaR+DeltaThetaI-(C/2)*(ChiR_new+ChiI_new-ChiR-ChiI); %calculate the update value of delta Theta
-% deltaG=real(y(i))*sigmaR1+real(y(j))*sigmaR2+imag(y(m))*sigmaI1+imag(y(n))*sigmaI2-epsilon*(sigmaR1_a+sigmaR2_a+sigmaI1_a+sigmaI2_a)-2*DeltaTheta; 
-% %calculate real part of K correlated G
-% deltaG_additional=sigmaR1*Ki(i,m)*sigmaI1+sigmaR2*Ki(j,m)*sigmaI1+sigmaR1*Ki(i,n)*sigmaI2+sigmaR2*Ki(j,n)*sigmaI2+sigmaR1*PsiR(i)+sigmaR2*PsiR(j)+sigmaI1*PsiI(m)+sigmaI2*PsiI(n);
-%calculate imaginary part of K correlated G
-% deltaG=deltaG+deltaG_additional;
-% Theta=Theta+DeltaTheta;
-% G=G+deltaG;
-% ratio=G/(G+Theta);
-% PhiR=PhiR_new;
-% PsiR=PsiR_new;
-% PhiI=PhiI_new;
-% PsiI=PsiI_new;
-% LambdaR=LambdaR_new;
-% LambdaI=LambdaI_new;
-% ChiR=ChiR_new;
-% ChiI=ChiI_new;
-% Theta1=(-1/2)*LambdaR'*Kr*LambdaR+(-1/2)*LambdaI'*Kr*LambdaI+real(y)'*LambdaR+imag(y)'*LambdaI-epsilon*(norm(LambdaR,1)+norm(LambdaI,1))-(C/2)*(ChiR+ChiI);
-% G1=real(y)'*LambdaR+imag(y)'*LambdaI-epsilon*(norm(LambdaR,1)+norm(LambdaI,1))-2*Theta-LambdaR'*Ki*LambdaI;
-% ratio=G1/(G1+Theta1);
-% iteration=iteration+1;
-% G_v=[G_v,Theta1];
-%% reconstruct output symbol vector
-Lambda=LambdaR+1i*LambdaI;
-x_hat=H'*(Lambda);
-[symOut]=Rectangular_QAM_slicer(x_hat, M, 1/Nt);
-end
+%% imaginary channel
+[LambdaI]=a2DSolver_modified(Yi, Kr, C, epsilon, tol);
 
-function [X_hat] = Rectangular_QAM_slicer(X, M, pav)    %slicer
-%need to be modified
+%%Reconstruction
+Lambda=complex(LambdaR, LambdaI);
+I=eye(Nr);
+G=H'*(I/(K+SNRd^(-1)*I));
+% G=(I/(H'*H)+SNRd)*H';
+% symOut_mmse=G*y;
+symOut_hat=2*G*Kr*Lambda;
+U_conj=H'*Lambda;
+V_conj=H.'*Lambda;
+% symOut_hat=(H'+H.')*Lambda;
+% symOut_hat=U_conj+V_conj;
 
-% sq10=sqrt(10);
-if(M==2)
-    d=sqrt(pav);
-else
-d=sqrt(3*pav/(2*(M-1)));
-end
-
-N=length(X);
-for i=1:N
-if(M==2)
-    
-    if(real(X(i))<=0)
-        REAL=-d;
-    else
-        REAL=d;
-    end
-    X(i)=complex(REAL,0);
-elseif(M==4)
-        if(real(X(i))<=0)
-        REAL=-d;
-    else
-        REAL=d;
-        end
-        if(imag(X(i))<=0)
-        IMAG=-d;
-    else
-        IMAG=d;
-        end
-        X(i)=complex(REAL, IMAG);
-elseif(M==16)
-    
-        if(real(X(i))<=-2*d)
-        REAL=-3*d;
-        elseif (real(X(i))>-2*d&&real(X(i))<=0)
-        REAL=-d;
-        elseif(real(X(i))>0&&real(X(i))<=2*d)
-            REAL=d;
-        elseif(real(X(i)>2*d))
-            REAL=3*d;
-        end
-        if(imag(X(i))<=-2*d)
-        IMAG=-3*d;
-        elseif (imag(X(i))>-2*d&&imag(X(i))<=0)
-        IMAG=-d;
-        elseif(imag(X(i))>0&&imag(X(i))<=2*d)
-            IMAG=d;
-        elseif(imag(X(i)>2*d))
-            IMAG=3*d;
-        end
-        X(i)=complex(REAL, IMAG);
-end
-
-end
-X_hat=X;
+% u_c=H'*Lambda;   %conjugate of u
+% v_c=H.'*Lambda;   %conjugate of v
+% H_c=complex(real(H), -imag(H));
+% symOut_hat=u_c+G*H_c*v_c;
+MSE=norm(H*dataMod-H*symOut_hat);
+% MSE=norm(H*dataMod-2*Kr*Lambda);
+% MSE2=norm(H*dataMod-H*symOut_mmse);
+MSE3=norm(H*dataMod-H*symOut_hat);
+symOut=Rectangular_QAM_slicer(symOut_hat,M, pav);
 end

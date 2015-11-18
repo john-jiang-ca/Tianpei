@@ -1,0 +1,221 @@
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 14 16 18 20 22 24 26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 3.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+BER of RSVD:
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 14 16 18 20 22 24 26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 3.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+BER of RSVD:
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 14 16 18 20 22 24 26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 3.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+BER of RSVD:
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+10 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 3.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+BER of RSVD:
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+10 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 3.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+BER of RSVD:
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+10 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+02
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+average number of outliers in RSVD
+32.1800000000, 
+average number of outliers in MMSE
+32.5100000000, 
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+14 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+average number of outliers in RSVD
+30.0730000000, 
+average number of outliers in MMSE
+31.5230000000, 
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+6 8 10 12 14 16 18 20 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+average number of outliers in RSVD
+36.3420000000, 33.4710000000, 31.5600000000, 30.4710000000, 29.6490000000, 29.3350000000, 28.7500000000, 27.9690000000, 
+average number of outliers in MMSE
+33.2910000000, 32.4800000000, 31.8820000000, 31.5220000000, 31.2220000000, 31.3430000000, 31.2920000000, 31.6560000000, 
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+this file records the BER simulation results of RSVD and MMSE in LS-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+22 24 26 28 30 32 34 36 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+Simulation Output
+****************
+average number of outliers in RSVD
+27.4660000000, 26.7700000000, 25.9730000000, 25.5450000000, 24.9170000000, 24.6590000000, 24.5460000000, 24.3220000000, 
+average number of outliers in MMSE
+31.6000000000, 31.6260000000, 31.5180000000, 31.6620000000, 31.8520000000, 31.9400000000, 32.0130000000, 31.8970000000, 
+****************
+
+
+The program ends successfully!
+-----------------

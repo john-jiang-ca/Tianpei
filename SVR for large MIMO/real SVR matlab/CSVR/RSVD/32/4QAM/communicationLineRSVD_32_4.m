@@ -3,33 +3,28 @@ clear all
 tic
 
 % cd('/home/tchen44/Documents/spheredecodingtest/4X4')
-%% Signal Modulation and MIMO Channel modeling %% 
+%% SYSTEM CONFIGURATION
 M =4;         %size of constellation
 Nt=32;         %number of transmit antennas
 Nr=32;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[28];       %signal to noise ratio per bit in dB
+SNR=[34:2:40];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
-BER=zeros(length(SNR),1);         %bit error rate
-graycode=grayEncoder(M); %gray encoder
-% numFlop=zeros(length(SNR),1);    %complexity of the algorithm
+pav=1/Nt;  %average symbol power
+SER=zeros(length(SNR),1);  %symbol error rate of RSVD
+BER=zeros(length(SNR),1);  %bit error rate of RSVD
+MSE_V=zeros(length(SNR),1);   %MSE of RSVD
 global C;
 global tol;
 global epsilon;
 C=4;
 tol =1e-3;
-epsilon=1e-7;
-SER1=zeros(length(SNR),1);  %symbol error rate of RSVD
-BER1=zeros(length(SNR), 1); %bit error rate of RSVD
-% SER2=zeros(length(SNR),1); %symbol error rate of MMSE-OSIC
-% SER3=zeros(length(SNR),1); %symbol error rate of partial-MIC
-% SER4=zeros(length(SNR),1); %symbol error rate of ordered-MIC(ascend)
-% SER5=zeros(length(SNR),1); %symbol error rate of ordered-MIC(descend)
-% SER6=zeros(length(SNR),1); %symbol error rate of CSVD
-% symNum=1e3;   %the number of symbol
-% symMap=[11 10 14 15 9 8 12 13 1 0 4 5 3 2 6 7];    %symbol map
-pav=1/Nt;  %average symbol power
+epsilon=0;
+minSymbolError=150;  %the minimum symbol errors to accumulatted
+ChannelRealization=1e3;  %the minimum channel realizations
+%% SIGNAL MDOLUATION
+graycode=grayEncoder(M); %gray encoder
 [symConstell]=symbolConstellation( M, pav );
 % dataInMatrix = reshape(dataIn, [], 2); % Reshape data into binary 4-tuples
 % dataSymbolsIn = bi2de(dataInMatrix);                 % Convert to integers
@@ -56,17 +51,20 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/4QAM/data/BER.txt', 'a');
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/4QAM/data/MSE.txt', 'a');
  fprintf(fid, '\n');
  fprintf(fid, '-----------------\n');
- fprintf(fid ,'this file record the simulation results of RSVD\n');
- fprintf(fid, 'RSVD\n');
- fprintf(fid, 'the order method 1\n');
-fprintf(fid, 'this is the bit error rate of %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
+ fprintf(fid ,'this file record the MSE results of RSVD\n');
+%  fprintf(fid, 'RSVD\n');
+%  fprintf(fid, 'the order method 1\n');
+fprintf(fid, 'SYSTEM CONFIGUREATION\n');
+fprintf(fid, '**********************\n');
+fprintf(fid, ' %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
 fprintf(fid, 'the hyperparameters for RSVD are\n');
-fprintf(fid, 'test the epsilon and C\n');
+fprintf(fid, 'C: %d\n', C);
 % fprintf(fid, 'epsilon: %0.10f\n', epsilon);
-fprintf(fid, 'tolerence: %0.10f\n', tol);
+fprintf(fid, 'tolerence: %e\n', tol);
+fprintf(fid, 'epsilon: %e\n', epsilon);
 fprintf(fid, 'without the clipper\n');
 % fprintf(fid, 'use the abs of feasibility gap\n');
 fprintf(fid,'the SNR are:\n');
@@ -74,34 +72,33 @@ for count=1:length(SNR)
     fprintf(fid, '%d ', SNR(count));
 end
 fprintf(fid, '\n');
-
-fprintf(fid,'the C are:\n');
-for count=1:length(C)
-    fprintf(fid, '%d ', C(count));
-end
+fprintf(fid, 'Minimum number of symbol errors accumulated %d\n', minSymbolError);
+fprintf(fid, 'Minimum number of channel realizations %e\n', ChannelRealization);
+fprintf(fid, '**********************\n');
 fprintf(fid, '\n');
-
-fprintf(fid,'the epsilon are:\n');
-for count=1:length(epsilon)
-    fprintf(fid, '%d ', epsilon(count));
-end
 fprintf(fid, '\n');
-fprintf(fid,'the symbol error rates are\n');
-fclose(fid);
+% fprintf(fid,'the C are:\n');
+% for count=1:length(C)
+%     fprintf(fid, '%d ', C(count));
+% end
+% fprintf(fid, '\n');
+
+% fprintf(fid,'the epsilon are:\n');
+% for count=1:length(epsilon)
+%     fprintf(fid, '%d ', epsilon(count));
+% end
+fprintf(fid, 'SYSTEM OUTPUT\n');
+fprintf(fid, '**********************\n');
+fprintf(fid,'The MSE are\n');
 %% Monte-Carlo simulation
 for count=1:length(SNR)     %under the SNR from 0 to 10
 %     symError1=zeros(length(epsilon),length(C));
-    symError1=0;
-    symError2=0;
-    symError3=0;
-    symError4=0;
-    symError5=0;
-    symError6=0;
-    bitError1=0;
-    channelRealization=0;          %number of channel realization
+   Realization=0;          %number of channel realization
+   symError1=0;   %the number of symbol errors
+   bitError1=0; %the bit error  accumulated
+   MSE=0;   %the MSE of each channel realization
 %     bitOutput=zeros(nBits,1);
- fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/RSVD/32/4QAM/data/BER.txt', 'a');
- while(symError1<200||channelRealization<5e3)
+ while(symError1<minSymbolError||Realization<ChannelRealization)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
 % for i=1:Nt
@@ -115,6 +112,7 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
 dataIn = randi(M,Nt,1);  % Generate vector of input data (1 to M)
 % dataMod = step(hMod, dataIn);  %modulate the bit sequence
 dataMod=zeros(Nt,1);
+grayData=zeros(Nt,1);
 for count1=1:Nt
     dataMod(count1)=symConstell(dataIn(count1));
     grayData(count1)=graycode(dataIn(count1));
@@ -141,21 +139,21 @@ sigRec=H*dataMod+n;
 % end
 % symOut=dataMod;
 
-  stage=1;
-  maxStage1=4;
-  maxStage2=6;
-  symOut1=zeros(Nt,1);
-  W=ones(Nt,Nt);
-  G=zeros(Nt,Nr);
+%   stage=1;
+%   maxStage1=4;
+%   maxStage2=6;
+%   symOut1=zeros(Nt,1);
+%   W=ones(Nt,Nt);
+%   G=zeros(Nt,Nr);
 %   [symOut1]=MIC_Recursive(sigRec, H, symOut1, SNRd(count), M, pav, stage,maxStage, W,G, symConstell);
-  symOut_total=zeros(Nt,1);
+%   symOut_total=zeros(Nt,1);
 %   tol=0.1;
-  list=1:Nt;
-  W=zeros(Nt,1);
-  sym_prev=zeros(Nt,1);
-  sym_total=zeros(Nt,1);
-  G=zeros(Nt);
-  order=zeros(Nt,1);
+%   list=1:Nt;
+%   W=zeros(Nt,1);
+%   sym_prev=zeros(Nt,1);
+%   sym_total=zeros(Nt,1);
+%   G=zeros(Nt);
+%   order=zeros(Nt,1);
 %   [ symOut1 ] = MIC_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell);
 %   [symOut2]=MMSE_OSIC(sigRec, H, SNRd(count), M, pav);
 %    [symOut3]=Partial_MIC_recursive( sigRec, H, list, W, sym_prev, sym_total, SNRd(count), M, pav, stage, maxStage2, symConstell, tol);
@@ -167,13 +165,14 @@ H_r=[real(H), -imag(H); imag(H), real(H)];
 % symOut=zeros(Nt,length(C));
 % for count0=1:length(epsilon)
 % for count1=1:length(C)
- [symOut1]=RSVR(H_r,  sigRec_r, SNRd(count),  M, pav, C, tol ,epsilon);
+ [symOut1, MSE_tmp]=RSVD(H_r,  sigRec_r, SNRd(count),  M, pav, C, tol ,epsilon, dataMod);
 % [ symOut1 ] = RSVR_OMIC_MMSE(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
 % [ symOut1 ] = RSVR_OMIC_total(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order,C, tol, epsilon);
  symError_v=abs(dataMod-symOut1);
 symError1=symError1+length(find(symError_v>1e-4));
 bitOut1=grayDecoder(symOut1, graycode,symConstell);
 bitError1=bitError1+checkBitError(bitOut1, grayData, M);
+MSE=MSE+MSE_tmp;  % calculate the accumulated MSE
 % end
 % end
 %  bitOut=step(hDmod,symOut);
@@ -206,13 +205,14 @@ bitError1=bitError1+checkBitError(bitOut1, grayData, M);
 %     end
 % end
 
-channelRealization=channelRealization+1;
+Realization=Realization+1;
  end
 %  for count0=1:length(epsilon)
 %  for count1=1:length(C)
-SER1(count)=symError1/(channelRealization*Nt);  %caculate symbol error rate of MIC
-BER1(count)=bitError1/(channelRealization*Nt*ceil(log2(M))); %calculate bit error rate of RSVD
-fprintf(fid,'%0.10f, ', BER1(count));
+SER(count)=symError1/(Realization*Nt);  %caculate symbol error rate of MIC
+BER(count)=bitError1/(Realization*Nt*ceil(log2(M))); %calculate bit error rate of RSVD
+MSE_V(count)=MSE/Realization; %calculate the average MSE
+fprintf(fid,'%0.10f, ', MSE_V(count));
 %  end
 %  fprintf(fid, '\n');
 % end
@@ -225,6 +225,14 @@ fprintf(fid,'%0.10f, ', BER1(count));
 % BER(count)=bitError/(channelRealization*nBits);   %caculate bit error rate
 end
 fprintf(fid,'\n');
+fprintf(fid, 'BER are\n');
+for count1=1:length(SNR)
+    fprintf(fid, '%0.10f, ', BER(count1));
+end
+fprintf(fid, '\n');
+fprintf(fid, '**********************\n');
+fprintf(fid, '\n');
+fprintf(fid, '\n');
 fprintf(fid, 'The program ends successfully!\n');
 fprintf(fid, '-----------------\n');
 fclose(fid);

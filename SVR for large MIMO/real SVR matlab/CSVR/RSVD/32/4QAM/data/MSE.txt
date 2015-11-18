@@ -1,0 +1,58 @@
+
+-----------------
+this file record the MSE results of RSVD
+SYSTEM CONFIGUREATION
+**********************
+ 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+C: 4
+tolerence: 1.000000e-03
+epsilon: 0.000000e+00
+without the clipper
+the SNR are:
+6 8 10 12 14 16 18 20 22 24 26 28 30 32 
+Minimum number of symbol errors accumulated 150
+Minimum number of channel realizations 1.000000e+03
+**********************
+
+
+SYSTEM OUTPUT
+**********************
+The MSE are
+0.0299984461, 0.0193353035, 0.0121362374, 0.0078477851, 0.0051168287, 0.0034336228, 0.0024027127, 0.0016443974, 0.0012285362, 0.0009785147, 0.0008327863, 0.0007435500, 0.0006972224, 0.0006739026, 
+BER are
+0.2367031250, 0.1889375000, 0.1346093750, 0.0863437500, 0.0486093750, 0.0222187500, 0.0100156250, 0.0031406250, 0.0012516578, 0.0006230064, 0.0003558685, 0.0002893164, 0.0002826276, 0.0002351146, 
+**********************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+this file record the MSE results of RSVD
+SYSTEM CONFIGUREATION
+**********************
+ 32 X 32 MIMO system with 4 QAM modulation
+the hyperparameters for RSVD are
+C: 4
+tolerence: 1.000000e-03
+epsilon: 0.000000e+00
+without the clipper
+the SNR are:
+34 36 38 40 
+Minimum number of symbol errors accumulated 150
+Minimum number of channel realizations 1.000000e+03
+**********************
+
+
+SYSTEM OUTPUT
+**********************
+The MSE are
+0.0006589697, 0.0006437497, 0.0006345739, 0.0006399370, 
+BER are
+0.0002432405, 0.0002045693, 0.0001735211, 0.0002032542, 
+**********************
+
+
+The program ends successfully!
+-----------------

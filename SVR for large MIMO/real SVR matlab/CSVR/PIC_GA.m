@@ -7,12 +7,12 @@ function [ symOut ] = PIC_GA(y, H, symOut_prev, SNRd, M, pav, stage, maxStage, s
 %the weakest data stream is detected firsly
 Nr=length(H(:,1)); %number of receive antennas
 Nt=length(H(1,:));  %number of transmit antennas
-if(stage==1)
-% I=eye(Nt);
-W=eye(Nt,Nt);
-G=H'*H;
-[value, order]=sort(diag(G),'ascend');
-end
+% if(stage==1)
+% % I=eye(Nt);
+% W=eye(Nt,Nt);
+% G=H'*H;
+% [value, order]=sort(diag(G),'ascend');
+% end
 symOut_tmp=symOut_prev;
 E=zeros(M,1);
 

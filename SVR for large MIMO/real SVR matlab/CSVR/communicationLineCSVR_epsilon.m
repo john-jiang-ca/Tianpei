@@ -4,17 +4,20 @@ tic
 
 % cd('/home/tchen44/Documents/spheredecodingtest/4X4')
 %% Signal Modulation and MIMO Channel modeling %% 
-M =4;         %size of constellation
+M =16;         %size of constellation
 Nt=32;         %number of transmit antennas
 Nr=32;         %number of receive antennas
 % x=6;            %diversity gain that required
-SNR=[12];       %signal to noise ratio per bit in dB
+SNR=[22];       %signal to noise ratio per bit in dB
 SNRd=10.^(SNR.*0.1);   %SNR in dicimal
 noiseV=1./SNRd;   %noise variance of AWGN 
 BER=zeros(length(SNR),1);         %bit error rate
 graycode=grayEncoder(M); %gray encoder
 maxGeneration=7;
-population=32;
+population=100;
+S_area=7;
+pm=0.1;
+alpha=1;
 % numFlop=zeros(length(SNR),1);    %complexity of the algorithm
 global C;
 global tol;
@@ -58,17 +61,22 @@ pav=1/Nt;  %average symbol power
 % hSpDec = comm.SphereDecoder('Constellation', constellation(hMod),...
 %         'BitTable', BitTable, 'DecisionType', 'Hard');
 %     hBER = comm.ErrorRate;
- fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_RSVD_GA.txt', 'a');
+ fid=fopen('/home/tchen44/code/Tianpei/SVR for large MIMO/real SVR matlab/CSVR/test data/BER_RSVD_GA.txt', 'a');
  fprintf(fid, '\n');
  fprintf(fid, '-----------------\n');
+ fprintf(fid, 'this is the bit error rate of %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
  fprintf(fid ,'this file record the simulation results of RSVD-GA\n');
  fprintf(fid, 'the population is %d\n', population);
  fprintf(fid, 'the number of generation is %d\n', maxGeneration);
+ fprintf(fid, 'the searching area is %d\n', S_area);
+ fprintf(fid, 'mutation probability is %0.10f\n', pm);
+ fprintf(fid, 'alpha is %0.10f\n', alpha);
  fprintf(fid, 'RSVD-GA with OMIC\n');
- fprintf(fid, 'the order method 1\n');
-fprintf(fid, 'this is the bit error rate of %d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
-fprintf(fid, 'the hyperparameters for RSVD-OMIC are\n');
-fprintf(fid, 'test the epsilon and C\n');
+ fprintf(fid, 'the order method is weakest first\n');
+fprintf(fid, 'the hyperparameters for RSVD are\n');
+fprintf(fid, ' C: %f\n', C);
+fprintf(fid,'epsilon: %0.10f\n', epsilon);
+% fprintf(fid, 'test the epsilon and C\n');
 % fprintf(fid, 'epsilon: %0.10f\n', epsilon);
 fprintf(fid, 'tolerence: %0.10f\n', tol);
 fprintf(fid, 'without the clipper\n');
@@ -79,19 +87,19 @@ for count=1:length(SNR)
 end
 fprintf(fid, '\n');
 
-fprintf(fid,'the C are:\n');
-for count=1:length(C)
-    fprintf(fid, '%d ', C(count));
-end
-fprintf(fid, '\n');
-
-fprintf(fid,'the epsilon are:\n');
-for count=1:length(epsilon)
-    fprintf(fid, '%d ', epsilon(count));
-end
-fprintf(fid, '\n');
-fprintf(fid,'the symbol error rates are\n');
-fclose(fid);
+% fprintf(fid,'the C are:\n');
+% for count=1:length(C)
+%     fprintf(fid, '%d ', C(count));
+% end
+% fprintf(fid, '\n');
+% 
+% fprintf(fid,'the epsilon are:\n');
+% for count=1:length(epsilon)
+%     fprintf(fid, '%d ', epsilon(count));
+% end
+% fprintf(fid, '\n');
+fprintf(fid,'the bit error rates are\n');
+% fclose(fid);
 %% Monte-Carlo simulation
 for count=1:length(SNR)     %under the SNR from 0 to 10
 %     symError1=zeros(length(epsilon),length(C));
@@ -104,8 +112,7 @@ for count=1:length(SNR)     %under the SNR from 0 to 10
     bitError1=0;
     channelRealization=0;          %number of channel realization
 %     bitOutput=zeros(nBits,1);
- fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\test data\BER_RSVD_GA.txt', 'a');
- while(symError1<100||channelRealization<1e3)
+ while(symError1<200||channelRealization<1e3)
 % symOut=zeros(Nt,1);
 % for k=1:symNum/Nt
 % for i=1:Nt
@@ -166,8 +173,8 @@ sigRec=H*dataMod+n;
 % [ symOut4 ] = MIC_ordering_ascend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
 % [ symOut1 ] = MIC_ordering_descend_Recursive(sigRec, H, sym_prev, SNRd(count), M, pav, stage, maxStage1,W,G, symConstell, order);
 % [symOut5]=CSVD(sigRec, H, SNRd(count), M);
-sigRec_r=[real(sigRec);imag(sigRec)];
-H_r=[real(H), -imag(H); imag(H), real(H)];
+% sigRec_r=[real(sigRec);imag(sigRec)];
+% H_r=[real(H), -imag(H); imag(H), real(H)];
 % symOut=zeros(Nt,length(C));
 % for count0=1:length(epsilon)
 % for count1=1:length(C)
@@ -178,7 +185,7 @@ H_r=[real(H), -imag(H); imag(H), real(H)];
 generation=0;
 
 symGeneration=zeros(Nt, population);
-[ symOut1 ] = RSVD_GA( sigRec, H, symGeneration, M, symConstell, C, tol, epsilon, SNRd(count), pav, population, generation, maxGeneration );
+[ symOut1 ] = RSVD_GA( sigRec, H, symGeneration, M, symConstell, C, tol, epsilon, pm, S_area, alpha,  SNRd(count), pav, population, generation, maxGeneration );
  symError_v=abs(dataMod-symOut1);
 symError1=symError1+length(find(symError_v>1e-4));
 bitOut1=grayDecoder(symOut1, graycode,symConstell);

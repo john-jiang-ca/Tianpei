@@ -1,7 +1,8 @@
 function [ symOut] = RSVD( H,  y, SNRd,  M, pav, C, tol , epsilon)
 %real SVR detecor  
 %OUTPUT
-% symOut: the estimated regression coefficience vector (sliced by symbol constellation alphabet) 
+% symOut: the estimated regression coefficience vector (sliced by symbol constellation alphabet)
+% outlier: the number of extreme case before slicing
 
 
 %Input
@@ -13,7 +14,7 @@ function [ symOut] = RSVD( H,  y, SNRd,  M, pav, C, tol , epsilon)
 % C: constant to control the tradeoff between regularization term and
 % outlier penaty term
 % epsilon: epsilon for precision control 
-% tol: tolerance of the duality gap that determine when the algorithm stops  
+% tol: tolerance of the duality gap that determine when the algorithm stops 
 
 
 
@@ -116,6 +117,13 @@ Phi=Phi_new;  %update Phi
 end
 %% Reconstruct regression coefficience vector based on lambda
 symOut_tmp=H'*lambda;
+% if(M==2)
+%     d=sqrt(pav);
+% else
+% d=sqrt(3*pav/(2*(M-1)));
+% end
+% Q=ceil(sqrt(M));  % the size of one dimension of symbol constellation
+% outlier=length(find(symOut_tmp>(Q-1)*d))+length(find(symOut_tmp<-(Q-1)*d));
 if(length(symOut_tmp)==2)
     symOut=symOut_tmp(1)+1i*symOut_tmp(2);
 else

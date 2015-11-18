@@ -10,15 +10,22 @@
 \contentsline {section}{\numberline {3.1}Brief Introduction to $\epsilon $-Support Vector Regression ($\epsilon $-SVR)}{9}
 \contentsline {subsection}{\numberline {3.1.1}primal Objective Function}{9}
 \contentsline {subsection}{\numberline {3.1.2}Cost Function}{11}
-\contentsline {subsection}{\numberline {3.1.3}Dual Objective Problem}{13}
-\contentsline {section}{\numberline {3.2}Combined Single Direction Searching Strategy}{13}
-\contentsline {section}{\numberline {3.3}Complex Support Vector Preliminary Detector}{14}
-\contentsline {section}{\numberline {3.4}Channel Hardening Approximation}{14}
-\contentsline {section}{\numberline {3.5}CSVPD-LAS versus MMSE-LAS}{14}
-\contentsline {section}{\numberline {3.6}CSVPD-OPIC versus MMSE-OPIC}{14}
-\contentsline {chapter}{\numberline {4}Mathematical Layout Styles}{15}
-\contentsline {chapter}{\numberline {5}Tables}{16}
-\contentsline {section}{\numberline {5.1}Tables in \LaTeX {}}{16}
-\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{18}
-\contentsline {section}{\numberline {A.1}Thesis Preamble}{18}
-\contentsline {chapter}{References}{19}
+\contentsline {subsection}{\numberline {3.1.3}Dual Objective Function}{12}
+\contentsline {section}{\numberline {3.2}Combined Single Direction Searching Strategy}{16}
+\contentsline {section}{\numberline {3.3}Complex Support Vector Preliminary Detector}{18}
+\contentsline {section}{\numberline {3.4}Channel Hardening Approximation}{18}
+\contentsline {section}{\numberline {3.5}CSVPD-LAS versus MMSE-LAS}{18}
+\contentsline {section}{\numberline {3.6}CSVPD-OPIC versus MMSE-OPIC}{18}
+\contentsline {chapter}{\numberline {4}Low Complexity Near Optimal Hybrid Detector based on Genetic Algorithm}{19}
+\contentsline {section}{\numberline {4.1}CSVPD aided Hybrid Genetic Algorithm}{19}
+\contentsline {subsection}{\numberline {4.1.1}Initialization}{20}
+\contentsline {subsection}{\numberline {4.1.2}Selection}{20}
+\contentsline {subsection}{\numberline {4.1.3}Mutation}{20}
+\contentsline {subsection}{\numberline {4.1.4}OPIC}{20}
+\contentsline {subsection}{\numberline {4.1.5}Stopping Criteria}{20}
+\contentsline {chapter}{\numberline {5}Mathematical Layout Styles}{21}
+\contentsline {chapter}{\numberline {6}Tables}{22}
+\contentsline {section}{\numberline {6.1}Tables in \LaTeX {}}{22}
+\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{24}
+\contentsline {section}{\numberline {A.1}Thesis Preamble}{24}
+\contentsline {chapter}{References}{25}

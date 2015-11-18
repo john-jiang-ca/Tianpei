@@ -1,4 +1,4 @@
-function [ symOut ] = MMSE( y, H, SNRd, M, pav )
+function [ symOut, outlier ] = MMSE( y, H, SNRd, M, pav )
 %Minimum Mean Square Error Detector
 % Rectangular_QAM_slicer performs slicing based on the symbol constellation
 % alphabet

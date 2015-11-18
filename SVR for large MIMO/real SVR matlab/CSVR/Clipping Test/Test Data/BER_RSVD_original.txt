@@ -1,0 +1,1453 @@
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+clipping set: add to the implicit expression R(xi)
+clipping set: add to the explicit expression R(xi(lambda))
+****************
+
+
+Simulation Output
+****************
+BER of RSVD:
+0.2807291667, 0.2265625000, 0.1963541667, 0.1354166667, 0.0786458333, 
+
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+4 6 8 10 12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 3.000000e+01
+The minimum symbol error accumulatted is 1.000000e+00
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping explicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.050000
+tolerance: 1.000000e-03
+epsilon: 1.000000e-07
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+12 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+10 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+0.0000000000, 
+BER of RSVD original are:
+0.0035937500, 
+
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+0.0000000000, 
+BER of RSVD original are:
+0.0004828492, 
+
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+26 
+the hyperparameter settings for RSVD are
+C: 4.000000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+10 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+10 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+14 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+14 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+14 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+0.0208593750, 
+BER of RSVD original are:
+0.0215625000, 
+
+****************
+
+
+The program ends successfully!
+-----------------
+
+-----------------
+This file records the simulation results for RSVD with clipping
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the SNR (dB) are:
+14 
+the hyperparameter settings for RSVD are
+C: 0.500000
+tolerance: 1.000000e-03
+epsilon: 0.000000e+00
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 5.000000e+01
+clipping set: original
+****************
+
+
+Simulation Output
+****************
+BER of RSVD clipping implicit:
+0.0195312500, 
+BER of RSVD original are:
+0.0201562500, 
+
+****************
+
+
+The program ends successfully!
+-----------------

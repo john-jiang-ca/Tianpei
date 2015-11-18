@@ -37,6 +37,11 @@ E.~Dahlman, S.~Parkvall, J.~Skold, and P.~Beming, \emph{3{G} {E}volution:
   {HSPA} and {LTE} for Mobile Broadband}.\hskip 1em plus 0.5em minus
   0.4em\relax Academic press, 2010.
 
+\bibitem{oestges2010mimo}
+C.~Oestges and B.~Clerckx, \emph{MIMO wireless communications: From real-world
+  propagation to space-time code design}.\hskip 1em plus 0.5em minus
+  0.4em\relax Academic Press, 2010.
+
 \bibitem{rusek2013scaling}
 F.~Rusek, D.~Persson, B.~K. Lau, E.~G. Larsson, T.~L. Marzetta, O.~Edfors, and
   F.~Tufvesson, ``Scaling up {MIMO}: Opportunities and challenges with very
@@ -271,13 +276,30 @@ P.~Bouboulis, S.~Theodoridis, C.~Mavroforakis, and L.~Evaggelatou-Dalla,
   ``Complex support vector machines for regression and quaternary
   classification.''
 
-\bibitem{oestges2010mimo}
-C.~Oestges and B.~Clerckx, \emph{MIMO wireless communications: From real-world
-  propagation to space-time code design}.\hskip 1em plus 0.5em minus
-  0.4em\relax Academic Press, 2010.
-
 \bibitem{steinwart2011training}
 I.~Steinwart, D.~Hush, and C.~Scovel, ``Training svms without offset,''
   \emph{The Journal of Machine Learning Research}, vol.~12, pp. 141--202, 2011.
+
+\bibitem{smola1998connection}
+A.~J. Smola, B.~Sch{\"o}lkopf, and K.-R. M{\"u}ller, ``The connection between
+  regularization operators and support vector kernels,'' \emph{Neural
+  networks}, vol.~11, no.~4, pp. 637--649, 1998.
+
+\bibitem{muller1997predicting}
+K.-R. M{\"u}ller, A.~J. Smola, G.~R{\"a}tsch, B.~Sch{\"o}lkopf, J.~Kohlmorgen,
+  and V.~Vapnik, ``Predicting time series with support vector machines,'' in
+  \emph{Artificial Neural Networks—ICANN'97}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer, 1997, pp. 999--1004.
+
+\bibitem{juntti1997genetic}
+M.~J. Juntti, T.~Schl{\"o}sser, and J.~O. Lilleberg, ``Genetic algorithms for
+  multiuser detection in synchronous cdma,'' in \emph{Information Theory. 1997.
+  Proceedings., 1997 IEEE International Symposium on}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 1997, p. 492.
+
+\bibitem{ergun2000multiuser}
+C.~Erg{\"u}n and K.~Hacioglu, ``Multiuser detection using a genetic algorithm
+  in cdma communications systems,'' \emph{Communications, IEEE Transactions
+  on}, vol.~48, no.~8, pp. 1374--1383, 2000.
 
 \end{thebibliography}

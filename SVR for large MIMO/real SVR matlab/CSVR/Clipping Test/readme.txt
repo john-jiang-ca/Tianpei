@@ -1,0 +1,4 @@
+
+  This package includes all the necessary matlab code for the simulation of BER performance of Real Support Vector Regression (RSVD) and Minimum Mean Square Error (MMSE) Detectors. 
+  The main system file is 'communicationLink.m', in this main routine, first there is a brief introduction about how this routine works. Then it comes a short paragraph indicates the major function modules used in the main file. Then it comes the system configurations, parameters can be set for the desired scheme.
+  All the reults are saved in the output .txt file, called "BER_RSVD_MMSE.txt". On the top of this output file, there is a short paragraph that explains the system configuration, then bit error rate of different signal to noise ratio points are recorded. These data can be further inputed into matlab to plot the figure respectively.      

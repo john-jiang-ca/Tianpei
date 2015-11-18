@@ -4,9 +4,9 @@ clear all;
 tic
 SNR=2:2:60;   %receive signal to noise ratio in dB
 SNRd=10.^(SNR./10);   %receive signal to noise ratio decimal
-M=150;   %number of training data samples
+M=30;   %number of training data samples
 M_t=1000; %number of testing data samples
-N=150; %the dimensions of the linear function
+N=30; %the dimensions of the linear function
 pav=1/N;      %the average power of the regression coefficiences
 w=complex(normrnd(0, sqrt(pav/2), [N,1]), normrnd(0, sqrt(pav/2),[N,1]));   %the true regression coeffeciences
 % Pt=norm(w)^(2);   %the total power of the true function 
@@ -15,8 +15,8 @@ d=zeros(M,1);   %the observations in training part
 w_svr=zeros(M,1); %the regression estimation coefficiences from SVR
 noiseV=1./SNRd;
 realization=1e2;  %the realization time
-epsilon=1e-7;
-C=1;
+epsilon=0;
+C=10;
 tol=1e-3;
 MSE_training=zeros(length(SNR),1);  %training output MSE for SVR
 MSE_svrco_training=zeros(length(SNR),1);  %training MSE for coefficiences vector for SVR
@@ -26,11 +26,12 @@ MSE_mmseco_training=zeros(length(SNR),1); %training MSE for coefficiences vector
 MSE_mmse_testing=zeros(length(SNR),1); %testing MSE for MMSE
 
 %% generate the file to record the simulation results
-fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\Verification Test\Test Data\MSE_SNR.txt', 'a');
+fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\Verification Test\Test Data\MSE_coefficientVector.txt', 'a');
 fprintf(fid, '-------------\n');
 fprintf(fid, 'this document record the data of SVR from testing\n');
 fprintf(fid, 'this document compare the output of SVR and MMSE regression from the view of SNR\n');
 fprintf(fid, 'this document also record the MSE comparison of the regression coefficience vector (coefficience vector) of SVR and MMSE\n');
+fprintf(fid, 'this document consider the influence of the weight of regularization term to the estimation accuracy of coefficience vector\n');
 fprintf(fid, 'all the result are based on %d realizations\n', realization);
 fprintf(fid, 'the SNR(dB) are\n');
 for count=1:length(SNR)
@@ -41,8 +42,8 @@ fprintf(fid, 'The training data set size is %d with dimension %d\n', M, N);
 fprintf(fid, 'The testing data set size is %d\n', M_t);
 fprintf(fid, 'the hyperparameters of SVR are\n');
 fprintf(fid, 'C %f \n', C);
-fprintf(fid, 'epsilon %0.10f\n', epsilon);
-fprintf(fid, 'tolerence %0.10f\n', tol);
+fprintf(fid, 'epsilon %e\n', epsilon);
+fprintf(fid, 'tolerence %e\n', tol);
     
 for count=1:length(SNR)
     

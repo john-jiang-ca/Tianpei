@@ -4,11 +4,10 @@ clear all;
 tic
 SNR=2:2:50;   %receive signal to noise ratio in dB
 SNRd=10.^(SNR./10);   %receive signal to noise ratio decimal
-M=120;   %number of training data samples
+M=30;   %number of training data samples
 M_t=1000; %number of testing data samples
-N=120; %the dimensions of the linear function
+N=30; %the dimensions of the linear function
 pav=1/N;      %the average power of the regression coefficiences
-w=complex(normrnd(0, sqrt(pav/2), [N,1]), normrnd(0, sqrt(pav/2),[N,1]));   %the true regression coeffeciences
 % Pt=norm(w)^(2);   %the total power of the true function 
 d_hat=zeros(M,1); %the true output of the linear function in training part
 d=zeros(M,1);   %the observations in training part
@@ -16,7 +15,7 @@ w_svr=zeros(M,1); %the regression estimation coefficiences from SVR
 noiseV=1./SNRd;
 realization=1e3;  %the realization time
 epsilon=0;
-C=1;
+C=0.1;
 tol=1e-3;
 MSE_training_svrV=zeros(length(SNR),1);  %training output MSE for SVR
 MSE_training_svr_coV=zeros(length(SNR),1);  %training MSE for coefficiences vector for SVR
@@ -26,11 +25,11 @@ MSE_training_mmse_coV=zeros(length(SNR),1); %training MSE for coefficiences vect
 MSE_testing_mmseV=zeros(length(SNR),1); %testing MSE for MMSE
 
 %% generate the file to record the simulation results
-fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\Verification Test\Test Data\Prediction_coefficintVector.txt', 'a');
+fid=fopen('F:\GitHub\Tianpei\SVR for large MIMO\real SVR matlab\CSVR\Verification Test\Test Data\FunctionEstimation_withoutNoise.txt', 'a');
 fprintf(fid, '=======================================\n');
-fprintf(fid, 'this document shows the results of the relation between prediction and MSE of coefficient vector\n');
-fprintf(fid, 'this document compare the output of SVR and MMSE regression from the view of SNR\n');
-fprintf(fid, 'this document also record the MSE comparison of the regression coefficience vector (coefficience vector) of SVR and MMSE\n');
+fprintf(fid, 'this document records the comparison of the accuracy of function estimation between SVR and MMSE without additive noise\n');
+% fprintf(fid, 'this document compare the output of SVR and MMSE regression from the view of SNR\n');
+% fprintf(fid, 'this document also record the MSE comparison of the regression coefficience vector (coefficience vector) of SVR and MMSE\n');
 % fprintf(fid, 'this document consider the influence of the weight of regularization term to the estimation accuracy of coefficience vector\n');
 fprintf(fid, 'SYSTEM CONFIGURATION\n');
 fprintf(fid, '*********************\n');
@@ -63,6 +62,7 @@ for count=1:length(SNR)
 for count1=1:realization
 
 %% The traing part
+w=complex(normrnd(0, sqrt(pav/2), [N,1]), normrnd(0, sqrt(pav/2),[N,1]));   %the true regression coeffeciences   
 x=complex(normrnd(0,sqrt(1/2), M, N), normrnd(0, sqrt(1/2), M ,N));    %input data matrix
 n=complex(normrnd(0, sqrt(noiseV(count)/2), M,1), normrnd(0, sqrt(noiseV(count)/2), M,1));  %AWGN noise vector
 d_hat=x*w;  %the true output of the linear function
@@ -73,7 +73,7 @@ MSE_training_svr=MSE_training_svr+norm(d_out_svr-d_hat)^(2)/M;   % the mean MSE 
 MSE_training_svr_co=MSE_training_svr_co+norm(w-w_svr)^(2)/M;   %the mean MSE of the coefficience vector for the training data of SVR
 % the MMSE regression
 I=eye(N);
-w_mmse=(I/(x'*x+SNRd(count)^(-1)*I))*x'*d; 
+w_mmse=(I/(x'*x+(SNRd(count)/N)^(-1)*I))*x'*d; 
 d_out_mmse=x*w_mmse;
 MSE_training_mmse=MSE_training_mmse+norm(d_hat-d_out_mmse)^(2)/M;  %the mean MSE of the output of the training data of  MMSE 
 MSE_training_mmse_co=MSE_training_mmse_co+norm(w-w_mmse)^(2)/M; %the mean MSE of the coefficience vector of MMSE training data 

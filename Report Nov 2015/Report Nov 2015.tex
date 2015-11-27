@@ -1,0 +1,914 @@
+
+%% bare_jrnl.tex
+%% V1.4a
+%% 2014/09/17
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8a or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_conf_compsoc.tex,
+%%                    bare_jrnl_compsoc.tex, bare_jrnl_transmag.tex
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices and paper sizes can       ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+%\documentclass[journal]{IEEEtran}
+\documentclass[10pt, draftclsnofoot, onecolumn]{IEEEtran}
+%\documentclass[12pt,paper,final]{article}
+%
+%\documentclass[12pt, onecolummn]{report}
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{graphicx}
+%\usepackage[pdftex]{graphicx}
+\usepackage{psfrag}
+\usepackage{color}
+\usepackage{epsfig}
+%\usepackage{appendix}
+%\usepackage{caption}
+\usepackage{cite}
+\usepackage{ifpdf}
+\usepackage[cmex10]{amsmath}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{fixltx2e}
+\usepackage{setspace} 
+\usepackage{diagbox}
+\usepackage{subfigure}
+\usepackage{algpseudocode}
+\usepackage{multirow}
+\usepackage{calc}
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Justification for Employing Support Vector Detector in Large-Scale MIMO Systems}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{Michael~Shell,~\IEEEmembership{Member,~IEEE,}
+    %    John~Doe,~\IEEEmembership{Fellow,~OSA,}
+   %     and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
+%\thanks{M. Shell is with the Department
+%of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
+%GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised September 17, 2014.}}
+
+
+\author{Tianpei Chen\\
+Department of Electrical and Computer Engineering\\
+McGill University, Montreal, Quebec, Canada\\
+\today}
+
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~13, No.~9, September~2014}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2014 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+This report provides the justifications for employing support vector regression (SVR) in the detection problem of Large-Scale MIMO (LS-MIMO) systems, which have medium or full loading factor (number of transmit antennas is close or equal to the number of receive antennas). Under this condition, LS-MIMO detection in the view of statistical learning is a multidimensional linear regression problem, given a small training data set. We compare linear detectors (LD) (zero forcing (ZF) and minimum mean square error (MMSE)) with SVR in view of statistical learning theory and demonstrate the better performance that SVR possess over LD in the high spectrum efficiency LS-MIMO systems with medium and full loading factor.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Large-Scale MIMO, full loading, statistical learning theory, support vector regression, linear detectors
+\end{IEEEkeywords}
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+
+
+
+\section{Large-Scale MIMO System Model and Equivalent Regression Estimation Problem}
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps.
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+%\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
+%for IEEE journal papers produced under \LaTeX\ using
+%IEEEtran.cls version 1.8a and later.
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+%I wish you the best of success.
+
+%\hfill mds
+ 
+%\hfill September 17, 2014
+In this section, we present the system model of Large-Scale MIMO (LS-MIMO) systems and the equivalent regression estimation model in view of statistical learning. 
+
+\subsection{System Model}
+Consider a uncoded complex LS-MIMO uplink spatial multiplexing (SM) system, uplink means the data streams are transmitted from users to base stations (BS). Let $N_{t}$ denotes the number of transmit antennas and $N_{r}$ denotes the number of receive antennas, $N_{r}\geq N_{t}$, define loading factor $\alpha=\frac{N_{t}}{N_{r}}$. Typically LS-MIMO systems have hundreds of receive antennas at BS. 
+
+Independent bit sequences, which are modulated to complex symbols are transmitted over flat and slow fading channel. The discrete time model of LS-MIMO systems in the complex domain is given by 
+\begin{equation}
+\mathbf{y}_{c}=\mathbf{H}_{c}\mathbf{s}_{c}+\mathbf{n}_{c},
+\label{complex MIMO model}
+\end{equation}
+where $\mathbf{y}_{c}\in \mathbb{C}^{N_{r}\times 1}$ denotes the receive symbol vector, $\mathbf{H}_{c}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading propagation channel matrix. Each component of $\mathbf{H}_{c}$ is independent identically distributed (i.i.d), circularly symmetric complex Gaussian (CSCG) random variables with zero mean and unit variance. $\mathbf{s}_{c}\in \mathbb{C}^{N_{t}\times 1}$ denotes the transmit symbol vector. Each transmit symbol is equally probable and mutually independent, taken from a finite signal constellation alphabet $\mathbb{O}$ (4-QAM, 16-QAM and 64-QAM), $|\mathbb{O}|=M$. $\mathbf{s}_{c}\in \mathbb{O}^{N_{t}}$, satisfies $\mathbb{E}(\mathbf{s}_{c}\mathbf{s}^{H}_{c})=\xi_{s}\mathbf{I}_{N_{t}}$, where $\mathbb{E}(\cdot)$ denotes expectation operator, $(\cdot)^{H}$ denotes Hermitian transpose, $\xi_{s}$ denotes the average power of each component in $\mathbf{s}_{c}$, $\mathbf{I}_{N_{t}}\in \mathbb{C}^{N_{t}\times N_{t}}$ is an identity matrix. $\mathbf{n}_{c}\in \mathbb{C}^{N_{t}\times 1}$ denotes i.i.d additive white Gaussian noise with zeros mean and satisfies $\mathbb{E}(\mathbf{n}_{c}\mathbf{n}^{H}_{c})=N_{0}\mathbf{I}_{N_{r}}$. $N_{0}$ denotes the power spectrum density of each component in $\mathbf{n}_{c}$. The signal to noise ratio (SNR) is defined as $\frac{\xi_{s}}{N_{0}}$.
+
+The discrete time model in (\ref{complex MIMO model}) is defined in complex domain, one can transfer this model into an equivalent real-valued model. Let $\Re(\cdot)$ denotes the real part and $\Im(\cdot)$ denotes the imaginary part, $\mathbf{y}_{c}, \mathbf{H}_{c}, \mathbf{s}_{c}$ and $\mathbf{n}_{c}$ can be decomposed by 
+
+\newcommand{\mysmallarraydecl}{\renewcommand{%
+\IEEEeqnarraymathstyle}{\scriptscriptstyle}%
+\renewcommand{\IEEEeqnarraytextstyle}{\scriptsize}%
+\renewcommand{\baselinestretch}{1.1}%
+\settowidth{\normalbaselineskip}{\scriptsize
+\hspace{\baselinestretch\baselineskip}}%
+\setlength{\baselineskip}{\normalbaselineskip}%
+\setlength{\jot}{0.25\normalbaselineskip}%
+\setlength{\arraycolsep}{2pt}}
+
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\mathbf{y}_{c}=\Re{(\mathbf{y}_c)}+\jmath \Im{(\mathbf{y}_{c})}, \mathbf{H}_{c}=\Re{(\mathbf{H}_{c})}+\jmath \Im{(\mathbf{H}_{c})},\\
+\mathbf{s}_{c}=\Re{(\mathbf{s}_{c})}+\jmath \Im{(\mathbf{s}_{c})}, \mathbf{n}_{c}=\Re{(\mathbf{n}_{c})}+\jmath \Im{(\mathbf{n}_{c})},
+\label{complex decomposition}
+\end{IEEEeqnarray}
+define 
+
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\mathbf{y}=[\Re{(\mathbf{y}_{c})}^{T}, \Im{(\mathbf{y}_{c})}^{T}]^{T}, \mathbf{H}=\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\Re{(\mathbf{H}_{c})}& -\Im{(\mathbf{H}_{c})}\\
+\Im{(\mathbf{H}_{c})}& \Re{(\mathbf{H}_{c})}
+\end{IEEEeqnarraybox*}\right] \\
+\mathbf{s}=[\Re{(\mathbf{s}_{c})}^{T}, \Im{(\mathbf{s}_{c})}^{T}]^{T}, \mathbf{n}=[\Re{(\mathbf{n}_{c})}^{T}, \Im{(\mathbf{n}_{c})}^{T}]^{T},
+\label{real vectors}
+\end{IEEEeqnarray}
+The complex model in (\ref{complex MIMO model}) can be transferred into an equivalent real-valued model, which is given by 
+\begin{equation}
+\mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},
+\label{real MIMO model}
+\end{equation}
+\subsection{MIMO Detection in view of Statistical Learning}
+Generally speaking, the task of LS-MIMO detection is to estimate the transmit symbol vector $\mathbf{s}$ based on the knowledge of receive symbol vector $\mathbf{y}$ and channel state information (CSI) $\mathbf{H}$. In view of statistical learning, LS-MIMO detection problem is a multidimensional ($N_{t}$) regression estimation problem with $N_{r}$ training data samples, which is given by 
+\begin{equation}
+\mathbf{y}_{i}=f_{LS-MIMO}(\mathbf{h}_{i})+\mathbf{n}_{i}, i=1,2,\ldots, N_{r},
+\label{multidimensional regression estimation}
+\end{equation}
+where $\mathbf{h}_{i}$ denotes the $i$th row of $\mathbf{H}$, is the $i$th input data vector, $f_{LS-MIMO}(\mathbf{h}_{i})=\mathbf{h}_{i}\mathbf{s}$, is a $N_{t}$-dimensional linear function, $\mathbf{s}$ is the regression coefficient vector, $\mathbf{y}_{i}$ is the $i$th observation disrupted by additive noise (error) $\mathbf{n}_{i}$.
+
+The loss function $L(\mathbf{y}_{i}, f_{c}(\mathbf{h}_{i}))$ is a measure of the loss between the observations and the output of a candidate function $f_{c}{\cdot}$, the actual risk of a regression estimate $f_{c}(\cdot)$ is defined by\cite{vapnik1998statistical}
+\begin{equation}
+R(f_{c})=\int L(y, f_{c}(h))dP(y, \mathbf{h}), f_{c}\in \Lambda
+\label{actual risk}
+\end{equation} 
+where $\Lambda$ is the set of candidate functions, $P(y, \mathbf{h})$ is the joint probability density function (pdf) of input-output data set $(y, \mathbf{h})$ where $y$ is a real value and $\mathbf{h}$ is a vector, (\ref{actual risk}) is the expectation of loss function. The goal of regression estimation is to find the best function $f_{0}(\cdot)$ (e.g., the most accurate approximation to the regression coefficient vector $\mathbf{s}$ in (\ref{multidimensional regression estimation})) that minimize the actual risk, based on the training data set.
+
+The loss function for regression estimation, based on Huber's robust estimator principle\cite{huber2011robust} is given by 
+\begin{equation}
+L(y, f_{c}(\mathbf{h}))=-\ln(Pr(y-f_{c}(\mathbf{h}))),
+\label{robust loss function}
+\end{equation}  
+where $Pr(\cdot)$ denotes the pdf of additive noise, when the additive noise is Gaussian distributed, the robust loss function is given by 
+\begin{equation}
+L(y, f_{c}(h))=(y-f_{c}(h))^{2},
+\label{robust loss function normal}
+\end{equation}
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+\section{Empirical Risk Minimization Principle and Its Correlation with Linear Detectors}
+The actual risk is a theoretical measure of the regression estimation performance with respect to all the data set $(y,\mathbf{h})$. However, in practical the training data set is a finite set of the samples in the data set space and the probability measure $P(y,\mathbf{h})$ is unknown, thus empirical risk is used as an alternative measure of the performance of regression estimation performance. Given a training data set $(y_{1}, \mathbf{h}_{1}), (y_{2}, \mathbf{h}_{2}), \ldots, (y_{l}, \mathbf{h}_{l})$, where $l$ is the number of training data, empirical risk is given by 
+\begin{equation}
+R_{emp}(f_{c})=\frac{1}{l}\sum_{i=1}^{l}L(y_{i}, f_{c}(\mathbf{h}_{i})), f_{c}\in \Lambda
+\label{empirical risk}
+\end{equation}
+For regression estimation problems in LS-MIMO detection, use Huber's robust loss function in (\ref{robust loss function normal}), the empirical risk in LS-MIMO detection is given by 
+\begin{equation}
+R^{LS-MIMO}_{emp}(f_{c})=\frac{1}{N_{r}}\sum_{i=1}^{N_{r}}(\mathbf{y}_{i}-f_{c}(\mathbf{h}_{i}))^{2},
+\label{empirical risk MIMO}
+\end{equation}
+where $f_{c}(\mathbf{h}_{i})=\mathbf{h}_{i}\hat{\mathbf{s}}$, $\hat{\mathbf{s}}$ is the estimation of the regression coefficient vector. The empirical risk minimization principle (ERM) is to approximate the minimizer $f_{0}$ of actual risk $R(f_{c})$ by the minimizer $f_{emp}$ of the corresponding empirical risk $R_{emp}(f_{c})$. 
+
+In MIMO detection, linear detectors (LD) (zeros forcing (ZF) and minimum mean square error (MMSE)) from the view of regression estimation, are the estimators designed based on ERM principle. We elaborate a little further here. 
+
+ZF is derived from the principle of solving an unconstrained least square problem in a continuous vector space\cite{kailath2005mimo}, then slicing the results by symbol constellation alphabet (e.g., 4-QAM, 16-QAM or 64-QAM), the unconstrained least square problem is given by 
+\begin{equation}
+\min_{\hat{\mathbf{s}}}||\mathbf{y}-\mathbf{H}\hat{\mathbf{s}}||^{2}=\min_{\hat{\mathbf{s}}}\sum_{i=1}^{N_{r}}(\mathbf{y}_{i}-\mathbf{h}_{i}\hat{\mathbf{s}})^{2},
+\label{ZF least square}
+\end{equation}
+where $||\cdot||$ denotes 2-norm operator. The solution of (\ref{ZF least square}) is given by 
+\begin{equation}
+\tilde{\mathbf{s}}=\mathbf{H}^{\dagger}\mathbf{y},
+\label{ZF solution}
+\end{equation}
+where $\mathbf{H}^{\dagger}=(\mathbf{H}^{T}\mathbf{H})^{-1}\mathbf{H}^{T}$ is the pseudo-inverse of $\mathbf{H}$.
+
+
+MMSE detector is designed based on the principle that minimizaing the mean square error between the transmit symbol vector and the estimated symbol vector, that is\cite{paulraj2003introduction} 
+\begin{equation}
+\min_{\hat{\mathbf{s}}}\mathbb{E}(||\mathbf{s}-\hat{\mathbf{s}}||^{2}),
+\label{MMSE criterison}
+\end{equation}
+where $\hat{\mathbf{s}}=\mathbf{G}\mathbf{y}$, $\mathbf{G}$ is the equalization matrix, given by 
+$\mathbf{G}=(\mathbf{H}^{T}\mathbf{H}+\rho^{-1}\mathbf{I})^{-1}\mathbf{H}^{T}$, $\rho=\frac{\xi_{s}}{N_{0}}$ denotes the SNR. Although ZF and MMSE are based on the different principles, the latter one can also be interpreted as solving the similar unconstrained least square problem as in (\ref{ZF least square}) for an augmented linear equation system. The augmented linear equation system takes into account the noise.
+\begin{IEEEeqnarray}[\relax]{l}
+\nonumber
+\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\mathbf{y}\\
+0
+\end{IEEEeqnarraybox*}\right]= \left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\mathbf{H}\\
+\rho^{-1/2}\mathbf{I_{N_{t}}}
+\end{IEEEeqnarraybox*}\right]\mathbf{s}+\left[\begin{IEEEeqnarraybox*}[\mysmallarraydecl][c]{,c/c,}
+\mathbf{n}\\
+-\rho^{-1/2}\mathbf{I_{N_{t}}\mathbf{s}}
+\end{IEEEeqnarraybox*}\right]
+\label{augmented linear equation system}
+\end{IEEEeqnarray}
+define $\bar{\mathbf{y}}=[\mathbf{y}^{T}, 0]^{T}$ and $\bar{\mathbf{H}}=[\mathbf{H}^{T}, \sqrt{N_{0}}\mathbf{I}_{N_{t}}]^{T}$, $\mathbf{I}_{N_{t}}$ denotes $N_{t}\times N_{t}$ identity matrix, $\bar{\mathbf{h}}_{i}$ denotes the $i$th row of $\bar{\mathbf{H}}$. The equivalent unconstrained least square problem is given by 
+\begin{equation}
+\min_{\hat{\mathbf{s}}}||\bar{\mathbf{y}}-\bar{\mathbf{H}}\hat{\mathbf{s}}||^{2}=\min_{\hat{\mathbf{s}}}\sum_{i=1}^{N_{r}+N_{t}}(\bar{\mathbf{y}}_{i}-\bar{\mathbf{h}}_{i}\hat{\mathbf{s}})^{2},
+\label{MMSE least square}
+\end{equation}
+Similar to (\ref{ZF solution}), the solution of (\ref{MMSE least square}) is given by\cite{gore2002performance}\cite{wubben2003mmse}
+\begin{equation}
+\tilde{\mathbf{s}}=\bar{\mathbf{H}}^{\dagger}\bar{\mathbf{y}}=\mathbf{G}\mathbf{y},
+\label{MMSE solution}
+\end{equation} 
+From (\ref{empirical risk MIMO}), (\ref{ZF least square}) and (\ref{MMSE least square}), we can conclude ZF and MMSE are based on ERM principle. In view of statistical learning, when the VC-dimension of the regression function is finite\cite{vapnik1998statistical}, with the number of training data (in LS-MIMO it refers to $N_{r}$) increasing, empirical risk converges to actual risk rapidly, independent to the probability measure ($P(y, \mathbf{h})$)\cite{vapnik1998statistical}. The asymptotical consistence of empirical risk is achieved when the number of training data is large, this explains why the ERM based estimators (ZF and MMSE) can achieve near optimal performance in the LS-MIMO with low loading factor ($\alpha=\frac{N_{t}}{N_{r}}\ll 1$, $N_{t}\ll N_{r}$, the diversity gain of ZF/MMSE is $N_{r}-N_{t}+1$\cite{paulraj2003introduction}). This demonstrates the effectiveness of LDs (ZF/MMSE) for low loading LS-MIMO systems. However, in medium and full loading LS-MIMO, the diversity of ZF/MMSE is close to or equal to 1, this can be explained by the fact that ERM principle is not effective when the size of the training data set is small.
+
+\section{Structural Risk Minimization: why support vector regression}
+In this section, we present the explanation why support vector regression (SVR) are promising in the medium and full loading LS-MIMO. Based on the theoretical justifications of SVR based on the structural risk minimization (SRM) principle, we demonstrate the fitness of SVR based detector to be used as a preliminary estimator that can replace the traditional ZF/MMSE detectors.
+
+Given the situation that ZF/MMSE have inferior performance in full loading LS-MIMO systems because of the asymptotical consistence of ERM principle. We consider another principle in statistical learning theory that takes into account the small training data set size. Based on statistical learning theory, the actual risk is upper bounded in probability by\cite{vapnik1998statistical}
+\begin{equation}
+R(f_{c})\leq R_{emp}(f_{c})+\frac{B\epsilon}{2}(1+\sqrt{1+\frac{4R_{emp}(f_{c})}{B\epsilon}}),
+\label{bound of actual risk}
+\end{equation}
+if the loss function is bounded by 
+\begin{equation}
+0\leq L(y, f_{c}(\mathbf{h}))\leq B\quad f_{c}\in \Lambda, B>0
+\label{bound of loss function}
+\end{equation}
+$\epsilon$ in (\ref{bound of actual risk}) is 
+\begin{equation}
+\epsilon=4\frac{m(\ln(\frac{2l}{m})+1)}{l}
+\label{epsilon bound}
+\end{equation}
+where $l$ is the number of training data and $m$ is the VC-dimension of candidate function $f_{c}$. 
+
+The second summand of the right hand side of (\ref{bound of actual risk}) is called confidence interval, which is determined by the complexity of the candidate function (VC-dimension) $f_{c}$\cite{vapnik1999overview}. From (\ref{bound of actual risk}) we can conclude that\\
+1. If $\frac{l}{m}$ is large (typically that is $\frac{l}{m}\geq 20$), the confidence interval in (\ref{bound of actual risk}) tends to be vanished, therefore a small empirical risk can guarantee a small actual risk, ERM principle is effective.\\
+2. If $\frac{l}{m}$ is small, a small empirical risk can not guarantee a small actual risk.\\
+In the medium or full loading LS-MIMO, where the number of training data $N_{r}$ is not very large comparing to the dimensionality of the regression function $N_{t}$, structural risk minimization (SRM) principle, which minimize the two terms in the right hand side of (\ref{bound of actual risk}) simultaneously is more effective to find a solution that guarantee a small actual risk. SRM principle aims to find a simplest function (small confidence interval) that minimize the training error (empirical risk).
+
+Based on the constructive SRM principle, SVR is designed by making a trade off between minimizing the complexity of function (regularization) and minimizing training error (risk functional). As to the full loading LS-MIMO systems, SVR based detector can guarantee a better regression performance (lower error probability of detection) than ZF/MMSE LDs in a feasible SNR region. Furthermore, By exploiting "channel hardening" phenomenon\cite{hochwald2004multiple}, a fast training algorithm can be developed in dual optimization process of SVR.
+  
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Conclusion}
+In conclusion, SVR is a suitable algorithmic framework for designing the preliminary detector in full loading LS-MIMO systems, which can replace traditional LD (ZF/MMSE) in the preprocessing stage of some searching algorithms such as likelihood ascend searching (LAS)\cite{vardhan2008low}\cite{li2010multiple} and genetic algorithm (GA)\cite{juntti1997genetic}\cite{ergun2000multiuser}. SVR based detectors have the following advantages:\\
+1. Better performance in the feasible SNR region (more accurate estimate of the regression coefficient vector $\mathbf{s}$ in (\ref{multidimensional regression estimation})).\\
+2. Lower computational complexity by exploiting the characteristic of high dimensional random channel matrix $\mathbf{H}$.\\ 
+3. Comparing with MMSE, SVR based detector do not require the information of noise variance.
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+%\ifCLASSOPTIONcaptionsoff
+%  \newpage
+%\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+%\newpage 
+\bibliographystyle{IEEEtran}
+\bibliography{citation}
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+

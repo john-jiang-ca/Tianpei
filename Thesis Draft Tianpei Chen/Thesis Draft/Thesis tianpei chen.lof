@@ -4,6 +4,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Regression Model of $\epsilon $-SVR}}{10}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Random Flipping with $\mathcal {F}=1$}}{22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Crossover operation to a pair of parent binary sequence}}{23}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mutation operation to one bit in binary sequence}}{24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

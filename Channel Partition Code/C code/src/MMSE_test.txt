@@ -1,0 +1,258 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 4 times 4 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 2
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.25
+SNR (dB) are
+0, 2, 4, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 1000 	 998 	 6183 	 3456983 	 0.998 	 0.386437 	 108.031 	 0.1
+2 	 1000 	 999 	 6163 	 10410330 	 0.999 	 0.385188 	 325.323 	 0.09
+4 	 1000 	 1000 	 6228 	 17352154 	 1 	 0.38925 	 542.255 	 0.08
+6 	 1000 	 1000 	 6168 	 24346164 	 1 	 0.3855 	 760.818 	 0.09
+8 	 1000 	 1000 	 6054 	 31178926 	 1 	 0.378375 	 974.341 	 0.09
+10 	 1000 	 742 	 1533 	 26266359 	 0.742 	 0.0958125 	 820.824 	 0.09
+12 	 1000 	 747 	 1547 	 27628847 	 0.747 	 0.0966875 	 863.401 	 0.08
+14 	 1000 	 752 	 1630 	 29052313 	 0.752 	 0.101875 	 907.885 	 0.09
+16 	 1000 	 767 	 1593 	 30909870 	 0.767 	 0.0995625 	 965.933 	 0.09
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 1000 	 999 	 6218 	 3500629 	 0.999 	 0.388625 	 109.395 	 0.09
+2 	 1000 	 1000 	 6224 	 10465702 	 1 	 0.389 	 327.053 	 0.08
+4 	 1000 	 999 	 6182 	 17520323 	 0.999 	 0.386375 	 547.51 	 0.09
+6 	 1000 	 1000 	 6142 	 24480706 	 1 	 0.383875 	 765.022 	 0.09
+8 	 1000 	 1000 	 6088 	 31357973 	 1 	 0.3805 	 979.937 	 0.08
+10 	 1000 	 778 	 1643 	 27702889 	 0.778 	 0.102688 	 865.715 	 0.09
+12 	 1000 	 756 	 1612 	 28172913 	 0.756 	 0.10075 	 880.404 	 0.09
+14 	 1000 	 750 	 1559 	 29191076 	 0.75 	 0.0974375 	 912.221 	 0.08
+16 	 1000 	 736 	 1533 	 29820643 	 0.736 	 0.0958125 	 931.895 	 0.09
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 1000 	 999 	 6128 	 6901 	 0.999 	 0.383 	 0.215656 	 0.12
+2 	 1000 	 999 	 6139 	 6887 	 0.999 	 0.383688 	 0.215219 	 0.09
+4 	 1000 	 1000 	 6201 	 6945 	 1 	 0.387562 	 0.217031 	 0.09
+6 	 1000 	 999 	 6104 	 6810 	 0.999 	 0.3815 	 0.212812 	 0.09
+8 	 1000 	 999 	 6191 	 6937 	 0.999 	 0.386937 	 0.216781 	 0.09
+10 	 1000 	 761 	 1595 	 1649 	 0.761 	 0.0996875 	 0.0515313 	 0.08
+12 	 1000 	 744 	 1623 	 1678 	 0.744 	 0.101437 	 0.0524375 	 0.09
+14 	 1000 	 765 	 1660 	 1730 	 0.765 	 0.10375 	 0.0540625 	 0.09
+16 	 1000 	 712 	 1569 	 1621 	 0.712 	 0.0980625 	 0.0506562 	 0.08
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+28, 30, 32, 34, 36, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+28 	 1390 	 115 	 150 	 152 	 0.0827338 	 0.0067446 	 0.00341727 	 0.12
+30 	 16558 	 119 	 150 	 151 	 0.00718686 	 0.000566192 	 0.000284983 	 1.45
+32 	 16655 	 120 	 150 	 150 	 0.00720504 	 0.000562894 	 0.000281447 	 1.45
+34 	 18311 	 123 	 150 	 151 	 0.00671727 	 0.000511987 	 0.0002577 	 1.61
+36 	 16373 	 124 	 150 	 151 	 0.00757344 	 0.000572589 	 0.000288203 	 1.42
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 150
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 1000 	 1000 	 6240 	 7005 	 1 	 0.39 	 0.218906 	 0.11
+2 	 1000 	 1000 	 6158 	 6955 	 1 	 0.384875 	 0.217344 	 0.08
+4 	 1000 	 998 	 6149 	 6930 	 0.998 	 0.384313 	 0.216562 	 0.09
+6 	 1000 	 999 	 6179 	 6969 	 0.999 	 0.386188 	 0.217781 	 0.09
+8 	 1000 	 999 	 6215 	 6968 	 0.999 	 0.388437 	 0.21775 	 0.09
+10 	 1000 	 743 	 1603 	 1649 	 0.743 	 0.100187 	 0.0515313 	 0.08
+12 	 1000 	 749 	 1595 	 1650 	 0.749 	 0.0996875 	 0.0515625 	 0.09
+14 	 1000 	 696 	 1481 	 1539 	 0.696 	 0.0925625 	 0.0480937 	 0.09
+16 	 1000 	 762 	 1640 	 1697 	 0.762 	 0.1025 	 0.0530313 	 0.08
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 100000
+the minimum symbol errors accumulated is 200
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 100000 	 99957 	 616922 	 693293 	 0.99957 	 0.385576 	 0.216654 	 8.7
+2 	 100000 	 99963 	 615612 	 691888 	 0.99963 	 0.384757 	 0.216215 	 8.71
+4 	 100000 	 99946 	 614481 	 690757 	 0.99946 	 0.384051 	 0.215862 	 8.7
+6 	 100000 	 99964 	 615587 	 692142 	 0.99964 	 0.384742 	 0.216294 	 8.72
+8 	 100000 	 99953 	 616842 	 693448 	 0.99953 	 0.385526 	 0.216702 	 8.75
+10 	 100000 	 75224 	 160888 	 166670 	 0.75224 	 0.100555 	 0.0520844 	 8.8
+12 	 100000 	 75241 	 160999 	 166787 	 0.75241 	 0.100624 	 0.0521209 	 8.7
+14 	 100000 	 75410 	 161714 	 167342 	 0.7541 	 0.101071 	 0.0522944 	 8.7
+16 	 100000 	 75477 	 161576 	 167315 	 0.75477 	 0.100985 	 0.0522859 	 8.73
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 4
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 1000
+the minimum symbol errors accumulated is 200
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time

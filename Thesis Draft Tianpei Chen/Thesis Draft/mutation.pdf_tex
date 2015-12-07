@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{521.02440541bp}%
+    \setlength{\unitlength}{575.38289708bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,11 +48,10 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.37969159)%
-    \put(0.22638476,0.32543902){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$b_{offspring1}=[1, 1, 1, 1, -1, -1, 1, -1]$}}}%
+  \begin{picture}(1,0.86806491)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{mutation.pdf}}%
-    \put(-0.00261467,0.03370599){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$b^{mutation}_{offspring1}=[-1, 1, 1, 1, -1, -1, 1, -1]$}}}%
+    \put(0.12910657,0.66340916){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$b_{offspring1}=[1,  1,  1,  1, -1, -1,  1, -1]$}}}%
+    \put(0.03835555,0.2672833){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$b^{mutation}_{offspring1}=[-1,  1,  1,  1, -1, -1,  1, -1]$}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{mutation.pdf}}%
-    \put(0.59794292,0.17767198){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{mutation\\ }}}%
   \end{picture}%
 \endgroup%

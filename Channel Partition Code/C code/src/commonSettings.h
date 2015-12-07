@@ -57,11 +57,11 @@
 #include "RectangularQAMSlicer.h"
 
 //#define DEBUG    //debugging mode
-#define fileName "MMSE_test.txt"  //the output file
+#define fileName "F:\GitHub\Tianpei\Channel Partition Code\C code\test data\MMSE_test.txt"  //the output file
 int Corr_Ind=0; //the correlation channel mode (0 close 1 open)
 int Est_Ind=0; //channel estimation error mode (0 close 1 open)
-int receiveAntennas=16;     //number of receive antenna
-int transmitAntennas=16;     //number of transmit antenna
+int receiveAntennas=8;     //number of receive antenna
+int transmitAntennas=8;     //number of transmit antenna
 int symConstellationSize=4;     //modulation scheme
 double Rr=0;   // receive correlation parameter. Should be a real number in the interval between 0 and 1
 double Rt=0;	// transmit correlation parameter. Should be a real number in the interval between 0 and 1

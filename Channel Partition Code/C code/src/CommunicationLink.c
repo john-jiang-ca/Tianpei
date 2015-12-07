@@ -50,6 +50,8 @@ int main(void) {
     int SNR_tmp;
     double pav=(double)1/((double)Nt); //the average power of transmit symbol
     clock_t start, end;
+    printf("The program begin.\n");
+    printf("%d X %d %d QAM system\n", Nr, Nt, M);
     FILE *pfile;
     pfile=fopen(fileName, "a");
     fprintf(pfile, "==============================================================================\n");
@@ -162,7 +164,7 @@ int main(void) {
     			gsl_blas_zgemm(CblasNoTrans, CblasNoTrans, alpha, pRr, pH, beta, pH_tmp);   //add spatial correlation (receive side)
     			gsl_blas_zgemm(CblasNoTrans, CblasNoTrans, alpha, pH_tmp, pRt, beta, pH);   //add spatial correlation (transmit side)
     		}
-    		snr=pow(10,(SNR_tmp/10)); //SNR in decimal
+    		snr=pow(10,((double)SNR_tmp/(double)10)); //SNR in decimal
     		noiseV=1/snr;     //noise variance
     		if(Est_Ind==1){
     			sigmaerr = sqrt (gammasq*pav/(2.0*snr));

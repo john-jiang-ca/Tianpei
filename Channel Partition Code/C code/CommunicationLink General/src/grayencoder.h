@@ -1,4 +1,3 @@
-#include "commonSettings.h"
 void grayencoder (gsl_vector_ulong *pgraydata)
 {
 	int Q=pgraydata->size;

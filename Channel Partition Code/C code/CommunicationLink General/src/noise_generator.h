@@ -1,4 +1,3 @@
-#include "commonSettings.h"
 void noise_generator (gsl_vector_complex *pnoise, gsl_rng *pr, double noiseV)
 {
 	int Nr, count=0;

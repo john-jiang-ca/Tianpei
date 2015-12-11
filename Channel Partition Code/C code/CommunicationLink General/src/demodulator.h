@@ -1,9 +1,8 @@
-#include "commonSettings.h"
 void demodulator(gsl_vector_complex *psymOut, gsl_vector_complex *psymbolconstellation, gsl_vector_ulong *pgraydata,  int *ErrorIndex,  gsl_vector_ulong *pgrayOut)
 {
 	  //notice: put the condition judgement ErrorIndex in the main function if ErrorIndex==NULL is true, that jump over demodulator and binaryerrors
      int count1, count2;
-     int l=(int)(sizeof(ErrorIndex)/(sizeof(int))); //the length of the error symbol vector
+     int l=pgrayOut->size; //the length of the error symbol vector
      int Nt=psymOut->size;
      gsl_complex temp, psymbolconstellation_tmp;
 

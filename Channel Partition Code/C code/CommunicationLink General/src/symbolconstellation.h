@@ -3,7 +3,6 @@
  * Tianpei chen
  * 08/27/2014
  */
-#include "commonSettings.h"
 void symbolconstellation(gsl_vector_complex *psymbolconstellation, double pav) {
 	int Q, count = 0;
 	Q = psymbolconstellation->size;
@@ -18,10 +17,10 @@ void symbolconstellation(gsl_vector_complex *psymbolconstellation, double pav) {
 	double d = 0.0;
 	if (Q == 2)   //BPSK
 			{
-		d = sqrt(1/(double)(Nt));
+		d = sqrt(pav);
 	}
 	else {
-		d = sqrt((3*pav )/ (2 * (double) ( (Q - 1))));
+		d = sqrt((3 *pav)/ (2 * (double) ( (Q - 1))));
 	}
 	gsl_vector *psymbolconstellationreal;
 	psymbolconstellationreal = gsl_vector_calloc(M);

@@ -1,0 +1,205 @@
+
+=========================================================================================
+this file compare the BER simulation results of MMSE-OSIC in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+4 X 4 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.2500000000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 14 16 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+SEL_MMSE_OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 1588 	 1807 	 3.970000e-01 	 2.258750e-01
+2 	 1000 	 1321 	 1501 	 3.302500e-01 	 1.876250e-01
+4 	 1000 	 1030 	 1150 	 2.575000e-01 	 1.437500e-01
+6 	 1000 	 671 	 723 	 1.677500e-01 	 9.037500e-02
+8 	 1000 	 392 	 427 	 9.800000e-02 	 5.337500e-02
+10 	 1000 	 198 	 220 	 4.950000e-02 	 2.750000e-02
+12 	 1671 	 150 	 172 	 2.244165e-02 	 1.286655e-02
+14 	 5712 	 151 	 170 	 6.608894e-03 	 3.720238e-03
+16 	 15224 	 151 	 172 	 2.479637e-03 	 1.412244e-03
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this file compare the BER simulation results of MMSE-OSIC in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+16 X 16 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0625000000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 14 16 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+SEL_MMSE_OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 6385 	 7227 	 3.990625e-01 	 2.258438e-01
+2 	 1000 	 5386 	 5971 	 3.366250e-01 	 1.865938e-01
+4 	 1000 	 4198 	 4600 	 2.623750e-01 	 1.437500e-01
+6 	 1000 	 3114 	 3336 	 1.946250e-01 	 1.042500e-01
+8 	 1000 	 1766 	 1864 	 1.103750e-01 	 5.825000e-02
+10 	 1000 	 782 	 822 	 4.887500e-02 	 2.568750e-02
+12 	 1000 	 225 	 236 	 1.406250e-02 	 7.375000e-03
+14 	 3468 	 154 	 162 	 2.775375e-03 	 1.459775e-03
+16 	 15518 	 152 	 173 	 6.121923e-04 	 3.483857e-04
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this file compare the BER simulation results of MMSE-OSIC in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 14 16 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+SEL_MMSE_OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 12837 	 14491 	 4.011562e-01 	 2.264219e-01
+2 	 1000 	 10940 	 12065 	 3.418750e-01 	 1.885156e-01
+4 	 1000 	 8902 	 9716 	 2.781875e-01 	 1.518125e-01
+6 	 1000 	 6533 	 6966 	 2.041563e-01 	 1.088438e-01
+8 	 1000 	 3996 	 4186 	 1.248750e-01 	 6.540625e-02
+10 	 1000 	 1822 	 1912 	 5.693750e-02 	 2.987500e-02
+12 	 1000 	 509 	 530 	 1.590625e-02 	 8.281250e-03
+14 	 1000 	 202 	 207 	 6.312500e-03 	 3.234375e-03
+16 	 6742 	 150 	 154 	 6.952685e-04 	 3.569045e-04
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this file compare the BER simulation results of MMSE-OSIC in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 14 16 
+The minimum channel realization is 1.000000e+04
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+SEL_MMSE_OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 10000 	 129076 	 145950 	 4.033625e-01 	 2.280469e-01
+2 	 10000 	 110180 	 122149 	 3.443125e-01 	 1.908578e-01
+4 	 10000 	 88115 	 95732 	 2.753594e-01 	 1.495813e-01
+6 	 10000 	 65344 	 69747 	 2.042000e-01 	 1.089797e-01
+8 	 10000 	 39906 	 41807 	 1.247063e-01 	 6.532344e-02
+10 	 10000 	 18158 	 18864 	 5.674375e-02 	 2.947500e-02
+12 	 10000 	 5627 	 5827 	 1.758437e-02 	 9.104687e-03
+14 	 10000 	 1164 	 1200 	 3.637500e-03 	 1.875000e-03
+16 	 10000 	 215 	 221 	 6.718750e-04 	 3.453125e-04
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this file compare the BER simulation results of MMSE-OSIC in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 14 16 
+The minimum channel realization is 1.000000e+04
+The minimum symbol error accumulatted is 1.500000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+SEL_MMSE_OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 10000 	 270403 	 439695 	 8.450094e-01 	 3.435117e-01
+2 	 10000 	 259498 	 403355 	 8.109312e-01 	 3.151211e-01
+4 	 10000 	 246770 	 364474 	 7.711562e-01 	 2.847453e-01
+6 	 10000 	 232227 	 327041 	 7.257094e-01 	 2.555008e-01
+8 	 10000 	 216808 	 292523 	 6.775250e-01 	 2.285336e-01
+10 	 10000 	 199444 	 258251 	 6.232625e-01 	 2.017586e-01
+12 	 10000 	 180074 	 225614 	 5.627313e-01 	 1.762609e-01
+14 	 10000 	 157185 	 190541 	 4.912031e-01 	 1.488602e-01
+16 	 10000 	 125932 	 148966 	 3.935375e-01 	 1.163797e-01
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+

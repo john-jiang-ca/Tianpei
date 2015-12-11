@@ -1,4 +1,3 @@
-#include "commonSettings.h"
 void binaryerrors (gsl_vector_ulong *pgrayOut,  int *ErrorIndex, gsl_vector_ulong *pgrayInput,  int Q, int *errors)
 {
 	int  count1, count2;
@@ -6,6 +5,7 @@ void binaryerrors (gsl_vector_ulong *pgrayOut,  int *ErrorIndex, gsl_vector_ulon
 	int l=pgrayOut->size;  // the number of the error gray code
 	int temp1, temp2;
 	int currentBit;
+	(*errors)=0;
 	for (count1=0;count1<l;count1++){
 	  temp1=gsl_vector_ulong_get(pgrayOut, count1);
 	  temp2=gsl_vector_ulong_get(pgrayInput, ErrorIndex[count1]);

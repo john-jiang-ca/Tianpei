@@ -1,4 +1,4 @@
-#include "commonSettings.h"
+
 void data_generator(gsl_vector_ulong *pdata, gsl_rng *pr, int M)
 {
 	int Nt;

@@ -1,4 +1,3 @@
-#include "commonSettings.h"
 void error_channel_generator (gsl_matrix_complex *pH, gsl_rng *pr, double sigmaerr)
 {
 	int Nt, Nr, count1=0, count2=0;

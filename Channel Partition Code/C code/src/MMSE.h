@@ -17,7 +17,7 @@ int Nr=pH->size1;
 int Nt=pH->size2;
 gsl_matrix_complex *G_pre, *G_preInv, *G;
 gsl_permutation *p=gsl_permutation_calloc(Nt);
-int *signum=(int*)malloc(sizeof(int));
+int *signum=(int*)calloc(1, sizeof(int));
 *signum=1;
 G_pre=gsl_matrix_complex_calloc(Nt, Nt);
 G_preInv=gsl_matrix_complex_calloc(Nt, Nt);
@@ -49,6 +49,7 @@ gsl_matrix_complex_free(G_pre);
 gsl_matrix_complex_free(G_preInv);
 gsl_matrix_complex_free(G);
 gsl_permutation_free(p);
+free(signum);
 
 
 

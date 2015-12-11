@@ -7,7 +7,6 @@
 /*
  * check the number of symbol errors and the corresponding indexes
  */
-#include "commonSettings.h"
 #ifndef SYMERRORCHECK_H_
 #define SYMERRORCHECK_H_
 void symErrorCheck(gsl_vector_complex *ptransmit, gsl_vector_complex *psymOut, int *ErrorIndex_V,  int *symError, int *frameError)
@@ -27,6 +26,9 @@ void symErrorCheck(gsl_vector_complex *ptransmit, gsl_vector_complex *psymOut, i
 			ErrorIndex_V[count]=count1;
 			count++;
 		}
+	}
+	if((*symError)>0){
+		(*frameError)++;
 	}
 
     return;

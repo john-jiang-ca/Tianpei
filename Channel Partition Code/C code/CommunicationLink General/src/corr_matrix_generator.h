@@ -1,6 +1,4 @@
 
-
-#include "commonSettings.h"
 #include "matrix_sqrt.h"
 void corr_matrix_generator (gsl_matrix_complex *pRt, gsl_matrix_complex *pRr, double Rt, double Rr)
 {

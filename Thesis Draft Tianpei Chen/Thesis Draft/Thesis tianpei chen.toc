@@ -14,18 +14,18 @@
 \contentsline {section}{\numberline {3.2}Combined Single Direction Searching Strategy}{16}
 \contentsline {section}{\numberline {3.3}Complex Support Vector Preliminary Detector}{18}
 \contentsline {section}{\numberline {3.4}Channel Hardening Approximation}{18}
-\contentsline {section}{\numberline {3.5}CSVPD-LAS versus MMSE-LAS}{18}
+\contentsline {section}{\numberline {3.5}SVPD-LAS versus MMSE-LAS}{18}
 \contentsline {section}{\numberline {3.6}CSVPD-OPIC versus MMSE-OPIC}{18}
-\contentsline {chapter}{\numberline {4}Low Complexity Near Optimal Hybrid Detector based on Genetic Algorithm}{19}
-\contentsline {section}{\numberline {4.1}CSVPD aided Hybrid Genetic Algorithm}{19}
-\contentsline {subsection}{\numberline {4.1.1}Initialization}{20}
-\contentsline {subsection}{\numberline {4.1.2}Selection}{20}
-\contentsline {subsection}{\numberline {4.1.3}Mutation}{20}
-\contentsline {subsection}{\numberline {4.1.4}OPIC}{20}
-\contentsline {subsection}{\numberline {4.1.5}Stopping Criteria}{20}
-\contentsline {chapter}{\numberline {5}Mathematical Layout Styles}{21}
-\contentsline {chapter}{\numberline {6}Tables}{22}
-\contentsline {section}{\numberline {6.1}Tables in \LaTeX {}}{22}
-\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{24}
-\contentsline {section}{\numberline {A.1}Thesis Preamble}{24}
-\contentsline {chapter}{References}{25}
+\contentsline {chapter}{\numberline {4}Low Complexity Near Optimal Hybrid Detector based on Genetic Algorithm}{20}
+\contentsline {section}{\numberline {4.1}SVPD aided Hybrid Genetic Algorithm}{20}
+\contentsline {subsection}{\numberline {4.1.1}Initialization}{21}
+\contentsline {subsection}{\numberline {4.1.2}Selection}{21}
+\contentsline {subsection}{\numberline {4.1.3}Mutation}{23}
+\contentsline {subsection}{\numberline {4.1.4}OPIC}{23}
+\contentsline {subsection}{\numberline {4.1.5}Stopping Criteria}{23}
+\contentsline {chapter}{\numberline {5}Mathematical Layout Styles}{25}
+\contentsline {chapter}{\numberline {6}Tables}{26}
+\contentsline {section}{\numberline {6.1}Tables in \LaTeX {}}{26}
+\contentsline {chapter}{\numberline {A}\LaTeX {} Macros}{28}
+\contentsline {section}{\numberline {A.1}Thesis Preamble}{28}
+\contentsline {chapter}{References}{29}

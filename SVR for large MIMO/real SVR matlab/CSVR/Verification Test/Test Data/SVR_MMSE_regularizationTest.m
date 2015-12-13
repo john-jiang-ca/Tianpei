@@ -41,7 +41,7 @@ SNR=2:2:60;
 figure(1)
 plot(SNR, SVR_half, '-*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE'),title('MSE of Regression coefficient vector of SVR and MMSE (C=0.5)');
 hold on 
-plot(SNR, MMSE_half, '--*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
+plot(SNR, MMSE_half, '-->', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
 hold on 
 legend('SVR', 'MMSE');
 hold off
@@ -49,7 +49,7 @@ hold off
 figure(2)
 plot(SNR, SVR_1, '-*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE'),title('MSE of Regression coefficient vector of SVR and MMSE (C=1)');
 hold on 
-plot(SNR, MMSE_1, '--*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
+plot(SNR, MMSE_1, '-->', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
 hold on 
 legend('SVR', 'MMSE');
 hold off
@@ -57,7 +57,20 @@ hold off
 figure(3)
 plot(SNR, SVR_10, '-*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE'),title('MSE of Regression coefficient vector of SVR and MMSE (C=10)');
 hold on 
-plot(SNR, MMSE_10, '--*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
+plot(SNR, MMSE_10, '-->', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
 hold on 
 legend('SVR', 'MMSE');
+hold off
+
+
+figure(4)
+plot(SNR, SVR_half, '-*', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE'),title('MSE of Regression coefficient vector of SVR and MMSE ');
+hold on 
+plot(SNR, SVR_1, '-+', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE'),title('MSE of Regression coefficient vector of SVR and MMSE ');
+hold on
+plot(SNR, SVR_10, '-^', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE'),title('MSE of Regression coefficient vector of SVR and MMSE ');
+hold on
+plot(SNR, MMSE_10, ':>', 'MarkerSize', 5),xlabel('SNR(dB)'), ylabel('MSE');
+hold on 
+legend('SVR-0.5', 'SVR-1', 'SVR-10', 'MMSE');
 hold off

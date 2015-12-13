@@ -4,7 +4,7 @@ function [ symOut, outlier ] = MMSE( y, H, SNRd, M, pav )
 % alphabet
 Nt=length(H(1,:));
 I=eye(Nt);
-G=(I/(H'*H+SNRd^(-1)*I))*H';
+G=(I/(H'*H+(SNRd/Nt)^(-1)*I))*H';
 symOut_tmp=G*y;
 if(M==2)
     d=sqrt(pav);

@@ -299,7 +299,6 @@ int main(void) {
 //			FCSD_detection(sigRec, pH_cu, Nt, Nr, M, psymbolconstellation_cu,
 //					SNR[count], symOut_cu, durationKernel_GPU); //detection algorithm
 			end = clock();
-
 			duration2 = double(end - start);
 			durationKernel_GPU_t += *durationKernel_GPU;
 //			cudaProfilerStop();

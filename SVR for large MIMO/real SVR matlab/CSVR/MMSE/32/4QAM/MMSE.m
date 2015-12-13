@@ -6,7 +6,7 @@ Nt=length(H(1,:));
 I=eye(Nt);
 G=(I/(H'*H+SNRd^(-1)*I))*H';
 symOut_tmp=G*y;
-MSE=norm(dataMod-symOut_tmp)^(2)/Nr;
+MSE=norm(dataMod-symOut_tmp)^(2)/Nt;
 symOut=Rectangular_QAM_slicer(symOut_tmp, M, pav);
 
 end

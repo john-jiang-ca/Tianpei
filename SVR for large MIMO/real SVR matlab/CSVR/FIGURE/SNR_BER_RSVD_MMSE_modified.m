@@ -45,7 +45,7 @@ semilogy([10:2:36], BER_RSVD_64_4, '--o', 'MarkerSize', 8), xlabel('SNR(dB)'), y
 hold on
 semilogy([10:2:28], BER_RSVD_128_4, '--+', 'MarkerSize', 8), xlabel('SNR(dB)'), ylabel('BER');
 hold on
-title('BER Versus SNR 4QAM'), legend('MMSE-32', 'MMSE-64', 'MMSE-128', 'CSVD-32', 'CSVD-64', 'CSVD-128');
+title('BER Versus SNR 4QAM'), legend('MMSE-32', 'MMSE-64', 'MMSE-128', 'RSVD-32', 'RSVD-64', 'RSVD-128');
 hold off
 
 %% 16QAM
@@ -62,7 +62,7 @@ semilogy([10:2:36], BER_RSVD_64_16, '--o', 'MarkerSize', 8), xlabel('SNR(dB)'), 
 hold on
 semilogy([10:2:30], BER_RSVD_128_16, '--+', 'MarkerSize', 8), xlabel('SNR(dB)'), ylabel('BER');
 hold on
-title('BER Versus SNR 16QAM'), legend('MMSE-32', 'MMSE-64', 'MMSE-128', 'CSVD-32', 'CSVD-64', 'CSVD-128');
+title('BER Versus SNR 16QAM'), legend('MMSE-32', 'MMSE-64', 'MMSE-128', 'RSVD-32', 'RSVD-64', 'RSVD-128');
 hold off
 
 

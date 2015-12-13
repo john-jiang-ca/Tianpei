@@ -132,11 +132,6 @@ int main(void) {
     printf("\n");
 #endif
     symbolconstellation(psymbolconstellation, pav);  //generate the symbol constellation
-//    gsl_complex constemp;
-//    for (count=0;count<M;count++){
-//    	double a=gsl_vector_complex_get(psymbolconstellation, count).dat[0];
-//    	double b=gsl_vector_complex_get(psymbolconstellation, count).dat[1];
-//    }
     if(Corr_Ind==1){
     	corr_matrix_generator (pRt, pRr,  Rt,  Rr);  //generate spatial correlation matrix
     }
@@ -149,7 +144,7 @@ int main(void) {
     	BER=0;
     	Realizations=0;
     	pfile=fopen(fileName, "a");
-    	start=clock();
+    	start=time(NULL);
     	while (symError<minSymErrors||Realizations<minChannelRealizations){
     		data_generator(pdata, pr, M); //generate the random index of the data to be transmitted
 #ifdef DEBUG
@@ -160,13 +155,7 @@ int main(void) {
     		}
     		printf("\n");
 #endif
-    		unsigned long temp;
-    		for(count=0;count<Nt;count++){
-    			temp=gsl_vector_ulong_get(pdata, count);
-    		 gsl_vector_ulong_set(pgrayInput, count, gsl_vector_ulong_get(pgraydata, temp));
-//    		 gsl_vector_complex_set(ptransmitted, count, gsl_vector_complex_get(psymbolconstellation, temp));
-    		}
-//    		modulator (pdata,  psymbolconstellation, pgraydata, ptransmitted, pgrayInput); //generate the corresponding transmit
+    		modulator (pdata,  psymbolconstellation, pgraydata, ptransmitted, pgrayInput); //generate the corresponding transmit
     		//symbol vector and gray code vector
     		channel_generator (pH, pr);
     		if(Corr_Ind==1){
@@ -208,7 +197,7 @@ int main(void) {
     		free(ErrorIndex);
 
     	}
-        end=clock();
+        end=time(NULL);
         FER=(double)frameError/((double)(Realizations));  //calculate frame error rate
         SER=(double)symError/((double)(Realizations*Nt)); //calculate symbol error rate
         BER=(double)bitError/((double)(Realizations*Nt*ceil(log2(M)))); //calculate bit error rate

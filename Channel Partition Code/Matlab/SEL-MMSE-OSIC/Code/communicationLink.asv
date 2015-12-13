@@ -29,7 +29,7 @@ clear all
 tic
 
 %% System Configuration
-M =4;         %size of the signal constellation alphabet  (rectangular M-QAM)
+M =16;         %size of the signal constellation alphabet  (rectangular M-QAM)
 Nt=4;         %number of transmit antennas
 Nr=4;         %number of receive antennas
 SNR=[0:2:16];       %average receive signal to noie ratio (SNR) in (dB) 
@@ -39,17 +39,17 @@ pav=1/Nt;  %average power of the transmitted symbols
 noiseV=1./SNRd;   
 SER_sel_MMSE_OSIC=zeros(length(SNR),1);    %symbol error rate of MMSE detector for every SNR (dB) 
 BER_sel_MMSE_OSIC=zeros(length(SNR),1);    %bit error rate of MMSE detector for every SNR (dB)
-ChannelRealization=1e3;   %the minimum number of channel realization
-minSymbolError=150;       %the minimum number of symbol error accumulated 
+ChannelRealization=5e3;   %the minimum number of channel realization
+minSymbolError=200;       %the minimum number of symbol error accumulated 
 %% Signal Modulation
 graycode=grayEncoder(M); %gray code encoder
 [symConstell]=symbolConstellation( M, pav );  %generate symbol constellation
 
 %% generate file to record the simulation results
-fid=fopen('F:\GitHub\Tianpei\Channel Partition Code\Matlab\SEL-MMSE-OSIC\data\MMSE_OSIC_test.txt', 'a');
+fid=fopen('F:\GitHub\Tianpei\Channel Partition Code\Matlab\SEL-MMSE-OSIC\data\MMSE.txt', 'a');
 fprintf(fid, '\n');
 fprintf(fid, '=========================================================================================\n');
-fprintf(fid ,'this file compare the BER simulation results of sel_MMSE-OSIC in LS(large scale)-MIMO systems\n');
+fprintf(fid ,'this file compare the BER simulation results of MMSE in LS(large scale)-MIMO systems\n');
 fprintf(fid, 'SYSTEM CONFIGURATION\n');
 fprintf(fid, '****************\n');
 fprintf(fid, '%d X %d MIMO system with %d QAM modulation\n', Nr,Nt,M);
@@ -74,7 +74,7 @@ fprintf(fid, 'the fourth column shows the number of bit errors\n');
 fprintf(fid, 'the sixth column shows SER\n');
 fprintf(fid, 'the seventh column shows BER\n');
 fprintf(fid, '-------------\n');
-fprintf(fid, 'SEL_MMSE_OSIC\n');
+fprintf(fid, 'MMSE_OSIC\n');
 fprintf(fid, 'SNR \t iteration \t symbol errors \t  bit errors \t SER \t BER\n');
 
 
@@ -95,8 +95,9 @@ end
 H=complex(normrnd(0,sqrt(1/2),[Nr,Nt]), normrnd(0,sqrt(1/2),[Nr,Nt]));   %generate channel matrix
 n=complex(normrnd(0,sqrt(noiseV(count)/2),Nr,1),normrnd(0,sqrt(noiseV(count)/2),Nr,1));  %generate AWGN vector
 sigRec=H*dataMod+n;   %generate receive signal vector
-[symOut_sel_MMSE_OSIC]=sel_MMSE_OSIC(sigRec, H, SNRd(count), M, pav, symConstell);   %MMSE-OSIC detection
-% [symOut_sel_MMSE_OSIC]=MMSE_OSIC(sigRec, H, SNRd(count)/Nt, M, pav);
+% [symOut_sel_MMSE_OSIC]=sel_MMSE_OSIC(sigRec, H, SNRd(count), M, pav, symConstell);   %Sel_MMSE-OSIC detection
+[symOut_sel_MMSE_OSIC]=MMSE_OSIC(sigRec, H, SNRd(count)/Nt, M, pav);   %MMSE-OSIC detection
+% [symOut_sel_MMSE_OSIC]=MMSE(sigRec, H, SNRd(count)/Nt, M, pav);   %MMSE detection
 symError1_v=abs(dataMod-symOut_sel_MMSE_OSIC);
 ErrorIndex=find(symError1_v>1e-5);
 symError_sel_MMSE_OSIC=symError_sel_MMSE_OSIC+length(ErrorIndex);  %calculate the symbol error of MMSE in this channel realization

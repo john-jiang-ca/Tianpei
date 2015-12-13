@@ -34,6 +34,9 @@ void noise_generator (gsl_vector_complex *pnoise, gsl_rng *pr, double noiseV); /
 void MMSE(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr, double pav, int M,  gsl_vector_complex *psymOut); //MMSE detector
 void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr,
 		double pav, int M, gsl_vector_complex *psymOut); //MMSE-OSIC detector
+void Sel_MMSE_OSIC(gsl_vector_complex *preceive, gsl_matrix_complex *pH,
+		double SNR, double pav, int N, gsl_vector_complex *psymbolconstellation,
+		gsl_vector_complex *psymOut); //Sel_MMSE_OSIC algorithm
 void symErrorCheck(gsl_vector_complex *ptransmit, gsl_vector_complex *psymOut, int *ErrorIndex, int *symError_sub, int *frameError_sub);
 //find the error symbol"s index and calculate the number of symbol error
 void demodulator(gsl_vector_complex *psymOut, gsl_vector_complex *psymbolconstellation, gsl_vector_ulong *pgraydata,
@@ -47,14 +50,15 @@ void binaryerrors (gsl_vector_ulong *pgrayOut, int *ErrorIndex, gsl_vector_ulong
 int main(void) {
 	int Nr=receiveAntennas;
 	int Nt=transmitAntennas;
-	int N=floor(sqrt(Nr+(1/4)*pow((Nr-Nt),2.0))-(1/2)*(Nr-Nt));  //the number of antennas that are chosen in the channel partition stage
+//	int N=floor(sqrt(Nr+(1/4)*pow((Nr-Nt),2.0))-(1/2)*(Nr-Nt));  //the number of antennas that are chosen in the channel partition stage
+	int N=1;
 	int M=symConstellationSize;
     int SNR_tmp;
     double pav=(double)1/((double)Nt); //the average power of transmit symbol
     clock_t start, end;
     printf("The program begin.\n");
     printf("%d X %d %d QAM system\n", Nr, Nt, M);
-    printf("This is the test for MMSE-OSIC\n");
+    printf("This is the test for Sel_MMSE_OSIC\n");
     FILE *pfile;
     pfile=fopen(fileName, "a");
     fprintf(pfile, "==============================================================================\n");
@@ -183,7 +187,8 @@ int main(void) {
     		MMSE(preceived, pHest, snr/(double)(Nt), pav,  M,  psymOut); //detection with imperfect CSI
     		}else{
 //    	    MMSE(preceived, pH, snr/(double)(Nt), pav,  M,  psymOut); //detection with perfect CSI
-    	    MMSE_OSIC(preceived, pH, snr/(double)Nt, pav,  M, psymOut);
+//    	    MMSE_OSIC(preceived, pH, snr/(double)Nt, pav,  M, psymOut);
+    	    Sel_MMSE_OSIC(preceived, pH,  snr, pav, N, psymbolconstellation, psymOut);
     		}
     		//MMSE detector
     		symErrorCheck(ptransmitted, psymOut, ErrorIndex_V, symError_sub, frameError_sub);   //check symbol error
@@ -234,7 +239,6 @@ int main(void) {
     gsl_vector_complex_free(pnoise);
     gsl_vector_complex_free(preceived);
     gsl_vector_complex_free(psymOut);
-    gsl_vector_ulong_free(pgrayOut);
     gsl_rng_free(pr);
     free(frameError_sub);
     free(symError_sub);

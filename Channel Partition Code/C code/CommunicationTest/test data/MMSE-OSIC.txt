@@ -1,0 +1,32 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+The algorithm tested is MMSE-OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 4 times 4 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 1
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.25
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 
+the minimum channel realization is 100000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 100000 	 99903 	 334967 	 547076 	 0.99903 	 0.837418 	 0.341923 	 1.22
+2 	 100000 	 99749 	 320537 	 500044 	 0.99749 	 0.801342 	 0.312528 	 1.24
+4 	 100000 	 99234 	 300870 	 447807 	 0.99234 	 0.752175 	 0.279879 	 1.24
+6 	 100000 	 98072 	 278984 	 396797 	 0.98072 	 0.69746 	 0.247998 	 1.24
+8 	 100000 	 94887 	 252030 	 345035 	 0.94887 	 0.630075 	 0.215647 	 1.23
+10 	 100000 	 88055 	 219270 	 290020 	 0.88055 	 0.548175 	 0.181262 	 1.22
+12 	 100000 	 74895 	 177541 	 229403 	 0.74895 	 0.443852 	 0.143377 	 1.21
+14 	 100000 	 56055 	 129854 	 165469 	 0.56055 	 0.324635 	 0.103418 	 1.21
+16 	 100000 	 35082 	 82919 	 105709 	 0.35082 	 0.207297 	 0.0660681 	 1.21
+*************************************
+The whole program ends successfully!!
+==============================================================================

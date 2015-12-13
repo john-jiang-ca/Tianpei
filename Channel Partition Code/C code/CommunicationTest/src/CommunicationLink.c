@@ -34,6 +34,9 @@ void noise_generator (gsl_vector_complex *pnoise, gsl_rng *pr, double noiseV); /
 void MMSE(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr, double pav, int M,  gsl_vector_complex *psymOut); //MMSE detector
 void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr,
 		double pav, int M, gsl_vector_complex *psymOut); //MMSE-OSIC detector
+void Sel_MMSE_OSIC(gsl_vector_complex *preceive, gsl_matrix_complex *pH,
+		double SNR, double pav, int N, gsl_vector_complex *psymbolconstellation,
+		gsl_vector_complex *psymOut); //Sel_MMSE_OSIC algorithm
 void symErrorCheck(gsl_vector_complex *ptransmit, gsl_vector_complex *psymOut, int *ErrorIndex, int *symError_sub, int *frameError_sub);
 //find the error symbol"s index and calculate the number of symbol error
 void demodulator(gsl_vector_complex *psymOut, gsl_vector_complex *psymbolconstellation, gsl_vector_ulong *pgraydata,
@@ -47,19 +50,21 @@ void binaryerrors (gsl_vector_ulong *pgrayOut, int *ErrorIndex, gsl_vector_ulong
 int main(void) {
 	int Nr=receiveAntennas;
 	int Nt=transmitAntennas;
-	int N=floor(sqrt(Nr+(1/4)*pow((Nr-Nt),2.0))-(1/2)*(Nr-Nt));  //the number of antennas that are chosen in the channel partition stage
+//	int N=floor(sqrt(Nr+(1/4)*pow((Nr-Nt),2.0))-(1/2)*(Nr-Nt));  //the number of antennas that are chosen in the channel partition stage
+	int N=1;
 	int M=symConstellationSize;
     int SNR_tmp;
     double pav=(double)1/((double)Nt); //the average power of transmit symbol
     clock_t start, end;
     printf("The program begin.\n");
     printf("%d X %d %d QAM system\n", Nr, Nt, M);
-    printf("This is the test for MMSE-OSIC\n");
+    printf("This is the test for Sel_MMSE-OSIC\n");
     FILE *pfile;
     pfile=fopen(fileName, "a");
     fprintf(pfile, "==============================================================================\n");
     fprintf(pfile, "This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system\n");
-    fprintf(pfile, "The algorithm tested is MMSE-OSIC\n");
+    fprintf(pfile, "The algorithm tested is Sel-MMSE-OSIC\n");
+    fprintf(pfile, "This is the check file that make comparison with Dejelili's paper\n");
     fprintf(pfile, "*************************************\n");
     fprintf(pfile, "SYSTEM CONFIGURATION\n");
     fprintf(pfile, "this is for %d times %d MIMO with %d QAM modulation\n", Nr, Nt, M);
@@ -138,6 +143,14 @@ int main(void) {
     printf("\n");
 #endif
     symbolconstellation(psymbolconstellation, pav);  //generate the symbol constellation
+#ifdef DEBUG
+    printf("the symbol constellation are:\n");
+    for (count=0;count<M;count++){
+    	printf("%f+i%f, ", gsl_vector_complex_get(psymbolconstellation, count).dat[0],
+    			gsl_vector_complex_get(psymbolconstellation, count).dat[1]);
+    }
+    printf("\n");
+#endif
     if(Corr_Ind==1){
     	corr_matrix_generator (pRt, pRr,  Rt,  Rr);  //generate spatial correlation matrix
     }
@@ -150,6 +163,8 @@ int main(void) {
     	BER=0;
     	Realizations=0;
     	pfile=fopen(fileName, "a");
+		snr=pow(10,((double)SNR_tmp/(double)10)); //SNR in decimal
+		noiseV=(double)1/snr;     //noise variance
     	start=clock();
     	while (symError<minSymErrors||Realizations<minChannelRealizations){
     		data_generator(pdata, pr, M); //generate the random index of the data to be transmitted
@@ -168,8 +183,6 @@ int main(void) {
     			gsl_blas_zgemm(CblasNoTrans, CblasNoTrans, alpha, pRr, pH, beta, pH_tmp);   //add spatial correlation (receive side)
     			gsl_blas_zgemm(CblasNoTrans, CblasNoTrans, alpha, pH_tmp, pRt, beta, pH);   //add spatial correlation (transmit side)
     		}
-    		snr=pow(10,((double)SNR_tmp/(double)10)); //SNR in decimal
-    		noiseV=1/snr;     //noise variance
     		if(Est_Ind==1){
     			sigmaerr = sqrt (gammasq*pav/(2.0*snr));
     			error_channel_generator (pH_tmp, pr, sigmaerr);    //add channel estimation error
@@ -183,7 +196,8 @@ int main(void) {
     		MMSE(preceived, pHest, snr/(double)(Nt), pav,  M,  psymOut); //detection with imperfect CSI
     		}else{
 //    	    MMSE(preceived, pH, snr/(double)(Nt), pav,  M,  psymOut); //detection with perfect CSI
-    	    MMSE_OSIC(preceived, pH, snr/(double)Nt, pav,  M, psymOut);
+//    	    MMSE_OSIC(preceived, pH, snr/(double)Nt, pav,  M, psymOut);
+    	    Sel_MMSE_OSIC(preceived, pH,  snr, pav, N, psymbolconstellation, psymOut);
     		}
     		//MMSE detector
     		symErrorCheck(ptransmitted, psymOut, ErrorIndex_V, symError_sub, frameError_sub);   //check symbol error
@@ -196,7 +210,23 @@ int main(void) {
     			ErrorIndex[count]=ErrorIndex_V[count];
     		}
     		pgrayOut=gsl_vector_ulong_calloc(*symError_sub);
+#ifdef DEBUG
+    		printf("the indexes of the erroneous symbols are\n");
+    		for(count=0;count<(pgrayOut->size);count++){
+    			printf("%d, ", ErrorIndex[count]);
+    		}
+    		printf("\n");
+
+#endif
     		demodulator(psymOut, psymbolconstellation, pgraydata, ErrorIndex,  pgrayOut);
+#ifdef DEBUG
+    		printf("the output gray codes are\n");
+    		for(count=0;count<(pgrayOut->size);count++){
+    			printf("%d, ", gsl_vector_ulong_get(pgrayOut, count));
+    		}
+    		printf("\n");
+
+#endif
     		binaryerrors (pgrayOut, ErrorIndex, pgrayInput,  M,  bitError_sub);
     		symError+=*symError_sub;
     		frameError+=*frameError_sub;
@@ -234,7 +264,6 @@ int main(void) {
     gsl_vector_complex_free(pnoise);
     gsl_vector_complex_free(preceived);
     gsl_vector_complex_free(psymOut);
-    gsl_vector_ulong_free(pgrayOut);
     gsl_rng_free(pr);
     free(frameError_sub);
     free(symError_sub);

@@ -5,53 +5,11 @@
  *      Author: tianpei.chen@mail.mcgill.ca
  */
 #include "RectangularQAMSlicer.h"
+#include "linkedList.h"
 #ifndef MMSE_OSIC_H_
 #define MMSE_OSIC_H_
-#define LEN sizeof(struct Node)
-struct  Node{
-	int index;
-    struct Node *next;
-};
-struct Node *create(int Nt){   //create linked list
-	struct Node *head, *current,*tail;
-	int count;
-	for (count=0;count<Nt;count++){
-		  current=(struct Node*)calloc(1, LEN);
-		  current->index=count;
-		  current->next=NULL;
-		if(count==0){
-          head=current;
-          tail=current;
-		}
-	    tail->next=current;
-	    tail=current;
-	}
-	return head;
 
-}
-int get(int k, struct Node *head){   // get the index in the kth struct Node
-	int index;
-	int count=0;
-	struct Node *current=head;
-	struct Node *Nulling=NULL;
-	if(k==0){
-		index=current->index;
-		head=current->next;
-		free(current);
-		current=NULL;
-		return index;
-	}
-	while(count<k-1){
-		current=current->next;
-		count++;
-	}
-	Nulling=current->next;
-	index=Nulling->index;   //get the index
-	current->next=Nulling->next;  //delete Nulling struct Node
-	free(Nulling);
-	Nulling=NULL;
-	return index;
-}
+
 //void delete(int k, struct Node *head){   //delete k th struct Node
 //	struct Node *current=head;
 //	struct Node *Nulling;
@@ -74,7 +32,8 @@ void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr
 		double pav, int M, gsl_vector_complex *psymOut){
    int Nr=pH->size1;
    int Nt=pH->size2;
-   struct Node *head=create(Nt);
+   struct Node *head=create(1);
+   head->next=create(Nt);
    gsl_matrix_complex *pH_inter=gsl_matrix_complex_calloc(Nr, Nt);
    gsl_matrix_complex_memcpy(pH_inter, pH);
    gsl_vector_complex *preceive_tmp=gsl_vector_complex_calloc(Nr);
@@ -121,16 +80,18 @@ void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr
 	   gsl_linalg_complex_LU_decomp(G_pre, p, signum);
 	   gsl_linalg_complex_LU_invert(G_pre, p, G_preInv);//calculate the inverse matrix
 	   diag_viewComplex=gsl_matrix_complex_diagonal(G_preInv);
+//	   printf("The complex diagonal elements are");
+//	   for (count2=0;count2<(Nt-count);count2++){
+//		   printf("%f+i%f, ", gsl_vector_complex_get(&diag_viewComplex.vector, count2).dat[0],
+//				   gsl_vector_complex_get(&diag_viewComplex.vector, count2).dat[1]);
+//	   }
+//	   printf("\n");
 	   diag_viewReal=gsl_vector_complex_real(&diag_viewComplex.vector);
 	   gsl_vector_memcpy(diag, &diag_viewReal.vector);
 	   k=gsl_vector_min_index(diag);   //the current index of the strongest data stream
 	   //(with largest post processing SNR
 	   gsl_matrix_complex_get_row(row, G_preInv, k);
 	   gsl_matrix_complex_set_row(row_M, 0, row);
-       if (pH_inter->size1==15){
-       	printf("this is the where error happens\n");
-       	printf("\n");
-       }
 	   gsl_blas_zgemm(CblasNoTrans, CblasConjTrans, alpha, row_M, pH_inter, beta2, Gmmse);
        gsl_matrix_complex_get_row(GmmseR, Gmmse,0);
        gsl_blas_zdotu(GmmseR, preceive_tmp, &symCurrent);
@@ -141,9 +102,9 @@ void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr
 	   index=get((int)k, head);
 //	   index=indexNode->index;
 //	   free(indexNode);
-	   if (k==0){
-		   head=head->next;
-	   }
+//	   if (k==0){
+//		   head=head->next;
+//	   }
 	   gsl_vector_complex_set(psymOut, index, gsl_vector_complex_get(symCurrent_V, 0));
 	   //of the chosen symbol
 	   //update observation
@@ -159,13 +120,20 @@ void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr
 		   gsl_vector_free(diag);
 		   gsl_vector_complex_free(row);
 		   gsl_matrix_complex_free(row_M);
-
-
-
 		   break;
 	   }
 
 	   pHtemp=gsl_matrix_complex_calloc(Nr, Nt-count-1);
+	   int count3;
+//	   	   printf("The former matrix are\n");
+//	   	   for (count2=0;count2<Nr;count2++){
+//	   		   for(count3=0;count3<(Nt-count);count3++){
+//	   		   printf("%f+i%f, ", gsl_matrix_complex_get(pH_inter, count2, count3).dat[0],
+//	   				   gsl_matrix_complex_get(pH_inter, count2, count3).dat[1]);
+//	   	   }
+//	   		   printf("\n");
+//	   	   }
+//	   	   printf("\n");
 		count2=0;
 		for (count1=0;count1<(Nt-count);count1++){
 		  if (count1==k){
@@ -179,7 +147,15 @@ void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr
 		pH_inter=gsl_matrix_complex_calloc(Nr, Nt-count-1);
 		gsl_matrix_complex_memcpy(pH_inter, pHtemp);
 	    gsl_matrix_complex_free(pHtemp);
-
+//	   	   printf("The latter matrix are\n");
+//	   	   for (count2=0;count2<Nr;count2++){
+//	   		   for(count3=0;count3<(Nt-count-1);count3++){
+//	   		   printf("%f+i%f, ", gsl_matrix_complex_get(pH_inter, count2, count3).dat[0],
+//	   				   gsl_matrix_complex_get(pH_inter, count2, count3).dat[1]);
+//	   	   }
+//	   		   printf("\n");
+//	   	   }
+//	   	   printf("\n");
 
 	   gsl_matrix_complex_free(G_pre);
 	   gsl_matrix_complex_free(G_preInv);
@@ -190,7 +166,7 @@ void MMSE_OSIC(gsl_vector_complex *preceived, gsl_matrix_complex *pH, double snr
 
 
    }
-
+   free(head);
    gsl_vector_complex_free(preceive_tmp);
    free(signum);
    gsl_vector_complex_free(GmmseR);

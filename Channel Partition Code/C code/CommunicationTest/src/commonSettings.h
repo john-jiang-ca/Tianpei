@@ -1,6 +1,10 @@
 /*
  * commonSettings.h
- *
+ *  The modification of system configuration should be synchronized with the
+ *  following aspect:
+ *  The command window output
+ *  The output file name
+ *  The explanation in the output file
  *  Created on: Dec 4, 2015
  *      Author: Preston Chen
  */
@@ -52,7 +56,7 @@
 #include "Sel_MMSE_OSIC.h"
 #include "fullfact.h"
 //#define DEBUG    //debugging mode
-#define fileName "/home/tchen44/code/CommunicationTest/test data/Sel_MMSE_OSIC_test.txt"  //the output file
+#define fileName "/home/tchen44/code/Tianpei/Channel Partition Code/C code/CommunicationTest/test data/Sel_MMSE_OSIC.txt"  //the output file
 int Corr_Ind=0; //the correlation channel mode (0 close 1 open)
 int Est_Ind=0; //channel estimation error mode (0 close 1 open)
 int receiveAntennas=4;     //number of receive antenna
@@ -61,10 +65,10 @@ int symConstellationSize=16;     //modulation scheme
 double Rr=0;   // receive correlation parameter. Should be a real number in the interval between 0 and 1
 double Rt=0;	// transmit correlation parameter. Should be a real number in the interval between 0 and 1
 double gammasq=0; //the parameter for the channel estimation error
-int minSymErrors=200; //the minimum symbol error accumulated
-int minChannelRealizations=1e4; //the minimum channel realizations
+int minSymErrors=300; //the minimum symbol error accumulated
+int minChannelRealizations=1e5; //the minimum channel realizations
 int Start_SNR=0;   //the start SNR   (receive SNR in dB)
-int End_SNR=16;     //the end SNR
+int End_SNR=20;     //the end SNR
 int Step_SNR=2;   //the step of SNR
 
 #endif /* COMMONSETTINGS_H_ */

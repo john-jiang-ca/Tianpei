@@ -423,8 +423,8 @@ Orthogonality deficiency measures the how orthogonal a matrix is \cite{ma2008per
 \phi_{od}=1-\frac{det(\mathbf{W})}{\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||^{2}},
 \label{formula1}
 \end{equation}
-where $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$ denotes Wishart matrix, $\mathbf{h}_{i}$ denotes the $i$ th column of $\mathbf{H}$, $det(\cdot)$ denotes determinant operation, $||\cdot||^{2}$ denotes 2-norm operation.
-In (\ref{formula1}), $||\mathbf{h}_{i}||^{2}=\sum_{j=1}^{N_{r}}|\mathbf{H}_{ji}|^{2}$, $\mathbf{H}_{ji}$ denotes the component of $\mathbf{H}$ at $j$ th row and $i$ th column. $|\mathbf{H}_{ji}|\sim Rayleigh(1/\sqrt{2})$, therefore $||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},1)$\cite{papoulis1996stochastic}. $Gamma(k,\theta)$ denotes Gamma distribution, with $k$ degrees of freedom and scale $\theta$. Furthermore, we have:
+where $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$ denotes Wishart matrix, $\mathbf{h}_{i}$ denotes the $i$ th column of $\mathbf{H}$, $det(\cdot)$ denotes determinant operation, $||\cdot||$ denotes 2-norm operation. Based on Hadamard's inequality $\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||\geq det(\mathbf{H})$, we have $0\leq\phi_{od}\leq 1$.
+In (\ref{formula1}), $||\mathbf{h}_{i}||^{2}=\sum_{j=1}^{N_{r}}|\mathbf{H}_{ji}|^{2}$, $\mathbf{H}_{ji}$ denotes the component of $\mathbf{H}$ at $j$ th row and $i$ th column. $\mathbf{H}_{ij}\sim \mathbb{C}N(0,1)$, where $\mathbb{C}N(0, \sigma^{2})$ denotes CSCG distribution with variance $\sigma^{2}$, let $|\cdot|$ denotes magnitude operation, $|\mathbf{H}_{ji}|\sim Rayleigh(1/\sqrt{2})$, where $Rayleigh(\sigma)$ denotes the Rayleigh distribution with shape parameter $\sigma$, therefore $||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},1)$\cite{papoulis1996stochastic}. $Gamma(k,\theta)$ denotes Gamma distribution, with $k$ degrees of freedom and scale parameter $\theta$. Furthermore, we have:
 \begin{equation}
 2||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r},2)\sim\chi^{2}_{2N_{r}},
 \label{formula2}
@@ -463,7 +463,6 @@ Notice that $\mathbf{R}$ can be viewed as the Cholesky factorization of $\mathbf
 \label{formula9}
 \end{equation}  
 \section{Logarithmic Expectation of Orthogonality Measurement}\label{log expectation of om}
-
 Taking expectation of (\ref{formula4}), we have 
 \begin{equation}
 \mathbb{E}[\ln(\phi_{om})]=N_{t}\ln(2)+\mathbb{E}[\ln(det(\mathbf{W}))]-\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(2||\mathbf{h}_{i}||^{2})].
@@ -617,26 +616,36 @@ If $x\sim Gamma(n, \theta)$, with shape parameter $k$ and scale parameter $\thet
 f(x,k,\theta)=\frac{x^{k-1}e^{-x/\theta}}{\Gamma(k)\theta^{k}}.
 \label{Appendequa9}
 \end{equation}
-Thus we have 
+where $\Gamma(n)$ satisfies\cite{papoulis2002probability}
+\begin{equation}
+\Gamma(n)=\int_{0}^{\infty}x^{n-1}e^{-x}dx,
+\label{AppendequaAdditional}
+\end{equation}
+Thus the logarithmic expectation of $x$ can be written as
 \begin{equation}
 E[\ln(x)]=\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(x)x^{k-1}e^{-x/\theta}\theta^{-k}dx,
 \label{Appendequa10}
 \end{equation}
-define $z=x/\theta$ and since $\Gamma(k)=\int_{0}^{\infty}x^{k-1}e^{-x}dx$, (\ref{Appendequa10}) can be rewritten as
+define $z=x/\theta$ and based on (\ref{AppendequaAdditional}), (\ref{Appendequa10}) can be rewritten as
 \begin{equation}
 E[\ln(x)]=\ln(\theta)+\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(z)z^{k-1}e^{-z}dz.
 \label{Appendequa11}
 \end{equation}
 Because $\frac{d(z^{k-1})}{dk}=\ln(z)z^{k-1}$, (\ref{Appendequa11}) can be rewritten as
-\begin{eqnarray}
-\nonumber
-E[\ln(z)]&=&\ln(\theta)+\frac{1}{\Gamma(k)}\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e^{-z}dz\\
-\nonumber
-&=&\ln(\theta)+\frac{\Gamma^{'}(k)}{\Gamma(k)}\\
-\nonumber
-&=&\ln(\theta)+\psi(k),
+\begin{equation}
+E[\ln(x)]=\ln(\theta)+\frac{1}{\Gamma(k)}\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e^{-z}dz,
 \label{Appendequa12}
-\end{eqnarray}
+\end{equation}
+Based on (\ref{AppendequaAdditional}), we have
+\begin{equation}
+\Gamma^{'}(k)=\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e^{-z}dz,
+\label{AppendequaAdditional2}
+\end{equation}
+Thus (\ref{Appendequa12}) can be rewritten as
+\begin{equation}
+E(\ln(x))=\ln(\theta)+\frac{\Gamma^{'}(k)}{\Gamma(k)}=\ln(\theta)+\psi(k),
+\label{AppendequaAdditional3}
+\end{equation}
 where $\psi(k)$ denotes Digamma function.
 \section{Appendix C}
 $x_{1}, x_{2}, \cdots x_{N_{t}}$ are independent beta variables, the probability density function (pdf) can be written as: 

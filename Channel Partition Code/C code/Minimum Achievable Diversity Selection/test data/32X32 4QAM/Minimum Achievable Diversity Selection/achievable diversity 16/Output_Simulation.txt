@@ -1,0 +1,56 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Minimum Achievable Diversity Selection
+The minimum achievable diversity here is 16
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 32 times 32 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.03125
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 10000 	 10000 	 129745 	 146789 	 1 	 0.405453 	 0.229358 	 10497.6
+2 	 10000 	 9997 	 109778 	 121878 	 0.9997 	 0.343056 	 0.190434 	 10473.7
+4 	 10000 	 9983 	 86502 	 94033 	 0.9983 	 0.270319 	 0.146927 	 10543.1
+6 	 10000 	 9620 	 57475 	 61149 	 0.962 	 0.179609 	 0.0955453 	 10553.2
+8 	 10000 	 7489 	 27602 	 28714 	 0.7489 	 0.0862563 	 0.0448656 	 10631.3
+10 	 10000 	 3591 	 8137 	 8307 	 0.3591 	 0.0254281 	 0.0129797 	 10529.9
+12 	 10000 	 924 	 1421 	 1429 	 0.0924 	 0.00444063 	 0.00223281 	 10265.3
+14 	 16409 	 221 	 300 	 302 	 0.0134682 	 0.000571333 	 0.000287571 	 17115.9
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Minimum Achievable Diversity Selection
+The minimum achievable diversity here is 16
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 32 times 32 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.03125
+SNR (dB) are
+16, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 50
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+16 	 40541 	 45 	 50 	 50 	 0.00110999 	 3.85412e-05 	 1.92706e-05 	 43128.2
+*************************************
+The whole program ends successfully!!
+==============================================================================

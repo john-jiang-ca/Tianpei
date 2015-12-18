@@ -1,0 +1,61 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Minimum Achievable Diversity Selection
+The minimum achievable diversity here is 4
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 1
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 10000 	 10000 	 134123 	 220209 	 1 	 0.838269 	 0.344077 	 39.3883
+2 	 10000 	 10000 	 128603 	 201780 	 1 	 0.803769 	 0.315281 	 39.7915
+4 	 10000 	 10000 	 121568 	 181272 	 1 	 0.7598 	 0.283237 	 40.1571
+6 	 10000 	 10000 	 113975 	 162721 	 1 	 0.712344 	 0.254252 	 40.6691
+8 	 10000 	 10000 	 105183 	 143261 	 1 	 0.657394 	 0.223845 	 39.7525
+10 	 10000 	 9997 	 95445 	 124623 	 0.9997 	 0.596531 	 0.194723 	 39.7679
+12 	 10000 	 9916 	 82934 	 104347 	 0.9916 	 0.518338 	 0.163042 	 39.906
+14 	 10000 	 9278 	 65248 	 79560 	 0.9278 	 0.4078 	 0.124313 	 39.8918
+16 	 10000 	 6764 	 38605 	 45766 	 0.6764 	 0.241281 	 0.0715094 	 39.9839
+18 	 10000 	 3205 	 15971 	 18760 	 0.3205 	 0.0998187 	 0.0293125 	 39.8838
+20 	 10000 	 776 	 3640 	 4228 	 0.0776 	 0.02275 	 0.00660625 	 39.8869
+*************************************
+The whole program ends successfully!!
+==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Minimum Achievable Diversity Selection
+The minimum achievable diversity here is 4
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 1
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+22, 24, 26, 28, 30, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+22 	 10000 	 143 	 742 	 903 	 0.0143 	 0.0046375 	 0.00141094 	 61.4858
+24 	 62039 	 66 	 301 	 367 	 0.00106385 	 0.000303237 	 9.24318e-05 	 363.182
+26 	 896571 	 47 	 311 	 386 	 5.24219e-05 	 2.16798e-05 	 6.72702e-06 	 5240.9

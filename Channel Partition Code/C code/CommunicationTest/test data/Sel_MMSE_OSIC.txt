@@ -29,3 +29,38 @@ SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SE
 *************************************
 The whole program ends successfully!!
 ==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+The algorithm tested is Sel-MMSE-OSIC
+This is the check file that make comparison with Dejelili's paper
+*************************************
+SYSTEM CONFIGURATION
+this is for 4 times 4 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 1
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.25
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 
+the minimum channel realization is 100000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 100000 	 99835 	 328089 	 547430 	 0.99835 	 0.820222 	 0.342144 	 8.64801
+2 	 100000 	 99565 	 312897 	 500156 	 0.99565 	 0.782242 	 0.312597 	 8.61382
+4 	 100000 	 98926 	 293999 	 449465 	 0.98926 	 0.734997 	 0.280916 	 8.64822
+6 	 100000 	 97217 	 271185 	 395960 	 0.97217 	 0.677963 	 0.247475 	 8.70487
+8 	 100000 	 93015 	 242653 	 338538 	 0.93015 	 0.606633 	 0.211586 	 8.66318
+10 	 100000 	 83953 	 205007 	 275517 	 0.83953 	 0.512517 	 0.172198 	 8.67116
+12 	 100000 	 68202 	 158046 	 206548 	 0.68202 	 0.395115 	 0.129092 	 8.74577
+14 	 100000 	 46454 	 103849 	 133912 	 0.46454 	 0.259622 	 0.083695 	 8.85946
+16 	 100000 	 24636 	 53478 	 68393 	 0.24636 	 0.133695 	 0.0427456 	 8.90409
+18 	 100000 	 9924 	 21088 	 26981 	 0.09924 	 0.05272 	 0.0168631 	 8.73461
+20 	 100000 	 2911 	 6071 	 7770 	 0.02911 	 0.0151775 	 0.00485625 	 8.65527
+*************************************
+The whole program ends successfully!!
+==============================================================================

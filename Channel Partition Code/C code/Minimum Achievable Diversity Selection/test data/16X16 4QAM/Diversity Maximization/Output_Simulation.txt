@@ -1,0 +1,56 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Diversity Maximization Selection
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+0 	 10000 	 9992 	 64342 	 72937 	 0.9992 	 0.402137 	 0.227928 	 213.312
+2 	 10000 	 9919 	 54506 	 60447 	 0.9919 	 0.340662 	 0.188897 	 215.67
+4 	 10000 	 9471 	 41492 	 45234 	 0.9471 	 0.259325 	 0.141356 	 216.964
+6 	 10000 	 7718 	 26289 	 28125 	 0.7718 	 0.164306 	 0.0878906 	 217.205
+8 	 10000 	 4383 	 11145 	 11678 	 0.4383 	 0.0696563 	 0.0364937 	 217.455
+10 	 10000 	 1418 	 2915 	 3029 	 0.1418 	 0.0182187 	 0.00946563 	 217.085
+12 	 10000 	 235 	 381 	 389 	 0.0235 	 0.00238125 	 0.00121562 	 217.704
+14 	 112590 	 192 	 300 	 304 	 0.0017053 	 0.000166533 	 8.43769e-05 	 2466.48
+==============================================================================
+
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Diversity Maximization Selection
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+16, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 50
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+16 	 729928 	 32 	 51 	 51 	 4.38399e-05 	 4.36687e-06 	 2.18343e-06 	 18400.4
+*************************************
+The whole program ends successfully!!
+==============================================================================

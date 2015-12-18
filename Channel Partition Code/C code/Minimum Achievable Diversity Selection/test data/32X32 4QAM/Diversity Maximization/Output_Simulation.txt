@@ -1,0 +1,21 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Diversity Maximization Selection
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 32 times 32 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 5
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.03125
+SNR (dB) are
+8, 10, 12, 14, 16, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time

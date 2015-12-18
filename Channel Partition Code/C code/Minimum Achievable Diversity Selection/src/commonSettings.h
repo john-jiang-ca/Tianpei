@@ -56,19 +56,20 @@
 #include "Sel_MMSE_OSIC.h"
 #include "fullfact.h"
 //#define DEBUG    //debugging mode
-#define fileName "/home/tchen44/Tianpei/Channel Partition Code/C code/CommunicationTest/test data/Sel_MMSE_OSIC.txt"  //the output file
+#define achievable //achivable selectio mode
+#define fileName "Output_Simulation.txt"  //the output file
 int Corr_Ind=0; //the correlation channel mode (0 close 1 open)
 int Est_Ind=0; //channel estimation error mode (0 close 1 open)
-int receiveAntennas=4;     //number of receive antenna
-int transmitAntennas=4;     //number of transmit antenna
-int symConstellationSize=16;     //modulation scheme
+int receiveAntennas=32;     //number of receive antenna
+int transmitAntennas=32;     //number of transmit antenna
+int symConstellationSize=4;     //modulation scheme
 double Rr=0;   // receive correlation parameter. Should be a real number in the interval between 0 and 1
 double Rt=0;	// transmit correlation parameter. Should be a real number in the interval between 0 and 1
 double gammasq=0; //the parameter for the channel estimation error
-int minSymErrors=300; //the minimum symbol error accumulated
-int minChannelRealizations=1e5; //the minimum channel realizations
-int Start_SNR=0;   //the start SNR   (receive SNR in dB)
-int End_SNR=20;     //the end SNR
+int minSymErrors=50; //the minimum symbol error accumulated
+int minChannelRealizations=1e4; //the minimum channel realizations
+int Start_SNR=18;   //the start SNR   (receive SNR in dB)
+int End_SNR=18;     //the end SNR
 int Step_SNR=2;   //the step of SNR
-
+int x=9;     //achievable diversity
 #endif /* COMMONSETTINGS_H_ */

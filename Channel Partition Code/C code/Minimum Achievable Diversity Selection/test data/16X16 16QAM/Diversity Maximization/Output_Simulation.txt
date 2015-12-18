@@ -1,0 +1,53 @@
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Diversity Maximization Selection
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 300
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+8 	 10000 	 10000 	 103545 	 141793 	 1 	 0.647156 	 0.221552 	 8923.91
+10 	 10000 	 9991 	 92866 	 121171 	 0.9991 	 0.580412 	 0.18933 	 9467.63
+12 	 10000 	 9848 	 78434 	 98143 	 0.9848 	 0.490212 	 0.153348 	 9472.13
+14 	 10000 	 8575 	 55080 	 66646 	 0.8575 	 0.34425 	 0.104134 	 7862.36
+16 	 10000 	 4873 	 22763 	 26687 	 0.4873 	 0.142269 	 0.0416984 	 7099.87
+18 	 10000 	 1290 	 4180 	 4732 	 0.129 	 0.026125 	 0.00739375 	 7080.88
+20 	 10000 	 162 	 392 	 431 	 0.0162 	 0.00245 	 0.000673437 	 6937.18
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Diversity Maximization Selection
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+22, 
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 50
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
+22 	 32185 	 24 	 51 	 53 	 0.000745689 	 9.90368e-05 	 2.57302e-05 	 21338.9
+*************************************
+The whole program ends successfully!!
+==============================================================================

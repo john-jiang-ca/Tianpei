@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  18 DEC 2015 18:50
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  22 DEC 2015 02:33
 entering extended mode
 **Report.tex
 ("F:\GitHub\Tianpei\Report Dec 2015\Report.tex"
@@ -542,20 +542,305 @@ Requested font "cmbx6" at 6.0pt
 Overfull \vbox (5.4559pt too high) has occurred while \output is active []
 
 
-[1] [2] [3] [4] [5] [6] [7] [8] [9] [10]
-("F:\GitHub\Tianpei\Report Dec 2015\Report.bbl" [11]) [12]
+[1] [2] [3] [4]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 745.
+
+[5] [6]
+Requested font "ptmrc7t" at 9.0pt
+Requested font "cmr9" at 9.0pt
+Requested font "cmmi9" at 9.0pt
+Requested font "cmsy9" at 9.0pt
+Requested font "cmex9" at 9.0pt
+Requested font "cmbx9" at 9.0pt
+Requested font "cmbx5" at 5.0pt
+Requested font "msam10" at 9.0pt
+Requested font "msbm10" at 9.0pt
+ [7] ("F:\GitHub\Tianpei\Report Dec 2015\16MIMO4QAM.pdf_tex"
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page1>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page2>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page3>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page4>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page5>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page6>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page7>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page8>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page9>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page10>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page11>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page12>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page13>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page14>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page15>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page16>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page17>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page18>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page19>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page20>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO4QAM.pdf"  page21>
+File: 16MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO4QAM.pdf"  page22>) [8]
+("F:\GitHub\Tianpei\Report Dec 2015\16MIMO16QAM.pdf_tex"
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page1>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page2>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page3>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page4>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page5>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page6>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page7>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page8>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page9>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page10>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page11>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page12>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page13>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page14>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page15>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page16>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page17>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page18>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page19>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page20>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+
+<use  "16MIMO16QAM.pdf"  page21>
+File: 16MIMO16QAM.pdf Graphic file (type QTm)
+ <use  "16MIMO16QAM.pdf"  page22>)
+("F:\GitHub\Tianpei\Report Dec 2015\32MIMO4QAM.pdf_tex"
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page1>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page2>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page3>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page4>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page5>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page6>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page7>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page8>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page9>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page10>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page11>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page12>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page13>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page14>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page15>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page16>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page17>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page18>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page19>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page20>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+
+<use  "32MIMO4QAM.pdf"  page21>
+File: 32MIMO4QAM.pdf Graphic file (type QTm)
+ <use  "32MIMO4QAM.pdf"  page22>) [9] [10]
+[11] [12] [13] ("F:\GitHub\Tianpei\Report Dec 2015\logOMt.pdf_tex"
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page1>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page2>
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page3>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page4>
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page5>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page6>
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page7>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page8>
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page9>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page10>
+Missing character: There is no − in font ptmr7t!
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page11>
+Missing character: There is no − in font ptmr7t!
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page12>
+Missing character: There is no − in font ptmr7t!
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page13>
+Missing character: There is no − in font ptmr7t!
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page14>
+Missing character: There is no − in font ptmr7t!
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page15>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page16>
+File: logOMt.pdf Graphic file (type QTm)
+
+<use  "logOMt.pdf"  page17>
+File: logOMt.pdf Graphic file (type QTm)
+ <use  "logOMt.pdf"  page18>)
+("F:\GitHub\Tianpei\Report Dec 2015\logOMem.pdf_tex"
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page1>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page2>
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page3>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page4>
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page5>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page6>
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page7>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page8>
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page9>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page10>
+Missing character: There is no − in font ptmr7t!
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page11>
+Missing character: There is no − in font ptmr7t!
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page12>
+Missing character: There is no − in font ptmr7t!
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page13>
+Missing character: There is no − in font ptmr7t!
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page14>
+Missing character: There is no − in font ptmr7t!
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page15>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page16>
+File: logOMem.pdf Graphic file (type QTm)
+
+<use  "logOMem.pdf"  page17>
+File: logOMem.pdf Graphic file (type QTm)
+ <use  "logOMem.pdf"  page18>) [14] [15] [16]
+[17] [18] [19] [20] ("F:\GitHub\Tianpei\Report Dec 2015\Report.bbl") [21]
 ("F:\GitHub\Tianpei\Report Dec 2015\Report.aux")
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4614 strings out of 429025
- 61258 string characters out of 3166797
- 140134 words of memory out of 3000000
- 7773 multiletter control sequences out of 15000+200000
- 31028 words of font info for 81 fonts, out of 3000000 for 9000
+ 4686 strings out of 429025
+ 62412 string characters out of 3166797
+ 145134 words of memory out of 3000000
+ 7822 multiletter control sequences out of 15000+200000
+ 33836 words of font info for 90 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 32i,8n,24p,1398b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,10n,24p,1398b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report.pdf (12 pages).
+Output written on Report.pdf (21 pages).

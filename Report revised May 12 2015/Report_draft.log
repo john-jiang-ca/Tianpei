@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  18 DEC 2015 18:37
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  21 DEC 2015 09:16
 entering extended mode
 **Report_draft.tex
 ("F:\GitHub\Tianpei\Report revised May 12 2015\Report_draft.tex"
@@ -414,51 +414,44 @@ ity Mea-sure. Based on Hadamard's in-equal-ity ($[][] \OMS/cmsy/m/n/12 jj\OT1/c
 mr/bx/n/12 h[]\OMS/cmsy/m/n/12 jj ^^U
  []
 
-[5] [6] [7]
-Overfull \hbox (18.21358pt too wide) in paragraph at lines 500--502
-\OT1/cmr/m/n/12 All the com-po-nents in $\OT1/cmr/bx/n/12 R$ \OT1/cmr/m/n/12 ar
-e in-de-pen-dently dis-tributed and $\OML/cmm/m/it/12 r[] \OMS/cmsy/m/n/12 ^^X 
-\U/msb/m/n/12 C\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/
-m/n/12 1)$, $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 r[]\OMS/cmsy/m/n/12 j[] ^^X \OM
-L/cmm/m/it/12 Gamma\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 N[] \OMS/cmsy/m/n/12 ^^@
- []
 
-[8]
+LaTeX Warning: Citation `watkins2004fundamentals' on page 5 undefined on input 
+line 444.
+
+[5] [6] [7] [8]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 516.
+(amsmath)                 on input line 517.
 
 [9]
 File: logE_om_em.eps Graphic file (type eps)
- <logE_om_em.eps>
+ <logE_om_em.eps> [10]
 File: logE_om_t.eps Graphic file (type eps)
  <logE_om_t.eps>
 File: NtE.eps Graphic file (type eps)
- <NtE.eps> [10] [11] [12] [13] [14]
+ <NtE.eps> [11] [12] [13] [14]
 
 LaTeX Warning: Citation `papoulis2002probability' on page 15 undefined on input
- line 619.
+ line 620.
 
 [15] [16]
 Missing character: There is no ， in font cmr12!
  [17] ("F:\GitHub\Tianpei\Report revised May 12 2015\Report_draft.bbl"
 Requested font "cmti12" at 12.0pt
-[18]) [19] ("F:\GitHub\Tianpei\Report revised May 12 2015\Report_draft.aux")
+[18]) [19] [20] ("F:\GitHub\Tianpei\Report revised May 12 2015\Report_draft.aux
+")
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 4448 strings out of 429025
- 57749 string characters out of 3166797
+ 4449 strings out of 429025
+ 57774 string characters out of 3166797
  134956 words of memory out of 3000000
- 7615 multiletter control sequences out of 15000+200000
+ 7616 multiletter control sequences out of 15000+200000
  13064 words of font info for 50 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  36i,8n,38p,1069b,358s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report_draft.pdf (19 pages).
+Output written on Report_draft.pdf (20 pages).

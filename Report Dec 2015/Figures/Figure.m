@@ -30,37 +30,37 @@ BER_MAD_32_4_16=[0.229358, 0.190434, 0.146927, 0.0955453, 0.0448656, 0.0129797, 
 
 %% Figure plotting
 figure (1)
-semilogy([0:2:16], BER_MDS_16_4, '-*', 'MarkerSize', 5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([0:2:16], BER_MDS_16_4, '-*', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-semilogy([0:2:18], BER_MAD_16_4_4, '-^', 'MarkerSize', 5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([0:2:18], BER_MAD_16_4_4, '-^', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-semilogy([0:2:16], BER_MAD_16_4_9, '-+', 'MarkerSize',5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([0:2:16], BER_MAD_16_4_9, '-+', 'MarkerSize',8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-title('16X16 system 4QAM');
-hold on;
-legend('MDS', 'MAD (4)', 'MAD (9)');
+% title('16X16 system 4QAM');
+% hold on;
+legend('MDS', 'MAD-4', 'MAD-9');
 hold off;
 
 figure (2)
-semilogy([8:2:22], BER_MDS_16_16, '-*', 'MarkerSize', 5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([8:2:22], BER_MDS_16_16, '-*', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-semilogy([8:2:26], BER_MAD_16_16_4, '-^', 'MarkerSize', 5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([8:2:26], BER_MAD_16_16_4, '-^', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-semilogy([8:2:24], BER_MAD_16_16_9, '-+', 'MarkerSize',5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([8:2:24], BER_MAD_16_16_9, '-+', 'MarkerSize',8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-title('16X16 system 16QAM');
-hold on;
-legend('MDS', 'MAD (4)', 'MAD (9)');
+% title('16X16 system 16QAM');
+% hold on;
+legend('MDS', 'MAD-4', 'MAD-9');
 hold off;
 
 figure (3)
-semilogy([0:2:18], BER_MAD_32_4_4, '-*', 'MarkerSize', 5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([0:2:18], BER_MAD_32_4_4, '-*', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-semilogy([0:2:16], BER_MAD_32_4_9, '-^', 'MarkerSize', 5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([0:2:16], BER_MAD_32_4_9, '-^', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-semilogy([0:2:16], BER_MAD_32_4_16, '-+', 'MarkerSize',5), xlabel('SNR (dB)'), ylabel('BER');
+semilogy([0:2:16], BER_MAD_32_4_16, '-+', 'MarkerSize',8), xlabel('SNR (dB)'), ylabel('BER');
 hold on;
-title('32X32 system 4QAM');
-hold on;
-legend( 'MAD (4)', 'MAD (9)', 'MAD (16)');
+% title('32X32 system 4QAM');
+% hold on;
+legend( 'MAD-4', 'MAD-9', 'MAD-16');
 hold off;

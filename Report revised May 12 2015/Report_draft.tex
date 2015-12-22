@@ -441,16 +441,17 @@ Taking logarithmic operation to $\phi_{om}$ we have
 \end{equation}
 $\phi_{om}$ in (\ref{formula3}) is defined as Orthogonality Measure. Based on Hadamard's inequality ($\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||\geq det(\mathbf{H})$). $\phi_{om}\in [0,1]$. If $\phi_{om}$ is more closer to 1, $\mathbf{H}$ is closer to orthogonal matrix.
 
-Because $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$, do QR factorization to $\mathbf{H}$ 
+Because $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}$, do QR factorization to $\mathbf{H}$\cite{watkins2004fundamentals}
 \begin{equation}
 \mathbf{H}=\mathbf{Q}\mathbf{R},
 \label{formula5} 
  \end{equation}
-where $\mathbf{Q}\in\mathbb{C}^{N_{r}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in\mathbb{C}^{N_{t}\times N_{t}}$ is the upper triangular matrix. Using (\ref{formula5}), we have $\mathbf{W}=\mathbf{R}^{H}\mathbf{R}$. $r_{ii}$ denotes the $i$ th diagonal component of $\mathbf{R}$, thus $det(\mathbf{W})$ can be rewritten as:
+where $\mathbf{Q}\in\mathbb{C}^{N_{r}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in\mathbb{C}^{N_{t}\times N_{t}}$ is an upper triangular matrix. Using (\ref{formula5}), we have $\mathbf{W}=\mathbf{R}^{H}\mathbf{R}$. $r_{ij}$ denotes the component of $\mathbf{R}$ at $i$th row and $j$th column, thus $det(\mathbf{W})$ can be rewritten as:
 \begin{equation}
-det(\mathbf{W})=det(\mathbf{R}^{H}\mathbf{R})=det(\mathbf{R}^{H})det(\mathbf{R})\\=\prod_{i=1}^{N_{t}}r_{ii}^{H}\prod_{i=1}^{N_{t}}r_{ii}=\prod_{i=1}^{N_{t}}|r_{ii}|^{2}.
+det(\mathbf{W})=det(\mathbf{R}^{H}\mathbf{R})=det(\mathbf{R}^{H})det(\mathbf{R})\\=\prod_{i=1}^{N_{t}}r_{ii}^{*}\prod_{i=1}^{N_{t}}r_{ii}=\prod_{i=1}^{N_{t}}|r_{ii}|^{2},
 \label{formula6}
-\end{equation}  
+\end{equation} 
+where $(\cdot)^{*}$ denotes conjugate operation. 
 Notice that $\mathbf{R}$ can be viewed as the Cholesky factorization of $\mathbf{W}$. Therefore, we have
 \begin{equation}
  ||\mathbf{h}_{i}||^{2}=\mathbf{W}_{ii}=\sum^{i-1}_{j=1}|r_{ji}|^{2}+|r_{ii}|^{2},
@@ -498,7 +499,7 @@ Recall (\ref{formula9})
 \begin{equation}
 \phi_{om}=\prod_{i=1}^{N_{t}}\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum_{j<i}|r_{ji}|^{2}}.
 \end{equation}
-All the components in $\mathbf{R}$ are independently distributed and $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma(N_{r}-i+1,1)$ \cite{nagar2011expectations}. Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ji}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten as 
+Based on \cite{nagar2011expectations}, for $1\leq j\leq i\leq N_{t}$, $r_{ji}$ are mutually independent distributed. Furthermore $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma(N_{r}-i+1,1)$ . Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Defining $\alpha_{i}=\sum_{j<i}|r_{ji}|^{2}$ and $\beta_{i}=|r_{ii}|^{2}$, $\alpha_{i}$ and $\beta_{i}$ are mutually independent, therefore (\ref{formula9}) can be rewritten as 
 \begin{equation}
 \phi_{om}=\prod_{i=1}^{N_{t}}\frac{\beta_{i}}{\beta_{i}+\alpha_{i}},
 \label{formula21}
@@ -660,10 +661,10 @@ f_{y_{i}}(\rho)=|\frac{dy_{i}}{dx_{i}}|^{-1}f_{x_{i}}(g^{-1}(\rho))=\frac{1}{\ma
 \end{equation}
 where (\ref{Appendequal14}) can be alternatively expressed as \cite{bhargava1981distribution}
 \begin{equation}
-f_{y_{i}}(\rho)=\sum_{j^{i}=0}^{k_{2}^{i}-1}c(k_{1}^{i},k_{2}^{i}, j^{i})(k_{1}^{i}+j^{i})exp(-(k_{1}^{i}+j^{i})\rho),
+f_{y_{i}}(\rho)=\sum_{j_{i}=0}^{k_{2}^{i}-1}c(k_{1}^{i},k_{2}^{i}, j_{i})(k_{1}^{i}+j_{i})e^{-(k_{1}^{i}+j_{i})\rho},
 \label{Appendequal15}
 \end{equation} 
-where $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j^{i}}$ $k_{2}^{i}-1\choose j^{i}$ $[(k_{1}^{i}+k_{2}^{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. Based on the lemma 1 of \cite{bhargava1981distribution}, if $a_{1}, a_{2}, \cdots a_{n}$ are independent exponentially distributed random variables, with pdf given by
+where $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j_{i}}$ $k_{2}^{i}-1\choose j_{i}$ $[(k_{1}^{i}+j_{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes beta function. The pdf of $y_{i}$ can be viewed as the weighted summation of pdf of exponential distribution. Based on the lemma 1 of \cite{bhargava1981distribution}, if $a_{1}, a_{2}, \cdots a_{n}$ are independent exponentially distributed random variables, with pdf given by
 \begin{equation}
 t_{i}exp(-t_{i}a_{i})，
 \label{Appendequal16}
@@ -673,7 +674,7 @@ then pdf of $a=\sum_{i=1}^{n}a_{i}$ can be written as
 f(a|\mathbf{t})=\prod_{i=1}^{n}t_{i}\sum_{i=1}^{n}[exp(-t_{i}a)/\prod_{j=1\\ j\neq i}^{j=n}(t_{j}-t_{i})],
 \label{Appendequal17}
 \end{equation}
-where $t=[t_{1}, t_{2}, \cdots t_{n}]$. The pdf of $y_{i}$ can be viewed as the weighting summation of exponential distribution functions, define $y=\sum_{i=1}^{n}y_{i}$, based on (\ref{Appendequal17}), the pdf of $y$ is given by
+where $t=[t_{1}, t_{2}, \cdots t_{n}]$. define $y=\sum_{i=1}^{n}y_{i}$, based on (\ref{Appendequal17}), the pdf of $y$ is given by
 \begin{equation}
 f_{y}(m)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j^{i})]f(m|\mathbf{k_{1}}+\mathbf{j})\},
 \label{Appendequal18}
@@ -682,8 +683,7 @@ where $\sum_{\mathbf{j}}=\sum_{j^{1}}\sum_{j^{2}}\cdots \sum_{j^{n}}$, the range
 \begin{equation}
 f_{U}(u)=|\frac{du}{dy}|^{-1}f_{y}(-\ln(u))=\frac{1}{u}\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i},j^{i})]f(-\ln(u)|\mathbf{k_{1}}+\mathbf{j})\}.
 \label{Appendequal19}
-\end{equation}
-
+ \end{equation}
 \end{appendices}
 
 

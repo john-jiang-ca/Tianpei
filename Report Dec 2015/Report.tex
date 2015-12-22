@@ -740,9 +740,9 @@ based on (\ref{average frame error probability of GPIC}), we have
 thus 
 $d_{t}=d_{2}$.
 \end{itemize} 
-Therefore when $d_{2}\geq N_{r}$, GPIC algorithm can achieve ML performance asymptotically, when $d_{2}<N_{r}$, the diversity order that GPIC can achieve at high SNR region is equal to that of LD/SICs, in \cite{radji2009interference}, the authors employ diversity maximization selection (DMS) scheme for channel partition, which is proposed in \cite{zhang2006diversity}. The optimum diversity order can be guaranteed with low complexity.
+Therefore when $d_{2}\geq N_{r}$, GPIC algorithm can achieve ML performance asymptotically, when $d_{2}<N_{r}$, the diversity order that GPIC can achieve at high SNR region is equal to that of LD/SICs, in \cite{radji2009interference}, the authors employ diversity maximization selection (MDS) scheme for channel partition, which is proposed in \cite{zhang2006diversity}. The optimal diversity order can be guaranteed with low complexity for conventional MIMO systems.
 
-To elaborate further, for a given number of antennas chosen at the channel partition stage $N$, there is $N_{u}=\left[\begin{array}{l}N_{t}\\N\end{array}\right]$ possible combinations of $[\mathbf{H}_{1}, \mathbf{H}_{2}]$, according to DMS principle, the maximum diversity order of LD/SIC is achieved by choosing the subset $\mathbf{H}_{2}$ that has the strongest weakest substream, in a sense of post processing SNR. Therefore, when using MMSE/SIC as the sub optimal detector, the subset $\mathbf{H}^{opt}_{2}$ selected based on DMS principle should be\cite{zhang2006diversity} 
+To elaborate further, for a given number of antennas chosen at the channel partition stage $N$, there is $N_{u}={N_{t}\choose N}$ possible combinations of $[\mathbf{H}_{1}, \mathbf{H}_{2}]$, according to MDS principle, the maximum diversity order of LD/SIC is achieved by choosing the subset $\mathbf{H}_{2}$ that has the strongest weakest substream, in a sense of post processing SNR. Therefore, when using MMSE/SIC as the sub optimal detector, the subset $\mathbf{H}^{opt}_{2}$ selected based on DMS principle should be\cite{zhang2006diversity} 
 \begin{IEEEeqnarray}[\relax]{l}
 \mathbf{H}^{opt}_{2}=\mathbf{H}^{p}_{2},\\
 p=\min_{j=1,2,\ldots, N_{u}}\theta_{j},\\
@@ -775,12 +775,91 @@ N_{1}=-\sqrt{\frac{(N_{r}-N_{t})^{2}}{4}+g}-\frac{N_{r}-N_{t}}{2}-1,\\
 N_{2}=\sqrt{\frac{(N_{r}-N_{t})^{2}}{4}+g}-\frac{N_{r}-N_{t}}{2}-1
 \label{zeros points}
 \end{IEEEeqnarray}
-when $N<N_{1}$ or $N>N_{2}$, $f(N)\geq 0$, obviously $N_{1}<0$, there is no effective $N$ exits that satisfy the former condition, thus, we have 
+when $N\leq N_{1}$ or $N\geq N_{2}$, $f(N)\geq 0$, obviously $N_{1}<0$, there is no feasible $N$ exits that can make the former condition satisfied. Thus, we have 
 \begin{equation}
 \tilde{N}_{min}=\lceil \sqrt{\frac{(N_{r}-N_{t})^{2}}{4}+g}-\frac{N_{r}-N_{t}}{2}-1\rceil
 \label{Nmin MAD}
 \end{equation}
-\section{Theoretical Analysis of Channel Hardening}
+\subsection{Computer Simulations}
+In this section, computer simulation results for the bit error rate (BER) performances of MAD principle based GPIC algorithm are presented. As comparisons, Sel-MMSE-OSIC algorithm in \cite{radji2009interference}, which is based on maximum diversity selection (MDS) principle is also considered. The software testbed is build by C, compiled by GCC compiler version 4.9.2 on 64 bit Debian (release 8.2) Linux systems, the experiments are performed on two desktops, one with Intel I5-4th generation CPU, quad cores, 3.2GHz clock rate and the other one with Intel I7-5th generation CPU, six cores, 3.5GHz clock rate.
+
+We consider uncoded complex spatial multiplexing LS-MIMO systems, For each receive SNR point, the BER are calculated with minimum $10^{5}$ independent channel realizations achieved and minimum 300 symbol errors accumulated. The modulation schemes considered are rectangular M-QAM(4-QAM and 16-QAM) with Gray code labeling. In each channel realization, $N_{t}$ mutually independent randomly generated bit sequences are modulated to complex symbols. $N_{t}$ complex symbols are transmitted over randomly generated Rayleigh flat fading channel, each channel matrix component is CSCG random variable with unit variance. The receive symbol vector are corrupted by AWGN.
+
+For sake of simplicity, we use MAD-n to present the results for minimum achievable diversity selection, where $n$ denotes the minimum achievable diversity. The minimum number of antennas selected by channel partition for a given minimum achievable diversity is given by (\ref{Nmin MAD}). Maximum diversity selection (MDS) is used to present the Sel-MMSE-OSIC that can achieve ML diversity asymptotically. The minimum number of antennas selected by channel partition is given by (\ref{Nmin DMS}).
+
+First, we consider $16\times 16$ system with $4$-QAM modulation, Table.\ref{t16MIMO4QAM} shows the schemes considered, the corresponding results are presented in Fig.\ref{f16MIMO4QAM}, 
+\begin{table}[htb]
+\renewcommand{\arraystretch}{1.3}
+\caption{$16\times 16$ system $4$-QAM}
+\label{t16MIMO4QAM}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Scheme&number of antennas selected&Asymptotic diversity\\
+\hline 
+MDS&3&16\\
+\hline
+MAD-9&2&9\\
+\hline
+MAD-4&1&4\\
+\hline
+\end{tabular}
+\end{table}
+
+As shown in Fig.\ref{f16MIMO4QAM}, compared with MDS which can achieve ML performance asymptotically, MAD-9 has a small performance loss, while MAD-4's performance is inferior, at BER $10^{-5}$, the MAD-9 is about $0.8$dB worse than MDS, MAD-4 is about $1.8$dB worse than MDS, let $\kappa(\cdot)$ denote the number of list candidate generated by GPIC algorithm\cite{radji2009interference}, from Table.\ref{t16MIMO4QAM}, 
+we have $\frac{\kappa(MAD-9)}{\kappa(DMS)}=1/4$ and $\frac{\kappa(MAD-4)}{\kappa(DMS)}=1/16$.
+
+\begin{figure}[htb]
+\centering
+%\includegraphics[width=\textwidth]{16MIMO4QAM.eps}
+\def\svgwidth{\columnwidth}
+\input{16MIMO4QAM.pdf_tex}
+\caption{$16\times 16$ system $4$-QAM}
+\label{f16MIMO4QAM}
+\end{figure}
+
+The results for $16\times 16$ system with $16$-QAM modulation is shown in Fig.\ref{f16MIMO16QAM}, the information of the schemes considered is as the same as that in Talbe.\ref{t16MIMO4QAM}, From Fig.\ref{f16MIMO16QAM}, we can see that similar to the case of $4$-QAM system, MAD-9 has a very small performance loss comparing to DMS, at BER $2\times 10^{-5}$, MAD-9 is about $1.1$dB worse than MDS, while MAD-4 has about $3$dB  performance loss comparing to DMS.
+
+Furthermore,comparing to $4$-QAM system, the reduction of the number of list candidates provided by MAD scheme is more significant in $16$-QAM, $\frac{\kappa(MAD-9)}{\kappa(DMS)}=1/16$ and $\frac{\kappa(MAD-4)}{\kappa(DMS)}=1/256$.
+\begin{figure}[htb]
+\centering
+\def\svgwidth{\columnwidth}
+\input{16MIMO16QAM.pdf_tex}
+\caption{$16\times 16$ system $16$-QAM}
+\label{f16MIMO16QAM}
+\end{figure}
+
+
+\begin{table}[htb]
+\renewcommand{\arraystretch}{1.3}
+\caption{$32\times 32$ system $4$-QAM}
+\label{t32MIMO4QAM}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Scheme&number of antennas selected&Asymptotic diversity\\
+\hline 
+MAD-4&1&4\\
+\hline
+MAD-9&2&9\\
+\hline
+MAD-16&3&16\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{\columnwidth}
+\input{32MIMO4QAM.pdf_tex}
+\caption{$32\times 32$ system $4$-QAM}
+\label{f32MIMO4QAM}
+\end{figure}
+Now we consider the performance of MAD in large systems, Fig.\ref{f32MIMO4QAM} shows the results for $32\times 32$ system with $4$-QAM. Table.\ref{t32MIMO4QAM} shows the information of the schemes, due to the time limitation, we just provide the results for MAD. As we can see in Fig\ref{f32MIMO4QAM}, although the asymptotic diversity of MAD-16 is much higher than that of MAD-9, at the BER region of interest, their performance difference is negligible, at BER=$3\times 10^{-4}$, the performance of MAD-9 is about $0.3$dB worse comparing to MAD-16, at BER=$3\times 10^{-5}$, the performance loss of MAD-9 is about $0.5$dB comparing to MAD-16.
+
+
+ 
+\section{Theoretical Analysis of Channel Hardening Phenomenon}
 \subsection{Preliminary}
 Orthogonality deficiency $\phi_{od}$ measures  how orthogonal a matrix is \cite{ma2008performance}, which is defined by
 \begin{equation}
@@ -796,8 +875,8 @@ For sake of simplicity, we define orthogonality measure $\phi_{om}$, which is gi
 \phi_{om}=\frac{det(\mathbf{W})}{\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||^{2}},
 \label{OM}
 \end{equation}
-$0\leq \phi_{om}\leq 1$, if $\phi_{om}$ is closer to 1, $\mathbf{H}$ is more closer to an orthogonal matrix. 
-\subsection{Introduction to Channel Hardening Phenomenon}
+$0\leq \phi_{om}\leq 1$, $\forall \mathbf{H}$, if $\phi_{om}$ is closer to 1, $\mathbf{H}$ is more closer to an orthogonal matrix. 
+%\subsection{Introduction to Channel Hardening Phenomenon}
 \subsection{Logarithmic Expectation of Orthogonality Measure}
 Based on (\ref{OM}), The logarithm of $\phi_{om}$ can be written as 
 \begin{equation}
@@ -809,7 +888,7 @@ Taking expectation of (\ref{log OM}), we have
 \mathbb{E}[\ln(\phi_{om})]=\mathbb{E}[\ln(det(\mathbf{W}))]-\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(||\mathbf{h}_{i}||^{2})].
 \label{log expectation OM}
 \end{equation}
-First we consider the first summand on the right hand of (\ref{log expectation OM}) $\mathbb{E}[\ln(det(\mathbf{W}))]$. Let $\mathbb{C}W_{m}(n, \Sigma)$ denotes complex Wishart distribution, which is the joint distribution of sample covariance matrix from multivariate complex Gaussian random variable\cite{goodman1963statistical}. $n$ is the degree of freedom and $\Sigma\in \mathbb{C}^{m\times m}$ is the covariance matrix. Let $\Pi_{i}$ denotes the $i$th row of $\mathbf{H}$. $\Pi_{i}$ is a $N_{t}$-variate complex Gaussian random variable so does $\Pi_{i}^{H}$. Therefore $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}=\sum_{i=1}^{N_{r}}\Pi_{i}^{H}\Pi_{i}\sim \mathbb{C}W_{N_{t}}(N_{r}, \mathbf{I})$. The logarithmic expectation of $det(\mathbf{W})$ is
+First we consider the first summand on the right hand of (\ref{log expectation OM}) $\mathbb{E}[\ln(det(\mathbf{W}))]$. Let $\mathbb{C}W_{m}(n, \Sigma)$ denotes complex Wishart distribution, which is the joint distribution of sample covariance matrix from multivariate complex Gaussian random variable\cite{goodman1963statistical}. $n$ is the degree of freedom and $\Sigma\in \mathbb{C}^{m\times m}$ is the covariance matrix. Let $\Pi_{i}$ denotes the $i$th row of $\mathbf{H}$. $\Pi_{i}$ is a $N_{t}$-variate complex Gaussian random variable, so does $\Pi_{i}^{H}$. Therefore $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}=\sum_{i=1}^{N_{r}}\Pi_{i}^{H}\Pi_{i}\sim \mathbb{C}W_{N_{t}}(N_{r}, \mathbf{I})$. The logarithmic expectation of $det(\mathbf{W})$ is
 \begin{equation}
 \mathbb{E}[\ln(det(\mathbf{W}))]=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1),
 \label{log expectation of wishart}
@@ -840,14 +919,84 @@ Based on (\ref{log expectation of wishart}) and (\ref{sum of log expectation gam
 \label{final log expectation OM}
 \end{equation}
 \subsection{Probability Density Function of Orthogonality Measure}
-\section{Simplified Channel Partition based on Orthogonality Measure}
-\section{Computer Simulations}
-\subsection{Full Loaded Systems}
-\subsection{Systems with Different Loading Factors}
+In this section, we derive the probability distribution of $\phi_{om}$. First, let's consider an alternative form of (\ref{OM}), do QR factorization to $\mathbf{H}$, $\mathbf{H}=\mathbf{Q}\mathbf{R}$\cite{watkins2004fundamentals}, where $\mathbf{Q}\in\mathbb{C}^{N_{r}\times N_{t}}$ is a unitary matrix and $\mathbf{R}\in\mathbb{C}^{N_{t}\times N_{t}}$ is an upper triangular matrix. Thus $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}=\mathbf{R}^{H}\mathbf{R}$. Let $r_{ji}, j\leq i$ denote the component of $\mathbf{R}$ at $j$th row and $i$th column, $r^{*}_{ji}$ denotes the conjugate of $r_{ji}$, we have
+\begin{equation}
+det(\mathbf{W})=det(\mathbf{R}^{H}\mathbf{R})=det(\mathbf{R}^{H})det(\mathbf{R})\\=\prod_{i=1}^{N_{t}}r_{ii}^{*}\prod_{i=1}^{N_{t}}r_{ii}=\prod_{i=1}^{N_{t}}|r_{ii}|^{2},
+\label{alternative wishart}
+\end{equation}
+Furthermore, let $\mathbf{R}_{i}$ denote the $i$th column of $\mathbf{R}$, $\mathbf{W}_{ii}$ denote the $i$th diagonal component of $\mathbf{W}$, we have
+\begin{equation}
+\mathbf{W}_{ii}=||\mathbf{h}_{i}||^{2}=||\mathbf{R}_{i}||^{2}=\sum_{j<i}|r_{ji}|^{2}+|r_{ii}|^{2},
+\label{alternative wishart diagonal}
+\end{equation}
+based on (\ref{alternative wishart}) and (\ref{alternative wishart diagonal}), (\ref{OM}) can be rewritten as 
+\begin{equation}
+\phi_{om}=\prod_{i=1}^{N_{t}}(\frac{|r_{ii}|^{2}}{|r_{ii}|^{2}+\sum_{j<i}|r_{ji}|^{2}}).
+\label{alternative OM}
+\end{equation}
+Based on \cite{nagar2011expectations}, given $\mathbf{W}\sim \mathbb{C}W_{N_{t}}(N_{r}, \mathbf{I}_{N_{t}})$ and $\mathbf{W}=\mathbf{R}^{H}\mathbf{R}$, we have $1\leq j\leq i\leq N_{t}$, $r_{ji}$ are mutually independent distributed. Furthermore $r_{ji}\sim \mathbb{C}N(0,1)$, $|r_{ii}|^{2}\sim Gamma(N_{r}-i+1,1)$ . Because $|r_{ji}|\sim Rayleigh(1/\sqrt{2})$, $\sum_{j<i}|r_{ji}|^{2}\sim Gamma(i-1, 1)$. Define 
+\begin{IEEEeqnarray}[\relax]{l}
+\alpha_{i}=|r_{ii}|^{2}\sim Gamma(k_{1}^{i},1),\quad k_{1}^{i}=N_{r}-i+1,\quad i=1,2\ldots N_{t}\\
+\beta_{i}=\sum_{j<i}|r_{ji}|^{2}\sim Gamma(k_{2}^{i},1),\quad k_{2}^{i}=i-1, \quad i=1,2\ldots N_{t}
+\end{IEEEeqnarray}
+$\alpha_{i}$ and $\beta_{i}$ are independent Gamma random variables, from \cite{gupta2004handbook}, if $X\sim Gamma(k_{1},\theta)$ and $Y\sim Gamma(k_{2},\theta)$, then $\frac{X}{X+Y}\sim Beta(k_{1},k_{2})$, where $Beta(k_{1}, k_{2})$ denotes Beta distribution with shape parameters $k_{1}$ and $k_{2}$. Therefore $\frac{\alpha_{i}}{\alpha_{i}+\beta_{i}}\sim Beta(k^{i}_{1}, k^{i}_{2})$. Define $\eta_{i}=\frac{\alpha_{i}}{\alpha_{i}+\beta_{i}}, i=1,2,\ldots, N_{t}$, $\eta_{i}$ are mutually independent Beta random variables, Therefore (\ref{alternative OM}) can be rewritten as 
+  \begin{equation}
+  \phi_{om}=\prod_{i=1}^{N_{t}}\eta_{i},
+  \label{product beta OM}
+  \end{equation}
+Thus $\phi_{om}$ is the product of $N_{t}$ independent Beta random variables, the pdf of $\phi_{om}$ is given by 
+\begin{equation}
+f_{\phi_{om}}(\rho)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{N_{t}}c(k_{1}^{i},k_{2}^{i}, j_{i})]U(\rho|\mathbf{k}_{1}+\mathbf{j})\},
+\label{pdf of OM}
+\end{equation}
+where $\sum_{\mathbf{j}}=\sum_{j_{1}}\sum_{j_{2}}\ldots\sum_{j_{N_{t}}}$, $j_{i}\in [0,1,\ldots, k_{2}^{i}-1]$. $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j_{i}}$ $k_{2}^{i}-1\choose j_{i}$ $[(k_{1}^{i}+j_{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $\mathbb{B}(\alpha, \beta)$ denotes Beta function with parameters $\alpha$ and $\beta$. $\mathbf{k}_{1}+\mathbf{j}=[k_{1}^{1}+j_{1}, k_{1}^{2}+j_{2},\ldots, k_{1}^{N_{t}}+j_{N_{t}}]$, 
+\begin{equation}
+U(\rho|\mathbf{k}_{1}+\mathbf{j})=\rho^{-1}\prod_{i=1}^{N_{t}}(k_{1}^{i}+j_{i})\sum_{i=1}^{N_{t}}[\rho^{k_{1}^{i}+j_{i}}/\prod_{j\neq i}^{N_{t}}(k_{1}^{j}+j_{j}-k_{1}^{i}-j_{i})],
+\label{auxiliary pdf of OM}
+\end{equation}
+Proof: see Appendix \ref{proof pdf of OM}. 
+
+If a Beta random variable $\nu\sim Beta(k_{1}, k_{2})$, then $\mathbb{E}[\ln(\nu)]=\psi(k_{1})-\psi(k_{1}+k_{2})$\cite{papoulis2002probability}, take logarithmic expectation of (\ref{product beta OM}), we have 
+\begin{equation}
+\mathbb{E}[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(\eta_{i})]=\sum_{i=1}^{N_{t}}[\psi(k^{i}_{1})-\psi(k^{i}_{1}+k^{i}_{2})]=\sum_{i=1}^{N_{t}}[\psi(N_{r}-i+1)-\psi(N_{r})],
+\label{final log expectation OM beta}
+\end{equation}
+which is consistent with (\ref{final log expectation OM}).
+
+\subsection{Computer Simulations}
+Computer simulations are made to demonstrate the correctness of $\mathbb{E}[\ln(\phi_{om})]$ in (\ref{final log expectation OM}). The experiments are performed by Matlab, on a desktop with I5-4th generation CPU, quad cores, 3.2GHz clock rate.
+
+Different sizes of channel matrices are considered, with $5\leq N_{r}\leq 200$ and $5\leq N_{t}\leq N_{r}$. The theoretical logarithmic expectation of $\phi_{om}$, denoted by $\mathbb{E}[\ln(\phi_{om})]_{t}$ is calculated based on (\ref{final log expectation OM}), the result is shown in Fig.\ref{flogOMt}. The empirical estimation of the logarithmic expectation of $\phi_{om}$, denoted by $\mathbb{E}[\ln(\phi_{om})]_{em}$, are calculated based on taking average over $10^{5}$ independent channel realizations of each size of channel matrix. In each realization, the channel matrix are generated randomly, each component of the channel matrix is CSCG random variable with unit variance. The result is shown in Fig.\ref{flogOMem}. 
+\begin{figure}[htb]
+\centering
+\def\svgwidth{\columnwidth}
+\input{logOMt.pdf_tex}
+\caption{Theoretical logarithmic expectation of $\phi_{om}$}
+\label{flogOMt}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\def\svgwidth{\columnwidth}
+\input{logOMem.pdf_tex}
+\caption{Empirical estimation of the logarithmic expectation of $\phi_{om}$}
+\label{flogOMem}
+\end{figure}
+
+The variance between $\mathbb{E}[\ln(\phi_{om})]_{t}$ and $\mathbb{E}[\ln(\phi_{om})]_{t}$, denoted by $\upsilon$, is also calculated by \begin{equation}
+\upsilon=\frac{1}{m}\sum_{i=1}^{m}(\mathbb{E}[\ln(\phi_{om})]^{i}_{em}-\mathbb{E}[\ln(\phi_{om})]^{i}_{t})^{2},
+\label{variance OM}
+\end{equation} 
+where $m$ is the number of the different sizes of channel matrix considered. By simulation $\upsilon=8.0116\times 10^{-4}$.
+%\section{Simplified Channel Partition based on Orthogonality Measure}
+%\section{Computer Simulations}
+%\subsection{Full Loaded Systems}
+%\subsection{Systems with Different Loading Factors}
+
 
 \section{Conclusion}
 The conclusion goes here.
-
+\newpage
 
 
 
@@ -869,7 +1018,7 @@ The conclusion goes here.
 
 \appendices
 \section{}\label{log expectation of OM}
-Let $\mathbf{A}\in \mathbb{C}^{m\times m}$, $A\sim \mathbb{C}W_{m}(n, \mathbf{\Sigma})$, According to the definition of complex Wishart matrix, it is obvious $\mathbf{A}$ is Hermition positive definite matrix (i.e., $\mathbf{A}=\mathbf{A}^{H}>0$).
+Let $\mathbf{A}\in \mathbb{C}^{m\times m}$, $A\sim \mathbb{C}W_{m}(n, \mathbf{\Sigma})$, According to the definition of complex Wishart matrix, it is obvious $\mathbf{A}$ is Hermition positive definite matrix (i.e., $\mathbf{A}=\mathbf{A}^{H}>0$). Define $etr(\mathbf{A})=e^{tr(\mathbf{A})}$, $tr(\mathbf{A})=\mathbf{A}_{11}+\mathbf{A}_{22}+\cdots+\mathbf{A}_{mm}$.
 
 The pdf of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
 \begin{equation}
@@ -976,8 +1125,57 @@ Thus (\ref{AppendixB5}) can be rewritten as
 \label{AppendixB6}
 \end{equation}
 where $\psi(k)$ denotes Digamma function.
+\section{}\label{proof pdf of OM}
+Define $x=\prod_{i=1}^{n}x_{i}$,
+$x_{1}, x_{2}, \ldots, x_{n}$ are independent Beta random variables, where $x_{i}\sim Beta(k_{1}^{i}, k_{2}^{i})$, the pdf of $x_{i}$ is given by 
+\begin{equation}
+f_{x_{i}}(\rho)=\frac{1}{\mathbb{B}(k_{1}^{i}, k_{2}^{i})}\rho^{k_{1}^{i}-1}(1-\rho)^{k_{2}^{i}-1},
+\label{pdf beta}
+\end{equation}
+where $\mathbb{B}(k^{i}_{1}, k_{2}^{i})$ denotes Beta function with parameters $k_{1}^{i}$ and $k_{2}^{i}$.
+Define $y_{i}=-\ln(x_{i})=g(x_{i})$, Based on Jacobian transformation, we have 
+\begin{equation}
+f_{y_{i}}(\rho)=|\frac{dy_{i}}{dx_{i}}|^{-1}f_{x_{i}}(g^{-1}(\rho))=\frac{1}{\mathbb{B}(k_{1}^{i},k_{2}^{i})}e^{-k_{1}^{i}\rho}(1-e^{-\rho})^{k_{2}^{i}-1}.
+\label{pdf log beta}
+\end{equation}
+(\ref{pdf log beta}) can be alternatively expressed as \cite{bhargava1981distribution}
+\begin{equation}
+f_{y_{i}}(\rho)=\sum_{j_{i}=0}^{k_{2}^{i}-1}c(k_{1}^{i},k_{2}^{i}, j_{i})(k_{1}^{i}+j_{i})e^{-(k_{1}^{i}+j_{i})\rho},
+\label{pdf log beta alternative}
+\end{equation} 
+where $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j_{i}}$ $k_{2}^{i}-1\choose j_{i}$ $[(k_{1}^{i}+j_{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $j_{i}\in [0,1,\ldots, k_{2}^{i}-1]$,
+From (\ref{pdf log beta alternative}), one can conclude that $f_{y_{i}}(\rho)$ is a weighted summation of the pdf of exponential distributions. 
 
-
+If $\tau_{1}, \tau_{2}, \ldots, \tau_{n}$ are independent exponential random variables, where $\tau_{i}\sim exp(t_{i})$, the pdf of $\tau_{i}$ is given by 
+\begin{equation}
+f_{\tau_{i}}(\rho)=t_{i}e^{-t_{i}\rho}, \quad\rho\geq 0, 
+\label{pdf exp}
+\end{equation}
+define $\tau=\sum_{i=1}^{n}\tau_{i}$, by induction, the pdf of $\tau$ is given by\cite{bhargava1981distribution}
+\begin{equation}
+f_{\tau}(\rho)=f(\rho|\mathbf{t})=\prod_{i=1}^{n}t_{i}\sum_{i=1}^{n}[exp(-t_{i}\rho)/\prod_{j\neq i}^{j=n}(t_{j}-t_{i})],
+\label{pdf of sum exp}
+\end{equation}
+where $\mathbf{t}=[t_{1}, t_{2}, \ldots, t_{n}]$. Define $y=\sum_{i=1}^{n}y_{i}=-\ln(\prod_{i=1}^{n}x_{i})=-\ln(x)$. Based on (\ref{pdf log beta alternative}) and (\ref{pdf of sum exp}), the pdf of $y$ is given by\cite{bhargava1981distribution}
+\begin{equation}
+f_{y}(\rho)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j_{i})]f(\rho|\mathbf{k_{1}}+\mathbf{j})\},
+\label{pdf of y}
+\end{equation}
+where $\sum_{\mathbf{j}}=\sum_{j_{1}}\sum_{j_{2}}\ldots \sum_{j_{n}}$, $j_{i}\in [0,1,\ldots, k^{i}_{2}-1]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j_{1}, k_{1}^{2}+j_{2} \ldots k_{1}^{n}+j_{n}]$. Based on (\ref{pdf of y}) and $x=e^{-y}=G(y)$, using Jacobian transformation, the pdf of $x$ is given by
+\begin{equation}
+f_{x}(\rho)=f_{y}(G^{-1}(\rho))|\frac{dx}{dy}|^{-1}=f_{y}(-\ln(\rho))\rho^{-1}=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j_{i})]f(-\ln(\rho)|\mathbf{k}_{1}+\mathbf{j})\rho^{-1}\},
+\label{pdf of x1}
+\end{equation} 
+define 
+\begin{equation}
+U(\rho|\mathbf{k}_{1}+\mathbf{j})=f(-\ln(\rho)|\mathbf{k}_{1}+\mathbf{j})\rho^{-1},
+\label{definition of U}
+\end{equation}
+Thus (\ref{pdf of x1}) can be rewritten as 
+\begin{equation}
+f_{x}(\rho)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j_{i})]U(\rho|\mathbf{k}_{1}+\mathbf{j})\}.
+\label{final pdf of x}
+\end{equation}
 % use section* for acknowledgment
 %\section*{Acknowledgment}
 
@@ -987,9 +1185,9 @@ where $\psi(k)$ denotes Digamma function.
 
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
-\ifCLASSOPTIONcaptionsoff
-  \newpage
-\fi
+%\ifCLASSOPTIONcaptionsoff
+ % \newpage
+%\fi
 
 
 
@@ -1062,6 +1260,7 @@ where $\psi(k)$ denotes Digamma function.
 % Can be used to pull up biographies so that the bottom of the last one
 % is flush with the other column.
 %\enlargethispage{-5in}
+\newpage
 \bibliographystyle{IEEEtran}
 \bibliography{citation}
 

@@ -1,0 +1,89 @@
+%% Creator: Inkscape 0.91_64bit, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'logOMem.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{419bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.75178998)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{logOMem.pdf}}%
+    \put(0.48389021,0.05310263){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{logOMem.pdf}}%
+    \put(0.57179714,0.07696897){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{20}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{logOMem.pdf}}%
+    \put(0.65970644,0.10083532){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{40}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{logOMem.pdf}}%
+    \put(0.74761337,0.1245031){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{60}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{logOMem.pdf}}%
+    \put(0.83552029,0.14836945){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{80}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{logOMem.pdf}}%
+    \put(0.92342959,0.1722358){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{100}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{logOMem.pdf}}%
+    \put(0.43655609,0.05608592){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{logOMem.pdf}}%
+    \put(0.25477327,0.13345298){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{50}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{logOMem.pdf}}%
+    \put(0.07279236,0.21101862){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{100}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{logOMem.pdf}}%
+    \put(0.05986444,0.23687351){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−100}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{logOMem.pdf}}%
+    \put(0.07319045,0.30449403){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−80}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{logOMem.pdf}}%
+    \put(0.07319045,0.37231504){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−60}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{logOMem.pdf}}%
+    \put(0.07319045,0.43993556){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−40}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{logOMem.pdf}}%
+    \put(0.07319045,0.50775656){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{−20}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{logOMem.pdf}}%
+    \put(0.10043723,0.57537709){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{logOMem.pdf}}%
+    \put(0.72012649,0.10330119){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Nt}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{logOMem.pdf}}%
+    \put(0.24136754,0.11225107){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Nr}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{logOMem.pdf}}%
+    \put(0.02019708,0.40504438){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{$\mathbb{E}[\ln(\phi_{om})]_{em}$}}}%
+  \end{picture}%
+\endgroup%

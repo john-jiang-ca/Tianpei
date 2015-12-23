@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  22 DEC 2015 02:33
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9) (preloaded format=xelatex 2014.11.18)  22 DEC 2015 19:04
 entering extended mode
 **Report.tex
 ("F:\GitHub\Tianpei\Report Dec 2015\Report.tex"
@@ -478,11 +478,7 @@ LaTeX Info: The control sequence `\]' is already robust on input line 472.
 \@dblbotnum=\count136
 \c@dblbotnumber=\count137
 )
-("F:\GitHub\Tianpei\Report Dec 2015\Report.aux"
-
-LaTeX Warning: Label `AppendixB6' multiply defined.
-
-)
+("F:\GitHub\Tianpei\Report Dec 2015\Report.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 386.
 LaTeX Font Info:    ... okay on input line 386.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 386.
@@ -613,7 +609,7 @@ File: 16MIMO4QAM.pdf Graphic file (type QTm)
 
 <use  "16MIMO4QAM.pdf"  page21>
 File: 16MIMO4QAM.pdf Graphic file (type QTm)
- <use  "16MIMO4QAM.pdf"  page22>) [8]
+ <use  "16MIMO4QAM.pdf"  page22>)
 ("F:\GitHub\Tianpei\Report Dec 2015\16MIMO16QAM.pdf_tex"
 File: 16MIMO16QAM.pdf Graphic file (type QTm)
 
@@ -725,8 +721,8 @@ File: 32MIMO4QAM.pdf Graphic file (type QTm)
 
 <use  "32MIMO4QAM.pdf"  page21>
 File: 32MIMO4QAM.pdf Graphic file (type QTm)
- <use  "32MIMO4QAM.pdf"  page22>) [9] [10]
-[11] [12] [13] ("F:\GitHub\Tianpei\Report Dec 2015\logOMt.pdf_tex"
+ <use  "32MIMO4QAM.pdf"  page22>) [8] [9]
+[10] [11] [12] [13] ("F:\GitHub\Tianpei\Report Dec 2015\logOMt.pdf_tex"
 File: logOMt.pdf Graphic file (type QTm)
 
 <use  "logOMt.pdf"  page1>
@@ -776,7 +772,7 @@ File: logOMt.pdf Graphic file (type QTm)
 
 <use  "logOMt.pdf"  page17>
 File: logOMt.pdf Graphic file (type QTm)
- <use  "logOMt.pdf"  page18>)
+ <use  "logOMt.pdf"  page18>) [14]
 ("F:\GitHub\Tianpei\Report Dec 2015\logOMem.pdf_tex"
 File: logOMem.pdf Graphic file (type QTm)
 
@@ -827,20 +823,16 @@ File: logOMem.pdf Graphic file (type QTm)
 
 <use  "logOMem.pdf"  page17>
 File: logOMem.pdf Graphic file (type QTm)
- <use  "logOMem.pdf"  page18>) [14] [15] [16]
-[17] [18] [19] [20] ("F:\GitHub\Tianpei\Report Dec 2015\Report.bbl") [21]
-("F:\GitHub\Tianpei\Report Dec 2015\Report.aux")
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+ <use  "logOMem.pdf"  page18>) [15] [16] [17]
+[18] [19] [20] ("F:\GitHub\Tianpei\Report Dec 2015\Report.bbl") [21]
+("F:\GitHub\Tianpei\Report Dec 2015\Report.aux") ) 
 Here is how much of TeX's memory you used:
- 4686 strings out of 429025
- 62412 string characters out of 3166797
- 145134 words of memory out of 3000000
- 7822 multiletter control sequences out of 15000+200000
+ 4688 strings out of 429025
+ 62436 string characters out of 3166797
+ 153752 words of memory out of 3000000
+ 7824 multiletter control sequences out of 15000+200000
  33836 words of font info for 90 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
- 32i,10n,24p,1398b,303s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,10n,24p,1449b,305s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on Report.pdf (21 pages).

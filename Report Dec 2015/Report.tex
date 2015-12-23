@@ -522,7 +522,7 @@ IEEEtran, journal, \LaTeX, paper, template.
 %\hfill mds
  
 %\hfill September 17, 2014
-Consider a uncoded complex Large-Scale MIMO (LS-MIMO) uplink spatial multiplexing (SM) system with $N_{t}$ users, where each is equipped with one transmit antenna. The number of receive antennas at the Base Station (BS) is $N_{r}$, $N_{r}\geq N_{t}$. Typically LS-MIMO systems have hundreds of antennas at the BS, 
+Consider an uncoded complex Large-Scale MIMO (LS-MIMO) uplink spatial multiplexing (SM) system with $N_{t}$ users, each is equipped with one transmit antenna. The number of receive antennas at the Base Station (BS) is $N_{r}$, $N_{r}\geq N_{t}$. Typically LS-MIMO systems have hundreds of antennas at the BS, 
 %as shown in Fig {\ref{large MIMO uplink model}}.
  % \begin{figure}[htb]
   %\centering
@@ -537,25 +537,25 @@ Bit sequences, which are modulated to complex symbols, are transmitted by the us
 \begin{equation}
 \mathbf{y}=\mathbf{H}\mathbf{s}+\mathbf{n},   \label{discrete time MIMO system}
 \end{equation}
-where $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector, $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. BPSK, 4-QAM, 16-QAM, 64-QAM), $|\mathbb{O}|=M$. The transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, $\mathbb{E}[\cdot]$ denotes the expectation operation, $\mathbf{I}_{N_{t}}$ denotes identity matrix of size $N_{r}\times N_{t}$. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix, $\mathbf{H}_{ij}$ denotes the component of $\mathbf{H}$ at $i$th row and $j$th column, representing the channel response from $i$th receive antenna to the $j$th transmit antenna. Each component is independent identically distributed (i.i.d) circularly symmetric complex Gaussian (CSCG) random variable with unit variance. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
+where $\mathbf{y}\in\mathbb{C}^{N_{r}\times 1}$ is the received symbol vector, $\mathbf{s}\in \mathbb{C}^{N_{t}}$ is the transmitted symbol vector, with components that are mutually independent and taken from a finite signal constellation alphabet $\mathbb{O}$ (e.g. BPSK, 4-QAM, 16-QAM, 64-QAM), $|\mathbb{O}|=M$. The transmitted symbol vectors $\mathbf{s}\in \mathbb{O}^{N_{t}}$, satisfy $\mathbb{E}[\mathbf{s}\mathbf{s}^{H}]=\mathbf{I}_{N_t}E_{s}$, where $E_{s}$ denotes the symbol average energy, $\mathbb{E}[\cdot]$ denotes the expectation operation, $\mathbf{I}_{N_{t}}$ denotes identity matrix of size $N_{t}\times N_{t}$. Furthermore $\mathbf{H}\in \mathbb{C}^{N_{r}\times N_{t}}$ denotes the Rayleigh fading channel propagation matrix, $\mathbf{H}_{ij}$ denotes the component of $\mathbf{H}$ at $i$th row and $j$th column, representing the channel response from $i$th receive antenna to the $j$th transmit antenna. Each component is independent identically distributed (i.i.d) circularly symmetric complex Gaussian (CSCG) random variable with unit variance, denoted by $\mathbf{H}_{ij}\sim \mathbb{C}N(0,1)$. Finally, $\mathbf{n}\in \mathbb{C}^{N_{r}}$ is the additive white Gaussian noise (AWGN) vector with zero mean components and $\mathbb{E}[\mathbf{n}\mathbf{n}^{H}]=\mathbf{I}_{N_{r}}N_{0}$, where $N_{0}$ denotes the noise power spectrum density, and hence $\frac{E_{s}}{N_{0}}$ is the signal to noise ratio (SNR). 
 
 The task of a MIMO detector is to estimate the transmit symbol vector $\mathbf{s}$, based on the knowledge of receive symbol vector $\mathbf{y}$ and channel matrix $\mathbf{H}$.
 
-The Optimal (in a sense of lowest average error probability) Maximum Likelihood Detector (MLD) for MIMO system is given by
+The optimal (in a sense of lowest average error probability) Maximum Likelihood Detector (MLD) for MIMO system is given by
 \begin{equation}
-\hat{\mathbf{s}}^{ML}=\min_{\mathbf{s}\in \mathbb{O}^{N_{t}}}||\mathbf{y}-\mathbf{H}\mathbf{s}||^{2},
+\hat{\mathbf{s}}^{ML}=\arg\min_{\hat{\mathbf{s}}\in \mathbb{O}^{N_{t}}}||\mathbf{y}-\mathbf{H}\hat{\mathbf{s}}||^{2},
 \label{MLD}
 \end{equation}
-where $||\cdot||$ denotes the 2-norm operation, therefore from (\ref{MLD}), the solution of MLD is the $\hat{\mathbf{s}}$ that can generate the minimum Euclidean distance between vector $\mathbf{y}$ and $\mathbf{H}\mathbf{s}$.
+where $||\cdot||$ denotes the 2-norm operation. From (\ref{MLD}), the solution of MLD is the $\hat{\mathbf{s}}$ that can generate the minimum Euclidean distance between vector $\mathbf{y}$ and $\mathbf{H}\mathbf{s}$.
 
-Consider an alternative representation of MLD principle, let $\mathbf{H}_{1}\in \mathbb{C}^{N_{r}\times N}$ denotes a sub matrix composed of $N$ columns from $\mathbf{H}$, let $\mathbf{s}_{1}\in \mathbb{C}^{N}$ denote the sub symbol vector whose components are transmitted from the users corresponding to $\mathbf{H}_{1}$. Similarly, let $\mathbf{H}_{2}\in \mathbb{C}^{N_{r}\times (N_{t}-N)}$ denotes the sub matrix composed of the remaining columns from $\mathbf{H}$ and $\mathbf{s}_{2}\in \mathbb{C}^{(N_{t}-N)}$ is the sub symbol vector whose components are transmitted by the users corresponding to $\mathbf{H}_{2}$. Thus (\ref{discrete time MIMO system}) can be rewritten as 
+Consider an alternative representation of MLD principle, let $\mathbf{H}_{1}\in \mathbb{C}^{N_{r}\times N}$ denotes a sub matrix composed of $N$ columns from $\mathbf{H}$, where $1\leq N\leq N_{t}$, let $\mathbf{s}_{1}\in \mathbb{C}^{N}$ denote the sub symbol vector whose components are transmitted from the users corresponding to $\mathbf{H}_{1}$. Similarly, let $\mathbf{H}_{2}\in \mathbb{C}^{N_{r}\times (N_{t}-N)}$ denotes the sub matrix composed of the remaining columns from $\mathbf{H}$ and $\mathbf{s}_{2}\in \mathbb{C}^{(N_{t}-N)}$ is the sub symbol vector whose components are transmitted by the users corresponding to $\mathbf{H}_{2}$. Thus (\ref{discrete time MIMO system}) can be rewritten as 
 \begin{equation}
 \mathbf{y}=\mathbf{H}_{1}\mathbf{s}_{1}+\mathbf{H}_{2}\mathbf{s}_{2}+\mathbf{n}.
 \label{alternative MIMO system}
 \end{equation}  
 Let $\hat{\mathbf{s}}_{1}, \hat{\mathbf{s}}_{2}$ denote the estimations of $\mathbf{s}_{1}, \mathbf{s}_{2}$, we have $\hat{\mathbf{s}}_{1}\in [\hat{\mathbf{s}}^{1}_{1}, \hat{\mathbf{s}}^{2}_{1}, \cdots \hat{\mathbf{s}}^{K}_{1}],, K=M^{N}$ and $\hat{\mathbf{s}}_{2}\in [\hat{\mathbf{s}}^{1}_{2}, \hat{\mathbf{s}}^{2}_{2}, \cdots \hat{\mathbf{s}}^{Q}_{2}], Q=M^{N_{t}-N}$, MLD in (\ref{MLD}) can be rewritten as 
 \begin{equation}
-[\tilde{k}, \tilde{q}]=\min_{k\in [1,2\ldots K]}\min_{q\in [1,2,\ldots, Q]}||\mathbf{y}-\mathbf{H}_{1}\hat{\mathbf{s}}^{k}_{1}-\mathbf{H}_{2}\hat{\mathbf{s}}^{q}_{2}||^{2},\\
+[\tilde{k}, \tilde{q}]=\arg\min_{k\in [1,2\ldots K]}\min_{q\in [1,2,\ldots, Q]}||\mathbf{y}-\mathbf{H}_{1}\hat{\mathbf{s}}^{k}_{1}-\mathbf{H}_{2}\hat{\mathbf{s}}^{q}_{2}||^{2},\\
 \mathbf{s}^{ML}_{1}=\hat{\mathbf{s}}^{\tilde{k}}_{1}, \mathbf{s}^{ML}_{2}=\hat{\mathbf{s}}^{\tilde{q}}_{2},
 \label{alternative MLD}
 \end{equation}
@@ -566,11 +566,11 @@ Let $\hat{\mathbf{s}}_{1}, \hat{\mathbf{s}}_{2}$ denote the estimations of $\mat
 \end{equation}
 Then solve 
 \begin{equation}
-\hat{\mathbf{x}}_{2}^{k}=\min_{\hat{\mathbf{s}}_{2}^{q}\in [\hat{\mathbf{s}}_{2}^{1},\hat{\mathbf{s}}_{2}^{3}\ldots, \hat{\mathbf{s}}_{2}^{Q}]}||\mathbf{y}^{k}-\mathbf{H}_{2}\hat{\mathbf{s}}_{2}^{q}||^{2}, 
+\hat{\mathbf{x}}_{2}^{k}=\arg\min_{\hat{\mathbf{s}}_{2}^{q}\in [\hat{\mathbf{s}}_{2}^{1},\hat{\mathbf{s}}_{2}^{3}\ldots, \hat{\mathbf{s}}_{2}^{Q}]}||\mathbf{y}^{k}-\mathbf{H}_{2}\hat{\mathbf{s}}_{2}^{q}||^{2}, 
 \label{second step alternative MLD}
 \end{equation}
 \begin{equation}
-\tilde{k}=\min_{k\in [1,2,\ldots, K]}||\mathbf{y}^{k}-\mathbf{H}_{2}\hat{\mathbf{x}}_{2}^{k}||^{2},
+\tilde{k}=\arg\min_{k\in [1,2,\ldots, K]}||\mathbf{y}^{k}-\mathbf{H}_{2}\hat{\mathbf{x}}_{2}^{k}||^{2},
 \label{third step alternative MLD}
 \end{equation}
 Finally we have $\mathbf{s}_{1}^{ML}=\hat{\mathbf{s}}_{1}^{\tilde{k}}, \mathbf{s}_{2}^{ML}=\hat{\mathbf{x}}_{2}^{\tilde{k}}=\hat{\mathbf{s}}_{2}^{\tilde{q}}$.
@@ -676,24 +676,24 @@ Finally we have $\mathbf{s}_{1}^{ML}=\hat{\mathbf{s}}_{1}^{\tilde{k}}, \mathbf{s
 
 \section{Minimum Achievable Diversity based Channel Partition}
 \subsection{Diversity Maximization Selection}
-Based on the alternative form of MLD in (\ref{alternative MLD})-(\ref{third step alternative MLD}), General Parallel Interference Cancellation (GPIC) algorithm first generate a list of symbol vector candidates and then choose the candidate with the minimum Euclidean distance as the solution. To elaborate further, GPIC first generate a list of symbol vector candidate by exhaustive search for all the possible $\hat{\mathbf{s}}_{1}$, then rather than performing exhaustive search in (\ref{second step alternative MLD}), GPIC exploit low complexity sub optimal linear detectors (i.e., zeros forcing (ZF) and minimum mean square error (MMSE)) and their successive interference cancellation (SIC) counterparts to get the estimation of $\mathbf{s}_{2}$, for sake of simplicity, hereinafter we use LD/SIC. Then the best candidate in the list with the minimum Euclidean distance is chosen as the solution. 
+Based on the alternative form of MLD in (\ref{alternative MLD})-(\ref{third step alternative MLD}), General Parallel Interference Cancellation (GPIC) algorithm first generate a list of symbol vector candidates and then choose the candidate with the minimum Euclidean distance as the solution. To elaborate further, GPIC first generates a list of symbol vector candidate by exhaustive search for all the possible $\hat{\mathbf{s}}_{1}$ as shown in (\ref{first step alternative MLD}), then rather than performing exhaustive search in (\ref{second step alternative MLD}), GPIC exploits low complexity sub optimal linear detectors (i.e., zeros forcing (ZF) and minimum mean square error (MMSE)) and their successive interference cancellation (SIC) counterparts to get the estimation of $\mathbf{s}_{2}$. For sake of simplicity, hereinafter we use LD/SIC. Then the best candidate in the list with the minimum Euclidean distance is chosen as the solution. 
 
-Performance analysis of GPIC algorithm is provided in \cite{radji2009interference}, here we briefly conclude the main results in \cite{radji2009interference}, at the receiving side, the frame error is defined as there is at least one erroneous symbol in the estimation of transmitted symbol vector. Let $P_{e}$ denotes the average frame error probability. The diversity order, denoted by $d$ is defined as the slope of the $P_{e}$ in log-scale in high SNR region, which is given by\cite{zheng2003diversity}
+Performance analysis of GPIC algorithm is provided in \cite{radji2009interference}, here we briefly conclude the main results in \cite{radji2009interference}. At the receiving side, the frame error is defined as there is at least one erroneous symbol in the estimation of transmitted symbol vector. Let $P_{e}$ denotes the average frame error probability. The diversity order, denoted by $d$ is defined as the slope of the $P_{e}$ in log-scale in high SNR region, which is given by\cite{zheng2003diversity}
 \begin{equation}
 d=-\lim_{SNR\to\infty}\frac{\log{P_{e}}}{\log(SNR)},
 \label{diversity}
 \end{equation}
-Let $P_{e}^{ML}$ denotes the average frame error probability of MLD, and $P_{e2}=\mathbb{E}_{\mathbf{H}_{2}, \mathbf{s}_{2}}(Pr(\hat{\mathbf{s}}^{k_{1}}_{2}\neq \mathbf{s}_{2}|\mathbf{H}_{2}, \mathbf{s}_{2}))$, where $P_{r}(A)$ denotes the probability that a event A occurs, $\hat{\mathbf{s}}_{1}^{k_{1}}=\mathbf{s}_{1}$, therefore $P_{e2}$ is the average frame error probability of the LD/SICs for the sub system in which the interference from the users that transmitted $\mathbf{s}_{1}$ are perfectly cancelled from the observation $\mathbf{y}$. given by
+Let $P_{e}^{ML}$ denotes the average frame error probability of MLD, The average frame error probability of GPIC algorithm $P_{et}=\mathbb{E}_{\mathbf{H}, \mathbf{s}}[Pr(\hat{\mathbf{s}}\neq \mathbf{s}|\mathbf{H}, \mathbf{s})]$ and $P_{e2}=\mathbb{E}_{\mathbf{H}_{2}, \mathbf{s}_{2}}(Pr(\hat{\mathbf{s}}^{k_{1}}_{2}\neq \mathbf{s}_{2}|\mathbf{H}_{2}, \mathbf{s}_{2}))$, where $P_{r}(A)$ denotes the probability that a event A occurs, $\hat{\mathbf{s}}_{1}^{k_{1}}=\mathbf{s}_{1}$, therefore $P_{e2}$ is the average frame error probability of the LD/SICs for the sub system in which the interference from the users that transmitted $\mathbf{s}_{1}$ are perfectly cancelled from the observation $\mathbf{y}$. given by
 \begin{equation}
 \mathbf{y}^{k_{1}}=\mathbf{y}-\mathbf{H}_{1}\hat{\mathbf{s}}_{1}^{k_{1}},
 \label{perfect IC}
 \end{equation} 
 because $\hat{\mathbf{s}}^{k1}_{1}=\mathbf{s}_{1}$, we have
 \begin{equation}
-\mathbf{y}^{k1}=\mathbf{H}_{2}\mathbf{s}_{2}+\mathbf{n},
+\mathbf{y}^{k1}=\mathbf{H}_{2}\mathbf{s}_{2}+\mathbf{H}_{1}(\mathbf{s}_{1}-\hat{\mathbf{s}}_{1}^{k1})+\mathbf{n}=\mathbf{H}_{2}\mathbf{s}_{2}+\mathbf{n},
 \label{sub MIMO system}
 \end{equation} 
-The average frame error probability of GPIC algorithm $P_{et}$ is bounded by 
+Based on \cite{radji2009interference}, $P_{et}$ is bounded by 
 \begin{equation}
 \max(P^{ML}_{e}, P_{e2})\leq P_{et}\leq P^{ML}_{e}+P_{e2}, 
 \label{average frame error probability of GPIC}
@@ -707,7 +707,7 @@ in (\ref{average frame error probability of GPIC}), the diversity order of MLD i
 \lim_{SNR\to\infty}P_{e2}\propto SNR^{-d_{2}},
 \label{LD diversity}
 \end{equation}
-Let $d_{t}$ denotes the diversity order of GPIC algorithm, now consider the following conditions
+Let $d_{t}$ denotes the overall diversity order of GPIC algorithm, now consider the following conditions
 \begin{itemize}
 \item $d_{2}>N_{r}$,
 \begin{equation}
@@ -740,12 +740,12 @@ based on (\ref{average frame error probability of GPIC}), we have
 thus 
 $d_{t}=d_{2}$.
 \end{itemize} 
-Therefore when $d_{2}\geq N_{r}$, GPIC algorithm can achieve ML performance asymptotically, when $d_{2}<N_{r}$, the diversity order that GPIC can achieve at high SNR region is equal to that of LD/SICs, in \cite{radji2009interference}, the authors employ diversity maximization selection (MDS) scheme for channel partition, which is proposed in \cite{zhang2006diversity}. The optimal diversity order can be guaranteed with low complexity for conventional MIMO systems.
+Therefore when $d_{2}\geq N_{r}$, GPIC algorithm can achieve ML performance asymptotically, when $d_{2}<N_{r}$, the diversity order that GPIC can achieve at high SNR region is equal to that of LD/SICs. In \cite{radji2009interference}, the authors employ diversity maximization selection (DMS) scheme for channel partition, which is proposed in \cite{zhang2006diversity}. The optimal diversity order can be guaranteed with low complexity for conventional small MIMO systems.
 
-To elaborate further, for a given number of antennas chosen at the channel partition stage $N$, there is $N_{u}={N_{t}\choose N}$ possible combinations of $[\mathbf{H}_{1}, \mathbf{H}_{2}]$, according to MDS principle, the maximum diversity order of LD/SIC is achieved by choosing the subset $\mathbf{H}_{2}$ that has the strongest weakest substream, in a sense of post processing SNR. Therefore, when using MMSE/SIC as the sub optimal detector, the subset $\mathbf{H}^{opt}_{2}$ selected based on DMS principle should be\cite{zhang2006diversity} 
+To elaborate further, for a given number of antennas chosen at the channel partition stage $N$, there is $N_{u}={N_{t}\choose N}$ possible combinations of $[\mathbf{H}_{1}, \mathbf{H}_{2}]$. According to DMS principle, the maximum diversity order of LD/SIC is achieved by choosing the subset $\mathbf{H}_{2}$ that has the strongest weakest substream, in a sense of post processing SNR. Therefore, when using LD/SIC detectors as the sub optimal detector, the subset $\mathbf{H}^{opt}_{2}$ selected based on DMS principle should be\cite{zhang2006diversity} 
 \begin{IEEEeqnarray}[\relax]{l}
 \mathbf{H}^{opt}_{2}=\mathbf{H}^{p}_{2},\\
-p=\min_{j=1,2,\ldots, N_{u}}\theta_{j},\\
+p=\arg\min_{j=1,2,\ldots, N_{u}}\theta_{j},\\
 \theta_{j}=\max_{k=1,2,\ldots, N_{t}-N}((\mathbf{H}_{2}^{j})^{H}\mathbf{H}_{2}^{j}+SNR^{-1}\mathbf{I})_{kk}^{-1},\quad \mathbf{H}_{2}^{j}\in[\mathbf{H}_{2}^{1}, \mathbf{H}_{2}^{2}, \ldots, \mathbf{H}_{2}^{N_{u}}];
 \label{DMS principle}
 \end{IEEEeqnarray}   
@@ -759,7 +759,7 @@ where $\lceil\alpha\rceil$ denotes the minimum integer no less than $\alpha$.
 \subsection{Minimum Achievable Diversity: How many antennas do we need for LS-MIMO?}
 In LS-MIMO V-BLAS systems, the maximum diversity order is $N_{r}$, which is extremely large under the condition that there is tens to hundreds of receive antennas. On the one hand, diversity order is achieved at high SNR region, however, in practical, such a high diversity order is not necessary, because the SNR region of interest is the range in which the bit error rate (BER) or symbol error rate (SER) can be $10^{-5}$ to $10^{-7}$. On the other hand, the computational complexity to guarantee ML performance by DMS channel partition is excessive in LS-MIMO, for example, when $N_{r}=N_{t}$, based on (\ref{Nmin DMS}), the $N_{min}=\lceil\sqrt{N_{r}}-1\rceil$, the number of the symbol vector candidates in the list generated by exhaustive search for $\mathbf{s}_{1}$ is $M^{N_{min}}$.
 
-Therefore, here we consider minimum achievable diversity (MAD) principle, which sacrifices redundant diversity gain in LS-MIMO, in order to reduce the complexity. Let $d_{2MAD}$ denotes the diversity order of LD/SIC detectors, $\tilde{N}_{min}$ denotes the minimum number of antennas chosen by MAD principle. Our goal is to guarantee the overall diversity is no less than a given minimum diversity while keep $\tilde{N}_{min}$ small. Let $1\leq g<N_{r}$ denote the given minimum achievable diversity order, based on (\ref{condition3sub2}), we have
+Therefore, here we consider minimum achievable diversity (MAD) principle, which can reduce the detection complexity by sacrificing redundant asymptotic diversity gain in LS-MIMO. Let $d_{2MAD}$ denotes the diversity order of LD/SIC detectors, $\tilde{N}_{min}$ denotes the minimum number of antennas chosen by MAD principle. Our goal is to guarantee the overall diversity is no less than a given minimum diversity while keep $\tilde{N}_{min}$ small. Let $1\leq g<N_{r}$ denote the given minimum achievable diversity order, based on (\ref{condition3sub2}), we have
 \begin{IEEEeqnarray}[\relax]{l}
 \nonumber
  if \quad d_{2MAD}<N_{r}\quad and\quad d_{2MAD}\geq g\\
@@ -769,7 +769,7 @@ Therefore we can guarantee that the overall diversity order of GPIC algorithm is
 \begin{IEEEeqnarray}[\relax]{l}
 f(N)=d_{2MAD}-g=(N+1)(N_{r}-N_{t}+N+1)-g,\label{diversity function}
 \end{IEEEeqnarray}    
-where $N\in [1,2,\ldots, N_{t}]$, our goal is to find minimum $N$, denoted by $\tilde{N}_{min}$, that satisfy $f(N)\geq 0$. The two zeros points of quadratic function $f(N)$ are 
+where $N\in [1,2,\ldots, N_{t}]$, our goal is to find minimum $N$, that satisfy $f(N)\geq 0$. The two zeros points of quadratic function $f(N)$ are 
 \begin{IEEEeqnarray}[\relax]{l}
 N_{1}=-\sqrt{\frac{(N_{r}-N_{t})^{2}}{4}+g}-\frac{N_{r}-N_{t}}{2}-1,\\
 N_{2}=\sqrt{\frac{(N_{r}-N_{t})^{2}}{4}+g}-\frac{N_{r}-N_{t}}{2}-1
@@ -787,10 +787,10 @@ We consider uncoded complex spatial multiplexing LS-MIMO systems, For each recei
 
 For sake of simplicity, we use MAD-n to present the results for minimum achievable diversity selection, where $n$ denotes the minimum achievable diversity. The minimum number of antennas selected by channel partition for a given minimum achievable diversity is given by (\ref{Nmin MAD}). Maximum diversity selection (MDS) is used to present the Sel-MMSE-OSIC that can achieve ML diversity asymptotically. The minimum number of antennas selected by channel partition is given by (\ref{Nmin DMS}).
 
-First, we consider $16\times 16$ system with $4$-QAM modulation, Table.\ref{t16MIMO4QAM} shows the schemes considered, the corresponding results are presented in Fig.\ref{f16MIMO4QAM}, 
+First, we consider $16\times 16$ system with $4$-QAM modulation, Table.\ref{t16MIMO4QAM} shows the information of the schemes considered, the corresponding results are presented in Fig.\ref{f16MIMO4QAM}, 
 \begin{table}[htb]
 \renewcommand{\arraystretch}{1.3}
-\caption{$16\times 16$ system $4$-QAM}
+\caption{$16\times 16$ system}
 \label{t16MIMO4QAM}
 \centering
 \begin{tabular}{|c|c|c|}
@@ -820,7 +820,7 @@ we have $\frac{\kappa(MAD-9)}{\kappa(DMS)}=1/4$ and $\frac{\kappa(MAD-4)}{\kappa
 
 The results for $16\times 16$ system with $16$-QAM modulation is shown in Fig.\ref{f16MIMO16QAM}, the information of the schemes considered is as the same as that in Talbe.\ref{t16MIMO4QAM}, From Fig.\ref{f16MIMO16QAM}, we can see that similar to the case of $4$-QAM system, MAD-9 has a very small performance loss comparing to DMS, at BER $2\times 10^{-5}$, MAD-9 is about $1.1$dB worse than MDS, while MAD-4 has about $3$dB  performance loss comparing to DMS.
 
-Furthermore,comparing to $4$-QAM system, the reduction of the number of list candidates provided by MAD scheme is more significant in $16$-QAM, $\frac{\kappa(MAD-9)}{\kappa(DMS)}=1/16$ and $\frac{\kappa(MAD-4)}{\kappa(DMS)}=1/256$.
+Furthermore, compared with $4$-QAM systems, the reduction of the number of list candidates provided by MAD scheme is more significant in $16$-QAM systems, $\frac{\kappa(MAD-9)}{\kappa(DMS)}=1/16$ and $\frac{\kappa(MAD-4)}{\kappa(DMS)}=1/256$.
 \begin{figure}[htb]
 \centering
 \def\svgwidth{\columnwidth}
@@ -855,13 +855,13 @@ MAD-16&3&16\\
 \caption{$32\times 32$ system $4$-QAM}
 \label{f32MIMO4QAM}
 \end{figure}
-Now we consider the performance of MAD in large systems, Fig.\ref{f32MIMO4QAM} shows the results for $32\times 32$ system with $4$-QAM. Table.\ref{t32MIMO4QAM} shows the information of the schemes, due to the time limitation, we just provide the results for MAD. As we can see in Fig\ref{f32MIMO4QAM}, although the asymptotic diversity of MAD-16 is much higher than that of MAD-9, at the BER region of interest, their performance difference is negligible, at BER=$3\times 10^{-4}$, the performance of MAD-9 is about $0.3$dB worse comparing to MAD-16, at BER=$3\times 10^{-5}$, the performance loss of MAD-9 is about $0.5$dB comparing to MAD-16.
+Now we consider the performance of MAD in large systems, Fig.\ref{f32MIMO4QAM} shows the results for $32\times 32$ system with $4$-QAM. Table.\ref{t32MIMO4QAM} shows the information of the schemes, due to the time limitation, we just provide the results for MAD. As we can see in Fig.\ref{f32MIMO4QAM}, although the asymptotic diversity of MAD-16 is much higher than that of MAD-9, at the BER region of interest, their performance difference is negligible, at BER=$3\times 10^{-4}$, the performance of MAD-9 is about $0.3$dB worse comparing to MAD-16, at BER=$3\times 10^{-5}$, the performance loss of MAD-9 is about $0.5$dB comparing to MAD-16.
 
 
  
 \section{Theoretical Analysis of Channel Hardening Phenomenon}
 \subsection{Preliminary}
-Orthogonality deficiency $\phi_{od}$ measures  how orthogonal a matrix is \cite{ma2008performance}, which is defined by
+Orthogonality deficiency $\phi_{od}$ measures the orthogonality of a matrix\cite{ma2008performance}, which is defined by
 \begin{equation}
 \phi_{od}=1-\frac{det(\mathbf{W})}{\prod_{i=1}^{N_{t}}||\mathbf{h}_{i}||^{2}},
 \label{OD}
@@ -888,7 +888,7 @@ Taking expectation of (\ref{log OM}), we have
 \mathbb{E}[\ln(\phi_{om})]=\mathbb{E}[\ln(det(\mathbf{W}))]-\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(||\mathbf{h}_{i}||^{2})].
 \label{log expectation OM}
 \end{equation}
-First we consider the first summand on the right hand of (\ref{log expectation OM}) $\mathbb{E}[\ln(det(\mathbf{W}))]$. Let $\mathbb{C}W_{m}(n, \Sigma)$ denotes complex Wishart distribution, which is the joint distribution of sample covariance matrix from multivariate complex Gaussian random variable\cite{goodman1963statistical}. $n$ is the degree of freedom and $\Sigma\in \mathbb{C}^{m\times m}$ is the covariance matrix. Let $\Pi_{i}$ denotes the $i$th row of $\mathbf{H}$. $\Pi_{i}$ is a $N_{t}$-variate complex Gaussian random variable, so does $\Pi_{i}^{H}$. Therefore $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}=\sum_{i=1}^{N_{r}}\Pi_{i}^{H}\Pi_{i}\sim \mathbb{C}W_{N_{t}}(N_{r}, \mathbf{I})$. The logarithmic expectation of $det(\mathbf{W})$ is
+First we consider the first summand on the right hand of (\ref{log expectation OM}) $\mathbb{E}[\ln(det(\mathbf{W}))]$. Let $\mathbb{C}W_{m}(n, \Sigma)$ denote complex Wishart distribution, which is the joint distribution of sample covariance matrix from multivariate complex Gaussian random variable\cite{goodman1963statistical}. $n$ is the degree of freedom and $\Sigma\in \mathbb{C}^{m\times m}$ is the covariance matrix. Let $\Pi_{i}$ denotes the $i$th row of $\mathbf{H}$. $\Pi_{i}$ is a $N_{t}$-variate complex Gaussian random variable, so does $\Pi_{i}^{H}$. Therefore $\mathbf{W}=\mathbf{H}^{H}\mathbf{H}=\sum_{i=1}^{N_{r}}\Pi_{i}^{H}\Pi_{i}\sim \mathbb{C}W_{N_{t}}(N_{r}, \mathbf{I}_{N_{t}})$. The logarithmic expectation of $det(\mathbf{W})$ is
 \begin{equation}
 \mathbb{E}[\ln(det(\mathbf{W}))]=\sum_{i=1}^{N_{t}}\psi(N_{r}-i+1),
 \label{log expectation of wishart}
@@ -898,8 +898,8 @@ where $\psi(n)$ denotes Digamma function, which is given by\cite{papoulis2002pro
 \psi(n)=\frac{\Gamma^{'}(n)}{\Gamma(n)},
 \label{Digmma function}
 \end{equation}
-$\Gamma(n)$ denotes Gamma function.
-Proof: see Appendix \ref{log expectation of OM}.
+$\Gamma(n)$ denotes Gamma function\cite{papoulis2002probability}.
+\proof: see Appendix \ref{log expectation of OM}.
 
 Now we consider the second summand on the right hand of (\ref{log expectation OM}) $\sum_{i=1}^{N_{t}}\mathbb{E}[\ln(||\mathbf{h}_{i}||^{2})]$. $||\mathbf{h}_{i}||^{2}\sim Gamma(N_{r}, 1)$, the logarithmic expectation of a Gamma random variable $\gamma\sim Gamma(n, \theta)$ can be written as:
 \begin{equation}
@@ -911,9 +911,9 @@ Thus (\ref{log expectation of gamma}), we have
 \sum_{i=1}^{N_{t}}\mathbb{E}[\ln(||\mathbf{h}_{i}||^{2})]=\sum_{i=1}^{N_{t}}\psi(N_{r}),
 \label{sum of log expectation gamma}
 \end{equation}
-proof: see Appendix \ref{proof log expectation gamma}.
+\proof: see Appendix \ref{proof log expectation gamma}.
 
-Based on (\ref{log expectation of wishart}) and (\ref{sum of log expectation gamma}), the logarithmic expectation of orthogonality measure $\phi_{om}$ is 
+Based on (\ref{log expectation OM}), (\ref{log expectation of wishart}) and (\ref{sum of log expectation gamma}), the logarithmic expectation of orthogonality measure $\phi_{om}$ is 
 \begin{equation}
 \mathbb{E}[\ln(\phi_{om})]=\sum_{i=1}^{N_{t}}[\psi(N_{r}-i+1)-\psi(N_{r})],
 \label{final log expectation OM}
@@ -944,7 +944,7 @@ $\alpha_{i}$ and $\beta_{i}$ are independent Gamma random variables, from \cite{
   \phi_{om}=\prod_{i=1}^{N_{t}}\eta_{i},
   \label{product beta OM}
   \end{equation}
-Thus $\phi_{om}$ is the product of $N_{t}$ independent Beta random variables, the pdf of $\phi_{om}$ is given by 
+Thus $\phi_{om}$ is the product of $N_{t}$ independent Beta random variables, the p.d.f of $\phi_{om}$ is given by 
 \begin{equation}
 f_{\phi_{om}}(\rho)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{N_{t}}c(k_{1}^{i},k_{2}^{i}, j_{i})]U(\rho|\mathbf{k}_{1}+\mathbf{j})\},
 \label{pdf of OM}
@@ -954,7 +954,7 @@ where $\sum_{\mathbf{j}}=\sum_{j_{1}}\sum_{j_{2}}\ldots\sum_{j_{N_{t}}}$, $j_{i}
 U(\rho|\mathbf{k}_{1}+\mathbf{j})=\rho^{-1}\prod_{i=1}^{N_{t}}(k_{1}^{i}+j_{i})\sum_{i=1}^{N_{t}}[\rho^{k_{1}^{i}+j_{i}}/\prod_{j\neq i}^{N_{t}}(k_{1}^{j}+j_{j}-k_{1}^{i}-j_{i})],
 \label{auxiliary pdf of OM}
 \end{equation}
-Proof: see Appendix \ref{proof pdf of OM}. 
+\proof{}: see Appendix \ref{proof pdf of OM}. 
 
 If a Beta random variable $\nu\sim Beta(k_{1}, k_{2})$, then $\mathbb{E}[\ln(\nu)]=\psi(k_{1})-\psi(k_{1}+k_{2})$\cite{papoulis2002probability}, take logarithmic expectation of (\ref{product beta OM}), we have 
 \begin{equation}
@@ -964,9 +964,9 @@ If a Beta random variable $\nu\sim Beta(k_{1}, k_{2})$, then $\mathbb{E}[\ln(\nu
 which is consistent with (\ref{final log expectation OM}).
 
 \subsection{Computer Simulations}
-Computer simulations are made to demonstrate the correctness of $\mathbb{E}[\ln(\phi_{om})]$ in (\ref{final log expectation OM}). The experiments are performed by Matlab, on a desktop with I5-4th generation CPU, quad cores, 3.2GHz clock rate.
+Computer simulations are made to demonstrate the correctness of the results in this section. The experiments are performed by Matlab, on a desktop with I5-4th generation CPU, quad cores, 3.2GHz clock rate.
 
-Different sizes of channel matrices are considered, with $5\leq N_{r}\leq 200$ and $5\leq N_{t}\leq N_{r}$. The theoretical logarithmic expectation of $\phi_{om}$, denoted by $\mathbb{E}[\ln(\phi_{om})]_{t}$ is calculated based on (\ref{final log expectation OM}), the result is shown in Fig.\ref{flogOMt}. The empirical estimation of the logarithmic expectation of $\phi_{om}$, denoted by $\mathbb{E}[\ln(\phi_{om})]_{em}$, are calculated based on taking average over $10^{5}$ independent channel realizations of each size of channel matrix. In each realization, the channel matrix are generated randomly, each component of the channel matrix is CSCG random variable with unit variance. The result is shown in Fig.\ref{flogOMem}. 
+Different sizes of channel matrices are considered, with $5\leq N_{r}\leq 100$ and $5\leq N_{t}\leq N_{r}$. The theoretical logarithmic expectation of $\phi_{om}$, denoted by $\mathbb{E}[\ln(\phi_{om})]_{t}$ are calculated based on (\ref{final log expectation OM}), the result is shown in Fig.\ref{flogOMt}. The empirical estimation of the logarithmic expectation of $\phi_{om}$, denoted by $\mathbb{E}[\ln(\phi_{om})]_{em}$, are calculated based on taking average over $10^{5}$ independent channel realizations of each size of channel matrix. In each realization, the channel matrix are generated randomly, each component of the channel matrix is CSCG random variable with unit variance. The result is shown in Fig.\ref{flogOMem}. 
 \begin{figure}[htb]
 \centering
 \def\svgwidth{\columnwidth}
@@ -1020,7 +1020,7 @@ The conclusion goes here.
 \section{}\label{log expectation of OM}
 Let $\mathbf{A}\in \mathbb{C}^{m\times m}$, $A\sim \mathbb{C}W_{m}(n, \mathbf{\Sigma})$, According to the definition of complex Wishart matrix, it is obvious $\mathbf{A}$ is Hermition positive definite matrix (i.e., $\mathbf{A}=\mathbf{A}^{H}>0$). Define $etr(\mathbf{A})=e^{tr(\mathbf{A})}$, $tr(\mathbf{A})=\mathbf{A}_{11}+\mathbf{A}_{22}+\cdots+\mathbf{A}_{mm}$.
 
-The pdf of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
+The p.d.f. of $\mathbf{A}$ can be written as\cite{nagar2011expectations}:
 \begin{equation}
 f(\mathbf{A})=\{\tilde{\Gamma}_{m}(n)det(\mathbf{\Sigma})^{n} \}^{-1}det(\mathbf{A})^{n-m}etr(-\mathbf{\Sigma}^{-1}\mathbf{A}),
 \label{Appendequa1}
@@ -1104,30 +1104,35 @@ Thus the logarithmic expectation of $x$ can be written as
 \mathbf{E}[\ln(x)]=\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(x)x^{k-1}e^{-x/\theta}\theta^{-k}dx,
 \label{AppendixB3}
 \end{equation}
-define $z=x/\theta$ and based on (\ref{AppendixB2}), (\ref{AppendixB3}) can be rewritten as
+define $z=x/\theta$, (\ref{AppendixB3}) can be rewritten as
 \begin{equation}
-\mathbf{E}[\ln(x)]=\ln(\theta)+\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(z)z^{k-1}e^{-z}dz.
+\mathbb{E}[\ln(x)]=\ln(\theta)\frac{1}{\Gamma(k)}\int_{0}^{\infty}z^{k-1}e^{-z}dz+\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(z)z^{k-1}e^{-z}dz,
 \label{AppendixB4}
 \end{equation}
-Because $\frac{d(z^{k-1})}{dk}=\ln(z)z^{k-1}$, (\ref{AppendixB4}) can be rewritten as
+Based on (\ref{AppendixB2}), (\ref{AppendixB4}) can be rewritten as
+\begin{equation}
+\mathbf{E}[\ln(x)]=\ln(\theta)+\frac{1}{\Gamma(k)}\int_{0}^{\infty}\ln(z)z^{k-1}e^{-z}dz.
+\label{AppendixB5}
+\end{equation}
+Because $\frac{d(z^{k-1})}{dk}=\ln(z)z^{k-1}$, (\ref{AppendixB5}) can be rewritten as
 \begin{equation}
 \mathbf{E}[\ln(x)]=\ln(\theta)+\frac{1}{\Gamma(k)}\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e^{-z}dz,
-\label{AppendixB5}
+\label{AppendixB6}
 \end{equation}
 Based on (\ref{AppendixB2}), we have
 \begin{equation}
 \Gamma^{'}(k)=\frac{d}{dk}\int_{0}^{\infty}z^{k-1}e^{-z}dz,
-\label{AppendixB6}
+\label{AppendixB7}
 \end{equation}
-Thus (\ref{AppendixB5}) can be rewritten as
+Thus (\ref{AppendixB6}) can be rewritten as
 \begin{equation}
 \mathbf{E}(\ln(x))=\ln(\theta)+\frac{\Gamma^{'}(k)}{\Gamma(k)}=\ln(\theta)+\psi(k),
-\label{AppendixB6}
+\label{AppendixB8}
 \end{equation}
 where $\psi(k)$ denotes Digamma function.
 \section{}\label{proof pdf of OM}
 Define $x=\prod_{i=1}^{n}x_{i}$,
-$x_{1}, x_{2}, \ldots, x_{n}$ are independent Beta random variables, where $x_{i}\sim Beta(k_{1}^{i}, k_{2}^{i})$, the pdf of $x_{i}$ is given by 
+$x_{1}, x_{2}, \ldots, x_{n}$ are independent Beta random variables, where $x_{i}\sim Beta(k_{1}^{i}, k_{2}^{i})$, the p.d.f. of $x_{i}$ is given by 
 \begin{equation}
 f_{x_{i}}(\rho)=\frac{1}{\mathbb{B}(k_{1}^{i}, k_{2}^{i})}\rho^{k_{1}^{i}-1}(1-\rho)^{k_{2}^{i}-1},
 \label{pdf beta}
@@ -1144,24 +1149,24 @@ f_{y_{i}}(\rho)=\sum_{j_{i}=0}^{k_{2}^{i}-1}c(k_{1}^{i},k_{2}^{i}, j_{i})(k_{1}^
 \label{pdf log beta alternative}
 \end{equation} 
 where $c(k_{1}^{i}, k_{2}^{i}, j_{i})=(-1)^{j_{i}}$ $k_{2}^{i}-1\choose j_{i}$ $[(k_{1}^{i}+j_{i})\mathbb{B}(k_{1}^{i},k_{2}^{i})]^{-1}$, $j_{i}\in [0,1,\ldots, k_{2}^{i}-1]$,
-From (\ref{pdf log beta alternative}), one can conclude that $f_{y_{i}}(\rho)$ is a weighted summation of the pdf of exponential distributions. 
+From (\ref{pdf log beta alternative}), one can conclude that $f_{y_{i}}(\rho)$ is a weighted summation of the p.d.f. of exponential distributions. 
 
-If $\tau_{1}, \tau_{2}, \ldots, \tau_{n}$ are independent exponential random variables, where $\tau_{i}\sim exp(t_{i})$, the pdf of $\tau_{i}$ is given by 
+If $\tau_{1}, \tau_{2}, \ldots, \tau_{n}$ are independent exponential random variables, where $\tau_{i}\sim exp(t_{i})$, the p.d.f. of $\tau_{i}$ is given by 
 \begin{equation}
 f_{\tau_{i}}(\rho)=t_{i}e^{-t_{i}\rho}, \quad\rho\geq 0, 
 \label{pdf exp}
 \end{equation}
-define $\tau=\sum_{i=1}^{n}\tau_{i}$, by induction, the pdf of $\tau$ is given by\cite{bhargava1981distribution}
+define $\tau=\sum_{i=1}^{n}\tau_{i}$, by induction, the p.d.f of $\tau$ is given by\cite{bhargava1981distribution}
 \begin{equation}
-f_{\tau}(\rho)=f(\rho|\mathbf{t})=\prod_{i=1}^{n}t_{i}\sum_{i=1}^{n}[exp(-t_{i}\rho)/\prod_{j\neq i}^{j=n}(t_{j}-t_{i})],
+f_{\tau}(\rho)=f(\rho|\mathbf{t})=\prod_{i=1}^{n}t_{i}\sum_{i=1}^{n}[e^{-t_{i}\rho}/\prod_{j\neq i}^{j=n}(t_{j}-t_{i})],
 \label{pdf of sum exp}
 \end{equation}
-where $\mathbf{t}=[t_{1}, t_{2}, \ldots, t_{n}]$. Define $y=\sum_{i=1}^{n}y_{i}=-\ln(\prod_{i=1}^{n}x_{i})=-\ln(x)$. Based on (\ref{pdf log beta alternative}) and (\ref{pdf of sum exp}), the pdf of $y$ is given by\cite{bhargava1981distribution}
+where $\mathbf{t}=[t_{1}, t_{2}, \ldots, t_{n}]$. Define $y=\sum_{i=1}^{n}y_{i}=-\ln(\prod_{i=1}^{n}x_{i})=-\ln(x)$. Based on (\ref{pdf log beta alternative}) and (\ref{pdf of sum exp}), the p.d.f. of $y$ is given by\cite{bhargava1981distribution}
 \begin{equation}
 f_{y}(\rho)=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j_{i})]f(\rho|\mathbf{k_{1}}+\mathbf{j})\},
 \label{pdf of y}
 \end{equation}
-where $\sum_{\mathbf{j}}=\sum_{j_{1}}\sum_{j_{2}}\ldots \sum_{j_{n}}$, $j_{i}\in [0,1,\ldots, k^{i}_{2}-1]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j_{1}, k_{1}^{2}+j_{2} \ldots k_{1}^{n}+j_{n}]$. Based on (\ref{pdf of y}) and $x=e^{-y}=G(y)$, using Jacobian transformation, the pdf of $x$ is given by
+where $\sum_{\mathbf{j}}=\sum_{j_{1}}\sum_{j_{2}}\ldots \sum_{j_{n}}$, $j_{i}\in [0,1,\ldots, k^{i}_{2}-1]$, $\mathbf{k_{1}}+\mathbf{j}=[k_{1}^{1}+j_{1}, k_{1}^{2}+j_{2} \ldots k_{1}^{n}+j_{n}]$. Based on (\ref{pdf of y}) and $x=e^{-y}=G(y)$, using Jacobian transformation, the p.d.f. of $x$ is given by
 \begin{equation}
 f_{x}(\rho)=f_{y}(G^{-1}(\rho))|\frac{dx}{dy}|^{-1}=f_{y}(-\ln(\rho))\rho^{-1}=\sum_{\mathbf{j}}\{[\prod_{i=1}^{n}c(k_{1}^{i},k_{2}^{i}, j_{i})]f(-\ln(\rho)|\mathbf{k}_{1}+\mathbf{j})\rho^{-1}\},
 \label{pdf of x1}

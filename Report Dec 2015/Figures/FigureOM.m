@@ -4,7 +4,7 @@
 count1=0;
 count2=0;
 count3=0;
-Crealization=1e3;
+Crealization=1e1;
 e=exp(1);
 Size=20;
 Et=zeros(Size);

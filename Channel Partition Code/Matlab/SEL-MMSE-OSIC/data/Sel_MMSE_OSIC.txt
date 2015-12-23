@@ -1,0 +1,71 @@
+
+=========================================================================================
+this file test the correctness of Sel_MMSE_OSIC algorithm implementation in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+4 X 4 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.2500000000
+the average receive SNR (dB) are:
+8 10 12 14 16 
+The minimum channel realization is 5.000000e+03
+The minimum symbol error accumulatted is 2.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+Sel_MMSE-OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+8 	 5000 	 4986 	 6390 	 2.493000e-01 	 7.987500e-02
+10 	 5000 	 2605 	 3328 	 1.302500e-01 	 4.160000e-02
+12 	 5000 	 1080 	 1406 	 5.400000e-02 	 1.757500e-02
+14 	 5000 	 355 	 462 	 1.775000e-02 	 5.775000e-03
+16 	 13291 	 200 	 262 	 3.761944e-03 	 1.232037e-03
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this file test the correctness of Sel_MMSE_OSIC algorithm implementation in LS(large scale)-MIMO systems
+SYSTEM CONFIGURATION
+****************
+4 X 4 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.2500000000
+the average receive SNR (dB) are:
+18 20 
+The minimum channel realization is 5.000000e+03
+The minimum symbol error accumulatted is 2.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+Sel_MMSE-OSIC
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+18 	 80075 	 201 	 272 	 6.275367e-04 	 2.123010e-04
+20 	 429348 	 203 	 258 	 1.182025e-04 	 3.755695e-05
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+

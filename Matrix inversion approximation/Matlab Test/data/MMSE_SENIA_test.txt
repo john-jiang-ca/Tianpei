@@ -1,0 +1,723 @@
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+128 X 8 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.1250000000
+the average receive SNR (dB) are:
+0 2 4 6 8 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 0.79999356
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 1038 	 1077 	 1.297500e-01 	 3.365625e-02
+2 	 1000 	 364 	 364 	 4.550000e-02 	 1.137500e-02
+4 	 1057 	 100 	 100 	 1.182592e-02 	 2.956481e-03
+6 	 12219 	 100 	 100 	 1.022997e-03 	 2.557492e-04
+8 	 368958 	 100 	 100 	 3.387919e-05 	 8.469799e-06
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 368958 	 125 	 125 	 1.330000e-01 	 3.456250e-02
+2 	 368958 	 125 	 125 	 4.612500e-02 	 1.153125e-02
+4 	 368958 	 125 	 125 	 1.182592e-02 	 2.986045e-03
+6 	 368958 	 125 	 125 	 1.166217e-03 	 2.915541e-04
+8 	 368958 	 125 	 125 	 4.234899e-05 	 1.058725e-05
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+64 X 8 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.1250000000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 0.63402790
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 2639 	 2897 	 3.298750e-01 	 9.053125e-02
+2 	 1000 	 1635 	 1731 	 2.043750e-01 	 5.409375e-02
+4 	 1000 	 743 	 766 	 9.287500e-02 	 2.393750e-02
+6 	 1000 	 223 	 227 	 2.787500e-02 	 7.093750e-03
+8 	 2527 	 100 	 101 	 4.946577e-03 	 1.249011e-03
+10 	 27619 	 100 	 100 	 4.525870e-04 	 1.131467e-04
+12 	 1275953 	 100 	 100 	 9.796599e-06 	 2.449150e-06
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1275953 	 7545 	 7695 	 3.396250e-01 	 9.365625e-02
+2 	 1275953 	 7545 	 7695 	 2.153750e-01 	 5.718750e-02
+4 	 1275953 	 7545 	 7695 	 1.058750e-01 	 2.718750e-02
+6 	 1275953 	 7545 	 7695 	 3.487500e-02 	 8.906250e-03
+8 	 1275953 	 7545 	 7695 	 9.794222e-03 	 2.473288e-03
+10 	 1275953 	 7545 	 7695 	 2.185995e-03 	 5.510247e-04
+12 	 1275953 	 7545 	 7695 	 7.391534e-04 	 1.884621e-04
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+0 2 4 6 8 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 0.00000000
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 26930 	 43684 	 8.415625e-01 	 3.412812e-01
+2 	 1000 	 25893 	 39972 	 8.091563e-01 	 3.122813e-01
+4 	 1000 	 24664 	 36321 	 7.707500e-01 	 2.837578e-01
+6 	 1000 	 23216 	 32327 	 7.255000e-01 	 2.525547e-01
+8 	 1000 	 21338 	 28190 	 6.668125e-01 	 2.202344e-01
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 30488 	 66779 	 8.847188e-01 	 3.952656e-01
+2 	 1000 	 30488 	 66779 	 9.041875e-01 	 4.472188e-01
+4 	 1000 	 30488 	 66779 	 9.335000e-01 	 4.954688e-01
+6 	 1000 	 30488 	 66779 	 9.446250e-01 	 5.107891e-01
+8 	 1000 	 30488 	 66779 	 9.527500e-01 	 5.217109e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+10 12 14 16 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 0.00000000
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+10 	 1000 	 19326 	 24380 	 6.039375e-01 	 1.904687e-01
+12 	 1000 	 17199 	 20900 	 5.374688e-01 	 1.632812e-01
+14 	 1000 	 14865 	 17462 	 4.645313e-01 	 1.364219e-01
+16 	 1000 	 12462 	 14171 	 3.894375e-01 	 1.107109e-01
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+10 	 1000 	 30695 	 68369 	 9.567813e-01 	 5.283672e-01
+12 	 1000 	 30695 	 68369 	 9.573438e-01 	 5.294609e-01
+14 	 1000 	 30695 	 68369 	 9.609688e-01 	 5.340625e-01
+16 	 1000 	 30695 	 68369 	 9.592188e-01 	 5.341328e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 4 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+0 2 4 6 8 10 12 14 16 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 0.00000000
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 12371 	 13863 	 3.865938e-01 	 2.166094e-01
+2 	 1000 	 10403 	 11472 	 3.250938e-01 	 1.792500e-01
+4 	 1000 	 8433 	 9059 	 2.635312e-01 	 1.415469e-01
+6 	 1000 	 6405 	 6804 	 2.001563e-01 	 1.063125e-01
+8 	 1000 	 4641 	 4829 	 1.450313e-01 	 7.545312e-02
+10 	 1000 	 3165 	 3279 	 9.890625e-02 	 5.123437e-02
+12 	 1000 	 2026 	 2072 	 6.331250e-02 	 3.237500e-02
+14 	 1000 	 1198 	 1216 	 3.743750e-02 	 1.900000e-02
+16 	 1000 	 604 	 608 	 1.887500e-02 	 9.500000e-03
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 26341 	 37212 	 5.060625e-01 	 2.980625e-01
+2 	 1000 	 26341 	 37212 	 6.332500e-01 	 4.002656e-01
+4 	 1000 	 26341 	 37212 	 7.378125e-01 	 4.906250e-01
+6 	 1000 	 26341 	 37212 	 7.758438e-01 	 5.293750e-01
+8 	 1000 	 26341 	 37212 	 7.998125e-01 	 5.523438e-01
+10 	 1000 	 26341 	 37212 	 8.112187e-01 	 5.677813e-01
+12 	 1000 	 26341 	 37212 	 8.171875e-01 	 5.738437e-01
+14 	 1000 	 26341 	 37212 	 8.200625e-01 	 5.771094e-01
+16 	 1000 	 26341 	 37212 	 8.231563e-01 	 5.814375e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+128 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+0 2 4 6 8 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.442349e-02
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 18199 	 22256 	 5.687188e-01 	 1.738750e-01
+2 	 1000 	 14227 	 16391 	 4.445938e-01 	 1.280547e-01
+4 	 1000 	 9925 	 10874 	 3.101563e-01 	 8.495313e-02
+6 	 1000 	 5834 	 6163 	 1.823125e-01 	 4.814844e-02
+8 	 1000 	 2484 	 2536 	 7.762500e-02 	 1.981250e-02
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 10028 	 11240 	 5.975000e-01 	 1.855859e-01
+2 	 1000 	 10028 	 11240 	 5.102500e-01 	 1.506328e-01
+4 	 1000 	 10028 	 11240 	 4.363125e-01 	 1.253672e-01
+6 	 1000 	 10028 	 11240 	 3.713750e-01 	 1.051875e-01
+8 	 1000 	 10028 	 11240 	 3.133750e-01 	 8.781250e-02
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 4 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.2500000000
+the average receive SNR (dB) are:
+0 2 4 6 8 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 8.230591e-01
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 1000 	 1330 	 1477 	 3.325000e-01 	 9.231250e-02
+2 	 1000 	 814 	 872 	 2.035000e-01 	 5.450000e-02
+4 	 1000 	 408 	 419 	 1.020000e-01 	 2.618750e-02
+6 	 1000 	 140 	 140 	 3.500000e-02 	 8.750000e-03
+8 	 4391 	 100 	 100 	 5.693464e-03 	 1.423366e-03
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+0 	 4391 	 139 	 139 	 3.402500e-01 	 9.431250e-02
+2 	 4391 	 139 	 139 	 2.107500e-01 	 5.681250e-02
+4 	 4391 	 139 	 139 	 1.065000e-01 	 2.731250e-02
+6 	 4391 	 139 	 139 	 3.900000e-02 	 9.750000e-03
+8 	 4391 	 139 	 139 	 7.913915e-03 	 1.978479e-03
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 4 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.2500000000
+the average receive SNR (dB) are:
+10 12 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 8.230591e-01
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+10 	 43271 	 100 	 100 	 5.777542e-04 	 1.444385e-04
+12 	 1449120 	 100 	 100 	 1.725185e-05 	 4.312962e-06
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+10 	 1449120 	 2898 	 3006 	 1.490606e-03 	 3.798734e-04
+12 	 1449120 	 2898 	 3006 	 4.999586e-04 	 1.296476e-04
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+128 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+10 12 14 16 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.442349e-02
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+10 	 1000 	 795 	 798 	 2.484375e-02 	 6.234375e-03
+12 	 1000 	 111 	 112 	 3.468750e-03 	 8.750000e-04
+14 	 18999 	 100 	 100 	 1.644823e-04 	 4.112059e-05
+16 	 1110648 	 100 	 100 	 2.813673e-06 	 7.034182e-07
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+10 	 1110648 	 8482007 	 9506099 	 2.814375e-01 	 7.839844e-02
+12 	 1110648 	 8482007 	 9506099 	 2.502813e-01 	 6.975781e-02
+14 	 1110648 	 8482007 	 9506099 	 2.478075e-01 	 6.941813e-02
+16 	 1110648 	 8482007 	 9506099 	 2.386559e-01 	 6.686763e-02
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+18 20 22 24 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.800414e-13
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+18 	 1000 	 9980 	 11095 	 3.118750e-01 	 8.667969e-02
+20 	 1000 	 7774 	 8495 	 2.429375e-01 	 6.636719e-02
+22 	 1000 	 5548 	 5940 	 1.733750e-01 	 4.640625e-02
+24 	 1000 	 4005 	 4267 	 1.251563e-01 	 3.333594e-02
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+18 	 1000 	 30819 	 68856 	 9.612812e-01 	 5.349375e-01
+20 	 1000 	 30819 	 68856 	 9.625938e-01 	 5.344062e-01
+22 	 1000 	 30819 	 68856 	 9.600625e-01 	 5.367891e-01
+24 	 1000 	 30819 	 68856 	 9.630937e-01 	 5.379375e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+26 28 30 32 34 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.800414e-13
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+26 	 1000 	 2657 	 2793 	 8.303125e-02 	 2.182031e-02
+28 	 1000 	 1692 	 1754 	 5.287500e-02 	 1.370313e-02
+30 	 1000 	 1046 	 1081 	 3.268750e-02 	 8.445312e-03
+32 	 1000 	 715 	 745 	 2.234375e-02 	 5.820313e-03
+34 	 1000 	 406 	 422 	 1.268750e-02 	 3.296875e-03
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+26 	 1000 	 30804 	 68839 	 9.615625e-01 	 5.364375e-01
+28 	 1000 	 30804 	 68839 	 9.615938e-01 	 5.379922e-01
+30 	 1000 	 30804 	 68839 	 9.597187e-01 	 5.348437e-01
+32 	 1000 	 30804 	 68839 	 9.600625e-01 	 5.362187e-01
+34 	 1000 	 30804 	 68839 	 9.626250e-01 	 5.378047e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+36 38 40 42 44 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.800414e-13
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+36 	 1000 	 271 	 279 	 8.468750e-03 	 2.179688e-03
+38 	 1000 	 130 	 136 	 4.062500e-03 	 1.062500e-03
+40 	 1000 	 129 	 133 	 4.031250e-03 	 1.039063e-03
+42 	 1319 	 100 	 105 	 2.369219e-03 	 6.219200e-04
+44 	 2261 	 100 	 103 	 1.382132e-03 	 3.558989e-04
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+36 	 2261 	 69603 	 154919 	 9.611875e-01 	 5.382344e-01
+38 	 2261 	 69603 	 154919 	 9.634375e-01 	 5.382266e-01
+40 	 2261 	 69603 	 154919 	 9.620625e-01 	 5.354688e-01
+42 	 2261 	 69603 	 154919 	 9.632297e-01 	 5.391099e-01
+44 	 2261 	 69603 	 154919 	 9.620052e-01 	 5.352962e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+46 48 50 
+The minimum channel realization is 1.000000e+03
+The minimum symbol error accumulatted is 1.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.800414e-13
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+46 	 3568 	 109 	 115 	 9.546665e-04 	 2.518042e-04
+48 	 5176 	 102 	 106 	 6.158230e-04 	 1.599932e-04
+50 	 10049 	 100 	 106 	 3.109762e-04 	 8.240870e-05
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+46 	 10049 	 309199 	 690606 	 9.615243e-01 	 5.365598e-01
+48 	 10049 	 309199 	 690606 	 9.622899e-01 	 5.364860e-01
+50 	 10049 	 309199 	 690606 	 9.615354e-01 	 5.369051e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+
+
+=========================================================================================
+this routine tests the performance of the series expansion Newton Iteration matrix approximation for Linear Detectors
+SYSTEM CONFIGURATION
+****************
+32 X 32 MIMO system with 16 QAM modulation
+the average power of transmit symbols is: 0.0312500000
+the average receive SNR (dB) are:
+30 32 34 36 38 40 42 44 46 48 50 
+The minimum channel realization is 1.000000e+04
+The minimum symbol error accumulatted is 2.000000e+02
+****************
+
+
+SIMULATION OUTPUT
+****************
+MMSE
+The expectation of OM is 1.800414e-13
+the first column shows the current SNR (dB)
+the second column shows the number of iterations
+the third column shows the number of symbol errors
+the fourth column shows the number of bit errors
+the sixth column shows SER
+the seventh column shows BER
+-------------
+MMSE with exact matrix inversion
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+30 	 10000 	 10917 	 11366 	 3.411562e-02 	 8.879688e-03
+32 	 10000 	 6673 	 6937 	 2.085313e-02 	 5.419531e-03
+34 	 10000 	 4600 	 4788 	 1.437500e-02 	 3.740625e-03
+36 	 10000 	 2770 	 2865 	 8.656250e-03 	 2.238281e-03
+38 	 10000 	 1778 	 1845 	 5.556250e-03 	 1.441406e-03
+40 	 10000 	 1127 	 1166 	 3.521875e-03 	 9.109375e-04
+42 	 10000 	 685 	 712 	 2.140625e-03 	 5.562500e-04
+44 	 10000 	 462 	 471 	 1.443750e-03 	 3.679688e-04
+46 	 10000 	 278 	 287 	 8.687500e-04 	 2.242188e-04
+48 	 10189 	 204 	 207 	 6.256747e-04 	 1.587190e-04
+50 	 26102 	 201 	 206 	 2.406425e-04 	 6.165715e-05
+
+-------------
+
+-------------
+MMSE with SENIA approximation
+SNR 	 iteration 	 symbol errors 	  bit errors 	 SER 	 BER
+30 	 26102 	 803340 	 1794699 	 9.617438e-01 	 5.367734e-01
+32 	 26102 	 803340 	 1794699 	 9.611250e-01 	 5.365961e-01
+34 	 26102 	 803340 	 1794699 	 9.620344e-01 	 5.371383e-01
+36 	 26102 	 803340 	 1794699 	 9.613719e-01 	 5.367992e-01
+38 	 26102 	 803340 	 1794699 	 9.618375e-01 	 5.366883e-01
+40 	 26102 	 803340 	 1794699 	 9.618937e-01 	 5.369648e-01
+42 	 26102 	 803340 	 1794699 	 9.617938e-01 	 5.371992e-01
+44 	 26102 	 803340 	 1794699 	 9.615844e-01 	 5.364031e-01
+46 	 26102 	 803340 	 1794699 	 9.620344e-01 	 5.373281e-01
+48 	 26102 	 803340 	 1794699 	 9.618584e-01 	 5.370996e-01
+50 	 26102 	 803340 	 1794699 	 9.617797e-01 	 5.371652e-01
+-------------
+
+****************
+
+
+The program ends successfully!
+=========================================================================================
+

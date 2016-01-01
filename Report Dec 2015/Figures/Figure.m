@@ -25,7 +25,9 @@ BER_MAD_32_4_9=[0.229477, 0.19105, 0.148106,0.10018, 0.0492078,0.0160859,0.00328
 BER_MAD_32_4_16=[0.229358, 0.190434, 0.146927, 0.0955453, 0.0448656, 0.0129797, 0.00223281, 0.000287571, 1.92706e-05 ]; %snr 0-16
 
 
-
+BER_MDS_16_20_4=[0.0850475, 0.0274025, 0.0042425, 0.000479125 ];%snr 8-14
+BER_MAD_16_20_4_5=[0.0926625,0.03786,0.00904,0.0014525, 0.000158027 , 1.45423e-05 ]; %snr 8-18
+BER_MAD_16_20_4_12=[0.0878775,0.03081, 0.006365,0.000675, 3.79123e-05 ]; %snr 8-16
 
 
 %% Figure plotting
@@ -63,4 +65,17 @@ hold on;
 % title('32X32 system 4QAM');
 % hold on;
 legend( 'MAD-4', 'MAD-9', 'MAD-16');
+hold off;
+
+
+figure (4)
+semilogy([8:2:14], BER_MDS_16_20_4, '-*', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
+hold on;
+semilogy([8:2:18], BER_MAD_16_20_4_5, '-^', 'MarkerSize', 8), xlabel('SNR (dB)'), ylabel('BER');
+hold on;
+semilogy([8:2:16], BER_MAD_16_20_4_12, '-+', 'MarkerSize',8), xlabel('SNR (dB)'), ylabel('BER');
+hold on;
+% title('16X16 system 4QAM');
+% hold on;
+legend('MDS', 'MAD-5', 'MAD-12');
 hold off;

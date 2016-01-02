@@ -51,3 +51,24 @@ SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SE
 *************************************
 The whole program ends successfully!!
 ==============================================================================
+==============================================================================
+This the output file for software testbed in Large-Scale MIMO (LS-MIMO) system
+Diversity Maximization Selection
+Sel_MMSE_OSIC
+*************************************
+SYSTEM CONFIGURATION
+this is for 16 times 16 MIMO with 16 QAM modulation
+the number of antennas chosen in the channel partition is 3
+do not consider spatial correlation
+do not consider the channel estimation error
+the average transmit symbol power is 0.0625
+SNR (dB) are
+
+the minimum channel realization is 10000
+the minimum symbol errors accumulated is 50
+*************************************
+
+
+*************************************
+SYSTEM OUTPUT
+SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time

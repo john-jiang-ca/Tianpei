@@ -4,21 +4,23 @@ Diversity Maximization Selection
 Sel_MMSE_OSIC
 *************************************
 SYSTEM CONFIGURATION
-this is for 32 times 32 MIMO with 4 QAM modulation
-the number of antennas chosen in the channel partition is 5
+this is for 16 times 20 MIMO with 4 QAM modulation
+the number of antennas chosen in the channel partition is 6
 do not consider spatial correlation
 do not consider the channel estimation error
-the average transmit symbol power is 0.03125
+the average transmit symbol power is 0.05
 SNR (dB) are
-8, 10, 12, 14, 16, 
+
 the minimum channel realization is 10000
-the minimum symbol errors accumulated is 300
+the minimum symbol errors accumulated is 200
 *************************************
 
 
 *************************************
 SYSTEM OUTPUT
 SNR 	 Channel Realization 	 frame errors 	 symbol errors 	 bit errors 	 FER 	 SER 	 BER 	 Operation time
-8 	 10000 	 6968 	 22881 	 23709 	 0.6968 	 0.0715031 	 0.0370453 	 339114
-10 	 10000 	 2927 	 5589 	 5671 	 0.2927 	 0.0174656 	 0.00886094 	 296431
-12 	 10000 	 592 	 805 	 807 	 0.0592 	 0.00251563 	 0.00126094 	 379868
+8 	 10000 	 7255 	 31395 	 34019 	 0.7255 	 0.156975 	 0.0850475 	 15700.7
+10 	 10000 	 3290 	 10256 	 10961 	 0.329 	 0.05128 	 0.0274025 	 24796.6
+12 	 10000 	 798 	 1630 	 1697 	 0.0798 	 0.00815 	 0.0042425 	 24645.5
+14 	 11114 	 97 	 203 	 213 	 0.00872773 	 0.000913263 	 0.000479125 	 17486.4
+16 	 412029 	 144 	 200 	 201 	 0.00034949 	 2.42701e-05 	 1.21957e-05 	 747289

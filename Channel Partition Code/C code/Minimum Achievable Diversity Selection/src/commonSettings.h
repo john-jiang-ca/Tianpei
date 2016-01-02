@@ -56,20 +56,20 @@
 #include "Sel_MMSE_OSIC.h"
 #include "fullfact.h"
 //#define DEBUG    //debugging mode
-#define achievable //achivable selectio mode
+#define achievable //minimum achievable diversity selection mode
 #define fileName "Output_Simulation.txt"  //the output file
 int Corr_Ind=0; //the correlation channel mode (0 close 1 open)
 int Est_Ind=0; //channel estimation error mode (0 close 1 open)
-int receiveAntennas=32;     //number of receive antenna
-int transmitAntennas=32;     //number of transmit antenna
+int receiveAntennas=16;     //number of receive antenna
+int transmitAntennas=20;     //number of transmit antenna
 int symConstellationSize=4;     //modulation scheme
 double Rr=0;   // receive correlation parameter. Should be a real number in the interval between 0 and 1
 double Rt=0;	// transmit correlation parameter. Should be a real number in the interval between 0 and 1
 double gammasq=0; //the parameter for the channel estimation error
-int minSymErrors=50; //the minimum symbol error accumulated
+int minSymErrors=200; //the minimum symbol error accumulated
 int minChannelRealizations=1e4; //the minimum channel realizations
-int Start_SNR=18;   //the start SNR   (receive SNR in dB)
-int End_SNR=18;     //the end SNR
+int Start_SNR=8;   //the start SNR   (receive SNR in dB)
+int End_SNR=22;     //the end SNR
 int Step_SNR=2;   //the step of SNR
-int x=9;     //achievable diversity
+int x=12;     //achievable diversity
 #endif /* COMMONSETTINGS_H_ */

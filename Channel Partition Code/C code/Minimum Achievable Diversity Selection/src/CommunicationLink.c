@@ -51,10 +51,10 @@ int main(void) {
 	int Nr=receiveAntennas;
 	int Nt=transmitAntennas;
 #ifndef achievable
-	int N=ceil(sqrt(Nr+(1/4)*pow((Nr-Nt),2.0))-(1/2)*(Nr-Nt)-1);  //the number of antennas that are chosen in the channel partition stage
+	int N=ceil(sqrt(Nr+(0.25)*pow((Nr-Nt),2.0))-(0.5)*(Nr-Nt)-1);  //the number of antennas that are chosen in the channel partition stage
 #endif
 #ifdef achievable
-	int N=ceil(sqrt(x+(1/4)*pow((Nr-Nt), 2))-(1/2)*(Nr-Nt)-1);   //the number of antennas that are chosen in the channel partition stage
+	int N=ceil(sqrt(x+(0.25)*pow((Nr-Nt), 2))-(0.5)*(Nr-Nt)-1);   //the number of antennas that are chosen in the channel partition stage
 #endif
 	int M=symConstellationSize;
     int SNR_tmp;
